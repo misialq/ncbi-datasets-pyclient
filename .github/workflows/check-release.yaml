@@ -1,0 +1,90 @@
+name: Check release
+
+on:
+  schedule:
+    - cron: '0 7 * * *'  # every day at 7am UTC
+  workflow_dispatch:
+
+jobs:
+  check-build-release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get latest upstream release
+        id: get_release
+        run: |
+          release=$(curl -s https://api.github.com/repos/ncbi/datasets/releases/latest | jq -r .tag_name)
+          echo "Latest upstream release: $release"
+          echo "::set-output name=release::$release"
+
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.PERSONAL_TOKEN }}
+
+      - name: Check for existing tag
+        id: check_tag
+        env:
+          RELEASE: ${{ steps.get_release.outputs.release }}
+        run: |
+          if git rev-parse "$RELEASE" >/dev/null 2>&1; then
+            echo "Tag $RELEASE exists, nothing to do."
+            echo "::set-output name=new_release::false"
+          else
+            echo "New release detected: $RELEASE"
+            echo "::set-output name=new_release::true"
+          fi
+
+      - name: Setup Node.js
+        if: ${{ steps.check_tag.outputs.new_release == 'true' }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+
+      - name: Generate Python client
+        if: ${{ steps.check_tag.outputs.new_release == 'true' }}
+        run: |
+          wget https://www.ncbi.nlm.nih.gov/datasets/docs/v2/openapi3/openapi3.docs.yaml
+          npm init --yes
+          npm install @openapitools/openapi-generator-cli
+          npx @openapitools/openapi-generator-cli generate \
+              -i openapi3.docs.yaml \
+              -g python \
+              -o . \
+              --git-repo-id "ncbi-datasets-pyclient" \
+              --git-user-id "misialq" \
+              --package-name "ncbi.datasets.openapi" \
+              --additional-properties=pythonAttrNoneIfUnset=true,projectName="ncbi-datasets-pyclient,packageVersion=${{ steps.get_release.outputs.release }}"
+
+      - name: Setup Python
+        if: ${{ steps.check_tag.outputs.new_release == 'true' }}
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: Install and test package
+        if: ${{ steps.check_tag.outputs.new_release == 'true' }}
+        run: |
+          pip install . pytest
+          pytest .
+
+      - name: Commit new files
+        if: ${{ steps.check_tag.outputs.new_release == 'true' }}
+        env:
+          RELEASE: ${{ steps.get_release.outputs.release }}
+        run: |
+          git config --global user.email "ziemski.michal@gmail.com"
+          git config --global user.name "Michal Ziemski"
+          git add . ':!?openapi*' ':!package*.json' ':!node_modules/*'
+          git commit -m "Update code files for release $RELEASE" || echo "No changes to commit"
+          git push origin main
+
+      - name: Tag and create release
+        if: ${{ steps.check_tag.outputs.new_release == 'true' }}
+        env:
+          RELEASE: ${{ steps.get_release.outputs.release }}
+          GITHUB_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
+        run: |
+          git tag "$RELEASE"
+          git push origin "$RELEASE"
+          gh release create "$RELEASE" --title "$RELEASE" --notes "Automatically generated release."
