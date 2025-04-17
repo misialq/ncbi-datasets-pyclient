@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "ncbi.datasets.openapi"
-version = "v17.3.0"
+version = "v18.0.1"
 description = "NCBI Datasets API"
 authors = ["NCBI <help@ncbi.nlm.nih.gov>"]
 license = "NoLicense"
