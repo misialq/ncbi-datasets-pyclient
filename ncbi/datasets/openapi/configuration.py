@@ -542,7 +542,7 @@ conf = ncbi.datasets.openapi.Configuration(
                "OS: {env}\n"\
                "Python Version: {pyversion}\n"\
                "Version of the API: v2\n"\
-               "SDK Package Version: v18.0.2".\
+               "SDK Package Version: v18.0.5".\
                format(env=sys.platform, pyversion=sys.version)
 
     def get_host_settings(self) -> List[HostSetting]:

@@ -15,7 +15,7 @@
 """  # noqa: E501
 
 
-__version__ = "v18.0.2"
+__version__ = "v18.0.5"
 
 # import apis into sdk package
 from ncbi.datasets.openapi.api.bio_sample_api import BioSampleApi
