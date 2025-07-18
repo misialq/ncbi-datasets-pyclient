@@ -73,8 +73,8 @@ jobs:
         env:
           RELEASE: ${{ steps.get_release.outputs.release }}
         run: |
-          git config --global user.email "ziemski.michal@gmail.com"
-          git config --global user.name "Michal Ziemski"
+          git config --global user.email "bokulich-lab@ethz.ch"
+          git config --global user.name "BOTulich"
           git add . ':!openapi*' ':!package*.json' ':!node_modules/*'
           git commit -m "Update code files for release $RELEASE" || echo "No changes to commit"
           git push origin main
