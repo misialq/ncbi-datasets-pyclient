@@ -55,7 +55,7 @@ jobs:
               --git-user-id "misialq" \
               --package-name "ncbi.datasets.openapi" \
               --additional-properties=pythonAttrNoneIfUnset=true,projectName="ncbi-datasets-pyclient,packageVersion=${{ steps.get_release.outputs.release }}"
-          sed -i '' 's/license = "NoLicense"/license = {file = "LICENSE"}/' pyproject.toml
+          sed -i 's/license = "NoLicense"/license = {file = "LICENSE"}/' pyproject.toml
 
       - name: Setup Python
         if: ${{ steps.check_tag.outputs.new_release == 'true' }}
