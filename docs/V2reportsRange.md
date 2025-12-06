@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **begin** | **str** |  | [optional] 
 **end** | **str** |  | [optional] 
-**orientation** | [**V2reportsOrientation**](V2reportsOrientation.md) |  | [optional] 
+**orientation** | [**V2reportsOrientation**](V2reportsOrientation.md) |  | [optional] [default to V2reportsOrientation.NONE]
 **order** | **int** |  | [optional] 
 **ribosomal_slippage** | **int** |  | [optional] 
 

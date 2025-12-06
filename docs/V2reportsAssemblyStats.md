@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **scaffold_l50** | **int** |  | [optional] 
 **gaps_between_scaffolds_count** | **int** |  | [optional] 
 **number_of_component_sequences** | **int** |  | [optional] 
+**atgc_count** | **str** |  | [optional] 
 **gc_count** | **str** |  | [optional] 
 **gc_percent** | **float** |  | [optional] 
 **genome_coverage** | **str** |  | [optional] 

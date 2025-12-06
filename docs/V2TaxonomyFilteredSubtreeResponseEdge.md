@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **visible_children** | **List[int]** |  | [optional] 
-**children_status** | [**V2TaxonomyFilteredSubtreeResponseEdgeChildStatus**](V2TaxonomyFilteredSubtreeResponseEdgeChildStatus.md) |  | [optional] 
+**children_status** | [**V2TaxonomyFilteredSubtreeResponseEdgeChildStatus**](V2TaxonomyFilteredSubtreeResponseEdgeChildStatus.md) |  | [optional] [default to V2TaxonomyFilteredSubtreeResponseEdgeChildStatus.UNSPECIFIED]
 
 ## Example
 

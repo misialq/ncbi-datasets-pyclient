@@ -15,8 +15,8 @@ Name | Type | Description | Notes
 **include_annotation_type** | [**List[V2GenomeAnnotationRequestAnnotationType]**](V2GenomeAnnotationRequestAnnotationType.md) |  | [optional] 
 **page_size** | **int** |  | [optional] 
 **table_fields** | **List[str]** |  | [optional] 
-**table_format** | [**V2GenomeAnnotationRequestGenomeAnnotationTableFormat**](V2GenomeAnnotationRequestGenomeAnnotationTableFormat.md) |  | [optional] 
-**include_tabular_header** | [**V2IncludeTabularHeader**](V2IncludeTabularHeader.md) |  | [optional] 
+**table_format** | [**V2GenomeAnnotationRequestGenomeAnnotationTableFormat**](V2GenomeAnnotationRequestGenomeAnnotationTableFormat.md) |  | [optional] [default to V2GenomeAnnotationRequestGenomeAnnotationTableFormat.NO_TABLE]
+**include_tabular_header** | [**V2IncludeTabularHeader**](V2IncludeTabularHeader.md) |  | [optional] [default to V2IncludeTabularHeader.INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY]
 **page_token** | **str** |  | [optional] 
 
 ## Example

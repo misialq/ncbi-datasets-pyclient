@@ -3,11 +3,11 @@
 
 ## Enum
 
+* `DEFAULT` (value: `'DEFAULT'`)
+
 * `GENOME_GFF` (value: `'GENOME_GFF'`)
 
 * `GENOME_GBFF` (value: `'GENOME_GBFF'`)
-
-* `GENOME_GB` (value: `'GENOME_GB'`)
 
 * `RNA_FASTA` (value: `'RNA_FASTA'`)
 

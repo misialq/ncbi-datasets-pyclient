@@ -6,11 +6,11 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **taxons** | **List[str]** |  | [optional] 
-**returned_content** | [**V2TaxonomyMetadataRequestContentType**](V2TaxonomyMetadataRequestContentType.md) |  | [optional] 
+**returned_content** | [**V2TaxonomyMetadataRequestContentType**](V2TaxonomyMetadataRequestContentType.md) |  | [optional] [default to V2TaxonomyMetadataRequestContentType.COMPLETE]
 **page_size** | **int** |  | [optional] 
-**include_tabular_header** | [**V2IncludeTabularHeader**](V2IncludeTabularHeader.md) |  | [optional] 
+**include_tabular_header** | [**V2IncludeTabularHeader**](V2IncludeTabularHeader.md) |  | [optional] [default to V2IncludeTabularHeader.INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY]
 **page_token** | **str** |  | [optional] 
-**table_format** | [**V2TaxonomyMetadataRequestTableFormat**](V2TaxonomyMetadataRequestTableFormat.md) |  | [optional] 
+**table_format** | [**V2TaxonomyMetadataRequestTableFormat**](V2TaxonomyMetadataRequestTableFormat.md) |  | [optional] [default to V2TaxonomyMetadataRequestTableFormat.SUMMARY]
 **children** | **bool** |  | [optional] 
 **ranks** | [**List[V2reportsRankType]**](V2reportsRankType.md) |  | [optional] 
 

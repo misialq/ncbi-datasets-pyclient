@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **tax_id** | **int** |  | [optional] 
-**rank** | [**V2reportsRankType**](V2reportsRankType.md) |  | [optional] 
+**rank** | [**V2reportsRankType**](V2reportsRankType.md) |  | [optional] [default to V2reportsRankType.NO_RANK]
 **current_scientific_name** | [**V2reportsNameAndAuthority**](V2reportsNameAndAuthority.md) |  | [optional] 
 **basionym** | [**V2reportsNameAndAuthority**](V2reportsNameAndAuthority.md) |  | [optional] 
 **curator_common_name** | **str** |  | [optional] 

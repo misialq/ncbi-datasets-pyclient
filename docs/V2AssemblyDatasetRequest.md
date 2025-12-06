@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **accessions** | **List[str]** |  | [optional] 
 **chromosomes** | **List[str]** |  | [optional] 
 **include_annotation_type** | [**List[V2AnnotationForAssemblyType]**](V2AnnotationForAssemblyType.md) |  | [optional] 
-**hydrated** | [**V2AssemblyDatasetRequestResolution**](V2AssemblyDatasetRequestResolution.md) |  | [optional] 
+**hydrated** | [**V2AssemblyDatasetRequestResolution**](V2AssemblyDatasetRequestResolution.md) |  | [optional] [default to V2AssemblyDatasetRequestResolution.FULLY_HYDRATED]
 **include_tsv** | **bool** |  | [optional] 
 
 ## Example

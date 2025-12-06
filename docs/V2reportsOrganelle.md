@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**description** | [**V2reportsOrganelleType**](V2reportsOrganelleType.md) |  | [optional] 
+**description** | [**V2reportsOrganelleType**](V2reportsOrganelleType.md) |  | [optional] [default to V2reportsOrganelleType.ORGANELLE_TYPE_UNKNOWN]
 **genbank** | [**V2reportsSequenceInformation**](V2reportsSequenceInformation.md) |  | [optional] 
 **refseq** | [**V2reportsSequenceInformation**](V2reportsSequenceInformation.md) |  | [optional] 
 **organism** | [**V2reportsOrganism**](V2reportsOrganism.md) |  | [optional] 
@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **biosample** | [**V2reportsOrganelleBiosample**](V2reportsOrganelleBiosample.md) |  | [optional] 
 **gene_counts** | [**V2reportsOrganelleGeneCounts**](V2reportsOrganelleGeneCounts.md) |  | [optional] 
 **length** | **int** |  | [optional] 
-**topology** | [**V2reportsOrganelleTopology**](V2reportsOrganelleTopology.md) |  | [optional] 
+**topology** | [**V2reportsOrganelleTopology**](V2reportsOrganelleTopology.md) |  | [optional] [default to V2reportsOrganelleTopology.TOPOLOGY_UNKNOWN]
 **gene_count** | **int** |  | [optional] 
 
 ## Example

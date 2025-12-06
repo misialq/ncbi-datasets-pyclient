@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | [**V2reportsTranscriptTranscriptType**](V2reportsTranscriptTranscriptType.md) |  | [optional] 
+**type** | [**V2reportsTranscriptTranscriptType**](V2reportsTranscriptTranscriptType.md) |  | [optional] [default to V2reportsTranscriptTranscriptType.UNKNOWN]
 **count** | **int** |  | [optional] 
 
 ## Example

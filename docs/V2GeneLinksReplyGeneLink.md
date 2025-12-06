@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **gene_id** | **int** |  | [optional] 
-**gene_link_type** | [**V2GeneLinksReplyGeneLinkType**](V2GeneLinksReplyGeneLinkType.md) |  | [optional] 
+**gene_link_type** | [**V2GeneLinksReplyGeneLinkType**](V2GeneLinksReplyGeneLinkType.md) |  | [optional] [default to V2GeneLinksReplyGeneLinkType.DEFAULT]
 **resource_link** | **str** |  | [optional] 
 **resource_id** | **str** |  | [optional] 
 

@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **tax_id** | **str** |  | [optional] 
 **common_name** | **str** |  | [optional] 
 **matched_term** | **str** |  | [optional] 
-**rank** | [**V2reportsRankType**](V2reportsRankType.md) |  | [optional] 
+**rank** | [**V2reportsRankType**](V2reportsRankType.md) |  | [optional] [default to V2reportsRankType.NO_RANK]
 **group_name** | **str** |  | [optional] 
 
 ## Example

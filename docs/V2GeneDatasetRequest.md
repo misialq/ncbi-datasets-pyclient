@@ -7,13 +7,13 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **gene_ids** | **List[int]** |  | [optional] 
 **include_annotation_type** | [**List[V2Fasta]**](V2Fasta.md) |  | [optional] 
-**returned_content** | [**V2GeneDatasetRequestContentType**](V2GeneDatasetRequestContentType.md) |  | [optional] 
+**returned_content** | [**V2GeneDatasetRequestContentType**](V2GeneDatasetRequestContentType.md) |  | [optional] [default to V2GeneDatasetRequestContentType.COMPLETE]
 **fasta_filter** | **List[str]** |  | [optional] 
 **accession_filter** | **List[str]** |  | [optional] 
 **aux_report** | [**List[V2GeneDatasetRequestGeneDatasetReportType]**](V2GeneDatasetRequestGeneDatasetReportType.md) |  | [optional] 
 **tabular_reports** | [**List[V2GeneDatasetRequestGeneDatasetReportType]**](V2GeneDatasetRequestGeneDatasetReportType.md) |  | [optional] 
 **table_fields** | **List[str]** |  | [optional] 
-**table_report_type** | [**V2GeneDatasetRequestGeneDatasetReportType**](V2GeneDatasetRequestGeneDatasetReportType.md) |  | [optional] 
+**table_report_type** | [**V2GeneDatasetRequestGeneDatasetReportType**](V2GeneDatasetRequestGeneDatasetReportType.md) |  | [optional] [default to V2GeneDatasetRequestGeneDatasetReportType.DATASET_REPORT]
 
 ## Example
 

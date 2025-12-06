@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | [**V2reportsCountType**](V2reportsCountType.md) |  | [optional] 
+**type** | [**V2reportsCountType**](V2reportsCountType.md) |  | [optional] [default to V2reportsCountType.COUNT_TYPE_UNSPECIFIED]
 **count** | **int** |  | [optional] 
 
 ## Example

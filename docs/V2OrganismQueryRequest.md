@@ -7,8 +7,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **organism_query** | **str** |  | [optional] 
 **taxon_query** | **str** |  | [optional] 
-**tax_rank_filter** | [**V2OrganismQueryRequestTaxRankFilter**](V2OrganismQueryRequestTaxRankFilter.md) |  | [optional] 
-**taxon_resource_filter** | [**V2OrganismQueryRequestTaxonResourceFilter**](V2OrganismQueryRequestTaxonResourceFilter.md) |  | [optional] 
+**tax_rank_filter** | [**V2OrganismQueryRequestTaxRankFilter**](V2OrganismQueryRequestTaxRankFilter.md) |  | [optional] [default to V2OrganismQueryRequestTaxRankFilter.SPECIES]
+**taxon_resource_filter** | [**V2OrganismQueryRequestTaxonResourceFilter**](V2OrganismQueryRequestTaxonResourceFilter.md) |  | [optional] [default to V2OrganismQueryRequestTaxonResourceFilter.TAXON_RESOURCE_FILTER_ALL]
 **exact_match** | **bool** |  | [optional] 
 
 ## Example

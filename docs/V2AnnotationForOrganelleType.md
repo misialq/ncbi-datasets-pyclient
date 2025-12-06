@@ -3,6 +3,8 @@
 
 ## Enum
 
+* `DEFAULT` (value: `'DEFAULT'`)
+
 * `GENOME_FASTA` (value: `'GENOME_FASTA'`)
 
 * `CDS_FASTA` (value: `'CDS_FASTA'`)

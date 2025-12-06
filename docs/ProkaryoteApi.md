@@ -4,16 +4,16 @@ All URIs are relative to *https://api.ncbi.nlm.nih.gov/datasets/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**download_prokaryote_gene_package**](ProkaryoteApi.md#download_prokaryote_gene_package) | **GET** /protein/accession/{accessions}/download | Get a prokaryote gene dataset by RefSeq protein accession
-[**download_prokaryote_gene_package_post**](ProkaryoteApi.md#download_prokaryote_gene_package_post) | **POST** /protein/accession/download | Get a prokaryote gene dataset by RefSeq protein accession by POST
+[**download_prokaryote_gene_package**](ProkaryoteApi.md#download_prokaryote_gene_package) | **GET** /protein/accession/{accessions}/download | Get a prokaryote gene data package by RefSeq protein accession
+[**download_prokaryote_gene_package_post**](ProkaryoteApi.md#download_prokaryote_gene_package_post) | **POST** /protein/accession/download | Get a prokaryote gene data package by RefSeq protein accession
 
 
 # **download_prokaryote_gene_package**
 > bytearray download_prokaryote_gene_package(accessions, include_annotation_type=include_annotation_type, gene_flank_config_length=gene_flank_config_length, taxon=taxon, filename=filename)
 
-Get a prokaryote gene dataset by RefSeq protein accession
+Get a prokaryote gene data package by RefSeq protein accession
 
-Get a prokaryote gene dataset including gene and protein fasta sequence, annotation and metadata by prokaryote protein accession.
+Download a prokaryote gene data package including sequence, annotation and data reports by RefSeq non-redundant protein accession.
 
 ### Example
 
@@ -46,14 +46,14 @@ configuration.api_key['ApiKeyAuthHeader'] = os.environ["API_KEY"]
 with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = ncbi.datasets.openapi.ProkaryoteApi(api_client)
-    accessions = ['[\"WP_015878339.1\"]'] # List[str] | WP prokaryote protein accession
-    include_annotation_type = [ncbi.datasets.openapi.V2Fasta()] # List[V2Fasta] | Select additional types of annotation to include in the data package.  If unset, no annotation is provided. (optional)
+    accessions = ['WP_015878339.1'] # List[str] | One or more RefSeq non-redundant protein accessions (preceded by `WP_`)
+    include_annotation_type = [ncbi.datasets.openapi.V2Fasta()] # List[V2Fasta] | Specify which sequence files to include in the data package. (optional)
     gene_flank_config_length = 56 # int |  (optional)
-    taxon = 'taxon_example' # str | NCBI Taxonomy ID or name (common or scientific) at any taxonomic rank When specified, return data from this taxon and its subtree (optional)
+    taxon = 'taxon_example' # str | Limit gene sequences and the genome assemblies described by the [annotation report file](https://www.ncbi.nlm.nih.gov/datasets/docs/v2/reference-docs/data-reports/prokaryote-gene-location/) to the specified NCBI Taxonomy ID or name (common or scientific) at any taxonomic rank. (optional)
     filename = 'ncbi_dataset.zip' # str | Output file name. (optional) (default to 'ncbi_dataset.zip')
 
     try:
-        # Get a prokaryote gene dataset by RefSeq protein accession
+        # Get a prokaryote gene data package by RefSeq protein accession
         api_response = api_instance.download_prokaryote_gene_package(accessions, include_annotation_type=include_annotation_type, gene_flank_config_length=gene_flank_config_length, taxon=taxon, filename=filename)
         print("The response of ProkaryoteApi->download_prokaryote_gene_package:\n")
         pprint(api_response)
@@ -68,10 +68,10 @@ with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accessions** | [**List[str]**](str.md)| WP prokaryote protein accession | 
- **include_annotation_type** | [**List[V2Fasta]**](V2Fasta.md)| Select additional types of annotation to include in the data package.  If unset, no annotation is provided. | [optional] 
+ **accessions** | [**List[str]**](str.md)| One or more RefSeq non-redundant protein accessions (preceded by &#x60;WP_&#x60;) | 
+ **include_annotation_type** | [**List[V2Fasta]**](V2Fasta.md)| Specify which sequence files to include in the data package. | [optional] 
  **gene_flank_config_length** | **int**|  | [optional] 
- **taxon** | **str**| NCBI Taxonomy ID or name (common or scientific) at any taxonomic rank When specified, return data from this taxon and its subtree | [optional] 
+ **taxon** | **str**| Limit gene sequences and the genome assemblies described by the [annotation report file](https://www.ncbi.nlm.nih.gov/datasets/docs/v2/reference-docs/data-reports/prokaryote-gene-location/) to the specified NCBI Taxonomy ID or name (common or scientific) at any taxonomic rank. | [optional] 
  **filename** | **str**| Output file name. | [optional] [default to &#39;ncbi_dataset.zip&#39;]
 
 ### Return type
@@ -99,9 +99,9 @@ Name | Type | Description  | Notes
 # **download_prokaryote_gene_package_post**
 > bytearray download_prokaryote_gene_package_post(v2_prokaryote_gene_request, filename=filename)
 
-Get a prokaryote gene dataset by RefSeq protein accession by POST
+Get a prokaryote gene data package by RefSeq protein accession
 
-Get a prokaryote gene dataset including gene and protein fasta sequence, annotation and metadata by prokaryote protein accession by POST.
+Download a prokaryote gene data package including sequence, annotation and data reports by RefSeq non-redundant protein accession.
 
 ### Example
 
@@ -134,11 +134,11 @@ configuration.api_key['ApiKeyAuthHeader'] = os.environ["API_KEY"]
 with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = ncbi.datasets.openapi.ProkaryoteApi(api_client)
-    v2_prokaryote_gene_request = {"accessions":["WP_000000001.1","WP_000000002.1"]} # V2ProkaryoteGeneRequest | 
+    v2_prokaryote_gene_request = {"accessions":["WP_015878339.1","WP_001040085.1"],"include_annotation_type":["FASTA_GENE","FASTA_PROTEIN"]} # V2ProkaryoteGeneRequest | 
     filename = 'ncbi_dataset.zip' # str | Output file name. (optional) (default to 'ncbi_dataset.zip')
 
     try:
-        # Get a prokaryote gene dataset by RefSeq protein accession by POST
+        # Get a prokaryote gene data package by RefSeq protein accession
         api_response = api_instance.download_prokaryote_gene_package_post(v2_prokaryote_gene_request, filename=filename)
         print("The response of ProkaryoteApi->download_prokaryote_gene_package_post:\n")
         pprint(api_response)

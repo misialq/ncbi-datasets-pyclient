@@ -6,20 +6,20 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **reference_only** | **bool** |  | [optional] 
-**assembly_source** | [**V2AssemblyDatasetDescriptorsFilterAssemblySource**](V2AssemblyDatasetDescriptorsFilterAssemblySource.md) |  | [optional] 
+**assembly_source** | [**V2AssemblyDatasetDescriptorsFilterAssemblySource**](V2AssemblyDatasetDescriptorsFilterAssemblySource.md) |  | [optional] [default to V2AssemblyDatasetDescriptorsFilterAssemblySource.ALL]
 **has_annotation** | **bool** |  | [optional] 
 **exclude_paired_reports** | **bool** |  | [optional] 
 **exclude_atypical** | **bool** |  | [optional] 
-**assembly_version** | [**V2AssemblyDatasetDescriptorsFilterAssemblyVersion**](V2AssemblyDatasetDescriptorsFilterAssemblyVersion.md) |  | [optional] 
+**assembly_version** | [**V2AssemblyDatasetDescriptorsFilterAssemblyVersion**](V2AssemblyDatasetDescriptorsFilterAssemblyVersion.md) |  | [optional] [default to V2AssemblyDatasetDescriptorsFilterAssemblyVersion.CURRENT]
 **assembly_level** | [**List[V2reportsAssemblyLevel]**](V2reportsAssemblyLevel.md) |  | [optional] 
 **first_release_date** | **datetime** |  | [optional] 
 **last_release_date** | **datetime** |  | [optional] 
 **search_text** | **List[str]** |  | [optional] 
-**is_metagenome_derived** | [**V2AssemblyDatasetDescriptorsFilterMetagenomeDerivedFilter**](V2AssemblyDatasetDescriptorsFilterMetagenomeDerivedFilter.md) |  | [optional] 
+**is_metagenome_derived** | [**V2AssemblyDatasetDescriptorsFilterMetagenomeDerivedFilter**](V2AssemblyDatasetDescriptorsFilterMetagenomeDerivedFilter.md) |  | [optional] [default to V2AssemblyDatasetDescriptorsFilterMetagenomeDerivedFilter.METAGENOME_DERIVED_UNSET]
 **is_type_material** | **bool** |  | [optional] 
 **is_ictv_exemplar** | **bool** |  | [optional] 
 **exclude_multi_isolate** | **bool** |  | [optional] 
-**type_material_category** | [**V2AssemblyDatasetDescriptorsFilterTypeMaterialCategory**](V2AssemblyDatasetDescriptorsFilterTypeMaterialCategory.md) |  | [optional] 
+**type_material_category** | [**V2AssemblyDatasetDescriptorsFilterTypeMaterialCategory**](V2AssemblyDatasetDescriptorsFilterTypeMaterialCategory.md) |  | [optional] [default to V2AssemblyDatasetDescriptorsFilterTypeMaterialCategory.NONE]
 
 ## Example
 

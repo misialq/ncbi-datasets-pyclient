@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **assembly** | **str** |  | [optional] 
 **organism_name** | **str** |  | [optional] 
-**category** | [**V2reportsANITypeCategory**](V2reportsANITypeCategory.md) |  | [optional] 
+**category** | [**V2reportsANITypeCategory**](V2reportsANITypeCategory.md) |  | [optional] [default to V2reportsANITypeCategory.ANI_CATEGORY_UNKNOWN]
 **ani** | **float** |  | [optional] 
 **assembly_coverage** | **float** |  | [optional] 
 **type_assembly_coverage** | **float** |  | [optional] 

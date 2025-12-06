@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **accession** | **str** |  | [optional] 
-**assembly_link_type** | [**V2AssemblyLinksReplyAssemblyLinkType**](V2AssemblyLinksReplyAssemblyLinkType.md) |  | [optional] 
+**assembly_link_type** | [**V2AssemblyLinksReplyAssemblyLinkType**](V2AssemblyLinksReplyAssemblyLinkType.md) |  | [optional] [default to V2AssemblyLinksReplyAssemblyLinkType.DEFAULT]
 **resource_link** | **str** |  | [optional] 
 **linked_identifiers** | **List[str]** |  | [optional] 
 

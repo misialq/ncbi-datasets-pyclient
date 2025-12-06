@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **cdd** | [**List[V2reportsConservedDomain]**](V2reportsConservedDomain.md) |  | [optional] 
 **uni_prot_kb** | [**V2reportsVirusPeptideUniProtId**](V2reportsVirusPeptideUniProtId.md) |  | [optional] 
 **mature_peptide** | [**List[V2reportsVirusPeptide]**](V2reportsVirusPeptide.md) |  | [optional] 
-**protein_completeness** | [**V2reportsVirusPeptideViralPeptideCompleteness**](V2reportsVirusPeptideViralPeptideCompleteness.md) |  | [optional] 
+**protein_completeness** | [**V2reportsVirusPeptideViralPeptideCompleteness**](V2reportsVirusPeptideViralPeptideCompleteness.md) |  | [optional] [default to V2reportsVirusPeptideViralPeptideCompleteness.UNKNOWN]
 
 ## Example
 

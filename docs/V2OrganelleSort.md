@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **var_field** | **str** |  | [optional] 
-**direction** | [**V2SortDirection**](V2SortDirection.md) |  | [optional] 
+**direction** | [**V2SortDirection**](V2SortDirection.md) |  | [optional] [default to V2SortDirection.SORT_DIRECTION_UNSPECIFIED]
 
 ## Example
 

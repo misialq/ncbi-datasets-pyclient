@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **str** |  | [optional] 
 **note** | **str** |  | [optional] 
-**note_classifier** | [**V2reportsNameAndAuthorityNoteClassifier**](V2reportsNameAndAuthorityNoteClassifier.md) |  | [optional] 
+**note_classifier** | [**V2reportsNameAndAuthorityNoteClassifier**](V2reportsNameAndAuthorityNoteClassifier.md) |  | [optional] [default to V2reportsNameAndAuthorityNoteClassifier.NO_AUTHORITY_CLASSIFIER]
 
 ## Example
 

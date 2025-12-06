@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **assembly_level** | **str** |  | [optional] 
-**assembly_status** | [**V2reportsAssemblyStatus**](V2reportsAssemblyStatus.md) |  | [optional] 
+**assembly_status** | [**V2reportsAssemblyStatus**](V2reportsAssemblyStatus.md) |  | [optional] [default to V2reportsAssemblyStatus.ASSEMBLY_STATUS_UNKNOWN]
 **paired_assembly** | [**V2reportsPairedAssembly**](V2reportsPairedAssembly.md) |  | [optional] 
 **assembly_name** | **str** |  | [optional] 
 **assembly_long_name** | **str** |  | [optional] 
@@ -30,7 +30,7 @@ Name | Type | Description | Notes
 **blast_url** | **str** |  | [optional] 
 **comments** | **str** |  | [optional] 
 **suppression_reason** | **str** |  | [optional] 
-**diploid_role** | [**V2reportsLinkedAssemblyType**](V2reportsLinkedAssemblyType.md) |  | [optional] 
+**diploid_role** | [**V2reportsLinkedAssemblyType**](V2reportsLinkedAssemblyType.md) |  | [optional] [default to V2reportsLinkedAssemblyType.LINKED_ASSEMBLY_TYPE_UNKNOWN]
 
 ## Example
 

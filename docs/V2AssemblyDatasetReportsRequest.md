@@ -15,11 +15,11 @@ Name | Type | Description | Notes
 **tax_exact_match** | **bool** |  | [optional] 
 **chromosomes** | **List[str]** |  | [optional] 
 **table_fields** | **List[str]** |  | [optional] 
-**returned_content** | [**V2AssemblyDatasetReportsRequestContentType**](V2AssemblyDatasetReportsRequestContentType.md) |  | [optional] 
+**returned_content** | [**V2AssemblyDatasetReportsRequestContentType**](V2AssemblyDatasetReportsRequestContentType.md) |  | [optional] [default to V2AssemblyDatasetReportsRequestContentType.COMPLETE]
 **page_size** | **int** |  | [optional] 
 **page_token** | **str** |  | [optional] 
 **sort** | [**List[V2SortField]**](V2SortField.md) |  | [optional] 
-**include_tabular_header** | [**V2IncludeTabularHeader**](V2IncludeTabularHeader.md) |  | [optional] 
+**include_tabular_header** | [**V2IncludeTabularHeader**](V2IncludeTabularHeader.md) |  | [optional] [default to V2IncludeTabularHeader.INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY]
 **table_format** | **str** |  | [optional] 
 
 ## Example

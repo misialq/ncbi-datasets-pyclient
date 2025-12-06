@@ -8,10 +8,11 @@ Name | Type | Description | Notes
 **genbank_accession** | **str** |  | [optional] 
 **refseq_accession** | **str** |  | [optional] 
 **assembly_name** | **str** |  | [optional] 
-**assembly_level** | [**V2reportsAssemblyLevel**](V2reportsAssemblyLevel.md) |  | [optional] 
+**assembly_level** | [**V2reportsAssemblyLevel**](V2reportsAssemblyLevel.md) |  | [optional] [default to V2reportsAssemblyLevel.CHROMOSOME]
 **release_date** | **str** |  | [optional] 
 **submission_date** | **str** |  | [optional] 
 **sequencing_technology** | **str** |  | [optional] 
+**identical** | **bool** |  | [optional] 
 
 ## Example
 

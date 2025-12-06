@@ -6,13 +6,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **accession** | **str** |  | [optional] 
-**status** | [**V2reportsAssemblyStatus**](V2reportsAssemblyStatus.md) |  | [optional] 
+**status** | [**V2reportsAssemblyStatus**](V2reportsAssemblyStatus.md) |  | [optional] [default to V2reportsAssemblyStatus.ASSEMBLY_STATUS_UNKNOWN]
 **annotation_name** | **str** |  | [optional] 
 **only_genbank** | **str** |  | [optional] 
 **only_refseq** | **str** |  | [optional] 
 **changed** | **str** |  | [optional] 
 **manual_diff** | **str** |  | [optional] 
 **refseq_genbank_are_different** | **bool** |  | [optional] 
+**differences** | **str** |  | [optional] 
 
 ## Example
 

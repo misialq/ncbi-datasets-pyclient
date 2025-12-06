@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **lineage** | **List[int]** |  | [optional] 
 **children** | **List[int]** |  | [optional] 
 **descendent_with_described_species_names_count** | **int** |  | [optional] 
-**rank** | [**V2reportsRankType**](V2reportsRankType.md) |  | [optional] 
+**rank** | [**V2reportsRankType**](V2reportsRankType.md) |  | [optional] [default to V2reportsRankType.NO_RANK]
 **has_described_species_name** | **bool** |  | [optional] 
 **counts** | [**List[V2TaxonomyNodeCountByType]**](V2TaxonomyNodeCountByType.md) |  | [optional] 
 **min_ord** | **int** |  | [optional] 

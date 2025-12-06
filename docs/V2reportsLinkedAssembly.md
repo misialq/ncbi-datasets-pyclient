@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **linked_assembly** | **str** |  | [optional] 
-**assembly_type** | [**V2reportsLinkedAssemblyType**](V2reportsLinkedAssemblyType.md) |  | [optional] 
+**assembly_type** | [**V2reportsLinkedAssemblyType**](V2reportsLinkedAssemblyType.md) |  | [optional] [default to V2reportsLinkedAssemblyType.LINKED_ASSEMBLY_TYPE_UNKNOWN]
 
 ## Example
 

@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **count_assembly_unplaced** | **bool** |  | [optional] 
 **page_size** | **int** |  | [optional] 
 **page_token** | **str** |  | [optional] 
-**include_tabular_header** | [**V2IncludeTabularHeader**](V2IncludeTabularHeader.md) |  | [optional] 
+**include_tabular_header** | [**V2IncludeTabularHeader**](V2IncludeTabularHeader.md) |  | [optional] [default to V2IncludeTabularHeader.INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY]
 **table_format** | **str** |  | [optional] 
 
 ## Example

@@ -49,7 +49,7 @@ configuration.api_key['ApiKeyAuthHeader'] = os.environ["API_KEY"]
 with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = ncbi.datasets.openapi.OrganelleApi(api_client)
-    accessions = ['[\"NC_001643.1\"]'] # List[str] | NCBI organelle assembly accessions
+    accessions = ['NC_001643.1'] # List[str] | NCBI organelle assembly accessions
     exclude_sequence = True # bool | Set to true to omit the genomic sequence. (optional)
     include_annotation_type = [ncbi.datasets.openapi.V2AnnotationForOrganelleType()] # List[V2AnnotationForOrganelleType] | Select additional types of annotation to include in the data package.  If unset, no annotation is provided. (optional)
     filename = 'ncbi_dataset.zip' # str | Output file name. (optional) (default to 'ncbi_dataset.zip')
@@ -222,17 +222,17 @@ configuration.api_key['ApiKeyAuthHeader'] = os.environ["API_KEY"]
 with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = ncbi.datasets.openapi.OrganelleApi(api_client)
-    accessions = ['[\"NC_001643.1\"]'] # List[str] | NCBI assembly accession
-    taxons = ['[\"9443\"]'] # List[str] | NCBI Taxonomy ID or name (common or scientific) at any taxonomic rank (optional)
+    accessions = ['NC_001643.1'] # List[str] | NCBI assembly accession
+    taxons = ['9443'] # List[str] | NCBI Taxonomy ID or name (common or scientific) at any taxonomic rank (optional)
     organelle_types = [ncbi.datasets.openapi.V2reportsOrganelleType()] # List[V2reportsOrganelleType] |  (optional)
     first_release_date = '2015-01-10T00:00:00Z' # datetime | Only return organelle assemblies that were released on or after the specified date By default, do not filter. (optional)
     last_release_date = '2021-01-10T00:00:00Z' # datetime | Only return organelle assemblies that were released on or before to the specified date By default, do not filter. (optional)
     tax_exact_match = False # bool | If true, only return assemblies with the given NCBI Taxonomy ID, or name. Otherwise, assemblies from taxonomy subtree are included, too. (optional) (default to False)
     sort_field = 'sort_field_example' # str |  (optional)
-    sort_direction = ncbi.datasets.openapi.V2SortDirection() # V2SortDirection |  (optional)
-    returned_content = ncbi.datasets.openapi.V2OrganelleMetadataRequestContentType() # V2OrganelleMetadataRequestContentType | Return either assembly accessions, or entire assembly-metadata records (optional)
-    table_format = ncbi.datasets.openapi.V2OrganelleMetadataRequestOrganelleTableFormat() # V2OrganelleMetadataRequestOrganelleTableFormat | Optional pre-defined template for processing a tabular data request (optional)
-    include_tabular_header = ncbi.datasets.openapi.V2IncludeTabularHeader() # V2IncludeTabularHeader | Whether this request for tabular data should include the header row (optional)
+    sort_direction = SORT_DIRECTION_UNSPECIFIED # V2SortDirection |  (optional) (default to SORT_DIRECTION_UNSPECIFIED)
+    returned_content = COMPLETE # V2OrganelleMetadataRequestContentType | Return either assembly accessions, or entire assembly-metadata records (optional) (default to COMPLETE)
+    table_format = ORGANELLE_TABLE_FORMAT_NO_TABLE # V2OrganelleMetadataRequestOrganelleTableFormat | Optional pre-defined template for processing a tabular data request (optional) (default to ORGANELLE_TABLE_FORMAT_NO_TABLE)
+    include_tabular_header = INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY # V2IncludeTabularHeader | Whether this request for tabular data should include the header row (optional) (default to INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY)
 
     try:
         # Get Organelle dataset report by accession
@@ -257,10 +257,10 @@ Name | Type | Description  | Notes
  **last_release_date** | **datetime**| Only return organelle assemblies that were released on or before to the specified date By default, do not filter. | [optional] 
  **tax_exact_match** | **bool**| If true, only return assemblies with the given NCBI Taxonomy ID, or name. Otherwise, assemblies from taxonomy subtree are included, too. | [optional] [default to False]
  **sort_field** | **str**|  | [optional] 
- **sort_direction** | [**V2SortDirection**](.md)|  | [optional] 
- **returned_content** | [**V2OrganelleMetadataRequestContentType**](.md)| Return either assembly accessions, or entire assembly-metadata records | [optional] 
- **table_format** | [**V2OrganelleMetadataRequestOrganelleTableFormat**](.md)| Optional pre-defined template for processing a tabular data request | [optional] 
- **include_tabular_header** | [**V2IncludeTabularHeader**](.md)| Whether this request for tabular data should include the header row | [optional] 
+ **sort_direction** | [**V2SortDirection**](.md)|  | [optional] [default to SORT_DIRECTION_UNSPECIFIED]
+ **returned_content** | [**V2OrganelleMetadataRequestContentType**](.md)| Return either assembly accessions, or entire assembly-metadata records | [optional] [default to COMPLETE]
+ **table_format** | [**V2OrganelleMetadataRequestOrganelleTableFormat**](.md)| Optional pre-defined template for processing a tabular data request | [optional] [default to ORGANELLE_TABLE_FORMAT_NO_TABLE]
+ **include_tabular_header** | [**V2IncludeTabularHeader**](.md)| Whether this request for tabular data should include the header row | [optional] [default to INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY]
 
 ### Return type
 
@@ -408,18 +408,18 @@ configuration.api_key['ApiKeyAuthHeader'] = os.environ["API_KEY"]
 with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = ncbi.datasets.openapi.OrganelleApi(api_client)
-    taxons = ['[\"9443\"]'] # List[str] | NCBI Taxonomy ID or name (common or scientific) at any taxonomic rank
+    taxons = ['9443'] # List[str] | NCBI Taxonomy ID or name (common or scientific) at any taxonomic rank
     organelle_types = [ncbi.datasets.openapi.V2reportsOrganelleType()] # List[V2reportsOrganelleType] |  (optional)
     first_release_date = '2015-01-10T00:00:00Z' # datetime | Only return organelle assemblies that were released on or after the specified date By default, do not filter. (optional)
     last_release_date = '2021-01-10T00:00:00Z' # datetime | Only return organelle assemblies that were released on or before to the specified date By default, do not filter. (optional)
     tax_exact_match = False # bool | If true, only return assemblies with the given NCBI Taxonomy ID, or name. Otherwise, assemblies from taxonomy subtree are included, too. (optional) (default to False)
     sort_field = 'sort_field_example' # str |  (optional)
-    sort_direction = ncbi.datasets.openapi.V2SortDirection() # V2SortDirection |  (optional)
-    returned_content = ncbi.datasets.openapi.V2OrganelleMetadataRequestContentType() # V2OrganelleMetadataRequestContentType | Return either assembly accessions, or entire assembly-metadata records (optional)
+    sort_direction = SORT_DIRECTION_UNSPECIFIED # V2SortDirection |  (optional) (default to SORT_DIRECTION_UNSPECIFIED)
+    returned_content = COMPLETE # V2OrganelleMetadataRequestContentType | Return either assembly accessions, or entire assembly-metadata records (optional) (default to COMPLETE)
     page_size = 56 # int | The maximum number of organelle assemblies to return. Default is 20 and maximum is 1000. If the number of results exceeds the page size, `page_token` can be used to retrieve the remaining results. (optional)
     page_token = 'page_token_example' # str | A page token is returned from an `OrganelleMetadata` call with more than `page_size` results. Use this token, along with the previous `OrganelleMetadata` parameters, to retrieve the next page of results. When `page_token` is empty, all results have been retrieved. (optional)
-    table_format = ncbi.datasets.openapi.V2OrganelleMetadataRequestOrganelleTableFormat() # V2OrganelleMetadataRequestOrganelleTableFormat | Optional pre-defined template for processing a tabular data request (optional)
-    include_tabular_header = ncbi.datasets.openapi.V2IncludeTabularHeader() # V2IncludeTabularHeader | Whether this request for tabular data should include the header row (optional)
+    table_format = ORGANELLE_TABLE_FORMAT_NO_TABLE # V2OrganelleMetadataRequestOrganelleTableFormat | Optional pre-defined template for processing a tabular data request (optional) (default to ORGANELLE_TABLE_FORMAT_NO_TABLE)
+    include_tabular_header = INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY # V2IncludeTabularHeader | Whether this request for tabular data should include the header row (optional) (default to INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY)
 
     try:
         # Get Organelle dataset report by taxons
@@ -443,12 +443,12 @@ Name | Type | Description  | Notes
  **last_release_date** | **datetime**| Only return organelle assemblies that were released on or before to the specified date By default, do not filter. | [optional] 
  **tax_exact_match** | **bool**| If true, only return assemblies with the given NCBI Taxonomy ID, or name. Otherwise, assemblies from taxonomy subtree are included, too. | [optional] [default to False]
  **sort_field** | **str**|  | [optional] 
- **sort_direction** | [**V2SortDirection**](.md)|  | [optional] 
- **returned_content** | [**V2OrganelleMetadataRequestContentType**](.md)| Return either assembly accessions, or entire assembly-metadata records | [optional] 
+ **sort_direction** | [**V2SortDirection**](.md)|  | [optional] [default to SORT_DIRECTION_UNSPECIFIED]
+ **returned_content** | [**V2OrganelleMetadataRequestContentType**](.md)| Return either assembly accessions, or entire assembly-metadata records | [optional] [default to COMPLETE]
  **page_size** | **int**| The maximum number of organelle assemblies to return. Default is 20 and maximum is 1000. If the number of results exceeds the page size, &#x60;page_token&#x60; can be used to retrieve the remaining results. | [optional] 
  **page_token** | **str**| A page token is returned from an &#x60;OrganelleMetadata&#x60; call with more than &#x60;page_size&#x60; results. Use this token, along with the previous &#x60;OrganelleMetadata&#x60; parameters, to retrieve the next page of results. When &#x60;page_token&#x60; is empty, all results have been retrieved. | [optional] 
- **table_format** | [**V2OrganelleMetadataRequestOrganelleTableFormat**](.md)| Optional pre-defined template for processing a tabular data request | [optional] 
- **include_tabular_header** | [**V2IncludeTabularHeader**](.md)| Whether this request for tabular data should include the header row | [optional] 
+ **table_format** | [**V2OrganelleMetadataRequestOrganelleTableFormat**](.md)| Optional pre-defined template for processing a tabular data request | [optional] [default to ORGANELLE_TABLE_FORMAT_NO_TABLE]
+ **include_tabular_header** | [**V2IncludeTabularHeader**](.md)| Whether this request for tabular data should include the header row | [optional] [default to INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY]
 
 ### Return type
 

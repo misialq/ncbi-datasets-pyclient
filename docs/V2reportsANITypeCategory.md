@@ -19,7 +19,7 @@
 
 * `SUSPECTED_TYPE` (value: `'suspected_type'`)
 
-* `SYNTYPE` (value: `'syntype'`)
+* `SYNONYM` (value: `'synonym'`)
 
 * `TYPE` (value: `'type'`)
 

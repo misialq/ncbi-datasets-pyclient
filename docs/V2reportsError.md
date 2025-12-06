@@ -5,11 +5,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**assembly_error_code** | [**V2reportsErrorAssemblyErrorCode**](V2reportsErrorAssemblyErrorCode.md) |  | [optional] 
-**gene_error_code** | [**V2reportsErrorGeneErrorCode**](V2reportsErrorGeneErrorCode.md) |  | [optional] 
-**organelle_error_code** | [**V2reportsErrorOrganelleErrorCode**](V2reportsErrorOrganelleErrorCode.md) |  | [optional] 
-**virus_error_code** | [**V2reportsErrorVirusErrorCode**](V2reportsErrorVirusErrorCode.md) |  | [optional] 
-**taxonomy_error_code** | [**V2reportsErrorTaxonomyErrorCode**](V2reportsErrorTaxonomyErrorCode.md) |  | [optional] 
+**assembly_error_code** | [**V2reportsErrorAssemblyErrorCode**](V2reportsErrorAssemblyErrorCode.md) |  | [optional] [default to V2reportsErrorAssemblyErrorCode.UNKNOWN_ASSEMBLY_ERROR_CODE]
+**gene_error_code** | [**V2reportsErrorGeneErrorCode**](V2reportsErrorGeneErrorCode.md) |  | [optional] [default to V2reportsErrorGeneErrorCode.UNKNOWN_GENE_ERROR_CODE]
+**organelle_error_code** | [**V2reportsErrorOrganelleErrorCode**](V2reportsErrorOrganelleErrorCode.md) |  | [optional] [default to V2reportsErrorOrganelleErrorCode.UNKNOWN_ORGANELLE_ERROR_CODE]
+**virus_error_code** | [**V2reportsErrorVirusErrorCode**](V2reportsErrorVirusErrorCode.md) |  | [optional] [default to V2reportsErrorVirusErrorCode.UNKNOWN_VIRUS_ERROR_CODE]
+**taxonomy_error_code** | [**V2reportsErrorTaxonomyErrorCode**](V2reportsErrorTaxonomyErrorCode.md) |  | [optional] [default to V2reportsErrorTaxonomyErrorCode.UNKNOWN_TAXONOMY_ERROR_CODE]
 **reason** | **str** |  | [optional] 
 **message** | **str** |  | [optional] 
 **invalid_identifiers** | **List[str]** |  | [optional] 

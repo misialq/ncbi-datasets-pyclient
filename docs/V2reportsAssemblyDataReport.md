@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **accession** | **str** |  | [optional] 
 **current_accession** | **str** |  | [optional] 
 **paired_accession** | **str** |  | [optional] 
-**source_database** | [**V2reportsSourceDatabase**](V2reportsSourceDatabase.md) |  | [optional] 
+**source_database** | [**V2reportsSourceDatabase**](V2reportsSourceDatabase.md) |  | [optional] [default to V2reportsSourceDatabase.SOURCE_DATABASE_UNSPECIFIED]
 **organism** | [**V2reportsOrganism**](V2reportsOrganism.md) |  | [optional] 
 **assembly_info** | [**V2reportsAssemblyInfo**](V2reportsAssemblyInfo.md) |  | [optional] 
 **assembly_stats** | [**V2reportsAssemblyStats**](V2reportsAssemblyStats.md) |  | [optional] 

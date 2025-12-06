@@ -5,21 +5,21 @@ All URIs are relative to *https://api.ncbi.nlm.nih.gov/datasets/v2*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**download_taxonomy_package**](TaxonomyApi.md#download_taxonomy_package) | **GET** /taxonomy/taxon/{tax_ids}/download | Get a taxonomy data package by tax ID
-[**download_taxonomy_package_by_post**](TaxonomyApi.md#download_taxonomy_package_by_post) | **POST** /taxonomy/download | Get a taxonomy data package by tax_id
+[**download_taxonomy_package_by_post**](TaxonomyApi.md#download_taxonomy_package_by_post) | **POST** /taxonomy/download | Get a taxonomy data package by Taxonomy ID
 [**tax_name_query**](TaxonomyApi.md#tax_name_query) | **GET** /taxonomy/taxon_suggest/{taxon_query} | Get a list of taxonomy names and IDs given a partial taxonomic name
 [**tax_name_query_by_post**](TaxonomyApi.md#tax_name_query_by_post) | **POST** /taxonomy/taxon_suggest | Get a list of taxonomy names and IDs given a partial taxonomic name
 [**taxonomy_data_report**](TaxonomyApi.md#taxonomy_data_report) | **GET** /taxonomy/taxon/{taxons}/dataset_report | Use taxonomic identifiers to get taxonomic data report
-[**taxonomy_data_report_post**](TaxonomyApi.md#taxonomy_data_report_post) | **POST** /taxonomy/dataset_report | Use taxonomic identifiers to get taxonomic names data report by post
+[**taxonomy_data_report_post**](TaxonomyApi.md#taxonomy_data_report_post) | **POST** /taxonomy/dataset_report | Get a taxonomy data report by taxon
 [**taxonomy_filtered_subtree**](TaxonomyApi.md#taxonomy_filtered_subtree) | **GET** /taxonomy/taxon/{taxons}/filtered_subtree | Use taxonomic identifiers to get a filtered taxonomic subtree
-[**taxonomy_filtered_subtree_post**](TaxonomyApi.md#taxonomy_filtered_subtree_post) | **POST** /taxonomy/filtered_subtree | Use taxonomic identifiers to get a filtered taxonomic subtree by post
-[**taxonomy_image**](TaxonomyApi.md#taxonomy_image) | **GET** /taxonomy/taxon/{taxon}/image | Retrieve image associated with a taxonomic identifier
+[**taxonomy_filtered_subtree_post**](TaxonomyApi.md#taxonomy_filtered_subtree_post) | **POST** /taxonomy/filtered_subtree | Get a filtered taxonomic subtree by taxon
+[**taxonomy_image**](TaxonomyApi.md#taxonomy_image) | **GET** /taxonomy/taxon/{taxon}/image | Get a taxonomy image by taxon
 [**taxonomy_image_metadata**](TaxonomyApi.md#taxonomy_image_metadata) | **GET** /taxonomy/taxon/{taxon}/image/metadata | Retrieve image metadata associated with a taxonomic identifier
 [**taxonomy_image_metadata_post**](TaxonomyApi.md#taxonomy_image_metadata_post) | **POST** /taxonomy/image/metadata | Retrieve image metadata associated with a taxonomic identifier by post
-[**taxonomy_image_post**](TaxonomyApi.md#taxonomy_image_post) | **POST** /taxonomy/image | Retrieve image associated with a taxonomic identifier by post
+[**taxonomy_image_post**](TaxonomyApi.md#taxonomy_image_post) | **POST** /taxonomy/image | Get a taxonomy image by taxon
 [**taxonomy_links**](TaxonomyApi.md#taxonomy_links) | **GET** /taxonomy/taxon/{taxon}/links | Retrieve external links associated with a taxonomic identifier.
 [**taxonomy_links_by_post**](TaxonomyApi.md#taxonomy_links_by_post) | **POST** /taxonomy/links | Retrieve external links associated with a taxonomic identifier.
 [**taxonomy_metadata**](TaxonomyApi.md#taxonomy_metadata) | **GET** /taxonomy/taxon/{taxons} | Use taxonomic identifiers to get taxonomic metadata
-[**taxonomy_metadata_post**](TaxonomyApi.md#taxonomy_metadata_post) | **POST** /taxonomy | Use taxonomic identifiers to get taxonomic metadata by post
+[**taxonomy_metadata_post**](TaxonomyApi.md#taxonomy_metadata_post) | **POST** /taxonomy | Get taxonomy metadata by taxon
 [**taxonomy_names**](TaxonomyApi.md#taxonomy_names) | **GET** /taxonomy/taxon/{taxons}/name_report | Use taxonomic identifiers to get taxonomic names data report
 [**taxonomy_names_post**](TaxonomyApi.md#taxonomy_names_post) | **POST** /taxonomy/name_report | Use taxonomic identifiers to get taxonomic names data report by post
 [**taxonomy_related_ids**](TaxonomyApi.md#taxonomy_related_ids) | **GET** /taxonomy/taxon/{tax_id}/related_ids | Use taxonomic identifier to get related taxonomic identifiers, such as children
@@ -64,7 +64,7 @@ configuration.api_key['ApiKeyAuthHeader'] = os.environ["API_KEY"]
 with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = ncbi.datasets.openapi.TaxonomyApi(api_client)
-    tax_ids = [[9606]] # List[int] | 
+    tax_ids = [9606] # List[int] | 
     aux_reports = [ncbi.datasets.openapi.V2TaxonomyDatasetRequestTaxonomyReportType()] # List[V2TaxonomyDatasetRequestTaxonomyReportType] | list additional reports to include with download. TAXONOMY_REPORT is included by default. (optional)
     filename = 'ncbi_dataset.zip' # str | Output file name. (optional) (default to 'ncbi_dataset.zip')
 
@@ -113,9 +113,9 @@ Name | Type | Description  | Notes
 # **download_taxonomy_package_by_post**
 > bytearray download_taxonomy_package_by_post(v2_taxonomy_dataset_request, filename=filename)
 
-Get a taxonomy data package by tax_id
+Get a taxonomy data package by Taxonomy ID
 
-Download a taxonomy report and names data package.
+Download a taxonomy data package, including taxonomy and names reports, as a compressed zip archive.
 
 ### Example
 
@@ -148,11 +148,11 @@ configuration.api_key['ApiKeyAuthHeader'] = os.environ["API_KEY"]
 with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = ncbi.datasets.openapi.TaxonomyApi(api_client)
-    v2_taxonomy_dataset_request = {"tax_ids":[9606,10090]} # V2TaxonomyDatasetRequest | 
+    v2_taxonomy_dataset_request = {"tax_ids":[9606,10090],"aux_reports":["NAMES_REPORT","TAXONOMY_SUMMARY"]} # V2TaxonomyDatasetRequest | 
     filename = 'ncbi_dataset.zip' # str | Output file name. (optional) (default to 'ncbi_dataset.zip')
 
     try:
-        # Get a taxonomy data package by tax_id
+        # Get a taxonomy data package by Taxonomy ID
         api_response = api_instance.download_taxonomy_package_by_post(v2_taxonomy_dataset_request, filename=filename)
         print("The response of TaxonomyApi->download_taxonomy_package_by_post:\n")
         pprint(api_response)
@@ -232,9 +232,9 @@ configuration.api_key['ApiKeyAuthHeader'] = os.environ["API_KEY"]
 with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = ncbi.datasets.openapi.TaxonomyApi(api_client)
-    taxon_query = 'hum' # str | NCBI Taxonomy ID or name (common or scientific) at any taxonomic rank
-    tax_rank_filter = ncbi.datasets.openapi.V2OrganismQueryRequestTaxRankFilter() # V2OrganismQueryRequestTaxRankFilter | Set the scope of searched tax ranks when filtering by gene or genome.  Not used for 'all' (optional)
-    taxon_resource_filter = ncbi.datasets.openapi.V2OrganismQueryRequestTaxonResourceFilter() # V2OrganismQueryRequestTaxonResourceFilter | Limit results to those with gene or genome counts (no filter by default) (optional)
+    taxon_query = 'hum' # str | Taxid or name (common or scientific) at any taxonomic rank
+    tax_rank_filter = species # V2OrganismQueryRequestTaxRankFilter | Set the scope of searched tax ranks when filtering by gene or genome.  Not used for 'all' (optional) (default to species)
+    taxon_resource_filter = TAXON_RESOURCE_FILTER_ALL # V2OrganismQueryRequestTaxonResourceFilter | Limit results to those with gene or genome counts (no filter by default) (optional) (default to TAXON_RESOURCE_FILTER_ALL)
     exact_match = False # bool | If true, only return results that exactly match the provided name or tax-id (optional) (default to False)
 
     try:
@@ -253,9 +253,9 @@ with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **taxon_query** | **str**| NCBI Taxonomy ID or name (common or scientific) at any taxonomic rank | 
- **tax_rank_filter** | [**V2OrganismQueryRequestTaxRankFilter**](.md)| Set the scope of searched tax ranks when filtering by gene or genome.  Not used for &#39;all&#39; | [optional] 
- **taxon_resource_filter** | [**V2OrganismQueryRequestTaxonResourceFilter**](.md)| Limit results to those with gene or genome counts (no filter by default) | [optional] 
+ **taxon_query** | **str**| Taxid or name (common or scientific) at any taxonomic rank | 
+ **tax_rank_filter** | [**V2OrganismQueryRequestTaxRankFilter**](.md)| Set the scope of searched tax ranks when filtering by gene or genome.  Not used for &#39;all&#39; | [optional] [default to species]
+ **taxon_resource_filter** | [**V2OrganismQueryRequestTaxonResourceFilter**](.md)| Limit results to those with gene or genome counts (no filter by default) | [optional] [default to TAXON_RESOURCE_FILTER_ALL]
  **exact_match** | **bool**| If true, only return results that exactly match the provided name or tax-id | [optional] [default to False]
 
 ### Return type
@@ -403,12 +403,12 @@ configuration.api_key['ApiKeyAuthHeader'] = os.environ["API_KEY"]
 with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = ncbi.datasets.openapi.TaxonomyApi(api_client)
-    taxons = ['[\"9606\"]'] # List[str] | 
-    returned_content = ncbi.datasets.openapi.V2TaxonomyMetadataRequestContentType() # V2TaxonomyMetadataRequestContentType | Return either tax-ids alone, or entire taxononmy-metadata records (optional)
+    taxons = ['9606'] # List[str] | 
+    returned_content = COMPLETE # V2TaxonomyMetadataRequestContentType | Return either tax-ids alone, or entire taxononmy-metadata records (optional) (default to COMPLETE)
     page_size = 20 # int | The maximum number of taxons to return. Default is 20 and maximum is 1000. If the number of results exceeds the page size, `page_token` can be used to retrieve the remaining results. (optional) (default to 20)
-    include_tabular_header = ncbi.datasets.openapi.V2IncludeTabularHeader() # V2IncludeTabularHeader | Whether this request for tabular data should include the header row (optional)
-    page_token = 'page_token_example' # str | A page token is returned from `GetTaxonomyDataReportFor` and `GetTaxonomyNamesDataReportFor` calls with more than `page_size` results. When `page_token` is empty, all results have been retrieved. (optional)
-    table_format = ncbi.datasets.openapi.V2TaxonomyMetadataRequestTableFormat() # V2TaxonomyMetadataRequestTableFormat |  (optional)
+    include_tabular_header = INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY # V2IncludeTabularHeader | Specify when to include the table header when requesting a tabular report. (optional) (default to INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY)
+    page_token = 'page_token_example' # str | A page token is returned when the results count exceeds `page size`. Use this token along with previous request parameters to retrieve the next page of results. When `page_token` is empty, all results have been retrieved. (optional)
+    table_format = SUMMARY # V2TaxonomyMetadataRequestTableFormat |  (optional) (default to SUMMARY)
     children = True # bool | Flag for tax explosion. (optional)
     ranks = [ncbi.datasets.openapi.V2reportsRankType()] # List[V2reportsRankType] | Only include taxons of the provided ranks. If empty, return all ranks. (optional)
 
@@ -429,11 +429,11 @@ with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **taxons** | [**List[str]**](str.md)|  | 
- **returned_content** | [**V2TaxonomyMetadataRequestContentType**](.md)| Return either tax-ids alone, or entire taxononmy-metadata records | [optional] 
+ **returned_content** | [**V2TaxonomyMetadataRequestContentType**](.md)| Return either tax-ids alone, or entire taxononmy-metadata records | [optional] [default to COMPLETE]
  **page_size** | **int**| The maximum number of taxons to return. Default is 20 and maximum is 1000. If the number of results exceeds the page size, &#x60;page_token&#x60; can be used to retrieve the remaining results. | [optional] [default to 20]
- **include_tabular_header** | [**V2IncludeTabularHeader**](.md)| Whether this request for tabular data should include the header row | [optional] 
- **page_token** | **str**| A page token is returned from &#x60;GetTaxonomyDataReportFor&#x60; and &#x60;GetTaxonomyNamesDataReportFor&#x60; calls with more than &#x60;page_size&#x60; results. When &#x60;page_token&#x60; is empty, all results have been retrieved. | [optional] 
- **table_format** | [**V2TaxonomyMetadataRequestTableFormat**](.md)|  | [optional] 
+ **include_tabular_header** | [**V2IncludeTabularHeader**](.md)| Specify when to include the table header when requesting a tabular report. | [optional] [default to INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY]
+ **page_token** | **str**| A page token is returned when the results count exceeds &#x60;page size&#x60;. Use this token along with previous request parameters to retrieve the next page of results. When &#x60;page_token&#x60; is empty, all results have been retrieved. | [optional] 
+ **table_format** | [**V2TaxonomyMetadataRequestTableFormat**](.md)|  | [optional] [default to SUMMARY]
  **children** | **bool**| Flag for tax explosion. | [optional] 
  **ranks** | [**List[V2reportsRankType]**](V2reportsRankType.md)| Only include taxons of the provided ranks. If empty, return all ranks. | [optional] 
 
@@ -462,9 +462,9 @@ Name | Type | Description  | Notes
 # **taxonomy_data_report_post**
 > V2reportsTaxonomyDataReportPage taxonomy_data_report_post(v2_taxonomy_metadata_request)
 
-Use taxonomic identifiers to get taxonomic names data report by post
+Get a taxonomy data report by taxon
 
-Using NCBI Taxonomy IDs or names (common or scientific) at any rank, get metadata about a taxonomic node including taxonomic identifiers, lineage information, child nodes, and gene and genome counts in JSON format.
+Get a taxonomy data report by taxon. By default, in paged JSON format, but also available in tabular (accept: text/tab-separated-values) or JSON Lines (accept: application/x-ndjson) formats.
 
 ### Example
 
@@ -501,7 +501,7 @@ with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
     v2_taxonomy_metadata_request = {"taxons":["9606","house mouse"]} # V2TaxonomyMetadataRequest | 
 
     try:
-        # Use taxonomic identifiers to get taxonomic names data report by post
+        # Get a taxonomy data report by taxon
         api_response = api_instance.taxonomy_data_report_post(v2_taxonomy_metadata_request)
         print("The response of TaxonomyApi->taxonomy_data_report_post:\n")
         pprint(api_response)
@@ -541,7 +541,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **taxonomy_filtered_subtree**
-> V2TaxonomyFilteredSubtreeResponse taxonomy_filtered_subtree(taxons, specified_limit=specified_limit, rank_limits=rank_limits)
+> V2TaxonomyFilteredSubtreeResponse taxonomy_filtered_subtree(taxons, rank_limits=rank_limits, include_incertae_sedis=include_incertae_sedis)
 
 Use taxonomic identifiers to get a filtered taxonomic subtree
 
@@ -579,13 +579,13 @@ configuration.api_key['ApiKeyAuthHeader'] = os.environ["API_KEY"]
 with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = ncbi.datasets.openapi.TaxonomyApi(api_client)
-    taxons = ['[\"9606\"]'] # List[str] | 
-    specified_limit = True # bool | Limit to specified species (optional)
+    taxons = ['9606'] # List[str] | 
     rank_limits = [ncbi.datasets.openapi.V2reportsRankType()] # List[V2reportsRankType] | Limit to the provided ranks.  If empty, accept any rank. (optional)
+    include_incertae_sedis = True # bool | Include nodes with ranks not in 'rank_limits' if their names meet criteria for incertae sedis (of unknown origin). (optional)
 
     try:
         # Use taxonomic identifiers to get a filtered taxonomic subtree
-        api_response = api_instance.taxonomy_filtered_subtree(taxons, specified_limit=specified_limit, rank_limits=rank_limits)
+        api_response = api_instance.taxonomy_filtered_subtree(taxons, rank_limits=rank_limits, include_incertae_sedis=include_incertae_sedis)
         print("The response of TaxonomyApi->taxonomy_filtered_subtree:\n")
         pprint(api_response)
     except Exception as e:
@@ -600,8 +600,8 @@ with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **taxons** | [**List[str]**](str.md)|  | 
- **specified_limit** | **bool**| Limit to specified species | [optional] 
  **rank_limits** | [**List[V2reportsRankType]**](V2reportsRankType.md)| Limit to the provided ranks.  If empty, accept any rank. | [optional] 
+ **include_incertae_sedis** | **bool**| Include nodes with ranks not in &#39;rank_limits&#39; if their names meet criteria for incertae sedis (of unknown origin). | [optional] 
 
 ### Return type
 
@@ -628,9 +628,9 @@ Name | Type | Description  | Notes
 # **taxonomy_filtered_subtree_post**
 > V2TaxonomyFilteredSubtreeResponse taxonomy_filtered_subtree_post(v2_taxonomy_filtered_subtree_request)
 
-Use taxonomic identifiers to get a filtered taxonomic subtree by post
+Get a filtered taxonomic subtree by taxon
 
-Using NCBI Taxonomy IDs or names (common or scientific) at any rank, get a filtered taxonomic subtree that includes the full parent lineage and all immediate children from the selected taxonomic ranks in JSON format.
+Get a filtered taxonomic subtree, including parent and child nodes, in JSON format.
 
 ### Example
 
@@ -667,7 +667,7 @@ with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
     v2_taxonomy_filtered_subtree_request = {"taxons":["9606","10090"]} # V2TaxonomyFilteredSubtreeRequest | 
 
     try:
-        # Use taxonomic identifiers to get a filtered taxonomic subtree by post
+        # Get a filtered taxonomic subtree by taxon
         api_response = api_instance.taxonomy_filtered_subtree_post(v2_taxonomy_filtered_subtree_request)
         print("The response of TaxonomyApi->taxonomy_filtered_subtree_post:\n")
         pprint(api_response)
@@ -709,9 +709,9 @@ Name | Type | Description  | Notes
 # **taxonomy_image**
 > bytearray taxonomy_image(taxon, image_size=image_size)
 
-Retrieve image associated with a taxonomic identifier
+Get a taxonomy image by taxon
 
-Using an NCBI Taxonomy ID or a name (common or scientific) at any rank, get the image associated with the taxon.
+Get an image associated with the specified taxon. By default, in JPEG format, but also available in PNG (accept: image/png), TIFF (accept: accept: image/tiff), and SVG+XML (accept: image/svg+xml) formats.
 
 ### Example
 
@@ -745,10 +745,10 @@ with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = ncbi.datasets.openapi.TaxonomyApi(api_client)
     taxon = '9606' # str | 
-    image_size = ncbi.datasets.openapi.V2ImageSize() # V2ImageSize |  (optional)
+    image_size = UNSPECIFIED # V2ImageSize |  (optional) (default to UNSPECIFIED)
 
     try:
-        # Retrieve image associated with a taxonomic identifier
+        # Get a taxonomy image by taxon
         api_response = api_instance.taxonomy_image(taxon, image_size=image_size)
         print("The response of TaxonomyApi->taxonomy_image:\n")
         pprint(api_response)
@@ -764,7 +764,7 @@ with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **taxon** | **str**|  | 
- **image_size** | [**V2ImageSize**](.md)|  | [optional] 
+ **image_size** | [**V2ImageSize**](.md)|  | [optional] [default to UNSPECIFIED]
 
 ### Return type
 
@@ -952,9 +952,9 @@ Name | Type | Description  | Notes
 # **taxonomy_image_post**
 > bytearray taxonomy_image_post(v2_taxonomy_image_request)
 
-Retrieve image associated with a taxonomic identifier by post
+Get a taxonomy image by taxon
 
-Using an NCBI Taxonomy ID or a name (common or scientific) at any rank, get the image associated with the taxon.
+Get an image associated with the specified taxon. By default, in JPEG format, but also available in PNG (accept: image/png), TIFF (accept: accept: image/tiff), and SVG+XML (accept: image/svg+xml) formats.
 
 ### Example
 
@@ -990,7 +990,7 @@ with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
     v2_taxonomy_image_request = {"taxon":"9606"} # V2TaxonomyImageRequest | 
 
     try:
-        # Retrieve image associated with a taxonomic identifier by post
+        # Get a taxonomy image by taxon
         api_response = api_instance.taxonomy_image_post(v2_taxonomy_image_request)
         print("The response of TaxonomyApi->taxonomy_image_post:\n")
         pprint(api_response)
@@ -1232,12 +1232,12 @@ configuration.api_key['ApiKeyAuthHeader'] = os.environ["API_KEY"]
 with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = ncbi.datasets.openapi.TaxonomyApi(api_client)
-    taxons = ['[\"9606\"]'] # List[str] | 
-    returned_content = ncbi.datasets.openapi.V2TaxonomyMetadataRequestContentType() # V2TaxonomyMetadataRequestContentType | Return either tax-ids alone, or entire taxononmy-metadata records (optional)
+    taxons = ['9606'] # List[str] | 
+    returned_content = COMPLETE # V2TaxonomyMetadataRequestContentType | Return either tax-ids alone, or entire taxononmy-metadata records (optional) (default to COMPLETE)
     page_size = 20 # int | The maximum number of taxons to return. Default is 20 and maximum is 1000. If the number of results exceeds the page size, `page_token` can be used to retrieve the remaining results. (optional) (default to 20)
-    include_tabular_header = ncbi.datasets.openapi.V2IncludeTabularHeader() # V2IncludeTabularHeader | Whether this request for tabular data should include the header row (optional)
-    page_token = 'page_token_example' # str | A page token is returned from `GetTaxonomyDataReportFor` and `GetTaxonomyNamesDataReportFor` calls with more than `page_size` results. When `page_token` is empty, all results have been retrieved. (optional)
-    table_format = ncbi.datasets.openapi.V2TaxonomyMetadataRequestTableFormat() # V2TaxonomyMetadataRequestTableFormat |  (optional)
+    include_tabular_header = INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY # V2IncludeTabularHeader | Specify when to include the table header when requesting a tabular report. (optional) (default to INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY)
+    page_token = 'page_token_example' # str | A page token is returned when the results count exceeds `page size`. Use this token along with previous request parameters to retrieve the next page of results. When `page_token` is empty, all results have been retrieved. (optional)
+    table_format = SUMMARY # V2TaxonomyMetadataRequestTableFormat |  (optional) (default to SUMMARY)
     children = True # bool | Flag for tax explosion. (optional)
     ranks = [ncbi.datasets.openapi.V2reportsRankType()] # List[V2reportsRankType] | Only include taxons of the provided ranks. If empty, return all ranks. (optional)
 
@@ -1258,11 +1258,11 @@ with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **taxons** | [**List[str]**](str.md)|  | 
- **returned_content** | [**V2TaxonomyMetadataRequestContentType**](.md)| Return either tax-ids alone, or entire taxononmy-metadata records | [optional] 
+ **returned_content** | [**V2TaxonomyMetadataRequestContentType**](.md)| Return either tax-ids alone, or entire taxononmy-metadata records | [optional] [default to COMPLETE]
  **page_size** | **int**| The maximum number of taxons to return. Default is 20 and maximum is 1000. If the number of results exceeds the page size, &#x60;page_token&#x60; can be used to retrieve the remaining results. | [optional] [default to 20]
- **include_tabular_header** | [**V2IncludeTabularHeader**](.md)| Whether this request for tabular data should include the header row | [optional] 
- **page_token** | **str**| A page token is returned from &#x60;GetTaxonomyDataReportFor&#x60; and &#x60;GetTaxonomyNamesDataReportFor&#x60; calls with more than &#x60;page_size&#x60; results. When &#x60;page_token&#x60; is empty, all results have been retrieved. | [optional] 
- **table_format** | [**V2TaxonomyMetadataRequestTableFormat**](.md)|  | [optional] 
+ **include_tabular_header** | [**V2IncludeTabularHeader**](.md)| Specify when to include the table header when requesting a tabular report. | [optional] [default to INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY]
+ **page_token** | **str**| A page token is returned when the results count exceeds &#x60;page size&#x60;. Use this token along with previous request parameters to retrieve the next page of results. When &#x60;page_token&#x60; is empty, all results have been retrieved. | [optional] 
+ **table_format** | [**V2TaxonomyMetadataRequestTableFormat**](.md)|  | [optional] [default to SUMMARY]
  **children** | **bool**| Flag for tax explosion. | [optional] 
  **ranks** | [**List[V2reportsRankType]**](V2reportsRankType.md)| Only include taxons of the provided ranks. If empty, return all ranks. | [optional] 
 
@@ -1291,9 +1291,9 @@ Name | Type | Description  | Notes
 # **taxonomy_metadata_post**
 > V2TaxonomyMetadataResponse taxonomy_metadata_post(v2_taxonomy_metadata_request)
 
-Use taxonomic identifiers to get taxonomic metadata by post
+Get taxonomy metadata by taxon
 
-Using NCBI Taxonomy IDs or names (common or scientific) at any rank, get metadata about a taxonomic node including taxonomic identifiers, lineage information, child nodes, and gene and genome counts in JSON format.
+Get taxonomy metadata by taxon in JSON format.
 
 ### Example
 
@@ -1330,7 +1330,7 @@ with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
     v2_taxonomy_metadata_request = {"taxons":["9606","house mouse"]} # V2TaxonomyMetadataRequest | 
 
     try:
-        # Use taxonomic identifiers to get taxonomic metadata by post
+        # Get taxonomy metadata by taxon
         api_response = api_instance.taxonomy_metadata_post(v2_taxonomy_metadata_request)
         print("The response of TaxonomyApi->taxonomy_metadata_post:\n")
         pprint(api_response)
@@ -1411,12 +1411,12 @@ configuration.api_key['ApiKeyAuthHeader'] = os.environ["API_KEY"]
 with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = ncbi.datasets.openapi.TaxonomyApi(api_client)
-    taxons = ['[\"9606\"]'] # List[str] | 
-    returned_content = ncbi.datasets.openapi.V2TaxonomyMetadataRequestContentType() # V2TaxonomyMetadataRequestContentType | Return either tax-ids alone, or entire taxononmy-metadata records (optional)
+    taxons = ['9606'] # List[str] | 
+    returned_content = COMPLETE # V2TaxonomyMetadataRequestContentType | Return either tax-ids alone, or entire taxononmy-metadata records (optional) (default to COMPLETE)
     page_size = 20 # int | The maximum number of taxons to return. Default is 20 and maximum is 1000. If the number of results exceeds the page size, `page_token` can be used to retrieve the remaining results. (optional) (default to 20)
-    include_tabular_header = ncbi.datasets.openapi.V2IncludeTabularHeader() # V2IncludeTabularHeader | Whether this request for tabular data should include the header row (optional)
-    page_token = 'page_token_example' # str | A page token is returned from `GetTaxonomyDataReportFor` and `GetTaxonomyNamesDataReportFor` calls with more than `page_size` results. When `page_token` is empty, all results have been retrieved. (optional)
-    table_format = ncbi.datasets.openapi.V2TaxonomyMetadataRequestTableFormat() # V2TaxonomyMetadataRequestTableFormat |  (optional)
+    include_tabular_header = INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY # V2IncludeTabularHeader | Specify when to include the table header when requesting a tabular report. (optional) (default to INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY)
+    page_token = 'page_token_example' # str | A page token is returned when the results count exceeds `page size`. Use this token along with previous request parameters to retrieve the next page of results. When `page_token` is empty, all results have been retrieved. (optional)
+    table_format = SUMMARY # V2TaxonomyMetadataRequestTableFormat |  (optional) (default to SUMMARY)
     children = True # bool | Flag for tax explosion. (optional)
     ranks = [ncbi.datasets.openapi.V2reportsRankType()] # List[V2reportsRankType] | Only include taxons of the provided ranks. If empty, return all ranks. (optional)
 
@@ -1437,11 +1437,11 @@ with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **taxons** | [**List[str]**](str.md)|  | 
- **returned_content** | [**V2TaxonomyMetadataRequestContentType**](.md)| Return either tax-ids alone, or entire taxononmy-metadata records | [optional] 
+ **returned_content** | [**V2TaxonomyMetadataRequestContentType**](.md)| Return either tax-ids alone, or entire taxononmy-metadata records | [optional] [default to COMPLETE]
  **page_size** | **int**| The maximum number of taxons to return. Default is 20 and maximum is 1000. If the number of results exceeds the page size, &#x60;page_token&#x60; can be used to retrieve the remaining results. | [optional] [default to 20]
- **include_tabular_header** | [**V2IncludeTabularHeader**](.md)| Whether this request for tabular data should include the header row | [optional] 
- **page_token** | **str**| A page token is returned from &#x60;GetTaxonomyDataReportFor&#x60; and &#x60;GetTaxonomyNamesDataReportFor&#x60; calls with more than &#x60;page_size&#x60; results. When &#x60;page_token&#x60; is empty, all results have been retrieved. | [optional] 
- **table_format** | [**V2TaxonomyMetadataRequestTableFormat**](.md)|  | [optional] 
+ **include_tabular_header** | [**V2IncludeTabularHeader**](.md)| Specify when to include the table header when requesting a tabular report. | [optional] [default to INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY]
+ **page_token** | **str**| A page token is returned when the results count exceeds &#x60;page size&#x60;. Use this token along with previous request parameters to retrieve the next page of results. When &#x60;page_token&#x60; is empty, all results have been retrieved. | [optional] 
+ **table_format** | [**V2TaxonomyMetadataRequestTableFormat**](.md)|  | [optional] [default to SUMMARY]
  **children** | **bool**| Flag for tax explosion. | [optional] 
  **ranks** | [**List[V2reportsRankType]**](V2reportsRankType.md)| Only include taxons of the provided ranks. If empty, return all ranks. | [optional] 
 
@@ -1592,7 +1592,7 @@ with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
     include_subtree = False # bool | This field is deprecated because all requests include the subtree, so it has no effect (optional) (default to False)
     ranks = [ncbi.datasets.openapi.V2reportsRankType()] # List[V2reportsRankType] | Only include taxons of the provided ranks. If empty, return all ranks. (optional)
     page_size = 20 # int | The maximum number of taxids to return. Default is 20 and maximum is 1000. If the number of results exceeds the page size, `page_token` can be used to retrieve the remaining results. (optional) (default to 20)
-    page_token = 'page_token_example' # str | A page token is returned from a `GetRelatedTaxids` call with more than `page_size` results. Use this token, along with the previous `TaxonomyRelatedIdRequest` parameters, to retrieve the next page of results. When `page_token` is empty, all results have been retrieved. (optional)
+    page_token = 'page_token_example' # str | A page token is returned when the results count exceeds `page size`. Use this token along with previous request parameters to retrieve the next page of results. When `page_token` is empty, all results have been retrieved. (optional)
 
     try:
         # Use taxonomic identifier to get related taxonomic identifiers, such as children
@@ -1615,7 +1615,7 @@ Name | Type | Description  | Notes
  **include_subtree** | **bool**| This field is deprecated because all requests include the subtree, so it has no effect | [optional] [default to False]
  **ranks** | [**List[V2reportsRankType]**](V2reportsRankType.md)| Only include taxons of the provided ranks. If empty, return all ranks. | [optional] 
  **page_size** | **int**| The maximum number of taxids to return. Default is 20 and maximum is 1000. If the number of results exceeds the page size, &#x60;page_token&#x60; can be used to retrieve the remaining results. | [optional] [default to 20]
- **page_token** | **str**| A page token is returned from a &#x60;GetRelatedTaxids&#x60; call with more than &#x60;page_size&#x60; results. Use this token, along with the previous &#x60;TaxonomyRelatedIdRequest&#x60; parameters, to retrieve the next page of results. When &#x60;page_token&#x60; is empty, all results have been retrieved. | [optional] 
+ **page_token** | **str**| A page token is returned when the results count exceeds &#x60;page size&#x60;. Use this token along with previous request parameters to retrieve the next page of results. When &#x60;page_token&#x60; is empty, all results have been retrieved. | [optional] 
 
 ### Return type
 

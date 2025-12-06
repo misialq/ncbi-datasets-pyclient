@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 **table_fields** | [**List[V2VirusTableField]**](V2VirusTableField.md) |  | [optional] 
 **include_sequence** | [**List[V2ViralSequenceType]**](V2ViralSequenceType.md) |  | [optional] 
 **aux_report** | [**List[V2VirusDatasetReportType]**](V2VirusDatasetReportType.md) |  | [optional] 
-**format** | [**V2TableFormat**](V2TableFormat.md) |  | [optional] 
+**format** | [**V2TableFormat**](V2TableFormat.md) |  | [optional] [default to V2TableFormat.TSV]
 **use_psg** | **bool** |  | [optional] 
 
 ## Example

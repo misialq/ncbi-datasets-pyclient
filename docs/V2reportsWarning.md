@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**gene_warning_code** | [**V2reportsWarningGeneWarningCode**](V2reportsWarningGeneWarningCode.md) |  | [optional] 
+**gene_warning_code** | [**V2reportsWarningGeneWarningCode**](V2reportsWarningGeneWarningCode.md) |  | [optional] [default to V2reportsWarningGeneWarningCode.UNKNOWN_GENE_WARNING_CODE]
 **reason** | **str** |  | [optional] 
 **message** | **str** |  | [optional] 
 **replaced_id** | [**V2reportsWarningReplacedId**](V2reportsWarningReplacedId.md) |  | [optional] 

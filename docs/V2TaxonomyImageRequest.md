@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **taxon** | **str** |  | [optional] 
-**image_size** | [**V2ImageSize**](V2ImageSize.md) |  | [optional] 
+**image_size** | [**V2ImageSize**](V2ImageSize.md) |  | [optional] [default to V2ImageSize.UNSPECIFIED]
 
 ## Example
 

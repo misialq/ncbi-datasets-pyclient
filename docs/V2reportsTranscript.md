@@ -12,8 +12,8 @@ Name | Type | Description | Notes
 **genomic_locations** | [**List[V2reportsGenomicLocation]**](V2reportsGenomicLocation.md) |  | [optional] 
 **ensembl_transcript** | **str** |  | [optional] 
 **protein** | [**V2reportsProtein**](V2reportsProtein.md) |  | [optional] 
-**type** | [**V2reportsTranscriptTranscriptType**](V2reportsTranscriptTranscriptType.md) |  | [optional] 
-**select_category** | [**V2reportsTranscriptSelectCategory**](V2reportsTranscriptSelectCategory.md) |  | [optional] 
+**type** | [**V2reportsTranscriptTranscriptType**](V2reportsTranscriptTranscriptType.md) |  | [optional] [default to V2reportsTranscriptTranscriptType.UNKNOWN]
+**select_category** | [**V2reportsTranscriptSelectCategory**](V2reportsTranscriptSelectCategory.md) |  | [optional] [default to V2reportsTranscriptSelectCategory.SELECT_UNKNOWN]
 
 ## Example
 

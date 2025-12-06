@@ -3,6 +3,8 @@
 
 ## Enum
 
+* `DEFAULT` (value: `'DEFAULT'`)
+
 * `GENE_LINK` (value: `'GENE_LINK'`)
 
 * `GDV_LINK` (value: `'GDV_LINK'`)

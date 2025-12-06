@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **reports** | [**List[V2reportsAssemblyDataReport]**](V2reportsAssemblyDataReport.md) |  | [optional] 
-**content_type** | [**V2reportsContentType**](V2reportsContentType.md) |  | [optional] 
+**content_type** | [**V2reportsContentType**](V2reportsContentType.md) |  | [optional] [default to V2reportsContentType.COMPLETE]
 **total_count** | **int** |  | [optional] 
 **next_page_token** | **str** |  | [optional] 
 **messages** | [**List[V2reportsMessage]**](V2reportsMessage.md) |  | [optional] 

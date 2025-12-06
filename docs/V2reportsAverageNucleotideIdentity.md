@@ -5,11 +5,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**taxonomy_check_status** | [**V2reportsAverageNucleotideIdentityTaxonomyCheckStatus**](V2reportsAverageNucleotideIdentityTaxonomyCheckStatus.md) |  | [optional] 
-**match_status** | [**V2reportsAverageNucleotideIdentityMatchStatus**](V2reportsAverageNucleotideIdentityMatchStatus.md) |  | [optional] 
+**taxonomy_check_status** | [**V2reportsAverageNucleotideIdentityTaxonomyCheckStatus**](V2reportsAverageNucleotideIdentityTaxonomyCheckStatus.md) |  | [optional] [default to V2reportsAverageNucleotideIdentityTaxonomyCheckStatus.TAXONOMY_CHECK_STATUS_UNKNOWN]
+**match_status** | [**V2reportsAverageNucleotideIdentityMatchStatus**](V2reportsAverageNucleotideIdentityMatchStatus.md) |  | [optional] [default to V2reportsAverageNucleotideIdentityMatchStatus.BEST_MATCH_STATUS_UNKNOWN]
 **submitted_organism** | **str** |  | [optional] 
 **submitted_species** | **str** |  | [optional] 
-**category** | [**V2reportsANITypeCategory**](V2reportsANITypeCategory.md) |  | [optional] 
+**category** | [**V2reportsANITypeCategory**](V2reportsANITypeCategory.md) |  | [optional] [default to V2reportsANITypeCategory.ANI_CATEGORY_UNKNOWN]
 **submitted_ani_match** | [**V2reportsANIMatch**](V2reportsANIMatch.md) |  | [optional] 
 **best_ani_match** | [**V2reportsANIMatch**](V2reportsANIMatch.md) |  | [optional] 
 **comment** | **str** |  | [optional] 

@@ -12,11 +12,11 @@ Name | Type | Description | Notes
 **last_release_date** | **datetime** |  | [optional] 
 **tax_exact_match** | **bool** |  | [optional] 
 **sort** | [**List[V2OrganelleSort]**](V2OrganelleSort.md) |  | [optional] 
-**returned_content** | [**V2OrganelleMetadataRequestContentType**](V2OrganelleMetadataRequestContentType.md) |  | [optional] 
+**returned_content** | [**V2OrganelleMetadataRequestContentType**](V2OrganelleMetadataRequestContentType.md) |  | [optional] [default to V2OrganelleMetadataRequestContentType.COMPLETE]
 **page_size** | **int** |  | [optional] 
 **page_token** | **str** |  | [optional] 
-**table_format** | [**V2OrganelleMetadataRequestOrganelleTableFormat**](V2OrganelleMetadataRequestOrganelleTableFormat.md) |  | [optional] 
-**include_tabular_header** | [**V2IncludeTabularHeader**](V2IncludeTabularHeader.md) |  | [optional] 
+**table_format** | [**V2OrganelleMetadataRequestOrganelleTableFormat**](V2OrganelleMetadataRequestOrganelleTableFormat.md) |  | [optional] [default to V2OrganelleMetadataRequestOrganelleTableFormat.ORGANELLE_TABLE_FORMAT_NO_TABLE]
+**include_tabular_header** | [**V2IncludeTabularHeader**](V2IncludeTabularHeader.md) |  | [optional] [default to V2IncludeTabularHeader.INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY]
 
 ## Example
 

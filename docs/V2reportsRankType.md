@@ -97,6 +97,10 @@
 
 * `BIOTYPE` (value: `'BIOTYPE'`)
 
+* `ACELLULAR_ROOT` (value: `'ACELLULAR_ROOT'`)
+
+* `CELLULAR_ROOT` (value: `'CELLULAR_ROOT'`)
+
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

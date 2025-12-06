@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **gene_range** | [**V2reportsSeqRangeSet**](V2reportsSeqRangeSet.md) |  | [optional] 
-**type** | [**V2reportsGenomicRegionGenomicRegionType**](V2reportsGenomicRegionGenomicRegionType.md) |  | [optional] 
+**type** | [**V2reportsGenomicRegionGenomicRegionType**](V2reportsGenomicRegionGenomicRegionType.md) |  | [optional] [default to V2reportsGenomicRegionGenomicRegionType.UNKNOWN]
 
 ## Example
 

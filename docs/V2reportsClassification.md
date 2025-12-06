@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **species** | [**V2reportsTaxData**](V2reportsTaxData.md) |  | [optional] 
 **domain** | [**V2reportsTaxData**](V2reportsTaxData.md) |  | [optional] 
 **realm** | [**V2reportsTaxData**](V2reportsTaxData.md) |  | [optional] 
+**acellular_root** | [**V2reportsTaxData**](V2reportsTaxData.md) |  | [optional] 
 
 ## Example
 

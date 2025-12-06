@@ -45,7 +45,7 @@ configuration.api_key['ApiKeyAuthHeader'] = os.environ["API_KEY"]
 with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = ncbi.datasets.openapi.BioSampleApi(api_client)
-    accessions = ['[\"SAMN15960293\"]'] # List[str] | 
+    accessions = ['SAMN15960293'] # List[str] | 
 
     try:
         # Get BioSample dataset reports by accession(s)

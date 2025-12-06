@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **filter** | [**V2VirusDatasetFilter**](V2VirusDatasetFilter.md) |  | [optional] 
-**returned_content** | [**V2VirusDataReportRequestContentType**](V2VirusDataReportRequestContentType.md) |  | [optional] 
+**returned_content** | [**V2VirusDataReportRequestContentType**](V2VirusDataReportRequestContentType.md) |  | [optional] [default to V2VirusDataReportRequestContentType.COMPLETE]
 **table_fields** | **List[str]** |  | [optional] 
 **table_format** | **str** |  | [optional] 
 **page_size** | **int** |  | [optional] 

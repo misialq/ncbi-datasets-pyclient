@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **gene_id** | **int** |  | [optional] 
-**returned_content** | [**V2OrthologRequestContentType**](V2OrthologRequestContentType.md) |  | [optional] 
+**returned_content** | [**V2OrthologRequestContentType**](V2OrthologRequestContentType.md) |  | [optional] [default to V2OrthologRequestContentType.COMPLETE]
 **taxon_filter** | **List[str]** |  | [optional] 
 **page_size** | **int** |  | [optional] 
 **page_token** | **str** |  | [optional] 
