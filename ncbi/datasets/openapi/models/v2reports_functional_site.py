@@ -26,14 +26,13 @@ class V2reportsFunctionalSite(BaseModel):
     """
     V2reportsFunctionalSite
     """ # noqa: E501
-    index: Optional[StrictInt] = None
     name: Optional[StrictStr] = None
     type: Optional[StrictStr] = None
     specific: Optional[StrictBool] = None
     completeness: Optional[Union[StrictFloat, StrictInt]] = None
     source_accession: Optional[StrictStr] = None
     location: Optional[List[StrictInt]] = None
-    __properties: ClassVar[List[str]] = ["index", "name", "type", "specific", "completeness", "source_accession", "location"]
+    __properties: ClassVar[List[str]] = ["name", "type", "specific", "completeness", "source_accession", "location"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -86,7 +85,6 @@ class V2reportsFunctionalSite(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "index": obj.get("index"),
             "name": obj.get("name"),
             "type": obj.get("type"),
             "specific": obj.get("specific"),

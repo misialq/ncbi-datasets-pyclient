@@ -21,7 +21,7 @@ from setuptools import setup, find_packages  # noqa: H301
 # prerequisite: setuptools
 # http://pypi.python.org/pypi/setuptools
 NAME = "ncbi-datasets-pyclient"
-VERSION = "v18.10.2"
+VERSION = "v18.12.0"
 PYTHON_REQUIRES = ">= 3.9"
 REQUIRES = [
     "urllib3 >= 2.1.0, < 3.0.0",
@@ -34,8 +34,8 @@ setup(
     name=NAME,
     version=VERSION,
     description="NCBI Datasets API",
-    author="OpenAPI Generator community",
-    author_email="team@openapitools.org",
+    author="NCBI",
+    author_email="help@ncbi.nlm.nih.gov",
     url="",
     keywords=["OpenAPI", "OpenAPI-Generator", "NCBI Datasets API"],
     install_requires=REQUIRES,
