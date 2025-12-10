@@ -1,21 +1,28 @@
-[tool.poetry]
+[project]
 name = "ncbi-datasets-pyclient"
 version = "v18.12.0"
 description = "NCBI Datasets API"
-authors = ["NCBI <help@ncbi.nlm.nih.gov>"]
+authors = [
+  {name = "NCBI", email = "help@ncbi.nlm.nih.gov"},
+]
 readme = "README.md"
-repository = "https://github.com/misialq/ncbi-datasets-pyclient"
 keywords = ["OpenAPI", "OpenAPI-Generator", "NCBI Datasets API"]
-include = ["ncbi.datasets.openapi/py.typed"]
+requires-python = ">=3.9"
 
-[tool.poetry.dependencies]
-python = "^3.9"
-urllib3 = ">= 2.1.0, < 3.0.0"
-python-dateutil = ">= 2.8.2"
-pydantic = ">= 2"
-typing-extensions = ">= 4.7.1"
+dependencies = [
+  "urllib3 (>=2.1.0,<3.0.0)",
+  "python-dateutil (>=2.8.2)",
+  "pydantic (>=2)",
+  "typing-extensions (>=4.7.1)",
+]
 
-[tool.poetry.dev-dependencies]
+[project.urls]
+Repository = "https://github.com/misialq/ncbi-datasets-pyclient"
+
+[tool.poetry]
+requires-poetry = ">=2.0"
+
+[tool.poetry.group.dev.dependencies]
 pytest = ">= 7.2.1"
 pytest-cov = ">= 2.8.1"
 tox = ">= 3.9.0"
