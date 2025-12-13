@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **genomic_moltype** | **str** |  | [optional] 
 **current_scientific_name_is_formal** | **bool** |  | [optional] 
 **secondary_tax_ids** | **List[int]** |  | [optional] 
+**extinct** | **bool** |  | [optional] 
 
 ## Example
 

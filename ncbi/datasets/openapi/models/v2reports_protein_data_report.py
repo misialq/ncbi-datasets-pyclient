@@ -34,10 +34,11 @@ class V2reportsProteinDataReport(BaseModel):
     length: Optional[StrictInt] = None
     gene_id: Optional[StrictInt] = None
     identical_protein_group: Optional[StrictInt] = None
+    tax_id: Optional[StrictInt] = None
     conserved_domains: Optional[List[V2reportsProteinConservedDomain]] = None
     functional_sites: Optional[List[V2reportsFunctionalSite]] = None
     protein_families: Optional[List[V2reportsProteinFamily]] = None
-    __properties: ClassVar[List[str]] = ["accession", "description", "length", "gene_id", "identical_protein_group", "conserved_domains", "functional_sites", "protein_families"]
+    __properties: ClassVar[List[str]] = ["accession", "description", "length", "gene_id", "identical_protein_group", "tax_id", "conserved_domains", "functional_sites", "protein_families"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -116,6 +117,7 @@ class V2reportsProteinDataReport(BaseModel):
             "length": obj.get("length"),
             "gene_id": obj.get("gene_id"),
             "identical_protein_group": obj.get("identical_protein_group"),
+            "tax_id": obj.get("tax_id"),
             "conserved_domains": [V2reportsProteinConservedDomain.from_dict(_item) for _item in obj["conserved_domains"]] if obj.get("conserved_domains") is not None else None,
             "functional_sites": [V2reportsFunctionalSite.from_dict(_item) for _item in obj["functional_sites"]] if obj.get("functional_sites") is not None else None,
             "protein_families": [V2reportsProteinFamily.from_dict(_item) for _item in obj["protein_families"]] if obj.get("protein_families") is not None else None

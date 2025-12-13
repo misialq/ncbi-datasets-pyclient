@@ -1,6 +1,6 @@
 [project]
 name = "ncbi-datasets-pyclient"
-version = "v18.12.0"
+version = "v18.13.0"
 description = "NCBI Datasets API"
 authors = [
   {name = "NCBI", email = "help@ncbi.nlm.nih.gov"},

@@ -4134,7 +4134,7 @@ class TaxonomyApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> V2TaxonomyMetadataResponse:
-        """Use taxonomic identifiers to get taxonomic metadata
+        """Use taxonomic identifiers to get taxonomic metadata (deprecated)
 
         Using NCBI Taxonomy IDs or names (common or scientific) at any rank, get metadata about a taxonomic node including taxonomic identifiers, lineage information, child nodes, and gene and genome counts in JSON format.
 
@@ -4229,7 +4229,7 @@ class TaxonomyApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[V2TaxonomyMetadataResponse]:
-        """Use taxonomic identifiers to get taxonomic metadata
+        """Use taxonomic identifiers to get taxonomic metadata (deprecated)
 
         Using NCBI Taxonomy IDs or names (common or scientific) at any rank, get metadata about a taxonomic node including taxonomic identifiers, lineage information, child nodes, and gene and genome counts in JSON format.
 
@@ -4324,7 +4324,7 @@ class TaxonomyApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Use taxonomic identifiers to get taxonomic metadata
+        """Use taxonomic identifiers to get taxonomic metadata (deprecated)
 
         Using NCBI Taxonomy IDs or names (common or scientific) at any rank, get metadata about a taxonomic node including taxonomic identifiers, lineage information, child nodes, and gene and genome counts in JSON format.
 
@@ -4510,7 +4510,7 @@ class TaxonomyApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> V2TaxonomyMetadataResponse:
-        """Get taxonomy metadata by taxon
+        """Get taxonomy metadata by taxon (deprecated)
 
         Get taxonomy metadata by taxon in JSON format.
 
@@ -4577,7 +4577,7 @@ class TaxonomyApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[V2TaxonomyMetadataResponse]:
-        """Get taxonomy metadata by taxon
+        """Get taxonomy metadata by taxon (deprecated)
 
         Get taxonomy metadata by taxon in JSON format.
 
@@ -4644,7 +4644,7 @@ class TaxonomyApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Get taxonomy metadata by taxon
+        """Get taxonomy metadata by taxon (deprecated)
 
         Get taxonomy metadata by taxon in JSON format.
 

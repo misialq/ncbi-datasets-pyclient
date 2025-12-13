@@ -44,7 +44,8 @@ class V2reportsTaxonomyNode(BaseModel):
     genomic_moltype: Optional[StrictStr] = None
     current_scientific_name_is_formal: Optional[StrictBool] = None
     secondary_tax_ids: Optional[List[StrictInt]] = None
-    __properties: ClassVar[List[str]] = ["tax_id", "rank", "current_scientific_name", "basionym", "curator_common_name", "group_name", "has_type_material", "classification", "parents", "children", "counts", "genomic_moltype", "current_scientific_name_is_formal", "secondary_tax_ids"]
+    extinct: Optional[StrictBool] = None
+    __properties: ClassVar[List[str]] = ["tax_id", "rank", "current_scientific_name", "basionym", "curator_common_name", "group_name", "has_type_material", "classification", "parents", "children", "counts", "genomic_moltype", "current_scientific_name_is_formal", "secondary_tax_ids", "extinct"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -126,7 +127,8 @@ class V2reportsTaxonomyNode(BaseModel):
             "counts": [V2reportsTaxonomyNodeCountByType.from_dict(_item) for _item in obj["counts"]] if obj.get("counts") is not None else None,
             "genomic_moltype": obj.get("genomic_moltype"),
             "current_scientific_name_is_formal": obj.get("current_scientific_name_is_formal"),
-            "secondary_tax_ids": obj.get("secondary_tax_ids")
+            "secondary_tax_ids": obj.get("secondary_tax_ids"),
+            "extinct": obj.get("extinct")
         })
         return _obj
 

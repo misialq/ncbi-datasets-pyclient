@@ -18,8 +18,8 @@ Method | HTTP request | Description
 [**taxonomy_image_post**](TaxonomyApi.md#taxonomy_image_post) | **POST** /taxonomy/image | Get a taxonomy image by taxon
 [**taxonomy_links**](TaxonomyApi.md#taxonomy_links) | **GET** /taxonomy/taxon/{taxon}/links | Retrieve external links associated with a taxonomic identifier.
 [**taxonomy_links_by_post**](TaxonomyApi.md#taxonomy_links_by_post) | **POST** /taxonomy/links | Retrieve external links associated with a taxonomic identifier.
-[**taxonomy_metadata**](TaxonomyApi.md#taxonomy_metadata) | **GET** /taxonomy/taxon/{taxons} | Use taxonomic identifiers to get taxonomic metadata
-[**taxonomy_metadata_post**](TaxonomyApi.md#taxonomy_metadata_post) | **POST** /taxonomy | Get taxonomy metadata by taxon
+[**taxonomy_metadata**](TaxonomyApi.md#taxonomy_metadata) | **GET** /taxonomy/taxon/{taxons} | Use taxonomic identifiers to get taxonomic metadata (deprecated)
+[**taxonomy_metadata_post**](TaxonomyApi.md#taxonomy_metadata_post) | **POST** /taxonomy | Get taxonomy metadata by taxon (deprecated)
 [**taxonomy_names**](TaxonomyApi.md#taxonomy_names) | **GET** /taxonomy/taxon/{taxons}/name_report | Use taxonomic identifiers to get taxonomic names data report
 [**taxonomy_names_post**](TaxonomyApi.md#taxonomy_names_post) | **POST** /taxonomy/name_report | Use taxonomic identifiers to get taxonomic names data report by post
 [**taxonomy_related_ids**](TaxonomyApi.md#taxonomy_related_ids) | **GET** /taxonomy/taxon/{tax_id}/related_ids | Use taxonomic identifier to get related taxonomic identifiers, such as children
@@ -1193,7 +1193,7 @@ Name | Type | Description  | Notes
 # **taxonomy_metadata**
 > V2TaxonomyMetadataResponse taxonomy_metadata(taxons, returned_content=returned_content, page_size=page_size, include_tabular_header=include_tabular_header, page_token=page_token, table_format=table_format, children=children, ranks=ranks)
 
-Use taxonomic identifiers to get taxonomic metadata
+Use taxonomic identifiers to get taxonomic metadata (deprecated)
 
 Using NCBI Taxonomy IDs or names (common or scientific) at any rank, get metadata about a taxonomic node including taxonomic identifiers, lineage information, child nodes, and gene and genome counts in JSON format.
 
@@ -1242,7 +1242,7 @@ with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
     ranks = [ncbi.datasets.openapi.V2reportsRankType()] # List[V2reportsRankType] | Only include taxons of the provided ranks. If empty, return all ranks. (optional)
 
     try:
-        # Use taxonomic identifiers to get taxonomic metadata
+        # Use taxonomic identifiers to get taxonomic metadata (deprecated)
         api_response = api_instance.taxonomy_metadata(taxons, returned_content=returned_content, page_size=page_size, include_tabular_header=include_tabular_header, page_token=page_token, table_format=table_format, children=children, ranks=ranks)
         print("The response of TaxonomyApi->taxonomy_metadata:\n")
         pprint(api_response)
@@ -1291,7 +1291,7 @@ Name | Type | Description  | Notes
 # **taxonomy_metadata_post**
 > V2TaxonomyMetadataResponse taxonomy_metadata_post(v2_taxonomy_metadata_request)
 
-Get taxonomy metadata by taxon
+Get taxonomy metadata by taxon (deprecated)
 
 Get taxonomy metadata by taxon in JSON format.
 
@@ -1330,7 +1330,7 @@ with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
     v2_taxonomy_metadata_request = {"taxons":["9606","house mouse"]} # V2TaxonomyMetadataRequest | 
 
     try:
-        # Get taxonomy metadata by taxon
+        # Get taxonomy metadata by taxon (deprecated)
         api_response = api_instance.taxonomy_metadata_post(v2_taxonomy_metadata_request)
         print("The response of TaxonomyApi->taxonomy_metadata_post:\n")
         pprint(api_response)

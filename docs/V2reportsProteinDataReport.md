@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **length** | **int** |  | [optional] 
 **gene_id** | **int** |  | [optional] 
 **identical_protein_group** | **int** |  | [optional] 
+**tax_id** | **int** |  | [optional] 
 **conserved_domains** | [**List[V2reportsProteinConservedDomain]**](V2reportsProteinConservedDomain.md) |  | [optional] 
 **functional_sites** | [**List[V2reportsFunctionalSite]**](V2reportsFunctionalSite.md) |  | [optional] 
 **protein_families** | [**List[V2reportsProteinFamily]**](V2reportsProteinFamily.md) |  | [optional] 
