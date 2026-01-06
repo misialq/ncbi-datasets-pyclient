@@ -34,7 +34,8 @@ class V2TaxonomyImageMetadataResponse(BaseModel):
     source: Optional[StrictStr] = None
     image_sizes: Optional[List[V2ImageSize]] = None
     format: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["tax_id", "src", "license", "attribution", "source", "image_sizes", "format"]
+    license_url: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["tax_id", "src", "license", "attribution", "source", "image_sizes", "format", "license_url"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -93,7 +94,8 @@ class V2TaxonomyImageMetadataResponse(BaseModel):
             "attribution": obj.get("attribution"),
             "source": obj.get("source"),
             "image_sizes": obj.get("image_sizes"),
-            "format": obj.get("format")
+            "format": obj.get("format"),
+            "license_url": obj.get("license_url")
         })
         return _obj
 

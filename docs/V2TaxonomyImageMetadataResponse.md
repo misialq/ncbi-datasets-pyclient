@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **source** | **str** |  | [optional] 
 **image_sizes** | [**List[V2ImageSize]**](V2ImageSize.md) |  | [optional] 
 **format** | **str** |  | [optional] 
+**license_url** | **str** |  | [optional] 
 
 ## Example
 
