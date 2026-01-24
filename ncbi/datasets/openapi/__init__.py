@@ -14,7 +14,7 @@
 """  # noqa: E501
 
 
-__version__ = "v18.14.0"
+__version__ = "v18.15.0"
 
 # Define package exports
 __all__ = [
@@ -35,6 +35,13 @@ __all__ = [
     "ApiKeyError",
     "ApiAttributeError",
     "ApiException",
+    "Ncbigsupgcolv2AssemblyAccessionsReply",
+    "Ncbigsupgcolv2AssemblyCheckMHistogramRequest",
+    "Ncbigsupgcolv2AssemblyDataReportDraftRequest",
+    "Ncbigsupgcolv2AssemblyDataReportsRequest",
+    "Ncbigsupgcolv2ChromosomeLocation",
+    "Ncbigsupgcolv2ChromosomeType",
+    "Ncbigsupgcolv2SequenceAccessionRequest",
     "Ncbiprotddv2ChainFootprint",
     "Ncbiprotddv2QueryStructureDefinition",
     "Ncbiprotddv2RedundancyLevel",
@@ -340,6 +347,13 @@ from ncbi.datasets.openapi.exceptions import ApiAttributeError as ApiAttributeEr
 from ncbi.datasets.openapi.exceptions import ApiException as ApiException
 
 # import models into sdk package
+from ncbi.datasets.openapi.models.ncbigsupgcolv2_assembly_accessions_reply import Ncbigsupgcolv2AssemblyAccessionsReply as Ncbigsupgcolv2AssemblyAccessionsReply
+from ncbi.datasets.openapi.models.ncbigsupgcolv2_assembly_check_m_histogram_request import Ncbigsupgcolv2AssemblyCheckMHistogramRequest as Ncbigsupgcolv2AssemblyCheckMHistogramRequest
+from ncbi.datasets.openapi.models.ncbigsupgcolv2_assembly_data_report_draft_request import Ncbigsupgcolv2AssemblyDataReportDraftRequest as Ncbigsupgcolv2AssemblyDataReportDraftRequest
+from ncbi.datasets.openapi.models.ncbigsupgcolv2_assembly_data_reports_request import Ncbigsupgcolv2AssemblyDataReportsRequest as Ncbigsupgcolv2AssemblyDataReportsRequest
+from ncbi.datasets.openapi.models.ncbigsupgcolv2_chromosome_location import Ncbigsupgcolv2ChromosomeLocation as Ncbigsupgcolv2ChromosomeLocation
+from ncbi.datasets.openapi.models.ncbigsupgcolv2_chromosome_type import Ncbigsupgcolv2ChromosomeType as Ncbigsupgcolv2ChromosomeType
+from ncbi.datasets.openapi.models.ncbigsupgcolv2_sequence_accession_request import Ncbigsupgcolv2SequenceAccessionRequest as Ncbigsupgcolv2SequenceAccessionRequest
 from ncbi.datasets.openapi.models.ncbiprotddv2_chain_footprint import Ncbiprotddv2ChainFootprint as Ncbiprotddv2ChainFootprint
 from ncbi.datasets.openapi.models.ncbiprotddv2_query_structure_definition import Ncbiprotddv2QueryStructureDefinition as Ncbiprotddv2QueryStructureDefinition
 from ncbi.datasets.openapi.models.ncbiprotddv2_redundancy_level import Ncbiprotddv2RedundancyLevel as Ncbiprotddv2RedundancyLevel

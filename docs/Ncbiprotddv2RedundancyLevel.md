@@ -3,6 +3,8 @@
 
 ## Enum
 
+* `NOT_SPECIFIED` (value: `'NOT_SPECIFIED'`)
+
 * `ALL_SEQUENCES` (value: `'ALL_SEQUENCES'`)
 
 * `LOW` (value: `'LOW'`)

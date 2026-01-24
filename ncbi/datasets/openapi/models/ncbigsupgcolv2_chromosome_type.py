@@ -18,23 +18,25 @@ from enum import Enum
 from typing_extensions import Self
 
 
-class Ncbiprotddv2RedundancyLevel(str, Enum):
+class Ncbigsupgcolv2ChromosomeType(str, Enum):
     """
-    Ncbiprotddv2RedundancyLevel
+    Ncbigsupgcolv2ChromosomeType
     """
 
     """
     allowed enum values
     """
-    NOT_SPECIFIED = 'NOT_SPECIFIED'
-    ALL_SEQUENCES = 'ALL_SEQUENCES'
-    LOW = 'LOW'
-    MEDIUM = 'MEDIUM'
-    HIGH = 'HIGH'
+    TYPE_UNKNOWN = 'TYPE_UNKNOWN'
+    CHROMOSOME = 'CHROMOSOME'
+    EXTRACHROM = 'EXTRACHROM'
+    LINKAGEGROUP = 'LINKAGEGROUP'
+    OTHER_TYPE = 'OTHER_TYPE'
+    PLASMID = 'PLASMID'
+    SEGMENT = 'SEGMENT'
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:
-        """Create an instance of Ncbiprotddv2RedundancyLevel from a JSON string"""
+        """Create an instance of Ncbigsupgcolv2ChromosomeType from a JSON string"""
         return cls(json.loads(json_str))
 
 

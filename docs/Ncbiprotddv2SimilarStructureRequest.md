@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **sdid** | **str** |  | [optional] 
 **page_token** | **str** |  | [optional] 
-**redundancy_level** | [**Ncbiprotddv2RedundancyLevel**](Ncbiprotddv2RedundancyLevel.md) |  | [optional] [default to Ncbiprotddv2RedundancyLevel.ALL_SEQUENCES]
+**redundancy_level** | [**Ncbiprotddv2RedundancyLevel**](Ncbiprotddv2RedundancyLevel.md) |  | [optional] [default to Ncbiprotddv2RedundancyLevel.NOT_SPECIFIED]
 **sort_by** | [**Ncbiprotddv2SortById**](Ncbiprotddv2SortById.md) |  | [optional] [default to Ncbiprotddv2SortById.NONE]
 **hits_per_page** | **int** |  | [optional] 
 
