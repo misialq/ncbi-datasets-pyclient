@@ -14,7 +14,7 @@
 """  # noqa: E501
 
 
-__version__ = "v18.15.0"
+__version__ = "v18.16.0"
 
 # Define package exports
 __all__ = [
@@ -43,6 +43,10 @@ __all__ = [
     "Ncbigsupgcolv2ChromosomeType",
     "Ncbigsupgcolv2SequenceAccessionRequest",
     "Ncbiprotddv2ChainFootprint",
+    "Ncbiprotddv2ParsedAbstract",
+    "Ncbiprotddv2ParsedAbstractAuthor",
+    "Ncbiprotddv2ParsedAbstractEpub",
+    "Ncbiprotddv2PubmedAbstractRequest",
     "Ncbiprotddv2QueryStructureDefinition",
     "Ncbiprotddv2RedundancyLevel",
     "Ncbiprotddv2SdidRequest",
@@ -355,6 +359,10 @@ from ncbi.datasets.openapi.models.ncbigsupgcolv2_chromosome_location import Ncbi
 from ncbi.datasets.openapi.models.ncbigsupgcolv2_chromosome_type import Ncbigsupgcolv2ChromosomeType as Ncbigsupgcolv2ChromosomeType
 from ncbi.datasets.openapi.models.ncbigsupgcolv2_sequence_accession_request import Ncbigsupgcolv2SequenceAccessionRequest as Ncbigsupgcolv2SequenceAccessionRequest
 from ncbi.datasets.openapi.models.ncbiprotddv2_chain_footprint import Ncbiprotddv2ChainFootprint as Ncbiprotddv2ChainFootprint
+from ncbi.datasets.openapi.models.ncbiprotddv2_parsed_abstract import Ncbiprotddv2ParsedAbstract as Ncbiprotddv2ParsedAbstract
+from ncbi.datasets.openapi.models.ncbiprotddv2_parsed_abstract_author import Ncbiprotddv2ParsedAbstractAuthor as Ncbiprotddv2ParsedAbstractAuthor
+from ncbi.datasets.openapi.models.ncbiprotddv2_parsed_abstract_epub import Ncbiprotddv2ParsedAbstractEpub as Ncbiprotddv2ParsedAbstractEpub
+from ncbi.datasets.openapi.models.ncbiprotddv2_pubmed_abstract_request import Ncbiprotddv2PubmedAbstractRequest as Ncbiprotddv2PubmedAbstractRequest
 from ncbi.datasets.openapi.models.ncbiprotddv2_query_structure_definition import Ncbiprotddv2QueryStructureDefinition as Ncbiprotddv2QueryStructureDefinition
 from ncbi.datasets.openapi.models.ncbiprotddv2_redundancy_level import Ncbiprotddv2RedundancyLevel as Ncbiprotddv2RedundancyLevel
 from ncbi.datasets.openapi.models.ncbiprotddv2_sdid_request import Ncbiprotddv2SdidRequest as Ncbiprotddv2SdidRequest

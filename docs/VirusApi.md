@@ -67,8 +67,8 @@ with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
     proteins = ['spike protein'] # List[str] | One or more SARS-CoV-2 protein names
     refseq_only = False # bool | If true, limit results to RefSeq genomes. (optional) (default to False)
     annotated_only = False # bool | If true, limit results to annotated genomes. (optional) (default to False)
-    released_since = '2025-01-15' # datetime | Limit to genomes released on or after the specified date. (optional)
-    updated_since = '2025-01-15' # datetime | Limit to genomes updated on or after the specified date. (optional)
+    released_since = '2025-01-15' # datetime |  (optional)
+    updated_since = '2025-01-15' # datetime |  (optional)
     host = '9606' # str | Limit to genomes isolated from the specified host species (NCBI Taxonomy ID, common or scientific name). (optional)
     pangolin_classification = 'LP.8.1' # str | Limit to SARS-CoV-2 genomes with the specified Pango lineage. (optional)
     geo_location = 'USA' # str | Limit to genomes collected from the specififed geographic location. (optional)
@@ -97,8 +97,8 @@ Name | Type | Description  | Notes
  **proteins** | [**List[str]**](str.md)| One or more SARS-CoV-2 protein names | 
  **refseq_only** | **bool**| If true, limit results to RefSeq genomes. | [optional] [default to False]
  **annotated_only** | **bool**| If true, limit results to annotated genomes. | [optional] [default to False]
- **released_since** | **datetime**| Limit to genomes released on or after the specified date. | [optional] 
- **updated_since** | **datetime**| Limit to genomes updated on or after the specified date. | [optional] 
+ **released_since** | **datetime**|  | [optional] 
+ **updated_since** | **datetime**|  | [optional] 
  **host** | **str**| Limit to genomes isolated from the specified host species (NCBI Taxonomy ID, common or scientific name). | [optional] 
  **pangolin_classification** | **str**| Limit to SARS-CoV-2 genomes with the specified Pango lineage. | [optional] 
  **geo_location** | **str**| Limit to genomes collected from the specififed geographic location. | [optional] 
@@ -255,8 +255,8 @@ with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
     proteins = ['spike protein'] # List[str] | One or more SARS-CoV-2 protein names
     refseq_only = False # bool | If true, limit results to RefSeq genomes. (optional) (default to False)
     annotated_only = False # bool | If true, limit results to annotated genomes. (optional) (default to False)
-    released_since = '2025-01-15' # datetime | Limit to genomes released on or after the specified date. (optional)
-    updated_since = '2025-01-15' # datetime | Limit to genomes updated on or after the specified date. (optional)
+    released_since = '2025-01-15' # datetime |  (optional)
+    updated_since = '2025-01-15' # datetime |  (optional)
     host = '9606' # str | Limit to genomes isolated from the specified host species (NCBI Taxonomy ID, common or scientific name). (optional)
     pangolin_classification = 'LP.8.1' # str | Limit to SARS-CoV-2 genomes with the specified Pango lineage. (optional)
     geo_location = 'USA' # str | Limit to genomes collected from the specififed geographic location. (optional)
@@ -284,8 +284,8 @@ Name | Type | Description  | Notes
  **proteins** | [**List[str]**](str.md)| One or more SARS-CoV-2 protein names | 
  **refseq_only** | **bool**| If true, limit results to RefSeq genomes. | [optional] [default to False]
  **annotated_only** | **bool**| If true, limit results to annotated genomes. | [optional] [default to False]
- **released_since** | **datetime**| Limit to genomes released on or after the specified date. | [optional] 
- **updated_since** | **datetime**| Limit to genomes updated on or after the specified date. | [optional] 
+ **released_since** | **datetime**|  | [optional] 
+ **updated_since** | **datetime**|  | [optional] 
  **host** | **str**| Limit to genomes isolated from the specified host species (NCBI Taxonomy ID, common or scientific name). | [optional] 
  **pangolin_classification** | **str**| Limit to SARS-CoV-2 genomes with the specified Pango lineage. | [optional] 
  **geo_location** | **str**| Limit to genomes collected from the specififed geographic location. | [optional] 
@@ -440,8 +440,8 @@ with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
     proteins = ['spike protein'] # List[str] | One or more SARS-CoV-2 protein names
     refseq_only = False # bool | If true, limit results to RefSeq genomes. (optional) (default to False)
     annotated_only = False # bool | If true, limit results to annotated genomes. (optional) (default to False)
-    released_since = '2025-01-15' # datetime | Limit to genomes released on or after the specified date. (optional)
-    updated_since = '2025-01-15' # datetime | Limit to genomes updated on or after the specified date. (optional)
+    released_since = '2025-01-15' # datetime |  (optional)
+    updated_since = '2025-01-15' # datetime |  (optional)
     host = '9606' # str | Limit to genomes isolated from the specified host species (NCBI Taxonomy ID, common or scientific name). (optional)
     pangolin_classification = 'LP.8.1' # str | Limit to SARS-CoV-2 genomes with the specified Pango lineage. (optional)
     geo_location = 'USA' # str | Limit to genomes collected from the specififed geographic location. (optional)
@@ -469,8 +469,8 @@ Name | Type | Description  | Notes
  **proteins** | [**List[str]**](str.md)| One or more SARS-CoV-2 protein names | 
  **refseq_only** | **bool**| If true, limit results to RefSeq genomes. | [optional] [default to False]
  **annotated_only** | **bool**| If true, limit results to annotated genomes. | [optional] [default to False]
- **released_since** | **datetime**| Limit to genomes released on or after the specified date. | [optional] 
- **updated_since** | **datetime**| Limit to genomes updated on or after the specified date. | [optional] 
+ **released_since** | **datetime**|  | [optional] 
+ **updated_since** | **datetime**|  | [optional] 
  **host** | **str**| Limit to genomes isolated from the specified host species (NCBI Taxonomy ID, common or scientific name). | [optional] 
  **pangolin_classification** | **str**| Limit to SARS-CoV-2 genomes with the specified Pango lineage. | [optional] 
  **geo_location** | **str**| Limit to genomes collected from the specififed geographic location. | [optional] 
@@ -703,8 +703,8 @@ with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
     accessions = ['NC_038294.1'] # List[str] | One or more nucleotide sequence accessions
     filter_refseq_only = False # bool | If true, limit to RefSeq genomes. (optional) (default to False)
     filter_annotated_only = False # bool | If true, limit to annotated genomes. (optional) (default to False)
-    filter_released_since = '2025-01-15' # datetime | Limit to genomes released on or after the specified date. (optional)
-    filter_updated_since = '2025-01-15' # datetime | Limit to genomes updated on or after the specified date. (optional)
+    filter_released_since = '2025-01-15' # datetime |  (optional)
+    filter_updated_since = '2025-01-15' # datetime |  (optional)
     filter_host = '9606' # str | Limit to genomes isolated from the specified host species (NCBI Taxonomy ID, common or scientific name). (optional)
     filter_pangolin_classification = 'LP.8.1' # str | Limit to SARS-CoV-2 genomes from the specified Pango lineage. (optional)
     filter_geo_location = 'USA' # str | Limit to genomes collected from the specififed geographic location. (optional)
@@ -733,8 +733,8 @@ Name | Type | Description  | Notes
  **accessions** | [**List[str]**](str.md)| One or more nucleotide sequence accessions | 
  **filter_refseq_only** | **bool**| If true, limit to RefSeq genomes. | [optional] [default to False]
  **filter_annotated_only** | **bool**| If true, limit to annotated genomes. | [optional] [default to False]
- **filter_released_since** | **datetime**| Limit to genomes released on or after the specified date. | [optional] 
- **filter_updated_since** | **datetime**| Limit to genomes updated on or after the specified date. | [optional] 
+ **filter_released_since** | **datetime**|  | [optional] 
+ **filter_updated_since** | **datetime**|  | [optional] 
  **filter_host** | **str**| Limit to genomes isolated from the specified host species (NCBI Taxonomy ID, common or scientific name). | [optional] 
  **filter_pangolin_classification** | **str**| Limit to SARS-CoV-2 genomes from the specified Pango lineage. | [optional] 
  **filter_geo_location** | **str**| Limit to genomes collected from the specififed geographic location. | [optional] 
@@ -888,8 +888,8 @@ with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
     taxon = '1335626' # str | NCBI Taxonomy ID or name (common or scientific) at any taxonomic rank
     filter_refseq_only = False # bool | If true, limit to RefSeq genomes. (optional) (default to False)
     filter_annotated_only = False # bool | If true, limit to annotated genomes. (optional) (default to False)
-    filter_released_since = '2025-01-15' # datetime | Limit to genomes released on or after the specified date. (optional)
-    filter_updated_since = '2025-01-15' # datetime | Limit to genomes updated on or after the specified date. (optional)
+    filter_released_since = '2025-01-15' # datetime |  (optional)
+    filter_updated_since = '2025-01-15' # datetime |  (optional)
     filter_host = '9606' # str | Limit to genomes isolated from the specified host species (NCBI Taxonomy ID, common or scientific name). (optional)
     filter_pangolin_classification = 'LP.8.1' # str | Limit to SARS-CoV-2 genomes from the specified Pango lineage. (optional)
     filter_geo_location = 'USA' # str | Limit to genomes collected from the specififed geographic location. (optional)
@@ -918,8 +918,8 @@ Name | Type | Description  | Notes
  **taxon** | **str**| NCBI Taxonomy ID or name (common or scientific) at any taxonomic rank | 
  **filter_refseq_only** | **bool**| If true, limit to RefSeq genomes. | [optional] [default to False]
  **filter_annotated_only** | **bool**| If true, limit to annotated genomes. | [optional] [default to False]
- **filter_released_since** | **datetime**| Limit to genomes released on or after the specified date. | [optional] 
- **filter_updated_since** | **datetime**| Limit to genomes updated on or after the specified date. | [optional] 
+ **filter_released_since** | **datetime**|  | [optional] 
+ **filter_updated_since** | **datetime**|  | [optional] 
  **filter_host** | **str**| Limit to genomes isolated from the specified host species (NCBI Taxonomy ID, common or scientific name). | [optional] 
  **filter_pangolin_classification** | **str**| Limit to SARS-CoV-2 genomes from the specified Pango lineage. | [optional] 
  **filter_geo_location** | **str**| Limit to genomes collected from the specififed geographic location. | [optional] 
@@ -993,8 +993,8 @@ with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
     taxon = '1335626' # str | NCBI Taxonomy ID or name (common or scientific) at any taxonomic rank
     refseq_only = False # bool | If true, limit results to RefSeq genomes. (optional) (default to False)
     annotated_only = False # bool | If true, limit results to annotated genomes. (optional) (default to False)
-    released_since = '2025-01-15' # datetime | Limit to genomes released on or after the specified date. (optional)
-    updated_since = '2025-01-15' # datetime | Limit to genomes updated on or after the specified date. (optional)
+    released_since = '2025-01-15' # datetime |  (optional)
+    updated_since = '2025-01-15' # datetime |  (optional)
     host = '9606' # str | Limit to genomes isolated from the specified host species (NCBI Taxonomy ID, common or scientific name). (optional)
     pangolin_classification = 'LP.8.1' # str | Limit to SARS-CoV-2 genomes from the specified Pango lineage. (optional)
     geo_location = 'USA' # str | Limit to genomes collected from the specified geographic location. (optional)
@@ -1024,8 +1024,8 @@ Name | Type | Description  | Notes
  **taxon** | **str**| NCBI Taxonomy ID or name (common or scientific) at any taxonomic rank | 
  **refseq_only** | **bool**| If true, limit results to RefSeq genomes. | [optional] [default to False]
  **annotated_only** | **bool**| If true, limit results to annotated genomes. | [optional] [default to False]
- **released_since** | **datetime**| Limit to genomes released on or after the specified date. | [optional] 
- **updated_since** | **datetime**| Limit to genomes updated on or after the specified date. | [optional] 
+ **released_since** | **datetime**|  | [optional] 
+ **updated_since** | **datetime**|  | [optional] 
  **host** | **str**| Limit to genomes isolated from the specified host species (NCBI Taxonomy ID, common or scientific name). | [optional] 
  **pangolin_classification** | **str**| Limit to SARS-CoV-2 genomes from the specified Pango lineage. | [optional] 
  **geo_location** | **str**| Limit to genomes collected from the specified geographic location. | [optional] 
@@ -1101,8 +1101,8 @@ with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
     taxons = ['1335626'] # List[str] | NCBI Taxonomy IDs or names (common or scientific) at any taxonomic rank (optional)
     refseq_only = False # bool | If true, limit results to RefSeq genomes. (optional) (default to False)
     annotated_only = False # bool | If true, limit results to annotated genomes. (optional) (default to False)
-    released_since = '2025-01-15' # datetime | Limit to genomes released on or after the specified date. (optional)
-    updated_since = '2025-01-15' # datetime | Limit to genomes updated on or after the specified date. (optional)
+    released_since = '2025-01-15' # datetime |  (optional)
+    updated_since = '2025-01-15' # datetime |  (optional)
     host = '9606' # str | Limit to genomes isolated from the specified host species (NCBI Taxonomy ID, common or scientific name). (optional)
     pangolin_classification = 'LP.8.1' # str | Limit to SARS-CoV-2 genomes from the specified Pango lineage. (optional)
     geo_location = 'USA' # str | Limit to genomes collected from the specified geographic location. (optional)
@@ -1133,8 +1133,8 @@ Name | Type | Description  | Notes
  **taxons** | [**List[str]**](str.md)| NCBI Taxonomy IDs or names (common or scientific) at any taxonomic rank | [optional] 
  **refseq_only** | **bool**| If true, limit results to RefSeq genomes. | [optional] [default to False]
  **annotated_only** | **bool**| If true, limit results to annotated genomes. | [optional] [default to False]
- **released_since** | **datetime**| Limit to genomes released on or after the specified date. | [optional] 
- **updated_since** | **datetime**| Limit to genomes updated on or after the specified date. | [optional] 
+ **released_since** | **datetime**|  | [optional] 
+ **updated_since** | **datetime**|  | [optional] 
  **host** | **str**| Limit to genomes isolated from the specified host species (NCBI Taxonomy ID, common or scientific name). | [optional] 
  **pangolin_classification** | **str**| Limit to SARS-CoV-2 genomes from the specified Pango lineage. | [optional] 
  **geo_location** | **str**| Limit to genomes collected from the specified geographic location. | [optional] 
@@ -1293,8 +1293,8 @@ with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
     accessions = ['NC_038294.1'] # List[str] | One or more nucleotide sequence accessions (optional)
     refseq_only = False # bool | If true, limit results to RefSeq genomes. (optional) (default to False)
     annotated_only = False # bool | If true, limit results to annotated genomes. (optional) (default to False)
-    released_since = '2025-01-15' # datetime | Limit to genomes released on or after the specified date. (optional)
-    updated_since = '2025-01-15' # datetime | Limit to genomes updated on or after the specified date. (optional)
+    released_since = '2025-01-15' # datetime |  (optional)
+    updated_since = '2025-01-15' # datetime |  (optional)
     host = '9606' # str | Limit to genomes isolated from the specified host species (NCBI Taxonomy ID, common or scientific name). (optional)
     pangolin_classification = 'LP.8.1' # str | Limit to SARS-CoV-2 genomes from the specified Pango lineage. (optional)
     geo_location = 'USA' # str | Limit to genomes collected from the specified geographic location. (optional)
@@ -1323,8 +1323,8 @@ Name | Type | Description  | Notes
  **accessions** | [**List[str]**](str.md)| One or more nucleotide sequence accessions | [optional] 
  **refseq_only** | **bool**| If true, limit results to RefSeq genomes. | [optional] [default to False]
  **annotated_only** | **bool**| If true, limit results to annotated genomes. | [optional] [default to False]
- **released_since** | **datetime**| Limit to genomes released on or after the specified date. | [optional] 
- **updated_since** | **datetime**| Limit to genomes updated on or after the specified date. | [optional] 
+ **released_since** | **datetime**|  | [optional] 
+ **updated_since** | **datetime**|  | [optional] 
  **host** | **str**| Limit to genomes isolated from the specified host species (NCBI Taxonomy ID, common or scientific name). | [optional] 
  **pangolin_classification** | **str**| Limit to SARS-CoV-2 genomes from the specified Pango lineage. | [optional] 
  **geo_location** | **str**| Limit to genomes collected from the specified geographic location. | [optional] 
@@ -1482,8 +1482,8 @@ with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
     accessions = ['NC_038294.1'] # List[str] | One or more nucleotide sequence accessions (optional)
     refseq_only = False # bool | If true, limit results to RefSeq genomes. (optional) (default to False)
     annotated_only = False # bool | If true, limit results to annotated genomes. (optional) (default to False)
-    released_since = '2025-01-15' # datetime | Limit to genomes released on or after the specified date. (optional)
-    updated_since = '2025-01-15' # datetime | Limit to genomes updated on or after the specified date. (optional)
+    released_since = '2025-01-15' # datetime |  (optional)
+    updated_since = '2025-01-15' # datetime |  (optional)
     host = '9606' # str | Limit to genomes isolated from the specified host species (NCBI Taxonomy ID, common or scientific name). (optional)
     pangolin_classification = 'LP.8.1' # str | Limit to SARS-CoV-2 genomes from the specified Pango lineage. (optional)
     geo_location = 'USA' # str | Limit to genomes collected from the specified geographic location. (optional)
@@ -1514,8 +1514,8 @@ Name | Type | Description  | Notes
  **accessions** | [**List[str]**](str.md)| One or more nucleotide sequence accessions | [optional] 
  **refseq_only** | **bool**| If true, limit results to RefSeq genomes. | [optional] [default to False]
  **annotated_only** | **bool**| If true, limit results to annotated genomes. | [optional] [default to False]
- **released_since** | **datetime**| Limit to genomes released on or after the specified date. | [optional] 
- **updated_since** | **datetime**| Limit to genomes updated on or after the specified date. | [optional] 
+ **released_since** | **datetime**|  | [optional] 
+ **updated_since** | **datetime**|  | [optional] 
  **host** | **str**| Limit to genomes isolated from the specified host species (NCBI Taxonomy ID, common or scientific name). | [optional] 
  **pangolin_classification** | **str**| Limit to SARS-CoV-2 genomes from the specified Pango lineage. | [optional] 
  **geo_location** | **str**| Limit to genomes collected from the specified geographic location. | [optional] 
@@ -1590,8 +1590,8 @@ with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
     accessions = ['NC_038294.1'] # List[str] | One or more nucleotide sequence accessions
     filter_refseq_only = False # bool | If true, limit results to RefSeq genomes. (optional) (default to False)
     filter_annotated_only = False # bool | If true, limit results to annotated genomes. (optional) (default to False)
-    filter_released_since = '2025-01-15' # datetime | Limit to genomes released on or after the specified date. (optional)
-    filter_updated_since = '2025-01-15' # datetime | Limit to genomes updated on or after the specified date. (optional)
+    filter_released_since = '2025-01-15' # datetime |  (optional)
+    filter_updated_since = '2025-01-15' # datetime |  (optional)
     filter_host = '9606' # str | Limit to genomes isolated from the specified host species (NCBI Taxonomy ID, common or scientific name). (optional)
     filter_pangolin_classification = 'LP.8.1' # str | Limit to SARS-CoV-2 genomes from the specified Pango lineage. (optional)
     filter_geo_location = 'USA' # str | Limit to genomes collected from the specified geographic location. (optional)
@@ -1621,8 +1621,8 @@ Name | Type | Description  | Notes
  **accessions** | [**List[str]**](str.md)| One or more nucleotide sequence accessions | 
  **filter_refseq_only** | **bool**| If true, limit results to RefSeq genomes. | [optional] [default to False]
  **filter_annotated_only** | **bool**| If true, limit results to annotated genomes. | [optional] [default to False]
- **filter_released_since** | **datetime**| Limit to genomes released on or after the specified date. | [optional] 
- **filter_updated_since** | **datetime**| Limit to genomes updated on or after the specified date. | [optional] 
+ **filter_released_since** | **datetime**|  | [optional] 
+ **filter_updated_since** | **datetime**|  | [optional] 
  **filter_host** | **str**| Limit to genomes isolated from the specified host species (NCBI Taxonomy ID, common or scientific name). | [optional] 
  **filter_pangolin_classification** | **str**| Limit to SARS-CoV-2 genomes from the specified Pango lineage. | [optional] 
  **filter_geo_location** | **str**| Limit to genomes collected from the specified geographic location. | [optional] 
@@ -1778,8 +1778,8 @@ with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
     taxon = '1335626' # str | NCBI Taxonomy ID or name (common or scientific) at any taxonomic rank
     filter_refseq_only = False # bool | If true, limit results to RefSeq genomes. (optional) (default to False)
     filter_annotated_only = False # bool | If true, limit results to annotated genomes. (optional) (default to False)
-    filter_released_since = '2025-01-15' # datetime | Limit to genomes released on or after the specified date. (optional)
-    filter_updated_since = '2025-01-15' # datetime | Limit to genomes updated on or after the specified date. (optional)
+    filter_released_since = '2025-01-15' # datetime |  (optional)
+    filter_updated_since = '2025-01-15' # datetime |  (optional)
     filter_host = '9606' # str | Limit to genomes isolated from the specified host species (NCBI Taxonomy ID, common or scientific name). (optional)
     filter_pangolin_classification = 'LP.8.1' # str | Limit to SARS-CoV-2 genomes from the specified Pango lineage. (optional)
     filter_geo_location = 'USA' # str | Limit to genomes collected from the specified geographic location. (optional)
@@ -1809,8 +1809,8 @@ Name | Type | Description  | Notes
  **taxon** | **str**| NCBI Taxonomy ID or name (common or scientific) at any taxonomic rank | 
  **filter_refseq_only** | **bool**| If true, limit results to RefSeq genomes. | [optional] [default to False]
  **filter_annotated_only** | **bool**| If true, limit results to annotated genomes. | [optional] [default to False]
- **filter_released_since** | **datetime**| Limit to genomes released on or after the specified date. | [optional] 
- **filter_updated_since** | **datetime**| Limit to genomes updated on or after the specified date. | [optional] 
+ **filter_released_since** | **datetime**|  | [optional] 
+ **filter_updated_since** | **datetime**|  | [optional] 
  **filter_host** | **str**| Limit to genomes isolated from the specified host species (NCBI Taxonomy ID, common or scientific name). | [optional] 
  **filter_pangolin_classification** | **str**| Limit to SARS-CoV-2 genomes from the specified Pango lineage. | [optional] 
  **filter_geo_location** | **str**| Limit to genomes collected from the specified geographic location. | [optional] 

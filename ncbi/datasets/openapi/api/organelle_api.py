@@ -661,8 +661,8 @@ class OrganelleApi:
         accessions: Annotated[List[StrictStr], Field(description="NCBI assembly accession")],
         taxons: Annotated[Optional[List[StrictStr]], Field(description="NCBI Taxonomy ID or name (common or scientific) at any taxonomic rank")] = None,
         organelle_types: Optional[List[V2reportsOrganelleType]] = None,
-        first_release_date: Annotated[Optional[datetime], Field(description="Only return organelle assemblies that were released on or after the specified date By default, do not filter.")] = None,
-        last_release_date: Annotated[Optional[datetime], Field(description="Only return organelle assemblies that were released on or before to the specified date By default, do not filter.")] = None,
+        first_release_date: Optional[datetime] = None,
+        last_release_date: Optional[datetime] = None,
         tax_exact_match: Annotated[Optional[StrictBool], Field(description="If true, only return assemblies with the given NCBI Taxonomy ID, or name. Otherwise, assemblies from taxonomy subtree are included, too.")] = None,
         sort_field: Optional[StrictStr] = None,
         sort_direction: Optional[V2SortDirection] = None,
@@ -692,9 +692,9 @@ class OrganelleApi:
         :type taxons: List[str]
         :param organelle_types:
         :type organelle_types: List[V2reportsOrganelleType]
-        :param first_release_date: Only return organelle assemblies that were released on or after the specified date By default, do not filter.
+        :param first_release_date:
         :type first_release_date: datetime
-        :param last_release_date: Only return organelle assemblies that were released on or before to the specified date By default, do not filter.
+        :param last_release_date:
         :type last_release_date: datetime
         :param tax_exact_match: If true, only return assemblies with the given NCBI Taxonomy ID, or name. Otherwise, assemblies from taxonomy subtree are included, too.
         :type tax_exact_match: bool
@@ -768,8 +768,8 @@ class OrganelleApi:
         accessions: Annotated[List[StrictStr], Field(description="NCBI assembly accession")],
         taxons: Annotated[Optional[List[StrictStr]], Field(description="NCBI Taxonomy ID or name (common or scientific) at any taxonomic rank")] = None,
         organelle_types: Optional[List[V2reportsOrganelleType]] = None,
-        first_release_date: Annotated[Optional[datetime], Field(description="Only return organelle assemblies that were released on or after the specified date By default, do not filter.")] = None,
-        last_release_date: Annotated[Optional[datetime], Field(description="Only return organelle assemblies that were released on or before to the specified date By default, do not filter.")] = None,
+        first_release_date: Optional[datetime] = None,
+        last_release_date: Optional[datetime] = None,
         tax_exact_match: Annotated[Optional[StrictBool], Field(description="If true, only return assemblies with the given NCBI Taxonomy ID, or name. Otherwise, assemblies from taxonomy subtree are included, too.")] = None,
         sort_field: Optional[StrictStr] = None,
         sort_direction: Optional[V2SortDirection] = None,
@@ -799,9 +799,9 @@ class OrganelleApi:
         :type taxons: List[str]
         :param organelle_types:
         :type organelle_types: List[V2reportsOrganelleType]
-        :param first_release_date: Only return organelle assemblies that were released on or after the specified date By default, do not filter.
+        :param first_release_date:
         :type first_release_date: datetime
-        :param last_release_date: Only return organelle assemblies that were released on or before to the specified date By default, do not filter.
+        :param last_release_date:
         :type last_release_date: datetime
         :param tax_exact_match: If true, only return assemblies with the given NCBI Taxonomy ID, or name. Otherwise, assemblies from taxonomy subtree are included, too.
         :type tax_exact_match: bool
@@ -875,8 +875,8 @@ class OrganelleApi:
         accessions: Annotated[List[StrictStr], Field(description="NCBI assembly accession")],
         taxons: Annotated[Optional[List[StrictStr]], Field(description="NCBI Taxonomy ID or name (common or scientific) at any taxonomic rank")] = None,
         organelle_types: Optional[List[V2reportsOrganelleType]] = None,
-        first_release_date: Annotated[Optional[datetime], Field(description="Only return organelle assemblies that were released on or after the specified date By default, do not filter.")] = None,
-        last_release_date: Annotated[Optional[datetime], Field(description="Only return organelle assemblies that were released on or before to the specified date By default, do not filter.")] = None,
+        first_release_date: Optional[datetime] = None,
+        last_release_date: Optional[datetime] = None,
         tax_exact_match: Annotated[Optional[StrictBool], Field(description="If true, only return assemblies with the given NCBI Taxonomy ID, or name. Otherwise, assemblies from taxonomy subtree are included, too.")] = None,
         sort_field: Optional[StrictStr] = None,
         sort_direction: Optional[V2SortDirection] = None,
@@ -906,9 +906,9 @@ class OrganelleApi:
         :type taxons: List[str]
         :param organelle_types:
         :type organelle_types: List[V2reportsOrganelleType]
-        :param first_release_date: Only return organelle assemblies that were released on or after the specified date By default, do not filter.
+        :param first_release_date:
         :type first_release_date: datetime
-        :param last_release_date: Only return organelle assemblies that were released on or before to the specified date By default, do not filter.
+        :param last_release_date:
         :type last_release_date: datetime
         :param tax_exact_match: If true, only return assemblies with the given NCBI Taxonomy ID, or name. Otherwise, assemblies from taxonomy subtree are included, too.
         :type tax_exact_match: bool
@@ -1388,8 +1388,8 @@ class OrganelleApi:
         self,
         taxons: Annotated[List[StrictStr], Field(description="NCBI Taxonomy ID or name (common or scientific) at any taxonomic rank")],
         organelle_types: Optional[List[V2reportsOrganelleType]] = None,
-        first_release_date: Annotated[Optional[datetime], Field(description="Only return organelle assemblies that were released on or after the specified date By default, do not filter.")] = None,
-        last_release_date: Annotated[Optional[datetime], Field(description="Only return organelle assemblies that were released on or before to the specified date By default, do not filter.")] = None,
+        first_release_date: Optional[datetime] = None,
+        last_release_date: Optional[datetime] = None,
         tax_exact_match: Annotated[Optional[StrictBool], Field(description="If true, only return assemblies with the given NCBI Taxonomy ID, or name. Otherwise, assemblies from taxonomy subtree are included, too.")] = None,
         sort_field: Optional[StrictStr] = None,
         sort_direction: Optional[V2SortDirection] = None,
@@ -1419,9 +1419,9 @@ class OrganelleApi:
         :type taxons: List[str]
         :param organelle_types:
         :type organelle_types: List[V2reportsOrganelleType]
-        :param first_release_date: Only return organelle assemblies that were released on or after the specified date By default, do not filter.
+        :param first_release_date:
         :type first_release_date: datetime
-        :param last_release_date: Only return organelle assemblies that were released on or before to the specified date By default, do not filter.
+        :param last_release_date:
         :type last_release_date: datetime
         :param tax_exact_match: If true, only return assemblies with the given NCBI Taxonomy ID, or name. Otherwise, assemblies from taxonomy subtree are included, too.
         :type tax_exact_match: bool
@@ -1499,8 +1499,8 @@ class OrganelleApi:
         self,
         taxons: Annotated[List[StrictStr], Field(description="NCBI Taxonomy ID or name (common or scientific) at any taxonomic rank")],
         organelle_types: Optional[List[V2reportsOrganelleType]] = None,
-        first_release_date: Annotated[Optional[datetime], Field(description="Only return organelle assemblies that were released on or after the specified date By default, do not filter.")] = None,
-        last_release_date: Annotated[Optional[datetime], Field(description="Only return organelle assemblies that were released on or before to the specified date By default, do not filter.")] = None,
+        first_release_date: Optional[datetime] = None,
+        last_release_date: Optional[datetime] = None,
         tax_exact_match: Annotated[Optional[StrictBool], Field(description="If true, only return assemblies with the given NCBI Taxonomy ID, or name. Otherwise, assemblies from taxonomy subtree are included, too.")] = None,
         sort_field: Optional[StrictStr] = None,
         sort_direction: Optional[V2SortDirection] = None,
@@ -1530,9 +1530,9 @@ class OrganelleApi:
         :type taxons: List[str]
         :param organelle_types:
         :type organelle_types: List[V2reportsOrganelleType]
-        :param first_release_date: Only return organelle assemblies that were released on or after the specified date By default, do not filter.
+        :param first_release_date:
         :type first_release_date: datetime
-        :param last_release_date: Only return organelle assemblies that were released on or before to the specified date By default, do not filter.
+        :param last_release_date:
         :type last_release_date: datetime
         :param tax_exact_match: If true, only return assemblies with the given NCBI Taxonomy ID, or name. Otherwise, assemblies from taxonomy subtree are included, too.
         :type tax_exact_match: bool
@@ -1610,8 +1610,8 @@ class OrganelleApi:
         self,
         taxons: Annotated[List[StrictStr], Field(description="NCBI Taxonomy ID or name (common or scientific) at any taxonomic rank")],
         organelle_types: Optional[List[V2reportsOrganelleType]] = None,
-        first_release_date: Annotated[Optional[datetime], Field(description="Only return organelle assemblies that were released on or after the specified date By default, do not filter.")] = None,
-        last_release_date: Annotated[Optional[datetime], Field(description="Only return organelle assemblies that were released on or before to the specified date By default, do not filter.")] = None,
+        first_release_date: Optional[datetime] = None,
+        last_release_date: Optional[datetime] = None,
         tax_exact_match: Annotated[Optional[StrictBool], Field(description="If true, only return assemblies with the given NCBI Taxonomy ID, or name. Otherwise, assemblies from taxonomy subtree are included, too.")] = None,
         sort_field: Optional[StrictStr] = None,
         sort_direction: Optional[V2SortDirection] = None,
@@ -1641,9 +1641,9 @@ class OrganelleApi:
         :type taxons: List[str]
         :param organelle_types:
         :type organelle_types: List[V2reportsOrganelleType]
-        :param first_release_date: Only return organelle assemblies that were released on or after the specified date By default, do not filter.
+        :param first_release_date:
         :type first_release_date: datetime
-        :param last_release_date: Only return organelle assemblies that were released on or before to the specified date By default, do not filter.
+        :param last_release_date:
         :type last_release_date: datetime
         :param tax_exact_match: If true, only return assemblies with the given NCBI Taxonomy ID, or name. Otherwise, assemblies from taxonomy subtree are included, too.
         :type tax_exact_match: bool

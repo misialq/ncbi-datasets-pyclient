@@ -60,8 +60,8 @@ class VirusApi:
         proteins: Annotated[List[StrictStr], Field(description="One or more SARS-CoV-2 protein names")],
         refseq_only: Annotated[Optional[StrictBool], Field(description="If true, limit results to RefSeq genomes.")] = None,
         annotated_only: Annotated[Optional[StrictBool], Field(description="If true, limit results to annotated genomes.")] = None,
-        released_since: Annotated[Optional[datetime], Field(description="Limit to genomes released on or after the specified date.")] = None,
-        updated_since: Annotated[Optional[datetime], Field(description="Limit to genomes updated on or after the specified date.")] = None,
+        released_since: Optional[datetime] = None,
+        updated_since: Optional[datetime] = None,
         host: Annotated[Optional[StrictStr], Field(description="Limit to genomes isolated from the specified host species (NCBI Taxonomy ID, common or scientific name).")] = None,
         pangolin_classification: Annotated[Optional[StrictStr], Field(description="Limit to SARS-CoV-2 genomes with the specified Pango lineage.")] = None,
         geo_location: Annotated[Optional[StrictStr], Field(description="Limit to genomes collected from the specififed geographic location.")] = None,
@@ -93,9 +93,9 @@ class VirusApi:
         :type refseq_only: bool
         :param annotated_only: If true, limit results to annotated genomes.
         :type annotated_only: bool
-        :param released_since: Limit to genomes released on or after the specified date.
+        :param released_since:
         :type released_since: datetime
-        :param updated_since: Limit to genomes updated on or after the specified date.
+        :param updated_since:
         :type updated_since: datetime
         :param host: Limit to genomes isolated from the specified host species (NCBI Taxonomy ID, common or scientific name).
         :type host: str
@@ -175,8 +175,8 @@ class VirusApi:
         proteins: Annotated[List[StrictStr], Field(description="One or more SARS-CoV-2 protein names")],
         refseq_only: Annotated[Optional[StrictBool], Field(description="If true, limit results to RefSeq genomes.")] = None,
         annotated_only: Annotated[Optional[StrictBool], Field(description="If true, limit results to annotated genomes.")] = None,
-        released_since: Annotated[Optional[datetime], Field(description="Limit to genomes released on or after the specified date.")] = None,
-        updated_since: Annotated[Optional[datetime], Field(description="Limit to genomes updated on or after the specified date.")] = None,
+        released_since: Optional[datetime] = None,
+        updated_since: Optional[datetime] = None,
         host: Annotated[Optional[StrictStr], Field(description="Limit to genomes isolated from the specified host species (NCBI Taxonomy ID, common or scientific name).")] = None,
         pangolin_classification: Annotated[Optional[StrictStr], Field(description="Limit to SARS-CoV-2 genomes with the specified Pango lineage.")] = None,
         geo_location: Annotated[Optional[StrictStr], Field(description="Limit to genomes collected from the specififed geographic location.")] = None,
@@ -208,9 +208,9 @@ class VirusApi:
         :type refseq_only: bool
         :param annotated_only: If true, limit results to annotated genomes.
         :type annotated_only: bool
-        :param released_since: Limit to genomes released on or after the specified date.
+        :param released_since:
         :type released_since: datetime
-        :param updated_since: Limit to genomes updated on or after the specified date.
+        :param updated_since:
         :type updated_since: datetime
         :param host: Limit to genomes isolated from the specified host species (NCBI Taxonomy ID, common or scientific name).
         :type host: str
@@ -290,8 +290,8 @@ class VirusApi:
         proteins: Annotated[List[StrictStr], Field(description="One or more SARS-CoV-2 protein names")],
         refseq_only: Annotated[Optional[StrictBool], Field(description="If true, limit results to RefSeq genomes.")] = None,
         annotated_only: Annotated[Optional[StrictBool], Field(description="If true, limit results to annotated genomes.")] = None,
-        released_since: Annotated[Optional[datetime], Field(description="Limit to genomes released on or after the specified date.")] = None,
-        updated_since: Annotated[Optional[datetime], Field(description="Limit to genomes updated on or after the specified date.")] = None,
+        released_since: Optional[datetime] = None,
+        updated_since: Optional[datetime] = None,
         host: Annotated[Optional[StrictStr], Field(description="Limit to genomes isolated from the specified host species (NCBI Taxonomy ID, common or scientific name).")] = None,
         pangolin_classification: Annotated[Optional[StrictStr], Field(description="Limit to SARS-CoV-2 genomes with the specified Pango lineage.")] = None,
         geo_location: Annotated[Optional[StrictStr], Field(description="Limit to genomes collected from the specififed geographic location.")] = None,
@@ -323,9 +323,9 @@ class VirusApi:
         :type refseq_only: bool
         :param annotated_only: If true, limit results to annotated genomes.
         :type annotated_only: bool
-        :param released_since: Limit to genomes released on or after the specified date.
+        :param released_since:
         :type released_since: datetime
-        :param updated_since: Limit to genomes updated on or after the specified date.
+        :param updated_since:
         :type updated_since: datetime
         :param host: Limit to genomes isolated from the specified host species (NCBI Taxonomy ID, common or scientific name).
         :type host: str
@@ -839,8 +839,8 @@ class VirusApi:
         proteins: Annotated[List[StrictStr], Field(description="One or more SARS-CoV-2 protein names")],
         refseq_only: Annotated[Optional[StrictBool], Field(description="If true, limit results to RefSeq genomes.")] = None,
         annotated_only: Annotated[Optional[StrictBool], Field(description="If true, limit results to annotated genomes.")] = None,
-        released_since: Annotated[Optional[datetime], Field(description="Limit to genomes released on or after the specified date.")] = None,
-        updated_since: Annotated[Optional[datetime], Field(description="Limit to genomes updated on or after the specified date.")] = None,
+        released_since: Optional[datetime] = None,
+        updated_since: Optional[datetime] = None,
         host: Annotated[Optional[StrictStr], Field(description="Limit to genomes isolated from the specified host species (NCBI Taxonomy ID, common or scientific name).")] = None,
         pangolin_classification: Annotated[Optional[StrictStr], Field(description="Limit to SARS-CoV-2 genomes with the specified Pango lineage.")] = None,
         geo_location: Annotated[Optional[StrictStr], Field(description="Limit to genomes collected from the specififed geographic location.")] = None,
@@ -871,9 +871,9 @@ class VirusApi:
         :type refseq_only: bool
         :param annotated_only: If true, limit results to annotated genomes.
         :type annotated_only: bool
-        :param released_since: Limit to genomes released on or after the specified date.
+        :param released_since:
         :type released_since: datetime
-        :param updated_since: Limit to genomes updated on or after the specified date.
+        :param updated_since:
         :type updated_since: datetime
         :param host: Limit to genomes isolated from the specified host species (NCBI Taxonomy ID, common or scientific name).
         :type host: str
@@ -950,8 +950,8 @@ class VirusApi:
         proteins: Annotated[List[StrictStr], Field(description="One or more SARS-CoV-2 protein names")],
         refseq_only: Annotated[Optional[StrictBool], Field(description="If true, limit results to RefSeq genomes.")] = None,
         annotated_only: Annotated[Optional[StrictBool], Field(description="If true, limit results to annotated genomes.")] = None,
-        released_since: Annotated[Optional[datetime], Field(description="Limit to genomes released on or after the specified date.")] = None,
-        updated_since: Annotated[Optional[datetime], Field(description="Limit to genomes updated on or after the specified date.")] = None,
+        released_since: Optional[datetime] = None,
+        updated_since: Optional[datetime] = None,
         host: Annotated[Optional[StrictStr], Field(description="Limit to genomes isolated from the specified host species (NCBI Taxonomy ID, common or scientific name).")] = None,
         pangolin_classification: Annotated[Optional[StrictStr], Field(description="Limit to SARS-CoV-2 genomes with the specified Pango lineage.")] = None,
         geo_location: Annotated[Optional[StrictStr], Field(description="Limit to genomes collected from the specififed geographic location.")] = None,
@@ -982,9 +982,9 @@ class VirusApi:
         :type refseq_only: bool
         :param annotated_only: If true, limit results to annotated genomes.
         :type annotated_only: bool
-        :param released_since: Limit to genomes released on or after the specified date.
+        :param released_since:
         :type released_since: datetime
-        :param updated_since: Limit to genomes updated on or after the specified date.
+        :param updated_since:
         :type updated_since: datetime
         :param host: Limit to genomes isolated from the specified host species (NCBI Taxonomy ID, common or scientific name).
         :type host: str
@@ -1061,8 +1061,8 @@ class VirusApi:
         proteins: Annotated[List[StrictStr], Field(description="One or more SARS-CoV-2 protein names")],
         refseq_only: Annotated[Optional[StrictBool], Field(description="If true, limit results to RefSeq genomes.")] = None,
         annotated_only: Annotated[Optional[StrictBool], Field(description="If true, limit results to annotated genomes.")] = None,
-        released_since: Annotated[Optional[datetime], Field(description="Limit to genomes released on or after the specified date.")] = None,
-        updated_since: Annotated[Optional[datetime], Field(description="Limit to genomes updated on or after the specified date.")] = None,
+        released_since: Optional[datetime] = None,
+        updated_since: Optional[datetime] = None,
         host: Annotated[Optional[StrictStr], Field(description="Limit to genomes isolated from the specified host species (NCBI Taxonomy ID, common or scientific name).")] = None,
         pangolin_classification: Annotated[Optional[StrictStr], Field(description="Limit to SARS-CoV-2 genomes with the specified Pango lineage.")] = None,
         geo_location: Annotated[Optional[StrictStr], Field(description="Limit to genomes collected from the specififed geographic location.")] = None,
@@ -1093,9 +1093,9 @@ class VirusApi:
         :type refseq_only: bool
         :param annotated_only: If true, limit results to annotated genomes.
         :type annotated_only: bool
-        :param released_since: Limit to genomes released on or after the specified date.
+        :param released_since:
         :type released_since: datetime
-        :param updated_since: Limit to genomes updated on or after the specified date.
+        :param updated_since:
         :type updated_since: datetime
         :param host: Limit to genomes isolated from the specified host species (NCBI Taxonomy ID, common or scientific name).
         :type host: str
@@ -1584,8 +1584,8 @@ class VirusApi:
         proteins: Annotated[List[StrictStr], Field(description="One or more SARS-CoV-2 protein names")],
         refseq_only: Annotated[Optional[StrictBool], Field(description="If true, limit results to RefSeq genomes.")] = None,
         annotated_only: Annotated[Optional[StrictBool], Field(description="If true, limit results to annotated genomes.")] = None,
-        released_since: Annotated[Optional[datetime], Field(description="Limit to genomes released on or after the specified date.")] = None,
-        updated_since: Annotated[Optional[datetime], Field(description="Limit to genomes updated on or after the specified date.")] = None,
+        released_since: Optional[datetime] = None,
+        updated_since: Optional[datetime] = None,
         host: Annotated[Optional[StrictStr], Field(description="Limit to genomes isolated from the specified host species (NCBI Taxonomy ID, common or scientific name).")] = None,
         pangolin_classification: Annotated[Optional[StrictStr], Field(description="Limit to SARS-CoV-2 genomes with the specified Pango lineage.")] = None,
         geo_location: Annotated[Optional[StrictStr], Field(description="Limit to genomes collected from the specififed geographic location.")] = None,
@@ -1616,9 +1616,9 @@ class VirusApi:
         :type refseq_only: bool
         :param annotated_only: If true, limit results to annotated genomes.
         :type annotated_only: bool
-        :param released_since: Limit to genomes released on or after the specified date.
+        :param released_since:
         :type released_since: datetime
-        :param updated_since: Limit to genomes updated on or after the specified date.
+        :param updated_since:
         :type updated_since: datetime
         :param host: Limit to genomes isolated from the specified host species (NCBI Taxonomy ID, common or scientific name).
         :type host: str
@@ -1695,8 +1695,8 @@ class VirusApi:
         proteins: Annotated[List[StrictStr], Field(description="One or more SARS-CoV-2 protein names")],
         refseq_only: Annotated[Optional[StrictBool], Field(description="If true, limit results to RefSeq genomes.")] = None,
         annotated_only: Annotated[Optional[StrictBool], Field(description="If true, limit results to annotated genomes.")] = None,
-        released_since: Annotated[Optional[datetime], Field(description="Limit to genomes released on or after the specified date.")] = None,
-        updated_since: Annotated[Optional[datetime], Field(description="Limit to genomes updated on or after the specified date.")] = None,
+        released_since: Optional[datetime] = None,
+        updated_since: Optional[datetime] = None,
         host: Annotated[Optional[StrictStr], Field(description="Limit to genomes isolated from the specified host species (NCBI Taxonomy ID, common or scientific name).")] = None,
         pangolin_classification: Annotated[Optional[StrictStr], Field(description="Limit to SARS-CoV-2 genomes with the specified Pango lineage.")] = None,
         geo_location: Annotated[Optional[StrictStr], Field(description="Limit to genomes collected from the specififed geographic location.")] = None,
@@ -1727,9 +1727,9 @@ class VirusApi:
         :type refseq_only: bool
         :param annotated_only: If true, limit results to annotated genomes.
         :type annotated_only: bool
-        :param released_since: Limit to genomes released on or after the specified date.
+        :param released_since:
         :type released_since: datetime
-        :param updated_since: Limit to genomes updated on or after the specified date.
+        :param updated_since:
         :type updated_since: datetime
         :param host: Limit to genomes isolated from the specified host species (NCBI Taxonomy ID, common or scientific name).
         :type host: str
@@ -1806,8 +1806,8 @@ class VirusApi:
         proteins: Annotated[List[StrictStr], Field(description="One or more SARS-CoV-2 protein names")],
         refseq_only: Annotated[Optional[StrictBool], Field(description="If true, limit results to RefSeq genomes.")] = None,
         annotated_only: Annotated[Optional[StrictBool], Field(description="If true, limit results to annotated genomes.")] = None,
-        released_since: Annotated[Optional[datetime], Field(description="Limit to genomes released on or after the specified date.")] = None,
-        updated_since: Annotated[Optional[datetime], Field(description="Limit to genomes updated on or after the specified date.")] = None,
+        released_since: Optional[datetime] = None,
+        updated_since: Optional[datetime] = None,
         host: Annotated[Optional[StrictStr], Field(description="Limit to genomes isolated from the specified host species (NCBI Taxonomy ID, common or scientific name).")] = None,
         pangolin_classification: Annotated[Optional[StrictStr], Field(description="Limit to SARS-CoV-2 genomes with the specified Pango lineage.")] = None,
         geo_location: Annotated[Optional[StrictStr], Field(description="Limit to genomes collected from the specififed geographic location.")] = None,
@@ -1838,9 +1838,9 @@ class VirusApi:
         :type refseq_only: bool
         :param annotated_only: If true, limit results to annotated genomes.
         :type annotated_only: bool
-        :param released_since: Limit to genomes released on or after the specified date.
+        :param released_since:
         :type released_since: datetime
-        :param updated_since: Limit to genomes updated on or after the specified date.
+        :param updated_since:
         :type updated_since: datetime
         :param host: Limit to genomes isolated from the specified host species (NCBI Taxonomy ID, common or scientific name).
         :type host: str
@@ -2591,8 +2591,8 @@ class VirusApi:
         accessions: Annotated[List[StrictStr], Field(description="One or more nucleotide sequence accessions")],
         filter_refseq_only: Annotated[Optional[StrictBool], Field(description="If true, limit to RefSeq genomes.")] = None,
         filter_annotated_only: Annotated[Optional[StrictBool], Field(description="If true, limit to annotated genomes.")] = None,
-        filter_released_since: Annotated[Optional[datetime], Field(description="Limit to genomes released on or after the specified date.")] = None,
-        filter_updated_since: Annotated[Optional[datetime], Field(description="Limit to genomes updated on or after the specified date.")] = None,
+        filter_released_since: Optional[datetime] = None,
+        filter_updated_since: Optional[datetime] = None,
         filter_host: Annotated[Optional[StrictStr], Field(description="Limit to genomes isolated from the specified host species (NCBI Taxonomy ID, common or scientific name).")] = None,
         filter_pangolin_classification: Annotated[Optional[StrictStr], Field(description="Limit to SARS-CoV-2 genomes from the specified Pango lineage.")] = None,
         filter_geo_location: Annotated[Optional[StrictStr], Field(description="Limit to genomes collected from the specififed geographic location.")] = None,
@@ -2624,9 +2624,9 @@ class VirusApi:
         :type filter_refseq_only: bool
         :param filter_annotated_only: If true, limit to annotated genomes.
         :type filter_annotated_only: bool
-        :param filter_released_since: Limit to genomes released on or after the specified date.
+        :param filter_released_since:
         :type filter_released_since: datetime
-        :param filter_updated_since: Limit to genomes updated on or after the specified date.
+        :param filter_updated_since:
         :type filter_updated_since: datetime
         :param filter_host: Limit to genomes isolated from the specified host species (NCBI Taxonomy ID, common or scientific name).
         :type filter_host: str
@@ -2706,8 +2706,8 @@ class VirusApi:
         accessions: Annotated[List[StrictStr], Field(description="One or more nucleotide sequence accessions")],
         filter_refseq_only: Annotated[Optional[StrictBool], Field(description="If true, limit to RefSeq genomes.")] = None,
         filter_annotated_only: Annotated[Optional[StrictBool], Field(description="If true, limit to annotated genomes.")] = None,
-        filter_released_since: Annotated[Optional[datetime], Field(description="Limit to genomes released on or after the specified date.")] = None,
-        filter_updated_since: Annotated[Optional[datetime], Field(description="Limit to genomes updated on or after the specified date.")] = None,
+        filter_released_since: Optional[datetime] = None,
+        filter_updated_since: Optional[datetime] = None,
         filter_host: Annotated[Optional[StrictStr], Field(description="Limit to genomes isolated from the specified host species (NCBI Taxonomy ID, common or scientific name).")] = None,
         filter_pangolin_classification: Annotated[Optional[StrictStr], Field(description="Limit to SARS-CoV-2 genomes from the specified Pango lineage.")] = None,
         filter_geo_location: Annotated[Optional[StrictStr], Field(description="Limit to genomes collected from the specififed geographic location.")] = None,
@@ -2739,9 +2739,9 @@ class VirusApi:
         :type filter_refseq_only: bool
         :param filter_annotated_only: If true, limit to annotated genomes.
         :type filter_annotated_only: bool
-        :param filter_released_since: Limit to genomes released on or after the specified date.
+        :param filter_released_since:
         :type filter_released_since: datetime
-        :param filter_updated_since: Limit to genomes updated on or after the specified date.
+        :param filter_updated_since:
         :type filter_updated_since: datetime
         :param filter_host: Limit to genomes isolated from the specified host species (NCBI Taxonomy ID, common or scientific name).
         :type filter_host: str
@@ -2821,8 +2821,8 @@ class VirusApi:
         accessions: Annotated[List[StrictStr], Field(description="One or more nucleotide sequence accessions")],
         filter_refseq_only: Annotated[Optional[StrictBool], Field(description="If true, limit to RefSeq genomes.")] = None,
         filter_annotated_only: Annotated[Optional[StrictBool], Field(description="If true, limit to annotated genomes.")] = None,
-        filter_released_since: Annotated[Optional[datetime], Field(description="Limit to genomes released on or after the specified date.")] = None,
-        filter_updated_since: Annotated[Optional[datetime], Field(description="Limit to genomes updated on or after the specified date.")] = None,
+        filter_released_since: Optional[datetime] = None,
+        filter_updated_since: Optional[datetime] = None,
         filter_host: Annotated[Optional[StrictStr], Field(description="Limit to genomes isolated from the specified host species (NCBI Taxonomy ID, common or scientific name).")] = None,
         filter_pangolin_classification: Annotated[Optional[StrictStr], Field(description="Limit to SARS-CoV-2 genomes from the specified Pango lineage.")] = None,
         filter_geo_location: Annotated[Optional[StrictStr], Field(description="Limit to genomes collected from the specififed geographic location.")] = None,
@@ -2854,9 +2854,9 @@ class VirusApi:
         :type filter_refseq_only: bool
         :param filter_annotated_only: If true, limit to annotated genomes.
         :type filter_annotated_only: bool
-        :param filter_released_since: Limit to genomes released on or after the specified date.
+        :param filter_released_since:
         :type filter_released_since: datetime
-        :param filter_updated_since: Limit to genomes updated on or after the specified date.
+        :param filter_updated_since:
         :type filter_updated_since: datetime
         :param filter_host: Limit to genomes isolated from the specified host species (NCBI Taxonomy ID, common or scientific name).
         :type filter_host: str
@@ -3356,8 +3356,8 @@ class VirusApi:
         taxon: Annotated[StrictStr, Field(description="NCBI Taxonomy ID or name (common or scientific) at any taxonomic rank")],
         filter_refseq_only: Annotated[Optional[StrictBool], Field(description="If true, limit to RefSeq genomes.")] = None,
         filter_annotated_only: Annotated[Optional[StrictBool], Field(description="If true, limit to annotated genomes.")] = None,
-        filter_released_since: Annotated[Optional[datetime], Field(description="Limit to genomes released on or after the specified date.")] = None,
-        filter_updated_since: Annotated[Optional[datetime], Field(description="Limit to genomes updated on or after the specified date.")] = None,
+        filter_released_since: Optional[datetime] = None,
+        filter_updated_since: Optional[datetime] = None,
         filter_host: Annotated[Optional[StrictStr], Field(description="Limit to genomes isolated from the specified host species (NCBI Taxonomy ID, common or scientific name).")] = None,
         filter_pangolin_classification: Annotated[Optional[StrictStr], Field(description="Limit to SARS-CoV-2 genomes from the specified Pango lineage.")] = None,
         filter_geo_location: Annotated[Optional[StrictStr], Field(description="Limit to genomes collected from the specififed geographic location.")] = None,
@@ -3389,9 +3389,9 @@ class VirusApi:
         :type filter_refseq_only: bool
         :param filter_annotated_only: If true, limit to annotated genomes.
         :type filter_annotated_only: bool
-        :param filter_released_since: Limit to genomes released on or after the specified date.
+        :param filter_released_since:
         :type filter_released_since: datetime
-        :param filter_updated_since: Limit to genomes updated on or after the specified date.
+        :param filter_updated_since:
         :type filter_updated_since: datetime
         :param filter_host: Limit to genomes isolated from the specified host species (NCBI Taxonomy ID, common or scientific name).
         :type filter_host: str
@@ -3471,8 +3471,8 @@ class VirusApi:
         taxon: Annotated[StrictStr, Field(description="NCBI Taxonomy ID or name (common or scientific) at any taxonomic rank")],
         filter_refseq_only: Annotated[Optional[StrictBool], Field(description="If true, limit to RefSeq genomes.")] = None,
         filter_annotated_only: Annotated[Optional[StrictBool], Field(description="If true, limit to annotated genomes.")] = None,
-        filter_released_since: Annotated[Optional[datetime], Field(description="Limit to genomes released on or after the specified date.")] = None,
-        filter_updated_since: Annotated[Optional[datetime], Field(description="Limit to genomes updated on or after the specified date.")] = None,
+        filter_released_since: Optional[datetime] = None,
+        filter_updated_since: Optional[datetime] = None,
         filter_host: Annotated[Optional[StrictStr], Field(description="Limit to genomes isolated from the specified host species (NCBI Taxonomy ID, common or scientific name).")] = None,
         filter_pangolin_classification: Annotated[Optional[StrictStr], Field(description="Limit to SARS-CoV-2 genomes from the specified Pango lineage.")] = None,
         filter_geo_location: Annotated[Optional[StrictStr], Field(description="Limit to genomes collected from the specififed geographic location.")] = None,
@@ -3504,9 +3504,9 @@ class VirusApi:
         :type filter_refseq_only: bool
         :param filter_annotated_only: If true, limit to annotated genomes.
         :type filter_annotated_only: bool
-        :param filter_released_since: Limit to genomes released on or after the specified date.
+        :param filter_released_since:
         :type filter_released_since: datetime
-        :param filter_updated_since: Limit to genomes updated on or after the specified date.
+        :param filter_updated_since:
         :type filter_updated_since: datetime
         :param filter_host: Limit to genomes isolated from the specified host species (NCBI Taxonomy ID, common or scientific name).
         :type filter_host: str
@@ -3586,8 +3586,8 @@ class VirusApi:
         taxon: Annotated[StrictStr, Field(description="NCBI Taxonomy ID or name (common or scientific) at any taxonomic rank")],
         filter_refseq_only: Annotated[Optional[StrictBool], Field(description="If true, limit to RefSeq genomes.")] = None,
         filter_annotated_only: Annotated[Optional[StrictBool], Field(description="If true, limit to annotated genomes.")] = None,
-        filter_released_since: Annotated[Optional[datetime], Field(description="Limit to genomes released on or after the specified date.")] = None,
-        filter_updated_since: Annotated[Optional[datetime], Field(description="Limit to genomes updated on or after the specified date.")] = None,
+        filter_released_since: Optional[datetime] = None,
+        filter_updated_since: Optional[datetime] = None,
         filter_host: Annotated[Optional[StrictStr], Field(description="Limit to genomes isolated from the specified host species (NCBI Taxonomy ID, common or scientific name).")] = None,
         filter_pangolin_classification: Annotated[Optional[StrictStr], Field(description="Limit to SARS-CoV-2 genomes from the specified Pango lineage.")] = None,
         filter_geo_location: Annotated[Optional[StrictStr], Field(description="Limit to genomes collected from the specififed geographic location.")] = None,
@@ -3619,9 +3619,9 @@ class VirusApi:
         :type filter_refseq_only: bool
         :param filter_annotated_only: If true, limit to annotated genomes.
         :type filter_annotated_only: bool
-        :param filter_released_since: Limit to genomes released on or after the specified date.
+        :param filter_released_since:
         :type filter_released_since: datetime
-        :param filter_updated_since: Limit to genomes updated on or after the specified date.
+        :param filter_updated_since:
         :type filter_updated_since: datetime
         :param filter_host: Limit to genomes isolated from the specified host species (NCBI Taxonomy ID, common or scientific name).
         :type filter_host: str
@@ -3843,8 +3843,8 @@ class VirusApi:
         taxon: Annotated[StrictStr, Field(description="NCBI Taxonomy ID or name (common or scientific) at any taxonomic rank")],
         refseq_only: Annotated[Optional[StrictBool], Field(description="If true, limit results to RefSeq genomes.")] = None,
         annotated_only: Annotated[Optional[StrictBool], Field(description="If true, limit results to annotated genomes.")] = None,
-        released_since: Annotated[Optional[datetime], Field(description="Limit to genomes released on or after the specified date.")] = None,
-        updated_since: Annotated[Optional[datetime], Field(description="Limit to genomes updated on or after the specified date.")] = None,
+        released_since: Optional[datetime] = None,
+        updated_since: Optional[datetime] = None,
         host: Annotated[Optional[StrictStr], Field(description="Limit to genomes isolated from the specified host species (NCBI Taxonomy ID, common or scientific name).")] = None,
         pangolin_classification: Annotated[Optional[StrictStr], Field(description="Limit to SARS-CoV-2 genomes from the specified Pango lineage.")] = None,
         geo_location: Annotated[Optional[StrictStr], Field(description="Limit to genomes collected from the specified geographic location.")] = None,
@@ -3877,9 +3877,9 @@ class VirusApi:
         :type refseq_only: bool
         :param annotated_only: If true, limit results to annotated genomes.
         :type annotated_only: bool
-        :param released_since: Limit to genomes released on or after the specified date.
+        :param released_since:
         :type released_since: datetime
-        :param updated_since: Limit to genomes updated on or after the specified date.
+        :param updated_since:
         :type updated_since: datetime
         :param host: Limit to genomes isolated from the specified host species (NCBI Taxonomy ID, common or scientific name).
         :type host: str
@@ -3962,8 +3962,8 @@ class VirusApi:
         taxon: Annotated[StrictStr, Field(description="NCBI Taxonomy ID or name (common or scientific) at any taxonomic rank")],
         refseq_only: Annotated[Optional[StrictBool], Field(description="If true, limit results to RefSeq genomes.")] = None,
         annotated_only: Annotated[Optional[StrictBool], Field(description="If true, limit results to annotated genomes.")] = None,
-        released_since: Annotated[Optional[datetime], Field(description="Limit to genomes released on or after the specified date.")] = None,
-        updated_since: Annotated[Optional[datetime], Field(description="Limit to genomes updated on or after the specified date.")] = None,
+        released_since: Optional[datetime] = None,
+        updated_since: Optional[datetime] = None,
         host: Annotated[Optional[StrictStr], Field(description="Limit to genomes isolated from the specified host species (NCBI Taxonomy ID, common or scientific name).")] = None,
         pangolin_classification: Annotated[Optional[StrictStr], Field(description="Limit to SARS-CoV-2 genomes from the specified Pango lineage.")] = None,
         geo_location: Annotated[Optional[StrictStr], Field(description="Limit to genomes collected from the specified geographic location.")] = None,
@@ -3996,9 +3996,9 @@ class VirusApi:
         :type refseq_only: bool
         :param annotated_only: If true, limit results to annotated genomes.
         :type annotated_only: bool
-        :param released_since: Limit to genomes released on or after the specified date.
+        :param released_since:
         :type released_since: datetime
-        :param updated_since: Limit to genomes updated on or after the specified date.
+        :param updated_since:
         :type updated_since: datetime
         :param host: Limit to genomes isolated from the specified host species (NCBI Taxonomy ID, common or scientific name).
         :type host: str
@@ -4081,8 +4081,8 @@ class VirusApi:
         taxon: Annotated[StrictStr, Field(description="NCBI Taxonomy ID or name (common or scientific) at any taxonomic rank")],
         refseq_only: Annotated[Optional[StrictBool], Field(description="If true, limit results to RefSeq genomes.")] = None,
         annotated_only: Annotated[Optional[StrictBool], Field(description="If true, limit results to annotated genomes.")] = None,
-        released_since: Annotated[Optional[datetime], Field(description="Limit to genomes released on or after the specified date.")] = None,
-        updated_since: Annotated[Optional[datetime], Field(description="Limit to genomes updated on or after the specified date.")] = None,
+        released_since: Optional[datetime] = None,
+        updated_since: Optional[datetime] = None,
         host: Annotated[Optional[StrictStr], Field(description="Limit to genomes isolated from the specified host species (NCBI Taxonomy ID, common or scientific name).")] = None,
         pangolin_classification: Annotated[Optional[StrictStr], Field(description="Limit to SARS-CoV-2 genomes from the specified Pango lineage.")] = None,
         geo_location: Annotated[Optional[StrictStr], Field(description="Limit to genomes collected from the specified geographic location.")] = None,
@@ -4115,9 +4115,9 @@ class VirusApi:
         :type refseq_only: bool
         :param annotated_only: If true, limit results to annotated genomes.
         :type annotated_only: bool
-        :param released_since: Limit to genomes released on or after the specified date.
+        :param released_since:
         :type released_since: datetime
-        :param updated_since: Limit to genomes updated on or after the specified date.
+        :param updated_since:
         :type updated_since: datetime
         :param host: Limit to genomes isolated from the specified host species (NCBI Taxonomy ID, common or scientific name).
         :type host: str
@@ -4347,8 +4347,8 @@ class VirusApi:
         taxons: Annotated[Optional[List[StrictStr]], Field(description="NCBI Taxonomy IDs or names (common or scientific) at any taxonomic rank")] = None,
         refseq_only: Annotated[Optional[StrictBool], Field(description="If true, limit results to RefSeq genomes.")] = None,
         annotated_only: Annotated[Optional[StrictBool], Field(description="If true, limit results to annotated genomes.")] = None,
-        released_since: Annotated[Optional[datetime], Field(description="Limit to genomes released on or after the specified date.")] = None,
-        updated_since: Annotated[Optional[datetime], Field(description="Limit to genomes updated on or after the specified date.")] = None,
+        released_since: Optional[datetime] = None,
+        updated_since: Optional[datetime] = None,
         host: Annotated[Optional[StrictStr], Field(description="Limit to genomes isolated from the specified host species (NCBI Taxonomy ID, common or scientific name).")] = None,
         pangolin_classification: Annotated[Optional[StrictStr], Field(description="Limit to SARS-CoV-2 genomes from the specified Pango lineage.")] = None,
         geo_location: Annotated[Optional[StrictStr], Field(description="Limit to genomes collected from the specified geographic location.")] = None,
@@ -4383,9 +4383,9 @@ class VirusApi:
         :type refseq_only: bool
         :param annotated_only: If true, limit results to annotated genomes.
         :type annotated_only: bool
-        :param released_since: Limit to genomes released on or after the specified date.
+        :param released_since:
         :type released_since: datetime
-        :param updated_since: Limit to genomes updated on or after the specified date.
+        :param updated_since:
         :type updated_since: datetime
         :param host: Limit to genomes isolated from the specified host species (NCBI Taxonomy ID, common or scientific name).
         :type host: str
@@ -4470,8 +4470,8 @@ class VirusApi:
         taxons: Annotated[Optional[List[StrictStr]], Field(description="NCBI Taxonomy IDs or names (common or scientific) at any taxonomic rank")] = None,
         refseq_only: Annotated[Optional[StrictBool], Field(description="If true, limit results to RefSeq genomes.")] = None,
         annotated_only: Annotated[Optional[StrictBool], Field(description="If true, limit results to annotated genomes.")] = None,
-        released_since: Annotated[Optional[datetime], Field(description="Limit to genomes released on or after the specified date.")] = None,
-        updated_since: Annotated[Optional[datetime], Field(description="Limit to genomes updated on or after the specified date.")] = None,
+        released_since: Optional[datetime] = None,
+        updated_since: Optional[datetime] = None,
         host: Annotated[Optional[StrictStr], Field(description="Limit to genomes isolated from the specified host species (NCBI Taxonomy ID, common or scientific name).")] = None,
         pangolin_classification: Annotated[Optional[StrictStr], Field(description="Limit to SARS-CoV-2 genomes from the specified Pango lineage.")] = None,
         geo_location: Annotated[Optional[StrictStr], Field(description="Limit to genomes collected from the specified geographic location.")] = None,
@@ -4506,9 +4506,9 @@ class VirusApi:
         :type refseq_only: bool
         :param annotated_only: If true, limit results to annotated genomes.
         :type annotated_only: bool
-        :param released_since: Limit to genomes released on or after the specified date.
+        :param released_since:
         :type released_since: datetime
-        :param updated_since: Limit to genomes updated on or after the specified date.
+        :param updated_since:
         :type updated_since: datetime
         :param host: Limit to genomes isolated from the specified host species (NCBI Taxonomy ID, common or scientific name).
         :type host: str
@@ -4593,8 +4593,8 @@ class VirusApi:
         taxons: Annotated[Optional[List[StrictStr]], Field(description="NCBI Taxonomy IDs or names (common or scientific) at any taxonomic rank")] = None,
         refseq_only: Annotated[Optional[StrictBool], Field(description="If true, limit results to RefSeq genomes.")] = None,
         annotated_only: Annotated[Optional[StrictBool], Field(description="If true, limit results to annotated genomes.")] = None,
-        released_since: Annotated[Optional[datetime], Field(description="Limit to genomes released on or after the specified date.")] = None,
-        updated_since: Annotated[Optional[datetime], Field(description="Limit to genomes updated on or after the specified date.")] = None,
+        released_since: Optional[datetime] = None,
+        updated_since: Optional[datetime] = None,
         host: Annotated[Optional[StrictStr], Field(description="Limit to genomes isolated from the specified host species (NCBI Taxonomy ID, common or scientific name).")] = None,
         pangolin_classification: Annotated[Optional[StrictStr], Field(description="Limit to SARS-CoV-2 genomes from the specified Pango lineage.")] = None,
         geo_location: Annotated[Optional[StrictStr], Field(description="Limit to genomes collected from the specified geographic location.")] = None,
@@ -4629,9 +4629,9 @@ class VirusApi:
         :type refseq_only: bool
         :param annotated_only: If true, limit results to annotated genomes.
         :type annotated_only: bool
-        :param released_since: Limit to genomes released on or after the specified date.
+        :param released_since:
         :type released_since: datetime
-        :param updated_since: Limit to genomes updated on or after the specified date.
+        :param updated_since:
         :type updated_since: datetime
         :param host: Limit to genomes isolated from the specified host species (NCBI Taxonomy ID, common or scientific name).
         :type host: str
@@ -5161,8 +5161,8 @@ class VirusApi:
         accessions: Annotated[Optional[List[StrictStr]], Field(description="One or more nucleotide sequence accessions")] = None,
         refseq_only: Annotated[Optional[StrictBool], Field(description="If true, limit results to RefSeq genomes.")] = None,
         annotated_only: Annotated[Optional[StrictBool], Field(description="If true, limit results to annotated genomes.")] = None,
-        released_since: Annotated[Optional[datetime], Field(description="Limit to genomes released on or after the specified date.")] = None,
-        updated_since: Annotated[Optional[datetime], Field(description="Limit to genomes updated on or after the specified date.")] = None,
+        released_since: Optional[datetime] = None,
+        updated_since: Optional[datetime] = None,
         host: Annotated[Optional[StrictStr], Field(description="Limit to genomes isolated from the specified host species (NCBI Taxonomy ID, common or scientific name).")] = None,
         pangolin_classification: Annotated[Optional[StrictStr], Field(description="Limit to SARS-CoV-2 genomes from the specified Pango lineage.")] = None,
         geo_location: Annotated[Optional[StrictStr], Field(description="Limit to genomes collected from the specified geographic location.")] = None,
@@ -5195,9 +5195,9 @@ class VirusApi:
         :type refseq_only: bool
         :param annotated_only: If true, limit results to annotated genomes.
         :type annotated_only: bool
-        :param released_since: Limit to genomes released on or after the specified date.
+        :param released_since:
         :type released_since: datetime
-        :param updated_since: Limit to genomes updated on or after the specified date.
+        :param updated_since:
         :type updated_since: datetime
         :param host: Limit to genomes isolated from the specified host species (NCBI Taxonomy ID, common or scientific name).
         :type host: str
@@ -5276,8 +5276,8 @@ class VirusApi:
         accessions: Annotated[Optional[List[StrictStr]], Field(description="One or more nucleotide sequence accessions")] = None,
         refseq_only: Annotated[Optional[StrictBool], Field(description="If true, limit results to RefSeq genomes.")] = None,
         annotated_only: Annotated[Optional[StrictBool], Field(description="If true, limit results to annotated genomes.")] = None,
-        released_since: Annotated[Optional[datetime], Field(description="Limit to genomes released on or after the specified date.")] = None,
-        updated_since: Annotated[Optional[datetime], Field(description="Limit to genomes updated on or after the specified date.")] = None,
+        released_since: Optional[datetime] = None,
+        updated_since: Optional[datetime] = None,
         host: Annotated[Optional[StrictStr], Field(description="Limit to genomes isolated from the specified host species (NCBI Taxonomy ID, common or scientific name).")] = None,
         pangolin_classification: Annotated[Optional[StrictStr], Field(description="Limit to SARS-CoV-2 genomes from the specified Pango lineage.")] = None,
         geo_location: Annotated[Optional[StrictStr], Field(description="Limit to genomes collected from the specified geographic location.")] = None,
@@ -5310,9 +5310,9 @@ class VirusApi:
         :type refseq_only: bool
         :param annotated_only: If true, limit results to annotated genomes.
         :type annotated_only: bool
-        :param released_since: Limit to genomes released on or after the specified date.
+        :param released_since:
         :type released_since: datetime
-        :param updated_since: Limit to genomes updated on or after the specified date.
+        :param updated_since:
         :type updated_since: datetime
         :param host: Limit to genomes isolated from the specified host species (NCBI Taxonomy ID, common or scientific name).
         :type host: str
@@ -5391,8 +5391,8 @@ class VirusApi:
         accessions: Annotated[Optional[List[StrictStr]], Field(description="One or more nucleotide sequence accessions")] = None,
         refseq_only: Annotated[Optional[StrictBool], Field(description="If true, limit results to RefSeq genomes.")] = None,
         annotated_only: Annotated[Optional[StrictBool], Field(description="If true, limit results to annotated genomes.")] = None,
-        released_since: Annotated[Optional[datetime], Field(description="Limit to genomes released on or after the specified date.")] = None,
-        updated_since: Annotated[Optional[datetime], Field(description="Limit to genomes updated on or after the specified date.")] = None,
+        released_since: Optional[datetime] = None,
+        updated_since: Optional[datetime] = None,
         host: Annotated[Optional[StrictStr], Field(description="Limit to genomes isolated from the specified host species (NCBI Taxonomy ID, common or scientific name).")] = None,
         pangolin_classification: Annotated[Optional[StrictStr], Field(description="Limit to SARS-CoV-2 genomes from the specified Pango lineage.")] = None,
         geo_location: Annotated[Optional[StrictStr], Field(description="Limit to genomes collected from the specified geographic location.")] = None,
@@ -5425,9 +5425,9 @@ class VirusApi:
         :type refseq_only: bool
         :param annotated_only: If true, limit results to annotated genomes.
         :type annotated_only: bool
-        :param released_since: Limit to genomes released on or after the specified date.
+        :param released_since:
         :type released_since: datetime
-        :param updated_since: Limit to genomes updated on or after the specified date.
+        :param updated_since:
         :type updated_since: datetime
         :param host: Limit to genomes isolated from the specified host species (NCBI Taxonomy ID, common or scientific name).
         :type host: str
@@ -5923,8 +5923,8 @@ class VirusApi:
         accessions: Annotated[Optional[List[StrictStr]], Field(description="One or more nucleotide sequence accessions")] = None,
         refseq_only: Annotated[Optional[StrictBool], Field(description="If true, limit results to RefSeq genomes.")] = None,
         annotated_only: Annotated[Optional[StrictBool], Field(description="If true, limit results to annotated genomes.")] = None,
-        released_since: Annotated[Optional[datetime], Field(description="Limit to genomes released on or after the specified date.")] = None,
-        updated_since: Annotated[Optional[datetime], Field(description="Limit to genomes updated on or after the specified date.")] = None,
+        released_since: Optional[datetime] = None,
+        updated_since: Optional[datetime] = None,
         host: Annotated[Optional[StrictStr], Field(description="Limit to genomes isolated from the specified host species (NCBI Taxonomy ID, common or scientific name).")] = None,
         pangolin_classification: Annotated[Optional[StrictStr], Field(description="Limit to SARS-CoV-2 genomes from the specified Pango lineage.")] = None,
         geo_location: Annotated[Optional[StrictStr], Field(description="Limit to genomes collected from the specified geographic location.")] = None,
@@ -5959,9 +5959,9 @@ class VirusApi:
         :type refseq_only: bool
         :param annotated_only: If true, limit results to annotated genomes.
         :type annotated_only: bool
-        :param released_since: Limit to genomes released on or after the specified date.
+        :param released_since:
         :type released_since: datetime
-        :param updated_since: Limit to genomes updated on or after the specified date.
+        :param updated_since:
         :type updated_since: datetime
         :param host: Limit to genomes isolated from the specified host species (NCBI Taxonomy ID, common or scientific name).
         :type host: str
@@ -6046,8 +6046,8 @@ class VirusApi:
         accessions: Annotated[Optional[List[StrictStr]], Field(description="One or more nucleotide sequence accessions")] = None,
         refseq_only: Annotated[Optional[StrictBool], Field(description="If true, limit results to RefSeq genomes.")] = None,
         annotated_only: Annotated[Optional[StrictBool], Field(description="If true, limit results to annotated genomes.")] = None,
-        released_since: Annotated[Optional[datetime], Field(description="Limit to genomes released on or after the specified date.")] = None,
-        updated_since: Annotated[Optional[datetime], Field(description="Limit to genomes updated on or after the specified date.")] = None,
+        released_since: Optional[datetime] = None,
+        updated_since: Optional[datetime] = None,
         host: Annotated[Optional[StrictStr], Field(description="Limit to genomes isolated from the specified host species (NCBI Taxonomy ID, common or scientific name).")] = None,
         pangolin_classification: Annotated[Optional[StrictStr], Field(description="Limit to SARS-CoV-2 genomes from the specified Pango lineage.")] = None,
         geo_location: Annotated[Optional[StrictStr], Field(description="Limit to genomes collected from the specified geographic location.")] = None,
@@ -6082,9 +6082,9 @@ class VirusApi:
         :type refseq_only: bool
         :param annotated_only: If true, limit results to annotated genomes.
         :type annotated_only: bool
-        :param released_since: Limit to genomes released on or after the specified date.
+        :param released_since:
         :type released_since: datetime
-        :param updated_since: Limit to genomes updated on or after the specified date.
+        :param updated_since:
         :type updated_since: datetime
         :param host: Limit to genomes isolated from the specified host species (NCBI Taxonomy ID, common or scientific name).
         :type host: str
@@ -6169,8 +6169,8 @@ class VirusApi:
         accessions: Annotated[Optional[List[StrictStr]], Field(description="One or more nucleotide sequence accessions")] = None,
         refseq_only: Annotated[Optional[StrictBool], Field(description="If true, limit results to RefSeq genomes.")] = None,
         annotated_only: Annotated[Optional[StrictBool], Field(description="If true, limit results to annotated genomes.")] = None,
-        released_since: Annotated[Optional[datetime], Field(description="Limit to genomes released on or after the specified date.")] = None,
-        updated_since: Annotated[Optional[datetime], Field(description="Limit to genomes updated on or after the specified date.")] = None,
+        released_since: Optional[datetime] = None,
+        updated_since: Optional[datetime] = None,
         host: Annotated[Optional[StrictStr], Field(description="Limit to genomes isolated from the specified host species (NCBI Taxonomy ID, common or scientific name).")] = None,
         pangolin_classification: Annotated[Optional[StrictStr], Field(description="Limit to SARS-CoV-2 genomes from the specified Pango lineage.")] = None,
         geo_location: Annotated[Optional[StrictStr], Field(description="Limit to genomes collected from the specified geographic location.")] = None,
@@ -6205,9 +6205,9 @@ class VirusApi:
         :type refseq_only: bool
         :param annotated_only: If true, limit results to annotated genomes.
         :type annotated_only: bool
-        :param released_since: Limit to genomes released on or after the specified date.
+        :param released_since:
         :type released_since: datetime
-        :param updated_since: Limit to genomes updated on or after the specified date.
+        :param updated_since:
         :type updated_since: datetime
         :param host: Limit to genomes isolated from the specified host species (NCBI Taxonomy ID, common or scientific name).
         :type host: str
@@ -6444,8 +6444,8 @@ class VirusApi:
         accessions: Annotated[List[StrictStr], Field(description="One or more nucleotide sequence accessions")],
         filter_refseq_only: Annotated[Optional[StrictBool], Field(description="If true, limit results to RefSeq genomes.")] = None,
         filter_annotated_only: Annotated[Optional[StrictBool], Field(description="If true, limit results to annotated genomes.")] = None,
-        filter_released_since: Annotated[Optional[datetime], Field(description="Limit to genomes released on or after the specified date.")] = None,
-        filter_updated_since: Annotated[Optional[datetime], Field(description="Limit to genomes updated on or after the specified date.")] = None,
+        filter_released_since: Optional[datetime] = None,
+        filter_updated_since: Optional[datetime] = None,
         filter_host: Annotated[Optional[StrictStr], Field(description="Limit to genomes isolated from the specified host species (NCBI Taxonomy ID, common or scientific name).")] = None,
         filter_pangolin_classification: Annotated[Optional[StrictStr], Field(description="Limit to SARS-CoV-2 genomes from the specified Pango lineage.")] = None,
         filter_geo_location: Annotated[Optional[StrictStr], Field(description="Limit to genomes collected from the specified geographic location.")] = None,
@@ -6478,9 +6478,9 @@ class VirusApi:
         :type filter_refseq_only: bool
         :param filter_annotated_only: If true, limit results to annotated genomes.
         :type filter_annotated_only: bool
-        :param filter_released_since: Limit to genomes released on or after the specified date.
+        :param filter_released_since:
         :type filter_released_since: datetime
-        :param filter_updated_since: Limit to genomes updated on or after the specified date.
+        :param filter_updated_since:
         :type filter_updated_since: datetime
         :param filter_host: Limit to genomes isolated from the specified host species (NCBI Taxonomy ID, common or scientific name).
         :type filter_host: str
@@ -6563,8 +6563,8 @@ class VirusApi:
         accessions: Annotated[List[StrictStr], Field(description="One or more nucleotide sequence accessions")],
         filter_refseq_only: Annotated[Optional[StrictBool], Field(description="If true, limit results to RefSeq genomes.")] = None,
         filter_annotated_only: Annotated[Optional[StrictBool], Field(description="If true, limit results to annotated genomes.")] = None,
-        filter_released_since: Annotated[Optional[datetime], Field(description="Limit to genomes released on or after the specified date.")] = None,
-        filter_updated_since: Annotated[Optional[datetime], Field(description="Limit to genomes updated on or after the specified date.")] = None,
+        filter_released_since: Optional[datetime] = None,
+        filter_updated_since: Optional[datetime] = None,
         filter_host: Annotated[Optional[StrictStr], Field(description="Limit to genomes isolated from the specified host species (NCBI Taxonomy ID, common or scientific name).")] = None,
         filter_pangolin_classification: Annotated[Optional[StrictStr], Field(description="Limit to SARS-CoV-2 genomes from the specified Pango lineage.")] = None,
         filter_geo_location: Annotated[Optional[StrictStr], Field(description="Limit to genomes collected from the specified geographic location.")] = None,
@@ -6597,9 +6597,9 @@ class VirusApi:
         :type filter_refseq_only: bool
         :param filter_annotated_only: If true, limit results to annotated genomes.
         :type filter_annotated_only: bool
-        :param filter_released_since: Limit to genomes released on or after the specified date.
+        :param filter_released_since:
         :type filter_released_since: datetime
-        :param filter_updated_since: Limit to genomes updated on or after the specified date.
+        :param filter_updated_since:
         :type filter_updated_since: datetime
         :param filter_host: Limit to genomes isolated from the specified host species (NCBI Taxonomy ID, common or scientific name).
         :type filter_host: str
@@ -6682,8 +6682,8 @@ class VirusApi:
         accessions: Annotated[List[StrictStr], Field(description="One or more nucleotide sequence accessions")],
         filter_refseq_only: Annotated[Optional[StrictBool], Field(description="If true, limit results to RefSeq genomes.")] = None,
         filter_annotated_only: Annotated[Optional[StrictBool], Field(description="If true, limit results to annotated genomes.")] = None,
-        filter_released_since: Annotated[Optional[datetime], Field(description="Limit to genomes released on or after the specified date.")] = None,
-        filter_updated_since: Annotated[Optional[datetime], Field(description="Limit to genomes updated on or after the specified date.")] = None,
+        filter_released_since: Optional[datetime] = None,
+        filter_updated_since: Optional[datetime] = None,
         filter_host: Annotated[Optional[StrictStr], Field(description="Limit to genomes isolated from the specified host species (NCBI Taxonomy ID, common or scientific name).")] = None,
         filter_pangolin_classification: Annotated[Optional[StrictStr], Field(description="Limit to SARS-CoV-2 genomes from the specified Pango lineage.")] = None,
         filter_geo_location: Annotated[Optional[StrictStr], Field(description="Limit to genomes collected from the specified geographic location.")] = None,
@@ -6716,9 +6716,9 @@ class VirusApi:
         :type filter_refseq_only: bool
         :param filter_annotated_only: If true, limit results to annotated genomes.
         :type filter_annotated_only: bool
-        :param filter_released_since: Limit to genomes released on or after the specified date.
+        :param filter_released_since:
         :type filter_released_since: datetime
-        :param filter_updated_since: Limit to genomes updated on or after the specified date.
+        :param filter_updated_since:
         :type filter_updated_since: datetime
         :param filter_host: Limit to genomes isolated from the specified host species (NCBI Taxonomy ID, common or scientific name).
         :type filter_host: str
@@ -7226,8 +7226,8 @@ class VirusApi:
         taxon: Annotated[StrictStr, Field(description="NCBI Taxonomy ID or name (common or scientific) at any taxonomic rank")],
         filter_refseq_only: Annotated[Optional[StrictBool], Field(description="If true, limit results to RefSeq genomes.")] = None,
         filter_annotated_only: Annotated[Optional[StrictBool], Field(description="If true, limit results to annotated genomes.")] = None,
-        filter_released_since: Annotated[Optional[datetime], Field(description="Limit to genomes released on or after the specified date.")] = None,
-        filter_updated_since: Annotated[Optional[datetime], Field(description="Limit to genomes updated on or after the specified date.")] = None,
+        filter_released_since: Optional[datetime] = None,
+        filter_updated_since: Optional[datetime] = None,
         filter_host: Annotated[Optional[StrictStr], Field(description="Limit to genomes isolated from the specified host species (NCBI Taxonomy ID, common or scientific name).")] = None,
         filter_pangolin_classification: Annotated[Optional[StrictStr], Field(description="Limit to SARS-CoV-2 genomes from the specified Pango lineage.")] = None,
         filter_geo_location: Annotated[Optional[StrictStr], Field(description="Limit to genomes collected from the specified geographic location.")] = None,
@@ -7260,9 +7260,9 @@ class VirusApi:
         :type filter_refseq_only: bool
         :param filter_annotated_only: If true, limit results to annotated genomes.
         :type filter_annotated_only: bool
-        :param filter_released_since: Limit to genomes released on or after the specified date.
+        :param filter_released_since:
         :type filter_released_since: datetime
-        :param filter_updated_since: Limit to genomes updated on or after the specified date.
+        :param filter_updated_since:
         :type filter_updated_since: datetime
         :param filter_host: Limit to genomes isolated from the specified host species (NCBI Taxonomy ID, common or scientific name).
         :type filter_host: str
@@ -7345,8 +7345,8 @@ class VirusApi:
         taxon: Annotated[StrictStr, Field(description="NCBI Taxonomy ID or name (common or scientific) at any taxonomic rank")],
         filter_refseq_only: Annotated[Optional[StrictBool], Field(description="If true, limit results to RefSeq genomes.")] = None,
         filter_annotated_only: Annotated[Optional[StrictBool], Field(description="If true, limit results to annotated genomes.")] = None,
-        filter_released_since: Annotated[Optional[datetime], Field(description="Limit to genomes released on or after the specified date.")] = None,
-        filter_updated_since: Annotated[Optional[datetime], Field(description="Limit to genomes updated on or after the specified date.")] = None,
+        filter_released_since: Optional[datetime] = None,
+        filter_updated_since: Optional[datetime] = None,
         filter_host: Annotated[Optional[StrictStr], Field(description="Limit to genomes isolated from the specified host species (NCBI Taxonomy ID, common or scientific name).")] = None,
         filter_pangolin_classification: Annotated[Optional[StrictStr], Field(description="Limit to SARS-CoV-2 genomes from the specified Pango lineage.")] = None,
         filter_geo_location: Annotated[Optional[StrictStr], Field(description="Limit to genomes collected from the specified geographic location.")] = None,
@@ -7379,9 +7379,9 @@ class VirusApi:
         :type filter_refseq_only: bool
         :param filter_annotated_only: If true, limit results to annotated genomes.
         :type filter_annotated_only: bool
-        :param filter_released_since: Limit to genomes released on or after the specified date.
+        :param filter_released_since:
         :type filter_released_since: datetime
-        :param filter_updated_since: Limit to genomes updated on or after the specified date.
+        :param filter_updated_since:
         :type filter_updated_since: datetime
         :param filter_host: Limit to genomes isolated from the specified host species (NCBI Taxonomy ID, common or scientific name).
         :type filter_host: str
@@ -7464,8 +7464,8 @@ class VirusApi:
         taxon: Annotated[StrictStr, Field(description="NCBI Taxonomy ID or name (common or scientific) at any taxonomic rank")],
         filter_refseq_only: Annotated[Optional[StrictBool], Field(description="If true, limit results to RefSeq genomes.")] = None,
         filter_annotated_only: Annotated[Optional[StrictBool], Field(description="If true, limit results to annotated genomes.")] = None,
-        filter_released_since: Annotated[Optional[datetime], Field(description="Limit to genomes released on or after the specified date.")] = None,
-        filter_updated_since: Annotated[Optional[datetime], Field(description="Limit to genomes updated on or after the specified date.")] = None,
+        filter_released_since: Optional[datetime] = None,
+        filter_updated_since: Optional[datetime] = None,
         filter_host: Annotated[Optional[StrictStr], Field(description="Limit to genomes isolated from the specified host species (NCBI Taxonomy ID, common or scientific name).")] = None,
         filter_pangolin_classification: Annotated[Optional[StrictStr], Field(description="Limit to SARS-CoV-2 genomes from the specified Pango lineage.")] = None,
         filter_geo_location: Annotated[Optional[StrictStr], Field(description="Limit to genomes collected from the specified geographic location.")] = None,
@@ -7498,9 +7498,9 @@ class VirusApi:
         :type filter_refseq_only: bool
         :param filter_annotated_only: If true, limit results to annotated genomes.
         :type filter_annotated_only: bool
-        :param filter_released_since: Limit to genomes released on or after the specified date.
+        :param filter_released_since:
         :type filter_released_since: datetime
-        :param filter_updated_since: Limit to genomes updated on or after the specified date.
+        :param filter_updated_since:
         :type filter_updated_since: datetime
         :param filter_host: Limit to genomes isolated from the specified host species (NCBI Taxonomy ID, common or scientific name).
         :type filter_host: str

@@ -225,8 +225,8 @@ with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
     accessions = ['NC_001643.1'] # List[str] | NCBI assembly accession
     taxons = ['9443'] # List[str] | NCBI Taxonomy ID or name (common or scientific) at any taxonomic rank (optional)
     organelle_types = [ncbi.datasets.openapi.V2reportsOrganelleType()] # List[V2reportsOrganelleType] |  (optional)
-    first_release_date = '2015-01-10T00:00:00Z' # datetime | Only return organelle assemblies that were released on or after the specified date By default, do not filter. (optional)
-    last_release_date = '2021-01-10T00:00:00Z' # datetime | Only return organelle assemblies that were released on or before to the specified date By default, do not filter. (optional)
+    first_release_date = '2015-01-10' # datetime |  (optional)
+    last_release_date = '2021-01-10' # datetime |  (optional)
     tax_exact_match = False # bool | If true, only return assemblies with the given NCBI Taxonomy ID, or name. Otherwise, assemblies from taxonomy subtree are included, too. (optional) (default to False)
     sort_field = 'sort_field_example' # str |  (optional)
     sort_direction = SORT_DIRECTION_UNSPECIFIED # V2SortDirection |  (optional) (default to SORT_DIRECTION_UNSPECIFIED)
@@ -253,8 +253,8 @@ Name | Type | Description  | Notes
  **accessions** | [**List[str]**](str.md)| NCBI assembly accession | 
  **taxons** | [**List[str]**](str.md)| NCBI Taxonomy ID or name (common or scientific) at any taxonomic rank | [optional] 
  **organelle_types** | [**List[V2reportsOrganelleType]**](V2reportsOrganelleType.md)|  | [optional] 
- **first_release_date** | **datetime**| Only return organelle assemblies that were released on or after the specified date By default, do not filter. | [optional] 
- **last_release_date** | **datetime**| Only return organelle assemblies that were released on or before to the specified date By default, do not filter. | [optional] 
+ **first_release_date** | **datetime**|  | [optional] 
+ **last_release_date** | **datetime**|  | [optional] 
  **tax_exact_match** | **bool**| If true, only return assemblies with the given NCBI Taxonomy ID, or name. Otherwise, assemblies from taxonomy subtree are included, too. | [optional] [default to False]
  **sort_field** | **str**|  | [optional] 
  **sort_direction** | [**V2SortDirection**](.md)|  | [optional] [default to SORT_DIRECTION_UNSPECIFIED]
@@ -410,8 +410,8 @@ with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
     api_instance = ncbi.datasets.openapi.OrganelleApi(api_client)
     taxons = ['9443'] # List[str] | NCBI Taxonomy ID or name (common or scientific) at any taxonomic rank
     organelle_types = [ncbi.datasets.openapi.V2reportsOrganelleType()] # List[V2reportsOrganelleType] |  (optional)
-    first_release_date = '2015-01-10T00:00:00Z' # datetime | Only return organelle assemblies that were released on or after the specified date By default, do not filter. (optional)
-    last_release_date = '2021-01-10T00:00:00Z' # datetime | Only return organelle assemblies that were released on or before to the specified date By default, do not filter. (optional)
+    first_release_date = '2015-01-10' # datetime |  (optional)
+    last_release_date = '2021-01-10' # datetime |  (optional)
     tax_exact_match = False # bool | If true, only return assemblies with the given NCBI Taxonomy ID, or name. Otherwise, assemblies from taxonomy subtree are included, too. (optional) (default to False)
     sort_field = 'sort_field_example' # str |  (optional)
     sort_direction = SORT_DIRECTION_UNSPECIFIED # V2SortDirection |  (optional) (default to SORT_DIRECTION_UNSPECIFIED)
@@ -439,8 +439,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **taxons** | [**List[str]**](str.md)| NCBI Taxonomy ID or name (common or scientific) at any taxonomic rank | 
  **organelle_types** | [**List[V2reportsOrganelleType]**](V2reportsOrganelleType.md)|  | [optional] 
- **first_release_date** | **datetime**| Only return organelle assemblies that were released on or after the specified date By default, do not filter. | [optional] 
- **last_release_date** | **datetime**| Only return organelle assemblies that were released on or before to the specified date By default, do not filter. | [optional] 
+ **first_release_date** | **datetime**|  | [optional] 
+ **last_release_date** | **datetime**|  | [optional] 
  **tax_exact_match** | **bool**| If true, only return assemblies with the given NCBI Taxonomy ID, or name. Otherwise, assemblies from taxonomy subtree are included, too. | [optional] [default to False]
  **sort_field** | **str**|  | [optional] 
  **sort_direction** | [**V2SortDirection**](.md)|  | [optional] [default to SORT_DIRECTION_UNSPECIFIED]

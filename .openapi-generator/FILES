@@ -14,6 +14,10 @@ docs/Ncbigsupgcolv2ChromosomeLocation.md
 docs/Ncbigsupgcolv2ChromosomeType.md
 docs/Ncbigsupgcolv2SequenceAccessionRequest.md
 docs/Ncbiprotddv2ChainFootprint.md
+docs/Ncbiprotddv2ParsedAbstract.md
+docs/Ncbiprotddv2ParsedAbstractAuthor.md
+docs/Ncbiprotddv2ParsedAbstractEpub.md
+docs/Ncbiprotddv2PubmedAbstractRequest.md
 docs/Ncbiprotddv2QueryStructureDefinition.md
 docs/Ncbiprotddv2RedundancyLevel.md
 docs/Ncbiprotddv2SdidRequest.md
@@ -325,6 +329,10 @@ ncbi/datasets/openapi/models/ncbigsupgcolv2_chromosome_location.py
 ncbi/datasets/openapi/models/ncbigsupgcolv2_chromosome_type.py
 ncbi/datasets/openapi/models/ncbigsupgcolv2_sequence_accession_request.py
 ncbi/datasets/openapi/models/ncbiprotddv2_chain_footprint.py
+ncbi/datasets/openapi/models/ncbiprotddv2_parsed_abstract.py
+ncbi/datasets/openapi/models/ncbiprotddv2_parsed_abstract_author.py
+ncbi/datasets/openapi/models/ncbiprotddv2_parsed_abstract_epub.py
+ncbi/datasets/openapi/models/ncbiprotddv2_pubmed_abstract_request.py
 ncbi/datasets/openapi/models/ncbiprotddv2_query_structure_definition.py
 ncbi/datasets/openapi/models/ncbiprotddv2_redundancy_level.py
 ncbi/datasets/openapi/models/ncbiprotddv2_sdid_request.py
@@ -613,11 +621,8 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_ncbigsupgcolv2_assembly_accessions_reply.py
-test/test_ncbigsupgcolv2_assembly_check_m_histogram_request.py
-test/test_ncbigsupgcolv2_assembly_data_report_draft_request.py
-test/test_ncbigsupgcolv2_assembly_data_reports_request.py
-test/test_ncbigsupgcolv2_chromosome_location.py
-test/test_ncbigsupgcolv2_chromosome_type.py
-test/test_ncbigsupgcolv2_sequence_accession_request.py
+test/test_ncbiprotddv2_parsed_abstract.py
+test/test_ncbiprotddv2_parsed_abstract_author.py
+test/test_ncbiprotddv2_parsed_abstract_epub.py
+test/test_ncbiprotddv2_pubmed_abstract_request.py
 tox.ini
