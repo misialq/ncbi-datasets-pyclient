@@ -621,8 +621,4 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_ncbiprotddv2_parsed_abstract.py
-test/test_ncbiprotddv2_parsed_abstract_author.py
-test/test_ncbiprotddv2_parsed_abstract_epub.py
-test/test_ncbiprotddv2_pubmed_abstract_request.py
 tox.ini
