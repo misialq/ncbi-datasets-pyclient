@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**pmid** | **str** |  | [optional] 
+**pmid** | **int** |  | [optional] 
 **title** | **str** |  | [optional] 
 **authors** | [**List[Ncbiprotddv2ParsedAbstractAuthor]**](Ncbiprotddv2ParsedAbstractAuthor.md) |  | [optional] 
 **epub** | [**Ncbiprotddv2ParsedAbstractEpub**](Ncbiprotddv2ParsedAbstractEpub.md) |  | [optional] 

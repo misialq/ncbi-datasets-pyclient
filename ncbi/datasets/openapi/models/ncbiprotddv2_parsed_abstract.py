@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
+from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from ncbi.datasets.openapi.models.ncbiprotddv2_parsed_abstract_author import Ncbiprotddv2ParsedAbstractAuthor
 from ncbi.datasets.openapi.models.ncbiprotddv2_parsed_abstract_epub import Ncbiprotddv2ParsedAbstractEpub
@@ -28,7 +28,7 @@ class Ncbiprotddv2ParsedAbstract(BaseModel):
     """
     Ncbiprotddv2ParsedAbstract
     """ # noqa: E501
-    pmid: Optional[StrictStr] = None
+    pmid: Optional[StrictInt] = None
     title: Optional[StrictStr] = None
     authors: Optional[List[Ncbiprotddv2ParsedAbstractAuthor]] = None
     epub: Optional[Ncbiprotddv2ParsedAbstractEpub] = None

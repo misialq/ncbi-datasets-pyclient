@@ -1,5 +1,3 @@
-# coding: utf-8
-
 """
     NCBI Datasets API
 
@@ -10,6 +8,7 @@
 
     Do not edit the class manually.
 """  # noqa: E501
+
 
 import warnings
 from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
@@ -52,8 +51,7 @@ class OrganelleApi:
     def download_organelle_package(
         self,
         accessions: Annotated[List[StrictStr], Field(description="NCBI organelle assembly accessions")],
-        exclude_sequence: Annotated[Optional[StrictBool], Field(description="Set to true to omit the genomic sequence.")] = None,
-        include_annotation_type: Annotated[Optional[List[V2AnnotationForOrganelleType]], Field(description="Select additional types of annotation to include in the data package.  If unset, no annotation is provided.")] = None,
+        include_annotation_type: Annotated[Optional[List[V2AnnotationForOrganelleType]], Field(description="Specify which sequence files to include in the data package.")] = None,
         filename: Annotated[Optional[StrictStr], Field(description="Output file name.")] = None,
         _request_timeout: Union[
             None,
@@ -68,15 +66,13 @@ class OrganelleApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> bytearray:
-        """Get a organelle data package by accesions
+        """Get an organelle data package by nucleotide accession
 
-        Download a organelle data report and annotation data package.
+        Download an organelle data package including sequence, annotation, and detailed data reports as a compressed zip archive.
 
         :param accessions: NCBI organelle assembly accessions (required)
         :type accessions: List[str]
-        :param exclude_sequence: Set to true to omit the genomic sequence.
-        :type exclude_sequence: bool
-        :param include_annotation_type: Select additional types of annotation to include in the data package.  If unset, no annotation is provided.
+        :param include_annotation_type: Specify which sequence files to include in the data package.
         :type include_annotation_type: List[V2AnnotationForOrganelleType]
         :param filename: Output file name.
         :type filename: str
@@ -104,7 +100,6 @@ class OrganelleApi:
 
         _param = self._download_organelle_package_serialize(
             accessions=accessions,
-            exclude_sequence=exclude_sequence,
             include_annotation_type=include_annotation_type,
             filename=filename,
             _request_auth=_request_auth,
@@ -131,8 +126,7 @@ class OrganelleApi:
     def download_organelle_package_with_http_info(
         self,
         accessions: Annotated[List[StrictStr], Field(description="NCBI organelle assembly accessions")],
-        exclude_sequence: Annotated[Optional[StrictBool], Field(description="Set to true to omit the genomic sequence.")] = None,
-        include_annotation_type: Annotated[Optional[List[V2AnnotationForOrganelleType]], Field(description="Select additional types of annotation to include in the data package.  If unset, no annotation is provided.")] = None,
+        include_annotation_type: Annotated[Optional[List[V2AnnotationForOrganelleType]], Field(description="Specify which sequence files to include in the data package.")] = None,
         filename: Annotated[Optional[StrictStr], Field(description="Output file name.")] = None,
         _request_timeout: Union[
             None,
@@ -147,15 +141,13 @@ class OrganelleApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[bytearray]:
-        """Get a organelle data package by accesions
+        """Get an organelle data package by nucleotide accession
 
-        Download a organelle data report and annotation data package.
+        Download an organelle data package including sequence, annotation, and detailed data reports as a compressed zip archive.
 
         :param accessions: NCBI organelle assembly accessions (required)
         :type accessions: List[str]
-        :param exclude_sequence: Set to true to omit the genomic sequence.
-        :type exclude_sequence: bool
-        :param include_annotation_type: Select additional types of annotation to include in the data package.  If unset, no annotation is provided.
+        :param include_annotation_type: Specify which sequence files to include in the data package.
         :type include_annotation_type: List[V2AnnotationForOrganelleType]
         :param filename: Output file name.
         :type filename: str
@@ -183,7 +175,6 @@ class OrganelleApi:
 
         _param = self._download_organelle_package_serialize(
             accessions=accessions,
-            exclude_sequence=exclude_sequence,
             include_annotation_type=include_annotation_type,
             filename=filename,
             _request_auth=_request_auth,
@@ -210,8 +201,7 @@ class OrganelleApi:
     def download_organelle_package_without_preload_content(
         self,
         accessions: Annotated[List[StrictStr], Field(description="NCBI organelle assembly accessions")],
-        exclude_sequence: Annotated[Optional[StrictBool], Field(description="Set to true to omit the genomic sequence.")] = None,
-        include_annotation_type: Annotated[Optional[List[V2AnnotationForOrganelleType]], Field(description="Select additional types of annotation to include in the data package.  If unset, no annotation is provided.")] = None,
+        include_annotation_type: Annotated[Optional[List[V2AnnotationForOrganelleType]], Field(description="Specify which sequence files to include in the data package.")] = None,
         filename: Annotated[Optional[StrictStr], Field(description="Output file name.")] = None,
         _request_timeout: Union[
             None,
@@ -226,15 +216,13 @@ class OrganelleApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Get a organelle data package by accesions
+        """Get an organelle data package by nucleotide accession
 
-        Download a organelle data report and annotation data package.
+        Download an organelle data package including sequence, annotation, and detailed data reports as a compressed zip archive.
 
         :param accessions: NCBI organelle assembly accessions (required)
         :type accessions: List[str]
-        :param exclude_sequence: Set to true to omit the genomic sequence.
-        :type exclude_sequence: bool
-        :param include_annotation_type: Select additional types of annotation to include in the data package.  If unset, no annotation is provided.
+        :param include_annotation_type: Specify which sequence files to include in the data package.
         :type include_annotation_type: List[V2AnnotationForOrganelleType]
         :param filename: Output file name.
         :type filename: str
@@ -262,7 +250,6 @@ class OrganelleApi:
 
         _param = self._download_organelle_package_serialize(
             accessions=accessions,
-            exclude_sequence=exclude_sequence,
             include_annotation_type=include_annotation_type,
             filename=filename,
             _request_auth=_request_auth,
@@ -284,7 +271,6 @@ class OrganelleApi:
     def _download_organelle_package_serialize(
         self,
         accessions,
-        exclude_sequence,
         include_annotation_type,
         filename,
         _request_auth,
@@ -313,10 +299,6 @@ class OrganelleApi:
         if accessions is not None:
             _path_params['accessions'] = accessions
         # process the query parameters
-        if exclude_sequence is not None:
-            
-            _query_params.append(('exclude_sequence', exclude_sequence))
-            
         if include_annotation_type is not None:
             
             _query_params.append(('include_annotation_type', include_annotation_type))
@@ -381,9 +363,9 @@ class OrganelleApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> bytearray:
-        """Get a organelle data package by post
+        """Get an organelle data package
 
-        Download a organelle report and annotation data package by post.
+        Download an organelle data package including sequence, annotation, and detailed data reports as a compressed zip archive.
 
         :param v2_organelle_download_request: (required)
         :type v2_organelle_download_request: V2OrganelleDownloadRequest
@@ -452,9 +434,9 @@ class OrganelleApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[bytearray]:
-        """Get a organelle data package by post
+        """Get an organelle data package
 
-        Download a organelle report and annotation data package by post.
+        Download an organelle data package including sequence, annotation, and detailed data reports as a compressed zip archive.
 
         :param v2_organelle_download_request: (required)
         :type v2_organelle_download_request: V2OrganelleDownloadRequest
@@ -523,9 +505,9 @@ class OrganelleApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Get a organelle data package by post
+        """Get an organelle data package
 
-        Download a organelle report and annotation data package by post.
+        Download an organelle data package including sequence, annotation, and detailed data reports as a compressed zip archive.
 
         :param v2_organelle_download_request: (required)
         :type v2_organelle_download_request: V2OrganelleDownloadRequest
@@ -658,17 +640,15 @@ class OrganelleApi:
     @validate_call
     def organelle_datareport_by_accession(
         self,
-        accessions: Annotated[List[StrictStr], Field(description="NCBI assembly accession")],
-        taxons: Annotated[Optional[List[StrictStr]], Field(description="NCBI Taxonomy ID or name (common or scientific) at any taxonomic rank")] = None,
-        organelle_types: Optional[List[V2reportsOrganelleType]] = None,
-        first_release_date: Optional[datetime] = None,
-        last_release_date: Optional[datetime] = None,
-        tax_exact_match: Annotated[Optional[StrictBool], Field(description="If true, only return assemblies with the given NCBI Taxonomy ID, or name. Otherwise, assemblies from taxonomy subtree are included, too.")] = None,
+        accessions: Annotated[List[StrictStr], Field(description="One or more organelle nucleotide accessions")],
+        organelle_types: Annotated[Optional[List[V2reportsOrganelleType]], Field(description="Limit results to the specified organelle types.")] = None,
+        first_release_date: Annotated[Optional[datetime], Field(description="Limit results to organelle genomes released on or after the specified date.")] = None,
+        last_release_date: Annotated[Optional[datetime], Field(description="Limit results to organelle genomes released on or before the specified date.")] = None,
         sort_field: Optional[StrictStr] = None,
         sort_direction: Optional[V2SortDirection] = None,
-        returned_content: Annotated[Optional[V2OrganelleMetadataRequestContentType], Field(description="Return either assembly accessions, or entire assembly-metadata records")] = None,
-        table_format: Annotated[Optional[V2OrganelleMetadataRequestOrganelleTableFormat], Field(description="Optional pre-defined template for processing a tabular data request")] = None,
-        include_tabular_header: Annotated[Optional[V2IncludeTabularHeader], Field(description="Whether this request for tabular data should include the header row")] = None,
+        returned_content: Annotated[Optional[V2OrganelleMetadataRequestContentType], Field(description="Return complete organelle reports or nucleotide accessions only.")] = None,
+        table_format: Annotated[Optional[V2OrganelleMetadataRequestOrganelleTableFormat], Field(description="Specify a predefined set of fields for the tabular report using built-in templates. Use of this parameter requires the HTTP header, `accept: text/tab-separated-values`.")] = None,
+        include_tabular_header: Annotated[Optional[V2IncludeTabularHeader], Field(description="Specify when to include the table header when requesting a tabular report.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -682,31 +662,27 @@ class OrganelleApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> V2reportsOrganelleDataReports:
-        """Get Organelle dataset report by accession
+        """Get an organelle data report by nucleotide accession
 
-        Get Organelle dataset report by accession.
+        Get an organelle data report in JSON format.
 
-        :param accessions: NCBI assembly accession (required)
+        :param accessions: One or more organelle nucleotide accessions (required)
         :type accessions: List[str]
-        :param taxons: NCBI Taxonomy ID or name (common or scientific) at any taxonomic rank
-        :type taxons: List[str]
-        :param organelle_types:
+        :param organelle_types: Limit results to the specified organelle types.
         :type organelle_types: List[V2reportsOrganelleType]
-        :param first_release_date:
+        :param first_release_date: Limit results to organelle genomes released on or after the specified date.
         :type first_release_date: datetime
-        :param last_release_date:
+        :param last_release_date: Limit results to organelle genomes released on or before the specified date.
         :type last_release_date: datetime
-        :param tax_exact_match: If true, only return assemblies with the given NCBI Taxonomy ID, or name. Otherwise, assemblies from taxonomy subtree are included, too.
-        :type tax_exact_match: bool
         :param sort_field:
         :type sort_field: str
         :param sort_direction:
         :type sort_direction: V2SortDirection
-        :param returned_content: Return either assembly accessions, or entire assembly-metadata records
+        :param returned_content: Return complete organelle reports or nucleotide accessions only.
         :type returned_content: V2OrganelleMetadataRequestContentType
-        :param table_format: Optional pre-defined template for processing a tabular data request
+        :param table_format: Specify a predefined set of fields for the tabular report using built-in templates. Use of this parameter requires the HTTP header, `accept: text/tab-separated-values`.
         :type table_format: V2OrganelleMetadataRequestOrganelleTableFormat
-        :param include_tabular_header: Whether this request for tabular data should include the header row
+        :param include_tabular_header: Specify when to include the table header when requesting a tabular report.
         :type include_tabular_header: V2IncludeTabularHeader
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -732,11 +708,9 @@ class OrganelleApi:
 
         _param = self._organelle_datareport_by_accession_serialize(
             accessions=accessions,
-            taxons=taxons,
             organelle_types=organelle_types,
             first_release_date=first_release_date,
             last_release_date=last_release_date,
-            tax_exact_match=tax_exact_match,
             sort_field=sort_field,
             sort_direction=sort_direction,
             returned_content=returned_content,
@@ -765,17 +739,15 @@ class OrganelleApi:
     @validate_call
     def organelle_datareport_by_accession_with_http_info(
         self,
-        accessions: Annotated[List[StrictStr], Field(description="NCBI assembly accession")],
-        taxons: Annotated[Optional[List[StrictStr]], Field(description="NCBI Taxonomy ID or name (common or scientific) at any taxonomic rank")] = None,
-        organelle_types: Optional[List[V2reportsOrganelleType]] = None,
-        first_release_date: Optional[datetime] = None,
-        last_release_date: Optional[datetime] = None,
-        tax_exact_match: Annotated[Optional[StrictBool], Field(description="If true, only return assemblies with the given NCBI Taxonomy ID, or name. Otherwise, assemblies from taxonomy subtree are included, too.")] = None,
+        accessions: Annotated[List[StrictStr], Field(description="One or more organelle nucleotide accessions")],
+        organelle_types: Annotated[Optional[List[V2reportsOrganelleType]], Field(description="Limit results to the specified organelle types.")] = None,
+        first_release_date: Annotated[Optional[datetime], Field(description="Limit results to organelle genomes released on or after the specified date.")] = None,
+        last_release_date: Annotated[Optional[datetime], Field(description="Limit results to organelle genomes released on or before the specified date.")] = None,
         sort_field: Optional[StrictStr] = None,
         sort_direction: Optional[V2SortDirection] = None,
-        returned_content: Annotated[Optional[V2OrganelleMetadataRequestContentType], Field(description="Return either assembly accessions, or entire assembly-metadata records")] = None,
-        table_format: Annotated[Optional[V2OrganelleMetadataRequestOrganelleTableFormat], Field(description="Optional pre-defined template for processing a tabular data request")] = None,
-        include_tabular_header: Annotated[Optional[V2IncludeTabularHeader], Field(description="Whether this request for tabular data should include the header row")] = None,
+        returned_content: Annotated[Optional[V2OrganelleMetadataRequestContentType], Field(description="Return complete organelle reports or nucleotide accessions only.")] = None,
+        table_format: Annotated[Optional[V2OrganelleMetadataRequestOrganelleTableFormat], Field(description="Specify a predefined set of fields for the tabular report using built-in templates. Use of this parameter requires the HTTP header, `accept: text/tab-separated-values`.")] = None,
+        include_tabular_header: Annotated[Optional[V2IncludeTabularHeader], Field(description="Specify when to include the table header when requesting a tabular report.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -789,31 +761,27 @@ class OrganelleApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[V2reportsOrganelleDataReports]:
-        """Get Organelle dataset report by accession
+        """Get an organelle data report by nucleotide accession
 
-        Get Organelle dataset report by accession.
+        Get an organelle data report in JSON format.
 
-        :param accessions: NCBI assembly accession (required)
+        :param accessions: One or more organelle nucleotide accessions (required)
         :type accessions: List[str]
-        :param taxons: NCBI Taxonomy ID or name (common or scientific) at any taxonomic rank
-        :type taxons: List[str]
-        :param organelle_types:
+        :param organelle_types: Limit results to the specified organelle types.
         :type organelle_types: List[V2reportsOrganelleType]
-        :param first_release_date:
+        :param first_release_date: Limit results to organelle genomes released on or after the specified date.
         :type first_release_date: datetime
-        :param last_release_date:
+        :param last_release_date: Limit results to organelle genomes released on or before the specified date.
         :type last_release_date: datetime
-        :param tax_exact_match: If true, only return assemblies with the given NCBI Taxonomy ID, or name. Otherwise, assemblies from taxonomy subtree are included, too.
-        :type tax_exact_match: bool
         :param sort_field:
         :type sort_field: str
         :param sort_direction:
         :type sort_direction: V2SortDirection
-        :param returned_content: Return either assembly accessions, or entire assembly-metadata records
+        :param returned_content: Return complete organelle reports or nucleotide accessions only.
         :type returned_content: V2OrganelleMetadataRequestContentType
-        :param table_format: Optional pre-defined template for processing a tabular data request
+        :param table_format: Specify a predefined set of fields for the tabular report using built-in templates. Use of this parameter requires the HTTP header, `accept: text/tab-separated-values`.
         :type table_format: V2OrganelleMetadataRequestOrganelleTableFormat
-        :param include_tabular_header: Whether this request for tabular data should include the header row
+        :param include_tabular_header: Specify when to include the table header when requesting a tabular report.
         :type include_tabular_header: V2IncludeTabularHeader
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -839,11 +807,9 @@ class OrganelleApi:
 
         _param = self._organelle_datareport_by_accession_serialize(
             accessions=accessions,
-            taxons=taxons,
             organelle_types=organelle_types,
             first_release_date=first_release_date,
             last_release_date=last_release_date,
-            tax_exact_match=tax_exact_match,
             sort_field=sort_field,
             sort_direction=sort_direction,
             returned_content=returned_content,
@@ -872,17 +838,15 @@ class OrganelleApi:
     @validate_call
     def organelle_datareport_by_accession_without_preload_content(
         self,
-        accessions: Annotated[List[StrictStr], Field(description="NCBI assembly accession")],
-        taxons: Annotated[Optional[List[StrictStr]], Field(description="NCBI Taxonomy ID or name (common or scientific) at any taxonomic rank")] = None,
-        organelle_types: Optional[List[V2reportsOrganelleType]] = None,
-        first_release_date: Optional[datetime] = None,
-        last_release_date: Optional[datetime] = None,
-        tax_exact_match: Annotated[Optional[StrictBool], Field(description="If true, only return assemblies with the given NCBI Taxonomy ID, or name. Otherwise, assemblies from taxonomy subtree are included, too.")] = None,
+        accessions: Annotated[List[StrictStr], Field(description="One or more organelle nucleotide accessions")],
+        organelle_types: Annotated[Optional[List[V2reportsOrganelleType]], Field(description="Limit results to the specified organelle types.")] = None,
+        first_release_date: Annotated[Optional[datetime], Field(description="Limit results to organelle genomes released on or after the specified date.")] = None,
+        last_release_date: Annotated[Optional[datetime], Field(description="Limit results to organelle genomes released on or before the specified date.")] = None,
         sort_field: Optional[StrictStr] = None,
         sort_direction: Optional[V2SortDirection] = None,
-        returned_content: Annotated[Optional[V2OrganelleMetadataRequestContentType], Field(description="Return either assembly accessions, or entire assembly-metadata records")] = None,
-        table_format: Annotated[Optional[V2OrganelleMetadataRequestOrganelleTableFormat], Field(description="Optional pre-defined template for processing a tabular data request")] = None,
-        include_tabular_header: Annotated[Optional[V2IncludeTabularHeader], Field(description="Whether this request for tabular data should include the header row")] = None,
+        returned_content: Annotated[Optional[V2OrganelleMetadataRequestContentType], Field(description="Return complete organelle reports or nucleotide accessions only.")] = None,
+        table_format: Annotated[Optional[V2OrganelleMetadataRequestOrganelleTableFormat], Field(description="Specify a predefined set of fields for the tabular report using built-in templates. Use of this parameter requires the HTTP header, `accept: text/tab-separated-values`.")] = None,
+        include_tabular_header: Annotated[Optional[V2IncludeTabularHeader], Field(description="Specify when to include the table header when requesting a tabular report.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -896,31 +860,27 @@ class OrganelleApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Get Organelle dataset report by accession
+        """Get an organelle data report by nucleotide accession
 
-        Get Organelle dataset report by accession.
+        Get an organelle data report in JSON format.
 
-        :param accessions: NCBI assembly accession (required)
+        :param accessions: One or more organelle nucleotide accessions (required)
         :type accessions: List[str]
-        :param taxons: NCBI Taxonomy ID or name (common or scientific) at any taxonomic rank
-        :type taxons: List[str]
-        :param organelle_types:
+        :param organelle_types: Limit results to the specified organelle types.
         :type organelle_types: List[V2reportsOrganelleType]
-        :param first_release_date:
+        :param first_release_date: Limit results to organelle genomes released on or after the specified date.
         :type first_release_date: datetime
-        :param last_release_date:
+        :param last_release_date: Limit results to organelle genomes released on or before the specified date.
         :type last_release_date: datetime
-        :param tax_exact_match: If true, only return assemblies with the given NCBI Taxonomy ID, or name. Otherwise, assemblies from taxonomy subtree are included, too.
-        :type tax_exact_match: bool
         :param sort_field:
         :type sort_field: str
         :param sort_direction:
         :type sort_direction: V2SortDirection
-        :param returned_content: Return either assembly accessions, or entire assembly-metadata records
+        :param returned_content: Return complete organelle reports or nucleotide accessions only.
         :type returned_content: V2OrganelleMetadataRequestContentType
-        :param table_format: Optional pre-defined template for processing a tabular data request
+        :param table_format: Specify a predefined set of fields for the tabular report using built-in templates. Use of this parameter requires the HTTP header, `accept: text/tab-separated-values`.
         :type table_format: V2OrganelleMetadataRequestOrganelleTableFormat
-        :param include_tabular_header: Whether this request for tabular data should include the header row
+        :param include_tabular_header: Specify when to include the table header when requesting a tabular report.
         :type include_tabular_header: V2IncludeTabularHeader
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -946,11 +906,9 @@ class OrganelleApi:
 
         _param = self._organelle_datareport_by_accession_serialize(
             accessions=accessions,
-            taxons=taxons,
             organelle_types=organelle_types,
             first_release_date=first_release_date,
             last_release_date=last_release_date,
-            tax_exact_match=tax_exact_match,
             sort_field=sort_field,
             sort_direction=sort_direction,
             returned_content=returned_content,
@@ -975,11 +933,9 @@ class OrganelleApi:
     def _organelle_datareport_by_accession_serialize(
         self,
         accessions,
-        taxons,
         organelle_types,
         first_release_date,
         last_release_date,
-        tax_exact_match,
         sort_field,
         sort_direction,
         returned_content,
@@ -995,7 +951,6 @@ class OrganelleApi:
 
         _collection_formats: Dict[str, str] = {
             'accessions': 'csv',
-            'taxons': 'multi',
             'organelle_types': 'multi',
         }
 
@@ -1012,10 +967,6 @@ class OrganelleApi:
         if accessions is not None:
             _path_params['accessions'] = accessions
         # process the query parameters
-        if taxons is not None:
-            
-            _query_params.append(('taxons', taxons))
-            
         if organelle_types is not None:
             
             _query_params.append(('organelle_types', organelle_types))
@@ -1045,10 +996,6 @@ class OrganelleApi:
                 )
             else:
                 _query_params.append(('last_release_date', last_release_date))
-            
-        if tax_exact_match is not None:
-            
-            _query_params.append(('tax_exact_match', tax_exact_match))
             
         if sort_field is not None:
             
@@ -1080,7 +1027,9 @@ class OrganelleApi:
             _header_params['Accept'] = self.api_client.select_header_accept(
                 [
                     'text/plain', 
-                    'application/json'
+                    'application/json', 
+                    'application/x-ndjson', 
+                    'text/tab-separated-values'
                 ]
             )
 
@@ -1125,9 +1074,9 @@ class OrganelleApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> V2reportsOrganelleDataReports:
-        """Get Organelle dataset report by http post
+        """Get an organelle data report
 
-        Get Organelle dataset report by http post.
+        Get an organelle data report in JSON format.
 
         :param v2_organelle_metadata_request: (required)
         :type v2_organelle_metadata_request: V2OrganelleMetadataRequest
@@ -1192,9 +1141,9 @@ class OrganelleApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[V2reportsOrganelleDataReports]:
-        """Get Organelle dataset report by http post
+        """Get an organelle data report
 
-        Get Organelle dataset report by http post.
+        Get an organelle data report in JSON format.
 
         :param v2_organelle_metadata_request: (required)
         :type v2_organelle_metadata_request: V2OrganelleMetadataRequest
@@ -1259,9 +1208,9 @@ class OrganelleApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Get Organelle dataset report by http post
+        """Get an organelle data report
 
-        Get Organelle dataset report by http post.
+        Get an organelle data report in JSON format.
 
         :param v2_organelle_metadata_request: (required)
         :type v2_organelle_metadata_request: V2OrganelleMetadataRequest
@@ -1342,7 +1291,9 @@ class OrganelleApi:
             _header_params['Accept'] = self.api_client.select_header_accept(
                 [
                     'text/plain', 
-                    'application/json'
+                    'application/json', 
+                    'application/x-ndjson', 
+                    'text/tab-separated-values'
                 ]
             )
 
@@ -1387,17 +1338,17 @@ class OrganelleApi:
     def organelle_datareport_by_taxon(
         self,
         taxons: Annotated[List[StrictStr], Field(description="NCBI Taxonomy ID or name (common or scientific) at any taxonomic rank")],
-        organelle_types: Optional[List[V2reportsOrganelleType]] = None,
-        first_release_date: Optional[datetime] = None,
-        last_release_date: Optional[datetime] = None,
+        organelle_types: Annotated[Optional[List[V2reportsOrganelleType]], Field(description="Limit results to the specified organelle types.")] = None,
+        first_release_date: Annotated[Optional[datetime], Field(description="Limit results to organelle genomes released on or after the specified date.")] = None,
+        last_release_date: Annotated[Optional[datetime], Field(description="Limit results to organelle genomes released on or before the specified date.")] = None,
         tax_exact_match: Annotated[Optional[StrictBool], Field(description="If true, only return assemblies with the given NCBI Taxonomy ID, or name. Otherwise, assemblies from taxonomy subtree are included, too.")] = None,
         sort_field: Optional[StrictStr] = None,
         sort_direction: Optional[V2SortDirection] = None,
-        returned_content: Annotated[Optional[V2OrganelleMetadataRequestContentType], Field(description="Return either assembly accessions, or entire assembly-metadata records")] = None,
+        returned_content: Annotated[Optional[V2OrganelleMetadataRequestContentType], Field(description="Return complete organelle reports or nucleotide accessions only.")] = None,
         page_size: Annotated[Optional[StrictInt], Field(description="The maximum number of organelle assemblies to return. Default is 20 and maximum is 1000. If the number of results exceeds the page size, `page_token` can be used to retrieve the remaining results.")] = None,
         page_token: Annotated[Optional[StrictStr], Field(description="A page token is returned from an `OrganelleMetadata` call with more than `page_size` results. Use this token, along with the previous `OrganelleMetadata` parameters, to retrieve the next page of results. When `page_token` is empty, all results have been retrieved.")] = None,
-        table_format: Annotated[Optional[V2OrganelleMetadataRequestOrganelleTableFormat], Field(description="Optional pre-defined template for processing a tabular data request")] = None,
-        include_tabular_header: Annotated[Optional[V2IncludeTabularHeader], Field(description="Whether this request for tabular data should include the header row")] = None,
+        table_format: Annotated[Optional[V2OrganelleMetadataRequestOrganelleTableFormat], Field(description="Specify a predefined set of fields for the tabular report using built-in templates. Use of this parameter requires the HTTP header, `accept: text/tab-separated-values`.")] = None,
+        include_tabular_header: Annotated[Optional[V2IncludeTabularHeader], Field(description="Specify when to include the table header when requesting a tabular report.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1411,17 +1362,17 @@ class OrganelleApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> V2reportsOrganelleDataReports:
-        """Get Organelle dataset report by taxons
+        """Get an organelle data report by taxon
 
-        Get Organelle dataset report by taxons.
+        Get an organelle data report  in JSON format.
 
         :param taxons: NCBI Taxonomy ID or name (common or scientific) at any taxonomic rank (required)
         :type taxons: List[str]
-        :param organelle_types:
+        :param organelle_types: Limit results to the specified organelle types.
         :type organelle_types: List[V2reportsOrganelleType]
-        :param first_release_date:
+        :param first_release_date: Limit results to organelle genomes released on or after the specified date.
         :type first_release_date: datetime
-        :param last_release_date:
+        :param last_release_date: Limit results to organelle genomes released on or before the specified date.
         :type last_release_date: datetime
         :param tax_exact_match: If true, only return assemblies with the given NCBI Taxonomy ID, or name. Otherwise, assemblies from taxonomy subtree are included, too.
         :type tax_exact_match: bool
@@ -1429,15 +1380,15 @@ class OrganelleApi:
         :type sort_field: str
         :param sort_direction:
         :type sort_direction: V2SortDirection
-        :param returned_content: Return either assembly accessions, or entire assembly-metadata records
+        :param returned_content: Return complete organelle reports or nucleotide accessions only.
         :type returned_content: V2OrganelleMetadataRequestContentType
         :param page_size: The maximum number of organelle assemblies to return. Default is 20 and maximum is 1000. If the number of results exceeds the page size, `page_token` can be used to retrieve the remaining results.
         :type page_size: int
         :param page_token: A page token is returned from an `OrganelleMetadata` call with more than `page_size` results. Use this token, along with the previous `OrganelleMetadata` parameters, to retrieve the next page of results. When `page_token` is empty, all results have been retrieved.
         :type page_token: str
-        :param table_format: Optional pre-defined template for processing a tabular data request
+        :param table_format: Specify a predefined set of fields for the tabular report using built-in templates. Use of this parameter requires the HTTP header, `accept: text/tab-separated-values`.
         :type table_format: V2OrganelleMetadataRequestOrganelleTableFormat
-        :param include_tabular_header: Whether this request for tabular data should include the header row
+        :param include_tabular_header: Specify when to include the table header when requesting a tabular report.
         :type include_tabular_header: V2IncludeTabularHeader
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -1498,17 +1449,17 @@ class OrganelleApi:
     def organelle_datareport_by_taxon_with_http_info(
         self,
         taxons: Annotated[List[StrictStr], Field(description="NCBI Taxonomy ID or name (common or scientific) at any taxonomic rank")],
-        organelle_types: Optional[List[V2reportsOrganelleType]] = None,
-        first_release_date: Optional[datetime] = None,
-        last_release_date: Optional[datetime] = None,
+        organelle_types: Annotated[Optional[List[V2reportsOrganelleType]], Field(description="Limit results to the specified organelle types.")] = None,
+        first_release_date: Annotated[Optional[datetime], Field(description="Limit results to organelle genomes released on or after the specified date.")] = None,
+        last_release_date: Annotated[Optional[datetime], Field(description="Limit results to organelle genomes released on or before the specified date.")] = None,
         tax_exact_match: Annotated[Optional[StrictBool], Field(description="If true, only return assemblies with the given NCBI Taxonomy ID, or name. Otherwise, assemblies from taxonomy subtree are included, too.")] = None,
         sort_field: Optional[StrictStr] = None,
         sort_direction: Optional[V2SortDirection] = None,
-        returned_content: Annotated[Optional[V2OrganelleMetadataRequestContentType], Field(description="Return either assembly accessions, or entire assembly-metadata records")] = None,
+        returned_content: Annotated[Optional[V2OrganelleMetadataRequestContentType], Field(description="Return complete organelle reports or nucleotide accessions only.")] = None,
         page_size: Annotated[Optional[StrictInt], Field(description="The maximum number of organelle assemblies to return. Default is 20 and maximum is 1000. If the number of results exceeds the page size, `page_token` can be used to retrieve the remaining results.")] = None,
         page_token: Annotated[Optional[StrictStr], Field(description="A page token is returned from an `OrganelleMetadata` call with more than `page_size` results. Use this token, along with the previous `OrganelleMetadata` parameters, to retrieve the next page of results. When `page_token` is empty, all results have been retrieved.")] = None,
-        table_format: Annotated[Optional[V2OrganelleMetadataRequestOrganelleTableFormat], Field(description="Optional pre-defined template for processing a tabular data request")] = None,
-        include_tabular_header: Annotated[Optional[V2IncludeTabularHeader], Field(description="Whether this request for tabular data should include the header row")] = None,
+        table_format: Annotated[Optional[V2OrganelleMetadataRequestOrganelleTableFormat], Field(description="Specify a predefined set of fields for the tabular report using built-in templates. Use of this parameter requires the HTTP header, `accept: text/tab-separated-values`.")] = None,
+        include_tabular_header: Annotated[Optional[V2IncludeTabularHeader], Field(description="Specify when to include the table header when requesting a tabular report.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1522,17 +1473,17 @@ class OrganelleApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[V2reportsOrganelleDataReports]:
-        """Get Organelle dataset report by taxons
+        """Get an organelle data report by taxon
 
-        Get Organelle dataset report by taxons.
+        Get an organelle data report  in JSON format.
 
         :param taxons: NCBI Taxonomy ID or name (common or scientific) at any taxonomic rank (required)
         :type taxons: List[str]
-        :param organelle_types:
+        :param organelle_types: Limit results to the specified organelle types.
         :type organelle_types: List[V2reportsOrganelleType]
-        :param first_release_date:
+        :param first_release_date: Limit results to organelle genomes released on or after the specified date.
         :type first_release_date: datetime
-        :param last_release_date:
+        :param last_release_date: Limit results to organelle genomes released on or before the specified date.
         :type last_release_date: datetime
         :param tax_exact_match: If true, only return assemblies with the given NCBI Taxonomy ID, or name. Otherwise, assemblies from taxonomy subtree are included, too.
         :type tax_exact_match: bool
@@ -1540,15 +1491,15 @@ class OrganelleApi:
         :type sort_field: str
         :param sort_direction:
         :type sort_direction: V2SortDirection
-        :param returned_content: Return either assembly accessions, or entire assembly-metadata records
+        :param returned_content: Return complete organelle reports or nucleotide accessions only.
         :type returned_content: V2OrganelleMetadataRequestContentType
         :param page_size: The maximum number of organelle assemblies to return. Default is 20 and maximum is 1000. If the number of results exceeds the page size, `page_token` can be used to retrieve the remaining results.
         :type page_size: int
         :param page_token: A page token is returned from an `OrganelleMetadata` call with more than `page_size` results. Use this token, along with the previous `OrganelleMetadata` parameters, to retrieve the next page of results. When `page_token` is empty, all results have been retrieved.
         :type page_token: str
-        :param table_format: Optional pre-defined template for processing a tabular data request
+        :param table_format: Specify a predefined set of fields for the tabular report using built-in templates. Use of this parameter requires the HTTP header, `accept: text/tab-separated-values`.
         :type table_format: V2OrganelleMetadataRequestOrganelleTableFormat
-        :param include_tabular_header: Whether this request for tabular data should include the header row
+        :param include_tabular_header: Specify when to include the table header when requesting a tabular report.
         :type include_tabular_header: V2IncludeTabularHeader
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -1609,17 +1560,17 @@ class OrganelleApi:
     def organelle_datareport_by_taxon_without_preload_content(
         self,
         taxons: Annotated[List[StrictStr], Field(description="NCBI Taxonomy ID or name (common or scientific) at any taxonomic rank")],
-        organelle_types: Optional[List[V2reportsOrganelleType]] = None,
-        first_release_date: Optional[datetime] = None,
-        last_release_date: Optional[datetime] = None,
+        organelle_types: Annotated[Optional[List[V2reportsOrganelleType]], Field(description="Limit results to the specified organelle types.")] = None,
+        first_release_date: Annotated[Optional[datetime], Field(description="Limit results to organelle genomes released on or after the specified date.")] = None,
+        last_release_date: Annotated[Optional[datetime], Field(description="Limit results to organelle genomes released on or before the specified date.")] = None,
         tax_exact_match: Annotated[Optional[StrictBool], Field(description="If true, only return assemblies with the given NCBI Taxonomy ID, or name. Otherwise, assemblies from taxonomy subtree are included, too.")] = None,
         sort_field: Optional[StrictStr] = None,
         sort_direction: Optional[V2SortDirection] = None,
-        returned_content: Annotated[Optional[V2OrganelleMetadataRequestContentType], Field(description="Return either assembly accessions, or entire assembly-metadata records")] = None,
+        returned_content: Annotated[Optional[V2OrganelleMetadataRequestContentType], Field(description="Return complete organelle reports or nucleotide accessions only.")] = None,
         page_size: Annotated[Optional[StrictInt], Field(description="The maximum number of organelle assemblies to return. Default is 20 and maximum is 1000. If the number of results exceeds the page size, `page_token` can be used to retrieve the remaining results.")] = None,
         page_token: Annotated[Optional[StrictStr], Field(description="A page token is returned from an `OrganelleMetadata` call with more than `page_size` results. Use this token, along with the previous `OrganelleMetadata` parameters, to retrieve the next page of results. When `page_token` is empty, all results have been retrieved.")] = None,
-        table_format: Annotated[Optional[V2OrganelleMetadataRequestOrganelleTableFormat], Field(description="Optional pre-defined template for processing a tabular data request")] = None,
-        include_tabular_header: Annotated[Optional[V2IncludeTabularHeader], Field(description="Whether this request for tabular data should include the header row")] = None,
+        table_format: Annotated[Optional[V2OrganelleMetadataRequestOrganelleTableFormat], Field(description="Specify a predefined set of fields for the tabular report using built-in templates. Use of this parameter requires the HTTP header, `accept: text/tab-separated-values`.")] = None,
+        include_tabular_header: Annotated[Optional[V2IncludeTabularHeader], Field(description="Specify when to include the table header when requesting a tabular report.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1633,17 +1584,17 @@ class OrganelleApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Get Organelle dataset report by taxons
+        """Get an organelle data report by taxon
 
-        Get Organelle dataset report by taxons.
+        Get an organelle data report  in JSON format.
 
         :param taxons: NCBI Taxonomy ID or name (common or scientific) at any taxonomic rank (required)
         :type taxons: List[str]
-        :param organelle_types:
+        :param organelle_types: Limit results to the specified organelle types.
         :type organelle_types: List[V2reportsOrganelleType]
-        :param first_release_date:
+        :param first_release_date: Limit results to organelle genomes released on or after the specified date.
         :type first_release_date: datetime
-        :param last_release_date:
+        :param last_release_date: Limit results to organelle genomes released on or before the specified date.
         :type last_release_date: datetime
         :param tax_exact_match: If true, only return assemblies with the given NCBI Taxonomy ID, or name. Otherwise, assemblies from taxonomy subtree are included, too.
         :type tax_exact_match: bool
@@ -1651,15 +1602,15 @@ class OrganelleApi:
         :type sort_field: str
         :param sort_direction:
         :type sort_direction: V2SortDirection
-        :param returned_content: Return either assembly accessions, or entire assembly-metadata records
+        :param returned_content: Return complete organelle reports or nucleotide accessions only.
         :type returned_content: V2OrganelleMetadataRequestContentType
         :param page_size: The maximum number of organelle assemblies to return. Default is 20 and maximum is 1000. If the number of results exceeds the page size, `page_token` can be used to retrieve the remaining results.
         :type page_size: int
         :param page_token: A page token is returned from an `OrganelleMetadata` call with more than `page_size` results. Use this token, along with the previous `OrganelleMetadata` parameters, to retrieve the next page of results. When `page_token` is empty, all results have been retrieved.
         :type page_token: str
-        :param table_format: Optional pre-defined template for processing a tabular data request
+        :param table_format: Specify a predefined set of fields for the tabular report using built-in templates. Use of this parameter requires the HTTP header, `accept: text/tab-separated-values`.
         :type table_format: V2OrganelleMetadataRequestOrganelleTableFormat
-        :param include_tabular_header: Whether this request for tabular data should include the header row
+        :param include_tabular_header: Specify when to include the table header when requesting a tabular report.
         :type include_tabular_header: V2IncludeTabularHeader
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -1824,7 +1775,9 @@ class OrganelleApi:
             _header_params['Accept'] = self.api_client.select_header_accept(
                 [
                     'text/plain', 
-                    'application/json'
+                    'application/json', 
+                    'application/x-ndjson', 
+                    'text/tab-separated-values'
                 ]
             )
 

@@ -40,7 +40,8 @@ class Ncbiprotddv2StructureDataReport(BaseModel):
     ligand_chains: Optional[List[Ncbiprotddv2StructureDataReportLigandChain]] = None
     asymmetric_chains: Optional[List[Ncbiprotddv2StructureDataReportBiounitChain]] = None
     asymmetric_ligands: Optional[List[Ncbiprotddv2StructureDataReportLigandChain]] = None
-    __properties: ClassVar[List[str]] = ["pdb_id", "mmdb_id", "is_obsolete", "publication_pmid", "deposition_date", "update_date", "experiment", "chains", "ligand_chains", "asymmetric_chains", "asymmetric_ligands"]
+    title: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["pdb_id", "mmdb_id", "is_obsolete", "publication_pmid", "deposition_date", "update_date", "experiment", "chains", "ligand_chains", "asymmetric_chains", "asymmetric_ligands", "title"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -134,7 +135,8 @@ class Ncbiprotddv2StructureDataReport(BaseModel):
             "chains": [Ncbiprotddv2StructureDataReportBiounitChain.from_dict(_item) for _item in obj["chains"]] if obj.get("chains") is not None else None,
             "ligand_chains": [Ncbiprotddv2StructureDataReportLigandChain.from_dict(_item) for _item in obj["ligand_chains"]] if obj.get("ligand_chains") is not None else None,
             "asymmetric_chains": [Ncbiprotddv2StructureDataReportBiounitChain.from_dict(_item) for _item in obj["asymmetric_chains"]] if obj.get("asymmetric_chains") is not None else None,
-            "asymmetric_ligands": [Ncbiprotddv2StructureDataReportLigandChain.from_dict(_item) for _item in obj["asymmetric_ligands"]] if obj.get("asymmetric_ligands") is not None else None
+            "asymmetric_ligands": [Ncbiprotddv2StructureDataReportLigandChain.from_dict(_item) for _item in obj["asymmetric_ligands"]] if obj.get("asymmetric_ligands") is not None else None,
+            "title": obj.get("title")
         })
         return _obj
 

@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**pmid** | **str** |  | [optional] 
+**pmid** | **int** |  | [optional] 
 
 ## Example
 

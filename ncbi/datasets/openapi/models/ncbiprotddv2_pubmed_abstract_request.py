@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
+from pydantic import BaseModel, ConfigDict, StrictInt
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -26,7 +26,7 @@ class Ncbiprotddv2PubmedAbstractRequest(BaseModel):
     """
     Ncbiprotddv2PubmedAbstractRequest
     """ # noqa: E501
-    pmid: Optional[StrictStr] = None
+    pmid: Optional[StrictInt] = None
     __properties: ClassVar[List[str]] = ["pmid"]
 
     model_config = ConfigDict(

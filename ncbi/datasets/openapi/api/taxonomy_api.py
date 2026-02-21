@@ -1,5 +1,3 @@
-# coding: utf-8
-
 """
     NCBI Datasets API
 
@@ -10,6 +8,7 @@
 
     Do not edit the class manually.
 """  # noqa: E501
+
 
 import warnings
 from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
@@ -66,7 +65,7 @@ class TaxonomyApi:
     def download_taxonomy_package(
         self,
         tax_ids: List[StrictInt],
-        aux_reports: Annotated[Optional[List[V2TaxonomyDatasetRequestTaxonomyReportType]], Field(description="list additional reports to include with download. TAXONOMY_REPORT is included by default.")] = None,
+        aux_reports: Annotated[Optional[List[V2TaxonomyDatasetRequestTaxonomyReportType]], Field(description="Specify additional report files to include in the data package. The taxonomy report is always included, and its inclusion is not affected by this parameter.")] = None,
         filename: Annotated[Optional[StrictStr], Field(description="Output file name.")] = None,
         _request_timeout: Union[
             None,
@@ -81,13 +80,13 @@ class TaxonomyApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> bytearray:
-        """Get a taxonomy data package by tax ID
+        """Get a taxonomy data package by Taxonomy ID
 
-        Download a taxonomy report and names data package.
+        Download a taxonomy data package, including taxonomy and names reports, as a compressed zip archive.
 
         :param tax_ids: (required)
         :type tax_ids: List[int]
-        :param aux_reports: list additional reports to include with download. TAXONOMY_REPORT is included by default.
+        :param aux_reports: Specify additional report files to include in the data package. The taxonomy report is always included, and its inclusion is not affected by this parameter.
         :type aux_reports: List[V2TaxonomyDatasetRequestTaxonomyReportType]
         :param filename: Output file name.
         :type filename: str
@@ -141,7 +140,7 @@ class TaxonomyApi:
     def download_taxonomy_package_with_http_info(
         self,
         tax_ids: List[StrictInt],
-        aux_reports: Annotated[Optional[List[V2TaxonomyDatasetRequestTaxonomyReportType]], Field(description="list additional reports to include with download. TAXONOMY_REPORT is included by default.")] = None,
+        aux_reports: Annotated[Optional[List[V2TaxonomyDatasetRequestTaxonomyReportType]], Field(description="Specify additional report files to include in the data package. The taxonomy report is always included, and its inclusion is not affected by this parameter.")] = None,
         filename: Annotated[Optional[StrictStr], Field(description="Output file name.")] = None,
         _request_timeout: Union[
             None,
@@ -156,13 +155,13 @@ class TaxonomyApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[bytearray]:
-        """Get a taxonomy data package by tax ID
+        """Get a taxonomy data package by Taxonomy ID
 
-        Download a taxonomy report and names data package.
+        Download a taxonomy data package, including taxonomy and names reports, as a compressed zip archive.
 
         :param tax_ids: (required)
         :type tax_ids: List[int]
-        :param aux_reports: list additional reports to include with download. TAXONOMY_REPORT is included by default.
+        :param aux_reports: Specify additional report files to include in the data package. The taxonomy report is always included, and its inclusion is not affected by this parameter.
         :type aux_reports: List[V2TaxonomyDatasetRequestTaxonomyReportType]
         :param filename: Output file name.
         :type filename: str
@@ -216,7 +215,7 @@ class TaxonomyApi:
     def download_taxonomy_package_without_preload_content(
         self,
         tax_ids: List[StrictInt],
-        aux_reports: Annotated[Optional[List[V2TaxonomyDatasetRequestTaxonomyReportType]], Field(description="list additional reports to include with download. TAXONOMY_REPORT is included by default.")] = None,
+        aux_reports: Annotated[Optional[List[V2TaxonomyDatasetRequestTaxonomyReportType]], Field(description="Specify additional report files to include in the data package. The taxonomy report is always included, and its inclusion is not affected by this parameter.")] = None,
         filename: Annotated[Optional[StrictStr], Field(description="Output file name.")] = None,
         _request_timeout: Union[
             None,
@@ -231,13 +230,13 @@ class TaxonomyApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Get a taxonomy data package by tax ID
+        """Get a taxonomy data package by Taxonomy ID
 
-        Download a taxonomy report and names data package.
+        Download a taxonomy data package, including taxonomy and names reports, as a compressed zip archive.
 
         :param tax_ids: (required)
         :type tax_ids: List[int]
-        :param aux_reports: list additional reports to include with download. TAXONOMY_REPORT is included by default.
+        :param aux_reports: Specify additional report files to include in the data package. The taxonomy report is always included, and its inclusion is not affected by this parameter.
         :type aux_reports: List[V2TaxonomyDatasetRequestTaxonomyReportType]
         :param filename: Output file name.
         :type filename: str
@@ -655,10 +654,10 @@ class TaxonomyApi:
     @validate_call
     def tax_name_query(
         self,
-        taxon_query: Annotated[StrictStr, Field(description="Taxid or name (common or scientific) at any taxonomic rank")],
-        tax_rank_filter: Annotated[Optional[V2OrganismQueryRequestTaxRankFilter], Field(description="Set the scope of searched tax ranks when filtering by gene or genome.  Not used for 'all'")] = None,
-        taxon_resource_filter: Annotated[Optional[V2OrganismQueryRequestTaxonResourceFilter], Field(description="Limit results to those with gene or genome counts (no filter by default)")] = None,
-        exact_match: Annotated[Optional[StrictBool], Field(description="If true, only return results that exactly match the provided name or tax-id")] = None,
+        taxon_query: Annotated[StrictStr, Field(description="Taxonomy ID or name (common or scientific) at any taxonomic rank")],
+        tax_rank_filter: Annotated[Optional[V2OrganismQueryRequestTaxRankFilter], Field(description="Optionally return results for taxonomic ranks above species using `higher_taxon`")] = None,
+        taxon_resource_filter: Annotated[Optional[V2OrganismQueryRequestTaxonResourceFilter], Field(description="Limit to taxonomy nodes with gene, genome or organelle data")] = None,
+        exact_match: Annotated[Optional[StrictBool], Field(description="If true, only return results that exactly match the provided taxonomic name")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -672,17 +671,17 @@ class TaxonomyApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> V2SciNameAndIds:
-        """Get a list of taxonomy names and IDs given a partial taxonomic name
+        """Get a list of taxonomy names and IDs by partial taxonomic name
 
-        This endpoint retrieves a list of taxonomy names and IDs given a possibly partial taxonomic name of any rank.
+        Get a list of taxonomy names and IDs in JSON format.
 
-        :param taxon_query: Taxid or name (common or scientific) at any taxonomic rank (required)
+        :param taxon_query: Taxonomy ID or name (common or scientific) at any taxonomic rank (required)
         :type taxon_query: str
-        :param tax_rank_filter: Set the scope of searched tax ranks when filtering by gene or genome.  Not used for 'all'
+        :param tax_rank_filter: Optionally return results for taxonomic ranks above species using `higher_taxon`
         :type tax_rank_filter: V2OrganismQueryRequestTaxRankFilter
-        :param taxon_resource_filter: Limit results to those with gene or genome counts (no filter by default)
+        :param taxon_resource_filter: Limit to taxonomy nodes with gene, genome or organelle data
         :type taxon_resource_filter: V2OrganismQueryRequestTaxonResourceFilter
-        :param exact_match: If true, only return results that exactly match the provided name or tax-id
+        :param exact_match: If true, only return results that exactly match the provided taxonomic name
         :type exact_match: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -734,10 +733,10 @@ class TaxonomyApi:
     @validate_call
     def tax_name_query_with_http_info(
         self,
-        taxon_query: Annotated[StrictStr, Field(description="Taxid or name (common or scientific) at any taxonomic rank")],
-        tax_rank_filter: Annotated[Optional[V2OrganismQueryRequestTaxRankFilter], Field(description="Set the scope of searched tax ranks when filtering by gene or genome.  Not used for 'all'")] = None,
-        taxon_resource_filter: Annotated[Optional[V2OrganismQueryRequestTaxonResourceFilter], Field(description="Limit results to those with gene or genome counts (no filter by default)")] = None,
-        exact_match: Annotated[Optional[StrictBool], Field(description="If true, only return results that exactly match the provided name or tax-id")] = None,
+        taxon_query: Annotated[StrictStr, Field(description="Taxonomy ID or name (common or scientific) at any taxonomic rank")],
+        tax_rank_filter: Annotated[Optional[V2OrganismQueryRequestTaxRankFilter], Field(description="Optionally return results for taxonomic ranks above species using `higher_taxon`")] = None,
+        taxon_resource_filter: Annotated[Optional[V2OrganismQueryRequestTaxonResourceFilter], Field(description="Limit to taxonomy nodes with gene, genome or organelle data")] = None,
+        exact_match: Annotated[Optional[StrictBool], Field(description="If true, only return results that exactly match the provided taxonomic name")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -751,17 +750,17 @@ class TaxonomyApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[V2SciNameAndIds]:
-        """Get a list of taxonomy names and IDs given a partial taxonomic name
+        """Get a list of taxonomy names and IDs by partial taxonomic name
 
-        This endpoint retrieves a list of taxonomy names and IDs given a possibly partial taxonomic name of any rank.
+        Get a list of taxonomy names and IDs in JSON format.
 
-        :param taxon_query: Taxid or name (common or scientific) at any taxonomic rank (required)
+        :param taxon_query: Taxonomy ID or name (common or scientific) at any taxonomic rank (required)
         :type taxon_query: str
-        :param tax_rank_filter: Set the scope of searched tax ranks when filtering by gene or genome.  Not used for 'all'
+        :param tax_rank_filter: Optionally return results for taxonomic ranks above species using `higher_taxon`
         :type tax_rank_filter: V2OrganismQueryRequestTaxRankFilter
-        :param taxon_resource_filter: Limit results to those with gene or genome counts (no filter by default)
+        :param taxon_resource_filter: Limit to taxonomy nodes with gene, genome or organelle data
         :type taxon_resource_filter: V2OrganismQueryRequestTaxonResourceFilter
-        :param exact_match: If true, only return results that exactly match the provided name or tax-id
+        :param exact_match: If true, only return results that exactly match the provided taxonomic name
         :type exact_match: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -813,10 +812,10 @@ class TaxonomyApi:
     @validate_call
     def tax_name_query_without_preload_content(
         self,
-        taxon_query: Annotated[StrictStr, Field(description="Taxid or name (common or scientific) at any taxonomic rank")],
-        tax_rank_filter: Annotated[Optional[V2OrganismQueryRequestTaxRankFilter], Field(description="Set the scope of searched tax ranks when filtering by gene or genome.  Not used for 'all'")] = None,
-        taxon_resource_filter: Annotated[Optional[V2OrganismQueryRequestTaxonResourceFilter], Field(description="Limit results to those with gene or genome counts (no filter by default)")] = None,
-        exact_match: Annotated[Optional[StrictBool], Field(description="If true, only return results that exactly match the provided name or tax-id")] = None,
+        taxon_query: Annotated[StrictStr, Field(description="Taxonomy ID or name (common or scientific) at any taxonomic rank")],
+        tax_rank_filter: Annotated[Optional[V2OrganismQueryRequestTaxRankFilter], Field(description="Optionally return results for taxonomic ranks above species using `higher_taxon`")] = None,
+        taxon_resource_filter: Annotated[Optional[V2OrganismQueryRequestTaxonResourceFilter], Field(description="Limit to taxonomy nodes with gene, genome or organelle data")] = None,
+        exact_match: Annotated[Optional[StrictBool], Field(description="If true, only return results that exactly match the provided taxonomic name")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -830,17 +829,17 @@ class TaxonomyApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Get a list of taxonomy names and IDs given a partial taxonomic name
+        """Get a list of taxonomy names and IDs by partial taxonomic name
 
-        This endpoint retrieves a list of taxonomy names and IDs given a possibly partial taxonomic name of any rank.
+        Get a list of taxonomy names and IDs in JSON format.
 
-        :param taxon_query: Taxid or name (common or scientific) at any taxonomic rank (required)
+        :param taxon_query: Taxonomy ID or name (common or scientific) at any taxonomic rank (required)
         :type taxon_query: str
-        :param tax_rank_filter: Set the scope of searched tax ranks when filtering by gene or genome.  Not used for 'all'
+        :param tax_rank_filter: Optionally return results for taxonomic ranks above species using `higher_taxon`
         :type tax_rank_filter: V2OrganismQueryRequestTaxRankFilter
-        :param taxon_resource_filter: Limit results to those with gene or genome counts (no filter by default)
+        :param taxon_resource_filter: Limit to taxonomy nodes with gene, genome or organelle data
         :type taxon_resource_filter: V2OrganismQueryRequestTaxonResourceFilter
-        :param exact_match: If true, only return results that exactly match the provided name or tax-id
+        :param exact_match: If true, only return results that exactly match the provided taxonomic name
         :type exact_match: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -982,9 +981,9 @@ class TaxonomyApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> V2SciNameAndIds:
-        """Get a list of taxonomy names and IDs given a partial taxonomic name
+        """Get a list of taxonomy names and IDs by partial taxonomic name
 
-        This endpoint retrieves a list of taxonomy names and IDs given a possibly partial taxonomic name of any rank, by post.
+        Get a list of taxonomy names and IDs in JSON format.
 
         :param v2_organism_query_request: (required)
         :type v2_organism_query_request: V2OrganismQueryRequest
@@ -1049,9 +1048,9 @@ class TaxonomyApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[V2SciNameAndIds]:
-        """Get a list of taxonomy names and IDs given a partial taxonomic name
+        """Get a list of taxonomy names and IDs by partial taxonomic name
 
-        This endpoint retrieves a list of taxonomy names and IDs given a possibly partial taxonomic name of any rank, by post.
+        Get a list of taxonomy names and IDs in JSON format.
 
         :param v2_organism_query_request: (required)
         :type v2_organism_query_request: V2OrganismQueryRequest
@@ -1116,9 +1115,9 @@ class TaxonomyApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Get a list of taxonomy names and IDs given a partial taxonomic name
+        """Get a list of taxonomy names and IDs by partial taxonomic name
 
-        This endpoint retrieves a list of taxonomy names and IDs given a possibly partial taxonomic name of any rank, by post.
+        Get a list of taxonomy names and IDs in JSON format.
 
         :param v2_organism_query_request: (required)
         :type v2_organism_query_request: V2OrganismQueryRequest
@@ -1244,13 +1243,13 @@ class TaxonomyApi:
     def taxonomy_data_report(
         self,
         taxons: List[StrictStr],
-        returned_content: Annotated[Optional[V2TaxonomyMetadataRequestContentType], Field(description="Return either tax-ids alone, or entire taxononmy-metadata records")] = None,
+        returned_content: Annotated[Optional[V2TaxonomyMetadataRequestContentType], Field(description="Return complete taxonomy reports, Taxonomy IDs only, or reports without assembly and gene counts (metadata).")] = None,
         page_size: Annotated[Optional[StrictInt], Field(description="The maximum number of taxons to return. Default is 20 and maximum is 1000. If the number of results exceeds the page size, `page_token` can be used to retrieve the remaining results.")] = None,
         include_tabular_header: Annotated[Optional[V2IncludeTabularHeader], Field(description="Specify when to include the table header when requesting a tabular report.")] = None,
         page_token: Annotated[Optional[StrictStr], Field(description="A page token is returned when the results count exceeds `page size`. Use this token along with previous request parameters to retrieve the next page of results. When `page_token` is empty, all results have been retrieved.")] = None,
-        table_format: Optional[V2TaxonomyMetadataRequestTableFormat] = None,
-        children: Annotated[Optional[StrictBool], Field(description="Flag for tax explosion.")] = None,
-        ranks: Annotated[Optional[List[V2reportsRankType]], Field(description="Only include taxons of the provided ranks. If empty, return all ranks.")] = None,
+        table_format: Annotated[Optional[V2TaxonomyMetadataRequestTableFormat], Field(description="Specify a predefined set of fields for the tabular report using built-in templates. Use of this parameter requires the HTTP header, `accept: text/tab-separated-values`.")] = None,
+        children: Annotated[Optional[StrictBool], Field(description="If true, return results for child taxa.")] = None,
+        ranks: Annotated[Optional[List[V2reportsRankType]], Field(description="Limit results to taxa of the specified ranks.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1264,13 +1263,13 @@ class TaxonomyApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> V2reportsTaxonomyDataReportPage:
-        """Use taxonomic identifiers to get taxonomic data report
+        """Get a taxonomy data report by taxon
 
-        Using NCBI Taxonomy IDs or names (common or scientific) at any rank, get metadata about a taxonomic node including taxonomic identifiers, lineage information, child nodes, and gene and genome counts in JSON format.
+        Get a taxonomy data report by taxon. By default, in paged JSON format, but also available in tabular (accept: text/tab-separated-values) or JSON Lines (accept: application/x-ndjson) formats.
 
         :param taxons: (required)
         :type taxons: List[str]
-        :param returned_content: Return either tax-ids alone, or entire taxononmy-metadata records
+        :param returned_content: Return complete taxonomy reports, Taxonomy IDs only, or reports without assembly and gene counts (metadata).
         :type returned_content: V2TaxonomyMetadataRequestContentType
         :param page_size: The maximum number of taxons to return. Default is 20 and maximum is 1000. If the number of results exceeds the page size, `page_token` can be used to retrieve the remaining results.
         :type page_size: int
@@ -1278,11 +1277,11 @@ class TaxonomyApi:
         :type include_tabular_header: V2IncludeTabularHeader
         :param page_token: A page token is returned when the results count exceeds `page size`. Use this token along with previous request parameters to retrieve the next page of results. When `page_token` is empty, all results have been retrieved.
         :type page_token: str
-        :param table_format:
+        :param table_format: Specify a predefined set of fields for the tabular report using built-in templates. Use of this parameter requires the HTTP header, `accept: text/tab-separated-values`.
         :type table_format: V2TaxonomyMetadataRequestTableFormat
-        :param children: Flag for tax explosion.
+        :param children: If true, return results for child taxa.
         :type children: bool
-        :param ranks: Only include taxons of the provided ranks. If empty, return all ranks.
+        :param ranks: Limit results to taxa of the specified ranks.
         :type ranks: List[V2reportsRankType]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -1339,13 +1338,13 @@ class TaxonomyApi:
     def taxonomy_data_report_with_http_info(
         self,
         taxons: List[StrictStr],
-        returned_content: Annotated[Optional[V2TaxonomyMetadataRequestContentType], Field(description="Return either tax-ids alone, or entire taxononmy-metadata records")] = None,
+        returned_content: Annotated[Optional[V2TaxonomyMetadataRequestContentType], Field(description="Return complete taxonomy reports, Taxonomy IDs only, or reports without assembly and gene counts (metadata).")] = None,
         page_size: Annotated[Optional[StrictInt], Field(description="The maximum number of taxons to return. Default is 20 and maximum is 1000. If the number of results exceeds the page size, `page_token` can be used to retrieve the remaining results.")] = None,
         include_tabular_header: Annotated[Optional[V2IncludeTabularHeader], Field(description="Specify when to include the table header when requesting a tabular report.")] = None,
         page_token: Annotated[Optional[StrictStr], Field(description="A page token is returned when the results count exceeds `page size`. Use this token along with previous request parameters to retrieve the next page of results. When `page_token` is empty, all results have been retrieved.")] = None,
-        table_format: Optional[V2TaxonomyMetadataRequestTableFormat] = None,
-        children: Annotated[Optional[StrictBool], Field(description="Flag for tax explosion.")] = None,
-        ranks: Annotated[Optional[List[V2reportsRankType]], Field(description="Only include taxons of the provided ranks. If empty, return all ranks.")] = None,
+        table_format: Annotated[Optional[V2TaxonomyMetadataRequestTableFormat], Field(description="Specify a predefined set of fields for the tabular report using built-in templates. Use of this parameter requires the HTTP header, `accept: text/tab-separated-values`.")] = None,
+        children: Annotated[Optional[StrictBool], Field(description="If true, return results for child taxa.")] = None,
+        ranks: Annotated[Optional[List[V2reportsRankType]], Field(description="Limit results to taxa of the specified ranks.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1359,13 +1358,13 @@ class TaxonomyApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[V2reportsTaxonomyDataReportPage]:
-        """Use taxonomic identifiers to get taxonomic data report
+        """Get a taxonomy data report by taxon
 
-        Using NCBI Taxonomy IDs or names (common or scientific) at any rank, get metadata about a taxonomic node including taxonomic identifiers, lineage information, child nodes, and gene and genome counts in JSON format.
+        Get a taxonomy data report by taxon. By default, in paged JSON format, but also available in tabular (accept: text/tab-separated-values) or JSON Lines (accept: application/x-ndjson) formats.
 
         :param taxons: (required)
         :type taxons: List[str]
-        :param returned_content: Return either tax-ids alone, or entire taxononmy-metadata records
+        :param returned_content: Return complete taxonomy reports, Taxonomy IDs only, or reports without assembly and gene counts (metadata).
         :type returned_content: V2TaxonomyMetadataRequestContentType
         :param page_size: The maximum number of taxons to return. Default is 20 and maximum is 1000. If the number of results exceeds the page size, `page_token` can be used to retrieve the remaining results.
         :type page_size: int
@@ -1373,11 +1372,11 @@ class TaxonomyApi:
         :type include_tabular_header: V2IncludeTabularHeader
         :param page_token: A page token is returned when the results count exceeds `page size`. Use this token along with previous request parameters to retrieve the next page of results. When `page_token` is empty, all results have been retrieved.
         :type page_token: str
-        :param table_format:
+        :param table_format: Specify a predefined set of fields for the tabular report using built-in templates. Use of this parameter requires the HTTP header, `accept: text/tab-separated-values`.
         :type table_format: V2TaxonomyMetadataRequestTableFormat
-        :param children: Flag for tax explosion.
+        :param children: If true, return results for child taxa.
         :type children: bool
-        :param ranks: Only include taxons of the provided ranks. If empty, return all ranks.
+        :param ranks: Limit results to taxa of the specified ranks.
         :type ranks: List[V2reportsRankType]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -1434,13 +1433,13 @@ class TaxonomyApi:
     def taxonomy_data_report_without_preload_content(
         self,
         taxons: List[StrictStr],
-        returned_content: Annotated[Optional[V2TaxonomyMetadataRequestContentType], Field(description="Return either tax-ids alone, or entire taxononmy-metadata records")] = None,
+        returned_content: Annotated[Optional[V2TaxonomyMetadataRequestContentType], Field(description="Return complete taxonomy reports, Taxonomy IDs only, or reports without assembly and gene counts (metadata).")] = None,
         page_size: Annotated[Optional[StrictInt], Field(description="The maximum number of taxons to return. Default is 20 and maximum is 1000. If the number of results exceeds the page size, `page_token` can be used to retrieve the remaining results.")] = None,
         include_tabular_header: Annotated[Optional[V2IncludeTabularHeader], Field(description="Specify when to include the table header when requesting a tabular report.")] = None,
         page_token: Annotated[Optional[StrictStr], Field(description="A page token is returned when the results count exceeds `page size`. Use this token along with previous request parameters to retrieve the next page of results. When `page_token` is empty, all results have been retrieved.")] = None,
-        table_format: Optional[V2TaxonomyMetadataRequestTableFormat] = None,
-        children: Annotated[Optional[StrictBool], Field(description="Flag for tax explosion.")] = None,
-        ranks: Annotated[Optional[List[V2reportsRankType]], Field(description="Only include taxons of the provided ranks. If empty, return all ranks.")] = None,
+        table_format: Annotated[Optional[V2TaxonomyMetadataRequestTableFormat], Field(description="Specify a predefined set of fields for the tabular report using built-in templates. Use of this parameter requires the HTTP header, `accept: text/tab-separated-values`.")] = None,
+        children: Annotated[Optional[StrictBool], Field(description="If true, return results for child taxa.")] = None,
+        ranks: Annotated[Optional[List[V2reportsRankType]], Field(description="Limit results to taxa of the specified ranks.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1454,13 +1453,13 @@ class TaxonomyApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Use taxonomic identifiers to get taxonomic data report
+        """Get a taxonomy data report by taxon
 
-        Using NCBI Taxonomy IDs or names (common or scientific) at any rank, get metadata about a taxonomic node including taxonomic identifiers, lineage information, child nodes, and gene and genome counts in JSON format.
+        Get a taxonomy data report by taxon. By default, in paged JSON format, but also available in tabular (accept: text/tab-separated-values) or JSON Lines (accept: application/x-ndjson) formats.
 
         :param taxons: (required)
         :type taxons: List[str]
-        :param returned_content: Return either tax-ids alone, or entire taxononmy-metadata records
+        :param returned_content: Return complete taxonomy reports, Taxonomy IDs only, or reports without assembly and gene counts (metadata).
         :type returned_content: V2TaxonomyMetadataRequestContentType
         :param page_size: The maximum number of taxons to return. Default is 20 and maximum is 1000. If the number of results exceeds the page size, `page_token` can be used to retrieve the remaining results.
         :type page_size: int
@@ -1468,11 +1467,11 @@ class TaxonomyApi:
         :type include_tabular_header: V2IncludeTabularHeader
         :param page_token: A page token is returned when the results count exceeds `page size`. Use this token along with previous request parameters to retrieve the next page of results. When `page_token` is empty, all results have been retrieved.
         :type page_token: str
-        :param table_format:
+        :param table_format: Specify a predefined set of fields for the tabular report using built-in templates. Use of this parameter requires the HTTP header, `accept: text/tab-separated-values`.
         :type table_format: V2TaxonomyMetadataRequestTableFormat
-        :param children: Flag for tax explosion.
+        :param children: If true, return results for child taxa.
         :type children: bool
-        :param ranks: Only include taxons of the provided ranks. If empty, return all ranks.
+        :param ranks: Limit results to taxa of the specified ranks.
         :type ranks: List[V2reportsRankType]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -1921,9 +1920,9 @@ class TaxonomyApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> V2TaxonomyFilteredSubtreeResponse:
-        """Use taxonomic identifiers to get a filtered taxonomic subtree
+        """Get a filtered taxonomic subtree by taxon
 
-        Using NCBI Taxonomy IDs or names (common or scientific) at any rank, get a filtered taxonomic subtree that includes the full parent lineage and all immediate children from the selected taxonomic ranks in JSON format.
+        Get a filtered taxonomic subtree, including parent and child nodes, in JSON format.
 
         :param taxons: (required)
         :type taxons: List[str]
@@ -1996,9 +1995,9 @@ class TaxonomyApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[V2TaxonomyFilteredSubtreeResponse]:
-        """Use taxonomic identifiers to get a filtered taxonomic subtree
+        """Get a filtered taxonomic subtree by taxon
 
-        Using NCBI Taxonomy IDs or names (common or scientific) at any rank, get a filtered taxonomic subtree that includes the full parent lineage and all immediate children from the selected taxonomic ranks in JSON format.
+        Get a filtered taxonomic subtree, including parent and child nodes, in JSON format.
 
         :param taxons: (required)
         :type taxons: List[str]
@@ -2071,9 +2070,9 @@ class TaxonomyApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Use taxonomic identifiers to get a filtered taxonomic subtree
+        """Get a filtered taxonomic subtree by taxon
 
-        Using NCBI Taxonomy IDs or names (common or scientific) at any rank, get a filtered taxonomic subtree that includes the full parent lineage and all immediate children from the selected taxonomic ranks in JSON format.
+        Get a filtered taxonomic subtree, including parent and child nodes, in JSON format.
 
         :param taxons: (required)
         :type taxons: List[str]
@@ -2775,9 +2774,9 @@ class TaxonomyApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> V2TaxonomyImageMetadataResponse:
-        """Retrieve image metadata associated with a taxonomic identifier
+        """Get taxonomy image metadata by Taxonomy ID
 
-        Using an NCBI Taxonomy ID or a name (common or scientific) at any rank, get the image metadata associated with the taxon.
+        Get taxonomy image metadata, including the image URL and license information, in JSON format.
 
         :param taxon: (required)
         :type taxon: str
@@ -2842,9 +2841,9 @@ class TaxonomyApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[V2TaxonomyImageMetadataResponse]:
-        """Retrieve image metadata associated with a taxonomic identifier
+        """Get taxonomy image metadata by Taxonomy ID
 
-        Using an NCBI Taxonomy ID or a name (common or scientific) at any rank, get the image metadata associated with the taxon.
+        Get taxonomy image metadata, including the image URL and license information, in JSON format.
 
         :param taxon: (required)
         :type taxon: str
@@ -2909,9 +2908,9 @@ class TaxonomyApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Retrieve image metadata associated with a taxonomic identifier
+        """Get taxonomy image metadata by Taxonomy ID
 
-        Using an NCBI Taxonomy ID or a name (common or scientific) at any rank, get the image metadata associated with the taxon.
+        Get taxonomy image metadata, including the image URL and license information, in JSON format.
 
         :param taxon: (required)
         :type taxon: str
@@ -3037,9 +3036,9 @@ class TaxonomyApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> V2TaxonomyImageMetadataResponse:
-        """Retrieve image metadata associated with a taxonomic identifier by post
+        """Get taxonomy image metadata by Taxonomy ID
 
-        Using an NCBI Taxonomy ID or a name (common or scientific) at any rank, get the image metadata associated with the taxon.
+        Get taxonomy image metadata, including the image URL and license information, in JSON format.
 
         :param v2_taxonomy_image_metadata_request: (required)
         :type v2_taxonomy_image_metadata_request: V2TaxonomyImageMetadataRequest
@@ -3104,9 +3103,9 @@ class TaxonomyApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[V2TaxonomyImageMetadataResponse]:
-        """Retrieve image metadata associated with a taxonomic identifier by post
+        """Get taxonomy image metadata by Taxonomy ID
 
-        Using an NCBI Taxonomy ID or a name (common or scientific) at any rank, get the image metadata associated with the taxon.
+        Get taxonomy image metadata, including the image URL and license information, in JSON format.
 
         :param v2_taxonomy_image_metadata_request: (required)
         :type v2_taxonomy_image_metadata_request: V2TaxonomyImageMetadataRequest
@@ -3171,9 +3170,9 @@ class TaxonomyApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Retrieve image metadata associated with a taxonomic identifier by post
+        """Get taxonomy image metadata by Taxonomy ID
 
-        Using an NCBI Taxonomy ID or a name (common or scientific) at any rank, get the image metadata associated with the taxon.
+        Get taxonomy image metadata, including the image URL and license information, in JSON format.
 
         :param v2_taxonomy_image_metadata_request: (required)
         :type v2_taxonomy_image_metadata_request: V2TaxonomyImageMetadataRequest
@@ -3590,9 +3589,9 @@ class TaxonomyApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> V2TaxonomyLinksResponse:
-        """Retrieve external links associated with a taxonomic identifier.
+        """Get external links by Taxonomy ID
 
-        Using an NCBI Taxonomy ID at any rank, get the external links associated with the taxon.
+        Get external links associated with a given taxon in JSON format.
 
         :param taxon: (required)
         :type taxon: str
@@ -3657,9 +3656,9 @@ class TaxonomyApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[V2TaxonomyLinksResponse]:
-        """Retrieve external links associated with a taxonomic identifier.
+        """Get external links by Taxonomy ID
 
-        Using an NCBI Taxonomy ID at any rank, get the external links associated with the taxon.
+        Get external links associated with a given taxon in JSON format.
 
         :param taxon: (required)
         :type taxon: str
@@ -3724,9 +3723,9 @@ class TaxonomyApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Retrieve external links associated with a taxonomic identifier.
+        """Get external links by Taxonomy ID
 
-        Using an NCBI Taxonomy ID at any rank, get the external links associated with the taxon.
+        Get external links associated with a given taxon in JSON format.
 
         :param taxon: (required)
         :type taxon: str
@@ -3852,9 +3851,9 @@ class TaxonomyApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> V2TaxonomyLinksResponse:
-        """Retrieve external links associated with a taxonomic identifier.
+        """Get external links by Taxonomy ID
 
-        Using an NCBI Taxonomy ID at any rank, get the external links associated with the taxon.
+        Get external links associated with a given taxon in JSON format.
 
         :param v2_taxonomy_links_request: (required)
         :type v2_taxonomy_links_request: V2TaxonomyLinksRequest
@@ -3919,9 +3918,9 @@ class TaxonomyApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[V2TaxonomyLinksResponse]:
-        """Retrieve external links associated with a taxonomic identifier.
+        """Get external links by Taxonomy ID
 
-        Using an NCBI Taxonomy ID at any rank, get the external links associated with the taxon.
+        Get external links associated with a given taxon in JSON format.
 
         :param v2_taxonomy_links_request: (required)
         :type v2_taxonomy_links_request: V2TaxonomyLinksRequest
@@ -3986,9 +3985,9 @@ class TaxonomyApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Retrieve external links associated with a taxonomic identifier.
+        """Get external links by Taxonomy ID
 
-        Using an NCBI Taxonomy ID at any rank, get the external links associated with the taxon.
+        Get external links associated with a given taxon in JSON format.
 
         :param v2_taxonomy_links_request: (required)
         :type v2_taxonomy_links_request: V2TaxonomyLinksRequest
@@ -4114,13 +4113,13 @@ class TaxonomyApi:
     def taxonomy_metadata(
         self,
         taxons: List[StrictStr],
-        returned_content: Annotated[Optional[V2TaxonomyMetadataRequestContentType], Field(description="Return either tax-ids alone, or entire taxononmy-metadata records")] = None,
+        returned_content: Annotated[Optional[V2TaxonomyMetadataRequestContentType], Field(description="Return complete taxonomy reports, Taxonomy IDs only, or reports without assembly and gene counts (metadata).")] = None,
         page_size: Annotated[Optional[StrictInt], Field(description="The maximum number of taxons to return. Default is 20 and maximum is 1000. If the number of results exceeds the page size, `page_token` can be used to retrieve the remaining results.")] = None,
         include_tabular_header: Annotated[Optional[V2IncludeTabularHeader], Field(description="Specify when to include the table header when requesting a tabular report.")] = None,
         page_token: Annotated[Optional[StrictStr], Field(description="A page token is returned when the results count exceeds `page size`. Use this token along with previous request parameters to retrieve the next page of results. When `page_token` is empty, all results have been retrieved.")] = None,
-        table_format: Optional[V2TaxonomyMetadataRequestTableFormat] = None,
-        children: Annotated[Optional[StrictBool], Field(description="Flag for tax explosion.")] = None,
-        ranks: Annotated[Optional[List[V2reportsRankType]], Field(description="Only include taxons of the provided ranks. If empty, return all ranks.")] = None,
+        table_format: Annotated[Optional[V2TaxonomyMetadataRequestTableFormat], Field(description="Specify a predefined set of fields for the tabular report using built-in templates. Use of this parameter requires the HTTP header, `accept: text/tab-separated-values`.")] = None,
+        children: Annotated[Optional[StrictBool], Field(description="If true, return results for child taxa.")] = None,
+        ranks: Annotated[Optional[List[V2reportsRankType]], Field(description="Limit results to taxa of the specified ranks.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4140,7 +4139,7 @@ class TaxonomyApi:
 
         :param taxons: (required)
         :type taxons: List[str]
-        :param returned_content: Return either tax-ids alone, or entire taxononmy-metadata records
+        :param returned_content: Return complete taxonomy reports, Taxonomy IDs only, or reports without assembly and gene counts (metadata).
         :type returned_content: V2TaxonomyMetadataRequestContentType
         :param page_size: The maximum number of taxons to return. Default is 20 and maximum is 1000. If the number of results exceeds the page size, `page_token` can be used to retrieve the remaining results.
         :type page_size: int
@@ -4148,11 +4147,11 @@ class TaxonomyApi:
         :type include_tabular_header: V2IncludeTabularHeader
         :param page_token: A page token is returned when the results count exceeds `page size`. Use this token along with previous request parameters to retrieve the next page of results. When `page_token` is empty, all results have been retrieved.
         :type page_token: str
-        :param table_format:
+        :param table_format: Specify a predefined set of fields for the tabular report using built-in templates. Use of this parameter requires the HTTP header, `accept: text/tab-separated-values`.
         :type table_format: V2TaxonomyMetadataRequestTableFormat
-        :param children: Flag for tax explosion.
+        :param children: If true, return results for child taxa.
         :type children: bool
-        :param ranks: Only include taxons of the provided ranks. If empty, return all ranks.
+        :param ranks: Limit results to taxa of the specified ranks.
         :type ranks: List[V2reportsRankType]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -4209,13 +4208,13 @@ class TaxonomyApi:
     def taxonomy_metadata_with_http_info(
         self,
         taxons: List[StrictStr],
-        returned_content: Annotated[Optional[V2TaxonomyMetadataRequestContentType], Field(description="Return either tax-ids alone, or entire taxononmy-metadata records")] = None,
+        returned_content: Annotated[Optional[V2TaxonomyMetadataRequestContentType], Field(description="Return complete taxonomy reports, Taxonomy IDs only, or reports without assembly and gene counts (metadata).")] = None,
         page_size: Annotated[Optional[StrictInt], Field(description="The maximum number of taxons to return. Default is 20 and maximum is 1000. If the number of results exceeds the page size, `page_token` can be used to retrieve the remaining results.")] = None,
         include_tabular_header: Annotated[Optional[V2IncludeTabularHeader], Field(description="Specify when to include the table header when requesting a tabular report.")] = None,
         page_token: Annotated[Optional[StrictStr], Field(description="A page token is returned when the results count exceeds `page size`. Use this token along with previous request parameters to retrieve the next page of results. When `page_token` is empty, all results have been retrieved.")] = None,
-        table_format: Optional[V2TaxonomyMetadataRequestTableFormat] = None,
-        children: Annotated[Optional[StrictBool], Field(description="Flag for tax explosion.")] = None,
-        ranks: Annotated[Optional[List[V2reportsRankType]], Field(description="Only include taxons of the provided ranks. If empty, return all ranks.")] = None,
+        table_format: Annotated[Optional[V2TaxonomyMetadataRequestTableFormat], Field(description="Specify a predefined set of fields for the tabular report using built-in templates. Use of this parameter requires the HTTP header, `accept: text/tab-separated-values`.")] = None,
+        children: Annotated[Optional[StrictBool], Field(description="If true, return results for child taxa.")] = None,
+        ranks: Annotated[Optional[List[V2reportsRankType]], Field(description="Limit results to taxa of the specified ranks.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4235,7 +4234,7 @@ class TaxonomyApi:
 
         :param taxons: (required)
         :type taxons: List[str]
-        :param returned_content: Return either tax-ids alone, or entire taxononmy-metadata records
+        :param returned_content: Return complete taxonomy reports, Taxonomy IDs only, or reports without assembly and gene counts (metadata).
         :type returned_content: V2TaxonomyMetadataRequestContentType
         :param page_size: The maximum number of taxons to return. Default is 20 and maximum is 1000. If the number of results exceeds the page size, `page_token` can be used to retrieve the remaining results.
         :type page_size: int
@@ -4243,11 +4242,11 @@ class TaxonomyApi:
         :type include_tabular_header: V2IncludeTabularHeader
         :param page_token: A page token is returned when the results count exceeds `page size`. Use this token along with previous request parameters to retrieve the next page of results. When `page_token` is empty, all results have been retrieved.
         :type page_token: str
-        :param table_format:
+        :param table_format: Specify a predefined set of fields for the tabular report using built-in templates. Use of this parameter requires the HTTP header, `accept: text/tab-separated-values`.
         :type table_format: V2TaxonomyMetadataRequestTableFormat
-        :param children: Flag for tax explosion.
+        :param children: If true, return results for child taxa.
         :type children: bool
-        :param ranks: Only include taxons of the provided ranks. If empty, return all ranks.
+        :param ranks: Limit results to taxa of the specified ranks.
         :type ranks: List[V2reportsRankType]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -4304,13 +4303,13 @@ class TaxonomyApi:
     def taxonomy_metadata_without_preload_content(
         self,
         taxons: List[StrictStr],
-        returned_content: Annotated[Optional[V2TaxonomyMetadataRequestContentType], Field(description="Return either tax-ids alone, or entire taxononmy-metadata records")] = None,
+        returned_content: Annotated[Optional[V2TaxonomyMetadataRequestContentType], Field(description="Return complete taxonomy reports, Taxonomy IDs only, or reports without assembly and gene counts (metadata).")] = None,
         page_size: Annotated[Optional[StrictInt], Field(description="The maximum number of taxons to return. Default is 20 and maximum is 1000. If the number of results exceeds the page size, `page_token` can be used to retrieve the remaining results.")] = None,
         include_tabular_header: Annotated[Optional[V2IncludeTabularHeader], Field(description="Specify when to include the table header when requesting a tabular report.")] = None,
         page_token: Annotated[Optional[StrictStr], Field(description="A page token is returned when the results count exceeds `page size`. Use this token along with previous request parameters to retrieve the next page of results. When `page_token` is empty, all results have been retrieved.")] = None,
-        table_format: Optional[V2TaxonomyMetadataRequestTableFormat] = None,
-        children: Annotated[Optional[StrictBool], Field(description="Flag for tax explosion.")] = None,
-        ranks: Annotated[Optional[List[V2reportsRankType]], Field(description="Only include taxons of the provided ranks. If empty, return all ranks.")] = None,
+        table_format: Annotated[Optional[V2TaxonomyMetadataRequestTableFormat], Field(description="Specify a predefined set of fields for the tabular report using built-in templates. Use of this parameter requires the HTTP header, `accept: text/tab-separated-values`.")] = None,
+        children: Annotated[Optional[StrictBool], Field(description="If true, return results for child taxa.")] = None,
+        ranks: Annotated[Optional[List[V2reportsRankType]], Field(description="Limit results to taxa of the specified ranks.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4330,7 +4329,7 @@ class TaxonomyApi:
 
         :param taxons: (required)
         :type taxons: List[str]
-        :param returned_content: Return either tax-ids alone, or entire taxononmy-metadata records
+        :param returned_content: Return complete taxonomy reports, Taxonomy IDs only, or reports without assembly and gene counts (metadata).
         :type returned_content: V2TaxonomyMetadataRequestContentType
         :param page_size: The maximum number of taxons to return. Default is 20 and maximum is 1000. If the number of results exceeds the page size, `page_token` can be used to retrieve the remaining results.
         :type page_size: int
@@ -4338,11 +4337,11 @@ class TaxonomyApi:
         :type include_tabular_header: V2IncludeTabularHeader
         :param page_token: A page token is returned when the results count exceeds `page size`. Use this token along with previous request parameters to retrieve the next page of results. When `page_token` is empty, all results have been retrieved.
         :type page_token: str
-        :param table_format:
+        :param table_format: Specify a predefined set of fields for the tabular report using built-in templates. Use of this parameter requires the HTTP header, `accept: text/tab-separated-values`.
         :type table_format: V2TaxonomyMetadataRequestTableFormat
-        :param children: Flag for tax explosion.
+        :param children: If true, return results for child taxa.
         :type children: bool
-        :param ranks: Only include taxons of the provided ranks. If empty, return all ranks.
+        :param ranks: Limit results to taxa of the specified ranks.
         :type ranks: List[V2reportsRankType]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -4772,13 +4771,10 @@ class TaxonomyApi:
     def taxonomy_names(
         self,
         taxons: List[StrictStr],
-        returned_content: Annotated[Optional[V2TaxonomyMetadataRequestContentType], Field(description="Return either tax-ids alone, or entire taxononmy-metadata records")] = None,
         page_size: Annotated[Optional[StrictInt], Field(description="The maximum number of taxons to return. Default is 20 and maximum is 1000. If the number of results exceeds the page size, `page_token` can be used to retrieve the remaining results.")] = None,
-        include_tabular_header: Annotated[Optional[V2IncludeTabularHeader], Field(description="Specify when to include the table header when requesting a tabular report.")] = None,
         page_token: Annotated[Optional[StrictStr], Field(description="A page token is returned when the results count exceeds `page size`. Use this token along with previous request parameters to retrieve the next page of results. When `page_token` is empty, all results have been retrieved.")] = None,
-        table_format: Optional[V2TaxonomyMetadataRequestTableFormat] = None,
-        children: Annotated[Optional[StrictBool], Field(description="Flag for tax explosion.")] = None,
-        ranks: Annotated[Optional[List[V2reportsRankType]], Field(description="Only include taxons of the provided ranks. If empty, return all ranks.")] = None,
+        children: Annotated[Optional[StrictBool], Field(description="If true, return results for child taxa.")] = None,
+        ranks: Annotated[Optional[List[V2reportsRankType]], Field(description="Limit results to taxa of the specified ranks.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4792,25 +4788,19 @@ class TaxonomyApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> V2reportsTaxonomyNamesDataReportPage:
-        """Use taxonomic identifiers to get taxonomic names data report
+        """Get a taxonomy names report by taxon
 
-        Using NCBI Taxonomy IDs or names (common or scientific) at any rank, get metadata about associated taxonomic names.
+        Get a taxonomy names report, including common names and other synonyms, in JSON format.
 
         :param taxons: (required)
         :type taxons: List[str]
-        :param returned_content: Return either tax-ids alone, or entire taxononmy-metadata records
-        :type returned_content: V2TaxonomyMetadataRequestContentType
         :param page_size: The maximum number of taxons to return. Default is 20 and maximum is 1000. If the number of results exceeds the page size, `page_token` can be used to retrieve the remaining results.
         :type page_size: int
-        :param include_tabular_header: Specify when to include the table header when requesting a tabular report.
-        :type include_tabular_header: V2IncludeTabularHeader
         :param page_token: A page token is returned when the results count exceeds `page size`. Use this token along with previous request parameters to retrieve the next page of results. When `page_token` is empty, all results have been retrieved.
         :type page_token: str
-        :param table_format:
-        :type table_format: V2TaxonomyMetadataRequestTableFormat
-        :param children: Flag for tax explosion.
+        :param children: If true, return results for child taxa.
         :type children: bool
-        :param ranks: Only include taxons of the provided ranks. If empty, return all ranks.
+        :param ranks: Limit results to taxa of the specified ranks.
         :type ranks: List[V2reportsRankType]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -4836,11 +4826,8 @@ class TaxonomyApi:
 
         _param = self._taxonomy_names_serialize(
             taxons=taxons,
-            returned_content=returned_content,
             page_size=page_size,
-            include_tabular_header=include_tabular_header,
             page_token=page_token,
-            table_format=table_format,
             children=children,
             ranks=ranks,
             _request_auth=_request_auth,
@@ -4867,13 +4854,10 @@ class TaxonomyApi:
     def taxonomy_names_with_http_info(
         self,
         taxons: List[StrictStr],
-        returned_content: Annotated[Optional[V2TaxonomyMetadataRequestContentType], Field(description="Return either tax-ids alone, or entire taxononmy-metadata records")] = None,
         page_size: Annotated[Optional[StrictInt], Field(description="The maximum number of taxons to return. Default is 20 and maximum is 1000. If the number of results exceeds the page size, `page_token` can be used to retrieve the remaining results.")] = None,
-        include_tabular_header: Annotated[Optional[V2IncludeTabularHeader], Field(description="Specify when to include the table header when requesting a tabular report.")] = None,
         page_token: Annotated[Optional[StrictStr], Field(description="A page token is returned when the results count exceeds `page size`. Use this token along with previous request parameters to retrieve the next page of results. When `page_token` is empty, all results have been retrieved.")] = None,
-        table_format: Optional[V2TaxonomyMetadataRequestTableFormat] = None,
-        children: Annotated[Optional[StrictBool], Field(description="Flag for tax explosion.")] = None,
-        ranks: Annotated[Optional[List[V2reportsRankType]], Field(description="Only include taxons of the provided ranks. If empty, return all ranks.")] = None,
+        children: Annotated[Optional[StrictBool], Field(description="If true, return results for child taxa.")] = None,
+        ranks: Annotated[Optional[List[V2reportsRankType]], Field(description="Limit results to taxa of the specified ranks.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4887,25 +4871,19 @@ class TaxonomyApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[V2reportsTaxonomyNamesDataReportPage]:
-        """Use taxonomic identifiers to get taxonomic names data report
+        """Get a taxonomy names report by taxon
 
-        Using NCBI Taxonomy IDs or names (common or scientific) at any rank, get metadata about associated taxonomic names.
+        Get a taxonomy names report, including common names and other synonyms, in JSON format.
 
         :param taxons: (required)
         :type taxons: List[str]
-        :param returned_content: Return either tax-ids alone, or entire taxononmy-metadata records
-        :type returned_content: V2TaxonomyMetadataRequestContentType
         :param page_size: The maximum number of taxons to return. Default is 20 and maximum is 1000. If the number of results exceeds the page size, `page_token` can be used to retrieve the remaining results.
         :type page_size: int
-        :param include_tabular_header: Specify when to include the table header when requesting a tabular report.
-        :type include_tabular_header: V2IncludeTabularHeader
         :param page_token: A page token is returned when the results count exceeds `page size`. Use this token along with previous request parameters to retrieve the next page of results. When `page_token` is empty, all results have been retrieved.
         :type page_token: str
-        :param table_format:
-        :type table_format: V2TaxonomyMetadataRequestTableFormat
-        :param children: Flag for tax explosion.
+        :param children: If true, return results for child taxa.
         :type children: bool
-        :param ranks: Only include taxons of the provided ranks. If empty, return all ranks.
+        :param ranks: Limit results to taxa of the specified ranks.
         :type ranks: List[V2reportsRankType]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -4931,11 +4909,8 @@ class TaxonomyApi:
 
         _param = self._taxonomy_names_serialize(
             taxons=taxons,
-            returned_content=returned_content,
             page_size=page_size,
-            include_tabular_header=include_tabular_header,
             page_token=page_token,
-            table_format=table_format,
             children=children,
             ranks=ranks,
             _request_auth=_request_auth,
@@ -4962,13 +4937,10 @@ class TaxonomyApi:
     def taxonomy_names_without_preload_content(
         self,
         taxons: List[StrictStr],
-        returned_content: Annotated[Optional[V2TaxonomyMetadataRequestContentType], Field(description="Return either tax-ids alone, or entire taxononmy-metadata records")] = None,
         page_size: Annotated[Optional[StrictInt], Field(description="The maximum number of taxons to return. Default is 20 and maximum is 1000. If the number of results exceeds the page size, `page_token` can be used to retrieve the remaining results.")] = None,
-        include_tabular_header: Annotated[Optional[V2IncludeTabularHeader], Field(description="Specify when to include the table header when requesting a tabular report.")] = None,
         page_token: Annotated[Optional[StrictStr], Field(description="A page token is returned when the results count exceeds `page size`. Use this token along with previous request parameters to retrieve the next page of results. When `page_token` is empty, all results have been retrieved.")] = None,
-        table_format: Optional[V2TaxonomyMetadataRequestTableFormat] = None,
-        children: Annotated[Optional[StrictBool], Field(description="Flag for tax explosion.")] = None,
-        ranks: Annotated[Optional[List[V2reportsRankType]], Field(description="Only include taxons of the provided ranks. If empty, return all ranks.")] = None,
+        children: Annotated[Optional[StrictBool], Field(description="If true, return results for child taxa.")] = None,
+        ranks: Annotated[Optional[List[V2reportsRankType]], Field(description="Limit results to taxa of the specified ranks.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4982,25 +4954,19 @@ class TaxonomyApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Use taxonomic identifiers to get taxonomic names data report
+        """Get a taxonomy names report by taxon
 
-        Using NCBI Taxonomy IDs or names (common or scientific) at any rank, get metadata about associated taxonomic names.
+        Get a taxonomy names report, including common names and other synonyms, in JSON format.
 
         :param taxons: (required)
         :type taxons: List[str]
-        :param returned_content: Return either tax-ids alone, or entire taxononmy-metadata records
-        :type returned_content: V2TaxonomyMetadataRequestContentType
         :param page_size: The maximum number of taxons to return. Default is 20 and maximum is 1000. If the number of results exceeds the page size, `page_token` can be used to retrieve the remaining results.
         :type page_size: int
-        :param include_tabular_header: Specify when to include the table header when requesting a tabular report.
-        :type include_tabular_header: V2IncludeTabularHeader
         :param page_token: A page token is returned when the results count exceeds `page size`. Use this token along with previous request parameters to retrieve the next page of results. When `page_token` is empty, all results have been retrieved.
         :type page_token: str
-        :param table_format:
-        :type table_format: V2TaxonomyMetadataRequestTableFormat
-        :param children: Flag for tax explosion.
+        :param children: If true, return results for child taxa.
         :type children: bool
-        :param ranks: Only include taxons of the provided ranks. If empty, return all ranks.
+        :param ranks: Limit results to taxa of the specified ranks.
         :type ranks: List[V2reportsRankType]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -5026,11 +4992,8 @@ class TaxonomyApi:
 
         _param = self._taxonomy_names_serialize(
             taxons=taxons,
-            returned_content=returned_content,
             page_size=page_size,
-            include_tabular_header=include_tabular_header,
             page_token=page_token,
-            table_format=table_format,
             children=children,
             ranks=ranks,
             _request_auth=_request_auth,
@@ -5052,11 +5015,8 @@ class TaxonomyApi:
     def _taxonomy_names_serialize(
         self,
         taxons,
-        returned_content,
         page_size,
-        include_tabular_header,
         page_token,
-        table_format,
         children,
         ranks,
         _request_auth,
@@ -5085,25 +5045,13 @@ class TaxonomyApi:
         if taxons is not None:
             _path_params['taxons'] = taxons
         # process the query parameters
-        if returned_content is not None:
-            
-            _query_params.append(('returned_content', returned_content.value))
-            
         if page_size is not None:
             
             _query_params.append(('page_size', page_size))
             
-        if include_tabular_header is not None:
-            
-            _query_params.append(('include_tabular_header', include_tabular_header.value))
-            
         if page_token is not None:
             
             _query_params.append(('page_token', page_token))
-            
-        if table_format is not None:
-            
-            _query_params.append(('table_format', table_format.value))
             
         if children is not None:
             
@@ -5168,9 +5116,9 @@ class TaxonomyApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> V2reportsTaxonomyNamesDataReportPage:
-        """Use taxonomic identifiers to get taxonomic names data report by post
+        """Get a taxonomy names report by taxon
 
-        Using NCBI Taxonomy IDs or names (common or scientific) at any rank, get metadata about associated taxonomic names.
+        Get a taxonomy names report, including common names and other synonyms, in JSON format.
 
         :param v2_taxonomy_metadata_request: (required)
         :type v2_taxonomy_metadata_request: V2TaxonomyMetadataRequest
@@ -5235,9 +5183,9 @@ class TaxonomyApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[V2reportsTaxonomyNamesDataReportPage]:
-        """Use taxonomic identifiers to get taxonomic names data report by post
+        """Get a taxonomy names report by taxon
 
-        Using NCBI Taxonomy IDs or names (common or scientific) at any rank, get metadata about associated taxonomic names.
+        Get a taxonomy names report, including common names and other synonyms, in JSON format.
 
         :param v2_taxonomy_metadata_request: (required)
         :type v2_taxonomy_metadata_request: V2TaxonomyMetadataRequest
@@ -5302,9 +5250,9 @@ class TaxonomyApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Use taxonomic identifiers to get taxonomic names data report by post
+        """Get a taxonomy names report by taxon
 
-        Using NCBI Taxonomy IDs or names (common or scientific) at any rank, get metadata about associated taxonomic names.
+        Get a taxonomy names report, including common names and other synonyms, in JSON format.
 
         :param v2_taxonomy_metadata_request: (required)
         :type v2_taxonomy_metadata_request: V2TaxonomyMetadataRequest
@@ -5430,9 +5378,8 @@ class TaxonomyApi:
     def taxonomy_related_ids(
         self,
         tax_id: StrictInt,
-        include_lineage: Annotated[Optional[StrictBool], Field(description="If true, return reports for all taxonomy nodes in the lineages of the requested tax_id")] = None,
-        include_subtree: Annotated[Optional[StrictBool], Field(description="This field is deprecated because all requests include the subtree, so it has no effect")] = None,
-        ranks: Annotated[Optional[List[V2reportsRankType]], Field(description="Only include taxons of the provided ranks. If empty, return all ranks.")] = None,
+        include_lineage: Annotated[Optional[StrictBool], Field(description="If true, include parent nodes")] = None,
+        ranks: Annotated[Optional[List[V2reportsRankType]], Field(description="Limit to taxonomic nodes from the given ranks.")] = None,
         page_size: Annotated[Optional[StrictInt], Field(description="The maximum number of taxids to return. Default is 20 and maximum is 1000. If the number of results exceeds the page size, `page_token` can be used to retrieve the remaining results.")] = None,
         page_token: Annotated[Optional[StrictStr], Field(description="A page token is returned when the results count exceeds `page size`. Use this token along with previous request parameters to retrieve the next page of results. When `page_token` is empty, all results have been retrieved.")] = None,
         _request_timeout: Union[
@@ -5448,17 +5395,15 @@ class TaxonomyApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> V2TaxonomyTaxIdsPage:
-        """Use taxonomic identifier to get related taxonomic identifiers, such as children
+        """Get child nodes, and optionally parent nodes, for a given taxon by Taxonomy ID
 
-        Using a single NCBI Taxonomy ID at any rank, get a list of related taxonomic IDs in JSON format.
+        Get child nodes, and optionally parent nodes, in JSON format.
 
         :param tax_id: (required)
         :type tax_id: int
-        :param include_lineage: If true, return reports for all taxonomy nodes in the lineages of the requested tax_id
+        :param include_lineage: If true, include parent nodes
         :type include_lineage: bool
-        :param include_subtree: This field is deprecated because all requests include the subtree, so it has no effect
-        :type include_subtree: bool
-        :param ranks: Only include taxons of the provided ranks. If empty, return all ranks.
+        :param ranks: Limit to taxonomic nodes from the given ranks.
         :type ranks: List[V2reportsRankType]
         :param page_size: The maximum number of taxids to return. Default is 20 and maximum is 1000. If the number of results exceeds the page size, `page_token` can be used to retrieve the remaining results.
         :type page_size: int
@@ -5489,7 +5434,6 @@ class TaxonomyApi:
         _param = self._taxonomy_related_ids_serialize(
             tax_id=tax_id,
             include_lineage=include_lineage,
-            include_subtree=include_subtree,
             ranks=ranks,
             page_size=page_size,
             page_token=page_token,
@@ -5517,9 +5461,8 @@ class TaxonomyApi:
     def taxonomy_related_ids_with_http_info(
         self,
         tax_id: StrictInt,
-        include_lineage: Annotated[Optional[StrictBool], Field(description="If true, return reports for all taxonomy nodes in the lineages of the requested tax_id")] = None,
-        include_subtree: Annotated[Optional[StrictBool], Field(description="This field is deprecated because all requests include the subtree, so it has no effect")] = None,
-        ranks: Annotated[Optional[List[V2reportsRankType]], Field(description="Only include taxons of the provided ranks. If empty, return all ranks.")] = None,
+        include_lineage: Annotated[Optional[StrictBool], Field(description="If true, include parent nodes")] = None,
+        ranks: Annotated[Optional[List[V2reportsRankType]], Field(description="Limit to taxonomic nodes from the given ranks.")] = None,
         page_size: Annotated[Optional[StrictInt], Field(description="The maximum number of taxids to return. Default is 20 and maximum is 1000. If the number of results exceeds the page size, `page_token` can be used to retrieve the remaining results.")] = None,
         page_token: Annotated[Optional[StrictStr], Field(description="A page token is returned when the results count exceeds `page size`. Use this token along with previous request parameters to retrieve the next page of results. When `page_token` is empty, all results have been retrieved.")] = None,
         _request_timeout: Union[
@@ -5535,17 +5478,15 @@ class TaxonomyApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[V2TaxonomyTaxIdsPage]:
-        """Use taxonomic identifier to get related taxonomic identifiers, such as children
+        """Get child nodes, and optionally parent nodes, for a given taxon by Taxonomy ID
 
-        Using a single NCBI Taxonomy ID at any rank, get a list of related taxonomic IDs in JSON format.
+        Get child nodes, and optionally parent nodes, in JSON format.
 
         :param tax_id: (required)
         :type tax_id: int
-        :param include_lineage: If true, return reports for all taxonomy nodes in the lineages of the requested tax_id
+        :param include_lineage: If true, include parent nodes
         :type include_lineage: bool
-        :param include_subtree: This field is deprecated because all requests include the subtree, so it has no effect
-        :type include_subtree: bool
-        :param ranks: Only include taxons of the provided ranks. If empty, return all ranks.
+        :param ranks: Limit to taxonomic nodes from the given ranks.
         :type ranks: List[V2reportsRankType]
         :param page_size: The maximum number of taxids to return. Default is 20 and maximum is 1000. If the number of results exceeds the page size, `page_token` can be used to retrieve the remaining results.
         :type page_size: int
@@ -5576,7 +5517,6 @@ class TaxonomyApi:
         _param = self._taxonomy_related_ids_serialize(
             tax_id=tax_id,
             include_lineage=include_lineage,
-            include_subtree=include_subtree,
             ranks=ranks,
             page_size=page_size,
             page_token=page_token,
@@ -5604,9 +5544,8 @@ class TaxonomyApi:
     def taxonomy_related_ids_without_preload_content(
         self,
         tax_id: StrictInt,
-        include_lineage: Annotated[Optional[StrictBool], Field(description="If true, return reports for all taxonomy nodes in the lineages of the requested tax_id")] = None,
-        include_subtree: Annotated[Optional[StrictBool], Field(description="This field is deprecated because all requests include the subtree, so it has no effect")] = None,
-        ranks: Annotated[Optional[List[V2reportsRankType]], Field(description="Only include taxons of the provided ranks. If empty, return all ranks.")] = None,
+        include_lineage: Annotated[Optional[StrictBool], Field(description="If true, include parent nodes")] = None,
+        ranks: Annotated[Optional[List[V2reportsRankType]], Field(description="Limit to taxonomic nodes from the given ranks.")] = None,
         page_size: Annotated[Optional[StrictInt], Field(description="The maximum number of taxids to return. Default is 20 and maximum is 1000. If the number of results exceeds the page size, `page_token` can be used to retrieve the remaining results.")] = None,
         page_token: Annotated[Optional[StrictStr], Field(description="A page token is returned when the results count exceeds `page size`. Use this token along with previous request parameters to retrieve the next page of results. When `page_token` is empty, all results have been retrieved.")] = None,
         _request_timeout: Union[
@@ -5622,17 +5561,15 @@ class TaxonomyApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Use taxonomic identifier to get related taxonomic identifiers, such as children
+        """Get child nodes, and optionally parent nodes, for a given taxon by Taxonomy ID
 
-        Using a single NCBI Taxonomy ID at any rank, get a list of related taxonomic IDs in JSON format.
+        Get child nodes, and optionally parent nodes, in JSON format.
 
         :param tax_id: (required)
         :type tax_id: int
-        :param include_lineage: If true, return reports for all taxonomy nodes in the lineages of the requested tax_id
+        :param include_lineage: If true, include parent nodes
         :type include_lineage: bool
-        :param include_subtree: This field is deprecated because all requests include the subtree, so it has no effect
-        :type include_subtree: bool
-        :param ranks: Only include taxons of the provided ranks. If empty, return all ranks.
+        :param ranks: Limit to taxonomic nodes from the given ranks.
         :type ranks: List[V2reportsRankType]
         :param page_size: The maximum number of taxids to return. Default is 20 and maximum is 1000. If the number of results exceeds the page size, `page_token` can be used to retrieve the remaining results.
         :type page_size: int
@@ -5663,7 +5600,6 @@ class TaxonomyApi:
         _param = self._taxonomy_related_ids_serialize(
             tax_id=tax_id,
             include_lineage=include_lineage,
-            include_subtree=include_subtree,
             ranks=ranks,
             page_size=page_size,
             page_token=page_token,
@@ -5687,7 +5623,6 @@ class TaxonomyApi:
         self,
         tax_id,
         include_lineage,
-        include_subtree,
         ranks,
         page_size,
         page_token,
@@ -5719,10 +5654,6 @@ class TaxonomyApi:
         if include_lineage is not None:
             
             _query_params.append(('include_lineage', include_lineage))
-            
-        if include_subtree is not None:
-            
-            _query_params.append(('include_subtree', include_subtree))
             
         if ranks is not None:
             
@@ -5791,9 +5722,9 @@ class TaxonomyApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> V2TaxonomyTaxIdsPage:
-        """Use taxonomic identifier to get related taxonomic identifiers, such as children
+        """Get child nodes, and optionally parent nodes, for a given taxon by Taxonomy ID
 
-        Using a single NCBI Taxonomy ID at any rank, get a list of related taxonomic IDs in JSON format.
+        Get child nodes, and optionally parent nodes, in JSON format.
 
         :param v2_taxonomy_related_id_request: (required)
         :type v2_taxonomy_related_id_request: V2TaxonomyRelatedIdRequest
@@ -5858,9 +5789,9 @@ class TaxonomyApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[V2TaxonomyTaxIdsPage]:
-        """Use taxonomic identifier to get related taxonomic identifiers, such as children
+        """Get child nodes, and optionally parent nodes, for a given taxon by Taxonomy ID
 
-        Using a single NCBI Taxonomy ID at any rank, get a list of related taxonomic IDs in JSON format.
+        Get child nodes, and optionally parent nodes, in JSON format.
 
         :param v2_taxonomy_related_id_request: (required)
         :type v2_taxonomy_related_id_request: V2TaxonomyRelatedIdRequest
@@ -5925,9 +5856,9 @@ class TaxonomyApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Use taxonomic identifier to get related taxonomic identifiers, such as children
+        """Get child nodes, and optionally parent nodes, for a given taxon by Taxonomy ID
 
-        Using a single NCBI Taxonomy ID at any rank, get a list of related taxonomic IDs in JSON format.
+        Get child nodes, and optionally parent nodes, in JSON format.
 
         :param v2_taxonomy_related_id_request: (required)
         :type v2_taxonomy_related_id_request: V2TaxonomyRelatedIdRequest
