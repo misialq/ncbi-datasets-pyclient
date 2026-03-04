@@ -541,7 +541,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **taxonomy_filtered_subtree**
-> V2TaxonomyFilteredSubtreeResponse taxonomy_filtered_subtree(taxons, rank_limits=rank_limits, include_incertae_sedis=include_incertae_sedis)
+> V2TaxonomyFilteredSubtreeResponse taxonomy_filtered_subtree(taxons, specified_limit=specified_limit, exclude_extinct=exclude_extinct, levels=levels, rank_limits=rank_limits, include_incertae_sedis=include_incertae_sedis)
 
 Get a filtered taxonomic subtree by taxon
 
@@ -580,12 +580,15 @@ with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = ncbi.datasets.openapi.TaxonomyApi(api_client)
     taxons = ['9606'] # List[str] | 
+    specified_limit = True # bool | Limit to specified species (optional)
+    exclude_extinct = True # bool | Limit to species that are not extinct (optional)
+    levels = 56 # int | Number of taxonomic levels to return with a valid range of 1-5. Values above 5 will return 5 levels and if level is 0 or not specified, 1 level will be returned. (optional)
     rank_limits = [ncbi.datasets.openapi.V2reportsRankType()] # List[V2reportsRankType] | Limit to the provided ranks.  If empty, accept any rank. (optional)
     include_incertae_sedis = True # bool | Include nodes with ranks not in 'rank_limits' if their names meet criteria for incertae sedis (of unknown origin). (optional)
 
     try:
         # Get a filtered taxonomic subtree by taxon
-        api_response = api_instance.taxonomy_filtered_subtree(taxons, rank_limits=rank_limits, include_incertae_sedis=include_incertae_sedis)
+        api_response = api_instance.taxonomy_filtered_subtree(taxons, specified_limit=specified_limit, exclude_extinct=exclude_extinct, levels=levels, rank_limits=rank_limits, include_incertae_sedis=include_incertae_sedis)
         print("The response of TaxonomyApi->taxonomy_filtered_subtree:\n")
         pprint(api_response)
     except Exception as e:
@@ -600,6 +603,9 @@ with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **taxons** | [**List[str]**](str.md)|  | 
+ **specified_limit** | **bool**| Limit to specified species | [optional] 
+ **exclude_extinct** | **bool**| Limit to species that are not extinct | [optional] 
+ **levels** | **int**| Number of taxonomic levels to return with a valid range of 1-5. Values above 5 will return 5 levels and if level is 0 or not specified, 1 level will be returned. | [optional] 
  **rank_limits** | [**List[V2reportsRankType]**](V2reportsRankType.md)| Limit to the provided ranks.  If empty, accept any rank. | [optional] 
  **include_incertae_sedis** | **bool**| Include nodes with ranks not in &#39;rank_limits&#39; if their names meet criteria for incertae sedis (of unknown origin). | [optional] 
 

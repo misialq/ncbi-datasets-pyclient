@@ -1905,6 +1905,9 @@ class TaxonomyApi:
     def taxonomy_filtered_subtree(
         self,
         taxons: List[StrictStr],
+        specified_limit: Annotated[Optional[StrictBool], Field(description="Limit to specified species")] = None,
+        exclude_extinct: Annotated[Optional[StrictBool], Field(description="Limit to species that are not extinct")] = None,
+        levels: Annotated[Optional[StrictInt], Field(description="Number of taxonomic levels to return with a valid range of 1-5. Values above 5 will return 5 levels and if level is 0 or not specified, 1 level will be returned.")] = None,
         rank_limits: Annotated[Optional[List[V2reportsRankType]], Field(description="Limit to the provided ranks.  If empty, accept any rank.")] = None,
         include_incertae_sedis: Annotated[Optional[StrictBool], Field(description="Include nodes with ranks not in 'rank_limits' if their names meet criteria for incertae sedis (of unknown origin).")] = None,
         _request_timeout: Union[
@@ -1926,6 +1929,12 @@ class TaxonomyApi:
 
         :param taxons: (required)
         :type taxons: List[str]
+        :param specified_limit: Limit to specified species
+        :type specified_limit: bool
+        :param exclude_extinct: Limit to species that are not extinct
+        :type exclude_extinct: bool
+        :param levels: Number of taxonomic levels to return with a valid range of 1-5. Values above 5 will return 5 levels and if level is 0 or not specified, 1 level will be returned.
+        :type levels: int
         :param rank_limits: Limit to the provided ranks.  If empty, accept any rank.
         :type rank_limits: List[V2reportsRankType]
         :param include_incertae_sedis: Include nodes with ranks not in 'rank_limits' if their names meet criteria for incertae sedis (of unknown origin).
@@ -1954,6 +1963,9 @@ class TaxonomyApi:
 
         _param = self._taxonomy_filtered_subtree_serialize(
             taxons=taxons,
+            specified_limit=specified_limit,
+            exclude_extinct=exclude_extinct,
+            levels=levels,
             rank_limits=rank_limits,
             include_incertae_sedis=include_incertae_sedis,
             _request_auth=_request_auth,
@@ -1980,6 +1992,9 @@ class TaxonomyApi:
     def taxonomy_filtered_subtree_with_http_info(
         self,
         taxons: List[StrictStr],
+        specified_limit: Annotated[Optional[StrictBool], Field(description="Limit to specified species")] = None,
+        exclude_extinct: Annotated[Optional[StrictBool], Field(description="Limit to species that are not extinct")] = None,
+        levels: Annotated[Optional[StrictInt], Field(description="Number of taxonomic levels to return with a valid range of 1-5. Values above 5 will return 5 levels and if level is 0 or not specified, 1 level will be returned.")] = None,
         rank_limits: Annotated[Optional[List[V2reportsRankType]], Field(description="Limit to the provided ranks.  If empty, accept any rank.")] = None,
         include_incertae_sedis: Annotated[Optional[StrictBool], Field(description="Include nodes with ranks not in 'rank_limits' if their names meet criteria for incertae sedis (of unknown origin).")] = None,
         _request_timeout: Union[
@@ -2001,6 +2016,12 @@ class TaxonomyApi:
 
         :param taxons: (required)
         :type taxons: List[str]
+        :param specified_limit: Limit to specified species
+        :type specified_limit: bool
+        :param exclude_extinct: Limit to species that are not extinct
+        :type exclude_extinct: bool
+        :param levels: Number of taxonomic levels to return with a valid range of 1-5. Values above 5 will return 5 levels and if level is 0 or not specified, 1 level will be returned.
+        :type levels: int
         :param rank_limits: Limit to the provided ranks.  If empty, accept any rank.
         :type rank_limits: List[V2reportsRankType]
         :param include_incertae_sedis: Include nodes with ranks not in 'rank_limits' if their names meet criteria for incertae sedis (of unknown origin).
@@ -2029,6 +2050,9 @@ class TaxonomyApi:
 
         _param = self._taxonomy_filtered_subtree_serialize(
             taxons=taxons,
+            specified_limit=specified_limit,
+            exclude_extinct=exclude_extinct,
+            levels=levels,
             rank_limits=rank_limits,
             include_incertae_sedis=include_incertae_sedis,
             _request_auth=_request_auth,
@@ -2055,6 +2079,9 @@ class TaxonomyApi:
     def taxonomy_filtered_subtree_without_preload_content(
         self,
         taxons: List[StrictStr],
+        specified_limit: Annotated[Optional[StrictBool], Field(description="Limit to specified species")] = None,
+        exclude_extinct: Annotated[Optional[StrictBool], Field(description="Limit to species that are not extinct")] = None,
+        levels: Annotated[Optional[StrictInt], Field(description="Number of taxonomic levels to return with a valid range of 1-5. Values above 5 will return 5 levels and if level is 0 or not specified, 1 level will be returned.")] = None,
         rank_limits: Annotated[Optional[List[V2reportsRankType]], Field(description="Limit to the provided ranks.  If empty, accept any rank.")] = None,
         include_incertae_sedis: Annotated[Optional[StrictBool], Field(description="Include nodes with ranks not in 'rank_limits' if their names meet criteria for incertae sedis (of unknown origin).")] = None,
         _request_timeout: Union[
@@ -2076,6 +2103,12 @@ class TaxonomyApi:
 
         :param taxons: (required)
         :type taxons: List[str]
+        :param specified_limit: Limit to specified species
+        :type specified_limit: bool
+        :param exclude_extinct: Limit to species that are not extinct
+        :type exclude_extinct: bool
+        :param levels: Number of taxonomic levels to return with a valid range of 1-5. Values above 5 will return 5 levels and if level is 0 or not specified, 1 level will be returned.
+        :type levels: int
         :param rank_limits: Limit to the provided ranks.  If empty, accept any rank.
         :type rank_limits: List[V2reportsRankType]
         :param include_incertae_sedis: Include nodes with ranks not in 'rank_limits' if their names meet criteria for incertae sedis (of unknown origin).
@@ -2104,6 +2137,9 @@ class TaxonomyApi:
 
         _param = self._taxonomy_filtered_subtree_serialize(
             taxons=taxons,
+            specified_limit=specified_limit,
+            exclude_extinct=exclude_extinct,
+            levels=levels,
             rank_limits=rank_limits,
             include_incertae_sedis=include_incertae_sedis,
             _request_auth=_request_auth,
@@ -2125,6 +2161,9 @@ class TaxonomyApi:
     def _taxonomy_filtered_subtree_serialize(
         self,
         taxons,
+        specified_limit,
+        exclude_extinct,
+        levels,
         rank_limits,
         include_incertae_sedis,
         _request_auth,
@@ -2153,6 +2192,18 @@ class TaxonomyApi:
         if taxons is not None:
             _path_params['taxons'] = taxons
         # process the query parameters
+        if specified_limit is not None:
+            
+            _query_params.append(('specified_limit', specified_limit))
+            
+        if exclude_extinct is not None:
+            
+            _query_params.append(('exclude_extinct', exclude_extinct))
+            
+        if levels is not None:
+            
+            _query_params.append(('levels', levels))
+            
         if rank_limits is not None:
             
             _query_params.append(('rank_limits', rank_limits))

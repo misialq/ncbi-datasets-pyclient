@@ -17,23 +17,22 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictBool, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from ncbi.datasets.openapi.models.v2reports_rank_type import V2reportsRankType
+from ncbi.datasets.openapi.models.v2reports_get_biocollections_report import V2reportsGetBiocollectionsReport
+from ncbi.datasets.openapi.models.v2reports_message import V2reportsMessage
 from typing import Optional, Set
 from typing_extensions import Self
 
-class V2TaxonomyFilteredSubtreeRequest(BaseModel):
+class V2reportsBiocollectionsReportPage(BaseModel):
     """
-    V2TaxonomyFilteredSubtreeRequest
+    V2reportsBiocollectionsReportPage
     """ # noqa: E501
-    taxons: Optional[List[StrictStr]] = None
-    specified_limit: Optional[StrictBool] = None
-    exclude_extinct: Optional[StrictBool] = None
-    levels: Optional[StrictInt] = None
-    rank_limits: Optional[List[V2reportsRankType]] = None
-    include_incertae_sedis: Optional[StrictBool] = None
-    __properties: ClassVar[List[str]] = ["taxons", "specified_limit", "exclude_extinct", "levels", "rank_limits", "include_incertae_sedis"]
+    reports: Optional[List[V2reportsGetBiocollectionsReport]] = None
+    messages: Optional[List[V2reportsMessage]] = None
+    total_count: Optional[StrictInt] = None
+    next_page_token: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["reports", "messages", "total_count", "next_page_token"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -53,7 +52,7 @@ class V2TaxonomyFilteredSubtreeRequest(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of V2TaxonomyFilteredSubtreeRequest from a JSON string"""
+        """Create an instance of V2reportsBiocollectionsReportPage from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -74,11 +73,25 @@ class V2TaxonomyFilteredSubtreeRequest(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of each item in reports (list)
+        _items = []
+        if self.reports:
+            for _item_reports in self.reports:
+                if _item_reports:
+                    _items.append(_item_reports.to_dict())
+            _dict['reports'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in messages (list)
+        _items = []
+        if self.messages:
+            for _item_messages in self.messages:
+                if _item_messages:
+                    _items.append(_item_messages.to_dict())
+            _dict['messages'] = _items
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of V2TaxonomyFilteredSubtreeRequest from a dict"""
+        """Create an instance of V2reportsBiocollectionsReportPage from a dict"""
         if obj is None:
             return None
 
@@ -86,12 +99,10 @@ class V2TaxonomyFilteredSubtreeRequest(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "taxons": obj.get("taxons"),
-            "specified_limit": obj.get("specified_limit"),
-            "exclude_extinct": obj.get("exclude_extinct"),
-            "levels": obj.get("levels"),
-            "rank_limits": obj.get("rank_limits"),
-            "include_incertae_sedis": obj.get("include_incertae_sedis")
+            "reports": [V2reportsGetBiocollectionsReport.from_dict(_item) for _item in obj["reports"]] if obj.get("reports") is not None else None,
+            "messages": [V2reportsMessage.from_dict(_item) for _item in obj["messages"]] if obj.get("messages") is not None else None,
+            "total_count": obj.get("total_count"),
+            "next_page_token": obj.get("next_page_token")
         })
         return _obj
 

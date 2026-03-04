@@ -63,6 +63,7 @@ docs/V2AssemblyRevisionHistory.md
 docs/V2AssemblyRevisionHistoryRequest.md
 docs/V2AssemblySequenceReportsRequest.md
 docs/V2BioSampleDatasetReportsRequest.md
+docs/V2BiocollectionsSortField.md
 docs/V2CatalogApiVersion.md
 docs/V2DatasetRequest.md
 docs/V2DownloadSummary.md
@@ -96,6 +97,7 @@ docs/V2GenomeAnnotationRequest.md
 docs/V2GenomeAnnotationRequestAnnotationType.md
 docs/V2GenomeAnnotationRequestGenomeAnnotationTableFormat.md
 docs/V2GenomeAnnotationTableSummaryReply.md
+docs/V2GetBiocollectionsRequest.md
 docs/V2HttpBody.md
 docs/V2ImageSize.md
 docs/V2IncludeTabularHeader.md
@@ -202,6 +204,9 @@ docs/V2reportsBioSampleDescriptor.md
 docs/V2reportsBioSampleId.md
 docs/V2reportsBioSampleOwner.md
 docs/V2reportsBioSampleStatus.md
+docs/V2reportsBiocollection.md
+docs/V2reportsBiocollectionInstitution.md
+docs/V2reportsBiocollectionsReportPage.md
 docs/V2reportsBuscoStat.md
 docs/V2reportsCheckM.md
 docs/V2reportsClassification.md
@@ -231,6 +236,7 @@ docs/V2reportsGenomeAnnotationReportPage.md
 docs/V2reportsGenomicLocation.md
 docs/V2reportsGenomicRegion.md
 docs/V2reportsGenomicRegionGenomicRegionType.md
+docs/V2reportsGetBiocollectionsReport.md
 docs/V2reportsInfraspecificNames.md
 docs/V2reportsIsolate.md
 docs/V2reportsLineageOrganism.md
@@ -375,6 +381,7 @@ ncbi/datasets/openapi/models/v2_assembly_revision_history.py
 ncbi/datasets/openapi/models/v2_assembly_revision_history_request.py
 ncbi/datasets/openapi/models/v2_assembly_sequence_reports_request.py
 ncbi/datasets/openapi/models/v2_bio_sample_dataset_reports_request.py
+ncbi/datasets/openapi/models/v2_biocollections_sort_field.py
 ncbi/datasets/openapi/models/v2_catalog_api_version.py
 ncbi/datasets/openapi/models/v2_dataset_request.py
 ncbi/datasets/openapi/models/v2_download_summary.py
@@ -408,6 +415,7 @@ ncbi/datasets/openapi/models/v2_genome_annotation_request.py
 ncbi/datasets/openapi/models/v2_genome_annotation_request_annotation_type.py
 ncbi/datasets/openapi/models/v2_genome_annotation_request_genome_annotation_table_format.py
 ncbi/datasets/openapi/models/v2_genome_annotation_table_summary_reply.py
+ncbi/datasets/openapi/models/v2_get_biocollections_request.py
 ncbi/datasets/openapi/models/v2_http_body.py
 ncbi/datasets/openapi/models/v2_image_size.py
 ncbi/datasets/openapi/models/v2_include_tabular_header.py
@@ -514,6 +522,9 @@ ncbi/datasets/openapi/models/v2reports_bio_sample_descriptor.py
 ncbi/datasets/openapi/models/v2reports_bio_sample_id.py
 ncbi/datasets/openapi/models/v2reports_bio_sample_owner.py
 ncbi/datasets/openapi/models/v2reports_bio_sample_status.py
+ncbi/datasets/openapi/models/v2reports_biocollection.py
+ncbi/datasets/openapi/models/v2reports_biocollection_institution.py
+ncbi/datasets/openapi/models/v2reports_biocollections_report_page.py
 ncbi/datasets/openapi/models/v2reports_busco_stat.py
 ncbi/datasets/openapi/models/v2reports_check_m.py
 ncbi/datasets/openapi/models/v2reports_classification.py
@@ -543,6 +554,7 @@ ncbi/datasets/openapi/models/v2reports_genome_annotation_report_page.py
 ncbi/datasets/openapi/models/v2reports_genomic_location.py
 ncbi/datasets/openapi/models/v2reports_genomic_region.py
 ncbi/datasets/openapi/models/v2reports_genomic_region_genomic_region_type.py
+ncbi/datasets/openapi/models/v2reports_get_biocollections_report.py
 ncbi/datasets/openapi/models/v2reports_infraspecific_names.py
 ncbi/datasets/openapi/models/v2reports_isolate.py
 ncbi/datasets/openapi/models/v2reports_lineage_organism.py
@@ -621,4 +633,10 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
+test/test_v2_biocollections_sort_field.py
+test/test_v2_get_biocollections_request.py
+test/test_v2reports_biocollection.py
+test/test_v2reports_biocollection_institution.py
+test/test_v2reports_biocollections_report_page.py
+test/test_v2reports_get_biocollections_report.py
 tox.ini

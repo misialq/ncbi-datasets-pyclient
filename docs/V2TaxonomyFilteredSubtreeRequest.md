@@ -7,6 +7,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **taxons** | **List[str]** |  | [optional] 
 **specified_limit** | **bool** |  | [optional] 
+**exclude_extinct** | **bool** |  | [optional] 
+**levels** | **int** |  | [optional] 
 **rank_limits** | [**List[V2reportsRankType]**](V2reportsRankType.md) |  | [optional] 
 **include_incertae_sedis** | **bool** |  | [optional] 
 

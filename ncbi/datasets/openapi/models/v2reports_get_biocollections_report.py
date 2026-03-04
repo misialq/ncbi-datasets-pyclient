@@ -17,23 +17,18 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictBool, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
-from ncbi.datasets.openapi.models.v2reports_rank_type import V2reportsRankType
+from ncbi.datasets.openapi.models.v2reports_biocollection_institution import V2reportsBiocollectionInstitution
 from typing import Optional, Set
 from typing_extensions import Self
 
-class V2TaxonomyFilteredSubtreeRequest(BaseModel):
+class V2reportsGetBiocollectionsReport(BaseModel):
     """
-    V2TaxonomyFilteredSubtreeRequest
+    V2reportsGetBiocollectionsReport
     """ # noqa: E501
-    taxons: Optional[List[StrictStr]] = None
-    specified_limit: Optional[StrictBool] = None
-    exclude_extinct: Optional[StrictBool] = None
-    levels: Optional[StrictInt] = None
-    rank_limits: Optional[List[V2reportsRankType]] = None
-    include_incertae_sedis: Optional[StrictBool] = None
-    __properties: ClassVar[List[str]] = ["taxons", "specified_limit", "exclude_extinct", "levels", "rank_limits", "include_incertae_sedis"]
+    institution: Optional[V2reportsBiocollectionInstitution] = None
+    __properties: ClassVar[List[str]] = ["institution"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -53,7 +48,7 @@ class V2TaxonomyFilteredSubtreeRequest(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of V2TaxonomyFilteredSubtreeRequest from a JSON string"""
+        """Create an instance of V2reportsGetBiocollectionsReport from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -74,11 +69,14 @@ class V2TaxonomyFilteredSubtreeRequest(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of institution
+        if self.institution:
+            _dict['institution'] = self.institution.to_dict()
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of V2TaxonomyFilteredSubtreeRequest from a dict"""
+        """Create an instance of V2reportsGetBiocollectionsReport from a dict"""
         if obj is None:
             return None
 
@@ -86,12 +84,7 @@ class V2TaxonomyFilteredSubtreeRequest(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "taxons": obj.get("taxons"),
-            "specified_limit": obj.get("specified_limit"),
-            "exclude_extinct": obj.get("exclude_extinct"),
-            "levels": obj.get("levels"),
-            "rank_limits": obj.get("rank_limits"),
-            "include_incertae_sedis": obj.get("include_incertae_sedis")
+            "institution": V2reportsBiocollectionInstitution.from_dict(obj["institution"]) if obj.get("institution") is not None else None
         })
         return _obj
 

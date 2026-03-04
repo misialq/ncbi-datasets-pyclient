@@ -14,7 +14,7 @@
 """  # noqa: E501
 
 
-__version__ = "v18.18.0"
+__version__ = "v18.19.0"
 
 # Define package exports
 __all__ = [
@@ -89,6 +89,7 @@ __all__ = [
     "V2AssemblyRevisionHistoryRequest",
     "V2AssemblySequenceReportsRequest",
     "V2BioSampleDatasetReportsRequest",
+    "V2BiocollectionsSortField",
     "V2CatalogApiVersion",
     "V2DatasetRequest",
     "V2DownloadSummary",
@@ -122,6 +123,7 @@ __all__ = [
     "V2GenomeAnnotationRequestAnnotationType",
     "V2GenomeAnnotationRequestGenomeAnnotationTableFormat",
     "V2GenomeAnnotationTableSummaryReply",
+    "V2GetBiocollectionsRequest",
     "V2HttpBody",
     "V2ImageSize",
     "V2IncludeTabularHeader",
@@ -228,6 +230,9 @@ __all__ = [
     "V2reportsBioSampleId",
     "V2reportsBioSampleOwner",
     "V2reportsBioSampleStatus",
+    "V2reportsBiocollection",
+    "V2reportsBiocollectionInstitution",
+    "V2reportsBiocollectionsReportPage",
     "V2reportsBuscoStat",
     "V2reportsCheckM",
     "V2reportsClassification",
@@ -257,6 +262,7 @@ __all__ = [
     "V2reportsGenomicLocation",
     "V2reportsGenomicRegion",
     "V2reportsGenomicRegionGenomicRegionType",
+    "V2reportsGetBiocollectionsReport",
     "V2reportsInfraspecificNames",
     "V2reportsIsolate",
     "V2reportsLineageOrganism",
@@ -405,6 +411,7 @@ from ncbi.datasets.openapi.models.v2_assembly_revision_history import V2Assembly
 from ncbi.datasets.openapi.models.v2_assembly_revision_history_request import V2AssemblyRevisionHistoryRequest as V2AssemblyRevisionHistoryRequest
 from ncbi.datasets.openapi.models.v2_assembly_sequence_reports_request import V2AssemblySequenceReportsRequest as V2AssemblySequenceReportsRequest
 from ncbi.datasets.openapi.models.v2_bio_sample_dataset_reports_request import V2BioSampleDatasetReportsRequest as V2BioSampleDatasetReportsRequest
+from ncbi.datasets.openapi.models.v2_biocollections_sort_field import V2BiocollectionsSortField as V2BiocollectionsSortField
 from ncbi.datasets.openapi.models.v2_catalog_api_version import V2CatalogApiVersion as V2CatalogApiVersion
 from ncbi.datasets.openapi.models.v2_dataset_request import V2DatasetRequest as V2DatasetRequest
 from ncbi.datasets.openapi.models.v2_download_summary import V2DownloadSummary as V2DownloadSummary
@@ -438,6 +445,7 @@ from ncbi.datasets.openapi.models.v2_genome_annotation_request import V2GenomeAn
 from ncbi.datasets.openapi.models.v2_genome_annotation_request_annotation_type import V2GenomeAnnotationRequestAnnotationType as V2GenomeAnnotationRequestAnnotationType
 from ncbi.datasets.openapi.models.v2_genome_annotation_request_genome_annotation_table_format import V2GenomeAnnotationRequestGenomeAnnotationTableFormat as V2GenomeAnnotationRequestGenomeAnnotationTableFormat
 from ncbi.datasets.openapi.models.v2_genome_annotation_table_summary_reply import V2GenomeAnnotationTableSummaryReply as V2GenomeAnnotationTableSummaryReply
+from ncbi.datasets.openapi.models.v2_get_biocollections_request import V2GetBiocollectionsRequest as V2GetBiocollectionsRequest
 from ncbi.datasets.openapi.models.v2_http_body import V2HttpBody as V2HttpBody
 from ncbi.datasets.openapi.models.v2_image_size import V2ImageSize as V2ImageSize
 from ncbi.datasets.openapi.models.v2_include_tabular_header import V2IncludeTabularHeader as V2IncludeTabularHeader
@@ -544,6 +552,9 @@ from ncbi.datasets.openapi.models.v2reports_bio_sample_descriptor import V2repor
 from ncbi.datasets.openapi.models.v2reports_bio_sample_id import V2reportsBioSampleId as V2reportsBioSampleId
 from ncbi.datasets.openapi.models.v2reports_bio_sample_owner import V2reportsBioSampleOwner as V2reportsBioSampleOwner
 from ncbi.datasets.openapi.models.v2reports_bio_sample_status import V2reportsBioSampleStatus as V2reportsBioSampleStatus
+from ncbi.datasets.openapi.models.v2reports_biocollection import V2reportsBiocollection as V2reportsBiocollection
+from ncbi.datasets.openapi.models.v2reports_biocollection_institution import V2reportsBiocollectionInstitution as V2reportsBiocollectionInstitution
+from ncbi.datasets.openapi.models.v2reports_biocollections_report_page import V2reportsBiocollectionsReportPage as V2reportsBiocollectionsReportPage
 from ncbi.datasets.openapi.models.v2reports_busco_stat import V2reportsBuscoStat as V2reportsBuscoStat
 from ncbi.datasets.openapi.models.v2reports_check_m import V2reportsCheckM as V2reportsCheckM
 from ncbi.datasets.openapi.models.v2reports_classification import V2reportsClassification as V2reportsClassification
@@ -573,6 +584,7 @@ from ncbi.datasets.openapi.models.v2reports_genome_annotation_report_page import
 from ncbi.datasets.openapi.models.v2reports_genomic_location import V2reportsGenomicLocation as V2reportsGenomicLocation
 from ncbi.datasets.openapi.models.v2reports_genomic_region import V2reportsGenomicRegion as V2reportsGenomicRegion
 from ncbi.datasets.openapi.models.v2reports_genomic_region_genomic_region_type import V2reportsGenomicRegionGenomicRegionType as V2reportsGenomicRegionGenomicRegionType
+from ncbi.datasets.openapi.models.v2reports_get_biocollections_report import V2reportsGetBiocollectionsReport as V2reportsGetBiocollectionsReport
 from ncbi.datasets.openapi.models.v2reports_infraspecific_names import V2reportsInfraspecificNames as V2reportsInfraspecificNames
 from ncbi.datasets.openapi.models.v2reports_isolate import V2reportsIsolate as V2reportsIsolate
 from ncbi.datasets.openapi.models.v2reports_lineage_organism import V2reportsLineageOrganism as V2reportsLineageOrganism
