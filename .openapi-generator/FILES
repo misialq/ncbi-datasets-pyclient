@@ -633,10 +633,4 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_v2_biocollections_sort_field.py
-test/test_v2_get_biocollections_request.py
-test/test_v2reports_biocollection.py
-test/test_v2reports_biocollection_institution.py
-test/test_v2reports_biocollections_report_page.py
-test/test_v2reports_get_biocollections_report.py
 tox.ini

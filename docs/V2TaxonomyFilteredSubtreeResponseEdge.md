@@ -7,6 +7,10 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **visible_children** | **List[int]** |  | [optional] 
 **children_status** | [**V2TaxonomyFilteredSubtreeResponseEdgeChildStatus**](V2TaxonomyFilteredSubtreeResponseEdgeChildStatus.md) |  | [optional] [default to V2TaxonomyFilteredSubtreeResponseEdgeChildStatus.UNSPECIFIED]
+**rank** | [**V2reportsRankType**](V2reportsRankType.md) |  | [optional] [default to V2reportsRankType.NO_RANK]
+**scientific_name** | **str** |  | [optional] 
+**curator_common_name** | **str** |  | [optional] 
+**assembly_count** | **int** |  | [optional] 
 
 ## Example
 

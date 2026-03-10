@@ -17,9 +17,10 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictInt
+from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from ncbi.datasets.openapi.models.v2_taxonomy_filtered_subtree_response_edge_child_status import V2TaxonomyFilteredSubtreeResponseEdgeChildStatus
+from ncbi.datasets.openapi.models.v2reports_rank_type import V2reportsRankType
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -29,7 +30,11 @@ class V2TaxonomyFilteredSubtreeResponseEdge(BaseModel):
     """ # noqa: E501
     visible_children: Optional[List[StrictInt]] = None
     children_status: Optional[V2TaxonomyFilteredSubtreeResponseEdgeChildStatus] = V2TaxonomyFilteredSubtreeResponseEdgeChildStatus.UNSPECIFIED
-    __properties: ClassVar[List[str]] = ["visible_children", "children_status"]
+    rank: Optional[V2reportsRankType] = V2reportsRankType.NO_RANK
+    scientific_name: Optional[StrictStr] = None
+    curator_common_name: Optional[StrictStr] = None
+    assembly_count: Optional[StrictInt] = None
+    __properties: ClassVar[List[str]] = ["visible_children", "children_status", "rank", "scientific_name", "curator_common_name", "assembly_count"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -83,7 +88,11 @@ class V2TaxonomyFilteredSubtreeResponseEdge(BaseModel):
 
         _obj = cls.model_validate({
             "visible_children": obj.get("visible_children"),
-            "children_status": obj.get("children_status") if obj.get("children_status") is not None else V2TaxonomyFilteredSubtreeResponseEdgeChildStatus.UNSPECIFIED
+            "children_status": obj.get("children_status") if obj.get("children_status") is not None else V2TaxonomyFilteredSubtreeResponseEdgeChildStatus.UNSPECIFIED,
+            "rank": obj.get("rank") if obj.get("rank") is not None else V2reportsRankType.NO_RANK,
+            "scientific_name": obj.get("scientific_name"),
+            "curator_common_name": obj.get("curator_common_name"),
+            "assembly_count": obj.get("assembly_count")
         })
         return _obj
 
