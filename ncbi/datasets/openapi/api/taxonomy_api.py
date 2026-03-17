@@ -4184,7 +4184,7 @@ class TaxonomyApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> V2TaxonomyMetadataResponse:
-        """Use taxonomic identifiers to get taxonomic metadata (deprecated)
+        """(Deprecated) Use taxonomic identifiers to get taxonomic metadata
 
         Using NCBI Taxonomy IDs or names (common or scientific) at any rank, get metadata about a taxonomic node including taxonomic identifiers, lineage information, child nodes, and gene and genome counts in JSON format.
 
@@ -4225,6 +4225,7 @@ class TaxonomyApi:
         :type _host_index: int, optional
         :return: Returns the result object.
         """ # noqa: E501
+        warnings.warn("GET /taxonomy/taxon/{taxons} is deprecated.", DeprecationWarning)
 
         _param = self._taxonomy_metadata_serialize(
             taxons=taxons,
@@ -4279,7 +4280,7 @@ class TaxonomyApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[V2TaxonomyMetadataResponse]:
-        """Use taxonomic identifiers to get taxonomic metadata (deprecated)
+        """(Deprecated) Use taxonomic identifiers to get taxonomic metadata
 
         Using NCBI Taxonomy IDs or names (common or scientific) at any rank, get metadata about a taxonomic node including taxonomic identifiers, lineage information, child nodes, and gene and genome counts in JSON format.
 
@@ -4320,6 +4321,7 @@ class TaxonomyApi:
         :type _host_index: int, optional
         :return: Returns the result object.
         """ # noqa: E501
+        warnings.warn("GET /taxonomy/taxon/{taxons} is deprecated.", DeprecationWarning)
 
         _param = self._taxonomy_metadata_serialize(
             taxons=taxons,
@@ -4374,7 +4376,7 @@ class TaxonomyApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Use taxonomic identifiers to get taxonomic metadata (deprecated)
+        """(Deprecated) Use taxonomic identifiers to get taxonomic metadata
 
         Using NCBI Taxonomy IDs or names (common or scientific) at any rank, get metadata about a taxonomic node including taxonomic identifiers, lineage information, child nodes, and gene and genome counts in JSON format.
 
@@ -4415,6 +4417,7 @@ class TaxonomyApi:
         :type _host_index: int, optional
         :return: Returns the result object.
         """ # noqa: E501
+        warnings.warn("GET /taxonomy/taxon/{taxons} is deprecated.", DeprecationWarning)
 
         _param = self._taxonomy_metadata_serialize(
             taxons=taxons,
@@ -4560,7 +4563,7 @@ class TaxonomyApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> V2TaxonomyMetadataResponse:
-        """Get taxonomy metadata by taxon (deprecated)
+        """(Deprecated) Get taxonomy metadata by taxon
 
         Get taxonomy metadata by taxon in JSON format.
 
@@ -4587,6 +4590,7 @@ class TaxonomyApi:
         :type _host_index: int, optional
         :return: Returns the result object.
         """ # noqa: E501
+        warnings.warn("POST /taxonomy is deprecated.", DeprecationWarning)
 
         _param = self._taxonomy_metadata_post_serialize(
             v2_taxonomy_metadata_request=v2_taxonomy_metadata_request,
@@ -4627,7 +4631,7 @@ class TaxonomyApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[V2TaxonomyMetadataResponse]:
-        """Get taxonomy metadata by taxon (deprecated)
+        """(Deprecated) Get taxonomy metadata by taxon
 
         Get taxonomy metadata by taxon in JSON format.
 
@@ -4654,6 +4658,7 @@ class TaxonomyApi:
         :type _host_index: int, optional
         :return: Returns the result object.
         """ # noqa: E501
+        warnings.warn("POST /taxonomy is deprecated.", DeprecationWarning)
 
         _param = self._taxonomy_metadata_post_serialize(
             v2_taxonomy_metadata_request=v2_taxonomy_metadata_request,
@@ -4694,7 +4699,7 @@ class TaxonomyApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Get taxonomy metadata by taxon (deprecated)
+        """(Deprecated) Get taxonomy metadata by taxon
 
         Get taxonomy metadata by taxon in JSON format.
 
@@ -4721,6 +4726,7 @@ class TaxonomyApi:
         :type _host_index: int, optional
         :return: Returns the result object.
         """ # noqa: E501
+        warnings.warn("POST /taxonomy is deprecated.", DeprecationWarning)
 
         _param = self._taxonomy_metadata_post_serialize(
             v2_taxonomy_metadata_request=v2_taxonomy_metadata_request,

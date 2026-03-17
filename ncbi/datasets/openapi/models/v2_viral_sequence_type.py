@@ -30,7 +30,6 @@ class V2ViralSequenceType(str, Enum):
     CDS = 'CDS'
     PROTEIN = 'PROTEIN'
     NONE = 'NONE'
-    BIOSAMPLE = 'BIOSAMPLE'
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:

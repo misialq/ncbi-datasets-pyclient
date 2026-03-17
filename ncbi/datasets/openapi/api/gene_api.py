@@ -5148,7 +5148,7 @@ class GeneApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> V2reportsGeneDataReportPage:
-        """Get gene metadata by RefSeq Accession (deprecated)
+        """(Deprecated) Get gene metadata by RefSeq Accession
 
         Get a gene summary by RefSeq Accession. By default, in paged JSON format, but also available as tabular (accept: text/tab-separated-values) or json-lines (accept: application/x-ndjson)
 
@@ -5195,6 +5195,7 @@ class GeneApi:
         :type _host_index: int, optional
         :return: Returns the result object.
         """ # noqa: E501
+        warnings.warn("GET /gene/accession/{accessions} is deprecated.", DeprecationWarning)
 
         _param = self._gene_metadata_by_accession_serialize(
             accessions=accessions,
@@ -5255,7 +5256,7 @@ class GeneApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[V2reportsGeneDataReportPage]:
-        """Get gene metadata by RefSeq Accession (deprecated)
+        """(Deprecated) Get gene metadata by RefSeq Accession
 
         Get a gene summary by RefSeq Accession. By default, in paged JSON format, but also available as tabular (accept: text/tab-separated-values) or json-lines (accept: application/x-ndjson)
 
@@ -5302,6 +5303,7 @@ class GeneApi:
         :type _host_index: int, optional
         :return: Returns the result object.
         """ # noqa: E501
+        warnings.warn("GET /gene/accession/{accessions} is deprecated.", DeprecationWarning)
 
         _param = self._gene_metadata_by_accession_serialize(
             accessions=accessions,
@@ -5362,7 +5364,7 @@ class GeneApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Get gene metadata by RefSeq Accession (deprecated)
+        """(Deprecated) Get gene metadata by RefSeq Accession
 
         Get a gene summary by RefSeq Accession. By default, in paged JSON format, but also available as tabular (accept: text/tab-separated-values) or json-lines (accept: application/x-ndjson)
 
@@ -5409,6 +5411,7 @@ class GeneApi:
         :type _host_index: int, optional
         :return: Returns the result object.
         """ # noqa: E501
+        warnings.warn("GET /gene/accession/{accessions} is deprecated.", DeprecationWarning)
 
         _param = self._gene_metadata_by_accession_serialize(
             accessions=accessions,
@@ -5576,7 +5579,7 @@ class GeneApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> V2reportsGeneDataReportPage:
-        """Get gene metadata as JSON (deprecated)
+        """(Deprecated) Get gene metadata as JSON
 
         Get a gene summary. By default, in paged JSON format, but also available as tabular (accept: text/tab-separated-values) or json-lines (accept: application/x-ndjson)
 
@@ -5603,6 +5606,7 @@ class GeneApi:
         :type _host_index: int, optional
         :return: Returns the result object.
         """ # noqa: E501
+        warnings.warn("POST /gene is deprecated.", DeprecationWarning)
 
         _param = self._gene_metadata_by_post_serialize(
             v2_gene_dataset_reports_request=v2_gene_dataset_reports_request,
@@ -5643,7 +5647,7 @@ class GeneApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[V2reportsGeneDataReportPage]:
-        """Get gene metadata as JSON (deprecated)
+        """(Deprecated) Get gene metadata as JSON
 
         Get a gene summary. By default, in paged JSON format, but also available as tabular (accept: text/tab-separated-values) or json-lines (accept: application/x-ndjson)
 
@@ -5670,6 +5674,7 @@ class GeneApi:
         :type _host_index: int, optional
         :return: Returns the result object.
         """ # noqa: E501
+        warnings.warn("POST /gene is deprecated.", DeprecationWarning)
 
         _param = self._gene_metadata_by_post_serialize(
             v2_gene_dataset_reports_request=v2_gene_dataset_reports_request,
@@ -5710,7 +5715,7 @@ class GeneApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Get gene metadata as JSON (deprecated)
+        """(Deprecated) Get gene metadata as JSON
 
         Get a gene summary. By default, in paged JSON format, but also available as tabular (accept: text/tab-separated-values) or json-lines (accept: application/x-ndjson)
 
@@ -5737,6 +5742,7 @@ class GeneApi:
         :type _host_index: int, optional
         :return: Returns the result object.
         """ # noqa: E501
+        warnings.warn("POST /gene is deprecated.", DeprecationWarning)
 
         _param = self._gene_metadata_by_post_serialize(
             v2_gene_dataset_reports_request=v2_gene_dataset_reports_request,
@@ -5864,7 +5870,7 @@ class GeneApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> V2reportsGeneDataReportPage:
-        """Get gene metadata by gene symbol (deprecated)
+        """(Deprecated) Get gene metadata by gene symbol
 
         Get a gene summary by by gene symbol. By default, in paged JSON format, but also available as tabular (accept: text/tab-separated-values) or json-lines (accept: application/x-ndjson)
 
@@ -5913,6 +5919,7 @@ class GeneApi:
         :type _host_index: int, optional
         :return: Returns the result object.
         """ # noqa: E501
+        warnings.warn("GET /gene/symbol/{symbols}/taxon/{taxon} is deprecated.", DeprecationWarning)
 
         _param = self._gene_metadata_by_tax_and_symbol_serialize(
             symbols=symbols,
@@ -5975,7 +5982,7 @@ class GeneApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[V2reportsGeneDataReportPage]:
-        """Get gene metadata by gene symbol (deprecated)
+        """(Deprecated) Get gene metadata by gene symbol
 
         Get a gene summary by by gene symbol. By default, in paged JSON format, but also available as tabular (accept: text/tab-separated-values) or json-lines (accept: application/x-ndjson)
 
@@ -6024,6 +6031,7 @@ class GeneApi:
         :type _host_index: int, optional
         :return: Returns the result object.
         """ # noqa: E501
+        warnings.warn("GET /gene/symbol/{symbols}/taxon/{taxon} is deprecated.", DeprecationWarning)
 
         _param = self._gene_metadata_by_tax_and_symbol_serialize(
             symbols=symbols,
@@ -6086,7 +6094,7 @@ class GeneApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Get gene metadata by gene symbol (deprecated)
+        """(Deprecated) Get gene metadata by gene symbol
 
         Get a gene summary by by gene symbol. By default, in paged JSON format, but also available as tabular (accept: text/tab-separated-values) or json-lines (accept: application/x-ndjson)
 
@@ -6135,6 +6143,7 @@ class GeneApi:
         :type _host_index: int, optional
         :return: Returns the result object.
         """ # noqa: E501
+        warnings.warn("GET /gene/symbol/{symbols}/taxon/{taxon} is deprecated.", DeprecationWarning)
 
         _param = self._gene_metadata_by_tax_and_symbol_serialize(
             symbols=symbols,
@@ -9333,7 +9342,7 @@ class GeneApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> V2reportsGeneDataReportPage:
-        """Get gene reports by GeneID (deprecated)
+        """(Deprecated) Get gene reports by GeneID
 
         Get a gene summary by GeneID. By default, in paged JSON format, but also available as tabular (accept: text/tab-separated-values) or json-lines (accept: application/x-ndjson)
 
@@ -9380,6 +9389,7 @@ class GeneApi:
         :type _host_index: int, optional
         :return: Returns the result object.
         """ # noqa: E501
+        warnings.warn("GET /gene/id/{gene_ids} is deprecated.", DeprecationWarning)
 
         _param = self._gene_reports_by_id_serialize(
             gene_ids=gene_ids,
@@ -9440,7 +9450,7 @@ class GeneApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[V2reportsGeneDataReportPage]:
-        """Get gene reports by GeneID (deprecated)
+        """(Deprecated) Get gene reports by GeneID
 
         Get a gene summary by GeneID. By default, in paged JSON format, but also available as tabular (accept: text/tab-separated-values) or json-lines (accept: application/x-ndjson)
 
@@ -9487,6 +9497,7 @@ class GeneApi:
         :type _host_index: int, optional
         :return: Returns the result object.
         """ # noqa: E501
+        warnings.warn("GET /gene/id/{gene_ids} is deprecated.", DeprecationWarning)
 
         _param = self._gene_reports_by_id_serialize(
             gene_ids=gene_ids,
@@ -9547,7 +9558,7 @@ class GeneApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Get gene reports by GeneID (deprecated)
+        """(Deprecated) Get gene reports by GeneID
 
         Get a gene summary by GeneID. By default, in paged JSON format, but also available as tabular (accept: text/tab-separated-values) or json-lines (accept: application/x-ndjson)
 
@@ -9594,6 +9605,7 @@ class GeneApi:
         :type _host_index: int, optional
         :return: Returns the result object.
         """ # noqa: E501
+        warnings.warn("GET /gene/id/{gene_ids} is deprecated.", DeprecationWarning)
 
         _param = self._gene_reports_by_id_serialize(
             gene_ids=gene_ids,
@@ -9773,7 +9785,7 @@ class GeneApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> V2reportsGeneDataReportPage:
-        """Get gene reports by taxonomic identifier (deprecated)
+        """(Deprecated) Get gene reports by taxonomic identifier
 
         Get a gene summary for a specified NCBI Taxonomy ID or name (common or scientific). By default, in paged JSON format, but also available as tabular (accept: text/tab-separated-values) or json-lines (accept: application/x-ndjson)
 
@@ -9824,6 +9836,7 @@ class GeneApi:
         :type _host_index: int, optional
         :return: Returns the result object.
         """ # noqa: E501
+        warnings.warn("GET /gene/taxon/{taxon} is deprecated.", DeprecationWarning)
 
         _param = self._gene_reports_by_taxon_serialize(
             taxon=taxon,
@@ -9888,7 +9901,7 @@ class GeneApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[V2reportsGeneDataReportPage]:
-        """Get gene reports by taxonomic identifier (deprecated)
+        """(Deprecated) Get gene reports by taxonomic identifier
 
         Get a gene summary for a specified NCBI Taxonomy ID or name (common or scientific). By default, in paged JSON format, but also available as tabular (accept: text/tab-separated-values) or json-lines (accept: application/x-ndjson)
 
@@ -9939,6 +9952,7 @@ class GeneApi:
         :type _host_index: int, optional
         :return: Returns the result object.
         """ # noqa: E501
+        warnings.warn("GET /gene/taxon/{taxon} is deprecated.", DeprecationWarning)
 
         _param = self._gene_reports_by_taxon_serialize(
             taxon=taxon,
@@ -10003,7 +10017,7 @@ class GeneApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Get gene reports by taxonomic identifier (deprecated)
+        """(Deprecated) Get gene reports by taxonomic identifier
 
         Get a gene summary for a specified NCBI Taxonomy ID or name (common or scientific). By default, in paged JSON format, but also available as tabular (accept: text/tab-separated-values) or json-lines (accept: application/x-ndjson)
 
@@ -10054,6 +10068,7 @@ class GeneApi:
         :type _host_index: int, optional
         :return: Returns the result object.
         """ # noqa: E501
+        warnings.warn("GET /gene/taxon/{taxon} is deprecated.", DeprecationWarning)
 
         _param = self._gene_reports_by_taxon_serialize(
             taxon=taxon,

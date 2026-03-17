@@ -19,7 +19,7 @@ Method | HTTP request | Description
 [**virus_genome_download_post**](VirusApi.md#virus_genome_download_post) | **POST** /virus/genome/download | Get a virus genome data package
 [**virus_genome_summary**](VirusApi.md#virus_genome_summary) | **GET** /virus/taxon/{taxon}/genome | Get a download summary of a virus genome data package by taxon
 [**virus_genome_summary_by_post**](VirusApi.md#virus_genome_summary_by_post) | **POST** /virus/genome | Get a download summary of a virus genome data package
-[**virus_genome_table**](VirusApi.md#virus_genome_table) | **GET** /virus/taxon/{taxon}/genome/table | Get virus genome metadata in a tabular format (deprecated)
+[**virus_genome_table**](VirusApi.md#virus_genome_table) | **GET** /virus/taxon/{taxon}/genome/table | Get virus genome metadata in a tabular format
 [**virus_reports_by_acessions**](VirusApi.md#virus_reports_by_acessions) | **GET** /virus/accession/{accessions}/dataset_report | Get a virus data report by nucleotide accession
 [**virus_reports_by_post**](VirusApi.md#virus_reports_by_post) | **POST** /virus | Get a virus data report
 [**virus_reports_by_taxon**](VirusApi.md#virus_reports_by_taxon) | **GET** /virus/taxon/{taxon}/dataset_report | Get a virus data report by taxon
@@ -1439,7 +1439,7 @@ Name | Type | Description  | Notes
 # **virus_genome_table**
 > V2TabularOutput virus_genome_table(taxon, accessions=accessions, refseq_only=refseq_only, annotated_only=annotated_only, released_since=released_since, updated_since=updated_since, host=host, pangolin_classification=pangolin_classification, geo_location=geo_location, usa_state=usa_state, complete_only=complete_only, table_fields=table_fields, include_sequence=include_sequence, aux_report=aux_report, format=format)
 
-Get virus genome metadata in a tabular format (deprecated)
+Get virus genome metadata in a tabular format
 
 Get virus genome metadata in tabular format for virus genomes by taxon.
 
@@ -1495,7 +1495,7 @@ with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
     format = tsv # V2TableFormat | Choose download format (tsv, csv or jsonl) (optional) (default to tsv)
 
     try:
-        # Get virus genome metadata in a tabular format (deprecated)
+        # Get virus genome metadata in a tabular format
         api_response = api_instance.virus_genome_table(taxon, accessions=accessions, refseq_only=refseq_only, annotated_only=annotated_only, released_since=released_since, updated_since=updated_since, host=host, pangolin_classification=pangolin_classification, geo_location=geo_location, usa_state=usa_state, complete_only=complete_only, table_fields=table_fields, include_sequence=include_sequence, aux_report=aux_report, format=format)
         print("The response of VirusApi->virus_genome_table:\n")
         pprint(api_response)

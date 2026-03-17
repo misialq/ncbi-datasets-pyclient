@@ -5946,7 +5946,7 @@ class VirusApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> V2TabularOutput:
-        """Get virus genome metadata in a tabular format (deprecated)
+        """(Deprecated) Get virus genome metadata in a tabular format
 
         Get virus genome metadata in tabular format for virus genomes by taxon.
 
@@ -6001,6 +6001,7 @@ class VirusApi:
         :type _host_index: int, optional
         :return: Returns the result object.
         """ # noqa: E501
+        warnings.warn("GET /virus/taxon/{taxon}/genome/table is deprecated.", DeprecationWarning)
 
         _param = self._virus_genome_table_serialize(
             taxon=taxon,
@@ -6069,7 +6070,7 @@ class VirusApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[V2TabularOutput]:
-        """Get virus genome metadata in a tabular format (deprecated)
+        """(Deprecated) Get virus genome metadata in a tabular format
 
         Get virus genome metadata in tabular format for virus genomes by taxon.
 
@@ -6124,6 +6125,7 @@ class VirusApi:
         :type _host_index: int, optional
         :return: Returns the result object.
         """ # noqa: E501
+        warnings.warn("GET /virus/taxon/{taxon}/genome/table is deprecated.", DeprecationWarning)
 
         _param = self._virus_genome_table_serialize(
             taxon=taxon,
@@ -6192,7 +6194,7 @@ class VirusApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Get virus genome metadata in a tabular format (deprecated)
+        """(Deprecated) Get virus genome metadata in a tabular format
 
         Get virus genome metadata in tabular format for virus genomes by taxon.
 
@@ -6247,6 +6249,7 @@ class VirusApi:
         :type _host_index: int, optional
         :return: Returns the result object.
         """ # noqa: E501
+        warnings.warn("GET /virus/taxon/{taxon}/genome/table is deprecated.", DeprecationWarning)
 
         _param = self._virus_genome_table_serialize(
             taxon=taxon,

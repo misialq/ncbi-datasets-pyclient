@@ -19,9 +19,9 @@ Method | HTTP request | Description
 [**gene_download_summary_by_post**](GeneApi.md#gene_download_summary_by_post) | **POST** /gene/download_summary | Get a download summary of a gene data package
 [**gene_links_by_id**](GeneApi.md#gene_links_by_id) | **GET** /gene/id/{gene_ids}/links | Get gene links by GeneID
 [**gene_links_by_id_by_post**](GeneApi.md#gene_links_by_id_by_post) | **POST** /gene/links | Get gene links by GeneID
-[**gene_metadata_by_accession**](GeneApi.md#gene_metadata_by_accession) | **GET** /gene/accession/{accessions} | Get gene metadata by RefSeq Accession (deprecated)
-[**gene_metadata_by_post**](GeneApi.md#gene_metadata_by_post) | **POST** /gene | Get gene metadata as JSON (deprecated)
-[**gene_metadata_by_tax_and_symbol**](GeneApi.md#gene_metadata_by_tax_and_symbol) | **GET** /gene/symbol/{symbols}/taxon/{taxon} | Get gene metadata by gene symbol (deprecated)
+[**gene_metadata_by_accession**](GeneApi.md#gene_metadata_by_accession) | **GET** /gene/accession/{accessions} | Get gene metadata by RefSeq Accession
+[**gene_metadata_by_post**](GeneApi.md#gene_metadata_by_post) | **POST** /gene | Get gene metadata as JSON
+[**gene_metadata_by_tax_and_symbol**](GeneApi.md#gene_metadata_by_tax_and_symbol) | **GET** /gene/symbol/{symbols}/taxon/{taxon} | Get gene metadata by gene symbol
 [**gene_orthologs_by_id**](GeneApi.md#gene_orthologs_by_id) | **GET** /gene/id/{gene_id}/orthologs | Get a gene data report for a gene ortholog set by GeneID
 [**gene_orthologs_by_post**](GeneApi.md#gene_orthologs_by_post) | **POST** /gene/orthologs | Get a gene data report for a gene ortholog set by GeneID
 [**gene_product_report**](GeneApi.md#gene_product_report) | **POST** /gene/product_report | Get a gene product report
@@ -30,8 +30,8 @@ Method | HTTP request | Description
 [**gene_product_reports_by_id**](GeneApi.md#gene_product_reports_by_id) | **GET** /gene/id/{gene_ids}/product_report | Get a gene product report by GeneID
 [**gene_product_reports_by_locus_tags**](GeneApi.md#gene_product_reports_by_locus_tags) | **GET** /gene/locus_tag/{locus_tags}/product_report | Get a gene product report by locus tag
 [**gene_product_reports_by_taxon**](GeneApi.md#gene_product_reports_by_taxon) | **GET** /gene/taxon/{taxon}/product_report | Get a gene product report by taxon
-[**gene_reports_by_id**](GeneApi.md#gene_reports_by_id) | **GET** /gene/id/{gene_ids} | Get gene reports by GeneID (deprecated)
-[**gene_reports_by_taxon**](GeneApi.md#gene_reports_by_taxon) | **GET** /gene/taxon/{taxon} | Get gene reports by taxonomic identifier (deprecated)
+[**gene_reports_by_id**](GeneApi.md#gene_reports_by_id) | **GET** /gene/id/{gene_ids} | Get gene reports by GeneID
+[**gene_reports_by_taxon**](GeneApi.md#gene_reports_by_taxon) | **GET** /gene/taxon/{taxon} | Get gene reports by taxonomic identifier
 
 
 # **download_gene_package**
@@ -1384,7 +1384,7 @@ Name | Type | Description  | Notes
 # **gene_metadata_by_accession**
 > V2reportsGeneDataReportPage gene_metadata_by_accession(accessions, returned_content=returned_content, locus_tags=locus_tags, table_fields=table_fields, include_tabular_header=include_tabular_header, page_size=page_size, page_token=page_token, accession_filter=accession_filter, tax_search_subtree=tax_search_subtree, sort_field=sort_field, sort_direction=sort_direction)
 
-Get gene metadata by RefSeq Accession (deprecated)
+Get gene metadata by RefSeq Accession
 
 Get a gene summary by RefSeq Accession. By default, in paged JSON format, but also available as tabular (accept: text/tab-separated-values) or json-lines (accept: application/x-ndjson)
 
@@ -1435,7 +1435,7 @@ with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
     sort_direction = SORT_DIRECTION_UNSPECIFIED # V2SortDirection |  (optional) (default to SORT_DIRECTION_UNSPECIFIED)
 
     try:
-        # Get gene metadata by RefSeq Accession (deprecated)
+        # Get gene metadata by RefSeq Accession
         api_response = api_instance.gene_metadata_by_accession(accessions, returned_content=returned_content, locus_tags=locus_tags, table_fields=table_fields, include_tabular_header=include_tabular_header, page_size=page_size, page_token=page_token, accession_filter=accession_filter, tax_search_subtree=tax_search_subtree, sort_field=sort_field, sort_direction=sort_direction)
         print("The response of GeneApi->gene_metadata_by_accession:\n")
         pprint(api_response)
@@ -1487,7 +1487,7 @@ Name | Type | Description  | Notes
 # **gene_metadata_by_post**
 > V2reportsGeneDataReportPage gene_metadata_by_post(v2_gene_dataset_reports_request)
 
-Get gene metadata as JSON (deprecated)
+Get gene metadata as JSON
 
 Get a gene summary. By default, in paged JSON format, but also available as tabular (accept: text/tab-separated-values) or json-lines (accept: application/x-ndjson)
 
@@ -1526,7 +1526,7 @@ with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
     v2_gene_dataset_reports_request = {"gene_ids":[59067,50615]} # V2GeneDatasetReportsRequest | 
 
     try:
-        # Get gene metadata as JSON (deprecated)
+        # Get gene metadata as JSON
         api_response = api_instance.gene_metadata_by_post(v2_gene_dataset_reports_request)
         print("The response of GeneApi->gene_metadata_by_post:\n")
         pprint(api_response)
@@ -1568,7 +1568,7 @@ Name | Type | Description  | Notes
 # **gene_metadata_by_tax_and_symbol**
 > V2reportsGeneDataReportPage gene_metadata_by_tax_and_symbol(symbols, taxon, returned_content=returned_content, locus_tags=locus_tags, table_fields=table_fields, include_tabular_header=include_tabular_header, page_size=page_size, page_token=page_token, accession_filter=accession_filter, tax_search_subtree=tax_search_subtree, sort_field=sort_field, sort_direction=sort_direction)
 
-Get gene metadata by gene symbol (deprecated)
+Get gene metadata by gene symbol
 
 Get a gene summary by by gene symbol. By default, in paged JSON format, but also available as tabular (accept: text/tab-separated-values) or json-lines (accept: application/x-ndjson)
 
@@ -1620,7 +1620,7 @@ with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
     sort_direction = SORT_DIRECTION_UNSPECIFIED # V2SortDirection |  (optional) (default to SORT_DIRECTION_UNSPECIFIED)
 
     try:
-        # Get gene metadata by gene symbol (deprecated)
+        # Get gene metadata by gene symbol
         api_response = api_instance.gene_metadata_by_tax_and_symbol(symbols, taxon, returned_content=returned_content, locus_tags=locus_tags, table_fields=table_fields, include_tabular_header=include_tabular_header, page_size=page_size, page_token=page_token, accession_filter=accession_filter, tax_search_subtree=tax_search_subtree, sort_field=sort_field, sort_direction=sort_direction)
         print("The response of GeneApi->gene_metadata_by_tax_and_symbol:\n")
         pprint(api_response)
@@ -2430,7 +2430,7 @@ Name | Type | Description  | Notes
 # **gene_reports_by_id**
 > V2reportsGeneDataReportPage gene_reports_by_id(gene_ids, returned_content=returned_content, locus_tags=locus_tags, table_fields=table_fields, include_tabular_header=include_tabular_header, page_size=page_size, page_token=page_token, accession_filter=accession_filter, tax_search_subtree=tax_search_subtree, sort_field=sort_field, sort_direction=sort_direction)
 
-Get gene reports by GeneID (deprecated)
+Get gene reports by GeneID
 
 Get a gene summary by GeneID. By default, in paged JSON format, but also available as tabular (accept: text/tab-separated-values) or json-lines (accept: application/x-ndjson)
 
@@ -2481,7 +2481,7 @@ with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
     sort_direction = SORT_DIRECTION_UNSPECIFIED # V2SortDirection |  (optional) (default to SORT_DIRECTION_UNSPECIFIED)
 
     try:
-        # Get gene reports by GeneID (deprecated)
+        # Get gene reports by GeneID
         api_response = api_instance.gene_reports_by_id(gene_ids, returned_content=returned_content, locus_tags=locus_tags, table_fields=table_fields, include_tabular_header=include_tabular_header, page_size=page_size, page_token=page_token, accession_filter=accession_filter, tax_search_subtree=tax_search_subtree, sort_field=sort_field, sort_direction=sort_direction)
         print("The response of GeneApi->gene_reports_by_id:\n")
         pprint(api_response)
@@ -2533,7 +2533,7 @@ Name | Type | Description  | Notes
 # **gene_reports_by_taxon**
 > V2reportsGeneDataReportPage gene_reports_by_taxon(taxon, returned_content=returned_content, locus_tags=locus_tags, table_fields=table_fields, include_tabular_header=include_tabular_header, page_size=page_size, page_token=page_token, query=query, types=types, accession_filter=accession_filter, tax_search_subtree=tax_search_subtree, sort_field=sort_field, sort_direction=sort_direction)
 
-Get gene reports by taxonomic identifier (deprecated)
+Get gene reports by taxonomic identifier
 
 Get a gene summary for a specified NCBI Taxonomy ID or name (common or scientific). By default, in paged JSON format, but also available as tabular (accept: text/tab-separated-values) or json-lines (accept: application/x-ndjson)
 
@@ -2587,7 +2587,7 @@ with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
     sort_direction = SORT_DIRECTION_UNSPECIFIED # V2SortDirection |  (optional) (default to SORT_DIRECTION_UNSPECIFIED)
 
     try:
-        # Get gene reports by taxonomic identifier (deprecated)
+        # Get gene reports by taxonomic identifier
         api_response = api_instance.gene_reports_by_taxon(taxon, returned_content=returned_content, locus_tags=locus_tags, table_fields=table_fields, include_tabular_header=include_tabular_header, page_size=page_size, page_token=page_token, query=query, types=types, accession_filter=accession_filter, tax_search_subtree=tax_search_subtree, sort_field=sort_field, sort_direction=sort_direction)
         print("The response of GeneApi->gene_reports_by_taxon:\n")
         pprint(api_response)
