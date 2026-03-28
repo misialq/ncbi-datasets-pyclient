@@ -32,6 +32,7 @@ from ncbi.datasets.openapi.models.v2reports_type_material import V2reportsTypeMa
 from ncbi.datasets.openapi.models.v2reports_wgs_info import V2reportsWGSInfo
 from typing import Optional, Set
 from typing_extensions import Self
+from pydantic_core import to_jsonable_python
 
 class V2reportsAssemblyDataReport(BaseModel):
     """
@@ -54,7 +55,8 @@ class V2reportsAssemblyDataReport(BaseModel):
     __properties: ClassVar[List[str]] = ["accession", "current_accession", "paired_accession", "source_database", "organism", "assembly_info", "assembly_stats", "organelle_info", "additional_submitters", "annotation_info", "wgs_info", "type_material", "checkm_info", "average_nucleotide_identity"]
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )
@@ -66,8 +68,7 @@ class V2reportsAssemblyDataReport(BaseModel):
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
-        return json.dumps(self.to_dict())
+        return json.dumps(to_jsonable_python(self.to_dict()))
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:

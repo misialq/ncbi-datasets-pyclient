@@ -21,6 +21,7 @@ from pydantic import BaseModel, ConfigDict, StrictFloat, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
+from pydantic_core import to_jsonable_python
 
 class V2reportsAssemblyStats(BaseModel):
     """
@@ -45,7 +46,8 @@ class V2reportsAssemblyStats(BaseModel):
     __properties: ClassVar[List[str]] = ["total_number_of_chromosomes", "total_sequence_length", "total_ungapped_length", "number_of_contigs", "contig_n50", "contig_l50", "number_of_scaffolds", "scaffold_n50", "scaffold_l50", "gaps_between_scaffolds_count", "number_of_component_sequences", "atgc_count", "gc_count", "gc_percent", "genome_coverage", "number_of_organelles"]
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )
@@ -57,8 +59,7 @@ class V2reportsAssemblyStats(BaseModel):
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
-        return json.dumps(self.to_dict())
+        return json.dumps(to_jsonable_python(self.to_dict()))
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:

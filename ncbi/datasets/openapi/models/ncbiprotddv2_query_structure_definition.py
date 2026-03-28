@@ -17,10 +17,11 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
+from pydantic_core import to_jsonable_python
 
 class Ncbiprotddv2QueryStructureDefinition(BaseModel):
     """
@@ -32,10 +33,13 @@ class Ncbiprotddv2QueryStructureDefinition(BaseModel):
     description: Optional[StrictStr] = None
     chain_id: Optional[StrictStr] = None
     domain_number: Optional[StrictInt] = None
-    __properties: ClassVar[List[str]] = ["sdid", "mmdb_id", "pdb_id", "description", "chain_id", "domain_number"]
+    var_from: Optional[StrictInt] = Field(default=None, alias="from")
+    to: Optional[StrictInt] = None
+    __properties: ClassVar[List[str]] = ["sdid", "mmdb_id", "pdb_id", "description", "chain_id", "domain_number", "from", "to"]
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )
@@ -47,8 +51,7 @@ class Ncbiprotddv2QueryStructureDefinition(BaseModel):
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
-        return json.dumps(self.to_dict())
+        return json.dumps(to_jsonable_python(self.to_dict()))
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
@@ -90,7 +93,9 @@ class Ncbiprotddv2QueryStructureDefinition(BaseModel):
             "pdb_id": obj.get("pdb_id"),
             "description": obj.get("description"),
             "chain_id": obj.get("chain_id"),
-            "domain_number": obj.get("domain_number")
+            "domain_number": obj.get("domain_number"),
+            "from": obj.get("from"),
+            "to": obj.get("to")
         })
         return _obj
 

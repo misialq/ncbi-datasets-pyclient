@@ -35,7 +35,7 @@ Method | HTTP request | Description
 
 
 # **download_gene_package**
-> bytearray download_gene_package(gene_ids, include_annotation_type=include_annotation_type, accession_filter=accession_filter, aux_report=aux_report, tabular_reports=tabular_reports, filename=filename)
+> bytes download_gene_package(gene_ids, include_annotation_type=include_annotation_type, accession_filter=accession_filter, aux_report=aux_report, tabular_reports=tabular_reports, filename=filename)
 
 Get a gene data package by GeneID
 
@@ -105,7 +105,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**bytearray**
+**bytes**
 
 ### Authorization
 
@@ -126,7 +126,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **download_gene_package_post**
-> bytearray download_gene_package_post(v2_gene_dataset_request, filename=filename)
+> bytes download_gene_package_post(v2_gene_dataset_request, filename=filename)
 
 Get a gene data package
 
@@ -187,7 +187,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**bytearray**
+**bytes**
 
 ### Authorization
 

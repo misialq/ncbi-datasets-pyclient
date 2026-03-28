@@ -28,6 +28,7 @@ from ncbi.datasets.openapi.models.v2reports_rna_type import V2reportsRnaType
 from ncbi.datasets.openapi.models.v2reports_transcript import V2reportsTranscript
 from typing import Optional, Set
 from typing_extensions import Self
+from pydantic_core import to_jsonable_python
 
 class V2reportsGenomeAnnotation(BaseModel):
     """
@@ -58,7 +59,8 @@ class V2reportsGenomeAnnotation(BaseModel):
     __properties: ClassVar[List[str]] = ["gene_id", "symbol", "description", "name", "tax_id", "taxname", "common_name", "type", "gene_type", "rna_type", "orientation", "locus_tag", "reference_standards", "genomic_regions", "transcripts", "proteins", "chromosomes", "swiss_prot_accessions", "ensembl_gene_ids", "omim_ids", "synonyms", "annotations"]
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )
@@ -70,8 +72,7 @@ class V2reportsGenomeAnnotation(BaseModel):
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
-        return json.dumps(self.to_dict())
+        return json.dumps(to_jsonable_python(self.to_dict()))
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:

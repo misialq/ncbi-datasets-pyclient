@@ -23,6 +23,7 @@ from ncbi.datasets.openapi.models.ncbiprotddv2_redundancy_level import Ncbiprotd
 from ncbi.datasets.openapi.models.ncbiprotddv2_sort_by_id import Ncbiprotddv2SortById
 from typing import Optional, Set
 from typing_extensions import Self
+from pydantic_core import to_jsonable_python
 
 class Ncbiprotddv2SimilarStructureRequest(BaseModel):
     """
@@ -36,7 +37,8 @@ class Ncbiprotddv2SimilarStructureRequest(BaseModel):
     __properties: ClassVar[List[str]] = ["sdid", "page_token", "redundancy_level", "sort_by", "hits_per_page"]
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )
@@ -48,8 +50,7 @@ class Ncbiprotddv2SimilarStructureRequest(BaseModel):
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
-        return json.dumps(self.to_dict())
+        return json.dumps(to_jsonable_python(self.to_dict()))
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:

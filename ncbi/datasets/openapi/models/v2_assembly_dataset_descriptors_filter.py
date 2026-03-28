@@ -27,6 +27,7 @@ from ncbi.datasets.openapi.models.v2_assembly_dataset_descriptors_filter_type_ma
 from ncbi.datasets.openapi.models.v2reports_assembly_level import V2reportsAssemblyLevel
 from typing import Optional, Set
 from typing_extensions import Self
+from pydantic_core import to_jsonable_python
 
 class V2AssemblyDatasetDescriptorsFilter(BaseModel):
     """
@@ -50,7 +51,8 @@ class V2AssemblyDatasetDescriptorsFilter(BaseModel):
     __properties: ClassVar[List[str]] = ["reference_only", "assembly_source", "has_annotation", "exclude_paired_reports", "exclude_atypical", "assembly_version", "assembly_level", "first_release_date", "last_release_date", "search_text", "is_metagenome_derived", "is_type_material", "is_ictv_exemplar", "exclude_multi_isolate", "type_material_category"]
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )
@@ -62,8 +64,7 @@ class V2AssemblyDatasetDescriptorsFilter(BaseModel):
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
-        return json.dumps(self.to_dict())
+        return json.dumps(to_jsonable_python(self.to_dict()))
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:

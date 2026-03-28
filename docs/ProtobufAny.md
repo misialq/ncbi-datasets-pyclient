@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **type_url** | **str** |  | [optional] 
-**value** | **bytearray** |  | [optional] 
+**value** | **bytes** |  | [optional] 
 
 ## Example
 

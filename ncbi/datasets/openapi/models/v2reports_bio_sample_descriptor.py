@@ -27,6 +27,7 @@ from ncbi.datasets.openapi.models.v2reports_bio_sample_owner import V2reportsBio
 from ncbi.datasets.openapi.models.v2reports_bio_sample_status import V2reportsBioSampleStatus
 from typing import Optional, Set
 from typing_extensions import Self
+from pydantic_core import to_jsonable_python
 
 class V2reportsBioSampleDescriptor(BaseModel):
     """
@@ -73,7 +74,8 @@ class V2reportsBioSampleDescriptor(BaseModel):
     __properties: ClassVar[List[str]] = ["accession", "last_updated", "publication_date", "submission_date", "sample_ids", "description", "owner", "models", "bioprojects", "package", "attributes", "status", "age", "biomaterial_provider", "breed", "collected_by", "collection_date", "cultivar", "dev_stage", "ecotype", "geo_loc_name", "host", "host_disease", "identified_by", "ifsac_category", "isolate", "isolate_name_alias", "isolation_source", "lat_lon", "project_name", "sample_name", "serovar", "sex", "source_type", "strain", "sub_species", "tissue", "serotype"]
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )
@@ -85,8 +87,7 @@ class V2reportsBioSampleDescriptor(BaseModel):
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
-        return json.dumps(self.to_dict())
+        return json.dumps(to_jsonable_python(self.to_dict()))
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:

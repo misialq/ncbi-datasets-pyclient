@@ -31,6 +31,7 @@ from ncbi.datasets.openapi.models.v2reports_rna_type import V2reportsRnaType
 from ncbi.datasets.openapi.models.v2reports_transcript_type_count import V2reportsTranscriptTypeCount
 from typing import Optional, Set
 from typing_extensions import Self
+from pydantic_core import to_jsonable_python
 
 class V2reportsGeneDescriptor(BaseModel):
     """
@@ -65,7 +66,8 @@ class V2reportsGeneDescriptor(BaseModel):
     __properties: ClassVar[List[str]] = ["gene_id", "symbol", "description", "tax_id", "taxname", "common_name", "type", "rna_type", "orientation", "reference_standards", "genomic_regions", "chromosomes", "nomenclature_authority", "swiss_prot_accessions", "ensembl_gene_ids", "omim_ids", "synonyms", "replaced_gene_id", "annotations", "transcript_count", "protein_count", "transcript_type_counts", "gene_groups", "summary", "gene_ontology", "locus_tag"]
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )
@@ -77,8 +79,7 @@ class V2reportsGeneDescriptor(BaseModel):
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
-        return json.dumps(self.to_dict())
+        return json.dumps(to_jsonable_python(self.to_dict()))
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:

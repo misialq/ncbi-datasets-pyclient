@@ -26,6 +26,7 @@ from ncbi.datasets.openapi.models.v2_virus_dataset_report_type import V2VirusDat
 from ncbi.datasets.openapi.models.v2_virus_table_field import V2VirusTableField
 from typing import Optional, Set
 from typing_extensions import Self
+from pydantic_core import to_jsonable_python
 
 class V2Sars2ProteinDatasetRequest(BaseModel):
     """
@@ -48,7 +49,8 @@ class V2Sars2ProteinDatasetRequest(BaseModel):
     __properties: ClassVar[List[str]] = ["proteins", "refseq_only", "annotated_only", "released_since", "updated_since", "host", "pangolin_classification", "geo_location", "usa_state", "complete_only", "table_fields", "include_sequence", "aux_report", "format"]
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )
@@ -60,8 +62,7 @@ class V2Sars2ProteinDatasetRequest(BaseModel):
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
-        return json.dumps(self.to_dict())
+        return json.dumps(to_jsonable_python(self.to_dict()))
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:

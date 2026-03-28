@@ -26,7 +26,7 @@ Method | HTTP request | Description
 
 
 # **sars2_protein_download**
-> bytearray sars2_protein_download(proteins, refseq_only=refseq_only, annotated_only=annotated_only, released_since=released_since, updated_since=updated_since, host=host, pangolin_classification=pangolin_classification, geo_location=geo_location, usa_state=usa_state, complete_only=complete_only, include_sequence=include_sequence, aux_report=aux_report, filename=filename)
+> bytes sars2_protein_download(proteins, refseq_only=refseq_only, annotated_only=annotated_only, released_since=released_since, updated_since=updated_since, host=host, pangolin_classification=pangolin_classification, geo_location=geo_location, usa_state=usa_state, complete_only=complete_only, include_sequence=include_sequence, aux_report=aux_report, filename=filename)
 
 Get a SARS-CoV-2 protein data package by protein name
 
@@ -110,7 +110,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**bytearray**
+**bytes**
 
 ### Authorization
 
@@ -131,7 +131,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **sars2_protein_download_post**
-> bytearray sars2_protein_download_post(v2_sars2_protein_dataset_request, filename=filename)
+> bytes sars2_protein_download_post(v2_sars2_protein_dataset_request, filename=filename)
 
 Get a SARS-CoV-2 protein data package
 
@@ -192,7 +192,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**bytearray**
+**bytes**
 
 ### Authorization
 
@@ -952,7 +952,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **virus_genome_download**
-> bytearray virus_genome_download(taxon, refseq_only=refseq_only, annotated_only=annotated_only, released_since=released_since, updated_since=updated_since, host=host, pangolin_classification=pangolin_classification, geo_location=geo_location, usa_state=usa_state, complete_only=complete_only, include_sequence=include_sequence, aux_report=aux_report, use_psg=use_psg, filename=filename)
+> bytes virus_genome_download(taxon, refseq_only=refseq_only, annotated_only=annotated_only, released_since=released_since, updated_since=updated_since, host=host, pangolin_classification=pangolin_classification, geo_location=geo_location, usa_state=usa_state, complete_only=complete_only, include_sequence=include_sequence, aux_report=aux_report, use_psg=use_psg, filename=filename)
 
 Get a virus genome data package by taxon
 
@@ -1038,7 +1038,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**bytearray**
+**bytes**
 
 ### Authorization
 
@@ -1059,7 +1059,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **virus_genome_download_accession**
-> bytearray virus_genome_download_accession(accessions, taxons=taxons, refseq_only=refseq_only, annotated_only=annotated_only, released_since=released_since, updated_since=updated_since, host=host, pangolin_classification=pangolin_classification, geo_location=geo_location, usa_state=usa_state, complete_only=complete_only, include_sequence=include_sequence, aux_report=aux_report, use_psg=use_psg, filename=filename)
+> bytes virus_genome_download_accession(accessions, taxons=taxons, refseq_only=refseq_only, annotated_only=annotated_only, released_since=released_since, updated_since=updated_since, host=host, pangolin_classification=pangolin_classification, geo_location=geo_location, usa_state=usa_state, complete_only=complete_only, include_sequence=include_sequence, aux_report=aux_report, use_psg=use_psg, filename=filename)
 
 Get a virus genome data package by nucleotide accession
 
@@ -1147,7 +1147,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**bytearray**
+**bytes**
 
 ### Authorization
 
@@ -1168,7 +1168,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **virus_genome_download_post**
-> bytearray virus_genome_download_post(v2_virus_dataset_request, filename=filename)
+> bytes virus_genome_download_post(v2_virus_dataset_request, filename=filename)
 
 Get a virus genome data package
 
@@ -1229,7 +1229,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**bytearray**
+**bytes**
 
 ### Authorization
 

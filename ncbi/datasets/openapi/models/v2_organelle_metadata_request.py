@@ -27,6 +27,7 @@ from ncbi.datasets.openapi.models.v2_organelle_sort import V2OrganelleSort
 from ncbi.datasets.openapi.models.v2reports_organelle_type import V2reportsOrganelleType
 from typing import Optional, Set
 from typing_extensions import Self
+from pydantic_core import to_jsonable_python
 
 class V2OrganelleMetadataRequest(BaseModel):
     """
@@ -47,7 +48,8 @@ class V2OrganelleMetadataRequest(BaseModel):
     __properties: ClassVar[List[str]] = ["taxons", "accessions", "organelle_types", "first_release_date", "last_release_date", "tax_exact_match", "sort", "returned_content", "page_size", "page_token", "table_format", "include_tabular_header"]
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )
@@ -59,8 +61,7 @@ class V2OrganelleMetadataRequest(BaseModel):
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
-        return json.dumps(self.to_dict())
+        return json.dumps(to_jsonable_python(self.to_dict()))
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:

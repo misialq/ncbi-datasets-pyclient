@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **download_organelle_package**
-> bytearray download_organelle_package(accessions, include_annotation_type=include_annotation_type, filename=filename)
+> bytes download_organelle_package(accessions, include_annotation_type=include_annotation_type, filename=filename)
 
 Get an organelle data package by nucleotide accession
 
@@ -75,7 +75,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**bytearray**
+**bytes**
 
 ### Authorization
 
@@ -96,7 +96,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **download_organelle_package_by_post**
-> bytearray download_organelle_package_by_post(v2_organelle_download_request, filename=filename)
+> bytes download_organelle_package_by_post(v2_organelle_download_request, filename=filename)
 
 Get an organelle data package
 
@@ -157,7 +157,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**bytearray**
+**bytes**
 
 ### Authorization
 

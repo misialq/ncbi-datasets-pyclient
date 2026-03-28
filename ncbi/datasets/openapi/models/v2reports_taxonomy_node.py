@@ -25,6 +25,7 @@ from ncbi.datasets.openapi.models.v2reports_rank_type import V2reportsRankType
 from ncbi.datasets.openapi.models.v2reports_taxonomy_node_count_by_type import V2reportsTaxonomyNodeCountByType
 from typing import Optional, Set
 from typing_extensions import Self
+from pydantic_core import to_jsonable_python
 
 class V2reportsTaxonomyNode(BaseModel):
     """
@@ -48,7 +49,8 @@ class V2reportsTaxonomyNode(BaseModel):
     __properties: ClassVar[List[str]] = ["tax_id", "rank", "current_scientific_name", "basionym", "curator_common_name", "group_name", "has_type_material", "classification", "parents", "children", "counts", "genomic_moltype", "current_scientific_name_is_formal", "secondary_tax_ids", "extinct"]
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )
@@ -60,8 +62,7 @@ class V2reportsTaxonomyNode(BaseModel):
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
-        return json.dumps(self.to_dict())
+        return json.dumps(to_jsonable_python(self.to_dict()))
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:

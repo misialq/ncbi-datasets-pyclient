@@ -848,7 +848,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **download_assembly_package**
-> bytearray download_assembly_package(accessions, chromosomes=chromosomes, include_annotation_type=include_annotation_type, hydrated=hydrated, filename=filename)
+> bytes download_assembly_package(accessions, chromosomes=chromosomes, include_annotation_type=include_annotation_type, hydrated=hydrated, filename=filename)
 
 Get a genome data package by genome assembly accession
 
@@ -916,7 +916,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**bytearray**
+**bytes**
 
 ### Authorization
 
@@ -937,7 +937,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **download_assembly_package_post**
-> bytearray download_assembly_package_post(v2_assembly_dataset_request, filename=filename)
+> bytes download_assembly_package_post(v2_assembly_dataset_request, filename=filename)
 
 Get a genome data package by genome assembly accession
 
@@ -998,7 +998,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**bytearray**
+**bytes**
 
 ### Authorization
 
@@ -1019,7 +1019,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **download_genome_annotation_package**
-> bytearray download_genome_annotation_package(accession, annotation_ids=annotation_ids, symbols=symbols, locations=locations, gene_types=gene_types, search_text=search_text, sort_field=sort_field, sort_direction=sort_direction, include_annotation_type=include_annotation_type, filename=filename)
+> bytes download_genome_annotation_package(accession, annotation_ids=annotation_ids, symbols=symbols, locations=locations, gene_types=gene_types, search_text=search_text, sort_field=sort_field, sort_direction=sort_direction, include_annotation_type=include_annotation_type, filename=filename)
 
 Get a genome annotation data package by genome assembly accession
 
@@ -1097,7 +1097,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**bytearray**
+**bytes**
 
 ### Authorization
 
@@ -1118,7 +1118,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **download_genome_annotation_package_by_post**
-> bytearray download_genome_annotation_package_by_post(v2_genome_annotation_request, filename=filename)
+> bytes download_genome_annotation_package_by_post(v2_genome_annotation_request, filename=filename)
 
 Get a genome annotation data package by genome assembly accession
 
@@ -1179,7 +1179,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**bytearray**
+**bytes**
 
 ### Authorization
 

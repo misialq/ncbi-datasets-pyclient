@@ -23,6 +23,7 @@ from ncbi.datasets.openapi.models.ncbiprotddv2_chain_footprint import Ncbiprotdd
 from ncbi.datasets.openapi.models.ncbiprotddv2_vast_score import Ncbiprotddv2VastScore
 from typing import Optional, Set
 from typing_extensions import Self
+from pydantic_core import to_jsonable_python
 
 class Ncbiprotddv2SimilarStructureReport(BaseModel):
     """
@@ -43,7 +44,8 @@ class Ncbiprotddv2SimilarStructureReport(BaseModel):
     __properties: ClassVar[List[str]] = ["sdid", "structure_title", "protein_chain_name", "chain_id", "domain_number", "mmdb_id", "pdb_id", "vast_score", "align_id", "superkingdom_id", "tax_id", "footprints"]
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )
@@ -55,8 +57,7 @@ class Ncbiprotddv2SimilarStructureReport(BaseModel):
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
-        return json.dumps(self.to_dict())
+        return json.dumps(to_jsonable_python(self.to_dict()))
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:

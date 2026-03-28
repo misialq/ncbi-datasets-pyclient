@@ -59,7 +59,7 @@ class ProkaryoteApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> bytearray:
+    ) -> bytes:
         """Get a prokaryote gene data package by RefSeq protein accession
 
         Download a prokaryote gene data package including sequence, annotation and data reports by RefSeq non-redundant protein accession.
@@ -109,7 +109,7 @@ class ProkaryoteApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "bytearray",
+            '200': "bytes",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -142,7 +142,7 @@ class ProkaryoteApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[bytearray]:
+    ) -> ApiResponse[bytes]:
         """Get a prokaryote gene data package by RefSeq protein accession
 
         Download a prokaryote gene data package including sequence, annotation and data reports by RefSeq non-redundant protein accession.
@@ -192,7 +192,7 @@ class ProkaryoteApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "bytearray",
+            '200': "bytes",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -275,7 +275,7 @@ class ProkaryoteApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "bytearray",
+            '200': "bytes",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -388,7 +388,7 @@ class ProkaryoteApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> bytearray:
+    ) -> bytes:
         """Get a prokaryote gene data package by RefSeq protein accession
 
         Download a prokaryote gene data package including sequence, annotation and data reports by RefSeq non-redundant protein accession.
@@ -429,7 +429,7 @@ class ProkaryoteApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "bytearray",
+            '200': "bytes",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -459,7 +459,7 @@ class ProkaryoteApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[bytearray]:
+    ) -> ApiResponse[bytes]:
         """Get a prokaryote gene data package by RefSeq protein accession
 
         Download a prokaryote gene data package including sequence, annotation and data reports by RefSeq non-redundant protein accession.
@@ -500,7 +500,7 @@ class ProkaryoteApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "bytearray",
+            '200': "bytes",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -571,7 +571,7 @@ class ProkaryoteApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "bytearray",
+            '200': "bytes",
         }
         response_data = self.api_client.call_api(
             *_param,

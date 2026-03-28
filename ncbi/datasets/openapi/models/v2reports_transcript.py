@@ -26,6 +26,7 @@ from ncbi.datasets.openapi.models.v2reports_transcript_select_category import V2
 from ncbi.datasets.openapi.models.v2reports_transcript_transcript_type import V2reportsTranscriptTranscriptType
 from typing import Optional, Set
 from typing_extensions import Self
+from pydantic_core import to_jsonable_python
 
 class V2reportsTranscript(BaseModel):
     """
@@ -43,7 +44,8 @@ class V2reportsTranscript(BaseModel):
     __properties: ClassVar[List[str]] = ["accession_version", "name", "length", "cds", "genomic_locations", "ensembl_transcript", "protein", "type", "select_category"]
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )
@@ -55,8 +57,7 @@ class V2reportsTranscript(BaseModel):
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
-        return json.dumps(self.to_dict())
+        return json.dumps(to_jsonable_python(self.to_dict()))
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:

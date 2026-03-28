@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **content_type** | **str** |  | [optional] 
-**data** | **bytearray** |  | [optional] 
+**data** | **bytes** |  | [optional] 
 
 ## Example
 

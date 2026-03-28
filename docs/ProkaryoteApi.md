@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **download_prokaryote_gene_package**
-> bytearray download_prokaryote_gene_package(accessions, include_annotation_type=include_annotation_type, gene_flank_config_length=gene_flank_config_length, taxon=taxon, filename=filename)
+> bytes download_prokaryote_gene_package(accessions, include_annotation_type=include_annotation_type, gene_flank_config_length=gene_flank_config_length, taxon=taxon, filename=filename)
 
 Get a prokaryote gene data package by RefSeq protein accession
 
@@ -76,7 +76,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**bytearray**
+**bytes**
 
 ### Authorization
 
@@ -97,7 +97,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **download_prokaryote_gene_package_post**
-> bytearray download_prokaryote_gene_package_post(v2_prokaryote_gene_request, filename=filename)
+> bytes download_prokaryote_gene_package_post(v2_prokaryote_gene_request, filename=filename)
 
 Get a prokaryote gene data package by RefSeq protein accession
 
@@ -158,7 +158,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**bytearray**
+**bytes**
 
 ### Authorization
 

@@ -28,6 +28,7 @@ from ncbi.datasets.openapi.models.v2reports_linked_assembly_type import V2report
 from ncbi.datasets.openapi.models.v2reports_paired_assembly import V2reportsPairedAssembly
 from typing import Optional, Set
 from typing_extensions import Self
+from pydantic_core import to_jsonable_python
 
 class V2reportsAssemblyInfo(BaseModel):
     """
@@ -62,7 +63,8 @@ class V2reportsAssemblyInfo(BaseModel):
     __properties: ClassVar[List[str]] = ["assembly_level", "assembly_status", "paired_assembly", "assembly_name", "assembly_long_name", "assembly_type", "bioproject_lineage", "bioproject_accession", "submission_date", "release_date", "description", "submitter", "refseq_category", "synonym", "linked_assembly", "linked_assemblies", "atypical", "genome_notes", "sequencing_tech", "assembly_method", "grouping_method", "biosample", "blast_url", "comments", "suppression_reason", "diploid_role"]
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )
@@ -74,8 +76,7 @@ class V2reportsAssemblyInfo(BaseModel):
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
-        return json.dumps(self.to_dict())
+        return json.dumps(to_jsonable_python(self.to_dict()))
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:

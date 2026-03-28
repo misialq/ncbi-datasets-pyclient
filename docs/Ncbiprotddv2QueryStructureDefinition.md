@@ -11,6 +11,8 @@ Name | Type | Description | Notes
 **description** | **str** |  | [optional] 
 **chain_id** | **str** |  | [optional] 
 **domain_number** | **int** |  | [optional] 
+**var_from** | **int** |  | [optional] 
+**to** | **int** |  | [optional] 
 
 ## Example
 

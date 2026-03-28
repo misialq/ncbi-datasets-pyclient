@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **tax_id** | **int** |  | [optional] 
 **kind** | [**Ncbiprotddv2StructureDataReportKind**](Ncbiprotddv2StructureDataReportKind.md) |  | [optional] [default to Ncbiprotddv2StructureDataReportKind.DNA]
 **molecule_group** | **int** |  | [optional] 
+**sdid** | **int** |  | [optional] 
 
 ## Example
 

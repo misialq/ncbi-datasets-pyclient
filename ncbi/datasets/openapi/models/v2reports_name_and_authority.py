@@ -24,6 +24,7 @@ from ncbi.datasets.openapi.models.v2reports_name_and_authority_publication impor
 from ncbi.datasets.openapi.models.v2reports_taxonomy_type_material import V2reportsTaxonomyTypeMaterial
 from typing import Optional, Set
 from typing_extensions import Self
+from pydantic_core import to_jsonable_python
 
 class V2reportsNameAndAuthority(BaseModel):
     """
@@ -44,7 +45,8 @@ class V2reportsNameAndAuthority(BaseModel):
     __properties: ClassVar[List[str]] = ["name", "authority", "type_strains", "curator_synonym", "homotypic_synonyms", "heterotypic_synonyms", "other_synonyms", "informal_names", "basionym", "publications", "notes", "formal"]
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )
@@ -56,8 +58,7 @@ class V2reportsNameAndAuthority(BaseModel):
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
-        return json.dumps(self.to_dict())
+        return json.dumps(to_jsonable_python(self.to_dict()))
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:

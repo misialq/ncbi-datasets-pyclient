@@ -27,7 +27,7 @@ Method | HTTP request | Description
 
 
 # **download_taxonomy_package**
-> bytearray download_taxonomy_package(tax_ids, aux_reports=aux_reports, filename=filename)
+> bytes download_taxonomy_package(tax_ids, aux_reports=aux_reports, filename=filename)
 
 Get a taxonomy data package by Taxonomy ID
 
@@ -90,7 +90,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**bytearray**
+**bytes**
 
 ### Authorization
 
@@ -111,7 +111,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **download_taxonomy_package_by_post**
-> bytearray download_taxonomy_package_by_post(v2_taxonomy_dataset_request, filename=filename)
+> bytes download_taxonomy_package_by_post(v2_taxonomy_dataset_request, filename=filename)
 
 Get a taxonomy data package by Taxonomy ID
 
@@ -172,7 +172,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**bytearray**
+**bytes**
 
 ### Authorization
 
@@ -713,7 +713,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **taxonomy_image**
-> bytearray taxonomy_image(taxon, image_size=image_size)
+> bytes taxonomy_image(taxon, image_size=image_size)
 
 Get a taxonomy image by taxon
 
@@ -774,7 +774,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**bytearray**
+**bytes**
 
 ### Authorization
 
@@ -956,7 +956,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **taxonomy_image_post**
-> bytearray taxonomy_image_post(v2_taxonomy_image_request)
+> bytes taxonomy_image_post(v2_taxonomy_image_request)
 
 Get a taxonomy image by taxon
 
@@ -1015,7 +1015,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**bytearray**
+**bytes**
 
 ### Authorization
 

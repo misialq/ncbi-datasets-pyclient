@@ -26,6 +26,7 @@ from ncbi.datasets.openapi.models.v2_include_tabular_header import V2IncludeTabu
 from ncbi.datasets.openapi.models.v2_sort_field import V2SortField
 from typing import Optional, Set
 from typing_extensions import Self
+from pydantic_core import to_jsonable_python
 
 class V2GeneDatasetReportsRequest(BaseModel):
     """
@@ -50,7 +51,8 @@ class V2GeneDatasetReportsRequest(BaseModel):
     __properties: ClassVar[List[str]] = ["returned_content", "gene_ids", "accessions", "symbols_for_taxon", "taxon", "locus_tags", "table_fields", "table_format", "include_tabular_header", "page_size", "page_token", "query", "types", "accession_filter", "tax_search_subtree", "sort"]
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )
@@ -62,8 +64,7 @@ class V2GeneDatasetReportsRequest(BaseModel):
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
-        return json.dumps(self.to_dict())
+        return json.dumps(to_jsonable_python(self.to_dict()))
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:

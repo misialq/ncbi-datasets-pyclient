@@ -22,6 +22,7 @@ from typing import Any, ClassVar, Dict, List, Optional
 from ncbi.datasets.openapi.models.ncbiprotddv2_structure_data_report_kind import Ncbiprotddv2StructureDataReportKind
 from typing import Optional, Set
 from typing_extensions import Self
+from pydantic_core import to_jsonable_python
 
 class Ncbiprotddv2StructureDataReportBiounitChain(BaseModel):
     """
@@ -31,10 +32,12 @@ class Ncbiprotddv2StructureDataReportBiounitChain(BaseModel):
     tax_id: Optional[StrictInt] = None
     kind: Optional[Ncbiprotddv2StructureDataReportKind] = Ncbiprotddv2StructureDataReportKind.DNA
     molecule_group: Optional[StrictInt] = None
-    __properties: ClassVar[List[str]] = ["chain_id", "tax_id", "kind", "molecule_group"]
+    sdid: Optional[StrictInt] = None
+    __properties: ClassVar[List[str]] = ["chain_id", "tax_id", "kind", "molecule_group", "sdid"]
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )
@@ -46,8 +49,7 @@ class Ncbiprotddv2StructureDataReportBiounitChain(BaseModel):
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
-        return json.dumps(self.to_dict())
+        return json.dumps(to_jsonable_python(self.to_dict()))
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
@@ -87,7 +89,8 @@ class Ncbiprotddv2StructureDataReportBiounitChain(BaseModel):
             "chain_id": obj.get("chain_id"),
             "tax_id": obj.get("tax_id"),
             "kind": obj.get("kind") if obj.get("kind") is not None else Ncbiprotddv2StructureDataReportKind.DNA,
-            "molecule_group": obj.get("molecule_group")
+            "molecule_group": obj.get("molecule_group"),
+            "sdid": obj.get("sdid")
         })
         return _obj
 

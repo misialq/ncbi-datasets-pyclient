@@ -7,8 +7,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **chain_id** | **str** |  | [optional] 
 **kind** | [**Ncbiprotddv2StructureDataReportKind**](Ncbiprotddv2StructureDataReportKind.md) |  | [optional] [default to Ncbiprotddv2StructureDataReportKind.DNA]
-**molecule_group** | **int** |  | [optional] 
 **sid** | **int** |  | [optional] 
+**sdid** | **int** |  | [optional] 
 
 ## Example
 
