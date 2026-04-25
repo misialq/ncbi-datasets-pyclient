@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt
+from pydantic import BaseModel, ConfigDict, StrictInt
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -27,8 +27,8 @@ class V2GenePubmedIdsResponse(BaseModel):
     """
     V2GenePubmedIdsResponse
     """ # noqa: E501
-    pubmed_ids: Optional[List[StrictInt]] = Field(default=None, alias="pubmedIds")
-    __properties: ClassVar[List[str]] = ["pubmedIds"]
+    pubmed_ids: Optional[List[StrictInt]] = None
+    __properties: ClassVar[List[str]] = ["pubmed_ids"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -81,7 +81,7 @@ class V2GenePubmedIdsResponse(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "pubmedIds": obj.get("pubmedIds")
+            "pubmed_ids": obj.get("pubmed_ids")
         })
         return _obj
 

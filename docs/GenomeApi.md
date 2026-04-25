@@ -2614,7 +2614,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **genome_links_by_accession**
-> V2AssemblyLinksReply genome_links_by_accession(accessions)
+> V2AssemblyLinksReply genome_links_by_accession(accessions, assembly_link_types=assembly_link_types)
 
 Get assembly links by genome assembly accession
 
@@ -2627,6 +2627,7 @@ Get links to assembly resources by genome assembly accession in JSON format.
 ```python
 import ncbi.datasets.openapi
 from ncbi.datasets.openapi.models.v2_assembly_links_reply import V2AssemblyLinksReply
+from ncbi.datasets.openapi.models.v2_assembly_links_reply_assembly_link_type import V2AssemblyLinksReplyAssemblyLinkType
 from ncbi.datasets.openapi.rest import ApiException
 from pprint import pprint
 
@@ -2652,10 +2653,11 @@ with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = ncbi.datasets.openapi.GenomeApi(api_client)
     accessions = ['GCF_000001405.40'] # List[str] | One or more genome assembly accessions, limited to 100
+    assembly_link_types = [ncbi.datasets.openapi.V2AssemblyLinksReplyAssemblyLinkType()] # List[V2AssemblyLinksReplyAssemblyLinkType] | Zero or more assembly link types to retrieve. If no values are provided, all links are retrieved (optional)
 
     try:
         # Get assembly links by genome assembly accession
-        api_response = api_instance.genome_links_by_accession(accessions)
+        api_response = api_instance.genome_links_by_accession(accessions, assembly_link_types=assembly_link_types)
         print("The response of GenomeApi->genome_links_by_accession:\n")
         pprint(api_response)
     except Exception as e:
@@ -2670,6 +2672,7 @@ with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **accessions** | [**List[str]**](str.md)| One or more genome assembly accessions, limited to 100 | 
+ **assembly_link_types** | [**List[V2AssemblyLinksReplyAssemblyLinkType]**](V2AssemblyLinksReplyAssemblyLinkType.md)| Zero or more assembly link types to retrieve. If no values are provided, all links are retrieved | [optional] 
 
 ### Return type
 

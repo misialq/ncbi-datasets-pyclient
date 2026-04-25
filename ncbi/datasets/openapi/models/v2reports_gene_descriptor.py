@@ -25,6 +25,7 @@ from ncbi.datasets.openapi.models.v2reports_gene_ontology import V2reportsGeneOn
 from ncbi.datasets.openapi.models.v2reports_gene_summary import V2reportsGeneSummary
 from ncbi.datasets.openapi.models.v2reports_gene_type import V2reportsGeneType
 from ncbi.datasets.openapi.models.v2reports_genomic_region import V2reportsGenomicRegion
+from ncbi.datasets.openapi.models.v2reports_map_location import V2reportsMapLocation
 from ncbi.datasets.openapi.models.v2reports_nomenclature_authority import V2reportsNomenclatureAuthority
 from ncbi.datasets.openapi.models.v2reports_orientation import V2reportsOrientation
 from ncbi.datasets.openapi.models.v2reports_rna_type import V2reportsRnaType
@@ -63,7 +64,8 @@ class V2reportsGeneDescriptor(BaseModel):
     summary: Optional[List[V2reportsGeneSummary]] = None
     gene_ontology: Optional[V2reportsGeneOntology] = None
     locus_tag: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["gene_id", "symbol", "description", "tax_id", "taxname", "common_name", "type", "rna_type", "orientation", "reference_standards", "genomic_regions", "chromosomes", "nomenclature_authority", "swiss_prot_accessions", "ensembl_gene_ids", "omim_ids", "synonyms", "replaced_gene_id", "annotations", "transcript_count", "protein_count", "transcript_type_counts", "gene_groups", "summary", "gene_ontology", "locus_tag"]
+    map_locations: Optional[List[V2reportsMapLocation]] = None
+    __properties: ClassVar[List[str]] = ["gene_id", "symbol", "description", "tax_id", "taxname", "common_name", "type", "rna_type", "orientation", "reference_standards", "genomic_regions", "chromosomes", "nomenclature_authority", "swiss_prot_accessions", "ensembl_gene_ids", "omim_ids", "synonyms", "replaced_gene_id", "annotations", "transcript_count", "protein_count", "transcript_type_counts", "gene_groups", "summary", "gene_ontology", "locus_tag", "map_locations"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -152,6 +154,13 @@ class V2reportsGeneDescriptor(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of gene_ontology
         if self.gene_ontology:
             _dict['gene_ontology'] = self.gene_ontology.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of each item in map_locations (list)
+        _items = []
+        if self.map_locations:
+            for _item_map_locations in self.map_locations:
+                if _item_map_locations:
+                    _items.append(_item_map_locations.to_dict())
+            _dict['map_locations'] = _items
         return _dict
 
     @classmethod
@@ -189,7 +198,8 @@ class V2reportsGeneDescriptor(BaseModel):
             "gene_groups": [V2reportsGeneGroup.from_dict(_item) for _item in obj["gene_groups"]] if obj.get("gene_groups") is not None else None,
             "summary": [V2reportsGeneSummary.from_dict(_item) for _item in obj["summary"]] if obj.get("summary") is not None else None,
             "gene_ontology": V2reportsGeneOntology.from_dict(obj["gene_ontology"]) if obj.get("gene_ontology") is not None else None,
-            "locus_tag": obj.get("locus_tag")
+            "locus_tag": obj.get("locus_tag"),
+            "map_locations": [V2reportsMapLocation.from_dict(_item) for _item in obj["map_locations"]] if obj.get("map_locations") is not None else None
         })
         return _obj
 

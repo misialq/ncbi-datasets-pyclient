@@ -17,20 +17,21 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
+from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from ncbi.datasets.openapi.models.v2_assembly_links_reply_assembly_link_type import V2AssemblyLinksReplyAssemblyLinkType
+from ncbi.datasets.openapi.models.v2reports_sequence_exon import V2reportsSequenceExon
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
 
-class V2AssemblyLinksRequest(BaseModel):
+class V2reportsSequenceExonList(BaseModel):
     """
-    V2AssemblyLinksRequest
+    V2reportsSequenceExonList
     """ # noqa: E501
-    accessions: Optional[List[StrictStr]] = None
-    assembly_link_types: Optional[List[V2AssemblyLinksReplyAssemblyLinkType]] = None
-    __properties: ClassVar[List[str]] = ["accessions", "assembly_link_types"]
+    count: Optional[StrictInt] = None
+    inference_method: Optional[StrictStr] = None
+    items: Optional[List[V2reportsSequenceExon]] = None
+    __properties: ClassVar[List[str]] = ["count", "inference_method", "items"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -50,7 +51,7 @@ class V2AssemblyLinksRequest(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of V2AssemblyLinksRequest from a JSON string"""
+        """Create an instance of V2reportsSequenceExonList from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -71,11 +72,18 @@ class V2AssemblyLinksRequest(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of each item in items (list)
+        _items = []
+        if self.items:
+            for _item_items in self.items:
+                if _item_items:
+                    _items.append(_item_items.to_dict())
+            _dict['items'] = _items
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of V2AssemblyLinksRequest from a dict"""
+        """Create an instance of V2reportsSequenceExonList from a dict"""
         if obj is None:
             return None
 
@@ -83,8 +91,9 @@ class V2AssemblyLinksRequest(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "accessions": obj.get("accessions"),
-            "assembly_link_types": obj.get("assembly_link_types")
+            "count": obj.get("count"),
+            "inference_method": obj.get("inference_method"),
+            "items": [V2reportsSequenceExon.from_dict(_item) for _item in obj["items"]] if obj.get("items") is not None else None
         })
         return _obj
 

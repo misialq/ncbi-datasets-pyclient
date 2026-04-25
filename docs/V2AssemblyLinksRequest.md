@@ -6,6 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **accessions** | **List[str]** |  | [optional] 
+**assembly_link_types** | [**List[V2AssemblyLinksReplyAssemblyLinkType]**](V2AssemblyLinksReplyAssemblyLinkType.md) |  | [optional] 
 
 ## Example
 

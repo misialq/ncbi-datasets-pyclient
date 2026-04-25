@@ -31,6 +31,7 @@ Name | Type | Description | Notes
 **summary** | [**List[V2reportsGeneSummary]**](V2reportsGeneSummary.md) |  | [optional] 
 **gene_ontology** | [**V2reportsGeneOntology**](V2reportsGeneOntology.md) |  | [optional] 
 **locus_tag** | **str** |  | [optional] 
+**map_locations** | [**List[V2reportsMapLocation]**](V2reportsMapLocation.md) |  | [optional] 
 
 ## Example
 

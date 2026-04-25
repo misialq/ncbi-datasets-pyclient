@@ -33,6 +33,7 @@ from ncbi.datasets.openapi.models.v2_assembly_dataset_reports_request_content_ty
 from ncbi.datasets.openapi.models.v2_assembly_dataset_request import V2AssemblyDatasetRequest
 from ncbi.datasets.openapi.models.v2_assembly_dataset_request_resolution import V2AssemblyDatasetRequestResolution
 from ncbi.datasets.openapi.models.v2_assembly_links_reply import V2AssemblyLinksReply
+from ncbi.datasets.openapi.models.v2_assembly_links_reply_assembly_link_type import V2AssemblyLinksReplyAssemblyLinkType
 from ncbi.datasets.openapi.models.v2_assembly_links_request import V2AssemblyLinksRequest
 from ncbi.datasets.openapi.models.v2_assembly_revision_history import V2AssemblyRevisionHistory
 from ncbi.datasets.openapi.models.v2_assembly_revision_history_request import V2AssemblyRevisionHistoryRequest
@@ -10438,6 +10439,7 @@ class GenomeApi:
     def genome_links_by_accession(
         self,
         accessions: Annotated[List[StrictStr], Field(description="One or more genome assembly accessions, limited to 100")],
+        assembly_link_types: Annotated[Optional[List[V2AssemblyLinksReplyAssemblyLinkType]], Field(description="Zero or more assembly link types to retrieve. If no values are provided, all links are retrieved")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -10457,6 +10459,8 @@ class GenomeApi:
 
         :param accessions: One or more genome assembly accessions, limited to 100 (required)
         :type accessions: List[str]
+        :param assembly_link_types: Zero or more assembly link types to retrieve. If no values are provided, all links are retrieved
+        :type assembly_link_types: List[V2AssemblyLinksReplyAssemblyLinkType]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -10481,6 +10485,7 @@ class GenomeApi:
 
         _param = self._genome_links_by_accession_serialize(
             accessions=accessions,
+            assembly_link_types=assembly_link_types,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -10505,6 +10510,7 @@ class GenomeApi:
     def genome_links_by_accession_with_http_info(
         self,
         accessions: Annotated[List[StrictStr], Field(description="One or more genome assembly accessions, limited to 100")],
+        assembly_link_types: Annotated[Optional[List[V2AssemblyLinksReplyAssemblyLinkType]], Field(description="Zero or more assembly link types to retrieve. If no values are provided, all links are retrieved")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -10524,6 +10530,8 @@ class GenomeApi:
 
         :param accessions: One or more genome assembly accessions, limited to 100 (required)
         :type accessions: List[str]
+        :param assembly_link_types: Zero or more assembly link types to retrieve. If no values are provided, all links are retrieved
+        :type assembly_link_types: List[V2AssemblyLinksReplyAssemblyLinkType]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -10548,6 +10556,7 @@ class GenomeApi:
 
         _param = self._genome_links_by_accession_serialize(
             accessions=accessions,
+            assembly_link_types=assembly_link_types,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -10572,6 +10581,7 @@ class GenomeApi:
     def genome_links_by_accession_without_preload_content(
         self,
         accessions: Annotated[List[StrictStr], Field(description="One or more genome assembly accessions, limited to 100")],
+        assembly_link_types: Annotated[Optional[List[V2AssemblyLinksReplyAssemblyLinkType]], Field(description="Zero or more assembly link types to retrieve. If no values are provided, all links are retrieved")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -10591,6 +10601,8 @@ class GenomeApi:
 
         :param accessions: One or more genome assembly accessions, limited to 100 (required)
         :type accessions: List[str]
+        :param assembly_link_types: Zero or more assembly link types to retrieve. If no values are provided, all links are retrieved
+        :type assembly_link_types: List[V2AssemblyLinksReplyAssemblyLinkType]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -10615,6 +10627,7 @@ class GenomeApi:
 
         _param = self._genome_links_by_accession_serialize(
             accessions=accessions,
+            assembly_link_types=assembly_link_types,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -10634,6 +10647,7 @@ class GenomeApi:
     def _genome_links_by_accession_serialize(
         self,
         accessions,
+        assembly_link_types,
         _request_auth,
         _content_type,
         _headers,
@@ -10644,6 +10658,7 @@ class GenomeApi:
 
         _collection_formats: Dict[str, str] = {
             'accessions': 'csv',
+            'assembly_link_types': 'multi',
         }
 
         _path_params: Dict[str, str] = {}
@@ -10659,6 +10674,10 @@ class GenomeApi:
         if accessions is not None:
             _path_params['accessions'] = accessions
         # process the query parameters
+        if assembly_link_types is not None:
+            
+            _query_params.append(('assembly_link_types', assembly_link_types))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter

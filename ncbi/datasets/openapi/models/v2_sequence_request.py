@@ -17,20 +17,19 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
+from pydantic import BaseModel, ConfigDict, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from ncbi.datasets.openapi.models.v2_assembly_links_reply_assembly_link_type import V2AssemblyLinksReplyAssemblyLinkType
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
 
-class V2AssemblyLinksRequest(BaseModel):
+class V2SequenceRequest(BaseModel):
     """
-    V2AssemblyLinksRequest
+    V2SequenceRequest
     """ # noqa: E501
     accessions: Optional[List[StrictStr]] = None
-    assembly_link_types: Optional[List[V2AssemblyLinksReplyAssemblyLinkType]] = None
-    __properties: ClassVar[List[str]] = ["accessions", "assembly_link_types"]
+    include_all_versions: Optional[StrictBool] = None
+    __properties: ClassVar[List[str]] = ["accessions", "include_all_versions"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -50,7 +49,7 @@ class V2AssemblyLinksRequest(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of V2AssemblyLinksRequest from a JSON string"""
+        """Create an instance of V2SequenceRequest from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -75,7 +74,7 @@ class V2AssemblyLinksRequest(BaseModel):
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of V2AssemblyLinksRequest from a dict"""
+        """Create an instance of V2SequenceRequest from a dict"""
         if obj is None:
             return None
 
@@ -84,7 +83,7 @@ class V2AssemblyLinksRequest(BaseModel):
 
         _obj = cls.model_validate({
             "accessions": obj.get("accessions"),
-            "assembly_link_types": obj.get("assembly_link_types")
+            "include_all_versions": obj.get("include_all_versions")
         })
         return _obj
 

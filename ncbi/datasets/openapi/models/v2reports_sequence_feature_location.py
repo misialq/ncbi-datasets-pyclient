@@ -19,18 +19,19 @@ import json
 
 from pydantic import BaseModel, ConfigDict, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from ncbi.datasets.openapi.models.v2_assembly_links_reply_assembly_link_type import V2AssemblyLinksReplyAssemblyLinkType
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
 
-class V2AssemblyLinksRequest(BaseModel):
+class V2reportsSequenceFeatureLocation(BaseModel):
     """
-    V2AssemblyLinksRequest
+    V2reportsSequenceFeatureLocation
     """ # noqa: E501
-    accessions: Optional[List[StrictStr]] = None
-    assembly_link_types: Optional[List[V2AssemblyLinksReplyAssemblyLinkType]] = None
-    __properties: ClassVar[List[str]] = ["accessions", "assembly_link_types"]
+    begin: Optional[StrictStr] = None
+    end: Optional[StrictStr] = None
+    position: Optional[StrictStr] = None
+    orientation: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["begin", "end", "position", "orientation"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -50,7 +51,7 @@ class V2AssemblyLinksRequest(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of V2AssemblyLinksRequest from a JSON string"""
+        """Create an instance of V2reportsSequenceFeatureLocation from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -75,7 +76,7 @@ class V2AssemblyLinksRequest(BaseModel):
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of V2AssemblyLinksRequest from a dict"""
+        """Create an instance of V2reportsSequenceFeatureLocation from a dict"""
         if obj is None:
             return None
 
@@ -83,8 +84,10 @@ class V2AssemblyLinksRequest(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "accessions": obj.get("accessions"),
-            "assembly_link_types": obj.get("assembly_link_types")
+            "begin": obj.get("begin"),
+            "end": obj.get("end"),
+            "position": obj.get("position"),
+            "orientation": obj.get("orientation")
         })
         return _obj
 
