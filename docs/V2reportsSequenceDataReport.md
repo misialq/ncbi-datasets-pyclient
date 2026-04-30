@@ -20,6 +20,8 @@ Name | Type | Description | Notes
 **features** | [**List[V2reportsSequenceFeature]**](V2reportsSequenceFeature.md) |  | [optional] 
 **external_ids** | [**List[V2reportsSequenceExternalId]**](V2reportsSequenceExternalId.md) |  | [optional] 
 **tax_id** | **int** |  | [optional] 
+**submissions** | [**List[V2reportsSubmission]**](V2reportsSubmission.md) |  | [optional] 
+**publications** | [**List[V2reportsPublication]**](V2reportsPublication.md) |  | [optional] 
 
 ## Example
 

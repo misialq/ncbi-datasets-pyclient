@@ -19,10 +19,12 @@ import json
 
 from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from ncbi.datasets.openapi.models.v2reports_publication import V2reportsPublication
 from ncbi.datasets.openapi.models.v2reports_sequence_encoded_protein import V2reportsSequenceEncodedProtein
 from ncbi.datasets.openapi.models.v2reports_sequence_external_id import V2reportsSequenceExternalId
 from ncbi.datasets.openapi.models.v2reports_sequence_feature import V2reportsSequenceFeature
 from ncbi.datasets.openapi.models.v2reports_sequence_gene_context import V2reportsSequenceGeneContext
+from ncbi.datasets.openapi.models.v2reports_submission import V2reportsSubmission
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
@@ -46,7 +48,9 @@ class V2reportsSequenceDataReport(BaseModel):
     features: Optional[List[V2reportsSequenceFeature]] = None
     external_ids: Optional[List[V2reportsSequenceExternalId]] = None
     tax_id: Optional[StrictInt] = None
-    __properties: ClassVar[List[str]] = ["accession", "organism_name", "length", "units", "molecule_type", "source_database", "description", "source_mrna", "encoded_proteins", "publication_date", "latest_update_date", "gene_context", "features", "external_ids", "tax_id"]
+    submissions: Optional[List[V2reportsSubmission]] = None
+    publications: Optional[List[V2reportsPublication]] = None
+    __properties: ClassVar[List[str]] = ["accession", "organism_name", "length", "units", "molecule_type", "source_database", "description", "source_mrna", "encoded_proteins", "publication_date", "latest_update_date", "gene_context", "features", "external_ids", "tax_id", "submissions", "publications"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -111,6 +115,20 @@ class V2reportsSequenceDataReport(BaseModel):
                 if _item_external_ids:
                     _items.append(_item_external_ids.to_dict())
             _dict['external_ids'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in submissions (list)
+        _items = []
+        if self.submissions:
+            for _item_submissions in self.submissions:
+                if _item_submissions:
+                    _items.append(_item_submissions.to_dict())
+            _dict['submissions'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in publications (list)
+        _items = []
+        if self.publications:
+            for _item_publications in self.publications:
+                if _item_publications:
+                    _items.append(_item_publications.to_dict())
+            _dict['publications'] = _items
         return _dict
 
     @classmethod
@@ -137,7 +155,9 @@ class V2reportsSequenceDataReport(BaseModel):
             "gene_context": V2reportsSequenceGeneContext.from_dict(obj["gene_context"]) if obj.get("gene_context") is not None else None,
             "features": [V2reportsSequenceFeature.from_dict(_item) for _item in obj["features"]] if obj.get("features") is not None else None,
             "external_ids": [V2reportsSequenceExternalId.from_dict(_item) for _item in obj["external_ids"]] if obj.get("external_ids") is not None else None,
-            "tax_id": obj.get("tax_id")
+            "tax_id": obj.get("tax_id"),
+            "submissions": [V2reportsSubmission.from_dict(_item) for _item in obj["submissions"]] if obj.get("submissions") is not None else None,
+            "publications": [V2reportsPublication.from_dict(_item) for _item in obj["publications"]] if obj.get("publications") is not None else None
         })
         return _obj
 

@@ -183,6 +183,7 @@ from ncbi.datasets.openapi.models.v2reports_assembly_revision import V2reportsAs
 from ncbi.datasets.openapi.models.v2reports_assembly_stats import V2reportsAssemblyStats
 from ncbi.datasets.openapi.models.v2reports_assembly_status import V2reportsAssemblyStatus
 from ncbi.datasets.openapi.models.v2reports_atypical_info import V2reportsAtypicalInfo
+from ncbi.datasets.openapi.models.v2reports_author import V2reportsAuthor
 from ncbi.datasets.openapi.models.v2reports_average_nucleotide_identity import V2reportsAverageNucleotideIdentity
 from ncbi.datasets.openapi.models.v2reports_average_nucleotide_identity_match_status import V2reportsAverageNucleotideIdentityMatchStatus
 from ncbi.datasets.openapi.models.v2reports_average_nucleotide_identity_taxonomy_check_status import V2reportsAverageNucleotideIdentityTaxonomyCheckStatus
@@ -262,6 +263,7 @@ from ncbi.datasets.openapi.models.v2reports_protein_conserved_domain import V2re
 from ncbi.datasets.openapi.models.v2reports_protein_data_report import V2reportsProteinDataReport
 from ncbi.datasets.openapi.models.v2reports_protein_data_report_page import V2reportsProteinDataReportPage
 from ncbi.datasets.openapi.models.v2reports_protein_family import V2reportsProteinFamily
+from ncbi.datasets.openapi.models.v2reports_publication import V2reportsPublication
 from ncbi.datasets.openapi.models.v2reports_purpose_of_sampling import V2reportsPurposeOfSampling
 from ncbi.datasets.openapi.models.v2reports_range import V2reportsRange
 from ncbi.datasets.openapi.models.v2reports_rank_type import V2reportsRankType
@@ -286,6 +288,7 @@ from ncbi.datasets.openapi.models.v2reports_sequence_info import V2reportsSequen
 from ncbi.datasets.openapi.models.v2reports_sequence_information import V2reportsSequenceInformation
 from ncbi.datasets.openapi.models.v2reports_sequence_prediction_source import V2reportsSequencePredictionSource
 from ncbi.datasets.openapi.models.v2reports_source_database import V2reportsSourceDatabase
+from ncbi.datasets.openapi.models.v2reports_submission import V2reportsSubmission
 from ncbi.datasets.openapi.models.v2reports_tax_data import V2reportsTaxData
 from ncbi.datasets.openapi.models.v2reports_taxonomy_data_report_page import V2reportsTaxonomyDataReportPage
 from ncbi.datasets.openapi.models.v2reports_taxonomy_names_data_report_page import V2reportsTaxonomyNamesDataReportPage

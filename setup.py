@@ -19,8 +19,8 @@ from setuptools import setup, find_packages  # noqa: H301
 # prerequisite: setuptools
 # http://pypi.python.org/pypi/setuptools
 NAME = "ncbi-datasets-pyclient"
-VERSION = "v18.24.0"
-PYTHON_REQUIRES = ">= 3.9"
+VERSION = "v18.25.0"
+PYTHON_REQUIRES = ">= 3.10"
 REQUIRES = [
     "urllib3 >= 2.1.0, < 3.0.0",
     "python-dateutil >= 2.8.2",

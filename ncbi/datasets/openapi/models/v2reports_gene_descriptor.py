@@ -55,6 +55,7 @@ class V2reportsGeneDescriptor(BaseModel):
     ensembl_gene_ids: Optional[List[StrictStr]] = None
     omim_ids: Optional[List[StrictStr]] = None
     synonyms: Optional[List[StrictStr]] = None
+    alternate_names: Optional[List[StrictStr]] = None
     replaced_gene_id: Optional[StrictStr] = None
     annotations: Optional[List[V2reportsAnnotation]] = None
     transcript_count: Optional[StrictInt] = None
@@ -65,7 +66,7 @@ class V2reportsGeneDescriptor(BaseModel):
     gene_ontology: Optional[V2reportsGeneOntology] = None
     locus_tag: Optional[StrictStr] = None
     map_locations: Optional[List[V2reportsMapLocation]] = None
-    __properties: ClassVar[List[str]] = ["gene_id", "symbol", "description", "tax_id", "taxname", "common_name", "type", "rna_type", "orientation", "reference_standards", "genomic_regions", "chromosomes", "nomenclature_authority", "swiss_prot_accessions", "ensembl_gene_ids", "omim_ids", "synonyms", "replaced_gene_id", "annotations", "transcript_count", "protein_count", "transcript_type_counts", "gene_groups", "summary", "gene_ontology", "locus_tag", "map_locations"]
+    __properties: ClassVar[List[str]] = ["gene_id", "symbol", "description", "tax_id", "taxname", "common_name", "type", "rna_type", "orientation", "reference_standards", "genomic_regions", "chromosomes", "nomenclature_authority", "swiss_prot_accessions", "ensembl_gene_ids", "omim_ids", "synonyms", "alternate_names", "replaced_gene_id", "annotations", "transcript_count", "protein_count", "transcript_type_counts", "gene_groups", "summary", "gene_ontology", "locus_tag", "map_locations"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -190,6 +191,7 @@ class V2reportsGeneDescriptor(BaseModel):
             "ensembl_gene_ids": obj.get("ensembl_gene_ids"),
             "omim_ids": obj.get("omim_ids"),
             "synonyms": obj.get("synonyms"),
+            "alternate_names": obj.get("alternate_names"),
             "replaced_gene_id": obj.get("replaced_gene_id"),
             "annotations": [V2reportsAnnotation.from_dict(_item) for _item in obj["annotations"]] if obj.get("annotations") is not None else None,
             "transcript_count": obj.get("transcript_count"),

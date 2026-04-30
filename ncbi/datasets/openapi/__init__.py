@@ -14,7 +14,7 @@
 """  # noqa: E501
 
 
-__version__ = "v18.24.0"
+__version__ = "v18.25.0"
 
 # Define package exports
 __all__ = [
@@ -205,6 +205,7 @@ __all__ = [
     "V2reportsAssemblyStats",
     "V2reportsAssemblyStatus",
     "V2reportsAtypicalInfo",
+    "V2reportsAuthor",
     "V2reportsAverageNucleotideIdentity",
     "V2reportsAverageNucleotideIdentityMatchStatus",
     "V2reportsAverageNucleotideIdentityTaxonomyCheckStatus",
@@ -284,6 +285,7 @@ __all__ = [
     "V2reportsProteinDataReport",
     "V2reportsProteinDataReportPage",
     "V2reportsProteinFamily",
+    "V2reportsPublication",
     "V2reportsPurposeOfSampling",
     "V2reportsRange",
     "V2reportsRankType",
@@ -308,6 +310,7 @@ __all__ = [
     "V2reportsSequenceInformation",
     "V2reportsSequencePredictionSource",
     "V2reportsSourceDatabase",
+    "V2reportsSubmission",
     "V2reportsTaxData",
     "V2reportsTaxonomyDataReportPage",
     "V2reportsTaxonomyNamesDataReportPage",
@@ -532,6 +535,7 @@ from ncbi.datasets.openapi.models.v2reports_assembly_revision import V2reportsAs
 from ncbi.datasets.openapi.models.v2reports_assembly_stats import V2reportsAssemblyStats as V2reportsAssemblyStats
 from ncbi.datasets.openapi.models.v2reports_assembly_status import V2reportsAssemblyStatus as V2reportsAssemblyStatus
 from ncbi.datasets.openapi.models.v2reports_atypical_info import V2reportsAtypicalInfo as V2reportsAtypicalInfo
+from ncbi.datasets.openapi.models.v2reports_author import V2reportsAuthor as V2reportsAuthor
 from ncbi.datasets.openapi.models.v2reports_average_nucleotide_identity import V2reportsAverageNucleotideIdentity as V2reportsAverageNucleotideIdentity
 from ncbi.datasets.openapi.models.v2reports_average_nucleotide_identity_match_status import V2reportsAverageNucleotideIdentityMatchStatus as V2reportsAverageNucleotideIdentityMatchStatus
 from ncbi.datasets.openapi.models.v2reports_average_nucleotide_identity_taxonomy_check_status import V2reportsAverageNucleotideIdentityTaxonomyCheckStatus as V2reportsAverageNucleotideIdentityTaxonomyCheckStatus
@@ -611,6 +615,7 @@ from ncbi.datasets.openapi.models.v2reports_protein_conserved_domain import V2re
 from ncbi.datasets.openapi.models.v2reports_protein_data_report import V2reportsProteinDataReport as V2reportsProteinDataReport
 from ncbi.datasets.openapi.models.v2reports_protein_data_report_page import V2reportsProteinDataReportPage as V2reportsProteinDataReportPage
 from ncbi.datasets.openapi.models.v2reports_protein_family import V2reportsProteinFamily as V2reportsProteinFamily
+from ncbi.datasets.openapi.models.v2reports_publication import V2reportsPublication as V2reportsPublication
 from ncbi.datasets.openapi.models.v2reports_purpose_of_sampling import V2reportsPurposeOfSampling as V2reportsPurposeOfSampling
 from ncbi.datasets.openapi.models.v2reports_range import V2reportsRange as V2reportsRange
 from ncbi.datasets.openapi.models.v2reports_rank_type import V2reportsRankType as V2reportsRankType
@@ -635,6 +640,7 @@ from ncbi.datasets.openapi.models.v2reports_sequence_info import V2reportsSequen
 from ncbi.datasets.openapi.models.v2reports_sequence_information import V2reportsSequenceInformation as V2reportsSequenceInformation
 from ncbi.datasets.openapi.models.v2reports_sequence_prediction_source import V2reportsSequencePredictionSource as V2reportsSequencePredictionSource
 from ncbi.datasets.openapi.models.v2reports_source_database import V2reportsSourceDatabase as V2reportsSourceDatabase
+from ncbi.datasets.openapi.models.v2reports_submission import V2reportsSubmission as V2reportsSubmission
 from ncbi.datasets.openapi.models.v2reports_tax_data import V2reportsTaxData as V2reportsTaxData
 from ncbi.datasets.openapi.models.v2reports_taxonomy_data_report_page import V2reportsTaxonomyDataReportPage as V2reportsTaxonomyDataReportPage
 from ncbi.datasets.openapi.models.v2reports_taxonomy_names_data_report_page import V2reportsTaxonomyNamesDataReportPage as V2reportsTaxonomyNamesDataReportPage

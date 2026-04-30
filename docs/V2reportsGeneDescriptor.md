@@ -22,6 +22,7 @@ Name | Type | Description | Notes
 **ensembl_gene_ids** | **List[str]** |  | [optional] 
 **omim_ids** | **List[str]** |  | [optional] 
 **synonyms** | **List[str]** |  | [optional] 
+**alternate_names** | **List[str]** |  | [optional] 
 **replaced_gene_id** | **str** |  | [optional] 
 **annotations** | [**List[V2reportsAnnotation]**](V2reportsAnnotation.md) |  | [optional] 
 **transcript_count** | **int** |  | [optional] 
