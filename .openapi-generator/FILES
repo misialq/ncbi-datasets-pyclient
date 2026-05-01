@@ -649,7 +649,4 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_v2reports_author.py
-test/test_v2reports_publication.py
-test/test_v2reports_submission.py
 tox.ini
