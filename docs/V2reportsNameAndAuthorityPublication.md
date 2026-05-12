@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **str** |  | [optional] 
 **citation** | **str** |  | [optional] 
+**pmid** | **str** |  | [optional] 
 
 ## Example
 

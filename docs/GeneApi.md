@@ -743,7 +743,7 @@ Name | Type | Description  | Notes
 
 Get a gene data report by GeneID
 
-Get a gene data report by GeneID.  By default, in paged JSON format, but also available in tabular (accept: text/tab-separated-values) or JSON Lines (accept: application/x-ndjson) formats.
+Get a gene data report by GeneID. By default, in paged JSON format, but also available in tabular (accept: text/tab-separated-values) or JSON Lines (accept: application/x-ndjson) formats.
 
 ### Example
 

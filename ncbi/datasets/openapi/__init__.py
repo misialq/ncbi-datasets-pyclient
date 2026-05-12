@@ -14,7 +14,7 @@
 """  # noqa: E501
 
 
-__version__ = "v18.25.1"
+__version__ = "v18.26.0"
 
 # Define package exports
 __all__ = [
@@ -35,6 +35,7 @@ __all__ = [
     "ApiKeyError",
     "ApiAttributeError",
     "ApiException",
+    "Ncbieukgenev2GeneIdRequest",
     "Ncbigsupgcolv2AssemblyAccessionsReply",
     "Ncbigsupgcolv2AssemblyCheckMHistogramRequest",
     "Ncbigsupgcolv2AssemblyDataReportDraftRequest",
@@ -142,6 +143,7 @@ __all__ = [
     "V2OrthologRequestContentType",
     "V2ProkaryoteGeneRequest",
     "V2ProkaryoteGeneRequestGeneFlankConfig",
+    "V2PubmedList",
     "V2RefGeneCatalogDatasetRequest",
     "V2RefGeneCatalogDatasetRequestFileType",
     "V2Sars2ProteinDatasetRequest",
@@ -242,6 +244,11 @@ __all__ = [
     "V2reportsGeneDataReportPage",
     "V2reportsGeneDescriptor",
     "V2reportsGeneGroup",
+    "V2reportsGeneNeighbor",
+    "V2reportsGeneNeighborGenomicLocation",
+    "V2reportsGeneNeighborsAnnotation",
+    "V2reportsGeneNeighborsDescriptor",
+    "V2reportsGeneNeighborsReports",
     "V2reportsGeneOntology",
     "V2reportsGeneReportMatch",
     "V2reportsGeneSummary",
@@ -297,7 +304,6 @@ __all__ = [
     "V2reportsSequenceDataProvenance",
     "V2reportsSequenceDataReport",
     "V2reportsSequenceDataReportPage",
-    "V2reportsSequenceEncodedProtein",
     "V2reportsSequenceExon",
     "V2reportsSequenceExonList",
     "V2reportsSequenceExternalId",
@@ -365,6 +371,7 @@ from ncbi.datasets.openapi.exceptions import ApiAttributeError as ApiAttributeEr
 from ncbi.datasets.openapi.exceptions import ApiException as ApiException
 
 # import models into sdk package
+from ncbi.datasets.openapi.models.ncbieukgenev2_gene_id_request import Ncbieukgenev2GeneIdRequest as Ncbieukgenev2GeneIdRequest
 from ncbi.datasets.openapi.models.ncbigsupgcolv2_assembly_accessions_reply import Ncbigsupgcolv2AssemblyAccessionsReply as Ncbigsupgcolv2AssemblyAccessionsReply
 from ncbi.datasets.openapi.models.ncbigsupgcolv2_assembly_check_m_histogram_request import Ncbigsupgcolv2AssemblyCheckMHistogramRequest as Ncbigsupgcolv2AssemblyCheckMHistogramRequest
 from ncbi.datasets.openapi.models.ncbigsupgcolv2_assembly_data_report_draft_request import Ncbigsupgcolv2AssemblyDataReportDraftRequest as Ncbigsupgcolv2AssemblyDataReportDraftRequest
@@ -472,6 +479,7 @@ from ncbi.datasets.openapi.models.v2_ortholog_request import V2OrthologRequest a
 from ncbi.datasets.openapi.models.v2_ortholog_request_content_type import V2OrthologRequestContentType as V2OrthologRequestContentType
 from ncbi.datasets.openapi.models.v2_prokaryote_gene_request import V2ProkaryoteGeneRequest as V2ProkaryoteGeneRequest
 from ncbi.datasets.openapi.models.v2_prokaryote_gene_request_gene_flank_config import V2ProkaryoteGeneRequestGeneFlankConfig as V2ProkaryoteGeneRequestGeneFlankConfig
+from ncbi.datasets.openapi.models.v2_pubmed_list import V2PubmedList as V2PubmedList
 from ncbi.datasets.openapi.models.v2_ref_gene_catalog_dataset_request import V2RefGeneCatalogDatasetRequest as V2RefGeneCatalogDatasetRequest
 from ncbi.datasets.openapi.models.v2_ref_gene_catalog_dataset_request_file_type import V2RefGeneCatalogDatasetRequestFileType as V2RefGeneCatalogDatasetRequestFileType
 from ncbi.datasets.openapi.models.v2_sars2_protein_dataset_request import V2Sars2ProteinDatasetRequest as V2Sars2ProteinDatasetRequest
@@ -572,6 +580,11 @@ from ncbi.datasets.openapi.models.v2reports_gene_counts import V2reportsGeneCoun
 from ncbi.datasets.openapi.models.v2reports_gene_data_report_page import V2reportsGeneDataReportPage as V2reportsGeneDataReportPage
 from ncbi.datasets.openapi.models.v2reports_gene_descriptor import V2reportsGeneDescriptor as V2reportsGeneDescriptor
 from ncbi.datasets.openapi.models.v2reports_gene_group import V2reportsGeneGroup as V2reportsGeneGroup
+from ncbi.datasets.openapi.models.v2reports_gene_neighbor import V2reportsGeneNeighbor as V2reportsGeneNeighbor
+from ncbi.datasets.openapi.models.v2reports_gene_neighbor_genomic_location import V2reportsGeneNeighborGenomicLocation as V2reportsGeneNeighborGenomicLocation
+from ncbi.datasets.openapi.models.v2reports_gene_neighbors_annotation import V2reportsGeneNeighborsAnnotation as V2reportsGeneNeighborsAnnotation
+from ncbi.datasets.openapi.models.v2reports_gene_neighbors_descriptor import V2reportsGeneNeighborsDescriptor as V2reportsGeneNeighborsDescriptor
+from ncbi.datasets.openapi.models.v2reports_gene_neighbors_reports import V2reportsGeneNeighborsReports as V2reportsGeneNeighborsReports
 from ncbi.datasets.openapi.models.v2reports_gene_ontology import V2reportsGeneOntology as V2reportsGeneOntology
 from ncbi.datasets.openapi.models.v2reports_gene_report_match import V2reportsGeneReportMatch as V2reportsGeneReportMatch
 from ncbi.datasets.openapi.models.v2reports_gene_summary import V2reportsGeneSummary as V2reportsGeneSummary
@@ -627,7 +640,6 @@ from ncbi.datasets.openapi.models.v2reports_sequence_coded_protein_info import V
 from ncbi.datasets.openapi.models.v2reports_sequence_data_provenance import V2reportsSequenceDataProvenance as V2reportsSequenceDataProvenance
 from ncbi.datasets.openapi.models.v2reports_sequence_data_report import V2reportsSequenceDataReport as V2reportsSequenceDataReport
 from ncbi.datasets.openapi.models.v2reports_sequence_data_report_page import V2reportsSequenceDataReportPage as V2reportsSequenceDataReportPage
-from ncbi.datasets.openapi.models.v2reports_sequence_encoded_protein import V2reportsSequenceEncodedProtein as V2reportsSequenceEncodedProtein
 from ncbi.datasets.openapi.models.v2reports_sequence_exon import V2reportsSequenceExon as V2reportsSequenceExon
 from ncbi.datasets.openapi.models.v2reports_sequence_exon_list import V2reportsSequenceExonList as V2reportsSequenceExonList
 from ncbi.datasets.openapi.models.v2reports_sequence_external_id import V2reportsSequenceExternalId as V2reportsSequenceExternalId

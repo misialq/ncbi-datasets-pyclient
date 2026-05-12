@@ -17,20 +17,21 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
+from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
+from ncbi.datasets.openapi.models.v2reports_gene_neighbor import V2reportsGeneNeighbor
+from ncbi.datasets.openapi.models.v2reports_genomic_location import V2reportsGenomicLocation
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
 
-class V2reportsNameAndAuthorityPublication(BaseModel):
+class V2reportsGeneNeighborGenomicLocation(BaseModel):
     """
-    V2reportsNameAndAuthorityPublication
+    V2reportsGeneNeighborGenomicLocation
     """ # noqa: E501
-    name: Optional[StrictStr] = None
-    citation: Optional[StrictStr] = None
-    pmid: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["name", "citation", "pmid"]
+    genomic_location: Optional[V2reportsGenomicLocation] = None
+    gene_neighbors: Optional[List[V2reportsGeneNeighbor]] = None
+    __properties: ClassVar[List[str]] = ["genomic_location", "gene_neighbors"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -50,7 +51,7 @@ class V2reportsNameAndAuthorityPublication(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of V2reportsNameAndAuthorityPublication from a JSON string"""
+        """Create an instance of V2reportsGeneNeighborGenomicLocation from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -71,11 +72,21 @@ class V2reportsNameAndAuthorityPublication(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of genomic_location
+        if self.genomic_location:
+            _dict['genomic_location'] = self.genomic_location.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of each item in gene_neighbors (list)
+        _items = []
+        if self.gene_neighbors:
+            for _item_gene_neighbors in self.gene_neighbors:
+                if _item_gene_neighbors:
+                    _items.append(_item_gene_neighbors.to_dict())
+            _dict['gene_neighbors'] = _items
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of V2reportsNameAndAuthorityPublication from a dict"""
+        """Create an instance of V2reportsGeneNeighborGenomicLocation from a dict"""
         if obj is None:
             return None
 
@@ -83,9 +94,8 @@ class V2reportsNameAndAuthorityPublication(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "name": obj.get("name"),
-            "citation": obj.get("citation"),
-            "pmid": obj.get("pmid")
+            "genomic_location": V2reportsGenomicLocation.from_dict(obj["genomic_location"]) if obj.get("genomic_location") is not None else None,
+            "gene_neighbors": [V2reportsGeneNeighbor.from_dict(_item) for _item in obj["gene_neighbors"]] if obj.get("gene_neighbors") is not None else None
         })
         return _obj
 

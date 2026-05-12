@@ -20,7 +20,6 @@ import json
 from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from ncbi.datasets.openapi.models.v2reports_publication import V2reportsPublication
-from ncbi.datasets.openapi.models.v2reports_sequence_encoded_protein import V2reportsSequenceEncodedProtein
 from ncbi.datasets.openapi.models.v2reports_sequence_external_id import V2reportsSequenceExternalId
 from ncbi.datasets.openapi.models.v2reports_sequence_feature import V2reportsSequenceFeature
 from ncbi.datasets.openapi.models.v2reports_sequence_gene_context import V2reportsSequenceGeneContext
@@ -38,10 +37,9 @@ class V2reportsSequenceDataReport(BaseModel):
     length: Optional[StrictInt] = None
     units: Optional[StrictStr] = None
     molecule_type: Optional[StrictStr] = None
-    source_database: Optional[StrictStr] = None
+    database_provider: Optional[StrictStr] = None
     description: Optional[StrictStr] = None
     source_mrna: Optional[StrictStr] = None
-    encoded_proteins: Optional[List[V2reportsSequenceEncodedProtein]] = None
     publication_date: Optional[StrictStr] = None
     latest_update_date: Optional[StrictStr] = None
     gene_context: Optional[V2reportsSequenceGeneContext] = None
@@ -50,7 +48,7 @@ class V2reportsSequenceDataReport(BaseModel):
     tax_id: Optional[StrictInt] = None
     submissions: Optional[List[V2reportsSubmission]] = None
     publications: Optional[List[V2reportsPublication]] = None
-    __properties: ClassVar[List[str]] = ["accession", "organism_name", "length", "units", "molecule_type", "source_database", "description", "source_mrna", "encoded_proteins", "publication_date", "latest_update_date", "gene_context", "features", "external_ids", "tax_id", "submissions", "publications"]
+    __properties: ClassVar[List[str]] = ["accession", "organism_name", "length", "units", "molecule_type", "database_provider", "description", "source_mrna", "publication_date", "latest_update_date", "gene_context", "features", "external_ids", "tax_id", "submissions", "publications"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -91,13 +89,6 @@ class V2reportsSequenceDataReport(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of each item in encoded_proteins (list)
-        _items = []
-        if self.encoded_proteins:
-            for _item_encoded_proteins in self.encoded_proteins:
-                if _item_encoded_proteins:
-                    _items.append(_item_encoded_proteins.to_dict())
-            _dict['encoded_proteins'] = _items
         # override the default output from pydantic by calling `to_dict()` of gene_context
         if self.gene_context:
             _dict['gene_context'] = self.gene_context.to_dict()
@@ -146,10 +137,9 @@ class V2reportsSequenceDataReport(BaseModel):
             "length": obj.get("length"),
             "units": obj.get("units"),
             "molecule_type": obj.get("molecule_type"),
-            "source_database": obj.get("source_database"),
+            "database_provider": obj.get("database_provider"),
             "description": obj.get("description"),
             "source_mrna": obj.get("source_mrna"),
-            "encoded_proteins": [V2reportsSequenceEncodedProtein.from_dict(_item) for _item in obj["encoded_proteins"]] if obj.get("encoded_proteins") is not None else None,
             "publication_date": obj.get("publication_date"),
             "latest_update_date": obj.get("latest_update_date"),
             "gene_context": V2reportsSequenceGeneContext.from_dict(obj["gene_context"]) if obj.get("gene_context") is not None else None,

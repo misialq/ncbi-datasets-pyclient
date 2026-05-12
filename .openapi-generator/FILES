@@ -6,6 +6,7 @@ README.md
 docs/BioSampleApi.md
 docs/GeneApi.md
 docs/GenomeApi.md
+docs/Ncbieukgenev2GeneIdRequest.md
 docs/Ncbigsupgcolv2AssemblyAccessionsReply.md
 docs/Ncbigsupgcolv2AssemblyCheckMHistogramRequest.md
 docs/Ncbigsupgcolv2AssemblyDataReportDraftRequest.md
@@ -116,6 +117,7 @@ docs/V2OrthologRequest.md
 docs/V2OrthologRequestContentType.md
 docs/V2ProkaryoteGeneRequest.md
 docs/V2ProkaryoteGeneRequestGeneFlankConfig.md
+docs/V2PubmedList.md
 docs/V2RefGeneCatalogDatasetRequest.md
 docs/V2RefGeneCatalogDatasetRequestFileType.md
 docs/V2Sars2ProteinDatasetRequest.md
@@ -216,6 +218,11 @@ docs/V2reportsGeneCounts.md
 docs/V2reportsGeneDataReportPage.md
 docs/V2reportsGeneDescriptor.md
 docs/V2reportsGeneGroup.md
+docs/V2reportsGeneNeighbor.md
+docs/V2reportsGeneNeighborGenomicLocation.md
+docs/V2reportsGeneNeighborsAnnotation.md
+docs/V2reportsGeneNeighborsDescriptor.md
+docs/V2reportsGeneNeighborsReports.md
 docs/V2reportsGeneOntology.md
 docs/V2reportsGeneReportMatch.md
 docs/V2reportsGeneSummary.md
@@ -271,7 +278,6 @@ docs/V2reportsSequenceCodedProteinInfo.md
 docs/V2reportsSequenceDataProvenance.md
 docs/V2reportsSequenceDataReport.md
 docs/V2reportsSequenceDataReportPage.md
-docs/V2reportsSequenceEncodedProtein.md
 docs/V2reportsSequenceExon.md
 docs/V2reportsSequenceExonList.md
 docs/V2reportsSequenceExternalId.md
@@ -335,6 +341,7 @@ ncbi/datasets/openapi/api_response.py
 ncbi/datasets/openapi/configuration.py
 ncbi/datasets/openapi/exceptions.py
 ncbi/datasets/openapi/models/__init__.py
+ncbi/datasets/openapi/models/ncbieukgenev2_gene_id_request.py
 ncbi/datasets/openapi/models/ncbigsupgcolv2_assembly_accessions_reply.py
 ncbi/datasets/openapi/models/ncbigsupgcolv2_assembly_check_m_histogram_request.py
 ncbi/datasets/openapi/models/ncbigsupgcolv2_assembly_data_report_draft_request.py
@@ -442,6 +449,7 @@ ncbi/datasets/openapi/models/v2_ortholog_request.py
 ncbi/datasets/openapi/models/v2_ortholog_request_content_type.py
 ncbi/datasets/openapi/models/v2_prokaryote_gene_request.py
 ncbi/datasets/openapi/models/v2_prokaryote_gene_request_gene_flank_config.py
+ncbi/datasets/openapi/models/v2_pubmed_list.py
 ncbi/datasets/openapi/models/v2_ref_gene_catalog_dataset_request.py
 ncbi/datasets/openapi/models/v2_ref_gene_catalog_dataset_request_file_type.py
 ncbi/datasets/openapi/models/v2_sars2_protein_dataset_request.py
@@ -542,6 +550,11 @@ ncbi/datasets/openapi/models/v2reports_gene_counts.py
 ncbi/datasets/openapi/models/v2reports_gene_data_report_page.py
 ncbi/datasets/openapi/models/v2reports_gene_descriptor.py
 ncbi/datasets/openapi/models/v2reports_gene_group.py
+ncbi/datasets/openapi/models/v2reports_gene_neighbor.py
+ncbi/datasets/openapi/models/v2reports_gene_neighbor_genomic_location.py
+ncbi/datasets/openapi/models/v2reports_gene_neighbors_annotation.py
+ncbi/datasets/openapi/models/v2reports_gene_neighbors_descriptor.py
+ncbi/datasets/openapi/models/v2reports_gene_neighbors_reports.py
 ncbi/datasets/openapi/models/v2reports_gene_ontology.py
 ncbi/datasets/openapi/models/v2reports_gene_report_match.py
 ncbi/datasets/openapi/models/v2reports_gene_summary.py
@@ -597,7 +610,6 @@ ncbi/datasets/openapi/models/v2reports_sequence_coded_protein_info.py
 ncbi/datasets/openapi/models/v2reports_sequence_data_provenance.py
 ncbi/datasets/openapi/models/v2reports_sequence_data_report.py
 ncbi/datasets/openapi/models/v2reports_sequence_data_report_page.py
-ncbi/datasets/openapi/models/v2reports_sequence_encoded_protein.py
 ncbi/datasets/openapi/models/v2reports_sequence_exon.py
 ncbi/datasets/openapi/models/v2reports_sequence_exon_list.py
 ncbi/datasets/openapi/models/v2reports_sequence_external_id.py
@@ -649,4 +661,11 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
+test/test_ncbieukgenev2_gene_id_request.py
+test/test_v2_pubmed_list.py
+test/test_v2reports_gene_neighbor.py
+test/test_v2reports_gene_neighbor_genomic_location.py
+test/test_v2reports_gene_neighbors_annotation.py
+test/test_v2reports_gene_neighbors_descriptor.py
+test/test_v2reports_gene_neighbors_reports.py
 tox.ini

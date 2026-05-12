@@ -4836,7 +4836,7 @@ class GenomeApi:
     ) -> V2reportsGenomeAnnotationReportPage:
         """Get genome annotation reports by genome assembly accession
 
-        Get genome annotation reports by genome assembly accession, where each report represents a single feature annotated on the genome.  By default, in paged JSON format, but also available in tabular (accept: text/tab-separated-values) or JSON Lines (accept: application/x-ndjson) formats.
+        Get genome annotation reports by genome assembly accession, where each report represents a single feature annotated on the genome. By default, in paged JSON format, but also available in tabular (accept: text/tab-separated-values) or JSON Lines (accept: application/x-ndjson) formats.
 
         :param accession: One or more genome assembly accessions, limited to 100 (required)
         :type accession: str
@@ -4947,7 +4947,7 @@ class GenomeApi:
     ) -> ApiResponse[V2reportsGenomeAnnotationReportPage]:
         """Get genome annotation reports by genome assembly accession
 
-        Get genome annotation reports by genome assembly accession, where each report represents a single feature annotated on the genome.  By default, in paged JSON format, but also available in tabular (accept: text/tab-separated-values) or JSON Lines (accept: application/x-ndjson) formats.
+        Get genome annotation reports by genome assembly accession, where each report represents a single feature annotated on the genome. By default, in paged JSON format, but also available in tabular (accept: text/tab-separated-values) or JSON Lines (accept: application/x-ndjson) formats.
 
         :param accession: One or more genome assembly accessions, limited to 100 (required)
         :type accession: str
@@ -5058,7 +5058,7 @@ class GenomeApi:
     ) -> RESTResponseType:
         """Get genome annotation reports by genome assembly accession
 
-        Get genome annotation reports by genome assembly accession, where each report represents a single feature annotated on the genome.  By default, in paged JSON format, but also available in tabular (accept: text/tab-separated-values) or JSON Lines (accept: application/x-ndjson) formats.
+        Get genome annotation reports by genome assembly accession, where each report represents a single feature annotated on the genome. By default, in paged JSON format, but also available in tabular (accept: text/tab-separated-values) or JSON Lines (accept: application/x-ndjson) formats.
 
         :param accession: One or more genome assembly accessions, limited to 100 (required)
         :type accession: str
@@ -5281,7 +5281,7 @@ class GenomeApi:
     ) -> V2reportsGenomeAnnotationReportPage:
         """Get genome annotation reports by genome assembly accession
 
-        Get genome annotation reports by genome assembly accession, where each report represents a single feature annotated on the genome.  By default, in paged JSON format, but also available in tabular (accept: text/tab-separated-values) or JSON Lines (accept: application/x-ndjson) formats.
+        Get genome annotation reports by genome assembly accession, where each report represents a single feature annotated on the genome. By default, in paged JSON format, but also available in tabular (accept: text/tab-separated-values) or JSON Lines (accept: application/x-ndjson) formats.
 
         :param v2_genome_annotation_request: (required)
         :type v2_genome_annotation_request: V2GenomeAnnotationRequest
@@ -5348,7 +5348,7 @@ class GenomeApi:
     ) -> ApiResponse[V2reportsGenomeAnnotationReportPage]:
         """Get genome annotation reports by genome assembly accession
 
-        Get genome annotation reports by genome assembly accession, where each report represents a single feature annotated on the genome.  By default, in paged JSON format, but also available in tabular (accept: text/tab-separated-values) or JSON Lines (accept: application/x-ndjson) formats.
+        Get genome annotation reports by genome assembly accession, where each report represents a single feature annotated on the genome. By default, in paged JSON format, but also available in tabular (accept: text/tab-separated-values) or JSON Lines (accept: application/x-ndjson) formats.
 
         :param v2_genome_annotation_request: (required)
         :type v2_genome_annotation_request: V2GenomeAnnotationRequest
@@ -5415,7 +5415,7 @@ class GenomeApi:
     ) -> RESTResponseType:
         """Get genome annotation reports by genome assembly accession
 
-        Get genome annotation reports by genome assembly accession, where each report represents a single feature annotated on the genome.  By default, in paged JSON format, but also available in tabular (accept: text/tab-separated-values) or JSON Lines (accept: application/x-ndjson) formats.
+        Get genome annotation reports by genome assembly accession, where each report represents a single feature annotated on the genome. By default, in paged JSON format, but also available in tabular (accept: text/tab-separated-values) or JSON Lines (accept: application/x-ndjson) formats.
 
         :param v2_genome_annotation_request: (required)
         :type v2_genome_annotation_request: V2GenomeAnnotationRequest
@@ -6518,7 +6518,7 @@ class GenomeApi:
     ) -> V2reportsAssemblyDataReportPage:
         """Get genome assembly reports by assembly name
 
-        Get genome assembly reports by assembly name (exact matches only).  By default, in paged JSON format, but also available in tabular (accept: text/tab-separated-values) or JSON Lines (accept: application/x-ndjson) formats.
+        Get genome assembly reports by assembly name (exact matches only). By default, in paged JSON format, but also available in tabular (accept: text/tab-separated-values) or JSON Lines (accept: application/x-ndjson) formats.
 
         :param assembly_names: One or more assembly names (exact match only) (required)
         :type assembly_names: List[str]
@@ -6677,7 +6677,7 @@ class GenomeApi:
     ) -> ApiResponse[V2reportsAssemblyDataReportPage]:
         """Get genome assembly reports by assembly name
 
-        Get genome assembly reports by assembly name (exact matches only).  By default, in paged JSON format, but also available in tabular (accept: text/tab-separated-values) or JSON Lines (accept: application/x-ndjson) formats.
+        Get genome assembly reports by assembly name (exact matches only). By default, in paged JSON format, but also available in tabular (accept: text/tab-separated-values) or JSON Lines (accept: application/x-ndjson) formats.
 
         :param assembly_names: One or more assembly names (exact match only) (required)
         :type assembly_names: List[str]
@@ -6836,7 +6836,7 @@ class GenomeApi:
     ) -> RESTResponseType:
         """Get genome assembly reports by assembly name
 
-        Get genome assembly reports by assembly name (exact matches only).  By default, in paged JSON format, but also available in tabular (accept: text/tab-separated-values) or JSON Lines (accept: application/x-ndjson) formats.
+        Get genome assembly reports by assembly name (exact matches only). By default, in paged JSON format, but also available in tabular (accept: text/tab-separated-values) or JSON Lines (accept: application/x-ndjson) formats.
 
         :param assembly_names: One or more assembly names (exact match only) (required)
         :type assembly_names: List[str]
@@ -7195,7 +7195,7 @@ class GenomeApi:
     ) -> V2reportsAssemblyDataReportPage:
         """Get genome assembly reports by BioProject accession
 
-        Get genome assembly reports by BioProject accession.  By default, in paged JSON format, but also available in tabular (accept: text/tab-separated-values) or JSON Lines (accept: application/x-ndjson) formats.
+        Get genome assembly reports by BioProject accession. By default, in paged JSON format, but also available in tabular (accept: text/tab-separated-values) or JSON Lines (accept: application/x-ndjson) formats.
 
         :param bioprojects: (required)
         :type bioprojects: List[str]
@@ -7354,7 +7354,7 @@ class GenomeApi:
     ) -> ApiResponse[V2reportsAssemblyDataReportPage]:
         """Get genome assembly reports by BioProject accession
 
-        Get genome assembly reports by BioProject accession.  By default, in paged JSON format, but also available in tabular (accept: text/tab-separated-values) or JSON Lines (accept: application/x-ndjson) formats.
+        Get genome assembly reports by BioProject accession. By default, in paged JSON format, but also available in tabular (accept: text/tab-separated-values) or JSON Lines (accept: application/x-ndjson) formats.
 
         :param bioprojects: (required)
         :type bioprojects: List[str]
@@ -7513,7 +7513,7 @@ class GenomeApi:
     ) -> RESTResponseType:
         """Get genome assembly reports by BioProject accession
 
-        Get genome assembly reports by BioProject accession.  By default, in paged JSON format, but also available in tabular (accept: text/tab-separated-values) or JSON Lines (accept: application/x-ndjson) formats.
+        Get genome assembly reports by BioProject accession. By default, in paged JSON format, but also available in tabular (accept: text/tab-separated-values) or JSON Lines (accept: application/x-ndjson) formats.
 
         :param bioprojects: (required)
         :type bioprojects: List[str]
@@ -7872,7 +7872,7 @@ class GenomeApi:
     ) -> V2reportsAssemblyDataReportPage:
         """Get genome assembly reports by BioSample accession
 
-        Get genome assembly reports by BioSample accession.  By default, in paged JSON format, but also available in tabular (accept: text/tab-separated-values) or JSON Lines (accept: application/x-ndjson) formats.
+        Get genome assembly reports by BioSample accession. By default, in paged JSON format, but also available in tabular (accept: text/tab-separated-values) or JSON Lines (accept: application/x-ndjson) formats.
 
         :param biosample_ids: (required)
         :type biosample_ids: List[str]
@@ -8031,7 +8031,7 @@ class GenomeApi:
     ) -> ApiResponse[V2reportsAssemblyDataReportPage]:
         """Get genome assembly reports by BioSample accession
 
-        Get genome assembly reports by BioSample accession.  By default, in paged JSON format, but also available in tabular (accept: text/tab-separated-values) or JSON Lines (accept: application/x-ndjson) formats.
+        Get genome assembly reports by BioSample accession. By default, in paged JSON format, but also available in tabular (accept: text/tab-separated-values) or JSON Lines (accept: application/x-ndjson) formats.
 
         :param biosample_ids: (required)
         :type biosample_ids: List[str]
@@ -8190,7 +8190,7 @@ class GenomeApi:
     ) -> RESTResponseType:
         """Get genome assembly reports by BioSample accession
 
-        Get genome assembly reports by BioSample accession.  By default, in paged JSON format, but also available in tabular (accept: text/tab-separated-values) or JSON Lines (accept: application/x-ndjson) formats.
+        Get genome assembly reports by BioSample accession. By default, in paged JSON format, but also available in tabular (accept: text/tab-separated-values) or JSON Lines (accept: application/x-ndjson) formats.
 
         :param biosample_ids: (required)
         :type biosample_ids: List[str]
@@ -8549,7 +8549,7 @@ class GenomeApi:
     ) -> V2reportsAssemblyDataReportPage:
         """Get a genome assembly report by taxon
 
-        Get a genome assembly report by taxon.  By default, in paged JSON format, but also available in tabular (accept: text/tab-separated-values) or JSON Lines (accept: application/x-ndjson) formats.
+        Get a genome assembly report by taxon. By default, in paged JSON format, but also available in tabular (accept: text/tab-separated-values) or JSON Lines (accept: application/x-ndjson) formats.
 
         :param taxons: NCBI Taxonomy ID or name (common or scientific) at any taxonomic rank (required)
         :type taxons: List[str]
@@ -8708,7 +8708,7 @@ class GenomeApi:
     ) -> ApiResponse[V2reportsAssemblyDataReportPage]:
         """Get a genome assembly report by taxon
 
-        Get a genome assembly report by taxon.  By default, in paged JSON format, but also available in tabular (accept: text/tab-separated-values) or JSON Lines (accept: application/x-ndjson) formats.
+        Get a genome assembly report by taxon. By default, in paged JSON format, but also available in tabular (accept: text/tab-separated-values) or JSON Lines (accept: application/x-ndjson) formats.
 
         :param taxons: NCBI Taxonomy ID or name (common or scientific) at any taxonomic rank (required)
         :type taxons: List[str]
@@ -8867,7 +8867,7 @@ class GenomeApi:
     ) -> RESTResponseType:
         """Get a genome assembly report by taxon
 
-        Get a genome assembly report by taxon.  By default, in paged JSON format, but also available in tabular (accept: text/tab-separated-values) or JSON Lines (accept: application/x-ndjson) formats.
+        Get a genome assembly report by taxon. By default, in paged JSON format, but also available in tabular (accept: text/tab-separated-values) or JSON Lines (accept: application/x-ndjson) formats.
 
         :param taxons: NCBI Taxonomy ID or name (common or scientific) at any taxonomic rank (required)
         :type taxons: List[str]
@@ -9226,7 +9226,7 @@ class GenomeApi:
     ) -> V2reportsAssemblyDataReportPage:
         """Get a genome assembly data report by WGS accession
 
-        Get a genome assembly data report by WGS (whole genome shotgun) accession.  By default, in paged JSON format, but also available in tabular (accept: text/tab-separated-values) or JSON Lines (accept: application/x-ndjson) formats.
+        Get a genome assembly data report by WGS (whole genome shotgun) accession. By default, in paged JSON format, but also available in tabular (accept: text/tab-separated-values) or JSON Lines (accept: application/x-ndjson) formats.
 
         :param wgs_accessions: One or more WGS accessions associated with a genome assembly (required)
         :type wgs_accessions: List[str]
@@ -9385,7 +9385,7 @@ class GenomeApi:
     ) -> ApiResponse[V2reportsAssemblyDataReportPage]:
         """Get a genome assembly data report by WGS accession
 
-        Get a genome assembly data report by WGS (whole genome shotgun) accession.  By default, in paged JSON format, but also available in tabular (accept: text/tab-separated-values) or JSON Lines (accept: application/x-ndjson) formats.
+        Get a genome assembly data report by WGS (whole genome shotgun) accession. By default, in paged JSON format, but also available in tabular (accept: text/tab-separated-values) or JSON Lines (accept: application/x-ndjson) formats.
 
         :param wgs_accessions: One or more WGS accessions associated with a genome assembly (required)
         :type wgs_accessions: List[str]
@@ -9544,7 +9544,7 @@ class GenomeApi:
     ) -> RESTResponseType:
         """Get a genome assembly data report by WGS accession
 
-        Get a genome assembly data report by WGS (whole genome shotgun) accession.  By default, in paged JSON format, but also available in tabular (accept: text/tab-separated-values) or JSON Lines (accept: application/x-ndjson) formats.
+        Get a genome assembly data report by WGS (whole genome shotgun) accession. By default, in paged JSON format, but also available in tabular (accept: text/tab-separated-values) or JSON Lines (accept: application/x-ndjson) formats.
 
         :param wgs_accessions: One or more WGS accessions associated with a genome assembly (required)
         :type wgs_accessions: List[str]

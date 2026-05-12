@@ -1383,7 +1383,7 @@ Name | Type | Description  | Notes
 
 Get genome annotation reports by genome assembly accession
 
-Get genome annotation reports by genome assembly accession, where each report represents a single feature annotated on the genome.  By default, in paged JSON format, but also available in tabular (accept: text/tab-separated-values) or JSON Lines (accept: application/x-ndjson) formats.
+Get genome annotation reports by genome assembly accession, where each report represents a single feature annotated on the genome. By default, in paged JSON format, but also available in tabular (accept: text/tab-separated-values) or JSON Lines (accept: application/x-ndjson) formats.
 
 ### Example
 
@@ -1488,7 +1488,7 @@ Name | Type | Description  | Notes
 
 Get genome annotation reports by genome assembly accession
 
-Get genome annotation reports by genome assembly accession, where each report represents a single feature annotated on the genome.  By default, in paged JSON format, but also available in tabular (accept: text/tab-separated-values) or JSON Lines (accept: application/x-ndjson) formats.
+Get genome annotation reports by genome assembly accession, where each report represents a single feature annotated on the genome. By default, in paged JSON format, but also available in tabular (accept: text/tab-separated-values) or JSON Lines (accept: application/x-ndjson) formats.
 
 ### Example
 
@@ -1782,7 +1782,7 @@ Name | Type | Description  | Notes
 
 Get genome assembly reports by assembly name
 
-Get genome assembly reports by assembly name (exact matches only).  By default, in paged JSON format, but also available in tabular (accept: text/tab-separated-values) or JSON Lines (accept: application/x-ndjson) formats.
+Get genome assembly reports by assembly name (exact matches only). By default, in paged JSON format, but also available in tabular (accept: text/tab-separated-values) or JSON Lines (accept: application/x-ndjson) formats.
 
 ### Example
 
@@ -1916,7 +1916,7 @@ Name | Type | Description  | Notes
 
 Get genome assembly reports by BioProject accession
 
-Get genome assembly reports by BioProject accession.  By default, in paged JSON format, but also available in tabular (accept: text/tab-separated-values) or JSON Lines (accept: application/x-ndjson) formats.
+Get genome assembly reports by BioProject accession. By default, in paged JSON format, but also available in tabular (accept: text/tab-separated-values) or JSON Lines (accept: application/x-ndjson) formats.
 
 ### Example
 
@@ -2050,7 +2050,7 @@ Name | Type | Description  | Notes
 
 Get genome assembly reports by BioSample accession
 
-Get genome assembly reports by BioSample accession.  By default, in paged JSON format, but also available in tabular (accept: text/tab-separated-values) or JSON Lines (accept: application/x-ndjson) formats.
+Get genome assembly reports by BioSample accession. By default, in paged JSON format, but also available in tabular (accept: text/tab-separated-values) or JSON Lines (accept: application/x-ndjson) formats.
 
 ### Example
 
@@ -2184,7 +2184,7 @@ Name | Type | Description  | Notes
 
 Get a genome assembly report by taxon
 
-Get a genome assembly report by taxon.  By default, in paged JSON format, but also available in tabular (accept: text/tab-separated-values) or JSON Lines (accept: application/x-ndjson) formats.
+Get a genome assembly report by taxon. By default, in paged JSON format, but also available in tabular (accept: text/tab-separated-values) or JSON Lines (accept: application/x-ndjson) formats.
 
 ### Example
 
@@ -2318,7 +2318,7 @@ Name | Type | Description  | Notes
 
 Get a genome assembly data report by WGS accession
 
-Get a genome assembly data report by WGS (whole genome shotgun) accession.  By default, in paged JSON format, but also available in tabular (accept: text/tab-separated-values) or JSON Lines (accept: application/x-ndjson) formats.
+Get a genome assembly data report by WGS (whole genome shotgun) accession. By default, in paged JSON format, but also available in tabular (accept: text/tab-separated-values) or JSON Lines (accept: application/x-ndjson) formats.
 
 ### Example
 

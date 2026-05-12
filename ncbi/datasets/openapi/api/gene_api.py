@@ -2691,7 +2691,7 @@ class GeneApi:
     ) -> V2reportsGeneDataReportPage:
         """Get a gene data report by GeneID
 
-        Get a gene data report by GeneID.  By default, in paged JSON format, but also available in tabular (accept: text/tab-separated-values) or JSON Lines (accept: application/x-ndjson) formats.
+        Get a gene data report by GeneID. By default, in paged JSON format, but also available in tabular (accept: text/tab-separated-values) or JSON Lines (accept: application/x-ndjson) formats.
 
         :param gene_ids: One or more NCBI GeneIDs (required)
         :type gene_ids: List[int]
@@ -2798,7 +2798,7 @@ class GeneApi:
     ) -> ApiResponse[V2reportsGeneDataReportPage]:
         """Get a gene data report by GeneID
 
-        Get a gene data report by GeneID.  By default, in paged JSON format, but also available in tabular (accept: text/tab-separated-values) or JSON Lines (accept: application/x-ndjson) formats.
+        Get a gene data report by GeneID. By default, in paged JSON format, but also available in tabular (accept: text/tab-separated-values) or JSON Lines (accept: application/x-ndjson) formats.
 
         :param gene_ids: One or more NCBI GeneIDs (required)
         :type gene_ids: List[int]
@@ -2905,7 +2905,7 @@ class GeneApi:
     ) -> RESTResponseType:
         """Get a gene data report by GeneID
 
-        Get a gene data report by GeneID.  By default, in paged JSON format, but also available in tabular (accept: text/tab-separated-values) or JSON Lines (accept: application/x-ndjson) formats.
+        Get a gene data report by GeneID. By default, in paged JSON format, but also available in tabular (accept: text/tab-separated-values) or JSON Lines (accept: application/x-ndjson) formats.
 
         :param gene_ids: One or more NCBI GeneIDs (required)
         :type gene_ids: List[int]

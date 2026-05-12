@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 Get BioSample dataset reports by accession(s)
 
-Get BioSample dataset reports by accession(s).  By default, in paged JSON format, but also available as tabular (accept: text/tab-separated-values) or json-lines (accept: application/x-ndjson)
+Get BioSample dataset reports by accession(s). By default, in paged JSON format, but also available as tabular (accept: text/tab-separated-values) or json-lines (accept: application/x-ndjson)
 
 ### Example
 

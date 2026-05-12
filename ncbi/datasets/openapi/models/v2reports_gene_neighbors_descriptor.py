@@ -19,18 +19,23 @@ import json
 
 from pydantic import BaseModel, ConfigDict, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from ncbi.datasets.openapi.models.v2reports_gene_neighbors_annotation import V2reportsGeneNeighborsAnnotation
+from ncbi.datasets.openapi.models.v2reports_gene_type import V2reportsGeneType
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
 
-class V2reportsNameAndAuthorityPublication(BaseModel):
+class V2reportsGeneNeighborsDescriptor(BaseModel):
     """
-    V2reportsNameAndAuthorityPublication
+    V2reportsGeneNeighborsDescriptor
     """ # noqa: E501
-    name: Optional[StrictStr] = None
-    citation: Optional[StrictStr] = None
-    pmid: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["name", "citation", "pmid"]
+    tax_id: Optional[StrictStr] = None
+    gene_id: Optional[StrictStr] = None
+    symbol: Optional[StrictStr] = None
+    description: Optional[StrictStr] = None
+    gene_type: Optional[V2reportsGeneType] = V2reportsGeneType.UNKNOWN
+    annotations: Optional[List[V2reportsGeneNeighborsAnnotation]] = None
+    __properties: ClassVar[List[str]] = ["tax_id", "gene_id", "symbol", "description", "gene_type", "annotations"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -50,7 +55,7 @@ class V2reportsNameAndAuthorityPublication(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of V2reportsNameAndAuthorityPublication from a JSON string"""
+        """Create an instance of V2reportsGeneNeighborsDescriptor from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -71,11 +76,18 @@ class V2reportsNameAndAuthorityPublication(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of each item in annotations (list)
+        _items = []
+        if self.annotations:
+            for _item_annotations in self.annotations:
+                if _item_annotations:
+                    _items.append(_item_annotations.to_dict())
+            _dict['annotations'] = _items
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of V2reportsNameAndAuthorityPublication from a dict"""
+        """Create an instance of V2reportsGeneNeighborsDescriptor from a dict"""
         if obj is None:
             return None
 
@@ -83,9 +95,12 @@ class V2reportsNameAndAuthorityPublication(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "name": obj.get("name"),
-            "citation": obj.get("citation"),
-            "pmid": obj.get("pmid")
+            "tax_id": obj.get("tax_id"),
+            "gene_id": obj.get("gene_id"),
+            "symbol": obj.get("symbol"),
+            "description": obj.get("description"),
+            "gene_type": obj.get("gene_type") if obj.get("gene_type") is not None else V2reportsGeneType.UNKNOWN,
+            "annotations": [V2reportsGeneNeighborsAnnotation.from_dict(_item) for _item in obj["annotations"]] if obj.get("annotations") is not None else None
         })
         return _obj
 
