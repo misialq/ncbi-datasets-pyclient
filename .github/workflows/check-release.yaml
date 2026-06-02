@@ -17,7 +17,7 @@ jobs:
           echo "::set-output name=release::$release"
 
       - name: Checkout repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6.0.2
         with:
           fetch-depth: 0
           token: ${{ secrets.PERSONAL_TOKEN }}
@@ -37,9 +37,9 @@ jobs:
 
       - name: Setup Node.js
         if: ${{ steps.check_tag.outputs.new_release == 'true' }}
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v6.4.0
         with:
-          node-version: '16'
+          node-version: '20'
 
       - name: Generate Python client
         if: ${{ steps.check_tag.outputs.new_release == 'true' }}
@@ -62,7 +62,7 @@ jobs:
 
       - name: Setup Python
         if: ${{ steps.check_tag.outputs.new_release == 'true' }}
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v6.2.0
         with:
           python-version: '3.9'
 
