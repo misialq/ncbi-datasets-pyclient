@@ -17,26 +17,29 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from ncbi.datasets.openapi.models.ncbiprotddv2_redundancy_level import Ncbiprotddv2RedundancyLevel
-from ncbi.datasets.openapi.models.ncbiprotddv2_sort_by_id import Ncbiprotddv2SortById
-from ncbi.datasets.openapi.models.v2_sort_direction import V2SortDirection
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
 
-class Ncbiprotddv2SimilarStructureRequest(BaseModel):
+class V2reportsInfraspecificName(BaseModel):
     """
-    Ncbiprotddv2SimilarStructureRequest
+    V2reportsInfraspecificName
     """ # noqa: E501
-    sdid: Optional[StrictStr] = None
-    page_token: Optional[StrictStr] = None
-    redundancy_level: Optional[Ncbiprotddv2RedundancyLevel] = Ncbiprotddv2RedundancyLevel.NOT_SPECIFIED
-    sort_by: Optional[Ncbiprotddv2SortById] = Ncbiprotddv2SortById.NONE
-    hits_per_page: Optional[StrictInt] = None
-    sort_direction: Optional[V2SortDirection] = V2SortDirection.SORT_DIRECTION_UNSPECIFIED
-    __properties: ClassVar[List[str]] = ["sdid", "page_token", "redundancy_level", "sort_by", "hits_per_page", "sort_direction"]
+    strain: Optional[StrictStr] = None
+    substrain: Optional[StrictStr] = None
+    variety: Optional[StrictStr] = None
+    serotype: Optional[StrictStr] = None
+    serogroup: Optional[StrictStr] = None
+    biotype: Optional[StrictStr] = None
+    isolate: Optional[StrictStr] = None
+    forma: Optional[StrictStr] = None
+    forma_specialis: Optional[StrictStr] = None
+    ecotype: Optional[StrictStr] = None
+    teleomorph: Optional[StrictStr] = None
+    breed: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["strain", "substrain", "variety", "serotype", "serogroup", "biotype", "isolate", "forma", "forma_specialis", "ecotype", "teleomorph", "breed"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -56,7 +59,7 @@ class Ncbiprotddv2SimilarStructureRequest(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of Ncbiprotddv2SimilarStructureRequest from a JSON string"""
+        """Create an instance of V2reportsInfraspecificName from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -81,7 +84,7 @@ class Ncbiprotddv2SimilarStructureRequest(BaseModel):
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of Ncbiprotddv2SimilarStructureRequest from a dict"""
+        """Create an instance of V2reportsInfraspecificName from a dict"""
         if obj is None:
             return None
 
@@ -89,12 +92,18 @@ class Ncbiprotddv2SimilarStructureRequest(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "sdid": obj.get("sdid"),
-            "page_token": obj.get("page_token"),
-            "redundancy_level": obj.get("redundancy_level") if obj.get("redundancy_level") is not None else Ncbiprotddv2RedundancyLevel.NOT_SPECIFIED,
-            "sort_by": obj.get("sort_by") if obj.get("sort_by") is not None else Ncbiprotddv2SortById.NONE,
-            "hits_per_page": obj.get("hits_per_page"),
-            "sort_direction": obj.get("sort_direction") if obj.get("sort_direction") is not None else V2SortDirection.SORT_DIRECTION_UNSPECIFIED
+            "strain": obj.get("strain"),
+            "substrain": obj.get("substrain"),
+            "variety": obj.get("variety"),
+            "serotype": obj.get("serotype"),
+            "serogroup": obj.get("serogroup"),
+            "biotype": obj.get("biotype"),
+            "isolate": obj.get("isolate"),
+            "forma": obj.get("forma"),
+            "forma_specialis": obj.get("forma_specialis"),
+            "ecotype": obj.get("ecotype"),
+            "teleomorph": obj.get("teleomorph"),
+            "breed": obj.get("breed")
         })
         return _obj
 

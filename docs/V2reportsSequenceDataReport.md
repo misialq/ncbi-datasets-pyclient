@@ -15,12 +15,14 @@ Name | Type | Description | Notes
 **source_mrna** | **str** |  | [optional] 
 **publication_date** | **str** |  | [optional] 
 **latest_update_date** | **str** |  | [optional] 
-**gene_context** | [**V2reportsSequenceGeneContext**](V2reportsSequenceGeneContext.md) |  | [optional] 
-**features** | [**List[V2reportsSequenceFeature]**](V2reportsSequenceFeature.md) |  | [optional] 
-**external_ids** | [**List[V2reportsSequenceExternalId]**](V2reportsSequenceExternalId.md) |  | [optional] 
 **tax_id** | **int** |  | [optional] 
 **submissions** | [**List[V2reportsSubmission]**](V2reportsSubmission.md) |  | [optional] 
 **publications** | [**List[V2reportsPublication]**](V2reportsPublication.md) |  | [optional] 
+**bioproject_accession** | **str** |  | [optional] 
+**biosample_accessions** | **List[str]** |  | [optional] 
+**origin_type** | [**V2reportsSequenceDataReportOriginType**](V2reportsSequenceDataReportOriginType.md) |  | [optional] [default to V2reportsSequenceDataReportOriginType.UNKNOWN]
+**specimen_voucher** | [**V2reportsSpecimenVoucher**](V2reportsSpecimenVoucher.md) |  | [optional] 
+**infraspecific_names** | [**V2reportsInfraspecificName**](V2reportsInfraspecificName.md) |  | [optional] 
 
 ## Example
 

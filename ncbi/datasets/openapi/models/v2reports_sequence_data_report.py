@@ -19,10 +19,10 @@ import json
 
 from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from ncbi.datasets.openapi.models.v2reports_infraspecific_name import V2reportsInfraspecificName
 from ncbi.datasets.openapi.models.v2reports_publication import V2reportsPublication
-from ncbi.datasets.openapi.models.v2reports_sequence_external_id import V2reportsSequenceExternalId
-from ncbi.datasets.openapi.models.v2reports_sequence_feature import V2reportsSequenceFeature
-from ncbi.datasets.openapi.models.v2reports_sequence_gene_context import V2reportsSequenceGeneContext
+from ncbi.datasets.openapi.models.v2reports_sequence_data_report_origin_type import V2reportsSequenceDataReportOriginType
+from ncbi.datasets.openapi.models.v2reports_specimen_voucher import V2reportsSpecimenVoucher
 from ncbi.datasets.openapi.models.v2reports_submission import V2reportsSubmission
 from typing import Optional, Set
 from typing_extensions import Self
@@ -42,13 +42,15 @@ class V2reportsSequenceDataReport(BaseModel):
     source_mrna: Optional[StrictStr] = None
     publication_date: Optional[StrictStr] = None
     latest_update_date: Optional[StrictStr] = None
-    gene_context: Optional[V2reportsSequenceGeneContext] = None
-    features: Optional[List[V2reportsSequenceFeature]] = None
-    external_ids: Optional[List[V2reportsSequenceExternalId]] = None
     tax_id: Optional[StrictInt] = None
     submissions: Optional[List[V2reportsSubmission]] = None
     publications: Optional[List[V2reportsPublication]] = None
-    __properties: ClassVar[List[str]] = ["accession", "organism_name", "length", "units", "molecule_type", "database_provider", "description", "source_mrna", "publication_date", "latest_update_date", "gene_context", "features", "external_ids", "tax_id", "submissions", "publications"]
+    bioproject_accession: Optional[StrictStr] = None
+    biosample_accessions: Optional[List[StrictStr]] = None
+    origin_type: Optional[V2reportsSequenceDataReportOriginType] = V2reportsSequenceDataReportOriginType.UNKNOWN
+    specimen_voucher: Optional[V2reportsSpecimenVoucher] = None
+    infraspecific_names: Optional[V2reportsInfraspecificName] = None
+    __properties: ClassVar[List[str]] = ["accession", "organism_name", "length", "units", "molecule_type", "database_provider", "description", "source_mrna", "publication_date", "latest_update_date", "tax_id", "submissions", "publications", "bioproject_accession", "biosample_accessions", "origin_type", "specimen_voucher", "infraspecific_names"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -89,23 +91,6 @@ class V2reportsSequenceDataReport(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of gene_context
-        if self.gene_context:
-            _dict['gene_context'] = self.gene_context.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of each item in features (list)
-        _items = []
-        if self.features:
-            for _item_features in self.features:
-                if _item_features:
-                    _items.append(_item_features.to_dict())
-            _dict['features'] = _items
-        # override the default output from pydantic by calling `to_dict()` of each item in external_ids (list)
-        _items = []
-        if self.external_ids:
-            for _item_external_ids in self.external_ids:
-                if _item_external_ids:
-                    _items.append(_item_external_ids.to_dict())
-            _dict['external_ids'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in submissions (list)
         _items = []
         if self.submissions:
@@ -120,6 +105,12 @@ class V2reportsSequenceDataReport(BaseModel):
                 if _item_publications:
                     _items.append(_item_publications.to_dict())
             _dict['publications'] = _items
+        # override the default output from pydantic by calling `to_dict()` of specimen_voucher
+        if self.specimen_voucher:
+            _dict['specimen_voucher'] = self.specimen_voucher.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of infraspecific_names
+        if self.infraspecific_names:
+            _dict['infraspecific_names'] = self.infraspecific_names.to_dict()
         return _dict
 
     @classmethod
@@ -142,12 +133,14 @@ class V2reportsSequenceDataReport(BaseModel):
             "source_mrna": obj.get("source_mrna"),
             "publication_date": obj.get("publication_date"),
             "latest_update_date": obj.get("latest_update_date"),
-            "gene_context": V2reportsSequenceGeneContext.from_dict(obj["gene_context"]) if obj.get("gene_context") is not None else None,
-            "features": [V2reportsSequenceFeature.from_dict(_item) for _item in obj["features"]] if obj.get("features") is not None else None,
-            "external_ids": [V2reportsSequenceExternalId.from_dict(_item) for _item in obj["external_ids"]] if obj.get("external_ids") is not None else None,
             "tax_id": obj.get("tax_id"),
             "submissions": [V2reportsSubmission.from_dict(_item) for _item in obj["submissions"]] if obj.get("submissions") is not None else None,
-            "publications": [V2reportsPublication.from_dict(_item) for _item in obj["publications"]] if obj.get("publications") is not None else None
+            "publications": [V2reportsPublication.from_dict(_item) for _item in obj["publications"]] if obj.get("publications") is not None else None,
+            "bioproject_accession": obj.get("bioproject_accession"),
+            "biosample_accessions": obj.get("biosample_accessions"),
+            "origin_type": obj.get("origin_type") if obj.get("origin_type") is not None else V2reportsSequenceDataReportOriginType.UNKNOWN,
+            "specimen_voucher": V2reportsSpecimenVoucher.from_dict(obj["specimen_voucher"]) if obj.get("specimen_voucher") is not None else None,
+            "infraspecific_names": V2reportsInfraspecificName.from_dict(obj["infraspecific_names"]) if obj.get("infraspecific_names") is not None else None
         })
         return _obj
 

@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **redundancy_level** | [**Ncbiprotddv2RedundancyLevel**](Ncbiprotddv2RedundancyLevel.md) |  | [optional] [default to Ncbiprotddv2RedundancyLevel.NOT_SPECIFIED]
 **sort_by** | [**Ncbiprotddv2SortById**](Ncbiprotddv2SortById.md) |  | [optional] [default to Ncbiprotddv2SortById.NONE]
 **hits_per_page** | **int** |  | [optional] 
+**sort_direction** | [**V2SortDirection**](V2SortDirection.md) |  | [optional] [default to V2SortDirection.SORT_DIRECTION_UNSPECIFIED]
 
 ## Example
 
