@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **tax_id** | **str** |  | [optional] 
 **taxname** | **str** |  | [optional] 
 **common_name** | **str** |  | [optional] 
-**type** | [**V2reportsGeneType**](V2reportsGeneType.md) |  | [optional] [default to V2reportsGeneType.UNKNOWN]
+**type** | [**V2GeneType**](V2GeneType.md) |  | [optional] [default to V2GeneType.UNKNOWN]
 **rna_type** | [**V2reportsRnaType**](V2reportsRnaType.md) |  | [optional] [default to V2reportsRnaType.RNA_UNKNOWN]
 **transcripts** | [**List[V2reportsTranscript]**](V2reportsTranscript.md) |  | [optional] 
 **transcript_count** | **int** |  | [optional] 

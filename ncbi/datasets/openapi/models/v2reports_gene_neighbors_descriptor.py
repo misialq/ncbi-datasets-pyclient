@@ -19,8 +19,8 @@ import json
 
 from pydantic import BaseModel, ConfigDict, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from ncbi.datasets.openapi.models.v2_gene_type import V2GeneType
 from ncbi.datasets.openapi.models.v2reports_gene_neighbors_annotation import V2reportsGeneNeighborsAnnotation
-from ncbi.datasets.openapi.models.v2reports_gene_type import V2reportsGeneType
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
@@ -33,7 +33,7 @@ class V2reportsGeneNeighborsDescriptor(BaseModel):
     gene_id: Optional[StrictStr] = None
     symbol: Optional[StrictStr] = None
     description: Optional[StrictStr] = None
-    gene_type: Optional[V2reportsGeneType] = V2reportsGeneType.UNKNOWN
+    gene_type: Optional[V2GeneType] = V2GeneType.UNKNOWN
     annotations: Optional[List[V2reportsGeneNeighborsAnnotation]] = None
     __properties: ClassVar[List[str]] = ["tax_id", "gene_id", "symbol", "description", "gene_type", "annotations"]
 
@@ -99,7 +99,7 @@ class V2reportsGeneNeighborsDescriptor(BaseModel):
             "gene_id": obj.get("gene_id"),
             "symbol": obj.get("symbol"),
             "description": obj.get("description"),
-            "gene_type": obj.get("gene_type") if obj.get("gene_type") is not None else V2reportsGeneType.UNKNOWN,
+            "gene_type": obj.get("gene_type") if obj.get("gene_type") is not None else V2GeneType.UNKNOWN,
             "annotations": [V2reportsGeneNeighborsAnnotation.from_dict(_item) for _item in obj["annotations"]] if obj.get("annotations") is not None else None
         })
         return _obj

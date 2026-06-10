@@ -23,6 +23,7 @@ Name | Type | Description | Notes
 **origin_type** | [**V2reportsSequenceDataReportOriginType**](V2reportsSequenceDataReportOriginType.md) |  | [optional] [default to V2reportsSequenceDataReportOriginType.UNKNOWN]
 **specimen_voucher** | [**V2reportsSpecimenVoucher**](V2reportsSpecimenVoucher.md) |  | [optional] 
 **infraspecific_names** | [**V2reportsInfraspecificName**](V2reportsInfraspecificName.md) |  | [optional] 
+**sample_info** | [**V2reportsSampleInfo**](V2reportsSampleInfo.md) |  | [optional] 
 
 ## Example
 

@@ -19,8 +19,8 @@ import json
 
 from pydantic import BaseModel, ConfigDict, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from ncbi.datasets.openapi.models.v2_gene_type import V2GeneType
 from ncbi.datasets.openapi.models.v2reports_annotation import V2reportsAnnotation
-from ncbi.datasets.openapi.models.v2reports_gene_type import V2reportsGeneType
 from ncbi.datasets.openapi.models.v2reports_genomic_region import V2reportsGenomicRegion
 from ncbi.datasets.openapi.models.v2reports_orientation import V2reportsOrientation
 from ncbi.datasets.openapi.models.v2reports_protein import V2reportsProtein
@@ -41,7 +41,7 @@ class V2reportsGenomeAnnotation(BaseModel):
     tax_id: Optional[StrictStr] = None
     taxname: Optional[StrictStr] = None
     common_name: Optional[StrictStr] = None
-    type: Optional[V2reportsGeneType] = V2reportsGeneType.UNKNOWN
+    type: Optional[V2GeneType] = V2GeneType.UNKNOWN
     gene_type: Optional[StrictStr] = None
     rna_type: Optional[V2reportsRnaType] = V2reportsRnaType.RNA_UNKNOWN
     orientation: Optional[V2reportsOrientation] = V2reportsOrientation.NONE
@@ -151,7 +151,7 @@ class V2reportsGenomeAnnotation(BaseModel):
             "tax_id": obj.get("tax_id"),
             "taxname": obj.get("taxname"),
             "common_name": obj.get("common_name"),
-            "type": obj.get("type") if obj.get("type") is not None else V2reportsGeneType.UNKNOWN,
+            "type": obj.get("type") if obj.get("type") is not None else V2GeneType.UNKNOWN,
             "gene_type": obj.get("gene_type"),
             "rna_type": obj.get("rna_type") if obj.get("rna_type") is not None else V2reportsRnaType.RNA_UNKNOWN,
             "orientation": obj.get("orientation") if obj.get("orientation") is not None else V2reportsOrientation.NONE,

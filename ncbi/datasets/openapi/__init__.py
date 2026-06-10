@@ -14,7 +14,7 @@
 """  # noqa: E501
 
 
-__version__ = "v18.29.1"
+__version__ = "v18.30.1"
 
 # Define package exports
 __all__ = [
@@ -252,7 +252,6 @@ __all__ = [
     "V2reportsGeneOntology",
     "V2reportsGeneReportMatch",
     "V2reportsGeneSummary",
-    "V2reportsGeneType",
     "V2reportsGenomeAnnotation",
     "V2reportsGenomeAnnotationReportMatch",
     "V2reportsGenomeAnnotationReportPage",
@@ -299,6 +298,7 @@ __all__ = [
     "V2reportsRankType",
     "V2reportsReference",
     "V2reportsRnaType",
+    "V2reportsSampleInfo",
     "V2reportsSeqRangeSet",
     "V2reportsSeqRangeSetFasta",
     "V2reportsSequenceDataReport",
@@ -580,7 +580,6 @@ from ncbi.datasets.openapi.models.v2reports_gene_neighbors_reports import V2repo
 from ncbi.datasets.openapi.models.v2reports_gene_ontology import V2reportsGeneOntology as V2reportsGeneOntology
 from ncbi.datasets.openapi.models.v2reports_gene_report_match import V2reportsGeneReportMatch as V2reportsGeneReportMatch
 from ncbi.datasets.openapi.models.v2reports_gene_summary import V2reportsGeneSummary as V2reportsGeneSummary
-from ncbi.datasets.openapi.models.v2reports_gene_type import V2reportsGeneType as V2reportsGeneType
 from ncbi.datasets.openapi.models.v2reports_genome_annotation import V2reportsGenomeAnnotation as V2reportsGenomeAnnotation
 from ncbi.datasets.openapi.models.v2reports_genome_annotation_report_match import V2reportsGenomeAnnotationReportMatch as V2reportsGenomeAnnotationReportMatch
 from ncbi.datasets.openapi.models.v2reports_genome_annotation_report_page import V2reportsGenomeAnnotationReportPage as V2reportsGenomeAnnotationReportPage
@@ -627,6 +626,7 @@ from ncbi.datasets.openapi.models.v2reports_range import V2reportsRange as V2rep
 from ncbi.datasets.openapi.models.v2reports_rank_type import V2reportsRankType as V2reportsRankType
 from ncbi.datasets.openapi.models.v2reports_reference import V2reportsReference as V2reportsReference
 from ncbi.datasets.openapi.models.v2reports_rna_type import V2reportsRnaType as V2reportsRnaType
+from ncbi.datasets.openapi.models.v2reports_sample_info import V2reportsSampleInfo as V2reportsSampleInfo
 from ncbi.datasets.openapi.models.v2reports_seq_range_set import V2reportsSeqRangeSet as V2reportsSeqRangeSet
 from ncbi.datasets.openapi.models.v2reports_seq_range_set_fasta import V2reportsSeqRangeSetFasta as V2reportsSeqRangeSetFasta
 from ncbi.datasets.openapi.models.v2reports_sequence_data_report import V2reportsSequenceDataReport as V2reportsSequenceDataReport

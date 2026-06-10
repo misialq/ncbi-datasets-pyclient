@@ -21,6 +21,7 @@ from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from ncbi.datasets.openapi.models.v2reports_infraspecific_name import V2reportsInfraspecificName
 from ncbi.datasets.openapi.models.v2reports_publication import V2reportsPublication
+from ncbi.datasets.openapi.models.v2reports_sample_info import V2reportsSampleInfo
 from ncbi.datasets.openapi.models.v2reports_sequence_data_report_origin_type import V2reportsSequenceDataReportOriginType
 from ncbi.datasets.openapi.models.v2reports_specimen_voucher import V2reportsSpecimenVoucher
 from ncbi.datasets.openapi.models.v2reports_submission import V2reportsSubmission
@@ -50,7 +51,8 @@ class V2reportsSequenceDataReport(BaseModel):
     origin_type: Optional[V2reportsSequenceDataReportOriginType] = V2reportsSequenceDataReportOriginType.UNKNOWN
     specimen_voucher: Optional[V2reportsSpecimenVoucher] = None
     infraspecific_names: Optional[V2reportsInfraspecificName] = None
-    __properties: ClassVar[List[str]] = ["accession", "organism_name", "length", "units", "molecule_type", "database_provider", "description", "source_mrna", "publication_date", "latest_update_date", "tax_id", "submissions", "publications", "bioproject_accession", "biosample_accessions", "origin_type", "specimen_voucher", "infraspecific_names"]
+    sample_info: Optional[V2reportsSampleInfo] = None
+    __properties: ClassVar[List[str]] = ["accession", "organism_name", "length", "units", "molecule_type", "database_provider", "description", "source_mrna", "publication_date", "latest_update_date", "tax_id", "submissions", "publications", "bioproject_accession", "biosample_accessions", "origin_type", "specimen_voucher", "infraspecific_names", "sample_info"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -111,6 +113,9 @@ class V2reportsSequenceDataReport(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of infraspecific_names
         if self.infraspecific_names:
             _dict['infraspecific_names'] = self.infraspecific_names.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of sample_info
+        if self.sample_info:
+            _dict['sample_info'] = self.sample_info.to_dict()
         return _dict
 
     @classmethod
@@ -140,7 +145,8 @@ class V2reportsSequenceDataReport(BaseModel):
             "biosample_accessions": obj.get("biosample_accessions"),
             "origin_type": obj.get("origin_type") if obj.get("origin_type") is not None else V2reportsSequenceDataReportOriginType.UNKNOWN,
             "specimen_voucher": V2reportsSpecimenVoucher.from_dict(obj["specimen_voucher"]) if obj.get("specimen_voucher") is not None else None,
-            "infraspecific_names": V2reportsInfraspecificName.from_dict(obj["infraspecific_names"]) if obj.get("infraspecific_names") is not None else None
+            "infraspecific_names": V2reportsInfraspecificName.from_dict(obj["infraspecific_names"]) if obj.get("infraspecific_names") is not None else None,
+            "sample_info": V2reportsSampleInfo.from_dict(obj["sample_info"]) if obj.get("sample_info") is not None else None
         })
         return _obj
 

@@ -19,7 +19,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from ncbi.datasets.openapi.models.v2reports_gene_type import V2reportsGeneType
+from ncbi.datasets.openapi.models.v2_gene_type import V2GeneType
 from ncbi.datasets.openapi.models.v2reports_rna_type import V2reportsRnaType
 from ncbi.datasets.openapi.models.v2reports_transcript import V2reportsTranscript
 from ncbi.datasets.openapi.models.v2reports_transcript_type_count import V2reportsTranscriptTypeCount
@@ -37,7 +37,7 @@ class V2reportsProductDescriptor(BaseModel):
     tax_id: Optional[StrictStr] = None
     taxname: Optional[StrictStr] = None
     common_name: Optional[StrictStr] = None
-    type: Optional[V2reportsGeneType] = V2reportsGeneType.UNKNOWN
+    type: Optional[V2GeneType] = V2GeneType.UNKNOWN
     rna_type: Optional[V2reportsRnaType] = V2reportsRnaType.RNA_UNKNOWN
     transcripts: Optional[List[V2reportsTranscript]] = None
     transcript_count: Optional[StrictInt] = None
@@ -116,7 +116,7 @@ class V2reportsProductDescriptor(BaseModel):
             "tax_id": obj.get("tax_id"),
             "taxname": obj.get("taxname"),
             "common_name": obj.get("common_name"),
-            "type": obj.get("type") if obj.get("type") is not None else V2reportsGeneType.UNKNOWN,
+            "type": obj.get("type") if obj.get("type") is not None else V2GeneType.UNKNOWN,
             "rna_type": obj.get("rna_type") if obj.get("rna_type") is not None else V2reportsRnaType.RNA_UNKNOWN,
             "transcripts": [V2reportsTranscript.from_dict(_item) for _item in obj["transcripts"]] if obj.get("transcripts") is not None else None,
             "transcript_count": obj.get("transcript_count"),

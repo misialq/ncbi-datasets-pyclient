@@ -19,7 +19,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from ncbi.datasets.openapi.models.v2reports_gene_type import V2reportsGeneType
+from ncbi.datasets.openapi.models.v2_gene_type import V2GeneType
 from ncbi.datasets.openapi.models.v2reports_range import V2reportsRange
 from typing import Optional, Set
 from typing_extensions import Self
@@ -32,7 +32,7 @@ class V2reportsGeneNeighbor(BaseModel):
     gene_id: Optional[StrictStr] = None
     symbol: Optional[StrictStr] = None
     description: Optional[StrictStr] = None
-    gene_type: Optional[V2reportsGeneType] = V2reportsGeneType.UNKNOWN
+    gene_type: Optional[V2GeneType] = V2GeneType.UNKNOWN
     genomic_range: Optional[V2reportsRange] = None
     __properties: ClassVar[List[str]] = ["gene_id", "symbol", "description", "gene_type", "genomic_range"]
 
@@ -93,7 +93,7 @@ class V2reportsGeneNeighbor(BaseModel):
             "gene_id": obj.get("gene_id"),
             "symbol": obj.get("symbol"),
             "description": obj.get("description"),
-            "gene_type": obj.get("gene_type") if obj.get("gene_type") is not None else V2reportsGeneType.UNKNOWN,
+            "gene_type": obj.get("gene_type") if obj.get("gene_type") is not None else V2GeneType.UNKNOWN,
             "genomic_range": V2reportsRange.from_dict(obj["genomic_range"]) if obj.get("genomic_range") is not None else None
         })
         return _obj

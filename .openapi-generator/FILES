@@ -226,7 +226,6 @@ docs/V2reportsGeneNeighborsReports.md
 docs/V2reportsGeneOntology.md
 docs/V2reportsGeneReportMatch.md
 docs/V2reportsGeneSummary.md
-docs/V2reportsGeneType.md
 docs/V2reportsGenomeAnnotation.md
 docs/V2reportsGenomeAnnotationReportMatch.md
 docs/V2reportsGenomeAnnotationReportPage.md
@@ -273,6 +272,7 @@ docs/V2reportsRange.md
 docs/V2reportsRankType.md
 docs/V2reportsReference.md
 docs/V2reportsRnaType.md
+docs/V2reportsSampleInfo.md
 docs/V2reportsSeqRangeSet.md
 docs/V2reportsSeqRangeSetFasta.md
 docs/V2reportsSequenceDataReport.md
@@ -550,7 +550,6 @@ ncbi/datasets/openapi/models/v2reports_gene_neighbors_reports.py
 ncbi/datasets/openapi/models/v2reports_gene_ontology.py
 ncbi/datasets/openapi/models/v2reports_gene_report_match.py
 ncbi/datasets/openapi/models/v2reports_gene_summary.py
-ncbi/datasets/openapi/models/v2reports_gene_type.py
 ncbi/datasets/openapi/models/v2reports_genome_annotation.py
 ncbi/datasets/openapi/models/v2reports_genome_annotation_report_match.py
 ncbi/datasets/openapi/models/v2reports_genome_annotation_report_page.py
@@ -597,6 +596,7 @@ ncbi/datasets/openapi/models/v2reports_range.py
 ncbi/datasets/openapi/models/v2reports_rank_type.py
 ncbi/datasets/openapi/models/v2reports_reference.py
 ncbi/datasets/openapi/models/v2reports_rna_type.py
+ncbi/datasets/openapi/models/v2reports_sample_info.py
 ncbi/datasets/openapi/models/v2reports_seq_range_set.py
 ncbi/datasets/openapi/models/v2reports_seq_range_set_fasta.py
 ncbi/datasets/openapi/models/v2reports_sequence_data_report.py
@@ -645,7 +645,5 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_v2reports_infraspecific_name.py
-test/test_v2reports_sequence_data_report_origin_type.py
-test/test_v2reports_specimen_voucher.py
+test/test_v2reports_sample_info.py
 tox.ini

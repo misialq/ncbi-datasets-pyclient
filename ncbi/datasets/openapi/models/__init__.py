@@ -230,7 +230,6 @@ from ncbi.datasets.openapi.models.v2reports_gene_neighbors_reports import V2repo
 from ncbi.datasets.openapi.models.v2reports_gene_ontology import V2reportsGeneOntology
 from ncbi.datasets.openapi.models.v2reports_gene_report_match import V2reportsGeneReportMatch
 from ncbi.datasets.openapi.models.v2reports_gene_summary import V2reportsGeneSummary
-from ncbi.datasets.openapi.models.v2reports_gene_type import V2reportsGeneType
 from ncbi.datasets.openapi.models.v2reports_genome_annotation import V2reportsGenomeAnnotation
 from ncbi.datasets.openapi.models.v2reports_genome_annotation_report_match import V2reportsGenomeAnnotationReportMatch
 from ncbi.datasets.openapi.models.v2reports_genome_annotation_report_page import V2reportsGenomeAnnotationReportPage
@@ -277,6 +276,7 @@ from ncbi.datasets.openapi.models.v2reports_range import V2reportsRange
 from ncbi.datasets.openapi.models.v2reports_rank_type import V2reportsRankType
 from ncbi.datasets.openapi.models.v2reports_reference import V2reportsReference
 from ncbi.datasets.openapi.models.v2reports_rna_type import V2reportsRnaType
+from ncbi.datasets.openapi.models.v2reports_sample_info import V2reportsSampleInfo
 from ncbi.datasets.openapi.models.v2reports_seq_range_set import V2reportsSeqRangeSet
 from ncbi.datasets.openapi.models.v2reports_seq_range_set_fasta import V2reportsSeqRangeSetFasta
 from ncbi.datasets.openapi.models.v2reports_sequence_data_report import V2reportsSequenceDataReport

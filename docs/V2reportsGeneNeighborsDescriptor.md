@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **gene_id** | **str** |  | [optional] 
 **symbol** | **str** |  | [optional] 
 **description** | **str** |  | [optional] 
-**gene_type** | [**V2reportsGeneType**](V2reportsGeneType.md) |  | [optional] [default to V2reportsGeneType.UNKNOWN]
+**gene_type** | [**V2GeneType**](V2GeneType.md) |  | [optional] [default to V2GeneType.UNKNOWN]
 **annotations** | [**List[V2reportsGeneNeighborsAnnotation]**](V2reportsGeneNeighborsAnnotation.md) |  | [optional] 
 
 ## Example
