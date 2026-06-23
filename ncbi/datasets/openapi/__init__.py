@@ -14,7 +14,7 @@
 """  # noqa: E501
 
 
-__version__ = "v18.30.1"
+__version__ = "v18.31.0"
 
 # Define package exports
 __all__ = [
@@ -236,6 +236,7 @@ __all__ = [
     "V2reportsErrorAssemblyErrorCode",
     "V2reportsErrorGeneErrorCode",
     "V2reportsErrorOrganelleErrorCode",
+    "V2reportsErrorSequenceErrorCode",
     "V2reportsErrorTaxonomyErrorCode",
     "V2reportsErrorVirusErrorCode",
     "V2reportsFeatureCounts",
@@ -564,6 +565,7 @@ from ncbi.datasets.openapi.models.v2reports_error import V2reportsError as V2rep
 from ncbi.datasets.openapi.models.v2reports_error_assembly_error_code import V2reportsErrorAssemblyErrorCode as V2reportsErrorAssemblyErrorCode
 from ncbi.datasets.openapi.models.v2reports_error_gene_error_code import V2reportsErrorGeneErrorCode as V2reportsErrorGeneErrorCode
 from ncbi.datasets.openapi.models.v2reports_error_organelle_error_code import V2reportsErrorOrganelleErrorCode as V2reportsErrorOrganelleErrorCode
+from ncbi.datasets.openapi.models.v2reports_error_sequence_error_code import V2reportsErrorSequenceErrorCode as V2reportsErrorSequenceErrorCode
 from ncbi.datasets.openapi.models.v2reports_error_taxonomy_error_code import V2reportsErrorTaxonomyErrorCode as V2reportsErrorTaxonomyErrorCode
 from ncbi.datasets.openapi.models.v2reports_error_virus_error_code import V2reportsErrorVirusErrorCode as V2reportsErrorVirusErrorCode
 from ncbi.datasets.openapi.models.v2reports_feature_counts import V2reportsFeatureCounts as V2reportsFeatureCounts

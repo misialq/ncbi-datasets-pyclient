@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **organelle_error_code** | [**V2reportsErrorOrganelleErrorCode**](V2reportsErrorOrganelleErrorCode.md) |  | [optional] [default to V2reportsErrorOrganelleErrorCode.UNKNOWN_ORGANELLE_ERROR_CODE]
 **virus_error_code** | [**V2reportsErrorVirusErrorCode**](V2reportsErrorVirusErrorCode.md) |  | [optional] [default to V2reportsErrorVirusErrorCode.UNKNOWN_VIRUS_ERROR_CODE]
 **taxonomy_error_code** | [**V2reportsErrorTaxonomyErrorCode**](V2reportsErrorTaxonomyErrorCode.md) |  | [optional] [default to V2reportsErrorTaxonomyErrorCode.UNKNOWN_TAXONOMY_ERROR_CODE]
+**sequence_error_code** | [**V2reportsErrorSequenceErrorCode**](V2reportsErrorSequenceErrorCode.md) |  | [optional] [default to V2reportsErrorSequenceErrorCode.UNKNOWN_SEQUENCE_ERROR_CODE]
 **reason** | **str** |  | [optional] 
 **message** | **str** |  | [optional] 
 **invalid_identifiers** | **List[str]** |  | [optional] 

@@ -22,6 +22,7 @@ from typing import Any, ClassVar, Dict, List, Optional
 from ncbi.datasets.openapi.models.v2reports_error_assembly_error_code import V2reportsErrorAssemblyErrorCode
 from ncbi.datasets.openapi.models.v2reports_error_gene_error_code import V2reportsErrorGeneErrorCode
 from ncbi.datasets.openapi.models.v2reports_error_organelle_error_code import V2reportsErrorOrganelleErrorCode
+from ncbi.datasets.openapi.models.v2reports_error_sequence_error_code import V2reportsErrorSequenceErrorCode
 from ncbi.datasets.openapi.models.v2reports_error_taxonomy_error_code import V2reportsErrorTaxonomyErrorCode
 from ncbi.datasets.openapi.models.v2reports_error_virus_error_code import V2reportsErrorVirusErrorCode
 from typing import Optional, Set
@@ -37,10 +38,11 @@ class V2reportsError(BaseModel):
     organelle_error_code: Optional[V2reportsErrorOrganelleErrorCode] = V2reportsErrorOrganelleErrorCode.UNKNOWN_ORGANELLE_ERROR_CODE
     virus_error_code: Optional[V2reportsErrorVirusErrorCode] = V2reportsErrorVirusErrorCode.UNKNOWN_VIRUS_ERROR_CODE
     taxonomy_error_code: Optional[V2reportsErrorTaxonomyErrorCode] = V2reportsErrorTaxonomyErrorCode.UNKNOWN_TAXONOMY_ERROR_CODE
+    sequence_error_code: Optional[V2reportsErrorSequenceErrorCode] = V2reportsErrorSequenceErrorCode.UNKNOWN_SEQUENCE_ERROR_CODE
     reason: Optional[StrictStr] = None
     message: Optional[StrictStr] = None
     invalid_identifiers: Optional[List[StrictStr]] = None
-    __properties: ClassVar[List[str]] = ["assembly_error_code", "gene_error_code", "organelle_error_code", "virus_error_code", "taxonomy_error_code", "reason", "message", "invalid_identifiers"]
+    __properties: ClassVar[List[str]] = ["assembly_error_code", "gene_error_code", "organelle_error_code", "virus_error_code", "taxonomy_error_code", "sequence_error_code", "reason", "message", "invalid_identifiers"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -98,6 +100,7 @@ class V2reportsError(BaseModel):
             "organelle_error_code": obj.get("organelle_error_code") if obj.get("organelle_error_code") is not None else V2reportsErrorOrganelleErrorCode.UNKNOWN_ORGANELLE_ERROR_CODE,
             "virus_error_code": obj.get("virus_error_code") if obj.get("virus_error_code") is not None else V2reportsErrorVirusErrorCode.UNKNOWN_VIRUS_ERROR_CODE,
             "taxonomy_error_code": obj.get("taxonomy_error_code") if obj.get("taxonomy_error_code") is not None else V2reportsErrorTaxonomyErrorCode.UNKNOWN_TAXONOMY_ERROR_CODE,
+            "sequence_error_code": obj.get("sequence_error_code") if obj.get("sequence_error_code") is not None else V2reportsErrorSequenceErrorCode.UNKNOWN_SEQUENCE_ERROR_CODE,
             "reason": obj.get("reason"),
             "message": obj.get("message"),
             "invalid_identifiers": obj.get("invalid_identifiers")

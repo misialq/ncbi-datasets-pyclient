@@ -24,6 +24,7 @@ Name | Type | Description | Notes
 **specimen_voucher** | [**V2reportsSpecimenVoucher**](V2reportsSpecimenVoucher.md) |  | [optional] 
 **infraspecific_names** | [**V2reportsInfraspecificName**](V2reportsInfraspecificName.md) |  | [optional] 
 **sample_info** | [**V2reportsSampleInfo**](V2reportsSampleInfo.md) |  | [optional] 
+**errors** | [**List[V2reportsError]**](V2reportsError.md) |  | [optional] 
 
 ## Example
 

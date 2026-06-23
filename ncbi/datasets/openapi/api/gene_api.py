@@ -6301,7 +6301,7 @@ class GeneApi:
     @validate_call
     def gene_orthologs_by_id(
         self,
-        gene_id: Annotated[StrictInt, Field(description="One or more NCBI GeneIDs")],
+        gene_id: Annotated[StrictInt, Field(description="A single NCBI GeneID")],
         returned_content: Annotated[Optional[V2OrthologRequestContentType], Field(description="Return complete gene reports, or abbreviated reports with either GeneIDs only or GeneIDs, transcript and protein counts.")] = None,
         taxon_filter: Annotated[Optional[List[StrictStr]], Field(description="Limit to genes from the specified NCBI Taxonomy ID or name (common or scientific) at any taxonomic rank.")] = None,
         page_size: Annotated[Optional[StrictInt], Field(description="The maximum number of gene reports to return. Default is 20 and maximum is 1000. If the number of results exceeds the page size, `page_token` can be used to retrieve the remaining results.")] = None,
@@ -6323,7 +6323,7 @@ class GeneApi:
 
         Get a gene data report for a gene ortholog set by GeneID in JSON format.
 
-        :param gene_id: One or more NCBI GeneIDs (required)
+        :param gene_id: A single NCBI GeneID (required)
         :type gene_id: int
         :param returned_content: Return complete gene reports, or abbreviated reports with either GeneIDs only or GeneIDs, transcript and protein counts.
         :type returned_content: V2OrthologRequestContentType
@@ -6384,7 +6384,7 @@ class GeneApi:
     @validate_call
     def gene_orthologs_by_id_with_http_info(
         self,
-        gene_id: Annotated[StrictInt, Field(description="One or more NCBI GeneIDs")],
+        gene_id: Annotated[StrictInt, Field(description="A single NCBI GeneID")],
         returned_content: Annotated[Optional[V2OrthologRequestContentType], Field(description="Return complete gene reports, or abbreviated reports with either GeneIDs only or GeneIDs, transcript and protein counts.")] = None,
         taxon_filter: Annotated[Optional[List[StrictStr]], Field(description="Limit to genes from the specified NCBI Taxonomy ID or name (common or scientific) at any taxonomic rank.")] = None,
         page_size: Annotated[Optional[StrictInt], Field(description="The maximum number of gene reports to return. Default is 20 and maximum is 1000. If the number of results exceeds the page size, `page_token` can be used to retrieve the remaining results.")] = None,
@@ -6406,7 +6406,7 @@ class GeneApi:
 
         Get a gene data report for a gene ortholog set by GeneID in JSON format.
 
-        :param gene_id: One or more NCBI GeneIDs (required)
+        :param gene_id: A single NCBI GeneID (required)
         :type gene_id: int
         :param returned_content: Return complete gene reports, or abbreviated reports with either GeneIDs only or GeneIDs, transcript and protein counts.
         :type returned_content: V2OrthologRequestContentType
@@ -6467,7 +6467,7 @@ class GeneApi:
     @validate_call
     def gene_orthologs_by_id_without_preload_content(
         self,
-        gene_id: Annotated[StrictInt, Field(description="One or more NCBI GeneIDs")],
+        gene_id: Annotated[StrictInt, Field(description="A single NCBI GeneID")],
         returned_content: Annotated[Optional[V2OrthologRequestContentType], Field(description="Return complete gene reports, or abbreviated reports with either GeneIDs only or GeneIDs, transcript and protein counts.")] = None,
         taxon_filter: Annotated[Optional[List[StrictStr]], Field(description="Limit to genes from the specified NCBI Taxonomy ID or name (common or scientific) at any taxonomic rank.")] = None,
         page_size: Annotated[Optional[StrictInt], Field(description="The maximum number of gene reports to return. Default is 20 and maximum is 1000. If the number of results exceeds the page size, `page_token` can be used to retrieve the remaining results.")] = None,
@@ -6489,7 +6489,7 @@ class GeneApi:
 
         Get a gene data report for a gene ortholog set by GeneID in JSON format.
 
-        :param gene_id: One or more NCBI GeneIDs (required)
+        :param gene_id: A single NCBI GeneID (required)
         :type gene_id: int
         :param returned_content: Return complete gene reports, or abbreviated reports with either GeneIDs only or GeneIDs, transcript and protein counts.
         :type returned_content: V2OrthologRequestContentType

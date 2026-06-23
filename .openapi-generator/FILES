@@ -210,6 +210,7 @@ docs/V2reportsError.md
 docs/V2reportsErrorAssemblyErrorCode.md
 docs/V2reportsErrorGeneErrorCode.md
 docs/V2reportsErrorOrganelleErrorCode.md
+docs/V2reportsErrorSequenceErrorCode.md
 docs/V2reportsErrorTaxonomyErrorCode.md
 docs/V2reportsErrorVirusErrorCode.md
 docs/V2reportsFeatureCounts.md
@@ -534,6 +535,7 @@ ncbi/datasets/openapi/models/v2reports_error.py
 ncbi/datasets/openapi/models/v2reports_error_assembly_error_code.py
 ncbi/datasets/openapi/models/v2reports_error_gene_error_code.py
 ncbi/datasets/openapi/models/v2reports_error_organelle_error_code.py
+ncbi/datasets/openapi/models/v2reports_error_sequence_error_code.py
 ncbi/datasets/openapi/models/v2reports_error_taxonomy_error_code.py
 ncbi/datasets/openapi/models/v2reports_error_virus_error_code.py
 ncbi/datasets/openapi/models/v2reports_feature_counts.py
@@ -645,5 +647,5 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_v2reports_sample_info.py
+test/test_v2reports_error_sequence_error_code.py
 tox.ini

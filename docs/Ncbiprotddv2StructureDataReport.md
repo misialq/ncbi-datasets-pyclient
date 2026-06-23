@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **asymmetric_chains** | [**List[Ncbiprotddv2StructureDataReportBiounitChain]**](Ncbiprotddv2StructureDataReportBiounitChain.md) |  | [optional] 
 **asymmetric_ligands** | [**List[Ncbiprotddv2StructureDataReportLigandChain]**](Ncbiprotddv2StructureDataReportLigandChain.md) |  | [optional] 
 **title** | **str** |  | [optional] 
+**default_biounit** | **int** |  | [optional] 
 
 ## Example
 

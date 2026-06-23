@@ -47,7 +47,7 @@ with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = ncbi.datasets.openapi.ProkaryoteApi(api_client)
     accessions = ['WP_015878339.1'] # List[str] | One or more RefSeq non-redundant protein accessions (preceded by `WP_`)
-    include_annotation_type = [ncbi.datasets.openapi.V2Fasta()] # List[V2Fasta] | Specify which sequence files to include in the data package. (optional)
+    include_annotation_type = [ncbi.datasets.openapi.V2Fasta()] # List[V2Fasta] | Specify which sequence files to include in the data package. Note that RNA, CDS, 5' UTR and 3' UTR sequences are not available for WP_ accessions (optional)
     gene_flank_config_length = 56 # int |  (optional)
     taxon = 'taxon_example' # str | Limit gene sequences and the genome assemblies described by the [annotation report file](https://www.ncbi.nlm.nih.gov/datasets/docs/v2/reference-docs/data-reports/prokaryote-gene-location/) to the specified NCBI Taxonomy ID or name (common or scientific) at any taxonomic rank. (optional)
     filename = 'ncbi_dataset.zip' # str | Output file name. (optional) (default to 'ncbi_dataset.zip')
@@ -69,7 +69,7 @@ with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **accessions** | [**List[str]**](str.md)| One or more RefSeq non-redundant protein accessions (preceded by &#x60;WP_&#x60;) | 
- **include_annotation_type** | [**List[V2Fasta]**](V2Fasta.md)| Specify which sequence files to include in the data package. | [optional] 
+ **include_annotation_type** | [**List[V2Fasta]**](V2Fasta.md)| Specify which sequence files to include in the data package. Note that RNA, CDS, 5&#39; UTR and 3&#39; UTR sequences are not available for WP_ accessions | [optional] 
  **gene_flank_config_length** | **int**|  | [optional] 
  **taxon** | **str**| Limit gene sequences and the genome assemblies described by the [annotation report file](https://www.ncbi.nlm.nih.gov/datasets/docs/v2/reference-docs/data-reports/prokaryote-gene-location/) to the specified NCBI Taxonomy ID or name (common or scientific) at any taxonomic rank. | [optional] 
  **filename** | **str**| Output file name. | [optional] [default to &#39;ncbi_dataset.zip&#39;]

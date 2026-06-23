@@ -1709,7 +1709,7 @@ configuration.api_key['ApiKeyAuthHeader'] = os.environ["API_KEY"]
 with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = ncbi.datasets.openapi.GeneApi(api_client)
-    gene_id = 2778 # int | One or more NCBI GeneIDs
+    gene_id = 2778 # int | A single NCBI GeneID
     returned_content = COMPLETE # V2OrthologRequestContentType | Return complete gene reports, or abbreviated reports with either GeneIDs only or GeneIDs, transcript and protein counts. (optional) (default to COMPLETE)
     taxon_filter = ['[\"9606\",\"10090\"]'] # List[str] | Limit to genes from the specified NCBI Taxonomy ID or name (common or scientific) at any taxonomic rank. (optional)
     page_size = 20 # int | The maximum number of gene reports to return. Default is 20 and maximum is 1000. If the number of results exceeds the page size, `page_token` can be used to retrieve the remaining results. (optional) (default to 20)
@@ -1731,7 +1731,7 @@ with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **gene_id** | **int**| One or more NCBI GeneIDs | 
+ **gene_id** | **int**| A single NCBI GeneID | 
  **returned_content** | [**V2OrthologRequestContentType**](.md)| Return complete gene reports, or abbreviated reports with either GeneIDs only or GeneIDs, transcript and protein counts. | [optional] [default to COMPLETE]
  **taxon_filter** | [**List[str]**](str.md)| Limit to genes from the specified NCBI Taxonomy ID or name (common or scientific) at any taxonomic rank. | [optional] 
  **page_size** | **int**| The maximum number of gene reports to return. Default is 20 and maximum is 1000. If the number of results exceeds the page size, &#x60;page_token&#x60; can be used to retrieve the remaining results. | [optional] [default to 20]

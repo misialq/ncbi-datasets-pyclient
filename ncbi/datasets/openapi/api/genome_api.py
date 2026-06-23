@@ -72,7 +72,7 @@ class GenomeApi:
     @validate_call
     def annotation_report_facets_by_accession(
         self,
-        accession: Annotated[StrictStr, Field(description="One or more genome assembly accessions, limited to 100")],
+        accession: Annotated[StrictStr, Field(description="A single genome assembly accession")],
         sort_field: Optional[StrictStr] = None,
         sort_direction: Optional[V2SortDirection] = None,
         _request_timeout: Union[
@@ -92,7 +92,7 @@ class GenomeApi:
 
         Get genome annotation report summary information by genome assembly accession in JSON format, including chromosome names and gene types.
 
-        :param accession: One or more genome assembly accessions, limited to 100 (required)
+        :param accession: A single genome assembly accession (required)
         :type accession: str
         :param sort_field:
         :type sort_field: str
@@ -147,7 +147,7 @@ class GenomeApi:
     @validate_call
     def annotation_report_facets_by_accession_with_http_info(
         self,
-        accession: Annotated[StrictStr, Field(description="One or more genome assembly accessions, limited to 100")],
+        accession: Annotated[StrictStr, Field(description="A single genome assembly accession")],
         sort_field: Optional[StrictStr] = None,
         sort_direction: Optional[V2SortDirection] = None,
         _request_timeout: Union[
@@ -167,7 +167,7 @@ class GenomeApi:
 
         Get genome annotation report summary information by genome assembly accession in JSON format, including chromosome names and gene types.
 
-        :param accession: One or more genome assembly accessions, limited to 100 (required)
+        :param accession: A single genome assembly accession (required)
         :type accession: str
         :param sort_field:
         :type sort_field: str
@@ -222,7 +222,7 @@ class GenomeApi:
     @validate_call
     def annotation_report_facets_by_accession_without_preload_content(
         self,
-        accession: Annotated[StrictStr, Field(description="One or more genome assembly accessions, limited to 100")],
+        accession: Annotated[StrictStr, Field(description="A single genome assembly accession")],
         sort_field: Optional[StrictStr] = None,
         sort_direction: Optional[V2SortDirection] = None,
         _request_timeout: Union[
@@ -242,7 +242,7 @@ class GenomeApi:
 
         Get genome annotation report summary information by genome assembly accession in JSON format, including chromosome names and gene types.
 
-        :param accession: One or more genome assembly accessions, limited to 100 (required)
+        :param accession: A single genome assembly accession (required)
         :type accession: str
         :param sort_field:
         :type sort_field: str
@@ -3417,7 +3417,7 @@ class GenomeApi:
     @validate_call
     def download_genome_annotation_package(
         self,
-        accession: Annotated[StrictStr, Field(description="One or more genome assembly accessions, limited to 100")],
+        accession: Annotated[StrictStr, Field(description="A single genome assembly accession")],
         annotation_ids: Annotated[Optional[List[StrictStr]], Field(description="Limit to one or more features annotated on the genome by specifying a number corresponding to a row_id (unstable).")] = None,
         symbols: Annotated[Optional[List[StrictStr]], Field(description="Limit to annotated features matching the given gene symbol (case-sensitive).")] = None,
         locations: Annotated[Optional[List[StrictStr]], Field(description="Limit to features annotated at a specific location on the genome, by specifying a chromosome name or accession and optional start-stop range.")] = None,
@@ -3444,7 +3444,7 @@ class GenomeApi:
 
         Download an annotation data package including sequence and a detailed annotation report by genome assembly accession.
 
-        :param accession: One or more genome assembly accessions, limited to 100 (required)
+        :param accession: A single genome assembly accession (required)
         :type accession: str
         :param annotation_ids: Limit to one or more features annotated on the genome by specifying a number corresponding to a row_id (unstable).
         :type annotation_ids: List[str]
@@ -3520,7 +3520,7 @@ class GenomeApi:
     @validate_call
     def download_genome_annotation_package_with_http_info(
         self,
-        accession: Annotated[StrictStr, Field(description="One or more genome assembly accessions, limited to 100")],
+        accession: Annotated[StrictStr, Field(description="A single genome assembly accession")],
         annotation_ids: Annotated[Optional[List[StrictStr]], Field(description="Limit to one or more features annotated on the genome by specifying a number corresponding to a row_id (unstable).")] = None,
         symbols: Annotated[Optional[List[StrictStr]], Field(description="Limit to annotated features matching the given gene symbol (case-sensitive).")] = None,
         locations: Annotated[Optional[List[StrictStr]], Field(description="Limit to features annotated at a specific location on the genome, by specifying a chromosome name or accession and optional start-stop range.")] = None,
@@ -3547,7 +3547,7 @@ class GenomeApi:
 
         Download an annotation data package including sequence and a detailed annotation report by genome assembly accession.
 
-        :param accession: One or more genome assembly accessions, limited to 100 (required)
+        :param accession: A single genome assembly accession (required)
         :type accession: str
         :param annotation_ids: Limit to one or more features annotated on the genome by specifying a number corresponding to a row_id (unstable).
         :type annotation_ids: List[str]
@@ -3623,7 +3623,7 @@ class GenomeApi:
     @validate_call
     def download_genome_annotation_package_without_preload_content(
         self,
-        accession: Annotated[StrictStr, Field(description="One or more genome assembly accessions, limited to 100")],
+        accession: Annotated[StrictStr, Field(description="A single genome assembly accession")],
         annotation_ids: Annotated[Optional[List[StrictStr]], Field(description="Limit to one or more features annotated on the genome by specifying a number corresponding to a row_id (unstable).")] = None,
         symbols: Annotated[Optional[List[StrictStr]], Field(description="Limit to annotated features matching the given gene symbol (case-sensitive).")] = None,
         locations: Annotated[Optional[List[StrictStr]], Field(description="Limit to features annotated at a specific location on the genome, by specifying a chromosome name or accession and optional start-stop range.")] = None,
@@ -3650,7 +3650,7 @@ class GenomeApi:
 
         Download an annotation data package including sequence and a detailed annotation report by genome assembly accession.
 
-        :param accession: One or more genome assembly accessions, limited to 100 (required)
+        :param accession: A single genome assembly accession (required)
         :type accession: str
         :param annotation_ids: Limit to one or more features annotated on the genome by specifying a number corresponding to a row_id (unstable).
         :type annotation_ids: List[str]
@@ -4130,7 +4130,7 @@ class GenomeApi:
     @validate_call
     def genome_annotation_download_summary(
         self,
-        accession: Annotated[StrictStr, Field(description="One or more genome assembly accessions, limited to 100")],
+        accession: Annotated[StrictStr, Field(description="A single genome assembly accession")],
         annotation_ids: Annotated[Optional[List[StrictStr]], Field(description="Limit to one or more features annotated on the genome by specifying a number corresponding to a row_id (unstable).")] = None,
         symbols: Annotated[Optional[List[StrictStr]], Field(description="Limit to annotated features matching the given gene symbol (case-sensitive).")] = None,
         locations: Annotated[Optional[List[StrictStr]], Field(description="Limit to features annotated at a specific location on the genome, by specifying a chromosome name or accession and optional start-stop range.")] = None,
@@ -4156,7 +4156,7 @@ class GenomeApi:
 
         Get a downlaod summary (preview) of a genome annotation data package, including counts and file sizes, in JSON format.
 
-        :param accession: One or more genome assembly accessions, limited to 100 (required)
+        :param accession: A single genome assembly accession (required)
         :type accession: str
         :param annotation_ids: Limit to one or more features annotated on the genome by specifying a number corresponding to a row_id (unstable).
         :type annotation_ids: List[str]
@@ -4229,7 +4229,7 @@ class GenomeApi:
     @validate_call
     def genome_annotation_download_summary_with_http_info(
         self,
-        accession: Annotated[StrictStr, Field(description="One or more genome assembly accessions, limited to 100")],
+        accession: Annotated[StrictStr, Field(description="A single genome assembly accession")],
         annotation_ids: Annotated[Optional[List[StrictStr]], Field(description="Limit to one or more features annotated on the genome by specifying a number corresponding to a row_id (unstable).")] = None,
         symbols: Annotated[Optional[List[StrictStr]], Field(description="Limit to annotated features matching the given gene symbol (case-sensitive).")] = None,
         locations: Annotated[Optional[List[StrictStr]], Field(description="Limit to features annotated at a specific location on the genome, by specifying a chromosome name or accession and optional start-stop range.")] = None,
@@ -4255,7 +4255,7 @@ class GenomeApi:
 
         Get a downlaod summary (preview) of a genome annotation data package, including counts and file sizes, in JSON format.
 
-        :param accession: One or more genome assembly accessions, limited to 100 (required)
+        :param accession: A single genome assembly accession (required)
         :type accession: str
         :param annotation_ids: Limit to one or more features annotated on the genome by specifying a number corresponding to a row_id (unstable).
         :type annotation_ids: List[str]
@@ -4328,7 +4328,7 @@ class GenomeApi:
     @validate_call
     def genome_annotation_download_summary_without_preload_content(
         self,
-        accession: Annotated[StrictStr, Field(description="One or more genome assembly accessions, limited to 100")],
+        accession: Annotated[StrictStr, Field(description="A single genome assembly accession")],
         annotation_ids: Annotated[Optional[List[StrictStr]], Field(description="Limit to one or more features annotated on the genome by specifying a number corresponding to a row_id (unstable).")] = None,
         symbols: Annotated[Optional[List[StrictStr]], Field(description="Limit to annotated features matching the given gene symbol (case-sensitive).")] = None,
         locations: Annotated[Optional[List[StrictStr]], Field(description="Limit to features annotated at a specific location on the genome, by specifying a chromosome name or accession and optional start-stop range.")] = None,
@@ -4354,7 +4354,7 @@ class GenomeApi:
 
         Get a downlaod summary (preview) of a genome annotation data package, including counts and file sizes, in JSON format.
 
-        :param accession: One or more genome assembly accessions, limited to 100 (required)
+        :param accession: A single genome assembly accession (required)
         :type accession: str
         :param annotation_ids: Limit to one or more features annotated on the genome by specifying a number corresponding to a row_id (unstable).
         :type annotation_ids: List[str]
@@ -4809,7 +4809,7 @@ class GenomeApi:
     @validate_call
     def genome_annotation_report(
         self,
-        accession: Annotated[StrictStr, Field(description="One or more genome assembly accessions, limited to 100")],
+        accession: Annotated[StrictStr, Field(description="A single genome assembly accession")],
         annotation_ids: Annotated[Optional[List[StrictStr]], Field(description="Limit to one or more features annotated on the genome by specifying a number corresponding to a row_id (unstable).")] = None,
         symbols: Annotated[Optional[List[StrictStr]], Field(description="Limit to annotated features matching the given gene symbol (case-sensitive).")] = None,
         locations: Annotated[Optional[List[StrictStr]], Field(description="Limit to features annotated at a specific location on the genome, by specifying a chromosome name or accession and optional start-stop range.")] = None,
@@ -4838,7 +4838,7 @@ class GenomeApi:
 
         Get genome annotation reports by genome assembly accession, where each report represents a single feature annotated on the genome. By default, in paged JSON format, but also available in tabular (accept: text/tab-separated-values) or JSON Lines (accept: application/x-ndjson) formats.
 
-        :param accession: One or more genome assembly accessions, limited to 100 (required)
+        :param accession: A single genome assembly accession (required)
         :type accession: str
         :param annotation_ids: Limit to one or more features annotated on the genome by specifying a number corresponding to a row_id (unstable).
         :type annotation_ids: List[str]
@@ -4920,7 +4920,7 @@ class GenomeApi:
     @validate_call
     def genome_annotation_report_with_http_info(
         self,
-        accession: Annotated[StrictStr, Field(description="One or more genome assembly accessions, limited to 100")],
+        accession: Annotated[StrictStr, Field(description="A single genome assembly accession")],
         annotation_ids: Annotated[Optional[List[StrictStr]], Field(description="Limit to one or more features annotated on the genome by specifying a number corresponding to a row_id (unstable).")] = None,
         symbols: Annotated[Optional[List[StrictStr]], Field(description="Limit to annotated features matching the given gene symbol (case-sensitive).")] = None,
         locations: Annotated[Optional[List[StrictStr]], Field(description="Limit to features annotated at a specific location on the genome, by specifying a chromosome name or accession and optional start-stop range.")] = None,
@@ -4949,7 +4949,7 @@ class GenomeApi:
 
         Get genome annotation reports by genome assembly accession, where each report represents a single feature annotated on the genome. By default, in paged JSON format, but also available in tabular (accept: text/tab-separated-values) or JSON Lines (accept: application/x-ndjson) formats.
 
-        :param accession: One or more genome assembly accessions, limited to 100 (required)
+        :param accession: A single genome assembly accession (required)
         :type accession: str
         :param annotation_ids: Limit to one or more features annotated on the genome by specifying a number corresponding to a row_id (unstable).
         :type annotation_ids: List[str]
@@ -5031,7 +5031,7 @@ class GenomeApi:
     @validate_call
     def genome_annotation_report_without_preload_content(
         self,
-        accession: Annotated[StrictStr, Field(description="One or more genome assembly accessions, limited to 100")],
+        accession: Annotated[StrictStr, Field(description="A single genome assembly accession")],
         annotation_ids: Annotated[Optional[List[StrictStr]], Field(description="Limit to one or more features annotated on the genome by specifying a number corresponding to a row_id (unstable).")] = None,
         symbols: Annotated[Optional[List[StrictStr]], Field(description="Limit to annotated features matching the given gene symbol (case-sensitive).")] = None,
         locations: Annotated[Optional[List[StrictStr]], Field(description="Limit to features annotated at a specific location on the genome, by specifying a chromosome name or accession and optional start-stop range.")] = None,
@@ -5060,7 +5060,7 @@ class GenomeApi:
 
         Get genome annotation reports by genome assembly accession, where each report represents a single feature annotated on the genome. By default, in paged JSON format, but also available in tabular (accept: text/tab-separated-values) or JSON Lines (accept: application/x-ndjson) formats.
 
-        :param accession: One or more genome assembly accessions, limited to 100 (required)
+        :param accession: A single genome assembly accession (required)
         :type accession: str
         :param annotation_ids: Limit to one or more features annotated on the genome by specifying a number corresponding to a row_id (unstable).
         :type annotation_ids: List[str]
@@ -10994,7 +10994,7 @@ class GenomeApi:
     @validate_call
     def genome_sequence_report(
         self,
-        accession: Annotated[StrictStr, Field(description="One or more genome assembly accessions, limited to 100")],
+        accession: Annotated[StrictStr, Field(description="A single genome assembly accession")],
         chromosomes: Annotated[Optional[List[StrictStr]], Field(description="Limit to sequences with the specified chromosome names")] = None,
         role_filters: Annotated[Optional[List[StrictStr]], Field(description="Limit to sequences with the specified \"role\", where possible roles are `assembled-molecule`, `unlocalized-scaffold`, or `unplaced-scaffold`")] = None,
         table_fields: Optional[List[StrictStr]] = None,
@@ -11019,7 +11019,7 @@ class GenomeApi:
 
         Get a genome sequence report by genome assembly accession. By default, in paged JSON format, but also available in tabular (accept: text/tab-separated-values) or JSON Lines (accept: application/x-ndjson) formats.
 
-        :param accession: One or more genome assembly accessions, limited to 100 (required)
+        :param accession: A single genome assembly accession (required)
         :type accession: str
         :param chromosomes: Limit to sequences with the specified chromosome names
         :type chromosomes: List[str]
@@ -11089,7 +11089,7 @@ class GenomeApi:
     @validate_call
     def genome_sequence_report_with_http_info(
         self,
-        accession: Annotated[StrictStr, Field(description="One or more genome assembly accessions, limited to 100")],
+        accession: Annotated[StrictStr, Field(description="A single genome assembly accession")],
         chromosomes: Annotated[Optional[List[StrictStr]], Field(description="Limit to sequences with the specified chromosome names")] = None,
         role_filters: Annotated[Optional[List[StrictStr]], Field(description="Limit to sequences with the specified \"role\", where possible roles are `assembled-molecule`, `unlocalized-scaffold`, or `unplaced-scaffold`")] = None,
         table_fields: Optional[List[StrictStr]] = None,
@@ -11114,7 +11114,7 @@ class GenomeApi:
 
         Get a genome sequence report by genome assembly accession. By default, in paged JSON format, but also available in tabular (accept: text/tab-separated-values) or JSON Lines (accept: application/x-ndjson) formats.
 
-        :param accession: One or more genome assembly accessions, limited to 100 (required)
+        :param accession: A single genome assembly accession (required)
         :type accession: str
         :param chromosomes: Limit to sequences with the specified chromosome names
         :type chromosomes: List[str]
@@ -11184,7 +11184,7 @@ class GenomeApi:
     @validate_call
     def genome_sequence_report_without_preload_content(
         self,
-        accession: Annotated[StrictStr, Field(description="One or more genome assembly accessions, limited to 100")],
+        accession: Annotated[StrictStr, Field(description="A single genome assembly accession")],
         chromosomes: Annotated[Optional[List[StrictStr]], Field(description="Limit to sequences with the specified chromosome names")] = None,
         role_filters: Annotated[Optional[List[StrictStr]], Field(description="Limit to sequences with the specified \"role\", where possible roles are `assembled-molecule`, `unlocalized-scaffold`, or `unplaced-scaffold`")] = None,
         table_fields: Optional[List[StrictStr]] = None,
@@ -11209,7 +11209,7 @@ class GenomeApi:
 
         Get a genome sequence report by genome assembly accession. By default, in paged JSON format, but also available in tabular (accept: text/tab-separated-values) or JSON Lines (accept: application/x-ndjson) formats.
 
-        :param accession: One or more genome assembly accessions, limited to 100 (required)
+        :param accession: A single genome assembly accession (required)
         :type accession: str
         :param chromosomes: Limit to sequences with the specified chromosome names
         :type chromosomes: List[str]

@@ -43,7 +43,7 @@ class ProkaryoteApi:
     def download_prokaryote_gene_package(
         self,
         accessions: Annotated[List[StrictStr], Field(description="One or more RefSeq non-redundant protein accessions (preceded by `WP_`)")],
-        include_annotation_type: Annotated[Optional[List[V2Fasta]], Field(description="Specify which sequence files to include in the data package.")] = None,
+        include_annotation_type: Annotated[Optional[List[V2Fasta]], Field(description="Specify which sequence files to include in the data package. Note that RNA, CDS, 5' UTR and 3' UTR sequences are not available for WP_ accessions")] = None,
         gene_flank_config_length: Optional[StrictInt] = None,
         taxon: Annotated[Optional[StrictStr], Field(description="Limit gene sequences and the genome assemblies described by the [annotation report file](https://www.ncbi.nlm.nih.gov/datasets/docs/v2/reference-docs/data-reports/prokaryote-gene-location/) to the specified NCBI Taxonomy ID or name (common or scientific) at any taxonomic rank.")] = None,
         filename: Annotated[Optional[StrictStr], Field(description="Output file name.")] = None,
@@ -66,7 +66,7 @@ class ProkaryoteApi:
 
         :param accessions: One or more RefSeq non-redundant protein accessions (preceded by `WP_`) (required)
         :type accessions: List[str]
-        :param include_annotation_type: Specify which sequence files to include in the data package.
+        :param include_annotation_type: Specify which sequence files to include in the data package. Note that RNA, CDS, 5' UTR and 3' UTR sequences are not available for WP_ accessions
         :type include_annotation_type: List[V2Fasta]
         :param gene_flank_config_length:
         :type gene_flank_config_length: int
@@ -126,7 +126,7 @@ class ProkaryoteApi:
     def download_prokaryote_gene_package_with_http_info(
         self,
         accessions: Annotated[List[StrictStr], Field(description="One or more RefSeq non-redundant protein accessions (preceded by `WP_`)")],
-        include_annotation_type: Annotated[Optional[List[V2Fasta]], Field(description="Specify which sequence files to include in the data package.")] = None,
+        include_annotation_type: Annotated[Optional[List[V2Fasta]], Field(description="Specify which sequence files to include in the data package. Note that RNA, CDS, 5' UTR and 3' UTR sequences are not available for WP_ accessions")] = None,
         gene_flank_config_length: Optional[StrictInt] = None,
         taxon: Annotated[Optional[StrictStr], Field(description="Limit gene sequences and the genome assemblies described by the [annotation report file](https://www.ncbi.nlm.nih.gov/datasets/docs/v2/reference-docs/data-reports/prokaryote-gene-location/) to the specified NCBI Taxonomy ID or name (common or scientific) at any taxonomic rank.")] = None,
         filename: Annotated[Optional[StrictStr], Field(description="Output file name.")] = None,
@@ -149,7 +149,7 @@ class ProkaryoteApi:
 
         :param accessions: One or more RefSeq non-redundant protein accessions (preceded by `WP_`) (required)
         :type accessions: List[str]
-        :param include_annotation_type: Specify which sequence files to include in the data package.
+        :param include_annotation_type: Specify which sequence files to include in the data package. Note that RNA, CDS, 5' UTR and 3' UTR sequences are not available for WP_ accessions
         :type include_annotation_type: List[V2Fasta]
         :param gene_flank_config_length:
         :type gene_flank_config_length: int
@@ -209,7 +209,7 @@ class ProkaryoteApi:
     def download_prokaryote_gene_package_without_preload_content(
         self,
         accessions: Annotated[List[StrictStr], Field(description="One or more RefSeq non-redundant protein accessions (preceded by `WP_`)")],
-        include_annotation_type: Annotated[Optional[List[V2Fasta]], Field(description="Specify which sequence files to include in the data package.")] = None,
+        include_annotation_type: Annotated[Optional[List[V2Fasta]], Field(description="Specify which sequence files to include in the data package. Note that RNA, CDS, 5' UTR and 3' UTR sequences are not available for WP_ accessions")] = None,
         gene_flank_config_length: Optional[StrictInt] = None,
         taxon: Annotated[Optional[StrictStr], Field(description="Limit gene sequences and the genome assemblies described by the [annotation report file](https://www.ncbi.nlm.nih.gov/datasets/docs/v2/reference-docs/data-reports/prokaryote-gene-location/) to the specified NCBI Taxonomy ID or name (common or scientific) at any taxonomic rank.")] = None,
         filename: Annotated[Optional[StrictStr], Field(description="Output file name.")] = None,
@@ -232,7 +232,7 @@ class ProkaryoteApi:
 
         :param accessions: One or more RefSeq non-redundant protein accessions (preceded by `WP_`) (required)
         :type accessions: List[str]
-        :param include_annotation_type: Specify which sequence files to include in the data package.
+        :param include_annotation_type: Specify which sequence files to include in the data package. Note that RNA, CDS, 5' UTR and 3' UTR sequences are not available for WP_ accessions
         :type include_annotation_type: List[V2Fasta]
         :param gene_flank_config_length:
         :type gene_flank_config_length: int

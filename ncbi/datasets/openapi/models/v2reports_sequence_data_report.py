@@ -19,6 +19,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from ncbi.datasets.openapi.models.v2reports_error import V2reportsError
 from ncbi.datasets.openapi.models.v2reports_infraspecific_name import V2reportsInfraspecificName
 from ncbi.datasets.openapi.models.v2reports_publication import V2reportsPublication
 from ncbi.datasets.openapi.models.v2reports_sample_info import V2reportsSampleInfo
@@ -52,7 +53,8 @@ class V2reportsSequenceDataReport(BaseModel):
     specimen_voucher: Optional[V2reportsSpecimenVoucher] = None
     infraspecific_names: Optional[V2reportsInfraspecificName] = None
     sample_info: Optional[V2reportsSampleInfo] = None
-    __properties: ClassVar[List[str]] = ["accession", "organism_name", "length", "units", "molecule_type", "database_provider", "description", "source_mrna", "publication_date", "latest_update_date", "tax_id", "submissions", "publications", "bioproject_accession", "biosample_accessions", "origin_type", "specimen_voucher", "infraspecific_names", "sample_info"]
+    errors: Optional[List[V2reportsError]] = None
+    __properties: ClassVar[List[str]] = ["accession", "organism_name", "length", "units", "molecule_type", "database_provider", "description", "source_mrna", "publication_date", "latest_update_date", "tax_id", "submissions", "publications", "bioproject_accession", "biosample_accessions", "origin_type", "specimen_voucher", "infraspecific_names", "sample_info", "errors"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -116,6 +118,13 @@ class V2reportsSequenceDataReport(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of sample_info
         if self.sample_info:
             _dict['sample_info'] = self.sample_info.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of each item in errors (list)
+        _items = []
+        if self.errors:
+            for _item_errors in self.errors:
+                if _item_errors:
+                    _items.append(_item_errors.to_dict())
+            _dict['errors'] = _items
         return _dict
 
     @classmethod
@@ -146,7 +155,8 @@ class V2reportsSequenceDataReport(BaseModel):
             "origin_type": obj.get("origin_type") if obj.get("origin_type") is not None else V2reportsSequenceDataReportOriginType.UNKNOWN,
             "specimen_voucher": V2reportsSpecimenVoucher.from_dict(obj["specimen_voucher"]) if obj.get("specimen_voucher") is not None else None,
             "infraspecific_names": V2reportsInfraspecificName.from_dict(obj["infraspecific_names"]) if obj.get("infraspecific_names") is not None else None,
-            "sample_info": V2reportsSampleInfo.from_dict(obj["sample_info"]) if obj.get("sample_info") is not None else None
+            "sample_info": V2reportsSampleInfo.from_dict(obj["sample_info"]) if obj.get("sample_info") is not None else None,
+            "errors": [V2reportsError.from_dict(_item) for _item in obj["errors"]] if obj.get("errors") is not None else None
         })
         return _obj
 
