@@ -17,21 +17,21 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
+from ncbi.datasets.openapi.models.v2reports_book import V2reportsBook
+from ncbi.datasets.openapi.models.v2reports_meeting import V2reportsMeeting
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
 
-class V2reportsSubmission(BaseModel):
+class V2reportsProceedings(BaseModel):
     """
-    V2reportsSubmission
+    V2reportsProceedings
     """ # noqa: E501
-    var_date: Optional[StrictStr] = Field(default=None, alias="date")
-    institution: Optional[StrictStr] = None
-    address: Optional[StrictStr] = None
-    authors: Optional[List[StrictStr]] = None
-    __properties: ClassVar[List[str]] = ["date", "institution", "address", "authors"]
+    meeting: Optional[V2reportsMeeting] = None
+    book: Optional[V2reportsBook] = None
+    __properties: ClassVar[List[str]] = ["meeting", "book"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -51,7 +51,7 @@ class V2reportsSubmission(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of V2reportsSubmission from a JSON string"""
+        """Create an instance of V2reportsProceedings from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -72,11 +72,17 @@ class V2reportsSubmission(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of meeting
+        if self.meeting:
+            _dict['meeting'] = self.meeting.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of book
+        if self.book:
+            _dict['book'] = self.book.to_dict()
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of V2reportsSubmission from a dict"""
+        """Create an instance of V2reportsProceedings from a dict"""
         if obj is None:
             return None
 
@@ -84,10 +90,8 @@ class V2reportsSubmission(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "date": obj.get("date"),
-            "institution": obj.get("institution"),
-            "address": obj.get("address"),
-            "authors": obj.get("authors")
+            "meeting": V2reportsMeeting.from_dict(obj["meeting"]) if obj.get("meeting") is not None else None,
+            "book": V2reportsBook.from_dict(obj["book"]) if obj.get("book") is not None else None
         })
         return _obj
 

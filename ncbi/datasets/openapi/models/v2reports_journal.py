@@ -17,21 +17,27 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from ncbi.datasets.openapi.models.v2reports_author import V2reportsAuthor
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
 
-class V2reportsSubmission(BaseModel):
+class V2reportsJournal(BaseModel):
     """
-    V2reportsSubmission
+    V2reportsJournal
     """ # noqa: E501
+    pmid: Optional[StrictInt] = None
+    pmcid: Optional[StrictStr] = None
+    doi: Optional[StrictStr] = None
     var_date: Optional[StrictStr] = Field(default=None, alias="date")
-    institution: Optional[StrictStr] = None
-    address: Optional[StrictStr] = None
-    authors: Optional[List[StrictStr]] = None
-    __properties: ClassVar[List[str]] = ["date", "institution", "address", "authors"]
+    journal_name: Optional[StrictStr] = None
+    volume: Optional[StrictStr] = None
+    issue: Optional[StrictStr] = None
+    pages: Optional[StrictStr] = None
+    authors: Optional[List[V2reportsAuthor]] = None
+    __properties: ClassVar[List[str]] = ["pmid", "pmcid", "doi", "date", "journal_name", "volume", "issue", "pages", "authors"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -51,7 +57,7 @@ class V2reportsSubmission(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of V2reportsSubmission from a JSON string"""
+        """Create an instance of V2reportsJournal from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -72,11 +78,18 @@ class V2reportsSubmission(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of each item in authors (list)
+        _items = []
+        if self.authors:
+            for _item_authors in self.authors:
+                if _item_authors:
+                    _items.append(_item_authors.to_dict())
+            _dict['authors'] = _items
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of V2reportsSubmission from a dict"""
+        """Create an instance of V2reportsJournal from a dict"""
         if obj is None:
             return None
 
@@ -84,10 +97,15 @@ class V2reportsSubmission(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "pmid": obj.get("pmid"),
+            "pmcid": obj.get("pmcid"),
+            "doi": obj.get("doi"),
             "date": obj.get("date"),
-            "institution": obj.get("institution"),
-            "address": obj.get("address"),
-            "authors": obj.get("authors")
+            "journal_name": obj.get("journal_name"),
+            "volume": obj.get("volume"),
+            "issue": obj.get("issue"),
+            "pages": obj.get("pages"),
+            "authors": [V2reportsAuthor.from_dict(_item) for _item in obj["authors"]] if obj.get("authors") is not None else None
         })
         return _obj
 

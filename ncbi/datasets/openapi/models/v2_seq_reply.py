@@ -33,7 +33,9 @@ class V2SeqReply(BaseModel):
     mol_type: Optional[V2MolType] = V2MolType.MOL_UNSPECIFIED
     defline: Optional[StrictStr] = None
     sequence: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["accession", "seq_length", "mol_type", "defline", "sequence"]
+    begin: Optional[StrictStr] = None
+    end: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["accession", "seq_length", "mol_type", "defline", "sequence", "begin", "end"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -90,7 +92,9 @@ class V2SeqReply(BaseModel):
             "seq_length": obj.get("seq_length"),
             "mol_type": obj.get("mol_type") if obj.get("mol_type") is not None else V2MolType.MOL_UNSPECIFIED,
             "defline": obj.get("defline"),
-            "sequence": obj.get("sequence")
+            "sequence": obj.get("sequence"),
+            "begin": obj.get("begin"),
+            "end": obj.get("end")
         })
         return _obj
 

@@ -177,6 +177,7 @@ from ncbi.datasets.openapi.models.v2reports_ani_type_category import V2reportsAN
 from ncbi.datasets.openapi.models.v2reports_additional_submitter import V2reportsAdditionalSubmitter
 from ncbi.datasets.openapi.models.v2reports_annotation import V2reportsAnnotation
 from ncbi.datasets.openapi.models.v2reports_annotation_info import V2reportsAnnotationInfo
+from ncbi.datasets.openapi.models.v2reports_article import V2reportsArticle
 from ncbi.datasets.openapi.models.v2reports_assembly_data_report import V2reportsAssemblyDataReport
 from ncbi.datasets.openapi.models.v2reports_assembly_data_report_page import V2reportsAssemblyDataReportPage
 from ncbi.datasets.openapi.models.v2reports_assembly_info import V2reportsAssemblyInfo
@@ -203,6 +204,7 @@ from ncbi.datasets.openapi.models.v2reports_bio_sample_status import V2reportsBi
 from ncbi.datasets.openapi.models.v2reports_biocollection import V2reportsBiocollection
 from ncbi.datasets.openapi.models.v2reports_biocollection_institution import V2reportsBiocollectionInstitution
 from ncbi.datasets.openapi.models.v2reports_biocollections_report_page import V2reportsBiocollectionsReportPage
+from ncbi.datasets.openapi.models.v2reports_book import V2reportsBook
 from ncbi.datasets.openapi.models.v2reports_busco_stat import V2reportsBuscoStat
 from ncbi.datasets.openapi.models.v2reports_check_m import V2reportsCheckM
 from ncbi.datasets.openapi.models.v2reports_classification import V2reportsClassification
@@ -231,6 +233,7 @@ from ncbi.datasets.openapi.models.v2reports_gene_neighbors_reports import V2repo
 from ncbi.datasets.openapi.models.v2reports_gene_ontology import V2reportsGeneOntology
 from ncbi.datasets.openapi.models.v2reports_gene_report_match import V2reportsGeneReportMatch
 from ncbi.datasets.openapi.models.v2reports_gene_summary import V2reportsGeneSummary
+from ncbi.datasets.openapi.models.v2reports_general import V2reportsGeneral
 from ncbi.datasets.openapi.models.v2reports_genome_annotation import V2reportsGenomeAnnotation
 from ncbi.datasets.openapi.models.v2reports_genome_annotation_report_match import V2reportsGenomeAnnotationReportMatch
 from ncbi.datasets.openapi.models.v2reports_genome_annotation_report_page import V2reportsGenomeAnnotationReportPage
@@ -241,12 +244,16 @@ from ncbi.datasets.openapi.models.v2reports_get_biocollections_report import V2r
 from ncbi.datasets.openapi.models.v2reports_infraspecific_name import V2reportsInfraspecificName
 from ncbi.datasets.openapi.models.v2reports_infraspecific_names import V2reportsInfraspecificNames
 from ncbi.datasets.openapi.models.v2reports_isolate import V2reportsIsolate
+from ncbi.datasets.openapi.models.v2reports_journal import V2reportsJournal
 from ncbi.datasets.openapi.models.v2reports_lineage_organism import V2reportsLineageOrganism
 from ncbi.datasets.openapi.models.v2reports_linked_assembly import V2reportsLinkedAssembly
 from ncbi.datasets.openapi.models.v2reports_linked_assembly_type import V2reportsLinkedAssemblyType
 from ncbi.datasets.openapi.models.v2reports_map_location import V2reportsMapLocation
 from ncbi.datasets.openapi.models.v2reports_map_location_map_type import V2reportsMapLocationMapType
 from ncbi.datasets.openapi.models.v2reports_mature_peptide import V2reportsMaturePeptide
+from ncbi.datasets.openapi.models.v2reports_medline import V2reportsMedline
+from ncbi.datasets.openapi.models.v2reports_medline_status import V2reportsMedlineStatus
+from ncbi.datasets.openapi.models.v2reports_meeting import V2reportsMeeting
 from ncbi.datasets.openapi.models.v2reports_message import V2reportsMessage
 from ncbi.datasets.openapi.models.v2reports_name_and_authority import V2reportsNameAndAuthority
 from ncbi.datasets.openapi.models.v2reports_name_and_authority_note import V2reportsNameAndAuthorityNote
@@ -263,6 +270,8 @@ from ncbi.datasets.openapi.models.v2reports_organelle_type import V2reportsOrgan
 from ncbi.datasets.openapi.models.v2reports_organism import V2reportsOrganism
 from ncbi.datasets.openapi.models.v2reports_orientation import V2reportsOrientation
 from ncbi.datasets.openapi.models.v2reports_paired_assembly import V2reportsPairedAssembly
+from ncbi.datasets.openapi.models.v2reports_patent import V2reportsPatent
+from ncbi.datasets.openapi.models.v2reports_proceedings import V2reportsProceedings
 from ncbi.datasets.openapi.models.v2reports_process_metadata import V2reportsProcessMetadata
 from ncbi.datasets.openapi.models.v2reports_product_descriptor import V2reportsProductDescriptor
 from ncbi.datasets.openapi.models.v2reports_prokaryote_gene_location_completeness import V2reportsProkaryoteGeneLocationCompleteness
@@ -271,7 +280,6 @@ from ncbi.datasets.openapi.models.v2reports_protein_conserved_domain import V2re
 from ncbi.datasets.openapi.models.v2reports_protein_data_report import V2reportsProteinDataReport
 from ncbi.datasets.openapi.models.v2reports_protein_data_report_page import V2reportsProteinDataReportPage
 from ncbi.datasets.openapi.models.v2reports_protein_family import V2reportsProteinFamily
-from ncbi.datasets.openapi.models.v2reports_publication import V2reportsPublication
 from ncbi.datasets.openapi.models.v2reports_purpose_of_sampling import V2reportsPurposeOfSampling
 from ncbi.datasets.openapi.models.v2reports_range import V2reportsRange
 from ncbi.datasets.openapi.models.v2reports_rank_type import V2reportsRankType
@@ -281,10 +289,12 @@ from ncbi.datasets.openapi.models.v2reports_sample_info import V2reportsSampleIn
 from ncbi.datasets.openapi.models.v2reports_seq_range_set import V2reportsSeqRangeSet
 from ncbi.datasets.openapi.models.v2reports_seq_range_set_fasta import V2reportsSeqRangeSetFasta
 from ncbi.datasets.openapi.models.v2reports_sequence_data_report import V2reportsSequenceDataReport
+from ncbi.datasets.openapi.models.v2reports_sequence_data_report_genome_type import V2reportsSequenceDataReportGenomeType
 from ncbi.datasets.openapi.models.v2reports_sequence_data_report_origin_type import V2reportsSequenceDataReportOriginType
 from ncbi.datasets.openapi.models.v2reports_sequence_data_report_page import V2reportsSequenceDataReportPage
 from ncbi.datasets.openapi.models.v2reports_sequence_info import V2reportsSequenceInfo
 from ncbi.datasets.openapi.models.v2reports_sequence_information import V2reportsSequenceInformation
+from ncbi.datasets.openapi.models.v2reports_sequence_reference import V2reportsSequenceReference
 from ncbi.datasets.openapi.models.v2reports_source_database import V2reportsSourceDatabase
 from ncbi.datasets.openapi.models.v2reports_specimen_voucher import V2reportsSpecimenVoucher
 from ncbi.datasets.openapi.models.v2reports_submission import V2reportsSubmission
@@ -298,6 +308,8 @@ from ncbi.datasets.openapi.models.v2reports_taxonomy_node import V2reportsTaxono
 from ncbi.datasets.openapi.models.v2reports_taxonomy_node_count_by_type import V2reportsTaxonomyNodeCountByType
 from ncbi.datasets.openapi.models.v2reports_taxonomy_report_match import V2reportsTaxonomyReportMatch
 from ncbi.datasets.openapi.models.v2reports_taxonomy_type_material import V2reportsTaxonomyTypeMaterial
+from ncbi.datasets.openapi.models.v2reports_thesis import V2reportsThesis
+from ncbi.datasets.openapi.models.v2reports_thesis_type import V2reportsThesisType
 from ncbi.datasets.openapi.models.v2reports_transcript import V2reportsTranscript
 from ncbi.datasets.openapi.models.v2reports_transcript_select_category import V2reportsTranscriptSelectCategory
 from ncbi.datasets.openapi.models.v2reports_transcript_transcript_type import V2reportsTranscriptTranscriptType

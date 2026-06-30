@@ -10,6 +10,8 @@ Name | Type | Description | Notes
 **mol_type** | [**V2MolType**](V2MolType.md) |  | [optional] [default to V2MolType.MOL_UNSPECIFIED]
 **defline** | **str** |  | [optional] 
 **sequence** | **str** |  | [optional] 
+**begin** | **str** |  | [optional] 
+**end** | **str** |  | [optional] 
 
 ## Example
 

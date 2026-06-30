@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **var_date** | **str** |  | [optional] 
 **institution** | **str** |  | [optional] 
 **address** | **str** |  | [optional] 
-**names** | **List[str]** |  | [optional] 
+**authors** | **List[str]** |  | [optional] 
 
 ## Example
 
