@@ -20,6 +20,7 @@ import json
 from pydantic import BaseModel, ConfigDict, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from ncbi.datasets.openapi.models.v2reports_classification import V2reportsClassification
+from ncbi.datasets.openapi.models.v2reports_genetic_codes import V2reportsGeneticCodes
 from ncbi.datasets.openapi.models.v2reports_name_and_authority import V2reportsNameAndAuthority
 from ncbi.datasets.openapi.models.v2reports_rank_type import V2reportsRankType
 from ncbi.datasets.openapi.models.v2reports_taxonomy_node_count_by_type import V2reportsTaxonomyNodeCountByType
@@ -46,7 +47,8 @@ class V2reportsTaxonomyNode(BaseModel):
     current_scientific_name_is_formal: Optional[StrictBool] = None
     secondary_tax_ids: Optional[List[StrictInt]] = None
     extinct: Optional[StrictBool] = None
-    __properties: ClassVar[List[str]] = ["tax_id", "rank", "current_scientific_name", "basionym", "curator_common_name", "group_name", "has_type_material", "classification", "parents", "children", "counts", "genomic_moltype", "current_scientific_name_is_formal", "secondary_tax_ids", "extinct"]
+    genetic_code: Optional[V2reportsGeneticCodes] = None
+    __properties: ClassVar[List[str]] = ["tax_id", "rank", "current_scientific_name", "basionym", "curator_common_name", "group_name", "has_type_material", "classification", "parents", "children", "counts", "genomic_moltype", "current_scientific_name_is_formal", "secondary_tax_ids", "extinct", "genetic_code"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -103,6 +105,9 @@ class V2reportsTaxonomyNode(BaseModel):
                 if _item_counts:
                     _items.append(_item_counts.to_dict())
             _dict['counts'] = _items
+        # override the default output from pydantic by calling `to_dict()` of genetic_code
+        if self.genetic_code:
+            _dict['genetic_code'] = self.genetic_code.to_dict()
         return _dict
 
     @classmethod
@@ -129,7 +134,8 @@ class V2reportsTaxonomyNode(BaseModel):
             "genomic_moltype": obj.get("genomic_moltype"),
             "current_scientific_name_is_formal": obj.get("current_scientific_name_is_formal"),
             "secondary_tax_ids": obj.get("secondary_tax_ids"),
-            "extinct": obj.get("extinct")
+            "extinct": obj.get("extinct"),
+            "genetic_code": V2reportsGeneticCodes.from_dict(obj["genetic_code"]) if obj.get("genetic_code") is not None else None
         })
         return _obj
 

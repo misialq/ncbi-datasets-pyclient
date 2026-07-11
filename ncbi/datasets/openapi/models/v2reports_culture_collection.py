@@ -17,20 +17,19 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictInt
+from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from ncbi.datasets.openapi.models.v2reports_sequence_data_report_match import V2reportsSequenceDataReportMatch
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
 
-class V2reportsSequenceDataReportPage(BaseModel):
+class V2reportsCultureCollection(BaseModel):
     """
-    V2reportsSequenceDataReportPage
+    V2reportsCultureCollection
     """ # noqa: E501
-    reports: Optional[List[V2reportsSequenceDataReportMatch]] = None
-    total_count: Optional[StrictInt] = None
-    __properties: ClassVar[List[str]] = ["reports", "total_count"]
+    id: Optional[StrictInt] = None
+    biocollection_code: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["id", "biocollection_code"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -50,7 +49,7 @@ class V2reportsSequenceDataReportPage(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of V2reportsSequenceDataReportPage from a JSON string"""
+        """Create an instance of V2reportsCultureCollection from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -71,18 +70,11 @@ class V2reportsSequenceDataReportPage(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of each item in reports (list)
-        _items = []
-        if self.reports:
-            for _item_reports in self.reports:
-                if _item_reports:
-                    _items.append(_item_reports.to_dict())
-            _dict['reports'] = _items
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of V2reportsSequenceDataReportPage from a dict"""
+        """Create an instance of V2reportsCultureCollection from a dict"""
         if obj is None:
             return None
 
@@ -90,8 +82,8 @@ class V2reportsSequenceDataReportPage(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "reports": [V2reportsSequenceDataReportMatch.from_dict(_item) for _item in obj["reports"]] if obj.get("reports") is not None else None,
-            "total_count": obj.get("total_count")
+            "id": obj.get("id"),
+            "biocollection_code": obj.get("biocollection_code")
         })
         return _obj
 

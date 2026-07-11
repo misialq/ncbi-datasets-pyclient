@@ -76,7 +76,7 @@ configuration.api_key['ApiKeyAuthHeader'] = os.environ["API_KEY"]
 with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = ncbi.datasets.openapi.GenomeApi(api_client)
-    accession = 'GCF_000001635.27' # str | A single genome assembly accession
+    accession = 'GCF_058215675.1' # str | A single genome assembly accession
     sort_field = 'sort_field_example' # str |  (optional)
     sort_direction = SORT_DIRECTION_UNSPECIFIED # V2SortDirection |  (optional) (default to SORT_DIRECTION_UNSPECIFIED)
 
@@ -161,7 +161,7 @@ configuration.api_key['ApiKeyAuthHeader'] = os.environ["API_KEY"]
 with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = ncbi.datasets.openapi.GenomeApi(api_client)
-    v2_genome_annotation_request = {"accession":"GCF_000001635.27"} # V2GenomeAnnotationRequest | 
+    v2_genome_annotation_request = {"accession":"GCF_000001635.27","page_size":20} # V2GenomeAnnotationRequest | 
 
     try:
         # Get genome annotation report summary information by genome assembly accession
@@ -1057,10 +1057,10 @@ configuration.api_key['ApiKeyAuthHeader'] = os.environ["API_KEY"]
 with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = ncbi.datasets.openapi.GenomeApi(api_client)
-    accession = 'GCF_000001635.27' # str | A single genome assembly accession
+    accession = 'GCF_058215675.1' # str | A single genome assembly accession
     annotation_ids = ['1'] # List[str] | Limit to one or more features annotated on the genome by specifying a number corresponding to a row_id (unstable). (optional)
-    symbols = ['Qsox1'] # List[str] | Limit to annotated features matching the given gene symbol (case-sensitive). (optional)
-    locations = ['1:1-1000'] # List[str] | Limit to features annotated at a specific location on the genome, by specifying a chromosome name or accession and optional start-stop range. (optional)
+    symbols = ['feuC'] # List[str] | Limit to annotated features matching the given gene symbol (case-sensitive). (optional)
+    locations = ['NZ_CM177093.1:1-10000'] # List[str] | Limit to features annotated at a specific location on the genome, by specifying a chromosome name or accession and optional start-stop range. (optional)
     gene_types = ['protein-coding'] # List[str] | Limit to features of a specified gene locus type. (optional)
     search_text = ['kinase'] # List[str] | Limit to features that match the specified gene symbol, gene name or protein name. (optional)
     sort_field = 'sort_field_example' # str |  (optional)
@@ -1155,7 +1155,7 @@ configuration.api_key['ApiKeyAuthHeader'] = os.environ["API_KEY"]
 with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = ncbi.datasets.openapi.GenomeApi(api_client)
-    v2_genome_annotation_request = {"accession":"GCF_000001635.27"} # V2GenomeAnnotationRequest | 
+    v2_genome_annotation_request = {"accession":"GCF_000001635.27","page_size":20} # V2GenomeAnnotationRequest | 
     filename = 'ncbi_dataset.zip' # str | Output file name. (optional) (default to 'ncbi_dataset.zip')
 
     try:
@@ -1239,10 +1239,10 @@ configuration.api_key['ApiKeyAuthHeader'] = os.environ["API_KEY"]
 with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = ncbi.datasets.openapi.GenomeApi(api_client)
-    accession = 'GCF_000001635.27' # str | A single genome assembly accession
+    accession = 'GCF_058215675.1' # str | A single genome assembly accession
     annotation_ids = ['1'] # List[str] | Limit to one or more features annotated on the genome by specifying a number corresponding to a row_id (unstable). (optional)
-    symbols = ['Qsox1'] # List[str] | Limit to annotated features matching the given gene symbol (case-sensitive). (optional)
-    locations = ['1:1-1000'] # List[str] | Limit to features annotated at a specific location on the genome, by specifying a chromosome name or accession and optional start-stop range. (optional)
+    symbols = ['feuC'] # List[str] | Limit to annotated features matching the given gene symbol (case-sensitive). (optional)
+    locations = ['NZ_CM177093.1:1-10000'] # List[str] | Limit to features annotated at a specific location on the genome, by specifying a chromosome name or accession and optional start-stop range. (optional)
     gene_types = ['protein-coding'] # List[str] | Limit to features of a specified gene locus type. (optional)
     search_text = ['kinase'] # List[str] | Limit to features that match the specified gene symbol, gene name or protein name. (optional)
     sort_field = 'sort_field_example' # str |  (optional)
@@ -1336,7 +1336,7 @@ configuration.api_key['ApiKeyAuthHeader'] = os.environ["API_KEY"]
 with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = ncbi.datasets.openapi.GenomeApi(api_client)
-    v2_genome_annotation_request = {"accession":"GCF_000001635.27"} # V2GenomeAnnotationRequest | 
+    v2_genome_annotation_request = {"accession":"GCF_000001635.27","page_size":20} # V2GenomeAnnotationRequest | 
 
     try:
         # Get a download summary (preview) of a genome annotation data package by genome assembly accession
@@ -1419,10 +1419,10 @@ configuration.api_key['ApiKeyAuthHeader'] = os.environ["API_KEY"]
 with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = ncbi.datasets.openapi.GenomeApi(api_client)
-    accession = 'GCF_000001635.27' # str | A single genome assembly accession
+    accession = 'GCF_058215675.1' # str | A single genome assembly accession
     annotation_ids = ['1'] # List[str] | Limit to one or more features annotated on the genome by specifying a number corresponding to a row_id (unstable). (optional)
-    symbols = ['Qsox1'] # List[str] | Limit to annotated features matching the given gene symbol (case-sensitive). (optional)
-    locations = ['1:1-1000'] # List[str] | Limit to features annotated at a specific location on the genome, by specifying a chromosome name or accession and optional start-stop range. (optional)
+    symbols = ['feuC'] # List[str] | Limit to annotated features matching the given gene symbol (case-sensitive). (optional)
+    locations = ['NZ_CM177093.1:1-10000'] # List[str] | Limit to features annotated at a specific location on the genome, by specifying a chromosome name or accession and optional start-stop range. (optional)
     gene_types = ['protein-coding'] # List[str] | Limit to features of a specified gene locus type. (optional)
     search_text = ['kinase'] # List[str] | Limit to features that match the specified gene symbol, gene name or protein name. (optional)
     sort_field = 'sort_field_example' # str |  (optional)
@@ -1522,7 +1522,7 @@ configuration.api_key['ApiKeyAuthHeader'] = os.environ["API_KEY"]
 with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = ncbi.datasets.openapi.GenomeApi(api_client)
-    v2_genome_annotation_request = {"accession":"GCF_000001635.27"} # V2GenomeAnnotationRequest | 
+    v2_genome_annotation_request = {"accession":"GCF_000001635.27","page_size":20} # V2GenomeAnnotationRequest | 
 
     try:
         # Get genome annotation reports by genome assembly accession

@@ -14,7 +14,7 @@
 """  # noqa: E501
 
 
-__version__ = "v18.32.0"
+__version__ = "v18.33.1"
 
 # Define package exports
 __all__ = [
@@ -234,6 +234,7 @@ __all__ = [
     "V2reportsConservedDomain",
     "V2reportsContentType",
     "V2reportsCountType",
+    "V2reportsCultureCollection",
     "V2reportsError",
     "V2reportsErrorAssemblyErrorCode",
     "V2reportsErrorGeneErrorCode",
@@ -256,6 +257,8 @@ __all__ = [
     "V2reportsGeneReportMatch",
     "V2reportsGeneSummary",
     "V2reportsGeneral",
+    "V2reportsGeneticCode",
+    "V2reportsGeneticCodes",
     "V2reportsGenomeAnnotation",
     "V2reportsGenomeAnnotationReportMatch",
     "V2reportsGenomeAnnotationReportPage",
@@ -263,9 +266,10 @@ __all__ = [
     "V2reportsGenomicRegion",
     "V2reportsGenomicRegionGenomicRegionType",
     "V2reportsGetBiocollectionsReport",
-    "V2reportsInfraspecificName",
+    "V2reportsInfraspecificModifers",
     "V2reportsInfraspecificNames",
     "V2reportsIsolate",
+    "V2reportsIsolationDetails",
     "V2reportsJournal",
     "V2reportsLineageOrganism",
     "V2reportsLinkedAssembly",
@@ -312,11 +316,15 @@ __all__ = [
     "V2reportsSeqRangeSetFasta",
     "V2reportsSequenceDataReport",
     "V2reportsSequenceDataReportGenomeType",
+    "V2reportsSequenceDataReportMatch",
+    "V2reportsSequenceDataReportMoleculeType",
     "V2reportsSequenceDataReportOriginType",
     "V2reportsSequenceDataReportPage",
+    "V2reportsSequenceDataReportUnits",
     "V2reportsSequenceInfo",
     "V2reportsSequenceInformation",
     "V2reportsSequenceReference",
+    "V2reportsSequenceTypeMaterial",
     "V2reportsSourceDatabase",
     "V2reportsSpecimenVoucher",
     "V2reportsSubmission",
@@ -575,6 +583,7 @@ from ncbi.datasets.openapi.models.v2reports_collection_type import V2reportsColl
 from ncbi.datasets.openapi.models.v2reports_conserved_domain import V2reportsConservedDomain as V2reportsConservedDomain
 from ncbi.datasets.openapi.models.v2reports_content_type import V2reportsContentType as V2reportsContentType
 from ncbi.datasets.openapi.models.v2reports_count_type import V2reportsCountType as V2reportsCountType
+from ncbi.datasets.openapi.models.v2reports_culture_collection import V2reportsCultureCollection as V2reportsCultureCollection
 from ncbi.datasets.openapi.models.v2reports_error import V2reportsError as V2reportsError
 from ncbi.datasets.openapi.models.v2reports_error_assembly_error_code import V2reportsErrorAssemblyErrorCode as V2reportsErrorAssemblyErrorCode
 from ncbi.datasets.openapi.models.v2reports_error_gene_error_code import V2reportsErrorGeneErrorCode as V2reportsErrorGeneErrorCode
@@ -597,6 +606,8 @@ from ncbi.datasets.openapi.models.v2reports_gene_ontology import V2reportsGeneOn
 from ncbi.datasets.openapi.models.v2reports_gene_report_match import V2reportsGeneReportMatch as V2reportsGeneReportMatch
 from ncbi.datasets.openapi.models.v2reports_gene_summary import V2reportsGeneSummary as V2reportsGeneSummary
 from ncbi.datasets.openapi.models.v2reports_general import V2reportsGeneral as V2reportsGeneral
+from ncbi.datasets.openapi.models.v2reports_genetic_code import V2reportsGeneticCode as V2reportsGeneticCode
+from ncbi.datasets.openapi.models.v2reports_genetic_codes import V2reportsGeneticCodes as V2reportsGeneticCodes
 from ncbi.datasets.openapi.models.v2reports_genome_annotation import V2reportsGenomeAnnotation as V2reportsGenomeAnnotation
 from ncbi.datasets.openapi.models.v2reports_genome_annotation_report_match import V2reportsGenomeAnnotationReportMatch as V2reportsGenomeAnnotationReportMatch
 from ncbi.datasets.openapi.models.v2reports_genome_annotation_report_page import V2reportsGenomeAnnotationReportPage as V2reportsGenomeAnnotationReportPage
@@ -604,9 +615,10 @@ from ncbi.datasets.openapi.models.v2reports_genomic_location import V2reportsGen
 from ncbi.datasets.openapi.models.v2reports_genomic_region import V2reportsGenomicRegion as V2reportsGenomicRegion
 from ncbi.datasets.openapi.models.v2reports_genomic_region_genomic_region_type import V2reportsGenomicRegionGenomicRegionType as V2reportsGenomicRegionGenomicRegionType
 from ncbi.datasets.openapi.models.v2reports_get_biocollections_report import V2reportsGetBiocollectionsReport as V2reportsGetBiocollectionsReport
-from ncbi.datasets.openapi.models.v2reports_infraspecific_name import V2reportsInfraspecificName as V2reportsInfraspecificName
+from ncbi.datasets.openapi.models.v2reports_infraspecific_modifers import V2reportsInfraspecificModifers as V2reportsInfraspecificModifers
 from ncbi.datasets.openapi.models.v2reports_infraspecific_names import V2reportsInfraspecificNames as V2reportsInfraspecificNames
 from ncbi.datasets.openapi.models.v2reports_isolate import V2reportsIsolate as V2reportsIsolate
+from ncbi.datasets.openapi.models.v2reports_isolation_details import V2reportsIsolationDetails as V2reportsIsolationDetails
 from ncbi.datasets.openapi.models.v2reports_journal import V2reportsJournal as V2reportsJournal
 from ncbi.datasets.openapi.models.v2reports_lineage_organism import V2reportsLineageOrganism as V2reportsLineageOrganism
 from ncbi.datasets.openapi.models.v2reports_linked_assembly import V2reportsLinkedAssembly as V2reportsLinkedAssembly
@@ -653,11 +665,15 @@ from ncbi.datasets.openapi.models.v2reports_seq_range_set import V2reportsSeqRan
 from ncbi.datasets.openapi.models.v2reports_seq_range_set_fasta import V2reportsSeqRangeSetFasta as V2reportsSeqRangeSetFasta
 from ncbi.datasets.openapi.models.v2reports_sequence_data_report import V2reportsSequenceDataReport as V2reportsSequenceDataReport
 from ncbi.datasets.openapi.models.v2reports_sequence_data_report_genome_type import V2reportsSequenceDataReportGenomeType as V2reportsSequenceDataReportGenomeType
+from ncbi.datasets.openapi.models.v2reports_sequence_data_report_match import V2reportsSequenceDataReportMatch as V2reportsSequenceDataReportMatch
+from ncbi.datasets.openapi.models.v2reports_sequence_data_report_molecule_type import V2reportsSequenceDataReportMoleculeType as V2reportsSequenceDataReportMoleculeType
 from ncbi.datasets.openapi.models.v2reports_sequence_data_report_origin_type import V2reportsSequenceDataReportOriginType as V2reportsSequenceDataReportOriginType
 from ncbi.datasets.openapi.models.v2reports_sequence_data_report_page import V2reportsSequenceDataReportPage as V2reportsSequenceDataReportPage
+from ncbi.datasets.openapi.models.v2reports_sequence_data_report_units import V2reportsSequenceDataReportUnits as V2reportsSequenceDataReportUnits
 from ncbi.datasets.openapi.models.v2reports_sequence_info import V2reportsSequenceInfo as V2reportsSequenceInfo
 from ncbi.datasets.openapi.models.v2reports_sequence_information import V2reportsSequenceInformation as V2reportsSequenceInformation
 from ncbi.datasets.openapi.models.v2reports_sequence_reference import V2reportsSequenceReference as V2reportsSequenceReference
+from ncbi.datasets.openapi.models.v2reports_sequence_type_material import V2reportsSequenceTypeMaterial as V2reportsSequenceTypeMaterial
 from ncbi.datasets.openapi.models.v2reports_source_database import V2reportsSourceDatabase as V2reportsSourceDatabase
 from ncbi.datasets.openapi.models.v2reports_specimen_voucher import V2reportsSpecimenVoucher as V2reportsSpecimenVoucher
 from ncbi.datasets.openapi.models.v2reports_submission import V2reportsSubmission as V2reportsSubmission

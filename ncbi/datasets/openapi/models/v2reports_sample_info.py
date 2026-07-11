@@ -17,8 +17,9 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictBool, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from ncbi.datasets.openapi.models.v2reports_isolation_details import V2reportsIsolationDetails
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
@@ -37,22 +38,17 @@ class V2reportsSampleInfo(BaseModel):
     tissue: Optional[StrictStr] = None
     clone_lib: Optional[StrictStr] = None
     dev_stage: Optional[StrictStr] = None
-    lab_host: Optional[StrictStr] = None
     tissue_lib: Optional[StrictStr] = None
     geo_loc_name: Optional[StrictStr] = None
-    environmental_sample: Optional[StrictBool] = None
-    isolation_source: Optional[StrictStr] = None
     lat_lon: Optional[StrictStr] = None
     collection_date: Optional[StrictStr] = None
     collected_by: Optional[StrictStr] = None
     identified_by: Optional[StrictStr] = None
-    metagenomic: Optional[StrictBool] = None
     mating_type: Optional[StrictStr] = None
     phenotype: Optional[StrictStr] = None
     altitude: Optional[StrictStr] = None
-    metagenome_name: Optional[StrictStr] = None
-    metagenome_taxid: Optional[StrictInt] = None
-    __properties: ClassVar[List[str]] = ["clone", "subclone", "haplotype", "genotype", "sex", "cell_line", "cell_type", "tissue", "clone_lib", "dev_stage", "lab_host", "tissue_lib", "geo_loc_name", "environmental_sample", "isolation_source", "lat_lon", "collection_date", "collected_by", "identified_by", "metagenomic", "mating_type", "phenotype", "altitude", "metagenome_name", "metagenome_taxid"]
+    isolation_details: Optional[V2reportsIsolationDetails] = None
+    __properties: ClassVar[List[str]] = ["clone", "subclone", "haplotype", "genotype", "sex", "cell_line", "cell_type", "tissue", "clone_lib", "dev_stage", "tissue_lib", "geo_loc_name", "lat_lon", "collection_date", "collected_by", "identified_by", "mating_type", "phenotype", "altitude", "isolation_details"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -93,6 +89,9 @@ class V2reportsSampleInfo(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of isolation_details
+        if self.isolation_details:
+            _dict['isolation_details'] = self.isolation_details.to_dict()
         return _dict
 
     @classmethod
@@ -115,21 +114,16 @@ class V2reportsSampleInfo(BaseModel):
             "tissue": obj.get("tissue"),
             "clone_lib": obj.get("clone_lib"),
             "dev_stage": obj.get("dev_stage"),
-            "lab_host": obj.get("lab_host"),
             "tissue_lib": obj.get("tissue_lib"),
             "geo_loc_name": obj.get("geo_loc_name"),
-            "environmental_sample": obj.get("environmental_sample"),
-            "isolation_source": obj.get("isolation_source"),
             "lat_lon": obj.get("lat_lon"),
             "collection_date": obj.get("collection_date"),
             "collected_by": obj.get("collected_by"),
             "identified_by": obj.get("identified_by"),
-            "metagenomic": obj.get("metagenomic"),
             "mating_type": obj.get("mating_type"),
             "phenotype": obj.get("phenotype"),
             "altitude": obj.get("altitude"),
-            "metagenome_name": obj.get("metagenome_name"),
-            "metagenome_taxid": obj.get("metagenome_taxid")
+            "isolation_details": V2reportsIsolationDetails.from_dict(obj["isolation_details"]) if obj.get("isolation_details") is not None else None
         })
         return _obj
 

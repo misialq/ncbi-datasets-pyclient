@@ -8,8 +8,8 @@ Name | Type | Description | Notes
 **accession** | **str** |  | [optional] 
 **organism_name** | **str** |  | [optional] 
 **length** | **int** |  | [optional] 
-**units** | **str** |  | [optional] 
-**molecule_type** | **str** |  | [optional] 
+**units** | [**V2reportsSequenceDataReportUnits**](V2reportsSequenceDataReportUnits.md) |  | [optional] [default to V2reportsSequenceDataReportUnits.UNITS_UNSPECIFIED]
+**molecule_type** | [**V2reportsSequenceDataReportMoleculeType**](V2reportsSequenceDataReportMoleculeType.md) |  | [optional] [default to V2reportsSequenceDataReportMoleculeType.MOLECULE_TYPE_UNSPECIFIED]
 **database_provider** | **str** |  | [optional] 
 **description** | **str** |  | [optional] 
 **source_mrna** | **str** |  | [optional] 
@@ -19,11 +19,9 @@ Name | Type | Description | Notes
 **bioproject_accession** | **str** |  | [optional] 
 **biosample_accessions** | **List[str]** |  | [optional] 
 **origin_type** | [**V2reportsSequenceDataReportOriginType**](V2reportsSequenceDataReportOriginType.md) |  | [optional] [default to V2reportsSequenceDataReportOriginType.UNKNOWN]
-**specimen_voucher** | [**V2reportsSpecimenVoucher**](V2reportsSpecimenVoucher.md) |  | [optional] 
-**infraspecific_names** | [**V2reportsInfraspecificName**](V2reportsInfraspecificName.md) |  | [optional] 
+**infraspecific_modifiers** | [**V2reportsInfraspecificModifers**](V2reportsInfraspecificModifers.md) |  | [optional] 
 **sample_info** | [**V2reportsSampleInfo**](V2reportsSampleInfo.md) |  | [optional] 
 **genome_type** | [**V2reportsSequenceDataReportGenomeType**](V2reportsSequenceDataReportGenomeType.md) |  | [optional] [default to V2reportsSequenceDataReportGenomeType.GENOME_TYPE_UNKNOWN]
-**errors** | [**List[V2reportsError]**](V2reportsError.md) |  | [optional] 
 
 ## Example
 

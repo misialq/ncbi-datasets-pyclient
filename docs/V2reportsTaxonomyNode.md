@@ -20,6 +20,7 @@ Name | Type | Description | Notes
 **current_scientific_name_is_formal** | **bool** |  | [optional] 
 **secondary_tax_ids** | **List[int]** |  | [optional] 
 **extinct** | **bool** |  | [optional] 
+**genetic_code** | [**V2reportsGeneticCodes**](V2reportsGeneticCodes.md) |  | [optional] 
 
 ## Example
 

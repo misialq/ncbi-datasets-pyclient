@@ -17,20 +17,22 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictInt
+from pydantic import BaseModel, ConfigDict, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from ncbi.datasets.openapi.models.v2reports_sequence_data_report_match import V2reportsSequenceDataReportMatch
+from ncbi.datasets.openapi.models.v2reports_error import V2reportsError
+from ncbi.datasets.openapi.models.v2reports_sequence_data_report import V2reportsSequenceDataReport
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
 
-class V2reportsSequenceDataReportPage(BaseModel):
+class V2reportsSequenceDataReportMatch(BaseModel):
     """
-    V2reportsSequenceDataReportPage
+    V2reportsSequenceDataReportMatch
     """ # noqa: E501
-    reports: Optional[List[V2reportsSequenceDataReportMatch]] = None
-    total_count: Optional[StrictInt] = None
-    __properties: ClassVar[List[str]] = ["reports", "total_count"]
+    query: Optional[StrictStr] = None
+    report: Optional[V2reportsSequenceDataReport] = None
+    errors: Optional[List[V2reportsError]] = None
+    __properties: ClassVar[List[str]] = ["query", "report", "errors"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -50,7 +52,7 @@ class V2reportsSequenceDataReportPage(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of V2reportsSequenceDataReportPage from a JSON string"""
+        """Create an instance of V2reportsSequenceDataReportMatch from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -71,18 +73,21 @@ class V2reportsSequenceDataReportPage(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of each item in reports (list)
+        # override the default output from pydantic by calling `to_dict()` of report
+        if self.report:
+            _dict['report'] = self.report.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of each item in errors (list)
         _items = []
-        if self.reports:
-            for _item_reports in self.reports:
-                if _item_reports:
-                    _items.append(_item_reports.to_dict())
-            _dict['reports'] = _items
+        if self.errors:
+            for _item_errors in self.errors:
+                if _item_errors:
+                    _items.append(_item_errors.to_dict())
+            _dict['errors'] = _items
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of V2reportsSequenceDataReportPage from a dict"""
+        """Create an instance of V2reportsSequenceDataReportMatch from a dict"""
         if obj is None:
             return None
 
@@ -90,8 +95,9 @@ class V2reportsSequenceDataReportPage(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "reports": [V2reportsSequenceDataReportMatch.from_dict(_item) for _item in obj["reports"]] if obj.get("reports") is not None else None,
-            "total_count": obj.get("total_count")
+            "query": obj.get("query"),
+            "report": V2reportsSequenceDataReport.from_dict(obj["report"]) if obj.get("report") is not None else None,
+            "errors": [V2reportsError.from_dict(_item) for _item in obj["errors"]] if obj.get("errors") is not None else None
         })
         return _obj
 

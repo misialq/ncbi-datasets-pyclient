@@ -15,21 +15,16 @@ Name | Type | Description | Notes
 **tissue** | **str** |  | [optional] 
 **clone_lib** | **str** |  | [optional] 
 **dev_stage** | **str** |  | [optional] 
-**lab_host** | **str** |  | [optional] 
 **tissue_lib** | **str** |  | [optional] 
 **geo_loc_name** | **str** |  | [optional] 
-**environmental_sample** | **bool** |  | [optional] 
-**isolation_source** | **str** |  | [optional] 
 **lat_lon** | **str** |  | [optional] 
 **collection_date** | **str** |  | [optional] 
 **collected_by** | **str** |  | [optional] 
 **identified_by** | **str** |  | [optional] 
-**metagenomic** | **bool** |  | [optional] 
 **mating_type** | **str** |  | [optional] 
 **phenotype** | **str** |  | [optional] 
 **altitude** | **str** |  | [optional] 
-**metagenome_name** | **str** |  | [optional] 
-**metagenome_taxid** | **int** |  | [optional] 
+**isolation_details** | [**V2reportsIsolationDetails**](V2reportsIsolationDetails.md) |  | [optional] 
 
 ## Example
 

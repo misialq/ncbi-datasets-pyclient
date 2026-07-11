@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**reports** | [**List[V2reportsSequenceDataReport]**](V2reportsSequenceDataReport.md) |  | [optional] 
+**reports** | [**List[V2reportsSequenceDataReportMatch]**](V2reportsSequenceDataReportMatch.md) |  | [optional] 
 **total_count** | **int** |  | [optional] 
 
 ## Example
