@@ -574,16 +574,16 @@ with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = ncbi.datasets.openapi.GeneApi(api_client)
     accessions = ['NM_021803.4'] # List[str] | One or more RefSeq nucleotide or protein accessions
-    returned_content = COMPLETE # V2GeneDatasetReportsRequestContentType | Return complete gene reports, or abbreviated reports with either GeneIDs only or GeneIDs, transcript and protein counts. (optional) (default to COMPLETE)
+    returned_content = 'COMPLETE' # V2GeneDatasetReportsRequestContentType | Return complete gene reports, or abbreviated reports with either GeneIDs only or GeneIDs, transcript and protein counts. (optional) (default to 'COMPLETE')
     table_fields = ['[\"gene-id\",\"gene-type\",\"description\"]'] # List[str] | Specify which fields to include in the tabular report. Additional fields are described here: [Create a table from the gene data reports](https://www.ncbi.nlm.nih.gov/datasets/docs/v2/command-line-tools/using-dataformat/gene-data-reports/). Use of this parameter requires the HTTP header, `accept: text/tab-separated-values`. (optional)
     table_format = 'summary' # str | Specify a predefined set of fields for the tabular report using built-in templates. Use of this parameter requires the HTTP header, `accept: text/tab-separated-values`. (optional)
-    include_tabular_header = INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY # V2IncludeTabularHeader | Specify when to include the table header when requesting a tabular report. (optional) (default to INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY)
+    include_tabular_header = 'INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY' # V2IncludeTabularHeader | Specify when to include the table header when requesting a tabular report. (optional) (default to 'INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY')
     page_size = 20 # int | The maximum number of gene reports to return. Default is 20 and maximum is 1000. If the number of results exceeds the page size, `page_token` can be used to retrieve the remaining results. (optional) (default to 20)
     page_token = 'page_token_example' # str | A page token is returned when the results count exceeds `page size`. Use this token along with previous request parameters to retrieve the next page of results. When `page_token` is empty, all results have been retrieved. (optional)
     query = 'A2M immunoglobulin' # str | Limit to genes that match the specified gene symbol, name (description), alias, locus tag or protein name. (optional)
     types = [ncbi.datasets.openapi.V2GeneType()] # List[V2GeneType] | Limit to genes matching the specified gene type. (optional)
     sort_field = 'sort_field_example' # str |  (optional)
-    sort_direction = SORT_DIRECTION_UNSPECIFIED # V2SortDirection |  (optional) (default to SORT_DIRECTION_UNSPECIFIED)
+    sort_direction = 'SORT_DIRECTION_UNSPECIFIED' # V2SortDirection |  (optional) (default to 'SORT_DIRECTION_UNSPECIFIED')
 
     try:
         # Get a gene data report by RefSeq nucleotide or protein accession
@@ -602,16 +602,16 @@ with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **accessions** | [**List[str]**](str.md)| One or more RefSeq nucleotide or protein accessions | 
- **returned_content** | [**V2GeneDatasetReportsRequestContentType**](.md)| Return complete gene reports, or abbreviated reports with either GeneIDs only or GeneIDs, transcript and protein counts. | [optional] [default to COMPLETE]
+ **returned_content** | [**V2GeneDatasetReportsRequestContentType**](.md)| Return complete gene reports, or abbreviated reports with either GeneIDs only or GeneIDs, transcript and protein counts. | [optional] [default to &#39;COMPLETE&#39;]
  **table_fields** | [**List[str]**](str.md)| Specify which fields to include in the tabular report. Additional fields are described here: [Create a table from the gene data reports](https://www.ncbi.nlm.nih.gov/datasets/docs/v2/command-line-tools/using-dataformat/gene-data-reports/). Use of this parameter requires the HTTP header, &#x60;accept: text/tab-separated-values&#x60;. | [optional] 
  **table_format** | **str**| Specify a predefined set of fields for the tabular report using built-in templates. Use of this parameter requires the HTTP header, &#x60;accept: text/tab-separated-values&#x60;. | [optional] 
- **include_tabular_header** | [**V2IncludeTabularHeader**](.md)| Specify when to include the table header when requesting a tabular report. | [optional] [default to INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY]
+ **include_tabular_header** | [**V2IncludeTabularHeader**](.md)| Specify when to include the table header when requesting a tabular report. | [optional] [default to &#39;INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY&#39;]
  **page_size** | **int**| The maximum number of gene reports to return. Default is 20 and maximum is 1000. If the number of results exceeds the page size, &#x60;page_token&#x60; can be used to retrieve the remaining results. | [optional] [default to 20]
  **page_token** | **str**| A page token is returned when the results count exceeds &#x60;page size&#x60;. Use this token along with previous request parameters to retrieve the next page of results. When &#x60;page_token&#x60; is empty, all results have been retrieved. | [optional] 
  **query** | **str**| Limit to genes that match the specified gene symbol, name (description), alias, locus tag or protein name. | [optional] 
  **types** | [**List[V2GeneType]**](V2GeneType.md)| Limit to genes matching the specified gene type. | [optional] 
  **sort_field** | **str**|  | [optional] 
- **sort_direction** | [**V2SortDirection**](.md)|  | [optional] [default to SORT_DIRECTION_UNSPECIFIED]
+ **sort_direction** | [**V2SortDirection**](.md)|  | [optional] [default to &#39;SORT_DIRECTION_UNSPECIFIED&#39;]
 
 ### Return type
 
@@ -678,10 +678,10 @@ with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
     api_instance = ncbi.datasets.openapi.GeneApi(api_client)
     symbols = ['GNAS'] # List[str] | One or more gene symbols
     taxon = '9606' # str | NCBI Taxonomy ID or name (common or scientific, any taxonomic rank) for the provided gene symbol
-    returned_content = COMPLETE # V2GeneDatasetReportsRequestContentType | Return complete gene reports, or abbreviated reports with either GeneIDs only or GeneIDs, transcript and protein counts. (optional) (default to COMPLETE)
+    returned_content = 'COMPLETE' # V2GeneDatasetReportsRequestContentType | Return complete gene reports, or abbreviated reports with either GeneIDs only or GeneIDs, transcript and protein counts. (optional) (default to 'COMPLETE')
     table_fields = ['[\"gene-id\",\"gene-type\",\"description\"]'] # List[str] | Specify which fields to include in the tabular report. Additional fields are described here: [Create a table from the gene data reports](https://www.ncbi.nlm.nih.gov/datasets/docs/v2/command-line-tools/using-dataformat/gene-data-reports/). Use of this parameter requires the HTTP header, `accept: text/tab-separated-values`. (optional)
     table_format = 'summary' # str | Specify a predefined set of fields for the tabular report using built-in templates. Use of this parameter requires the HTTP header, `accept: text/tab-separated-values`. (optional)
-    include_tabular_header = INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY # V2IncludeTabularHeader | Specify when to include the table header when requesting a tabular report. (optional) (default to INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY)
+    include_tabular_header = 'INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY' # V2IncludeTabularHeader | Specify when to include the table header when requesting a tabular report. (optional) (default to 'INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY')
     page_size = 20 # int | The maximum number of gene reports to return. Default is 20 and maximum is 1000. If the number of results exceeds the page size, `page_token` can be used to retrieve the remaining results. (optional) (default to 20)
     page_token = 'page_token_example' # str | A page token is returned when the results count exceeds `page size`. Use this token along with previous request parameters to retrieve the next page of results. When `page_token` is empty, all results have been retrieved. (optional)
     query = 'A2M immunoglobulin' # str | Limit to genes that match the specified gene symbol, name (description), alias, locus tag or protein name. (optional)
@@ -706,10 +706,10 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **symbols** | [**List[str]**](str.md)| One or more gene symbols | 
  **taxon** | **str**| NCBI Taxonomy ID or name (common or scientific, any taxonomic rank) for the provided gene symbol | 
- **returned_content** | [**V2GeneDatasetReportsRequestContentType**](.md)| Return complete gene reports, or abbreviated reports with either GeneIDs only or GeneIDs, transcript and protein counts. | [optional] [default to COMPLETE]
+ **returned_content** | [**V2GeneDatasetReportsRequestContentType**](.md)| Return complete gene reports, or abbreviated reports with either GeneIDs only or GeneIDs, transcript and protein counts. | [optional] [default to &#39;COMPLETE&#39;]
  **table_fields** | [**List[str]**](str.md)| Specify which fields to include in the tabular report. Additional fields are described here: [Create a table from the gene data reports](https://www.ncbi.nlm.nih.gov/datasets/docs/v2/command-line-tools/using-dataformat/gene-data-reports/). Use of this parameter requires the HTTP header, &#x60;accept: text/tab-separated-values&#x60;. | [optional] 
  **table_format** | **str**| Specify a predefined set of fields for the tabular report using built-in templates. Use of this parameter requires the HTTP header, &#x60;accept: text/tab-separated-values&#x60;. | [optional] 
- **include_tabular_header** | [**V2IncludeTabularHeader**](.md)| Specify when to include the table header when requesting a tabular report. | [optional] [default to INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY]
+ **include_tabular_header** | [**V2IncludeTabularHeader**](.md)| Specify when to include the table header when requesting a tabular report. | [optional] [default to &#39;INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY&#39;]
  **page_size** | **int**| The maximum number of gene reports to return. Default is 20 and maximum is 1000. If the number of results exceeds the page size, &#x60;page_token&#x60; can be used to retrieve the remaining results. | [optional] [default to 20]
  **page_token** | **str**| A page token is returned when the results count exceeds &#x60;page size&#x60;. Use this token along with previous request parameters to retrieve the next page of results. When &#x60;page_token&#x60; is empty, all results have been retrieved. | [optional] 
  **query** | **str**| Limit to genes that match the specified gene symbol, name (description), alias, locus tag or protein name. | [optional] 
@@ -781,16 +781,16 @@ with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = ncbi.datasets.openapi.GeneApi(api_client)
     gene_ids = [59067] # List[int] | One or more NCBI GeneIDs
-    returned_content = COMPLETE # V2GeneDatasetReportsRequestContentType | Return complete gene reports, or abbreviated reports with either GeneIDs only or GeneIDs, transcript and protein counts. (optional) (default to COMPLETE)
+    returned_content = 'COMPLETE' # V2GeneDatasetReportsRequestContentType | Return complete gene reports, or abbreviated reports with either GeneIDs only or GeneIDs, transcript and protein counts. (optional) (default to 'COMPLETE')
     table_fields = ['[\"gene-id\",\"gene-type\",\"description\"]'] # List[str] | Specify which fields to include in the tabular report. Additional fields are described here: [Create a table from the gene data reports](https://www.ncbi.nlm.nih.gov/datasets/docs/v2/command-line-tools/using-dataformat/gene-data-reports/). Use of this parameter requires the HTTP header, `accept: text/tab-separated-values`. (optional)
     table_format = 'summary' # str | Specify a predefined set of fields for the tabular report using built-in templates. Use of this parameter requires the HTTP header, `accept: text/tab-separated-values`. (optional)
-    include_tabular_header = INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY # V2IncludeTabularHeader | Specify when to include the table header when requesting a tabular report. (optional) (default to INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY)
+    include_tabular_header = 'INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY' # V2IncludeTabularHeader | Specify when to include the table header when requesting a tabular report. (optional) (default to 'INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY')
     page_size = 20 # int | The maximum number of gene reports to return. Default is 20 and maximum is 1000. If the number of results exceeds the page size, `page_token` can be used to retrieve the remaining results. (optional) (default to 20)
     page_token = 'page_token_example' # str | A page token is returned when the results count exceeds `page size`. Use this token along with previous request parameters to retrieve the next page of results. When `page_token` is empty, all results have been retrieved. (optional)
     query = 'A2M immunoglobulin' # str | Limit to genes that match the specified gene symbol, name (description), alias, locus tag or protein name. (optional)
     types = [ncbi.datasets.openapi.V2GeneType()] # List[V2GeneType] | Limit to genes matching the specified gene type. (optional)
     sort_field = 'sort_field_example' # str |  (optional)
-    sort_direction = SORT_DIRECTION_UNSPECIFIED # V2SortDirection |  (optional) (default to SORT_DIRECTION_UNSPECIFIED)
+    sort_direction = 'SORT_DIRECTION_UNSPECIFIED' # V2SortDirection |  (optional) (default to 'SORT_DIRECTION_UNSPECIFIED')
 
     try:
         # Get a gene data report by GeneID
@@ -809,16 +809,16 @@ with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **gene_ids** | [**List[int]**](int.md)| One or more NCBI GeneIDs | 
- **returned_content** | [**V2GeneDatasetReportsRequestContentType**](.md)| Return complete gene reports, or abbreviated reports with either GeneIDs only or GeneIDs, transcript and protein counts. | [optional] [default to COMPLETE]
+ **returned_content** | [**V2GeneDatasetReportsRequestContentType**](.md)| Return complete gene reports, or abbreviated reports with either GeneIDs only or GeneIDs, transcript and protein counts. | [optional] [default to &#39;COMPLETE&#39;]
  **table_fields** | [**List[str]**](str.md)| Specify which fields to include in the tabular report. Additional fields are described here: [Create a table from the gene data reports](https://www.ncbi.nlm.nih.gov/datasets/docs/v2/command-line-tools/using-dataformat/gene-data-reports/). Use of this parameter requires the HTTP header, &#x60;accept: text/tab-separated-values&#x60;. | [optional] 
  **table_format** | **str**| Specify a predefined set of fields for the tabular report using built-in templates. Use of this parameter requires the HTTP header, &#x60;accept: text/tab-separated-values&#x60;. | [optional] 
- **include_tabular_header** | [**V2IncludeTabularHeader**](.md)| Specify when to include the table header when requesting a tabular report. | [optional] [default to INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY]
+ **include_tabular_header** | [**V2IncludeTabularHeader**](.md)| Specify when to include the table header when requesting a tabular report. | [optional] [default to &#39;INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY&#39;]
  **page_size** | **int**| The maximum number of gene reports to return. Default is 20 and maximum is 1000. If the number of results exceeds the page size, &#x60;page_token&#x60; can be used to retrieve the remaining results. | [optional] [default to 20]
  **page_token** | **str**| A page token is returned when the results count exceeds &#x60;page size&#x60;. Use this token along with previous request parameters to retrieve the next page of results. When &#x60;page_token&#x60; is empty, all results have been retrieved. | [optional] 
  **query** | **str**| Limit to genes that match the specified gene symbol, name (description), alias, locus tag or protein name. | [optional] 
  **types** | [**List[V2GeneType]**](V2GeneType.md)| Limit to genes matching the specified gene type. | [optional] 
  **sort_field** | **str**|  | [optional] 
- **sort_direction** | [**V2SortDirection**](.md)|  | [optional] [default to SORT_DIRECTION_UNSPECIFIED]
+ **sort_direction** | [**V2SortDirection**](.md)|  | [optional] [default to &#39;SORT_DIRECTION_UNSPECIFIED&#39;]
 
 ### Return type
 
@@ -884,10 +884,10 @@ with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = ncbi.datasets.openapi.GeneApi(api_client)
     locus_tags = ['b0001'] # List[str] | Gene locus tags
-    returned_content = COMPLETE # V2GeneDatasetReportsRequestContentType | Return complete gene reports, or abbreviated reports with either GeneIDs only or GeneIDs, transcript and protein counts. (optional) (default to COMPLETE)
+    returned_content = 'COMPLETE' # V2GeneDatasetReportsRequestContentType | Return complete gene reports, or abbreviated reports with either GeneIDs only or GeneIDs, transcript and protein counts. (optional) (default to 'COMPLETE')
     table_fields = ['[\"gene-id\",\"gene-type\",\"description\"]'] # List[str] | Specify which fields to include in the tabular report. Additional fields are described here: [Create a table from the gene data reports](https://www.ncbi.nlm.nih.gov/datasets/docs/v2/command-line-tools/using-dataformat/gene-data-reports/). Use of this parameter requires the HTTP header, `accept: text/tab-separated-values`. (optional)
     table_format = 'summary' # str | Specify a predefined set of fields for the tabular report using built-in templates. Use of this parameter requires the HTTP header, `accept: text/tab-separated-values`. (optional)
-    include_tabular_header = INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY # V2IncludeTabularHeader | Specify when to include the table header when requesting a tabular report. (optional) (default to INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY)
+    include_tabular_header = 'INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY' # V2IncludeTabularHeader | Specify when to include the table header when requesting a tabular report. (optional) (default to 'INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY')
     page_size = 20 # int | The maximum number of gene reports to return. Default is 20 and maximum is 1000. If the number of results exceeds the page size, `page_token` can be used to retrieve the remaining results. (optional) (default to 20)
     page_token = 'page_token_example' # str | A page token is returned when the results count exceeds `page size`. Use this token along with previous request parameters to retrieve the next page of results. When `page_token` is empty, all results have been retrieved. (optional)
     query = 'A2M immunoglobulin' # str | Limit to genes that match the specified gene symbol, name (description), alias, locus tag or protein name. (optional)
@@ -911,10 +911,10 @@ with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **locus_tags** | [**List[str]**](str.md)| Gene locus tags | 
- **returned_content** | [**V2GeneDatasetReportsRequestContentType**](.md)| Return complete gene reports, or abbreviated reports with either GeneIDs only or GeneIDs, transcript and protein counts. | [optional] [default to COMPLETE]
+ **returned_content** | [**V2GeneDatasetReportsRequestContentType**](.md)| Return complete gene reports, or abbreviated reports with either GeneIDs only or GeneIDs, transcript and protein counts. | [optional] [default to &#39;COMPLETE&#39;]
  **table_fields** | [**List[str]**](str.md)| Specify which fields to include in the tabular report. Additional fields are described here: [Create a table from the gene data reports](https://www.ncbi.nlm.nih.gov/datasets/docs/v2/command-line-tools/using-dataformat/gene-data-reports/). Use of this parameter requires the HTTP header, &#x60;accept: text/tab-separated-values&#x60;. | [optional] 
  **table_format** | **str**| Specify a predefined set of fields for the tabular report using built-in templates. Use of this parameter requires the HTTP header, &#x60;accept: text/tab-separated-values&#x60;. | [optional] 
- **include_tabular_header** | [**V2IncludeTabularHeader**](.md)| Specify when to include the table header when requesting a tabular report. | [optional] [default to INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY]
+ **include_tabular_header** | [**V2IncludeTabularHeader**](.md)| Specify when to include the table header when requesting a tabular report. | [optional] [default to &#39;INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY&#39;]
  **page_size** | **int**| The maximum number of gene reports to return. Default is 20 and maximum is 1000. If the number of results exceeds the page size, &#x60;page_token&#x60; can be used to retrieve the remaining results. | [optional] [default to 20]
  **page_token** | **str**| A page token is returned when the results count exceeds &#x60;page size&#x60;. Use this token along with previous request parameters to retrieve the next page of results. When &#x60;page_token&#x60; is empty, all results have been retrieved. | [optional] 
  **query** | **str**| Limit to genes that match the specified gene symbol, name (description), alias, locus tag or protein name. | [optional] 
@@ -985,10 +985,10 @@ with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = ncbi.datasets.openapi.GeneApi(api_client)
     taxon = '9606' # str | NCBI Taxonomy ID or name (common or scientific) that the genes are annotated at
-    returned_content = COMPLETE # V2GeneDatasetReportsRequestContentType | Return complete gene reports, or abbreviated reports with either GeneIDs only or GeneIDs, transcript and protein counts. (optional) (default to COMPLETE)
+    returned_content = 'COMPLETE' # V2GeneDatasetReportsRequestContentType | Return complete gene reports, or abbreviated reports with either GeneIDs only or GeneIDs, transcript and protein counts. (optional) (default to 'COMPLETE')
     table_fields = ['[\"gene-id\",\"gene-type\",\"description\"]'] # List[str] | Specify which fields to include in the tabular report. Additional fields are described here: [Create a table from the gene data reports](https://www.ncbi.nlm.nih.gov/datasets/docs/v2/command-line-tools/using-dataformat/gene-data-reports/). Use of this parameter requires the HTTP header, `accept: text/tab-separated-values`. (optional)
     table_format = 'summary' # str | Specify a predefined set of fields for the tabular report using built-in templates. Use of this parameter requires the HTTP header, `accept: text/tab-separated-values`. (optional)
-    include_tabular_header = INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY # V2IncludeTabularHeader | Specify when to include the table header when requesting a tabular report. (optional) (default to INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY)
+    include_tabular_header = 'INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY' # V2IncludeTabularHeader | Specify when to include the table header when requesting a tabular report. (optional) (default to 'INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY')
     page_size = 20 # int | The maximum number of gene reports to return. Default is 20 and maximum is 1000. If the number of results exceeds the page size, `page_token` can be used to retrieve the remaining results. (optional) (default to 20)
     page_token = 'page_token_example' # str | A page token is returned when the results count exceeds `page size`. Use this token along with previous request parameters to retrieve the next page of results. When `page_token` is empty, all results have been retrieved. (optional)
     query = 'A2M immunoglobulin' # str | Limit to genes that match the specified gene symbol, name (description), alias, locus tag or protein name. (optional)
@@ -1012,10 +1012,10 @@ with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **taxon** | **str**| NCBI Taxonomy ID or name (common or scientific) that the genes are annotated at | 
- **returned_content** | [**V2GeneDatasetReportsRequestContentType**](.md)| Return complete gene reports, or abbreviated reports with either GeneIDs only or GeneIDs, transcript and protein counts. | [optional] [default to COMPLETE]
+ **returned_content** | [**V2GeneDatasetReportsRequestContentType**](.md)| Return complete gene reports, or abbreviated reports with either GeneIDs only or GeneIDs, transcript and protein counts. | [optional] [default to &#39;COMPLETE&#39;]
  **table_fields** | [**List[str]**](str.md)| Specify which fields to include in the tabular report. Additional fields are described here: [Create a table from the gene data reports](https://www.ncbi.nlm.nih.gov/datasets/docs/v2/command-line-tools/using-dataformat/gene-data-reports/). Use of this parameter requires the HTTP header, &#x60;accept: text/tab-separated-values&#x60;. | [optional] 
  **table_format** | **str**| Specify a predefined set of fields for the tabular report using built-in templates. Use of this parameter requires the HTTP header, &#x60;accept: text/tab-separated-values&#x60;. | [optional] 
- **include_tabular_header** | [**V2IncludeTabularHeader**](.md)| Specify when to include the table header when requesting a tabular report. | [optional] [default to INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY]
+ **include_tabular_header** | [**V2IncludeTabularHeader**](.md)| Specify when to include the table header when requesting a tabular report. | [optional] [default to &#39;INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY&#39;]
  **page_size** | **int**| The maximum number of gene reports to return. Default is 20 and maximum is 1000. If the number of results exceeds the page size, &#x60;page_token&#x60; can be used to retrieve the remaining results. | [optional] [default to 20]
  **page_token** | **str**| A page token is returned when the results count exceeds &#x60;page size&#x60;. Use this token along with previous request parameters to retrieve the next page of results. When &#x60;page_token&#x60; is empty, all results have been retrieved. | [optional] 
  **query** | **str**| Limit to genes that match the specified gene symbol, name (description), alias, locus tag or protein name. | [optional] 
@@ -1087,7 +1087,7 @@ with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
     api_instance = ncbi.datasets.openapi.GeneApi(api_client)
     gene_ids = [59067] # List[int] | One or more NCBI GeneIDs
     include_annotation_type = [ncbi.datasets.openapi.V2Fasta()] # List[V2Fasta] | Specify which sequence files to include in the data package. (optional)
-    returned_content = COMPLETE # V2GeneDatasetRequestContentType | Return complete gene reports, or abbreviated reports with either GeneIDs only or GeneIDs, transcript and protein counts. (optional) (default to COMPLETE)
+    returned_content = 'COMPLETE' # V2GeneDatasetRequestContentType | Return complete gene reports, or abbreviated reports with either GeneIDs only or GeneIDs, transcript and protein counts. (optional) (default to 'COMPLETE')
     fasta_filter = ['fasta_filter_example'] # List[str] | Limit the FASTA sequences in the datasets package to these transcript and protein accessions (deprecated) (optional)
     accession_filter = ['NM_021803.4'] # List[str] | Limit the contents of the sequence files and tabular product report to the specified RNA and protein accessions (optional)
     aux_report = [ncbi.datasets.openapi.V2GeneDatasetRequestGeneDatasetReportType()] # List[V2GeneDatasetRequestGeneDatasetReportType] | Specify additional report files to include in the data package. The gene data report is always included, and its inclusion is not affected by this parameter. (optional)
@@ -1111,7 +1111,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **gene_ids** | [**List[int]**](int.md)| One or more NCBI GeneIDs | 
  **include_annotation_type** | [**List[V2Fasta]**](V2Fasta.md)| Specify which sequence files to include in the data package. | [optional] 
- **returned_content** | [**V2GeneDatasetRequestContentType**](.md)| Return complete gene reports, or abbreviated reports with either GeneIDs only or GeneIDs, transcript and protein counts. | [optional] [default to COMPLETE]
+ **returned_content** | [**V2GeneDatasetRequestContentType**](.md)| Return complete gene reports, or abbreviated reports with either GeneIDs only or GeneIDs, transcript and protein counts. | [optional] [default to &#39;COMPLETE&#39;]
  **fasta_filter** | [**List[str]**](str.md)| Limit the FASTA sequences in the datasets package to these transcript and protein accessions (deprecated) | [optional] 
  **accession_filter** | [**List[str]**](str.md)| Limit the contents of the sequence files and tabular product report to the specified RNA and protein accessions | [optional] 
  **aux_report** | [**List[V2GeneDatasetRequestGeneDatasetReportType]**](V2GeneDatasetRequestGeneDatasetReportType.md)| Specify additional report files to include in the data package. The gene data report is always included, and its inclusion is not affected by this parameter. | [optional] 
@@ -1423,16 +1423,16 @@ with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = ncbi.datasets.openapi.GeneApi(api_client)
     accessions = ['NM_021803.4'] # List[str] | One or more RefSeq nucleotide or protein accessions
-    returned_content = COMPLETE # V2GeneDatasetReportsRequestContentType | Return complete gene reports, or abbreviated reports with either GeneIDs only or GeneIDs, transcript and protein counts. (optional) (default to COMPLETE)
+    returned_content = 'COMPLETE' # V2GeneDatasetReportsRequestContentType | Return complete gene reports, or abbreviated reports with either GeneIDs only or GeneIDs, transcript and protein counts. (optional) (default to 'COMPLETE')
     locus_tags = ['b0001'] # List[str] | Gene locus tags (optional)
     table_fields = ['[\"gene-id\",\"gene-type\",\"description\"]'] # List[str] | Specify which fields to include in the tabular report. Additional fields are described here: [Create a table from the gene data reports](https://www.ncbi.nlm.nih.gov/datasets/docs/v2/command-line-tools/using-dataformat/gene-data-reports/). Use of this parameter requires the HTTP header, `accept: text/tab-separated-values`. (optional)
-    include_tabular_header = INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY # V2IncludeTabularHeader | Specify when to include the table header when requesting a tabular report. (optional) (default to INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY)
+    include_tabular_header = 'INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY' # V2IncludeTabularHeader | Specify when to include the table header when requesting a tabular report. (optional) (default to 'INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY')
     page_size = 20 # int | The maximum number of gene reports to return. Default is 20 and maximum is 1000. If the number of results exceeds the page size, `page_token` can be used to retrieve the remaining results. (optional) (default to 20)
     page_token = 'page_token_example' # str | A page token is returned when the results count exceeds `page size`. Use this token along with previous request parameters to retrieve the next page of results. When `page_token` is empty, all results have been retrieved. (optional)
     accession_filter = ['[\"NM_001407959.1\",\"NM_001408458.1\"]'] # List[str] | Filter tabular product report to only include the selected accessions. Use of this parameter requires the HTTP header, `accept: text/tab-separated-values`. (optional)
     tax_search_subtree = False # bool | If true, include genes from taxonomic ranks below the requested taxon. (optional) (default to False)
     sort_field = 'sort_field_example' # str |  (optional)
-    sort_direction = SORT_DIRECTION_UNSPECIFIED # V2SortDirection |  (optional) (default to SORT_DIRECTION_UNSPECIFIED)
+    sort_direction = 'SORT_DIRECTION_UNSPECIFIED' # V2SortDirection |  (optional) (default to 'SORT_DIRECTION_UNSPECIFIED')
 
     try:
         # Get gene metadata by RefSeq Accession
@@ -1451,16 +1451,16 @@ with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **accessions** | [**List[str]**](str.md)| One or more RefSeq nucleotide or protein accessions | 
- **returned_content** | [**V2GeneDatasetReportsRequestContentType**](.md)| Return complete gene reports, or abbreviated reports with either GeneIDs only or GeneIDs, transcript and protein counts. | [optional] [default to COMPLETE]
+ **returned_content** | [**V2GeneDatasetReportsRequestContentType**](.md)| Return complete gene reports, or abbreviated reports with either GeneIDs only or GeneIDs, transcript and protein counts. | [optional] [default to &#39;COMPLETE&#39;]
  **locus_tags** | [**List[str]**](str.md)| Gene locus tags | [optional] 
  **table_fields** | [**List[str]**](str.md)| Specify which fields to include in the tabular report. Additional fields are described here: [Create a table from the gene data reports](https://www.ncbi.nlm.nih.gov/datasets/docs/v2/command-line-tools/using-dataformat/gene-data-reports/). Use of this parameter requires the HTTP header, &#x60;accept: text/tab-separated-values&#x60;. | [optional] 
- **include_tabular_header** | [**V2IncludeTabularHeader**](.md)| Specify when to include the table header when requesting a tabular report. | [optional] [default to INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY]
+ **include_tabular_header** | [**V2IncludeTabularHeader**](.md)| Specify when to include the table header when requesting a tabular report. | [optional] [default to &#39;INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY&#39;]
  **page_size** | **int**| The maximum number of gene reports to return. Default is 20 and maximum is 1000. If the number of results exceeds the page size, &#x60;page_token&#x60; can be used to retrieve the remaining results. | [optional] [default to 20]
  **page_token** | **str**| A page token is returned when the results count exceeds &#x60;page size&#x60;. Use this token along with previous request parameters to retrieve the next page of results. When &#x60;page_token&#x60; is empty, all results have been retrieved. | [optional] 
  **accession_filter** | [**List[str]**](str.md)| Filter tabular product report to only include the selected accessions. Use of this parameter requires the HTTP header, &#x60;accept: text/tab-separated-values&#x60;. | [optional] 
  **tax_search_subtree** | **bool**| If true, include genes from taxonomic ranks below the requested taxon. | [optional] [default to False]
  **sort_field** | **str**|  | [optional] 
- **sort_direction** | [**V2SortDirection**](.md)|  | [optional] [default to SORT_DIRECTION_UNSPECIFIED]
+ **sort_direction** | [**V2SortDirection**](.md)|  | [optional] [default to &#39;SORT_DIRECTION_UNSPECIFIED&#39;]
 
 ### Return type
 
@@ -1608,16 +1608,16 @@ with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
     api_instance = ncbi.datasets.openapi.GeneApi(api_client)
     symbols = ['GNAS'] # List[str] | One or more gene symbols
     taxon = '9606' # str | NCBI Taxonomy ID or name (common or scientific, any taxonomic rank) for the provided gene symbol
-    returned_content = COMPLETE # V2GeneDatasetReportsRequestContentType | Return complete gene reports, or abbreviated reports with either GeneIDs only or GeneIDs, transcript and protein counts. (optional) (default to COMPLETE)
+    returned_content = 'COMPLETE' # V2GeneDatasetReportsRequestContentType | Return complete gene reports, or abbreviated reports with either GeneIDs only or GeneIDs, transcript and protein counts. (optional) (default to 'COMPLETE')
     locus_tags = ['b0001'] # List[str] | Gene locus tags (optional)
     table_fields = ['[\"gene-id\",\"gene-type\",\"description\"]'] # List[str] | Specify which fields to include in the tabular report. Additional fields are described here: [Create a table from the gene data reports](https://www.ncbi.nlm.nih.gov/datasets/docs/v2/command-line-tools/using-dataformat/gene-data-reports/). Use of this parameter requires the HTTP header, `accept: text/tab-separated-values`. (optional)
-    include_tabular_header = INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY # V2IncludeTabularHeader | Specify when to include the table header when requesting a tabular report. (optional) (default to INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY)
+    include_tabular_header = 'INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY' # V2IncludeTabularHeader | Specify when to include the table header when requesting a tabular report. (optional) (default to 'INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY')
     page_size = 20 # int | The maximum number of gene reports to return. Default is 20 and maximum is 1000. If the number of results exceeds the page size, `page_token` can be used to retrieve the remaining results. (optional) (default to 20)
     page_token = 'page_token_example' # str | A page token is returned when the results count exceeds `page size`. Use this token along with previous request parameters to retrieve the next page of results. When `page_token` is empty, all results have been retrieved. (optional)
     accession_filter = ['[\"NM_001407959.1\",\"NM_001408458.1\"]'] # List[str] | Filter tabular product report to only include the selected accessions. Use of this parameter requires the HTTP header, `accept: text/tab-separated-values`. (optional)
     tax_search_subtree = False # bool | If true, include genes from taxonomic ranks below the requested taxon. (optional) (default to False)
     sort_field = 'sort_field_example' # str |  (optional)
-    sort_direction = SORT_DIRECTION_UNSPECIFIED # V2SortDirection |  (optional) (default to SORT_DIRECTION_UNSPECIFIED)
+    sort_direction = 'SORT_DIRECTION_UNSPECIFIED' # V2SortDirection |  (optional) (default to 'SORT_DIRECTION_UNSPECIFIED')
 
     try:
         # Get gene metadata by gene symbol
@@ -1637,16 +1637,16 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **symbols** | [**List[str]**](str.md)| One or more gene symbols | 
  **taxon** | **str**| NCBI Taxonomy ID or name (common or scientific, any taxonomic rank) for the provided gene symbol | 
- **returned_content** | [**V2GeneDatasetReportsRequestContentType**](.md)| Return complete gene reports, or abbreviated reports with either GeneIDs only or GeneIDs, transcript and protein counts. | [optional] [default to COMPLETE]
+ **returned_content** | [**V2GeneDatasetReportsRequestContentType**](.md)| Return complete gene reports, or abbreviated reports with either GeneIDs only or GeneIDs, transcript and protein counts. | [optional] [default to &#39;COMPLETE&#39;]
  **locus_tags** | [**List[str]**](str.md)| Gene locus tags | [optional] 
  **table_fields** | [**List[str]**](str.md)| Specify which fields to include in the tabular report. Additional fields are described here: [Create a table from the gene data reports](https://www.ncbi.nlm.nih.gov/datasets/docs/v2/command-line-tools/using-dataformat/gene-data-reports/). Use of this parameter requires the HTTP header, &#x60;accept: text/tab-separated-values&#x60;. | [optional] 
- **include_tabular_header** | [**V2IncludeTabularHeader**](.md)| Specify when to include the table header when requesting a tabular report. | [optional] [default to INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY]
+ **include_tabular_header** | [**V2IncludeTabularHeader**](.md)| Specify when to include the table header when requesting a tabular report. | [optional] [default to &#39;INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY&#39;]
  **page_size** | **int**| The maximum number of gene reports to return. Default is 20 and maximum is 1000. If the number of results exceeds the page size, &#x60;page_token&#x60; can be used to retrieve the remaining results. | [optional] [default to 20]
  **page_token** | **str**| A page token is returned when the results count exceeds &#x60;page size&#x60;. Use this token along with previous request parameters to retrieve the next page of results. When &#x60;page_token&#x60; is empty, all results have been retrieved. | [optional] 
  **accession_filter** | [**List[str]**](str.md)| Filter tabular product report to only include the selected accessions. Use of this parameter requires the HTTP header, &#x60;accept: text/tab-separated-values&#x60;. | [optional] 
  **tax_search_subtree** | **bool**| If true, include genes from taxonomic ranks below the requested taxon. | [optional] [default to False]
  **sort_field** | **str**|  | [optional] 
- **sort_direction** | [**V2SortDirection**](.md)|  | [optional] [default to SORT_DIRECTION_UNSPECIFIED]
+ **sort_direction** | [**V2SortDirection**](.md)|  | [optional] [default to &#39;SORT_DIRECTION_UNSPECIFIED&#39;]
 
 ### Return type
 
@@ -1710,7 +1710,7 @@ with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = ncbi.datasets.openapi.GeneApi(api_client)
     gene_id = 2778 # int | A single NCBI GeneID
-    returned_content = COMPLETE # V2OrthologRequestContentType | Return complete gene reports, or abbreviated reports with either GeneIDs only or GeneIDs, transcript and protein counts. (optional) (default to COMPLETE)
+    returned_content = 'COMPLETE' # V2OrthologRequestContentType | Return complete gene reports, or abbreviated reports with either GeneIDs only or GeneIDs, transcript and protein counts. (optional) (default to 'COMPLETE')
     taxon_filter = ['[\"9606\",\"10090\"]'] # List[str] | Limit to genes from the specified NCBI Taxonomy ID or name (common or scientific) at any taxonomic rank. (optional)
     page_size = 20 # int | The maximum number of gene reports to return. Default is 20 and maximum is 1000. If the number of results exceeds the page size, `page_token` can be used to retrieve the remaining results. (optional) (default to 20)
     page_token = 'page_token_example' # str | A page token is returned when the results count exceeds `page size`. Use this token along with previous request parameters to retrieve the next page of results. When `page_token` is empty, all results have been retrieved. (optional)
@@ -1732,7 +1732,7 @@ with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **gene_id** | **int**| A single NCBI GeneID | 
- **returned_content** | [**V2OrthologRequestContentType**](.md)| Return complete gene reports, or abbreviated reports with either GeneIDs only or GeneIDs, transcript and protein counts. | [optional] [default to COMPLETE]
+ **returned_content** | [**V2OrthologRequestContentType**](.md)| Return complete gene reports, or abbreviated reports with either GeneIDs only or GeneIDs, transcript and protein counts. | [optional] [default to &#39;COMPLETE&#39;]
  **taxon_filter** | [**List[str]**](str.md)| Limit to genes from the specified NCBI Taxonomy ID or name (common or scientific) at any taxonomic rank. | [optional] 
  **page_size** | **int**| The maximum number of gene reports to return. Default is 20 and maximum is 1000. If the number of results exceeds the page size, &#x60;page_token&#x60; can be used to retrieve the remaining results. | [optional] [default to 20]
  **page_token** | **str**| A page token is returned when the results count exceeds &#x60;page size&#x60;. Use this token along with previous request parameters to retrieve the next page of results. When &#x60;page_token&#x60; is empty, all results have been retrieved. | [optional] 
@@ -1965,7 +1965,7 @@ with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
     accessions = ['NM_021803.4'] # List[str] | One or more RefSeq nucleotide or protein accessions
     table_fields = ['[\"gene-id\",\"gene-type\",\"description\"]'] # List[str] | Specify which fields to include in the tabular report. Additional fields are described here: [Create a table from the gene data reports](https://www.ncbi.nlm.nih.gov/datasets/docs/v2/command-line-tools/using-dataformat/gene-data-reports/). Use of this parameter requires the HTTP header, `accept: text/tab-separated-values`. (optional)
     table_format = 'summary' # str | Specify a predefined set of fields for the tabular report using built-in templates. Use of this parameter requires the HTTP header, `accept: text/tab-separated-values`. (optional)
-    include_tabular_header = INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY # V2IncludeTabularHeader | Specify when to include the table header when requesting a tabular report. (optional) (default to INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY)
+    include_tabular_header = 'INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY' # V2IncludeTabularHeader | Specify when to include the table header when requesting a tabular report. (optional) (default to 'INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY')
     page_size = 20 # int | The maximum number of gene reports to return. Default is 20 and maximum is 1000. If the number of results exceeds the page size, `page_token` can be used to retrieve the remaining results. (optional) (default to 20)
     page_token = 'page_token_example' # str | A page token is returned when the results count exceeds `page size`. Use this token along with previous request parameters to retrieve the next page of results. When `page_token` is empty, all results have been retrieved. (optional)
     query = 'A2M immunoglobulin' # str | Limit to genes that match the specified gene symbol, name (description), alias, locus tag or protein name. (optional)
@@ -1973,7 +1973,7 @@ with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
     accession_filter = ['[\"NM_001407959.1\",\"NM_001408458.1\"]'] # List[str] | Filter tabular product report to only include the selected accessions. Use of this parameter requires the HTTP header, `accept: text/tab-separated-values`. (optional)
     tax_search_subtree = False # bool | If true, include genes from taxonomic ranks below the requested taxon. (optional) (default to False)
     sort_field = 'sort_field_example' # str |  (optional)
-    sort_direction = SORT_DIRECTION_UNSPECIFIED # V2SortDirection |  (optional) (default to SORT_DIRECTION_UNSPECIFIED)
+    sort_direction = 'SORT_DIRECTION_UNSPECIFIED' # V2SortDirection |  (optional) (default to 'SORT_DIRECTION_UNSPECIFIED')
 
     try:
         # Get a gene product report by RefSeq nucleotide or protein accession
@@ -1994,7 +1994,7 @@ Name | Type | Description  | Notes
  **accessions** | [**List[str]**](str.md)| One or more RefSeq nucleotide or protein accessions | 
  **table_fields** | [**List[str]**](str.md)| Specify which fields to include in the tabular report. Additional fields are described here: [Create a table from the gene data reports](https://www.ncbi.nlm.nih.gov/datasets/docs/v2/command-line-tools/using-dataformat/gene-data-reports/). Use of this parameter requires the HTTP header, &#x60;accept: text/tab-separated-values&#x60;. | [optional] 
  **table_format** | **str**| Specify a predefined set of fields for the tabular report using built-in templates. Use of this parameter requires the HTTP header, &#x60;accept: text/tab-separated-values&#x60;. | [optional] 
- **include_tabular_header** | [**V2IncludeTabularHeader**](.md)| Specify when to include the table header when requesting a tabular report. | [optional] [default to INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY]
+ **include_tabular_header** | [**V2IncludeTabularHeader**](.md)| Specify when to include the table header when requesting a tabular report. | [optional] [default to &#39;INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY&#39;]
  **page_size** | **int**| The maximum number of gene reports to return. Default is 20 and maximum is 1000. If the number of results exceeds the page size, &#x60;page_token&#x60; can be used to retrieve the remaining results. | [optional] [default to 20]
  **page_token** | **str**| A page token is returned when the results count exceeds &#x60;page size&#x60;. Use this token along with previous request parameters to retrieve the next page of results. When &#x60;page_token&#x60; is empty, all results have been retrieved. | [optional] 
  **query** | **str**| Limit to genes that match the specified gene symbol, name (description), alias, locus tag or protein name. | [optional] 
@@ -2002,7 +2002,7 @@ Name | Type | Description  | Notes
  **accession_filter** | [**List[str]**](str.md)| Filter tabular product report to only include the selected accessions. Use of this parameter requires the HTTP header, &#x60;accept: text/tab-separated-values&#x60;. | [optional] 
  **tax_search_subtree** | **bool**| If true, include genes from taxonomic ranks below the requested taxon. | [optional] [default to False]
  **sort_field** | **str**|  | [optional] 
- **sort_direction** | [**V2SortDirection**](.md)|  | [optional] [default to SORT_DIRECTION_UNSPECIFIED]
+ **sort_direction** | [**V2SortDirection**](.md)|  | [optional] [default to &#39;SORT_DIRECTION_UNSPECIFIED&#39;]
 
 ### Return type
 
@@ -2070,7 +2070,7 @@ with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
     taxon = '9606' # str | NCBI Taxonomy ID or name (common or scientific, any taxonomic rank) for the provided gene symbol
     table_fields = ['[\"gene-id\",\"gene-type\",\"description\"]'] # List[str] | Specify which fields to include in the tabular report. Additional fields are described here: [Create a table from the gene data reports](https://www.ncbi.nlm.nih.gov/datasets/docs/v2/command-line-tools/using-dataformat/gene-data-reports/). Use of this parameter requires the HTTP header, `accept: text/tab-separated-values`. (optional)
     table_format = 'summary' # str | Specify a predefined set of fields for the tabular report using built-in templates. Use of this parameter requires the HTTP header, `accept: text/tab-separated-values`. (optional)
-    include_tabular_header = INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY # V2IncludeTabularHeader | Specify when to include the table header when requesting a tabular report. (optional) (default to INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY)
+    include_tabular_header = 'INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY' # V2IncludeTabularHeader | Specify when to include the table header when requesting a tabular report. (optional) (default to 'INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY')
     page_size = 20 # int | The maximum number of gene reports to return. Default is 20 and maximum is 1000. If the number of results exceeds the page size, `page_token` can be used to retrieve the remaining results. (optional) (default to 20)
     page_token = 'page_token_example' # str | A page token is returned when the results count exceeds `page size`. Use this token along with previous request parameters to retrieve the next page of results. When `page_token` is empty, all results have been retrieved. (optional)
     query = 'A2M immunoglobulin' # str | Limit to genes that match the specified gene symbol, name (description), alias, locus tag or protein name. (optional)
@@ -2097,7 +2097,7 @@ Name | Type | Description  | Notes
  **taxon** | **str**| NCBI Taxonomy ID or name (common or scientific, any taxonomic rank) for the provided gene symbol | 
  **table_fields** | [**List[str]**](str.md)| Specify which fields to include in the tabular report. Additional fields are described here: [Create a table from the gene data reports](https://www.ncbi.nlm.nih.gov/datasets/docs/v2/command-line-tools/using-dataformat/gene-data-reports/). Use of this parameter requires the HTTP header, &#x60;accept: text/tab-separated-values&#x60;. | [optional] 
  **table_format** | **str**| Specify a predefined set of fields for the tabular report using built-in templates. Use of this parameter requires the HTTP header, &#x60;accept: text/tab-separated-values&#x60;. | [optional] 
- **include_tabular_header** | [**V2IncludeTabularHeader**](.md)| Specify when to include the table header when requesting a tabular report. | [optional] [default to INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY]
+ **include_tabular_header** | [**V2IncludeTabularHeader**](.md)| Specify when to include the table header when requesting a tabular report. | [optional] [default to &#39;INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY&#39;]
  **page_size** | **int**| The maximum number of gene reports to return. Default is 20 and maximum is 1000. If the number of results exceeds the page size, &#x60;page_token&#x60; can be used to retrieve the remaining results. | [optional] [default to 20]
  **page_token** | **str**| A page token is returned when the results count exceeds &#x60;page size&#x60;. Use this token along with previous request parameters to retrieve the next page of results. When &#x60;page_token&#x60; is empty, all results have been retrieved. | [optional] 
  **query** | **str**| Limit to genes that match the specified gene symbol, name (description), alias, locus tag or protein name. | [optional] 
@@ -2170,14 +2170,14 @@ with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
     gene_ids = [59067] # List[int] | One or more NCBI GeneIDs
     table_fields = ['[\"gene-id\",\"gene-type\",\"description\"]'] # List[str] | Specify which fields to include in the tabular report. Additional fields are described here: [Create a table from the gene data reports](https://www.ncbi.nlm.nih.gov/datasets/docs/v2/command-line-tools/using-dataformat/gene-data-reports/). Use of this parameter requires the HTTP header, `accept: text/tab-separated-values`. (optional)
     table_format = 'summary' # str | Specify a predefined set of fields for the tabular report using built-in templates. Use of this parameter requires the HTTP header, `accept: text/tab-separated-values`. (optional)
-    include_tabular_header = INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY # V2IncludeTabularHeader | Specify when to include the table header when requesting a tabular report. (optional) (default to INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY)
+    include_tabular_header = 'INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY' # V2IncludeTabularHeader | Specify when to include the table header when requesting a tabular report. (optional) (default to 'INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY')
     page_size = 20 # int | The maximum number of gene reports to return. Default is 20 and maximum is 1000. If the number of results exceeds the page size, `page_token` can be used to retrieve the remaining results. (optional) (default to 20)
     page_token = 'page_token_example' # str | A page token is returned when the results count exceeds `page size`. Use this token along with previous request parameters to retrieve the next page of results. When `page_token` is empty, all results have been retrieved. (optional)
     query = 'A2M immunoglobulin' # str | Limit to genes that match the specified gene symbol, name (description), alias, locus tag or protein name. (optional)
     types = [ncbi.datasets.openapi.V2GeneType()] # List[V2GeneType] | Limit to genes matching the specified gene type. (optional)
     accession_filter = ['[\"NM_001407959.1\",\"NM_001408458.1\"]'] # List[str] | Filter tabular product report to only include the selected accessions. Use of this parameter requires the HTTP header, `accept: text/tab-separated-values`. (optional)
     sort_field = 'sort_field_example' # str |  (optional)
-    sort_direction = SORT_DIRECTION_UNSPECIFIED # V2SortDirection |  (optional) (default to SORT_DIRECTION_UNSPECIFIED)
+    sort_direction = 'SORT_DIRECTION_UNSPECIFIED' # V2SortDirection |  (optional) (default to 'SORT_DIRECTION_UNSPECIFIED')
 
     try:
         # Get a gene product report by GeneID
@@ -2198,14 +2198,14 @@ Name | Type | Description  | Notes
  **gene_ids** | [**List[int]**](int.md)| One or more NCBI GeneIDs | 
  **table_fields** | [**List[str]**](str.md)| Specify which fields to include in the tabular report. Additional fields are described here: [Create a table from the gene data reports](https://www.ncbi.nlm.nih.gov/datasets/docs/v2/command-line-tools/using-dataformat/gene-data-reports/). Use of this parameter requires the HTTP header, &#x60;accept: text/tab-separated-values&#x60;. | [optional] 
  **table_format** | **str**| Specify a predefined set of fields for the tabular report using built-in templates. Use of this parameter requires the HTTP header, &#x60;accept: text/tab-separated-values&#x60;. | [optional] 
- **include_tabular_header** | [**V2IncludeTabularHeader**](.md)| Specify when to include the table header when requesting a tabular report. | [optional] [default to INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY]
+ **include_tabular_header** | [**V2IncludeTabularHeader**](.md)| Specify when to include the table header when requesting a tabular report. | [optional] [default to &#39;INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY&#39;]
  **page_size** | **int**| The maximum number of gene reports to return. Default is 20 and maximum is 1000. If the number of results exceeds the page size, &#x60;page_token&#x60; can be used to retrieve the remaining results. | [optional] [default to 20]
  **page_token** | **str**| A page token is returned when the results count exceeds &#x60;page size&#x60;. Use this token along with previous request parameters to retrieve the next page of results. When &#x60;page_token&#x60; is empty, all results have been retrieved. | [optional] 
  **query** | **str**| Limit to genes that match the specified gene symbol, name (description), alias, locus tag or protein name. | [optional] 
  **types** | [**List[V2GeneType]**](V2GeneType.md)| Limit to genes matching the specified gene type. | [optional] 
  **accession_filter** | [**List[str]**](str.md)| Filter tabular product report to only include the selected accessions. Use of this parameter requires the HTTP header, &#x60;accept: text/tab-separated-values&#x60;. | [optional] 
  **sort_field** | **str**|  | [optional] 
- **sort_direction** | [**V2SortDirection**](.md)|  | [optional] [default to SORT_DIRECTION_UNSPECIFIED]
+ **sort_direction** | [**V2SortDirection**](.md)|  | [optional] [default to &#39;SORT_DIRECTION_UNSPECIFIED&#39;]
 
 ### Return type
 
@@ -2272,7 +2272,7 @@ with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
     locus_tags = ['b0001'] # List[str] | Gene locus tags
     table_fields = ['[\"gene-id\",\"gene-type\",\"description\"]'] # List[str] | Specify which fields to include in the tabular report. Additional fields are described here: [Create a table from the gene data reports](https://www.ncbi.nlm.nih.gov/datasets/docs/v2/command-line-tools/using-dataformat/gene-data-reports/). Use of this parameter requires the HTTP header, `accept: text/tab-separated-values`. (optional)
     table_format = 'summary' # str | Specify a predefined set of fields for the tabular report using built-in templates. Use of this parameter requires the HTTP header, `accept: text/tab-separated-values`. (optional)
-    include_tabular_header = INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY # V2IncludeTabularHeader | Specify when to include the table header when requesting a tabular report. (optional) (default to INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY)
+    include_tabular_header = 'INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY' # V2IncludeTabularHeader | Specify when to include the table header when requesting a tabular report. (optional) (default to 'INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY')
     page_size = 20 # int | The maximum number of gene reports to return. Default is 20 and maximum is 1000. If the number of results exceeds the page size, `page_token` can be used to retrieve the remaining results. (optional) (default to 20)
     page_token = 'page_token_example' # str | A page token is returned when the results count exceeds `page size`. Use this token along with previous request parameters to retrieve the next page of results. When `page_token` is empty, all results have been retrieved. (optional)
     query = 'A2M immunoglobulin' # str | Limit to genes that match the specified gene symbol, name (description), alias, locus tag or protein name. (optional)
@@ -2299,7 +2299,7 @@ Name | Type | Description  | Notes
  **locus_tags** | [**List[str]**](str.md)| Gene locus tags | 
  **table_fields** | [**List[str]**](str.md)| Specify which fields to include in the tabular report. Additional fields are described here: [Create a table from the gene data reports](https://www.ncbi.nlm.nih.gov/datasets/docs/v2/command-line-tools/using-dataformat/gene-data-reports/). Use of this parameter requires the HTTP header, &#x60;accept: text/tab-separated-values&#x60;. | [optional] 
  **table_format** | **str**| Specify a predefined set of fields for the tabular report using built-in templates. Use of this parameter requires the HTTP header, &#x60;accept: text/tab-separated-values&#x60;. | [optional] 
- **include_tabular_header** | [**V2IncludeTabularHeader**](.md)| Specify when to include the table header when requesting a tabular report. | [optional] [default to INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY]
+ **include_tabular_header** | [**V2IncludeTabularHeader**](.md)| Specify when to include the table header when requesting a tabular report. | [optional] [default to &#39;INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY&#39;]
  **page_size** | **int**| The maximum number of gene reports to return. Default is 20 and maximum is 1000. If the number of results exceeds the page size, &#x60;page_token&#x60; can be used to retrieve the remaining results. | [optional] [default to 20]
  **page_token** | **str**| A page token is returned when the results count exceeds &#x60;page size&#x60;. Use this token along with previous request parameters to retrieve the next page of results. When &#x60;page_token&#x60; is empty, all results have been retrieved. | [optional] 
  **query** | **str**| Limit to genes that match the specified gene symbol, name (description), alias, locus tag or protein name. | [optional] 
@@ -2372,7 +2372,7 @@ with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
     taxon = '9606' # str | NCBI Taxonomy ID or name (common or scientific) that the genes are annotated at
     table_fields = ['[\"gene-id\",\"gene-type\",\"description\"]'] # List[str] | Specify which fields to include in the tabular report. Additional fields are described here: [Create a table from the gene data reports](https://www.ncbi.nlm.nih.gov/datasets/docs/v2/command-line-tools/using-dataformat/gene-data-reports/). Use of this parameter requires the HTTP header, `accept: text/tab-separated-values`. (optional)
     table_format = 'summary' # str | Specify a predefined set of fields for the tabular report using built-in templates. Use of this parameter requires the HTTP header, `accept: text/tab-separated-values`. (optional)
-    include_tabular_header = INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY # V2IncludeTabularHeader | Specify when to include the table header when requesting a tabular report. (optional) (default to INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY)
+    include_tabular_header = 'INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY' # V2IncludeTabularHeader | Specify when to include the table header when requesting a tabular report. (optional) (default to 'INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY')
     page_size = 20 # int | The maximum number of gene reports to return. Default is 20 and maximum is 1000. If the number of results exceeds the page size, `page_token` can be used to retrieve the remaining results. (optional) (default to 20)
     page_token = 'page_token_example' # str | A page token is returned when the results count exceeds `page size`. Use this token along with previous request parameters to retrieve the next page of results. When `page_token` is empty, all results have been retrieved. (optional)
     query = 'A2M immunoglobulin' # str | Limit to genes that match the specified gene symbol, name (description), alias, locus tag or protein name. (optional)
@@ -2398,7 +2398,7 @@ Name | Type | Description  | Notes
  **taxon** | **str**| NCBI Taxonomy ID or name (common or scientific) that the genes are annotated at | 
  **table_fields** | [**List[str]**](str.md)| Specify which fields to include in the tabular report. Additional fields are described here: [Create a table from the gene data reports](https://www.ncbi.nlm.nih.gov/datasets/docs/v2/command-line-tools/using-dataformat/gene-data-reports/). Use of this parameter requires the HTTP header, &#x60;accept: text/tab-separated-values&#x60;. | [optional] 
  **table_format** | **str**| Specify a predefined set of fields for the tabular report using built-in templates. Use of this parameter requires the HTTP header, &#x60;accept: text/tab-separated-values&#x60;. | [optional] 
- **include_tabular_header** | [**V2IncludeTabularHeader**](.md)| Specify when to include the table header when requesting a tabular report. | [optional] [default to INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY]
+ **include_tabular_header** | [**V2IncludeTabularHeader**](.md)| Specify when to include the table header when requesting a tabular report. | [optional] [default to &#39;INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY&#39;]
  **page_size** | **int**| The maximum number of gene reports to return. Default is 20 and maximum is 1000. If the number of results exceeds the page size, &#x60;page_token&#x60; can be used to retrieve the remaining results. | [optional] [default to 20]
  **page_token** | **str**| A page token is returned when the results count exceeds &#x60;page size&#x60;. Use this token along with previous request parameters to retrieve the next page of results. When &#x60;page_token&#x60; is empty, all results have been retrieved. | [optional] 
  **query** | **str**| Limit to genes that match the specified gene symbol, name (description), alias, locus tag or protein name. | [optional] 
@@ -2469,16 +2469,16 @@ with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = ncbi.datasets.openapi.GeneApi(api_client)
     gene_ids = [59067] # List[int] | One or more NCBI GeneIDs
-    returned_content = COMPLETE # V2GeneDatasetReportsRequestContentType | Return complete gene reports, or abbreviated reports with either GeneIDs only or GeneIDs, transcript and protein counts. (optional) (default to COMPLETE)
+    returned_content = 'COMPLETE' # V2GeneDatasetReportsRequestContentType | Return complete gene reports, or abbreviated reports with either GeneIDs only or GeneIDs, transcript and protein counts. (optional) (default to 'COMPLETE')
     locus_tags = ['b0001'] # List[str] | Gene locus tags (optional)
     table_fields = ['[\"gene-id\",\"gene-type\",\"description\"]'] # List[str] | Specify which fields to include in the tabular report. Additional fields are described here: [Create a table from the gene data reports](https://www.ncbi.nlm.nih.gov/datasets/docs/v2/command-line-tools/using-dataformat/gene-data-reports/). Use of this parameter requires the HTTP header, `accept: text/tab-separated-values`. (optional)
-    include_tabular_header = INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY # V2IncludeTabularHeader | Specify when to include the table header when requesting a tabular report. (optional) (default to INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY)
+    include_tabular_header = 'INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY' # V2IncludeTabularHeader | Specify when to include the table header when requesting a tabular report. (optional) (default to 'INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY')
     page_size = 20 # int | The maximum number of gene reports to return. Default is 20 and maximum is 1000. If the number of results exceeds the page size, `page_token` can be used to retrieve the remaining results. (optional) (default to 20)
     page_token = 'page_token_example' # str | A page token is returned when the results count exceeds `page size`. Use this token along with previous request parameters to retrieve the next page of results. When `page_token` is empty, all results have been retrieved. (optional)
     accession_filter = ['[\"NM_001407959.1\",\"NM_001408458.1\"]'] # List[str] | Filter tabular product report to only include the selected accessions. Use of this parameter requires the HTTP header, `accept: text/tab-separated-values`. (optional)
     tax_search_subtree = False # bool | If true, include genes from taxonomic ranks below the requested taxon. (optional) (default to False)
     sort_field = 'sort_field_example' # str |  (optional)
-    sort_direction = SORT_DIRECTION_UNSPECIFIED # V2SortDirection |  (optional) (default to SORT_DIRECTION_UNSPECIFIED)
+    sort_direction = 'SORT_DIRECTION_UNSPECIFIED' # V2SortDirection |  (optional) (default to 'SORT_DIRECTION_UNSPECIFIED')
 
     try:
         # Get gene reports by GeneID
@@ -2497,16 +2497,16 @@ with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **gene_ids** | [**List[int]**](int.md)| One or more NCBI GeneIDs | 
- **returned_content** | [**V2GeneDatasetReportsRequestContentType**](.md)| Return complete gene reports, or abbreviated reports with either GeneIDs only or GeneIDs, transcript and protein counts. | [optional] [default to COMPLETE]
+ **returned_content** | [**V2GeneDatasetReportsRequestContentType**](.md)| Return complete gene reports, or abbreviated reports with either GeneIDs only or GeneIDs, transcript and protein counts. | [optional] [default to &#39;COMPLETE&#39;]
  **locus_tags** | [**List[str]**](str.md)| Gene locus tags | [optional] 
  **table_fields** | [**List[str]**](str.md)| Specify which fields to include in the tabular report. Additional fields are described here: [Create a table from the gene data reports](https://www.ncbi.nlm.nih.gov/datasets/docs/v2/command-line-tools/using-dataformat/gene-data-reports/). Use of this parameter requires the HTTP header, &#x60;accept: text/tab-separated-values&#x60;. | [optional] 
- **include_tabular_header** | [**V2IncludeTabularHeader**](.md)| Specify when to include the table header when requesting a tabular report. | [optional] [default to INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY]
+ **include_tabular_header** | [**V2IncludeTabularHeader**](.md)| Specify when to include the table header when requesting a tabular report. | [optional] [default to &#39;INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY&#39;]
  **page_size** | **int**| The maximum number of gene reports to return. Default is 20 and maximum is 1000. If the number of results exceeds the page size, &#x60;page_token&#x60; can be used to retrieve the remaining results. | [optional] [default to 20]
  **page_token** | **str**| A page token is returned when the results count exceeds &#x60;page size&#x60;. Use this token along with previous request parameters to retrieve the next page of results. When &#x60;page_token&#x60; is empty, all results have been retrieved. | [optional] 
  **accession_filter** | [**List[str]**](str.md)| Filter tabular product report to only include the selected accessions. Use of this parameter requires the HTTP header, &#x60;accept: text/tab-separated-values&#x60;. | [optional] 
  **tax_search_subtree** | **bool**| If true, include genes from taxonomic ranks below the requested taxon. | [optional] [default to False]
  **sort_field** | **str**|  | [optional] 
- **sort_direction** | [**V2SortDirection**](.md)|  | [optional] [default to SORT_DIRECTION_UNSPECIFIED]
+ **sort_direction** | [**V2SortDirection**](.md)|  | [optional] [default to &#39;SORT_DIRECTION_UNSPECIFIED&#39;]
 
 ### Return type
 
@@ -2573,10 +2573,10 @@ with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = ncbi.datasets.openapi.GeneApi(api_client)
     taxon = '9606' # str | NCBI Taxonomy ID or name (common or scientific) that the genes are annotated at
-    returned_content = COMPLETE # V2GeneDatasetReportsRequestContentType | Return complete gene reports, or abbreviated reports with either GeneIDs only or GeneIDs, transcript and protein counts. (optional) (default to COMPLETE)
+    returned_content = 'COMPLETE' # V2GeneDatasetReportsRequestContentType | Return complete gene reports, or abbreviated reports with either GeneIDs only or GeneIDs, transcript and protein counts. (optional) (default to 'COMPLETE')
     locus_tags = ['b0001'] # List[str] | Gene locus tags (optional)
     table_fields = ['[\"gene-id\",\"gene-type\",\"description\"]'] # List[str] | Specify which fields to include in the tabular report. Additional fields are described here: [Create a table from the gene data reports](https://www.ncbi.nlm.nih.gov/datasets/docs/v2/command-line-tools/using-dataformat/gene-data-reports/). Use of this parameter requires the HTTP header, `accept: text/tab-separated-values`. (optional)
-    include_tabular_header = INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY # V2IncludeTabularHeader | Specify when to include the table header when requesting a tabular report. (optional) (default to INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY)
+    include_tabular_header = 'INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY' # V2IncludeTabularHeader | Specify when to include the table header when requesting a tabular report. (optional) (default to 'INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY')
     page_size = 20 # int | The maximum number of gene reports to return. Default is 20 and maximum is 1000. If the number of results exceeds the page size, `page_token` can be used to retrieve the remaining results. (optional) (default to 20)
     page_token = 'page_token_example' # str | A page token is returned when the results count exceeds `page size`. Use this token along with previous request parameters to retrieve the next page of results. When `page_token` is empty, all results have been retrieved. (optional)
     query = 'A2M immunoglobulin' # str | Limit to genes that match the specified gene symbol, name (description), alias, locus tag or protein name. (optional)
@@ -2584,7 +2584,7 @@ with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
     accession_filter = ['[\"NM_001407959.1\",\"NM_001408458.1\"]'] # List[str] | Filter tabular product report to only include the selected accessions. Use of this parameter requires the HTTP header, `accept: text/tab-separated-values`. (optional)
     tax_search_subtree = False # bool | If true, include genes from taxonomic ranks below the requested taxon. (optional) (default to False)
     sort_field = 'sort_field_example' # str |  (optional)
-    sort_direction = SORT_DIRECTION_UNSPECIFIED # V2SortDirection |  (optional) (default to SORT_DIRECTION_UNSPECIFIED)
+    sort_direction = 'SORT_DIRECTION_UNSPECIFIED' # V2SortDirection |  (optional) (default to 'SORT_DIRECTION_UNSPECIFIED')
 
     try:
         # Get gene reports by taxonomic identifier
@@ -2603,10 +2603,10 @@ with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **taxon** | **str**| NCBI Taxonomy ID or name (common or scientific) that the genes are annotated at | 
- **returned_content** | [**V2GeneDatasetReportsRequestContentType**](.md)| Return complete gene reports, or abbreviated reports with either GeneIDs only or GeneIDs, transcript and protein counts. | [optional] [default to COMPLETE]
+ **returned_content** | [**V2GeneDatasetReportsRequestContentType**](.md)| Return complete gene reports, or abbreviated reports with either GeneIDs only or GeneIDs, transcript and protein counts. | [optional] [default to &#39;COMPLETE&#39;]
  **locus_tags** | [**List[str]**](str.md)| Gene locus tags | [optional] 
  **table_fields** | [**List[str]**](str.md)| Specify which fields to include in the tabular report. Additional fields are described here: [Create a table from the gene data reports](https://www.ncbi.nlm.nih.gov/datasets/docs/v2/command-line-tools/using-dataformat/gene-data-reports/). Use of this parameter requires the HTTP header, &#x60;accept: text/tab-separated-values&#x60;. | [optional] 
- **include_tabular_header** | [**V2IncludeTabularHeader**](.md)| Specify when to include the table header when requesting a tabular report. | [optional] [default to INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY]
+ **include_tabular_header** | [**V2IncludeTabularHeader**](.md)| Specify when to include the table header when requesting a tabular report. | [optional] [default to &#39;INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY&#39;]
  **page_size** | **int**| The maximum number of gene reports to return. Default is 20 and maximum is 1000. If the number of results exceeds the page size, &#x60;page_token&#x60; can be used to retrieve the remaining results. | [optional] [default to 20]
  **page_token** | **str**| A page token is returned when the results count exceeds &#x60;page size&#x60;. Use this token along with previous request parameters to retrieve the next page of results. When &#x60;page_token&#x60; is empty, all results have been retrieved. | [optional] 
  **query** | **str**| Limit to genes that match the specified gene symbol, name (description), alias, locus tag or protein name. | [optional] 
@@ -2614,7 +2614,7 @@ Name | Type | Description  | Notes
  **accession_filter** | [**List[str]**](str.md)| Filter tabular product report to only include the selected accessions. Use of this parameter requires the HTTP header, &#x60;accept: text/tab-separated-values&#x60;. | [optional] 
  **tax_search_subtree** | **bool**| If true, include genes from taxonomic ranks below the requested taxon. | [optional] [default to False]
  **sort_field** | **str**|  | [optional] 
- **sort_direction** | [**V2SortDirection**](.md)|  | [optional] [default to SORT_DIRECTION_UNSPECIFIED]
+ **sort_direction** | [**V2SortDirection**](.md)|  | [optional] [default to &#39;SORT_DIRECTION_UNSPECIFIED&#39;]
 
 ### Return type
 

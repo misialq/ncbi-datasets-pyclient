@@ -156,6 +156,7 @@ class VirusApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "bytes",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -271,6 +272,7 @@ class VirusApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "bytes",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -386,6 +388,7 @@ class VirusApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "bytes",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -599,6 +602,7 @@ class VirusApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "bytes",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -670,6 +674,7 @@ class VirusApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "bytes",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -741,6 +746,7 @@ class VirusApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "bytes",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -931,6 +937,7 @@ class VirusApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2DownloadSummary",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1042,6 +1049,7 @@ class VirusApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2DownloadSummary",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1153,6 +1161,7 @@ class VirusApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2DownloadSummary",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1357,6 +1366,7 @@ class VirusApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2DownloadSummary",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1424,6 +1434,7 @@ class VirusApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2DownloadSummary",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1491,6 +1502,7 @@ class VirusApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2DownloadSummary",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1676,6 +1688,7 @@ class VirusApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2TabularOutput",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1787,6 +1800,7 @@ class VirusApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2TabularOutput",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1898,6 +1912,7 @@ class VirusApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2TabularOutput",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2101,6 +2116,7 @@ class VirusApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2VirusAvailability",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2168,6 +2184,7 @@ class VirusApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2VirusAvailability",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2235,6 +2252,7 @@ class VirusApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2VirusAvailability",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2364,6 +2382,7 @@ class VirusApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2VirusAvailability",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2431,6 +2450,7 @@ class VirusApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2VirusAvailability",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2498,6 +2518,7 @@ class VirusApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2VirusAvailability",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2687,6 +2708,7 @@ class VirusApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2reportsVirusAnnotationReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2802,6 +2824,7 @@ class VirusApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2reportsVirusAnnotationReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2917,6 +2940,7 @@ class VirusApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2reportsVirusAnnotationReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -3127,6 +3151,7 @@ class VirusApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2reportsVirusAnnotationReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -3194,6 +3219,7 @@ class VirusApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2reportsVirusAnnotationReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -3261,6 +3287,7 @@ class VirusApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2reportsVirusAnnotationReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -3452,6 +3479,7 @@ class VirusApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2reportsVirusAnnotationReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -3567,6 +3595,7 @@ class VirusApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2reportsVirusAnnotationReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -3682,6 +3711,7 @@ class VirusApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2reportsVirusAnnotationReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -3943,6 +3973,7 @@ class VirusApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "bytes",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -4062,6 +4093,7 @@ class VirusApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "bytes",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -4181,6 +4213,7 @@ class VirusApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "bytes",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -4450,6 +4483,7 @@ class VirusApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "bytes",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -4573,6 +4607,7 @@ class VirusApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "bytes",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -4696,6 +4731,7 @@ class VirusApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "bytes",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -4920,6 +4956,7 @@ class VirusApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "bytes",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -4991,6 +5028,7 @@ class VirusApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "bytes",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -5062,6 +5100,7 @@ class VirusApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "bytes",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -5256,6 +5295,7 @@ class VirusApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2DownloadSummary",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -5371,6 +5411,7 @@ class VirusApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2DownloadSummary",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -5486,6 +5527,7 @@ class VirusApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2DownloadSummary",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -5695,6 +5737,7 @@ class VirusApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2DownloadSummary",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -5762,6 +5805,7 @@ class VirusApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2DownloadSummary",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -5829,6 +5873,7 @@ class VirusApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2DownloadSummary",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -6027,6 +6072,7 @@ class VirusApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2TabularOutput",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -6151,6 +6197,7 @@ class VirusApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2TabularOutput",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -6275,6 +6322,7 @@ class VirusApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2TabularOutput",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -6547,6 +6595,7 @@ class VirusApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2reportsVirusDataReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -6666,6 +6715,7 @@ class VirusApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2reportsVirusDataReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -6785,6 +6835,7 @@ class VirusApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2reportsVirusDataReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -7000,6 +7051,7 @@ class VirusApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2reportsVirusDataReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -7067,6 +7119,7 @@ class VirusApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2reportsVirusDataReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -7134,6 +7187,7 @@ class VirusApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2reportsVirusDataReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -7329,6 +7383,7 @@ class VirusApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2reportsVirusDataReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -7448,6 +7503,7 @@ class VirusApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2reportsVirusDataReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -7567,6 +7623,7 @@ class VirusApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2reportsVirusDataReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,

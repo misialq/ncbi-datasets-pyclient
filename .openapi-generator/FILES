@@ -126,8 +126,11 @@ docs/V2SciNameAndIdsSciNameAndId.md
 docs/V2SeqRange.md
 docs/V2SeqReply.md
 docs/V2SequenceAccessionRequest.md
+docs/V2SequenceDatasetRequest.md
+docs/V2SequenceDatasetRequestFileType.md
 docs/V2SequenceReportPage.md
 docs/V2SequenceRequest.md
+docs/V2SequenceRequestContentType.md
 docs/V2SleepReply.md
 docs/V2SleepRequest.md
 docs/V2SortDirection.md
@@ -171,6 +174,7 @@ docs/V2VirusTableField.md
 docs/V2reportsANIMatch.md
 docs/V2reportsANITypeCategory.md
 docs/V2reportsAdditionalSubmitter.md
+docs/V2reportsAggregateExpressionValue.md
 docs/V2reportsAnnotation.md
 docs/V2reportsAnnotationInfo.md
 docs/V2reportsArticle.md
@@ -188,6 +192,7 @@ docs/V2reportsAverageNucleotideIdentityMatchStatus.md
 docs/V2reportsAverageNucleotideIdentityTaxonomyCheckStatus.md
 docs/V2reportsBioProject.md
 docs/V2reportsBioProjectLineage.md
+docs/V2reportsBioSample.md
 docs/V2reportsBioSampleAttribute.md
 docs/V2reportsBioSampleContact.md
 docs/V2reportsBioSampleDataReport.md
@@ -216,6 +221,9 @@ docs/V2reportsErrorOrganelleErrorCode.md
 docs/V2reportsErrorSequenceErrorCode.md
 docs/V2reportsErrorTaxonomyErrorCode.md
 docs/V2reportsErrorVirusErrorCode.md
+docs/V2reportsExpressionBioProject.md
+docs/V2reportsExpressionDescriptor.md
+docs/V2reportsExpressionRelease.md
 docs/V2reportsFeatureCounts.md
 docs/V2reportsFunctionalSite.md
 docs/V2reportsGeneCounts.md
@@ -285,6 +293,7 @@ docs/V2reportsRange.md
 docs/V2reportsRankType.md
 docs/V2reportsReference.md
 docs/V2reportsRnaType.md
+docs/V2reportsSample.md
 docs/V2reportsSampleInfo.md
 docs/V2reportsSeqRangeSet.md
 docs/V2reportsSeqRangeSetFasta.md
@@ -294,6 +303,7 @@ docs/V2reportsSequenceDataReportMatch.md
 docs/V2reportsSequenceDataReportMoleculeType.md
 docs/V2reportsSequenceDataReportOriginType.md
 docs/V2reportsSequenceDataReportPage.md
+docs/V2reportsSequenceDataReportTopologyType.md
 docs/V2reportsSequenceDataReportUnits.md
 docs/V2reportsSequenceInfo.md
 docs/V2reportsSequenceInformation.md
@@ -301,6 +311,7 @@ docs/V2reportsSequenceReference.md
 docs/V2reportsSequenceTypeMaterial.md
 docs/V2reportsSourceDatabase.md
 docs/V2reportsSpecimenVoucher.md
+docs/V2reportsSraRun.md
 docs/V2reportsSubmission.md
 docs/V2reportsTaxData.md
 docs/V2reportsTaxonomyDataReportPage.md
@@ -471,8 +482,11 @@ ncbi/datasets/openapi/models/v2_sci_name_and_ids_sci_name_and_id.py
 ncbi/datasets/openapi/models/v2_seq_range.py
 ncbi/datasets/openapi/models/v2_seq_reply.py
 ncbi/datasets/openapi/models/v2_sequence_accession_request.py
+ncbi/datasets/openapi/models/v2_sequence_dataset_request.py
+ncbi/datasets/openapi/models/v2_sequence_dataset_request_file_type.py
 ncbi/datasets/openapi/models/v2_sequence_report_page.py
 ncbi/datasets/openapi/models/v2_sequence_request.py
+ncbi/datasets/openapi/models/v2_sequence_request_content_type.py
 ncbi/datasets/openapi/models/v2_sleep_reply.py
 ncbi/datasets/openapi/models/v2_sleep_request.py
 ncbi/datasets/openapi/models/v2_sort_direction.py
@@ -514,6 +528,7 @@ ncbi/datasets/openapi/models/v2_virus_dataset_report_type.py
 ncbi/datasets/openapi/models/v2_virus_dataset_request.py
 ncbi/datasets/openapi/models/v2_virus_table_field.py
 ncbi/datasets/openapi/models/v2reports_additional_submitter.py
+ncbi/datasets/openapi/models/v2reports_aggregate_expression_value.py
 ncbi/datasets/openapi/models/v2reports_ani_match.py
 ncbi/datasets/openapi/models/v2reports_ani_type_category.py
 ncbi/datasets/openapi/models/v2reports_annotation.py
@@ -533,6 +548,7 @@ ncbi/datasets/openapi/models/v2reports_average_nucleotide_identity_match_status.
 ncbi/datasets/openapi/models/v2reports_average_nucleotide_identity_taxonomy_check_status.py
 ncbi/datasets/openapi/models/v2reports_bio_project.py
 ncbi/datasets/openapi/models/v2reports_bio_project_lineage.py
+ncbi/datasets/openapi/models/v2reports_bio_sample.py
 ncbi/datasets/openapi/models/v2reports_bio_sample_attribute.py
 ncbi/datasets/openapi/models/v2reports_bio_sample_contact.py
 ncbi/datasets/openapi/models/v2reports_bio_sample_data_report.py
@@ -561,6 +577,9 @@ ncbi/datasets/openapi/models/v2reports_error_organelle_error_code.py
 ncbi/datasets/openapi/models/v2reports_error_sequence_error_code.py
 ncbi/datasets/openapi/models/v2reports_error_taxonomy_error_code.py
 ncbi/datasets/openapi/models/v2reports_error_virus_error_code.py
+ncbi/datasets/openapi/models/v2reports_expression_bio_project.py
+ncbi/datasets/openapi/models/v2reports_expression_descriptor.py
+ncbi/datasets/openapi/models/v2reports_expression_release.py
 ncbi/datasets/openapi/models/v2reports_feature_counts.py
 ncbi/datasets/openapi/models/v2reports_functional_site.py
 ncbi/datasets/openapi/models/v2reports_gene_counts.py
@@ -630,6 +649,7 @@ ncbi/datasets/openapi/models/v2reports_range.py
 ncbi/datasets/openapi/models/v2reports_rank_type.py
 ncbi/datasets/openapi/models/v2reports_reference.py
 ncbi/datasets/openapi/models/v2reports_rna_type.py
+ncbi/datasets/openapi/models/v2reports_sample.py
 ncbi/datasets/openapi/models/v2reports_sample_info.py
 ncbi/datasets/openapi/models/v2reports_seq_range_set.py
 ncbi/datasets/openapi/models/v2reports_seq_range_set_fasta.py
@@ -639,6 +659,7 @@ ncbi/datasets/openapi/models/v2reports_sequence_data_report_match.py
 ncbi/datasets/openapi/models/v2reports_sequence_data_report_molecule_type.py
 ncbi/datasets/openapi/models/v2reports_sequence_data_report_origin_type.py
 ncbi/datasets/openapi/models/v2reports_sequence_data_report_page.py
+ncbi/datasets/openapi/models/v2reports_sequence_data_report_topology_type.py
 ncbi/datasets/openapi/models/v2reports_sequence_data_report_units.py
 ncbi/datasets/openapi/models/v2reports_sequence_info.py
 ncbi/datasets/openapi/models/v2reports_sequence_information.py
@@ -646,6 +667,7 @@ ncbi/datasets/openapi/models/v2reports_sequence_reference.py
 ncbi/datasets/openapi/models/v2reports_sequence_type_material.py
 ncbi/datasets/openapi/models/v2reports_source_database.py
 ncbi/datasets/openapi/models/v2reports_specimen_voucher.py
+ncbi/datasets/openapi/models/v2reports_sra_run.py
 ncbi/datasets/openapi/models/v2reports_submission.py
 ncbi/datasets/openapi/models/v2reports_tax_data.py
 ncbi/datasets/openapi/models/v2reports_taxonomy_data_report_page.py
@@ -687,13 +709,15 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_v2reports_culture_collection.py
-test/test_v2reports_genetic_code.py
-test/test_v2reports_genetic_codes.py
-test/test_v2reports_infraspecific_modifers.py
-test/test_v2reports_isolation_details.py
-test/test_v2reports_sequence_data_report_match.py
-test/test_v2reports_sequence_data_report_molecule_type.py
-test/test_v2reports_sequence_data_report_units.py
-test/test_v2reports_sequence_type_material.py
+test/test_v2_sequence_dataset_request.py
+test/test_v2_sequence_dataset_request_file_type.py
+test/test_v2_sequence_request_content_type.py
+test/test_v2reports_aggregate_expression_value.py
+test/test_v2reports_bio_sample.py
+test/test_v2reports_expression_bio_project.py
+test/test_v2reports_expression_descriptor.py
+test/test_v2reports_expression_release.py
+test/test_v2reports_sample.py
+test/test_v2reports_sequence_data_report_topology_type.py
+test/test_v2reports_sra_run.py
 tox.ini

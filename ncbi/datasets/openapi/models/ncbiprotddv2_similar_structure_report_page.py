@@ -31,7 +31,8 @@ class Ncbiprotddv2SimilarStructureReportPage(BaseModel):
     similar_structures: Optional[List[Ncbiprotddv2SimilarStructureReport]] = None
     next_page_token: Optional[StrictStr] = None
     total_count: Optional[StrictInt] = None
-    __properties: ClassVar[List[str]] = ["similar_structures", "next_page_token", "total_count"]
+    query_length: Optional[StrictInt] = None
+    __properties: ClassVar[List[str]] = ["similar_structures", "next_page_token", "total_count", "query_length"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -93,7 +94,8 @@ class Ncbiprotddv2SimilarStructureReportPage(BaseModel):
         _obj = cls.model_validate({
             "similar_structures": [Ncbiprotddv2SimilarStructureReport.from_dict(_item) for _item in obj["similar_structures"]] if obj.get("similar_structures") is not None else None,
             "next_page_token": obj.get("next_page_token"),
-            "total_count": obj.get("total_count")
+            "total_count": obj.get("total_count"),
+            "query_length": obj.get("query_length")
         })
         return _obj
 

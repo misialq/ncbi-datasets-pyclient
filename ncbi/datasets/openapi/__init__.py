@@ -14,7 +14,7 @@
 """  # noqa: E501
 
 
-__version__ = "v18.33.1"
+__version__ = "v18.34.0"
 
 # Define package exports
 __all__ = [
@@ -152,8 +152,11 @@ __all__ = [
     "V2SeqRange",
     "V2SeqReply",
     "V2SequenceAccessionRequest",
+    "V2SequenceDatasetRequest",
+    "V2SequenceDatasetRequestFileType",
     "V2SequenceReportPage",
     "V2SequenceRequest",
+    "V2SequenceRequestContentType",
     "V2SleepReply",
     "V2SleepRequest",
     "V2SortDirection",
@@ -197,6 +200,7 @@ __all__ = [
     "V2reportsANIMatch",
     "V2reportsANITypeCategory",
     "V2reportsAdditionalSubmitter",
+    "V2reportsAggregateExpressionValue",
     "V2reportsAnnotation",
     "V2reportsAnnotationInfo",
     "V2reportsArticle",
@@ -214,6 +218,7 @@ __all__ = [
     "V2reportsAverageNucleotideIdentityTaxonomyCheckStatus",
     "V2reportsBioProject",
     "V2reportsBioProjectLineage",
+    "V2reportsBioSample",
     "V2reportsBioSampleAttribute",
     "V2reportsBioSampleContact",
     "V2reportsBioSampleDataReport",
@@ -242,6 +247,9 @@ __all__ = [
     "V2reportsErrorSequenceErrorCode",
     "V2reportsErrorTaxonomyErrorCode",
     "V2reportsErrorVirusErrorCode",
+    "V2reportsExpressionBioProject",
+    "V2reportsExpressionDescriptor",
+    "V2reportsExpressionRelease",
     "V2reportsFeatureCounts",
     "V2reportsFunctionalSite",
     "V2reportsGeneCounts",
@@ -311,6 +319,7 @@ __all__ = [
     "V2reportsRankType",
     "V2reportsReference",
     "V2reportsRnaType",
+    "V2reportsSample",
     "V2reportsSampleInfo",
     "V2reportsSeqRangeSet",
     "V2reportsSeqRangeSetFasta",
@@ -320,6 +329,7 @@ __all__ = [
     "V2reportsSequenceDataReportMoleculeType",
     "V2reportsSequenceDataReportOriginType",
     "V2reportsSequenceDataReportPage",
+    "V2reportsSequenceDataReportTopologyType",
     "V2reportsSequenceDataReportUnits",
     "V2reportsSequenceInfo",
     "V2reportsSequenceInformation",
@@ -327,6 +337,7 @@ __all__ = [
     "V2reportsSequenceTypeMaterial",
     "V2reportsSourceDatabase",
     "V2reportsSpecimenVoucher",
+    "V2reportsSraRun",
     "V2reportsSubmission",
     "V2reportsTaxData",
     "V2reportsTaxonomyDataReportPage",
@@ -501,8 +512,11 @@ from ncbi.datasets.openapi.models.v2_sci_name_and_ids_sci_name_and_id import V2S
 from ncbi.datasets.openapi.models.v2_seq_range import V2SeqRange as V2SeqRange
 from ncbi.datasets.openapi.models.v2_seq_reply import V2SeqReply as V2SeqReply
 from ncbi.datasets.openapi.models.v2_sequence_accession_request import V2SequenceAccessionRequest as V2SequenceAccessionRequest
+from ncbi.datasets.openapi.models.v2_sequence_dataset_request import V2SequenceDatasetRequest as V2SequenceDatasetRequest
+from ncbi.datasets.openapi.models.v2_sequence_dataset_request_file_type import V2SequenceDatasetRequestFileType as V2SequenceDatasetRequestFileType
 from ncbi.datasets.openapi.models.v2_sequence_report_page import V2SequenceReportPage as V2SequenceReportPage
 from ncbi.datasets.openapi.models.v2_sequence_request import V2SequenceRequest as V2SequenceRequest
+from ncbi.datasets.openapi.models.v2_sequence_request_content_type import V2SequenceRequestContentType as V2SequenceRequestContentType
 from ncbi.datasets.openapi.models.v2_sleep_reply import V2SleepReply as V2SleepReply
 from ncbi.datasets.openapi.models.v2_sleep_request import V2SleepRequest as V2SleepRequest
 from ncbi.datasets.openapi.models.v2_sort_direction import V2SortDirection as V2SortDirection
@@ -546,6 +560,7 @@ from ncbi.datasets.openapi.models.v2_virus_table_field import V2VirusTableField 
 from ncbi.datasets.openapi.models.v2reports_ani_match import V2reportsANIMatch as V2reportsANIMatch
 from ncbi.datasets.openapi.models.v2reports_ani_type_category import V2reportsANITypeCategory as V2reportsANITypeCategory
 from ncbi.datasets.openapi.models.v2reports_additional_submitter import V2reportsAdditionalSubmitter as V2reportsAdditionalSubmitter
+from ncbi.datasets.openapi.models.v2reports_aggregate_expression_value import V2reportsAggregateExpressionValue as V2reportsAggregateExpressionValue
 from ncbi.datasets.openapi.models.v2reports_annotation import V2reportsAnnotation as V2reportsAnnotation
 from ncbi.datasets.openapi.models.v2reports_annotation_info import V2reportsAnnotationInfo as V2reportsAnnotationInfo
 from ncbi.datasets.openapi.models.v2reports_article import V2reportsArticle as V2reportsArticle
@@ -563,6 +578,7 @@ from ncbi.datasets.openapi.models.v2reports_average_nucleotide_identity_match_st
 from ncbi.datasets.openapi.models.v2reports_average_nucleotide_identity_taxonomy_check_status import V2reportsAverageNucleotideIdentityTaxonomyCheckStatus as V2reportsAverageNucleotideIdentityTaxonomyCheckStatus
 from ncbi.datasets.openapi.models.v2reports_bio_project import V2reportsBioProject as V2reportsBioProject
 from ncbi.datasets.openapi.models.v2reports_bio_project_lineage import V2reportsBioProjectLineage as V2reportsBioProjectLineage
+from ncbi.datasets.openapi.models.v2reports_bio_sample import V2reportsBioSample as V2reportsBioSample
 from ncbi.datasets.openapi.models.v2reports_bio_sample_attribute import V2reportsBioSampleAttribute as V2reportsBioSampleAttribute
 from ncbi.datasets.openapi.models.v2reports_bio_sample_contact import V2reportsBioSampleContact as V2reportsBioSampleContact
 from ncbi.datasets.openapi.models.v2reports_bio_sample_data_report import V2reportsBioSampleDataReport as V2reportsBioSampleDataReport
@@ -591,6 +607,9 @@ from ncbi.datasets.openapi.models.v2reports_error_organelle_error_code import V2
 from ncbi.datasets.openapi.models.v2reports_error_sequence_error_code import V2reportsErrorSequenceErrorCode as V2reportsErrorSequenceErrorCode
 from ncbi.datasets.openapi.models.v2reports_error_taxonomy_error_code import V2reportsErrorTaxonomyErrorCode as V2reportsErrorTaxonomyErrorCode
 from ncbi.datasets.openapi.models.v2reports_error_virus_error_code import V2reportsErrorVirusErrorCode as V2reportsErrorVirusErrorCode
+from ncbi.datasets.openapi.models.v2reports_expression_bio_project import V2reportsExpressionBioProject as V2reportsExpressionBioProject
+from ncbi.datasets.openapi.models.v2reports_expression_descriptor import V2reportsExpressionDescriptor as V2reportsExpressionDescriptor
+from ncbi.datasets.openapi.models.v2reports_expression_release import V2reportsExpressionRelease as V2reportsExpressionRelease
 from ncbi.datasets.openapi.models.v2reports_feature_counts import V2reportsFeatureCounts as V2reportsFeatureCounts
 from ncbi.datasets.openapi.models.v2reports_functional_site import V2reportsFunctionalSite as V2reportsFunctionalSite
 from ncbi.datasets.openapi.models.v2reports_gene_counts import V2reportsGeneCounts as V2reportsGeneCounts
@@ -660,6 +679,7 @@ from ncbi.datasets.openapi.models.v2reports_range import V2reportsRange as V2rep
 from ncbi.datasets.openapi.models.v2reports_rank_type import V2reportsRankType as V2reportsRankType
 from ncbi.datasets.openapi.models.v2reports_reference import V2reportsReference as V2reportsReference
 from ncbi.datasets.openapi.models.v2reports_rna_type import V2reportsRnaType as V2reportsRnaType
+from ncbi.datasets.openapi.models.v2reports_sample import V2reportsSample as V2reportsSample
 from ncbi.datasets.openapi.models.v2reports_sample_info import V2reportsSampleInfo as V2reportsSampleInfo
 from ncbi.datasets.openapi.models.v2reports_seq_range_set import V2reportsSeqRangeSet as V2reportsSeqRangeSet
 from ncbi.datasets.openapi.models.v2reports_seq_range_set_fasta import V2reportsSeqRangeSetFasta as V2reportsSeqRangeSetFasta
@@ -669,6 +689,7 @@ from ncbi.datasets.openapi.models.v2reports_sequence_data_report_match import V2
 from ncbi.datasets.openapi.models.v2reports_sequence_data_report_molecule_type import V2reportsSequenceDataReportMoleculeType as V2reportsSequenceDataReportMoleculeType
 from ncbi.datasets.openapi.models.v2reports_sequence_data_report_origin_type import V2reportsSequenceDataReportOriginType as V2reportsSequenceDataReportOriginType
 from ncbi.datasets.openapi.models.v2reports_sequence_data_report_page import V2reportsSequenceDataReportPage as V2reportsSequenceDataReportPage
+from ncbi.datasets.openapi.models.v2reports_sequence_data_report_topology_type import V2reportsSequenceDataReportTopologyType as V2reportsSequenceDataReportTopologyType
 from ncbi.datasets.openapi.models.v2reports_sequence_data_report_units import V2reportsSequenceDataReportUnits as V2reportsSequenceDataReportUnits
 from ncbi.datasets.openapi.models.v2reports_sequence_info import V2reportsSequenceInfo as V2reportsSequenceInfo
 from ncbi.datasets.openapi.models.v2reports_sequence_information import V2reportsSequenceInformation as V2reportsSequenceInformation
@@ -676,6 +697,7 @@ from ncbi.datasets.openapi.models.v2reports_sequence_reference import V2reportsS
 from ncbi.datasets.openapi.models.v2reports_sequence_type_material import V2reportsSequenceTypeMaterial as V2reportsSequenceTypeMaterial
 from ncbi.datasets.openapi.models.v2reports_source_database import V2reportsSourceDatabase as V2reportsSourceDatabase
 from ncbi.datasets.openapi.models.v2reports_specimen_voucher import V2reportsSpecimenVoucher as V2reportsSpecimenVoucher
+from ncbi.datasets.openapi.models.v2reports_sra_run import V2reportsSraRun as V2reportsSraRun
 from ncbi.datasets.openapi.models.v2reports_submission import V2reportsSubmission as V2reportsSubmission
 from ncbi.datasets.openapi.models.v2reports_tax_data import V2reportsTaxData as V2reportsTaxData
 from ncbi.datasets.openapi.models.v2reports_taxonomy_data_report_page import V2reportsTaxonomyDataReportPage as V2reportsTaxonomyDataReportPage

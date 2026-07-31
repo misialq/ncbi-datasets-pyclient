@@ -130,6 +130,7 @@ class GeneApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "bytes",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -217,6 +218,7 @@ class GeneApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "bytes",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -304,6 +306,7 @@ class GeneApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "bytes",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -466,6 +469,7 @@ class GeneApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "bytes",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -537,6 +541,7 @@ class GeneApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "bytes",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -608,6 +613,7 @@ class GeneApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "bytes",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -758,6 +764,7 @@ class GeneApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2GeneChromosomeSummaryReply",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -829,6 +836,7 @@ class GeneApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2GeneChromosomeSummaryReply",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -900,6 +908,7 @@ class GeneApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2GeneChromosomeSummaryReply",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1031,6 +1040,7 @@ class GeneApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2GeneCountsByTaxonReply",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1098,6 +1108,7 @@ class GeneApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2GeneCountsByTaxonReply",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1165,6 +1176,7 @@ class GeneApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2GeneCountsByTaxonReply",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1293,6 +1305,7 @@ class GeneApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2GeneCountsByTaxonReply",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1360,6 +1373,7 @@ class GeneApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2GeneCountsByTaxonReply",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1427,6 +1441,7 @@ class GeneApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2GeneCountsByTaxonReply",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1568,6 +1583,7 @@ class GeneApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2reportsGeneDataReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1635,6 +1651,7 @@ class GeneApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2reportsGeneDataReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1702,6 +1719,7 @@ class GeneApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2reportsGeneDataReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1885,6 +1903,7 @@ class GeneApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2reportsGeneDataReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1992,6 +2011,7 @@ class GeneApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2reportsGeneDataReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2099,6 +2119,7 @@ class GeneApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2reportsGeneDataReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2322,6 +2343,7 @@ class GeneApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2reportsGeneDataReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2429,6 +2451,7 @@ class GeneApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2reportsGeneDataReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2536,6 +2559,7 @@ class GeneApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2reportsGeneDataReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2757,6 +2781,7 @@ class GeneApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2reportsGeneDataReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2864,6 +2889,7 @@ class GeneApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2reportsGeneDataReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2971,6 +2997,7 @@ class GeneApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2reportsGeneDataReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -3190,6 +3217,7 @@ class GeneApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2reportsGeneDataReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -3293,6 +3321,7 @@ class GeneApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2reportsGeneDataReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -3396,6 +3425,7 @@ class GeneApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2reportsGeneDataReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -3610,6 +3640,7 @@ class GeneApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2reportsGeneDataReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -3713,6 +3744,7 @@ class GeneApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2reportsGeneDataReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -3816,6 +3848,7 @@ class GeneApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2reportsGeneDataReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -4017,6 +4050,7 @@ class GeneApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2DownloadSummary",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -4108,6 +4142,7 @@ class GeneApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2DownloadSummary",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -4199,6 +4234,7 @@ class GeneApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2DownloadSummary",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -4363,6 +4399,7 @@ class GeneApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2DownloadSummary",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -4430,6 +4467,7 @@ class GeneApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2DownloadSummary",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -4497,6 +4535,7 @@ class GeneApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2DownloadSummary",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -4638,6 +4677,7 @@ class GeneApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2GeneLinksReply",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -4705,6 +4745,7 @@ class GeneApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2GeneLinksReply",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -4772,6 +4813,7 @@ class GeneApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2GeneLinksReply",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -4901,6 +4943,7 @@ class GeneApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2GeneLinksReply",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -4968,6 +5011,7 @@ class GeneApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2GeneLinksReply",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -5035,6 +5079,7 @@ class GeneApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2GeneLinksReply",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -5217,6 +5262,7 @@ class GeneApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2reportsGeneDataReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -5325,6 +5371,7 @@ class GeneApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2reportsGeneDataReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -5433,6 +5480,7 @@ class GeneApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2reportsGeneDataReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -5618,6 +5666,7 @@ class GeneApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2reportsGeneDataReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -5686,6 +5735,7 @@ class GeneApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2reportsGeneDataReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -5754,6 +5804,7 @@ class GeneApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2reportsGeneDataReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -5942,6 +5993,7 @@ class GeneApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2reportsGeneDataReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -6054,6 +6106,7 @@ class GeneApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2reportsGeneDataReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -6166,6 +6219,7 @@ class GeneApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2reportsGeneDataReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -6369,6 +6423,7 @@ class GeneApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2reportsGeneDataReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -6452,6 +6507,7 @@ class GeneApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2reportsGeneDataReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -6535,6 +6591,7 @@ class GeneApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2reportsGeneDataReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -6684,6 +6741,7 @@ class GeneApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2reportsGeneDataReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -6751,6 +6809,7 @@ class GeneApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2reportsGeneDataReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -6818,6 +6877,7 @@ class GeneApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2reportsGeneDataReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -6959,6 +7019,7 @@ class GeneApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2reportsGeneDataReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -7026,6 +7087,7 @@ class GeneApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2reportsGeneDataReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -7093,6 +7155,7 @@ class GeneApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2reportsGeneDataReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -7280,6 +7343,7 @@ class GeneApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2reportsGeneDataReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -7391,6 +7455,7 @@ class GeneApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2reportsGeneDataReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -7502,6 +7567,7 @@ class GeneApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2reportsGeneDataReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -7727,6 +7793,7 @@ class GeneApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2reportsGeneDataReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -7830,6 +7897,7 @@ class GeneApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2reportsGeneDataReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -7933,6 +8001,7 @@ class GeneApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2reportsGeneDataReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -8149,6 +8218,7 @@ class GeneApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2reportsGeneDataReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -8256,6 +8326,7 @@ class GeneApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2reportsGeneDataReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -8363,6 +8434,7 @@ class GeneApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2reportsGeneDataReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -8583,6 +8655,7 @@ class GeneApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2reportsGeneDataReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -8686,6 +8759,7 @@ class GeneApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2reportsGeneDataReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -8789,6 +8863,7 @@ class GeneApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2reportsGeneDataReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -9000,6 +9075,7 @@ class GeneApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2reportsGeneDataReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -9099,6 +9175,7 @@ class GeneApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2reportsGeneDataReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -9198,6 +9275,7 @@ class GeneApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2reportsGeneDataReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -9411,6 +9489,7 @@ class GeneApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2reportsGeneDataReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -9519,6 +9598,7 @@ class GeneApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2reportsGeneDataReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -9627,6 +9707,7 @@ class GeneApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2reportsGeneDataReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -9860,6 +9941,7 @@ class GeneApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2reportsGeneDataReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -9976,6 +10058,7 @@ class GeneApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2reportsGeneDataReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -10092,6 +10175,7 @@ class GeneApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2reportsGeneDataReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,

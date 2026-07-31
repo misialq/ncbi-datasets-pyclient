@@ -24,6 +24,7 @@ from ncbi.datasets.openapi.models.v2reports_sample_info import V2reportsSampleIn
 from ncbi.datasets.openapi.models.v2reports_sequence_data_report_genome_type import V2reportsSequenceDataReportGenomeType
 from ncbi.datasets.openapi.models.v2reports_sequence_data_report_molecule_type import V2reportsSequenceDataReportMoleculeType
 from ncbi.datasets.openapi.models.v2reports_sequence_data_report_origin_type import V2reportsSequenceDataReportOriginType
+from ncbi.datasets.openapi.models.v2reports_sequence_data_report_topology_type import V2reportsSequenceDataReportTopologyType
 from ncbi.datasets.openapi.models.v2reports_sequence_data_report_units import V2reportsSequenceDataReportUnits
 from ncbi.datasets.openapi.models.v2reports_sequence_reference import V2reportsSequenceReference
 from ncbi.datasets.openapi.models.v2reports_submission import V2reportsSubmission
@@ -52,7 +53,8 @@ class V2reportsSequenceDataReport(BaseModel):
     infraspecific_modifiers: Optional[V2reportsInfraspecificModifers] = None
     sample_info: Optional[V2reportsSampleInfo] = None
     genome_type: Optional[V2reportsSequenceDataReportGenomeType] = V2reportsSequenceDataReportGenomeType.GENOME_TYPE_UNKNOWN
-    __properties: ClassVar[List[str]] = ["accession", "organism_name", "length", "units", "molecule_type", "database_provider", "description", "source_mrna", "tax_id", "submissions", "references", "bioproject_accession", "biosample_accessions", "origin_type", "infraspecific_modifiers", "sample_info", "genome_type"]
+    topology: Optional[V2reportsSequenceDataReportTopologyType] = V2reportsSequenceDataReportTopologyType.NOT_SET
+    __properties: ClassVar[List[str]] = ["accession", "organism_name", "length", "units", "molecule_type", "database_provider", "description", "source_mrna", "tax_id", "submissions", "references", "bioproject_accession", "biosample_accessions", "origin_type", "infraspecific_modifiers", "sample_info", "genome_type", "topology"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -141,7 +143,8 @@ class V2reportsSequenceDataReport(BaseModel):
             "origin_type": obj.get("origin_type") if obj.get("origin_type") is not None else V2reportsSequenceDataReportOriginType.UNKNOWN,
             "infraspecific_modifiers": V2reportsInfraspecificModifers.from_dict(obj["infraspecific_modifiers"]) if obj.get("infraspecific_modifiers") is not None else None,
             "sample_info": V2reportsSampleInfo.from_dict(obj["sample_info"]) if obj.get("sample_info") is not None else None,
-            "genome_type": obj.get("genome_type") if obj.get("genome_type") is not None else V2reportsSequenceDataReportGenomeType.GENOME_TYPE_UNKNOWN
+            "genome_type": obj.get("genome_type") if obj.get("genome_type") is not None else V2reportsSequenceDataReportGenomeType.GENOME_TYPE_UNKNOWN,
+            "topology": obj.get("topology") if obj.get("topology") is not None else V2reportsSequenceDataReportTopologyType.NOT_SET
         })
         return _obj
 

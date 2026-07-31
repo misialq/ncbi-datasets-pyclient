@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **similar_structures** | [**List[Ncbiprotddv2SimilarStructureReport]**](Ncbiprotddv2SimilarStructureReport.md) |  | [optional] 
 **next_page_token** | **str** |  | [optional] 
 **total_count** | **int** |  | [optional] 
+**query_length** | **int** |  | [optional] 
 
 ## Example
 

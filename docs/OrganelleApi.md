@@ -225,10 +225,10 @@ with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
     first_release_date = '2015-01-10' # datetime | Limit results to organelle genomes released on or after the specified date. (optional)
     last_release_date = '2021-01-10' # datetime | Limit results to organelle genomes released on or before the specified date. (optional)
     sort_field = 'sort_field_example' # str |  (optional)
-    sort_direction = SORT_DIRECTION_UNSPECIFIED # V2SortDirection |  (optional) (default to SORT_DIRECTION_UNSPECIFIED)
-    returned_content = COMPLETE # V2OrganelleMetadataRequestContentType | Return complete organelle reports or nucleotide accessions only. (optional) (default to COMPLETE)
-    table_format = ORGANELLE_TABLE_FORMAT_NO_TABLE # V2OrganelleMetadataRequestOrganelleTableFormat | Specify a predefined set of fields for the tabular report using built-in templates. Use of this parameter requires the HTTP header, `accept: text/tab-separated-values`. (optional) (default to ORGANELLE_TABLE_FORMAT_NO_TABLE)
-    include_tabular_header = INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY # V2IncludeTabularHeader | Specify when to include the table header when requesting a tabular report. (optional) (default to INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY)
+    sort_direction = 'SORT_DIRECTION_UNSPECIFIED' # V2SortDirection |  (optional) (default to 'SORT_DIRECTION_UNSPECIFIED')
+    returned_content = 'COMPLETE' # V2OrganelleMetadataRequestContentType | Return complete organelle reports or nucleotide accessions only. (optional) (default to 'COMPLETE')
+    table_format = 'ORGANELLE_TABLE_FORMAT_NO_TABLE' # V2OrganelleMetadataRequestOrganelleTableFormat | Specify a predefined set of fields for the tabular report using built-in templates. Use of this parameter requires the HTTP header, `accept: text/tab-separated-values`. (optional) (default to 'ORGANELLE_TABLE_FORMAT_NO_TABLE')
+    include_tabular_header = 'INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY' # V2IncludeTabularHeader | Specify when to include the table header when requesting a tabular report. (optional) (default to 'INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY')
 
     try:
         # Get an organelle data report by nucleotide accession
@@ -251,10 +251,10 @@ Name | Type | Description  | Notes
  **first_release_date** | **datetime**| Limit results to organelle genomes released on or after the specified date. | [optional] 
  **last_release_date** | **datetime**| Limit results to organelle genomes released on or before the specified date. | [optional] 
  **sort_field** | **str**|  | [optional] 
- **sort_direction** | [**V2SortDirection**](.md)|  | [optional] [default to SORT_DIRECTION_UNSPECIFIED]
- **returned_content** | [**V2OrganelleMetadataRequestContentType**](.md)| Return complete organelle reports or nucleotide accessions only. | [optional] [default to COMPLETE]
- **table_format** | [**V2OrganelleMetadataRequestOrganelleTableFormat**](.md)| Specify a predefined set of fields for the tabular report using built-in templates. Use of this parameter requires the HTTP header, &#x60;accept: text/tab-separated-values&#x60;. | [optional] [default to ORGANELLE_TABLE_FORMAT_NO_TABLE]
- **include_tabular_header** | [**V2IncludeTabularHeader**](.md)| Specify when to include the table header when requesting a tabular report. | [optional] [default to INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY]
+ **sort_direction** | [**V2SortDirection**](.md)|  | [optional] [default to &#39;SORT_DIRECTION_UNSPECIFIED&#39;]
+ **returned_content** | [**V2OrganelleMetadataRequestContentType**](.md)| Return complete organelle reports or nucleotide accessions only. | [optional] [default to &#39;COMPLETE&#39;]
+ **table_format** | [**V2OrganelleMetadataRequestOrganelleTableFormat**](.md)| Specify a predefined set of fields for the tabular report using built-in templates. Use of this parameter requires the HTTP header, &#x60;accept: text/tab-separated-values&#x60;. | [optional] [default to &#39;ORGANELLE_TABLE_FORMAT_NO_TABLE&#39;]
+ **include_tabular_header** | [**V2IncludeTabularHeader**](.md)| Specify when to include the table header when requesting a tabular report. | [optional] [default to &#39;INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY&#39;]
 
 ### Return type
 
@@ -408,12 +408,12 @@ with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
     last_release_date = '2021-01-10' # datetime | Limit results to organelle genomes released on or before the specified date. (optional)
     tax_exact_match = False # bool | If true, only return assemblies with the given NCBI Taxonomy ID, or name. Otherwise, assemblies from taxonomy subtree are included, too. (optional) (default to False)
     sort_field = 'sort_field_example' # str |  (optional)
-    sort_direction = SORT_DIRECTION_UNSPECIFIED # V2SortDirection |  (optional) (default to SORT_DIRECTION_UNSPECIFIED)
-    returned_content = COMPLETE # V2OrganelleMetadataRequestContentType | Return complete organelle reports or nucleotide accessions only. (optional) (default to COMPLETE)
+    sort_direction = 'SORT_DIRECTION_UNSPECIFIED' # V2SortDirection |  (optional) (default to 'SORT_DIRECTION_UNSPECIFIED')
+    returned_content = 'COMPLETE' # V2OrganelleMetadataRequestContentType | Return complete organelle reports or nucleotide accessions only. (optional) (default to 'COMPLETE')
     page_size = 56 # int | The maximum number of organelle assemblies to return. Default is 20 and maximum is 1000. If the number of results exceeds the page size, `page_token` can be used to retrieve the remaining results. (optional)
     page_token = 'page_token_example' # str | A page token is returned from an `OrganelleMetadata` call with more than `page_size` results. Use this token, along with the previous `OrganelleMetadata` parameters, to retrieve the next page of results. When `page_token` is empty, all results have been retrieved. (optional)
-    table_format = ORGANELLE_TABLE_FORMAT_NO_TABLE # V2OrganelleMetadataRequestOrganelleTableFormat | Specify a predefined set of fields for the tabular report using built-in templates. Use of this parameter requires the HTTP header, `accept: text/tab-separated-values`. (optional) (default to ORGANELLE_TABLE_FORMAT_NO_TABLE)
-    include_tabular_header = INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY # V2IncludeTabularHeader | Specify when to include the table header when requesting a tabular report. (optional) (default to INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY)
+    table_format = 'ORGANELLE_TABLE_FORMAT_NO_TABLE' # V2OrganelleMetadataRequestOrganelleTableFormat | Specify a predefined set of fields for the tabular report using built-in templates. Use of this parameter requires the HTTP header, `accept: text/tab-separated-values`. (optional) (default to 'ORGANELLE_TABLE_FORMAT_NO_TABLE')
+    include_tabular_header = 'INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY' # V2IncludeTabularHeader | Specify when to include the table header when requesting a tabular report. (optional) (default to 'INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY')
 
     try:
         # Get an organelle data report by taxon
@@ -437,12 +437,12 @@ Name | Type | Description  | Notes
  **last_release_date** | **datetime**| Limit results to organelle genomes released on or before the specified date. | [optional] 
  **tax_exact_match** | **bool**| If true, only return assemblies with the given NCBI Taxonomy ID, or name. Otherwise, assemblies from taxonomy subtree are included, too. | [optional] [default to False]
  **sort_field** | **str**|  | [optional] 
- **sort_direction** | [**V2SortDirection**](.md)|  | [optional] [default to SORT_DIRECTION_UNSPECIFIED]
- **returned_content** | [**V2OrganelleMetadataRequestContentType**](.md)| Return complete organelle reports or nucleotide accessions only. | [optional] [default to COMPLETE]
+ **sort_direction** | [**V2SortDirection**](.md)|  | [optional] [default to &#39;SORT_DIRECTION_UNSPECIFIED&#39;]
+ **returned_content** | [**V2OrganelleMetadataRequestContentType**](.md)| Return complete organelle reports or nucleotide accessions only. | [optional] [default to &#39;COMPLETE&#39;]
  **page_size** | **int**| The maximum number of organelle assemblies to return. Default is 20 and maximum is 1000. If the number of results exceeds the page size, &#x60;page_token&#x60; can be used to retrieve the remaining results. | [optional] 
  **page_token** | **str**| A page token is returned from an &#x60;OrganelleMetadata&#x60; call with more than &#x60;page_size&#x60; results. Use this token, along with the previous &#x60;OrganelleMetadata&#x60; parameters, to retrieve the next page of results. When &#x60;page_token&#x60; is empty, all results have been retrieved. | [optional] 
- **table_format** | [**V2OrganelleMetadataRequestOrganelleTableFormat**](.md)| Specify a predefined set of fields for the tabular report using built-in templates. Use of this parameter requires the HTTP header, &#x60;accept: text/tab-separated-values&#x60;. | [optional] [default to ORGANELLE_TABLE_FORMAT_NO_TABLE]
- **include_tabular_header** | [**V2IncludeTabularHeader**](.md)| Specify when to include the table header when requesting a tabular report. | [optional] [default to INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY]
+ **table_format** | [**V2OrganelleMetadataRequestOrganelleTableFormat**](.md)| Specify a predefined set of fields for the tabular report using built-in templates. Use of this parameter requires the HTTP header, &#x60;accept: text/tab-separated-values&#x60;. | [optional] [default to &#39;ORGANELLE_TABLE_FORMAT_NO_TABLE&#39;]
+ **include_tabular_header** | [**V2IncludeTabularHeader**](.md)| Specify when to include the table header when requesting a tabular report. | [optional] [default to &#39;INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY&#39;]
 
 ### Return type
 

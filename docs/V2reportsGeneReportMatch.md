@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **gene** | [**V2reportsGeneDescriptor**](V2reportsGeneDescriptor.md) |  | [optional] 
 **product** | [**V2reportsProductDescriptor**](V2reportsProductDescriptor.md) |  | [optional] 
+**expression** | [**V2reportsExpressionDescriptor**](V2reportsExpressionDescriptor.md) |  | [optional] 
 **query** | **List[str]** |  | [optional] 
 **warnings** | [**List[V2reportsWarning]**](V2reportsWarning.md) |  | [optional] 
 **warning** | [**V2reportsWarning**](V2reportsWarning.md) |  | [optional] 

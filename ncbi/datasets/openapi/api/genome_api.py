@@ -132,6 +132,7 @@ class GenomeApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2GenomeAnnotationTableSummaryReply",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -207,6 +208,7 @@ class GenomeApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2GenomeAnnotationTableSummaryReply",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -282,6 +284,7 @@ class GenomeApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2GenomeAnnotationTableSummaryReply",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -420,6 +423,7 @@ class GenomeApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2GenomeAnnotationTableSummaryReply",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -487,6 +491,7 @@ class GenomeApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2GenomeAnnotationTableSummaryReply",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -554,6 +559,7 @@ class GenomeApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2GenomeAnnotationTableSummaryReply",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -695,6 +701,7 @@ class GenomeApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2AssemblyAccessions",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -762,6 +769,7 @@ class GenomeApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2AssemblyAccessions",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -829,6 +837,7 @@ class GenomeApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2AssemblyAccessions",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -957,6 +966,7 @@ class GenomeApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2AssemblyAccessions",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1024,6 +1034,7 @@ class GenomeApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2AssemblyAccessions",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1091,6 +1102,7 @@ class GenomeApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2AssemblyAccessions",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1232,6 +1244,7 @@ class GenomeApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2AssemblyRevisionHistory",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1299,6 +1312,7 @@ class GenomeApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2AssemblyRevisionHistory",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1366,6 +1380,7 @@ class GenomeApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2AssemblyRevisionHistory",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1494,6 +1509,7 @@ class GenomeApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2AssemblyRevisionHistory",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1561,6 +1577,7 @@ class GenomeApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2AssemblyRevisionHistory",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1628,6 +1645,7 @@ class GenomeApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2AssemblyRevisionHistory",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1769,6 +1787,7 @@ class GenomeApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2AssemblyDatasetAvailability",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1836,6 +1855,7 @@ class GenomeApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2AssemblyDatasetAvailability",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1903,6 +1923,7 @@ class GenomeApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2AssemblyDatasetAvailability",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2032,6 +2053,7 @@ class GenomeApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2AssemblyDatasetAvailability",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2099,6 +2121,7 @@ class GenomeApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2AssemblyDatasetAvailability",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2166,6 +2189,7 @@ class GenomeApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2AssemblyDatasetAvailability",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2307,6 +2331,7 @@ class GenomeApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2AssemblyCheckMHistogramReply",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2374,6 +2399,7 @@ class GenomeApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2AssemblyCheckMHistogramReply",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2441,6 +2467,7 @@ class GenomeApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2AssemblyCheckMHistogramReply",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2569,6 +2596,7 @@ class GenomeApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2AssemblyCheckMHistogramReply",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2636,6 +2664,7 @@ class GenomeApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2AssemblyCheckMHistogramReply",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2703,6 +2732,7 @@ class GenomeApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2AssemblyCheckMHistogramReply",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2860,6 +2890,7 @@ class GenomeApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "bytes",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2943,6 +2974,7 @@ class GenomeApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "bytes",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -3026,6 +3058,7 @@ class GenomeApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "bytes",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -3181,6 +3214,7 @@ class GenomeApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "bytes",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -3252,6 +3286,7 @@ class GenomeApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "bytes",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -3323,6 +3358,7 @@ class GenomeApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "bytes",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -3505,6 +3541,7 @@ class GenomeApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "bytes",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -3608,6 +3645,7 @@ class GenomeApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "bytes",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -3711,6 +3749,7 @@ class GenomeApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "bytes",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -3894,6 +3933,7 @@ class GenomeApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "bytes",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -3965,6 +4005,7 @@ class GenomeApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "bytes",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -4036,6 +4077,7 @@ class GenomeApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "bytes",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -4214,6 +4256,7 @@ class GenomeApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2DownloadSummary",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -4313,6 +4356,7 @@ class GenomeApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2DownloadSummary",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -4412,6 +4456,7 @@ class GenomeApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2DownloadSummary",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -4586,6 +4631,7 @@ class GenomeApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2DownloadSummary",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -4653,6 +4699,7 @@ class GenomeApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2DownloadSummary",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -4720,6 +4767,7 @@ class GenomeApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2DownloadSummary",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -4905,6 +4953,7 @@ class GenomeApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2reportsGenomeAnnotationReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -5016,6 +5065,7 @@ class GenomeApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2reportsGenomeAnnotationReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -5127,6 +5177,7 @@ class GenomeApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2reportsGenomeAnnotationReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -5317,6 +5368,7 @@ class GenomeApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2reportsGenomeAnnotationReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -5384,6 +5436,7 @@ class GenomeApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2reportsGenomeAnnotationReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -5451,6 +5504,7 @@ class GenomeApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2reportsGenomeAnnotationReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -5682,6 +5736,7 @@ class GenomeApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2reportsAssemblyDataReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -5837,6 +5892,7 @@ class GenomeApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2reportsAssemblyDataReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -5992,6 +6048,7 @@ class GenomeApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2reportsAssemblyDataReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -6254,6 +6311,7 @@ class GenomeApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2reportsAssemblyDataReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -6321,6 +6379,7 @@ class GenomeApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2reportsAssemblyDataReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -6388,6 +6447,7 @@ class GenomeApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2reportsAssemblyDataReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -6623,6 +6683,7 @@ class GenomeApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2reportsAssemblyDataReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -6782,6 +6843,7 @@ class GenomeApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2reportsAssemblyDataReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -6941,6 +7003,7 @@ class GenomeApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2reportsAssemblyDataReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -7300,6 +7363,7 @@ class GenomeApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2reportsAssemblyDataReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -7459,6 +7523,7 @@ class GenomeApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2reportsAssemblyDataReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -7618,6 +7683,7 @@ class GenomeApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2reportsAssemblyDataReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -7977,6 +8043,7 @@ class GenomeApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2reportsAssemblyDataReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -8136,6 +8203,7 @@ class GenomeApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2reportsAssemblyDataReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -8295,6 +8363,7 @@ class GenomeApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2reportsAssemblyDataReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -8654,6 +8723,7 @@ class GenomeApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2reportsAssemblyDataReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -8813,6 +8883,7 @@ class GenomeApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2reportsAssemblyDataReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -8972,6 +9043,7 @@ class GenomeApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2reportsAssemblyDataReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -9331,6 +9403,7 @@ class GenomeApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2reportsAssemblyDataReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -9490,6 +9563,7 @@ class GenomeApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2reportsAssemblyDataReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -9649,6 +9723,7 @@ class GenomeApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2reportsAssemblyDataReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -9924,6 +9999,7 @@ class GenomeApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2DownloadSummary",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -9999,6 +10075,7 @@ class GenomeApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2DownloadSummary",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -10074,6 +10151,7 @@ class GenomeApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2DownloadSummary",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -10215,6 +10293,7 @@ class GenomeApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2DownloadSummary",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -10282,6 +10361,7 @@ class GenomeApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2DownloadSummary",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -10349,6 +10429,7 @@ class GenomeApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2DownloadSummary",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -10494,6 +10575,7 @@ class GenomeApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2AssemblyLinksReply",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -10565,6 +10647,7 @@ class GenomeApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2AssemblyLinksReply",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -10636,6 +10719,7 @@ class GenomeApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2AssemblyLinksReply",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -10771,6 +10855,7 @@ class GenomeApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2AssemblyLinksReply",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -10838,6 +10923,7 @@ class GenomeApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2AssemblyLinksReply",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -10905,6 +10991,7 @@ class GenomeApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2AssemblyLinksReply",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -11074,6 +11161,7 @@ class GenomeApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2SequenceReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -11169,6 +11257,7 @@ class GenomeApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2SequenceReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -11264,6 +11353,7 @@ class GenomeApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2SequenceReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -11433,6 +11523,7 @@ class GenomeApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2SequenceReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -11500,6 +11591,7 @@ class GenomeApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2SequenceReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -11567,6 +11659,7 @@ class GenomeApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2SequenceReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,

@@ -19,6 +19,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from ncbi.datasets.openapi.models.v2_sequence_request_content_type import V2SequenceRequestContentType
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
@@ -29,7 +30,8 @@ class V2SequenceRequest(BaseModel):
     """ # noqa: E501
     accessions: Optional[List[StrictStr]] = None
     include_all_versions: Optional[StrictBool] = None
-    __properties: ClassVar[List[str]] = ["accessions", "include_all_versions"]
+    returned_content: Optional[V2SequenceRequestContentType] = V2SequenceRequestContentType.COMPLETE
+    __properties: ClassVar[List[str]] = ["accessions", "include_all_versions", "returned_content"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -83,7 +85,8 @@ class V2SequenceRequest(BaseModel):
 
         _obj = cls.model_validate({
             "accessions": obj.get("accessions"),
-            "include_all_versions": obj.get("include_all_versions")
+            "include_all_versions": obj.get("include_all_versions"),
+            "returned_content": obj.get("returned_content") if obj.get("returned_content") is not None else V2SequenceRequestContentType.COMPLETE
         })
         return _obj
 

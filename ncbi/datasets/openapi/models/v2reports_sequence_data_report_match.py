@@ -29,10 +29,10 @@ class V2reportsSequenceDataReportMatch(BaseModel):
     """
     V2reportsSequenceDataReportMatch
     """ # noqa: E501
-    query: Optional[StrictStr] = None
-    report: Optional[V2reportsSequenceDataReport] = None
+    query: Optional[List[StrictStr]] = None
+    sequence: Optional[V2reportsSequenceDataReport] = None
     errors: Optional[List[V2reportsError]] = None
-    __properties: ClassVar[List[str]] = ["query", "report", "errors"]
+    __properties: ClassVar[List[str]] = ["query", "sequence", "errors"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -73,9 +73,9 @@ class V2reportsSequenceDataReportMatch(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of report
-        if self.report:
-            _dict['report'] = self.report.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of sequence
+        if self.sequence:
+            _dict['sequence'] = self.sequence.to_dict()
         # override the default output from pydantic by calling `to_dict()` of each item in errors (list)
         _items = []
         if self.errors:
@@ -96,7 +96,7 @@ class V2reportsSequenceDataReportMatch(BaseModel):
 
         _obj = cls.model_validate({
             "query": obj.get("query"),
-            "report": V2reportsSequenceDataReport.from_dict(obj["report"]) if obj.get("report") is not None else None,
+            "sequence": V2reportsSequenceDataReport.from_dict(obj["sequence"]) if obj.get("sequence") is not None else None,
             "errors": [V2reportsError.from_dict(_item) for _item in obj["errors"]] if obj.get("errors") is not None else None
         })
         return _obj

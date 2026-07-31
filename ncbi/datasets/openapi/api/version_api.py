@@ -86,6 +86,7 @@ class VersionApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2VersionReply",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -149,6 +150,7 @@ class VersionApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2VersionReply",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -212,6 +214,7 @@ class VersionApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2VersionReply",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,

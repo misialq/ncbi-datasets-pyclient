@@ -92,6 +92,7 @@ class BioSampleApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2reportsBioSampleDataReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -159,6 +160,7 @@ class BioSampleApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2reportsBioSampleDataReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -226,6 +228,7 @@ class BioSampleApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2reportsBioSampleDataReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,

@@ -124,6 +124,7 @@ class TaxonomyApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "bytes",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -199,6 +200,7 @@ class TaxonomyApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "bytes",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -274,6 +276,7 @@ class TaxonomyApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "bytes",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -418,6 +421,7 @@ class TaxonomyApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "bytes",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -489,6 +493,7 @@ class TaxonomyApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "bytes",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -560,6 +565,7 @@ class TaxonomyApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "bytes",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -718,6 +724,7 @@ class TaxonomyApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2SciNameAndIds",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -797,6 +804,7 @@ class TaxonomyApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2SciNameAndIds",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -876,6 +884,7 @@ class TaxonomyApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2SciNameAndIds",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1019,6 +1028,7 @@ class TaxonomyApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2SciNameAndIds",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1086,6 +1096,7 @@ class TaxonomyApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2SciNameAndIds",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1153,6 +1164,7 @@ class TaxonomyApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2SciNameAndIds",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1322,6 +1334,7 @@ class TaxonomyApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2reportsTaxonomyDataReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1417,6 +1430,7 @@ class TaxonomyApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2reportsTaxonomyDataReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1512,6 +1526,7 @@ class TaxonomyApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2reportsTaxonomyDataReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1679,6 +1694,7 @@ class TaxonomyApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2reportsTaxonomyDataReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1746,6 +1762,7 @@ class TaxonomyApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2reportsTaxonomyDataReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1813,6 +1830,7 @@ class TaxonomyApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2reportsTaxonomyDataReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1976,6 +1994,7 @@ class TaxonomyApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2TaxonomyFilteredSubtreeResponse",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2063,6 +2082,7 @@ class TaxonomyApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2TaxonomyFilteredSubtreeResponse",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2150,6 +2170,7 @@ class TaxonomyApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2TaxonomyFilteredSubtreeResponse",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2305,6 +2326,7 @@ class TaxonomyApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2TaxonomyFilteredSubtreeResponse",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2372,6 +2394,7 @@ class TaxonomyApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2TaxonomyFilteredSubtreeResponse",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2439,6 +2462,7 @@ class TaxonomyApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2TaxonomyFilteredSubtreeResponse",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2584,6 +2608,7 @@ class TaxonomyApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "bytes",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2655,6 +2680,7 @@ class TaxonomyApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "bytes",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2726,6 +2752,7 @@ class TaxonomyApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "bytes",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2863,6 +2890,7 @@ class TaxonomyApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2TaxonomyImageMetadataResponse",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2930,6 +2958,7 @@ class TaxonomyApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2TaxonomyImageMetadataResponse",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2997,6 +3026,7 @@ class TaxonomyApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2TaxonomyImageMetadataResponse",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -3125,6 +3155,7 @@ class TaxonomyApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2TaxonomyImageMetadataResponse",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -3192,6 +3223,7 @@ class TaxonomyApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2TaxonomyImageMetadataResponse",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -3259,6 +3291,7 @@ class TaxonomyApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2TaxonomyImageMetadataResponse",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -3400,6 +3433,7 @@ class TaxonomyApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "bytes",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -3467,6 +3501,7 @@ class TaxonomyApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "bytes",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -3534,6 +3569,7 @@ class TaxonomyApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "bytes",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -3678,6 +3714,7 @@ class TaxonomyApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2TaxonomyLinksResponse",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -3745,6 +3782,7 @@ class TaxonomyApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2TaxonomyLinksResponse",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -3812,6 +3850,7 @@ class TaxonomyApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2TaxonomyLinksResponse",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -3940,6 +3979,7 @@ class TaxonomyApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2TaxonomyLinksResponse",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -4007,6 +4047,7 @@ class TaxonomyApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2TaxonomyLinksResponse",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -4074,6 +4115,7 @@ class TaxonomyApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2TaxonomyLinksResponse",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -4244,6 +4286,7 @@ class TaxonomyApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2TaxonomyMetadataResponse",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -4340,6 +4383,7 @@ class TaxonomyApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2TaxonomyMetadataResponse",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -4436,6 +4480,7 @@ class TaxonomyApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2TaxonomyMetadataResponse",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -4602,6 +4647,7 @@ class TaxonomyApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2TaxonomyMetadataResponse",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -4670,6 +4716,7 @@ class TaxonomyApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2TaxonomyMetadataResponse",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -4738,6 +4785,7 @@ class TaxonomyApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2TaxonomyMetadataResponse",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -4895,6 +4943,7 @@ class TaxonomyApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2reportsTaxonomyNamesDataReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -4978,6 +5027,7 @@ class TaxonomyApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2reportsTaxonomyNamesDataReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -5061,6 +5111,7 @@ class TaxonomyApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2reportsTaxonomyNamesDataReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -5211,6 +5262,7 @@ class TaxonomyApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2reportsTaxonomyNamesDataReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -5278,6 +5330,7 @@ class TaxonomyApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2reportsTaxonomyNamesDataReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -5345,6 +5398,7 @@ class TaxonomyApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2reportsTaxonomyNamesDataReportPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -5502,6 +5556,7 @@ class TaxonomyApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2TaxonomyTaxIdsPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -5585,6 +5640,7 @@ class TaxonomyApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2TaxonomyTaxIdsPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -5668,6 +5724,7 @@ class TaxonomyApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2TaxonomyTaxIdsPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -5817,6 +5874,7 @@ class TaxonomyApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2TaxonomyTaxIdsPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -5884,6 +5942,7 @@ class TaxonomyApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2TaxonomyTaxIdsPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -5951,6 +6010,7 @@ class TaxonomyApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "V2TaxonomyTaxIdsPage",
+            'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
             *_param,

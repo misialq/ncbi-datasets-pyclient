@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**query** | **str** |  | [optional] 
-**report** | [**V2reportsSequenceDataReport**](V2reportsSequenceDataReport.md) |  | [optional] 
+**query** | **List[str]** |  | [optional] 
+**sequence** | [**V2reportsSequenceDataReport**](V2reportsSequenceDataReport.md) |  | [optional] 
 **errors** | [**List[V2reportsError]**](V2reportsError.md) |  | [optional] 
 
 ## Example

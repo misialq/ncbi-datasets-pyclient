@@ -233,8 +233,8 @@ with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = ncbi.datasets.openapi.TaxonomyApi(api_client)
     taxon_query = 'hum' # str | Taxonomy ID or name (common or scientific) at any taxonomic rank
-    tax_rank_filter = species # V2OrganismQueryRequestTaxRankFilter | Optionally return results for taxonomic ranks above species using `higher_taxon` (optional) (default to species)
-    taxon_resource_filter = TAXON_RESOURCE_FILTER_ALL # V2OrganismQueryRequestTaxonResourceFilter | Limit to taxonomy nodes with gene, genome or organelle data (optional) (default to TAXON_RESOURCE_FILTER_ALL)
+    tax_rank_filter = 'species' # V2OrganismQueryRequestTaxRankFilter | Optionally return results for taxonomic ranks above species using `higher_taxon` (optional) (default to 'species')
+    taxon_resource_filter = 'TAXON_RESOURCE_FILTER_ALL' # V2OrganismQueryRequestTaxonResourceFilter | Limit to taxonomy nodes with gene, genome or organelle data (optional) (default to 'TAXON_RESOURCE_FILTER_ALL')
     exact_match = False # bool | If true, only return results that exactly match the provided taxonomic name (optional) (default to False)
 
     try:
@@ -254,8 +254,8 @@ with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **taxon_query** | **str**| Taxonomy ID or name (common or scientific) at any taxonomic rank | 
- **tax_rank_filter** | [**V2OrganismQueryRequestTaxRankFilter**](.md)| Optionally return results for taxonomic ranks above species using &#x60;higher_taxon&#x60; | [optional] [default to species]
- **taxon_resource_filter** | [**V2OrganismQueryRequestTaxonResourceFilter**](.md)| Limit to taxonomy nodes with gene, genome or organelle data | [optional] [default to TAXON_RESOURCE_FILTER_ALL]
+ **tax_rank_filter** | [**V2OrganismQueryRequestTaxRankFilter**](.md)| Optionally return results for taxonomic ranks above species using &#x60;higher_taxon&#x60; | [optional] [default to &#39;species&#39;]
+ **taxon_resource_filter** | [**V2OrganismQueryRequestTaxonResourceFilter**](.md)| Limit to taxonomy nodes with gene, genome or organelle data | [optional] [default to &#39;TAXON_RESOURCE_FILTER_ALL&#39;]
  **exact_match** | **bool**| If true, only return results that exactly match the provided taxonomic name | [optional] [default to False]
 
 ### Return type
@@ -404,11 +404,11 @@ with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = ncbi.datasets.openapi.TaxonomyApi(api_client)
     taxons = ['9606'] # List[str] | 
-    returned_content = COMPLETE # V2TaxonomyMetadataRequestContentType | Return complete taxonomy reports, Taxonomy IDs only, or reports without assembly and gene counts (metadata). (optional) (default to COMPLETE)
+    returned_content = 'COMPLETE' # V2TaxonomyMetadataRequestContentType | Return complete taxonomy reports, Taxonomy IDs only, or reports without assembly and gene counts (metadata). (optional) (default to 'COMPLETE')
     page_size = 20 # int | The maximum number of taxons to return. Default is 20 and maximum is 1000. If the number of results exceeds the page size, `page_token` can be used to retrieve the remaining results. (optional) (default to 20)
-    include_tabular_header = INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY # V2IncludeTabularHeader | Specify when to include the table header when requesting a tabular report. (optional) (default to INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY)
+    include_tabular_header = 'INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY' # V2IncludeTabularHeader | Specify when to include the table header when requesting a tabular report. (optional) (default to 'INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY')
     page_token = 'page_token_example' # str | A page token is returned when the results count exceeds `page size`. Use this token along with previous request parameters to retrieve the next page of results. When `page_token` is empty, all results have been retrieved. (optional)
-    table_format = SUMMARY # V2TaxonomyMetadataRequestTableFormat | Specify a predefined set of fields for the tabular report using built-in templates. Use of this parameter requires the HTTP header, `accept: text/tab-separated-values`. (optional) (default to SUMMARY)
+    table_format = 'SUMMARY' # V2TaxonomyMetadataRequestTableFormat | Specify a predefined set of fields for the tabular report using built-in templates. Use of this parameter requires the HTTP header, `accept: text/tab-separated-values`. (optional) (default to 'SUMMARY')
     children = True # bool | If true, return results for child taxa. (optional)
     ranks = [ncbi.datasets.openapi.V2reportsRankType()] # List[V2reportsRankType] | Limit results to taxa of the specified ranks. (optional)
 
@@ -429,11 +429,11 @@ with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **taxons** | [**List[str]**](str.md)|  | 
- **returned_content** | [**V2TaxonomyMetadataRequestContentType**](.md)| Return complete taxonomy reports, Taxonomy IDs only, or reports without assembly and gene counts (metadata). | [optional] [default to COMPLETE]
+ **returned_content** | [**V2TaxonomyMetadataRequestContentType**](.md)| Return complete taxonomy reports, Taxonomy IDs only, or reports without assembly and gene counts (metadata). | [optional] [default to &#39;COMPLETE&#39;]
  **page_size** | **int**| The maximum number of taxons to return. Default is 20 and maximum is 1000. If the number of results exceeds the page size, &#x60;page_token&#x60; can be used to retrieve the remaining results. | [optional] [default to 20]
- **include_tabular_header** | [**V2IncludeTabularHeader**](.md)| Specify when to include the table header when requesting a tabular report. | [optional] [default to INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY]
+ **include_tabular_header** | [**V2IncludeTabularHeader**](.md)| Specify when to include the table header when requesting a tabular report. | [optional] [default to &#39;INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY&#39;]
  **page_token** | **str**| A page token is returned when the results count exceeds &#x60;page size&#x60;. Use this token along with previous request parameters to retrieve the next page of results. When &#x60;page_token&#x60; is empty, all results have been retrieved. | [optional] 
- **table_format** | [**V2TaxonomyMetadataRequestTableFormat**](.md)| Specify a predefined set of fields for the tabular report using built-in templates. Use of this parameter requires the HTTP header, &#x60;accept: text/tab-separated-values&#x60;. | [optional] [default to SUMMARY]
+ **table_format** | [**V2TaxonomyMetadataRequestTableFormat**](.md)| Specify a predefined set of fields for the tabular report using built-in templates. Use of this parameter requires the HTTP header, &#x60;accept: text/tab-separated-values&#x60;. | [optional] [default to &#39;SUMMARY&#39;]
  **children** | **bool**| If true, return results for child taxa. | [optional] 
  **ranks** | [**List[V2reportsRankType]**](V2reportsRankType.md)| Limit results to taxa of the specified ranks. | [optional] 
 
@@ -751,7 +751,7 @@ with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = ncbi.datasets.openapi.TaxonomyApi(api_client)
     taxon = '9606' # str | 
-    image_size = UNSPECIFIED # V2ImageSize |  (optional) (default to UNSPECIFIED)
+    image_size = 'UNSPECIFIED' # V2ImageSize |  (optional) (default to 'UNSPECIFIED')
 
     try:
         # Get a taxonomy image by taxon
@@ -770,7 +770,7 @@ with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **taxon** | **str**|  | 
- **image_size** | [**V2ImageSize**](.md)|  | [optional] [default to UNSPECIFIED]
+ **image_size** | [**V2ImageSize**](.md)|  | [optional] [default to &#39;UNSPECIFIED&#39;]
 
 ### Return type
 
@@ -1239,11 +1239,11 @@ with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = ncbi.datasets.openapi.TaxonomyApi(api_client)
     taxons = ['9606'] # List[str] | 
-    returned_content = COMPLETE # V2TaxonomyMetadataRequestContentType | Return complete taxonomy reports, Taxonomy IDs only, or reports without assembly and gene counts (metadata). (optional) (default to COMPLETE)
+    returned_content = 'COMPLETE' # V2TaxonomyMetadataRequestContentType | Return complete taxonomy reports, Taxonomy IDs only, or reports without assembly and gene counts (metadata). (optional) (default to 'COMPLETE')
     page_size = 20 # int | The maximum number of taxons to return. Default is 20 and maximum is 1000. If the number of results exceeds the page size, `page_token` can be used to retrieve the remaining results. (optional) (default to 20)
-    include_tabular_header = INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY # V2IncludeTabularHeader | Specify when to include the table header when requesting a tabular report. (optional) (default to INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY)
+    include_tabular_header = 'INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY' # V2IncludeTabularHeader | Specify when to include the table header when requesting a tabular report. (optional) (default to 'INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY')
     page_token = 'page_token_example' # str | A page token is returned when the results count exceeds `page size`. Use this token along with previous request parameters to retrieve the next page of results. When `page_token` is empty, all results have been retrieved. (optional)
-    table_format = SUMMARY # V2TaxonomyMetadataRequestTableFormat | Specify a predefined set of fields for the tabular report using built-in templates. Use of this parameter requires the HTTP header, `accept: text/tab-separated-values`. (optional) (default to SUMMARY)
+    table_format = 'SUMMARY' # V2TaxonomyMetadataRequestTableFormat | Specify a predefined set of fields for the tabular report using built-in templates. Use of this parameter requires the HTTP header, `accept: text/tab-separated-values`. (optional) (default to 'SUMMARY')
     children = True # bool | If true, return results for child taxa. (optional)
     ranks = [ncbi.datasets.openapi.V2reportsRankType()] # List[V2reportsRankType] | Limit results to taxa of the specified ranks. (optional)
 
@@ -1264,11 +1264,11 @@ with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **taxons** | [**List[str]**](str.md)|  | 
- **returned_content** | [**V2TaxonomyMetadataRequestContentType**](.md)| Return complete taxonomy reports, Taxonomy IDs only, or reports without assembly and gene counts (metadata). | [optional] [default to COMPLETE]
+ **returned_content** | [**V2TaxonomyMetadataRequestContentType**](.md)| Return complete taxonomy reports, Taxonomy IDs only, or reports without assembly and gene counts (metadata). | [optional] [default to &#39;COMPLETE&#39;]
  **page_size** | **int**| The maximum number of taxons to return. Default is 20 and maximum is 1000. If the number of results exceeds the page size, &#x60;page_token&#x60; can be used to retrieve the remaining results. | [optional] [default to 20]
- **include_tabular_header** | [**V2IncludeTabularHeader**](.md)| Specify when to include the table header when requesting a tabular report. | [optional] [default to INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY]
+ **include_tabular_header** | [**V2IncludeTabularHeader**](.md)| Specify when to include the table header when requesting a tabular report. | [optional] [default to &#39;INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY&#39;]
  **page_token** | **str**| A page token is returned when the results count exceeds &#x60;page size&#x60;. Use this token along with previous request parameters to retrieve the next page of results. When &#x60;page_token&#x60; is empty, all results have been retrieved. | [optional] 
- **table_format** | [**V2TaxonomyMetadataRequestTableFormat**](.md)| Specify a predefined set of fields for the tabular report using built-in templates. Use of this parameter requires the HTTP header, &#x60;accept: text/tab-separated-values&#x60;. | [optional] [default to SUMMARY]
+ **table_format** | [**V2TaxonomyMetadataRequestTableFormat**](.md)| Specify a predefined set of fields for the tabular report using built-in templates. Use of this parameter requires the HTTP header, &#x60;accept: text/tab-separated-values&#x60;. | [optional] [default to &#39;SUMMARY&#39;]
  **children** | **bool**| If true, return results for child taxa. | [optional] 
  **ranks** | [**List[V2reportsRankType]**](V2reportsRankType.md)| Limit results to taxa of the specified ranks. | [optional] 
 

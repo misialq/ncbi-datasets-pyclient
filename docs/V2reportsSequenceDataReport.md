@@ -22,6 +22,7 @@ Name | Type | Description | Notes
 **infraspecific_modifiers** | [**V2reportsInfraspecificModifers**](V2reportsInfraspecificModifers.md) |  | [optional] 
 **sample_info** | [**V2reportsSampleInfo**](V2reportsSampleInfo.md) |  | [optional] 
 **genome_type** | [**V2reportsSequenceDataReportGenomeType**](V2reportsSequenceDataReportGenomeType.md) |  | [optional] [default to V2reportsSequenceDataReportGenomeType.GENOME_TYPE_UNKNOWN]
+**topology** | [**V2reportsSequenceDataReportTopologyType**](V2reportsSequenceDataReportTopologyType.md) |  | [optional] [default to V2reportsSequenceDataReportTopologyType.NOT_SET]
 
 ## Example
 

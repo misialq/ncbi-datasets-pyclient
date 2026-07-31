@@ -78,7 +78,7 @@ with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
     api_instance = ncbi.datasets.openapi.GenomeApi(api_client)
     accession = 'GCF_058215675.1' # str | A single genome assembly accession
     sort_field = 'sort_field_example' # str |  (optional)
-    sort_direction = SORT_DIRECTION_UNSPECIFIED # V2SortDirection |  (optional) (default to SORT_DIRECTION_UNSPECIFIED)
+    sort_direction = 'SORT_DIRECTION_UNSPECIFIED' # V2SortDirection |  (optional) (default to 'SORT_DIRECTION_UNSPECIFIED')
 
     try:
         # Get genome annotation report summary information by genome assembly accession
@@ -98,7 +98,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **accession** | **str**| A single genome assembly accession | 
  **sort_field** | **str**|  | [optional] 
- **sort_direction** | [**V2SortDirection**](.md)|  | [optional] [default to SORT_DIRECTION_UNSPECIFIED]
+ **sort_direction** | [**V2SortDirection**](.md)|  | [optional] [default to &#39;SORT_DIRECTION_UNSPECIFIED&#39;]
 
 ### Return type
 
@@ -889,7 +889,7 @@ with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
     accessions = ['GCF_000001405.40'] # List[str] | One or more genome assembly accessions, limited to 100
     chromosomes = ['[\"1\",\"MT\"]'] # List[str] | Only return genomic fasta sequence for the specified chromosomes. (optional)
     include_annotation_type = [ncbi.datasets.openapi.V2AnnotationForAssemblyType()] # List[V2AnnotationForAssemblyType] | Specify which sequence, annotation, and report files to include in the data package. The assembly data report is always included, and its inclusion is not affected by this parameter. (optional)
-    hydrated = FULLY_HYDRATED # V2AssemblyDatasetRequestResolution | Specify whether to download a hydrated (with sequence and annotation files included) or dehydrated data package. A dehydrated data package includes the assembly data report and `fetch.txt`, which includes paths to the requested data files on NCBI servers. (optional) (default to FULLY_HYDRATED)
+    hydrated = 'FULLY_HYDRATED' # V2AssemblyDatasetRequestResolution | Specify whether to download a hydrated (with sequence and annotation files included) or dehydrated data package. A dehydrated data package includes the assembly data report and `fetch.txt`, which includes paths to the requested data files on NCBI servers. (optional) (default to 'FULLY_HYDRATED')
     filename = 'ncbi_dataset.zip' # str | Output file name. (optional) (default to 'ncbi_dataset.zip')
 
     try:
@@ -911,7 +911,7 @@ Name | Type | Description  | Notes
  **accessions** | [**List[str]**](str.md)| One or more genome assembly accessions, limited to 100 | 
  **chromosomes** | [**List[str]**](str.md)| Only return genomic fasta sequence for the specified chromosomes. | [optional] 
  **include_annotation_type** | [**List[V2AnnotationForAssemblyType]**](V2AnnotationForAssemblyType.md)| Specify which sequence, annotation, and report files to include in the data package. The assembly data report is always included, and its inclusion is not affected by this parameter. | [optional] 
- **hydrated** | [**V2AssemblyDatasetRequestResolution**](.md)| Specify whether to download a hydrated (with sequence and annotation files included) or dehydrated data package. A dehydrated data package includes the assembly data report and &#x60;fetch.txt&#x60;, which includes paths to the requested data files on NCBI servers. | [optional] [default to FULLY_HYDRATED]
+ **hydrated** | [**V2AssemblyDatasetRequestResolution**](.md)| Specify whether to download a hydrated (with sequence and annotation files included) or dehydrated data package. A dehydrated data package includes the assembly data report and &#x60;fetch.txt&#x60;, which includes paths to the requested data files on NCBI servers. | [optional] [default to &#39;FULLY_HYDRATED&#39;]
  **filename** | **str**| Output file name. | [optional] [default to &#39;ncbi_dataset.zip&#39;]
 
 ### Return type
@@ -1064,7 +1064,7 @@ with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
     gene_types = ['protein-coding'] # List[str] | Limit to features of a specified gene locus type. (optional)
     search_text = ['kinase'] # List[str] | Limit to features that match the specified gene symbol, gene name or protein name. (optional)
     sort_field = 'sort_field_example' # str |  (optional)
-    sort_direction = SORT_DIRECTION_UNSPECIFIED # V2SortDirection |  (optional) (default to SORT_DIRECTION_UNSPECIFIED)
+    sort_direction = 'SORT_DIRECTION_UNSPECIFIED' # V2SortDirection |  (optional) (default to 'SORT_DIRECTION_UNSPECIFIED')
     include_annotation_type = [ncbi.datasets.openapi.V2GenomeAnnotationRequestAnnotationType()] # List[V2GenomeAnnotationRequestAnnotationType] | Specify which sequence files to include in the data package. Options include gene (GENOME_FASTA), transcript (RNA_FASTA), and protein (PROT_FASTA) sequences. (optional)
     filename = 'ncbi_dataset.zip' # str | Output file name. (optional) (default to 'ncbi_dataset.zip')
 
@@ -1091,7 +1091,7 @@ Name | Type | Description  | Notes
  **gene_types** | [**List[str]**](str.md)| Limit to features of a specified gene locus type. | [optional] 
  **search_text** | [**List[str]**](str.md)| Limit to features that match the specified gene symbol, gene name or protein name. | [optional] 
  **sort_field** | **str**|  | [optional] 
- **sort_direction** | [**V2SortDirection**](.md)|  | [optional] [default to SORT_DIRECTION_UNSPECIFIED]
+ **sort_direction** | [**V2SortDirection**](.md)|  | [optional] [default to &#39;SORT_DIRECTION_UNSPECIFIED&#39;]
  **include_annotation_type** | [**List[V2GenomeAnnotationRequestAnnotationType]**](V2GenomeAnnotationRequestAnnotationType.md)| Specify which sequence files to include in the data package. Options include gene (GENOME_FASTA), transcript (RNA_FASTA), and protein (PROT_FASTA) sequences. | [optional] 
  **filename** | **str**| Output file name. | [optional] [default to &#39;ncbi_dataset.zip&#39;]
 
@@ -1246,7 +1246,7 @@ with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
     gene_types = ['protein-coding'] # List[str] | Limit to features of a specified gene locus type. (optional)
     search_text = ['kinase'] # List[str] | Limit to features that match the specified gene symbol, gene name or protein name. (optional)
     sort_field = 'sort_field_example' # str |  (optional)
-    sort_direction = SORT_DIRECTION_UNSPECIFIED # V2SortDirection |  (optional) (default to SORT_DIRECTION_UNSPECIFIED)
+    sort_direction = 'SORT_DIRECTION_UNSPECIFIED' # V2SortDirection |  (optional) (default to 'SORT_DIRECTION_UNSPECIFIED')
     include_annotation_type = [ncbi.datasets.openapi.V2GenomeAnnotationRequestAnnotationType()] # List[V2GenomeAnnotationRequestAnnotationType] | Specify which sequence files to include in the data package. Options include gene (GENOME_FASTA), transcript (RNA_FASTA), and protein (PROT_FASTA) sequences. (optional)
 
     try:
@@ -1272,7 +1272,7 @@ Name | Type | Description  | Notes
  **gene_types** | [**List[str]**](str.md)| Limit to features of a specified gene locus type. | [optional] 
  **search_text** | [**List[str]**](str.md)| Limit to features that match the specified gene symbol, gene name or protein name. | [optional] 
  **sort_field** | **str**|  | [optional] 
- **sort_direction** | [**V2SortDirection**](.md)|  | [optional] [default to SORT_DIRECTION_UNSPECIFIED]
+ **sort_direction** | [**V2SortDirection**](.md)|  | [optional] [default to &#39;SORT_DIRECTION_UNSPECIFIED&#39;]
  **include_annotation_type** | [**List[V2GenomeAnnotationRequestAnnotationType]**](V2GenomeAnnotationRequestAnnotationType.md)| Specify which sequence files to include in the data package. Options include gene (GENOME_FASTA), transcript (RNA_FASTA), and protein (PROT_FASTA) sequences. | [optional] 
 
 ### Return type
@@ -1426,10 +1426,10 @@ with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
     gene_types = ['protein-coding'] # List[str] | Limit to features of a specified gene locus type. (optional)
     search_text = ['kinase'] # List[str] | Limit to features that match the specified gene symbol, gene name or protein name. (optional)
     sort_field = 'sort_field_example' # str |  (optional)
-    sort_direction = SORT_DIRECTION_UNSPECIFIED # V2SortDirection |  (optional) (default to SORT_DIRECTION_UNSPECIFIED)
+    sort_direction = 'SORT_DIRECTION_UNSPECIFIED' # V2SortDirection |  (optional) (default to 'SORT_DIRECTION_UNSPECIFIED')
     page_size = 20 # int | The maximum number of features to return. Default is 20 and maximum is 1000. If the number of results exceeds the page size, `page_token` can be used to retrieve the remaining results. (optional) (default to 20)
-    table_format = NO_TABLE # V2GenomeAnnotationRequestGenomeAnnotationTableFormat | Optional pre-defined template for processing a tabular data request (optional) (default to NO_TABLE)
-    include_tabular_header = INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY # V2IncludeTabularHeader | Specify when to include the table header when requesting a tabular report. (optional) (default to INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY)
+    table_format = 'NO_TABLE' # V2GenomeAnnotationRequestGenomeAnnotationTableFormat | Optional pre-defined template for processing a tabular data request (optional) (default to 'NO_TABLE')
+    include_tabular_header = 'INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY' # V2IncludeTabularHeader | Specify when to include the table header when requesting a tabular report. (optional) (default to 'INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY')
     page_token = 'page_token_example' # str | A page token is returned when the results count exceeds `page size`. Use this token along with previous request parameters to retrieve the next page of results. When `page_token` is empty, all results have been retrieved. (optional)
 
     try:
@@ -1455,10 +1455,10 @@ Name | Type | Description  | Notes
  **gene_types** | [**List[str]**](str.md)| Limit to features of a specified gene locus type. | [optional] 
  **search_text** | [**List[str]**](str.md)| Limit to features that match the specified gene symbol, gene name or protein name. | [optional] 
  **sort_field** | **str**|  | [optional] 
- **sort_direction** | [**V2SortDirection**](.md)|  | [optional] [default to SORT_DIRECTION_UNSPECIFIED]
+ **sort_direction** | [**V2SortDirection**](.md)|  | [optional] [default to &#39;SORT_DIRECTION_UNSPECIFIED&#39;]
  **page_size** | **int**| The maximum number of features to return. Default is 20 and maximum is 1000. If the number of results exceeds the page size, &#x60;page_token&#x60; can be used to retrieve the remaining results. | [optional] [default to 20]
- **table_format** | [**V2GenomeAnnotationRequestGenomeAnnotationTableFormat**](.md)| Optional pre-defined template for processing a tabular data request | [optional] [default to NO_TABLE]
- **include_tabular_header** | [**V2IncludeTabularHeader**](.md)| Specify when to include the table header when requesting a tabular report. | [optional] [default to INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY]
+ **table_format** | [**V2GenomeAnnotationRequestGenomeAnnotationTableFormat**](.md)| Optional pre-defined template for processing a tabular data request | [optional] [default to &#39;NO_TABLE&#39;]
+ **include_tabular_header** | [**V2IncludeTabularHeader**](.md)| Specify when to include the table header when requesting a tabular report. | [optional] [default to &#39;INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY&#39;]
  **page_token** | **str**| A page token is returned when the results count exceeds &#x60;page size&#x60;. Use this token along with previous request parameters to retrieve the next page of results. When &#x60;page_token&#x60; is empty, all results have been retrieved. | [optional] 
 
 ### Return type
@@ -1612,27 +1612,27 @@ with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
     api_instance = ncbi.datasets.openapi.GenomeApi(api_client)
     accessions = ['GCF_000001405.40'] # List[str] | One or more genome assembly accessions, limited to 100
     filters_reference_only = False # bool | If true, limit to reference genome assemblies. (optional) (default to False)
-    filters_assembly_source = all # V2AssemblyDatasetDescriptorsFilterAssemblySource | Limit to either RefSeq (GCF_) or GenBank (GCA_) genome assemblies. (optional) (default to all)
+    filters_assembly_source = 'all' # V2AssemblyDatasetDescriptorsFilterAssemblySource | Limit to either RefSeq (GCF_) or GenBank (GCA_) genome assemblies. (optional) (default to 'all')
     filters_has_annotation = False # bool | Limit to annotated genome assemblies. (optional) (default to False)
     filters_exclude_paired_reports = False # bool | If true, for GenBank (GCA_)/RefSeq (GCF_) pairs, returns the RefSeq copy. When no RefSeq copy exists, the GenBank assembly is returned. (optional) (default to False)
     filters_exclude_atypical = False # bool | If true, exclude [atypical genome assemblies](https://www.ncbi.nlm.nih.gov/datasets/docs/v2/data-processing/policies-annotation/genome-processing/genome_notes/#atypical-assemblies), i.e., genomes that have assembly issues or are otherwise atypical. (optional) (default to False)
-    filters_assembly_version = current # V2AssemblyDatasetDescriptorsFilterAssemblyVersion | Limit to the most recent (current) version of a genome assembly. (optional) (default to current)
+    filters_assembly_version = 'current' # V2AssemblyDatasetDescriptorsFilterAssemblyVersion | Limit to the most recent (current) version of a genome assembly. (optional) (default to 'current')
     filters_assembly_level = [ncbi.datasets.openapi.V2reportsAssemblyLevel()] # List[V2reportsAssemblyLevel] | Limit to genomes at the specified [assembly level](https://www.ncbi.nlm.nih.gov/datasets/docs/v2/glossary/#assembly-level) (optional)
     filters_first_release_date = '2024-01-10' # datetime | Limit to genomes released on or after the specified date (optional)
     filters_last_release_date = '2025-01-10' # datetime | Limit to genomes released on or before the specified date (optional)
     filters_search_text = ['Genome Reference Consortium'] # List[str] | Limit to genomes that match the specified submitter name, assembly name, infraspecific name (or modifier), or organism name. (optional)
-    filters_is_metagenome_derived = METAGENOME_DERIVED_UNSET # V2AssemblyDatasetDescriptorsFilterMetagenomeDerivedFilter | Exclude or limit to metagenome-assembled genomes (MAGs). (optional) (default to METAGENOME_DERIVED_UNSET)
+    filters_is_metagenome_derived = 'METAGENOME_DERIVED_UNSET' # V2AssemblyDatasetDescriptorsFilterMetagenomeDerivedFilter | Exclude or limit to metagenome-assembled genomes (MAGs). (optional) (default to 'METAGENOME_DERIVED_UNSET')
     filters_is_type_material = False # bool | If true, limit to genomes derived from type material. (optional) (default to False)
     filters_is_ictv_exemplar = False # bool | If true, limit to genomes derived from an ICTV exemplar (only applies to virus genomes). (optional) (default to False)
     filters_exclude_multi_isolate = False # bool | If true, exclude genomes that were sequenced as part of large multi-isolate projects. (optional) (default to False)
-    filters_type_material_category = NONE # V2AssemblyDatasetDescriptorsFilterTypeMaterialCategory | Limit to genomes derived from specific type material categories. (optional) (default to NONE)
+    filters_type_material_category = 'NONE' # V2AssemblyDatasetDescriptorsFilterTypeMaterialCategory | Limit to genomes derived from specific type material categories. (optional) (default to 'NONE')
     table_fields = ['accession'] # List[str] |  (optional)
-    returned_content = COMPLETE # V2AssemblyDatasetReportsRequestContentType | Return complete genome assembly reports, or abbreviated reports with assembly accessions with or without paired assembly information. (optional) (default to COMPLETE)
+    returned_content = 'COMPLETE' # V2AssemblyDatasetReportsRequestContentType | Return complete genome assembly reports, or abbreviated reports with assembly accessions with or without paired assembly information. (optional) (default to 'COMPLETE')
     page_size = 20 # int | The maximum number of genome assembly reports to return. Default is 20 and maximum is 1000. If the number of results exceeds the page size, `page_token` can be used to retrieve the remaining results. (optional) (default to 20)
     page_token = 'page_token_example' # str | A page token is returned when the results count exceeds `page size`. Use this token along with previous request parameters to retrieve the next page of results. When `page_token` is empty, all results have been retrieved. (optional)
     sort_field = 'sort_field_example' # str |  (optional)
-    sort_direction = SORT_DIRECTION_UNSPECIFIED # V2SortDirection |  (optional) (default to SORT_DIRECTION_UNSPECIFIED)
-    include_tabular_header = INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY # V2IncludeTabularHeader | Specify when to include the table header when requesting a tabular report. (optional) (default to INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY)
+    sort_direction = 'SORT_DIRECTION_UNSPECIFIED' # V2SortDirection |  (optional) (default to 'SORT_DIRECTION_UNSPECIFIED')
+    include_tabular_header = 'INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY' # V2IncludeTabularHeader | Specify when to include the table header when requesting a tabular report. (optional) (default to 'INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY')
 
     try:
         # Get a genome assembly report by genome assembly accession
@@ -1652,27 +1652,27 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **accessions** | [**List[str]**](str.md)| One or more genome assembly accessions, limited to 100 | 
  **filters_reference_only** | **bool**| If true, limit to reference genome assemblies. | [optional] [default to False]
- **filters_assembly_source** | [**V2AssemblyDatasetDescriptorsFilterAssemblySource**](.md)| Limit to either RefSeq (GCF_) or GenBank (GCA_) genome assemblies. | [optional] [default to all]
+ **filters_assembly_source** | [**V2AssemblyDatasetDescriptorsFilterAssemblySource**](.md)| Limit to either RefSeq (GCF_) or GenBank (GCA_) genome assemblies. | [optional] [default to &#39;all&#39;]
  **filters_has_annotation** | **bool**| Limit to annotated genome assemblies. | [optional] [default to False]
  **filters_exclude_paired_reports** | **bool**| If true, for GenBank (GCA_)/RefSeq (GCF_) pairs, returns the RefSeq copy. When no RefSeq copy exists, the GenBank assembly is returned. | [optional] [default to False]
  **filters_exclude_atypical** | **bool**| If true, exclude [atypical genome assemblies](https://www.ncbi.nlm.nih.gov/datasets/docs/v2/data-processing/policies-annotation/genome-processing/genome_notes/#atypical-assemblies), i.e., genomes that have assembly issues or are otherwise atypical. | [optional] [default to False]
- **filters_assembly_version** | [**V2AssemblyDatasetDescriptorsFilterAssemblyVersion**](.md)| Limit to the most recent (current) version of a genome assembly. | [optional] [default to current]
+ **filters_assembly_version** | [**V2AssemblyDatasetDescriptorsFilterAssemblyVersion**](.md)| Limit to the most recent (current) version of a genome assembly. | [optional] [default to &#39;current&#39;]
  **filters_assembly_level** | [**List[V2reportsAssemblyLevel]**](V2reportsAssemblyLevel.md)| Limit to genomes at the specified [assembly level](https://www.ncbi.nlm.nih.gov/datasets/docs/v2/glossary/#assembly-level) | [optional] 
  **filters_first_release_date** | **datetime**| Limit to genomes released on or after the specified date | [optional] 
  **filters_last_release_date** | **datetime**| Limit to genomes released on or before the specified date | [optional] 
  **filters_search_text** | [**List[str]**](str.md)| Limit to genomes that match the specified submitter name, assembly name, infraspecific name (or modifier), or organism name. | [optional] 
- **filters_is_metagenome_derived** | [**V2AssemblyDatasetDescriptorsFilterMetagenomeDerivedFilter**](.md)| Exclude or limit to metagenome-assembled genomes (MAGs). | [optional] [default to METAGENOME_DERIVED_UNSET]
+ **filters_is_metagenome_derived** | [**V2AssemblyDatasetDescriptorsFilterMetagenomeDerivedFilter**](.md)| Exclude or limit to metagenome-assembled genomes (MAGs). | [optional] [default to &#39;METAGENOME_DERIVED_UNSET&#39;]
  **filters_is_type_material** | **bool**| If true, limit to genomes derived from type material. | [optional] [default to False]
  **filters_is_ictv_exemplar** | **bool**| If true, limit to genomes derived from an ICTV exemplar (only applies to virus genomes). | [optional] [default to False]
  **filters_exclude_multi_isolate** | **bool**| If true, exclude genomes that were sequenced as part of large multi-isolate projects. | [optional] [default to False]
- **filters_type_material_category** | [**V2AssemblyDatasetDescriptorsFilterTypeMaterialCategory**](.md)| Limit to genomes derived from specific type material categories. | [optional] [default to NONE]
+ **filters_type_material_category** | [**V2AssemblyDatasetDescriptorsFilterTypeMaterialCategory**](.md)| Limit to genomes derived from specific type material categories. | [optional] [default to &#39;NONE&#39;]
  **table_fields** | [**List[str]**](str.md)|  | [optional] 
- **returned_content** | [**V2AssemblyDatasetReportsRequestContentType**](.md)| Return complete genome assembly reports, or abbreviated reports with assembly accessions with or without paired assembly information. | [optional] [default to COMPLETE]
+ **returned_content** | [**V2AssemblyDatasetReportsRequestContentType**](.md)| Return complete genome assembly reports, or abbreviated reports with assembly accessions with or without paired assembly information. | [optional] [default to &#39;COMPLETE&#39;]
  **page_size** | **int**| The maximum number of genome assembly reports to return. Default is 20 and maximum is 1000. If the number of results exceeds the page size, &#x60;page_token&#x60; can be used to retrieve the remaining results. | [optional] [default to 20]
  **page_token** | **str**| A page token is returned when the results count exceeds &#x60;page size&#x60;. Use this token along with previous request parameters to retrieve the next page of results. When &#x60;page_token&#x60; is empty, all results have been retrieved. | [optional] 
  **sort_field** | **str**|  | [optional] 
- **sort_direction** | [**V2SortDirection**](.md)|  | [optional] [default to SORT_DIRECTION_UNSPECIFIED]
- **include_tabular_header** | [**V2IncludeTabularHeader**](.md)| Specify when to include the table header when requesting a tabular report. | [optional] [default to INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY]
+ **sort_direction** | [**V2SortDirection**](.md)|  | [optional] [default to &#39;SORT_DIRECTION_UNSPECIFIED&#39;]
+ **include_tabular_header** | [**V2IncludeTabularHeader**](.md)| Specify when to include the table header when requesting a tabular report. | [optional] [default to &#39;INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY&#39;]
 
 ### Return type
 
@@ -1825,28 +1825,28 @@ with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
     api_instance = ncbi.datasets.openapi.GenomeApi(api_client)
     assembly_names = ['HanXRQr2.0-SUNRISE'] # List[str] | One or more assembly names (exact match only)
     filters_reference_only = False # bool | If true, limit to reference genome assemblies. (optional) (default to False)
-    filters_assembly_source = all # V2AssemblyDatasetDescriptorsFilterAssemblySource | Limit to either RefSeq (GCF_) or GenBank (GCA_) genome assemblies. (optional) (default to all)
+    filters_assembly_source = 'all' # V2AssemblyDatasetDescriptorsFilterAssemblySource | Limit to either RefSeq (GCF_) or GenBank (GCA_) genome assemblies. (optional) (default to 'all')
     filters_has_annotation = False # bool | Limit to annotated genome assemblies. (optional) (default to False)
     filters_exclude_paired_reports = False # bool | If true, for GenBank (GCA_)/RefSeq (GCF_) pairs, returns the RefSeq copy. When no RefSeq copy exists, the GenBank assembly is returned. (optional) (default to False)
     filters_exclude_atypical = False # bool | If true, exclude [atypical genome assemblies](https://www.ncbi.nlm.nih.gov/datasets/docs/v2/data-processing/policies-annotation/genome-processing/genome_notes/#atypical-assemblies), i.e., genomes that have assembly issues or are otherwise atypical. (optional) (default to False)
-    filters_assembly_version = current # V2AssemblyDatasetDescriptorsFilterAssemblyVersion | Limit to the most recent (current) version of a genome assembly. (optional) (default to current)
+    filters_assembly_version = 'current' # V2AssemblyDatasetDescriptorsFilterAssemblyVersion | Limit to the most recent (current) version of a genome assembly. (optional) (default to 'current')
     filters_assembly_level = [ncbi.datasets.openapi.V2reportsAssemblyLevel()] # List[V2reportsAssemblyLevel] | Limit to genomes at the specified [assembly level](https://www.ncbi.nlm.nih.gov/datasets/docs/v2/glossary/#assembly-level) (optional)
     filters_first_release_date = '2024-01-10' # datetime | Limit to genomes released on or after the specified date (optional)
     filters_last_release_date = '2025-01-10' # datetime | Limit to genomes released on or before the specified date (optional)
     filters_search_text = ['Genome Reference Consortium'] # List[str] | Limit to genomes that match the specified submitter name, assembly name, infraspecific name (or modifier), or organism name. (optional)
-    filters_is_metagenome_derived = METAGENOME_DERIVED_UNSET # V2AssemblyDatasetDescriptorsFilterMetagenomeDerivedFilter | Exclude or limit to metagenome-assembled genomes (MAGs). (optional) (default to METAGENOME_DERIVED_UNSET)
+    filters_is_metagenome_derived = 'METAGENOME_DERIVED_UNSET' # V2AssemblyDatasetDescriptorsFilterMetagenomeDerivedFilter | Exclude or limit to metagenome-assembled genomes (MAGs). (optional) (default to 'METAGENOME_DERIVED_UNSET')
     filters_is_type_material = False # bool | If true, limit to genomes derived from type material. (optional) (default to False)
     filters_is_ictv_exemplar = False # bool | If true, limit to genomes derived from an ICTV exemplar (only applies to virus genomes). (optional) (default to False)
     filters_exclude_multi_isolate = False # bool | If true, exclude genomes that were sequenced as part of large multi-isolate projects. (optional) (default to False)
-    filters_type_material_category = NONE # V2AssemblyDatasetDescriptorsFilterTypeMaterialCategory | Limit to genomes derived from specific type material categories. (optional) (default to NONE)
+    filters_type_material_category = 'NONE' # V2AssemblyDatasetDescriptorsFilterTypeMaterialCategory | Limit to genomes derived from specific type material categories. (optional) (default to 'NONE')
     tax_exact_match = False # bool | If true, only return assemblies matching the specified taxon, but not child taxa. For example, if querying by \"Canis lupus\", return Canis lupus but not Canis lupus familiaris genomes. (optional) (default to False)
     table_fields = ['accession'] # List[str] |  (optional)
-    returned_content = COMPLETE # V2AssemblyDatasetReportsRequestContentType | Return complete genome assembly reports, or abbreviated reports with assembly accessions with or without paired assembly information. (optional) (default to COMPLETE)
+    returned_content = 'COMPLETE' # V2AssemblyDatasetReportsRequestContentType | Return complete genome assembly reports, or abbreviated reports with assembly accessions with or without paired assembly information. (optional) (default to 'COMPLETE')
     page_size = 20 # int | The maximum number of genome assembly reports to return. Default is 20 and maximum is 1000. If the number of results exceeds the page size, `page_token` can be used to retrieve the remaining results. (optional) (default to 20)
     page_token = 'page_token_example' # str | A page token is returned when the results count exceeds `page size`. Use this token along with previous request parameters to retrieve the next page of results. When `page_token` is empty, all results have been retrieved. (optional)
     sort_field = 'sort_field_example' # str |  (optional)
-    sort_direction = SORT_DIRECTION_UNSPECIFIED # V2SortDirection |  (optional) (default to SORT_DIRECTION_UNSPECIFIED)
-    include_tabular_header = INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY # V2IncludeTabularHeader | Specify when to include the table header when requesting a tabular report. (optional) (default to INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY)
+    sort_direction = 'SORT_DIRECTION_UNSPECIFIED' # V2SortDirection |  (optional) (default to 'SORT_DIRECTION_UNSPECIFIED')
+    include_tabular_header = 'INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY' # V2IncludeTabularHeader | Specify when to include the table header when requesting a tabular report. (optional) (default to 'INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY')
 
     try:
         # Get genome assembly reports by assembly name
@@ -1866,28 +1866,28 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **assembly_names** | [**List[str]**](str.md)| One or more assembly names (exact match only) | 
  **filters_reference_only** | **bool**| If true, limit to reference genome assemblies. | [optional] [default to False]
- **filters_assembly_source** | [**V2AssemblyDatasetDescriptorsFilterAssemblySource**](.md)| Limit to either RefSeq (GCF_) or GenBank (GCA_) genome assemblies. | [optional] [default to all]
+ **filters_assembly_source** | [**V2AssemblyDatasetDescriptorsFilterAssemblySource**](.md)| Limit to either RefSeq (GCF_) or GenBank (GCA_) genome assemblies. | [optional] [default to &#39;all&#39;]
  **filters_has_annotation** | **bool**| Limit to annotated genome assemblies. | [optional] [default to False]
  **filters_exclude_paired_reports** | **bool**| If true, for GenBank (GCA_)/RefSeq (GCF_) pairs, returns the RefSeq copy. When no RefSeq copy exists, the GenBank assembly is returned. | [optional] [default to False]
  **filters_exclude_atypical** | **bool**| If true, exclude [atypical genome assemblies](https://www.ncbi.nlm.nih.gov/datasets/docs/v2/data-processing/policies-annotation/genome-processing/genome_notes/#atypical-assemblies), i.e., genomes that have assembly issues or are otherwise atypical. | [optional] [default to False]
- **filters_assembly_version** | [**V2AssemblyDatasetDescriptorsFilterAssemblyVersion**](.md)| Limit to the most recent (current) version of a genome assembly. | [optional] [default to current]
+ **filters_assembly_version** | [**V2AssemblyDatasetDescriptorsFilterAssemblyVersion**](.md)| Limit to the most recent (current) version of a genome assembly. | [optional] [default to &#39;current&#39;]
  **filters_assembly_level** | [**List[V2reportsAssemblyLevel]**](V2reportsAssemblyLevel.md)| Limit to genomes at the specified [assembly level](https://www.ncbi.nlm.nih.gov/datasets/docs/v2/glossary/#assembly-level) | [optional] 
  **filters_first_release_date** | **datetime**| Limit to genomes released on or after the specified date | [optional] 
  **filters_last_release_date** | **datetime**| Limit to genomes released on or before the specified date | [optional] 
  **filters_search_text** | [**List[str]**](str.md)| Limit to genomes that match the specified submitter name, assembly name, infraspecific name (or modifier), or organism name. | [optional] 
- **filters_is_metagenome_derived** | [**V2AssemblyDatasetDescriptorsFilterMetagenomeDerivedFilter**](.md)| Exclude or limit to metagenome-assembled genomes (MAGs). | [optional] [default to METAGENOME_DERIVED_UNSET]
+ **filters_is_metagenome_derived** | [**V2AssemblyDatasetDescriptorsFilterMetagenomeDerivedFilter**](.md)| Exclude or limit to metagenome-assembled genomes (MAGs). | [optional] [default to &#39;METAGENOME_DERIVED_UNSET&#39;]
  **filters_is_type_material** | **bool**| If true, limit to genomes derived from type material. | [optional] [default to False]
  **filters_is_ictv_exemplar** | **bool**| If true, limit to genomes derived from an ICTV exemplar (only applies to virus genomes). | [optional] [default to False]
  **filters_exclude_multi_isolate** | **bool**| If true, exclude genomes that were sequenced as part of large multi-isolate projects. | [optional] [default to False]
- **filters_type_material_category** | [**V2AssemblyDatasetDescriptorsFilterTypeMaterialCategory**](.md)| Limit to genomes derived from specific type material categories. | [optional] [default to NONE]
+ **filters_type_material_category** | [**V2AssemblyDatasetDescriptorsFilterTypeMaterialCategory**](.md)| Limit to genomes derived from specific type material categories. | [optional] [default to &#39;NONE&#39;]
  **tax_exact_match** | **bool**| If true, only return assemblies matching the specified taxon, but not child taxa. For example, if querying by \&quot;Canis lupus\&quot;, return Canis lupus but not Canis lupus familiaris genomes. | [optional] [default to False]
  **table_fields** | [**List[str]**](str.md)|  | [optional] 
- **returned_content** | [**V2AssemblyDatasetReportsRequestContentType**](.md)| Return complete genome assembly reports, or abbreviated reports with assembly accessions with or without paired assembly information. | [optional] [default to COMPLETE]
+ **returned_content** | [**V2AssemblyDatasetReportsRequestContentType**](.md)| Return complete genome assembly reports, or abbreviated reports with assembly accessions with or without paired assembly information. | [optional] [default to &#39;COMPLETE&#39;]
  **page_size** | **int**| The maximum number of genome assembly reports to return. Default is 20 and maximum is 1000. If the number of results exceeds the page size, &#x60;page_token&#x60; can be used to retrieve the remaining results. | [optional] [default to 20]
  **page_token** | **str**| A page token is returned when the results count exceeds &#x60;page size&#x60;. Use this token along with previous request parameters to retrieve the next page of results. When &#x60;page_token&#x60; is empty, all results have been retrieved. | [optional] 
  **sort_field** | **str**|  | [optional] 
- **sort_direction** | [**V2SortDirection**](.md)|  | [optional] [default to SORT_DIRECTION_UNSPECIFIED]
- **include_tabular_header** | [**V2IncludeTabularHeader**](.md)| Specify when to include the table header when requesting a tabular report. | [optional] [default to INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY]
+ **sort_direction** | [**V2SortDirection**](.md)|  | [optional] [default to &#39;SORT_DIRECTION_UNSPECIFIED&#39;]
+ **include_tabular_header** | [**V2IncludeTabularHeader**](.md)| Specify when to include the table header when requesting a tabular report. | [optional] [default to &#39;INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY&#39;]
 
 ### Return type
 
@@ -1959,28 +1959,28 @@ with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
     api_instance = ncbi.datasets.openapi.GenomeApi(api_client)
     bioprojects = ['PRJNA489243'] # List[str] | 
     filters_reference_only = False # bool | If true, limit to reference genome assemblies. (optional) (default to False)
-    filters_assembly_source = all # V2AssemblyDatasetDescriptorsFilterAssemblySource | Limit to either RefSeq (GCF_) or GenBank (GCA_) genome assemblies. (optional) (default to all)
+    filters_assembly_source = 'all' # V2AssemblyDatasetDescriptorsFilterAssemblySource | Limit to either RefSeq (GCF_) or GenBank (GCA_) genome assemblies. (optional) (default to 'all')
     filters_has_annotation = False # bool | Limit to annotated genome assemblies. (optional) (default to False)
     filters_exclude_paired_reports = False # bool | If true, for GenBank (GCA_)/RefSeq (GCF_) pairs, returns the RefSeq copy. When no RefSeq copy exists, the GenBank assembly is returned. (optional) (default to False)
     filters_exclude_atypical = False # bool | If true, exclude [atypical genome assemblies](https://www.ncbi.nlm.nih.gov/datasets/docs/v2/data-processing/policies-annotation/genome-processing/genome_notes/#atypical-assemblies), i.e., genomes that have assembly issues or are otherwise atypical. (optional) (default to False)
-    filters_assembly_version = current # V2AssemblyDatasetDescriptorsFilterAssemblyVersion | Limit to the most recent (current) version of a genome assembly. (optional) (default to current)
+    filters_assembly_version = 'current' # V2AssemblyDatasetDescriptorsFilterAssemblyVersion | Limit to the most recent (current) version of a genome assembly. (optional) (default to 'current')
     filters_assembly_level = [ncbi.datasets.openapi.V2reportsAssemblyLevel()] # List[V2reportsAssemblyLevel] | Limit to genomes at the specified [assembly level](https://www.ncbi.nlm.nih.gov/datasets/docs/v2/glossary/#assembly-level) (optional)
     filters_first_release_date = '2024-01-10' # datetime | Limit to genomes released on or after the specified date (optional)
     filters_last_release_date = '2025-01-10' # datetime | Limit to genomes released on or before the specified date (optional)
     filters_search_text = ['Genome Reference Consortium'] # List[str] | Limit to genomes that match the specified submitter name, assembly name, infraspecific name (or modifier), or organism name. (optional)
-    filters_is_metagenome_derived = METAGENOME_DERIVED_UNSET # V2AssemblyDatasetDescriptorsFilterMetagenomeDerivedFilter | Exclude or limit to metagenome-assembled genomes (MAGs). (optional) (default to METAGENOME_DERIVED_UNSET)
+    filters_is_metagenome_derived = 'METAGENOME_DERIVED_UNSET' # V2AssemblyDatasetDescriptorsFilterMetagenomeDerivedFilter | Exclude or limit to metagenome-assembled genomes (MAGs). (optional) (default to 'METAGENOME_DERIVED_UNSET')
     filters_is_type_material = False # bool | If true, limit to genomes derived from type material. (optional) (default to False)
     filters_is_ictv_exemplar = False # bool | If true, limit to genomes derived from an ICTV exemplar (only applies to virus genomes). (optional) (default to False)
     filters_exclude_multi_isolate = False # bool | If true, exclude genomes that were sequenced as part of large multi-isolate projects. (optional) (default to False)
-    filters_type_material_category = NONE # V2AssemblyDatasetDescriptorsFilterTypeMaterialCategory | Limit to genomes derived from specific type material categories. (optional) (default to NONE)
+    filters_type_material_category = 'NONE' # V2AssemblyDatasetDescriptorsFilterTypeMaterialCategory | Limit to genomes derived from specific type material categories. (optional) (default to 'NONE')
     tax_exact_match = False # bool | If true, only return assemblies matching the specified taxon, but not child taxa. For example, if querying by \"Canis lupus\", return Canis lupus but not Canis lupus familiaris genomes. (optional) (default to False)
     table_fields = ['accession'] # List[str] |  (optional)
-    returned_content = COMPLETE # V2AssemblyDatasetReportsRequestContentType | Return complete genome assembly reports, or abbreviated reports with assembly accessions with or without paired assembly information. (optional) (default to COMPLETE)
+    returned_content = 'COMPLETE' # V2AssemblyDatasetReportsRequestContentType | Return complete genome assembly reports, or abbreviated reports with assembly accessions with or without paired assembly information. (optional) (default to 'COMPLETE')
     page_size = 20 # int | The maximum number of genome assembly reports to return. Default is 20 and maximum is 1000. If the number of results exceeds the page size, `page_token` can be used to retrieve the remaining results. (optional) (default to 20)
     page_token = 'page_token_example' # str | A page token is returned when the results count exceeds `page size`. Use this token along with previous request parameters to retrieve the next page of results. When `page_token` is empty, all results have been retrieved. (optional)
     sort_field = 'sort_field_example' # str |  (optional)
-    sort_direction = SORT_DIRECTION_UNSPECIFIED # V2SortDirection |  (optional) (default to SORT_DIRECTION_UNSPECIFIED)
-    include_tabular_header = INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY # V2IncludeTabularHeader | Specify when to include the table header when requesting a tabular report. (optional) (default to INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY)
+    sort_direction = 'SORT_DIRECTION_UNSPECIFIED' # V2SortDirection |  (optional) (default to 'SORT_DIRECTION_UNSPECIFIED')
+    include_tabular_header = 'INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY' # V2IncludeTabularHeader | Specify when to include the table header when requesting a tabular report. (optional) (default to 'INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY')
 
     try:
         # Get genome assembly reports by BioProject accession
@@ -2000,28 +2000,28 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bioprojects** | [**List[str]**](str.md)|  | 
  **filters_reference_only** | **bool**| If true, limit to reference genome assemblies. | [optional] [default to False]
- **filters_assembly_source** | [**V2AssemblyDatasetDescriptorsFilterAssemblySource**](.md)| Limit to either RefSeq (GCF_) or GenBank (GCA_) genome assemblies. | [optional] [default to all]
+ **filters_assembly_source** | [**V2AssemblyDatasetDescriptorsFilterAssemblySource**](.md)| Limit to either RefSeq (GCF_) or GenBank (GCA_) genome assemblies. | [optional] [default to &#39;all&#39;]
  **filters_has_annotation** | **bool**| Limit to annotated genome assemblies. | [optional] [default to False]
  **filters_exclude_paired_reports** | **bool**| If true, for GenBank (GCA_)/RefSeq (GCF_) pairs, returns the RefSeq copy. When no RefSeq copy exists, the GenBank assembly is returned. | [optional] [default to False]
  **filters_exclude_atypical** | **bool**| If true, exclude [atypical genome assemblies](https://www.ncbi.nlm.nih.gov/datasets/docs/v2/data-processing/policies-annotation/genome-processing/genome_notes/#atypical-assemblies), i.e., genomes that have assembly issues or are otherwise atypical. | [optional] [default to False]
- **filters_assembly_version** | [**V2AssemblyDatasetDescriptorsFilterAssemblyVersion**](.md)| Limit to the most recent (current) version of a genome assembly. | [optional] [default to current]
+ **filters_assembly_version** | [**V2AssemblyDatasetDescriptorsFilterAssemblyVersion**](.md)| Limit to the most recent (current) version of a genome assembly. | [optional] [default to &#39;current&#39;]
  **filters_assembly_level** | [**List[V2reportsAssemblyLevel]**](V2reportsAssemblyLevel.md)| Limit to genomes at the specified [assembly level](https://www.ncbi.nlm.nih.gov/datasets/docs/v2/glossary/#assembly-level) | [optional] 
  **filters_first_release_date** | **datetime**| Limit to genomes released on or after the specified date | [optional] 
  **filters_last_release_date** | **datetime**| Limit to genomes released on or before the specified date | [optional] 
  **filters_search_text** | [**List[str]**](str.md)| Limit to genomes that match the specified submitter name, assembly name, infraspecific name (or modifier), or organism name. | [optional] 
- **filters_is_metagenome_derived** | [**V2AssemblyDatasetDescriptorsFilterMetagenomeDerivedFilter**](.md)| Exclude or limit to metagenome-assembled genomes (MAGs). | [optional] [default to METAGENOME_DERIVED_UNSET]
+ **filters_is_metagenome_derived** | [**V2AssemblyDatasetDescriptorsFilterMetagenomeDerivedFilter**](.md)| Exclude or limit to metagenome-assembled genomes (MAGs). | [optional] [default to &#39;METAGENOME_DERIVED_UNSET&#39;]
  **filters_is_type_material** | **bool**| If true, limit to genomes derived from type material. | [optional] [default to False]
  **filters_is_ictv_exemplar** | **bool**| If true, limit to genomes derived from an ICTV exemplar (only applies to virus genomes). | [optional] [default to False]
  **filters_exclude_multi_isolate** | **bool**| If true, exclude genomes that were sequenced as part of large multi-isolate projects. | [optional] [default to False]
- **filters_type_material_category** | [**V2AssemblyDatasetDescriptorsFilterTypeMaterialCategory**](.md)| Limit to genomes derived from specific type material categories. | [optional] [default to NONE]
+ **filters_type_material_category** | [**V2AssemblyDatasetDescriptorsFilterTypeMaterialCategory**](.md)| Limit to genomes derived from specific type material categories. | [optional] [default to &#39;NONE&#39;]
  **tax_exact_match** | **bool**| If true, only return assemblies matching the specified taxon, but not child taxa. For example, if querying by \&quot;Canis lupus\&quot;, return Canis lupus but not Canis lupus familiaris genomes. | [optional] [default to False]
  **table_fields** | [**List[str]**](str.md)|  | [optional] 
- **returned_content** | [**V2AssemblyDatasetReportsRequestContentType**](.md)| Return complete genome assembly reports, or abbreviated reports with assembly accessions with or without paired assembly information. | [optional] [default to COMPLETE]
+ **returned_content** | [**V2AssemblyDatasetReportsRequestContentType**](.md)| Return complete genome assembly reports, or abbreviated reports with assembly accessions with or without paired assembly information. | [optional] [default to &#39;COMPLETE&#39;]
  **page_size** | **int**| The maximum number of genome assembly reports to return. Default is 20 and maximum is 1000. If the number of results exceeds the page size, &#x60;page_token&#x60; can be used to retrieve the remaining results. | [optional] [default to 20]
  **page_token** | **str**| A page token is returned when the results count exceeds &#x60;page size&#x60;. Use this token along with previous request parameters to retrieve the next page of results. When &#x60;page_token&#x60; is empty, all results have been retrieved. | [optional] 
  **sort_field** | **str**|  | [optional] 
- **sort_direction** | [**V2SortDirection**](.md)|  | [optional] [default to SORT_DIRECTION_UNSPECIFIED]
- **include_tabular_header** | [**V2IncludeTabularHeader**](.md)| Specify when to include the table header when requesting a tabular report. | [optional] [default to INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY]
+ **sort_direction** | [**V2SortDirection**](.md)|  | [optional] [default to &#39;SORT_DIRECTION_UNSPECIFIED&#39;]
+ **include_tabular_header** | [**V2IncludeTabularHeader**](.md)| Specify when to include the table header when requesting a tabular report. | [optional] [default to &#39;INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY&#39;]
 
 ### Return type
 
@@ -2093,28 +2093,28 @@ with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
     api_instance = ncbi.datasets.openapi.GenomeApi(api_client)
     biosample_ids = ['SAMN15960293'] # List[str] | 
     filters_reference_only = False # bool | If true, limit to reference genome assemblies. (optional) (default to False)
-    filters_assembly_source = all # V2AssemblyDatasetDescriptorsFilterAssemblySource | Limit to either RefSeq (GCF_) or GenBank (GCA_) genome assemblies. (optional) (default to all)
+    filters_assembly_source = 'all' # V2AssemblyDatasetDescriptorsFilterAssemblySource | Limit to either RefSeq (GCF_) or GenBank (GCA_) genome assemblies. (optional) (default to 'all')
     filters_has_annotation = False # bool | Limit to annotated genome assemblies. (optional) (default to False)
     filters_exclude_paired_reports = False # bool | If true, for GenBank (GCA_)/RefSeq (GCF_) pairs, returns the RefSeq copy. When no RefSeq copy exists, the GenBank assembly is returned. (optional) (default to False)
     filters_exclude_atypical = False # bool | If true, exclude [atypical genome assemblies](https://www.ncbi.nlm.nih.gov/datasets/docs/v2/data-processing/policies-annotation/genome-processing/genome_notes/#atypical-assemblies), i.e., genomes that have assembly issues or are otherwise atypical. (optional) (default to False)
-    filters_assembly_version = current # V2AssemblyDatasetDescriptorsFilterAssemblyVersion | Limit to the most recent (current) version of a genome assembly. (optional) (default to current)
+    filters_assembly_version = 'current' # V2AssemblyDatasetDescriptorsFilterAssemblyVersion | Limit to the most recent (current) version of a genome assembly. (optional) (default to 'current')
     filters_assembly_level = [ncbi.datasets.openapi.V2reportsAssemblyLevel()] # List[V2reportsAssemblyLevel] | Limit to genomes at the specified [assembly level](https://www.ncbi.nlm.nih.gov/datasets/docs/v2/glossary/#assembly-level) (optional)
     filters_first_release_date = '2024-01-10' # datetime | Limit to genomes released on or after the specified date (optional)
     filters_last_release_date = '2025-01-10' # datetime | Limit to genomes released on or before the specified date (optional)
     filters_search_text = ['Genome Reference Consortium'] # List[str] | Limit to genomes that match the specified submitter name, assembly name, infraspecific name (or modifier), or organism name. (optional)
-    filters_is_metagenome_derived = METAGENOME_DERIVED_UNSET # V2AssemblyDatasetDescriptorsFilterMetagenomeDerivedFilter | Exclude or limit to metagenome-assembled genomes (MAGs). (optional) (default to METAGENOME_DERIVED_UNSET)
+    filters_is_metagenome_derived = 'METAGENOME_DERIVED_UNSET' # V2AssemblyDatasetDescriptorsFilterMetagenomeDerivedFilter | Exclude or limit to metagenome-assembled genomes (MAGs). (optional) (default to 'METAGENOME_DERIVED_UNSET')
     filters_is_type_material = False # bool | If true, limit to genomes derived from type material. (optional) (default to False)
     filters_is_ictv_exemplar = False # bool | If true, limit to genomes derived from an ICTV exemplar (only applies to virus genomes). (optional) (default to False)
     filters_exclude_multi_isolate = False # bool | If true, exclude genomes that were sequenced as part of large multi-isolate projects. (optional) (default to False)
-    filters_type_material_category = NONE # V2AssemblyDatasetDescriptorsFilterTypeMaterialCategory | Limit to genomes derived from specific type material categories. (optional) (default to NONE)
+    filters_type_material_category = 'NONE' # V2AssemblyDatasetDescriptorsFilterTypeMaterialCategory | Limit to genomes derived from specific type material categories. (optional) (default to 'NONE')
     tax_exact_match = False # bool | If true, only return assemblies matching the specified taxon, but not child taxa. For example, if querying by \"Canis lupus\", return Canis lupus but not Canis lupus familiaris genomes. (optional) (default to False)
     table_fields = ['accession'] # List[str] |  (optional)
-    returned_content = COMPLETE # V2AssemblyDatasetReportsRequestContentType | Return complete genome assembly reports, or abbreviated reports with assembly accessions with or without paired assembly information. (optional) (default to COMPLETE)
+    returned_content = 'COMPLETE' # V2AssemblyDatasetReportsRequestContentType | Return complete genome assembly reports, or abbreviated reports with assembly accessions with or without paired assembly information. (optional) (default to 'COMPLETE')
     page_size = 20 # int | The maximum number of genome assembly reports to return. Default is 20 and maximum is 1000. If the number of results exceeds the page size, `page_token` can be used to retrieve the remaining results. (optional) (default to 20)
     page_token = 'page_token_example' # str | A page token is returned when the results count exceeds `page size`. Use this token along with previous request parameters to retrieve the next page of results. When `page_token` is empty, all results have been retrieved. (optional)
     sort_field = 'sort_field_example' # str |  (optional)
-    sort_direction = SORT_DIRECTION_UNSPECIFIED # V2SortDirection |  (optional) (default to SORT_DIRECTION_UNSPECIFIED)
-    include_tabular_header = INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY # V2IncludeTabularHeader | Specify when to include the table header when requesting a tabular report. (optional) (default to INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY)
+    sort_direction = 'SORT_DIRECTION_UNSPECIFIED' # V2SortDirection |  (optional) (default to 'SORT_DIRECTION_UNSPECIFIED')
+    include_tabular_header = 'INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY' # V2IncludeTabularHeader | Specify when to include the table header when requesting a tabular report. (optional) (default to 'INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY')
 
     try:
         # Get genome assembly reports by BioSample accession
@@ -2134,28 +2134,28 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **biosample_ids** | [**List[str]**](str.md)|  | 
  **filters_reference_only** | **bool**| If true, limit to reference genome assemblies. | [optional] [default to False]
- **filters_assembly_source** | [**V2AssemblyDatasetDescriptorsFilterAssemblySource**](.md)| Limit to either RefSeq (GCF_) or GenBank (GCA_) genome assemblies. | [optional] [default to all]
+ **filters_assembly_source** | [**V2AssemblyDatasetDescriptorsFilterAssemblySource**](.md)| Limit to either RefSeq (GCF_) or GenBank (GCA_) genome assemblies. | [optional] [default to &#39;all&#39;]
  **filters_has_annotation** | **bool**| Limit to annotated genome assemblies. | [optional] [default to False]
  **filters_exclude_paired_reports** | **bool**| If true, for GenBank (GCA_)/RefSeq (GCF_) pairs, returns the RefSeq copy. When no RefSeq copy exists, the GenBank assembly is returned. | [optional] [default to False]
  **filters_exclude_atypical** | **bool**| If true, exclude [atypical genome assemblies](https://www.ncbi.nlm.nih.gov/datasets/docs/v2/data-processing/policies-annotation/genome-processing/genome_notes/#atypical-assemblies), i.e., genomes that have assembly issues or are otherwise atypical. | [optional] [default to False]
- **filters_assembly_version** | [**V2AssemblyDatasetDescriptorsFilterAssemblyVersion**](.md)| Limit to the most recent (current) version of a genome assembly. | [optional] [default to current]
+ **filters_assembly_version** | [**V2AssemblyDatasetDescriptorsFilterAssemblyVersion**](.md)| Limit to the most recent (current) version of a genome assembly. | [optional] [default to &#39;current&#39;]
  **filters_assembly_level** | [**List[V2reportsAssemblyLevel]**](V2reportsAssemblyLevel.md)| Limit to genomes at the specified [assembly level](https://www.ncbi.nlm.nih.gov/datasets/docs/v2/glossary/#assembly-level) | [optional] 
  **filters_first_release_date** | **datetime**| Limit to genomes released on or after the specified date | [optional] 
  **filters_last_release_date** | **datetime**| Limit to genomes released on or before the specified date | [optional] 
  **filters_search_text** | [**List[str]**](str.md)| Limit to genomes that match the specified submitter name, assembly name, infraspecific name (or modifier), or organism name. | [optional] 
- **filters_is_metagenome_derived** | [**V2AssemblyDatasetDescriptorsFilterMetagenomeDerivedFilter**](.md)| Exclude or limit to metagenome-assembled genomes (MAGs). | [optional] [default to METAGENOME_DERIVED_UNSET]
+ **filters_is_metagenome_derived** | [**V2AssemblyDatasetDescriptorsFilterMetagenomeDerivedFilter**](.md)| Exclude or limit to metagenome-assembled genomes (MAGs). | [optional] [default to &#39;METAGENOME_DERIVED_UNSET&#39;]
  **filters_is_type_material** | **bool**| If true, limit to genomes derived from type material. | [optional] [default to False]
  **filters_is_ictv_exemplar** | **bool**| If true, limit to genomes derived from an ICTV exemplar (only applies to virus genomes). | [optional] [default to False]
  **filters_exclude_multi_isolate** | **bool**| If true, exclude genomes that were sequenced as part of large multi-isolate projects. | [optional] [default to False]
- **filters_type_material_category** | [**V2AssemblyDatasetDescriptorsFilterTypeMaterialCategory**](.md)| Limit to genomes derived from specific type material categories. | [optional] [default to NONE]
+ **filters_type_material_category** | [**V2AssemblyDatasetDescriptorsFilterTypeMaterialCategory**](.md)| Limit to genomes derived from specific type material categories. | [optional] [default to &#39;NONE&#39;]
  **tax_exact_match** | **bool**| If true, only return assemblies matching the specified taxon, but not child taxa. For example, if querying by \&quot;Canis lupus\&quot;, return Canis lupus but not Canis lupus familiaris genomes. | [optional] [default to False]
  **table_fields** | [**List[str]**](str.md)|  | [optional] 
- **returned_content** | [**V2AssemblyDatasetReportsRequestContentType**](.md)| Return complete genome assembly reports, or abbreviated reports with assembly accessions with or without paired assembly information. | [optional] [default to COMPLETE]
+ **returned_content** | [**V2AssemblyDatasetReportsRequestContentType**](.md)| Return complete genome assembly reports, or abbreviated reports with assembly accessions with or without paired assembly information. | [optional] [default to &#39;COMPLETE&#39;]
  **page_size** | **int**| The maximum number of genome assembly reports to return. Default is 20 and maximum is 1000. If the number of results exceeds the page size, &#x60;page_token&#x60; can be used to retrieve the remaining results. | [optional] [default to 20]
  **page_token** | **str**| A page token is returned when the results count exceeds &#x60;page size&#x60;. Use this token along with previous request parameters to retrieve the next page of results. When &#x60;page_token&#x60; is empty, all results have been retrieved. | [optional] 
  **sort_field** | **str**|  | [optional] 
- **sort_direction** | [**V2SortDirection**](.md)|  | [optional] [default to SORT_DIRECTION_UNSPECIFIED]
- **include_tabular_header** | [**V2IncludeTabularHeader**](.md)| Specify when to include the table header when requesting a tabular report. | [optional] [default to INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY]
+ **sort_direction** | [**V2SortDirection**](.md)|  | [optional] [default to &#39;SORT_DIRECTION_UNSPECIFIED&#39;]
+ **include_tabular_header** | [**V2IncludeTabularHeader**](.md)| Specify when to include the table header when requesting a tabular report. | [optional] [default to &#39;INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY&#39;]
 
 ### Return type
 
@@ -2227,28 +2227,28 @@ with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
     api_instance = ncbi.datasets.openapi.GenomeApi(api_client)
     taxons = ['9606'] # List[str] | NCBI Taxonomy ID or name (common or scientific) at any taxonomic rank
     filters_reference_only = False # bool | If true, limit to reference genome assemblies. (optional) (default to False)
-    filters_assembly_source = all # V2AssemblyDatasetDescriptorsFilterAssemblySource | Limit to either RefSeq (GCF_) or GenBank (GCA_) genome assemblies. (optional) (default to all)
+    filters_assembly_source = 'all' # V2AssemblyDatasetDescriptorsFilterAssemblySource | Limit to either RefSeq (GCF_) or GenBank (GCA_) genome assemblies. (optional) (default to 'all')
     filters_has_annotation = False # bool | Limit to annotated genome assemblies. (optional) (default to False)
     filters_exclude_paired_reports = False # bool | If true, for GenBank (GCA_)/RefSeq (GCF_) pairs, returns the RefSeq copy. When no RefSeq copy exists, the GenBank assembly is returned. (optional) (default to False)
     filters_exclude_atypical = False # bool | If true, exclude [atypical genome assemblies](https://www.ncbi.nlm.nih.gov/datasets/docs/v2/data-processing/policies-annotation/genome-processing/genome_notes/#atypical-assemblies), i.e., genomes that have assembly issues or are otherwise atypical. (optional) (default to False)
-    filters_assembly_version = current # V2AssemblyDatasetDescriptorsFilterAssemblyVersion | Limit to the most recent (current) version of a genome assembly. (optional) (default to current)
+    filters_assembly_version = 'current' # V2AssemblyDatasetDescriptorsFilterAssemblyVersion | Limit to the most recent (current) version of a genome assembly. (optional) (default to 'current')
     filters_assembly_level = [ncbi.datasets.openapi.V2reportsAssemblyLevel()] # List[V2reportsAssemblyLevel] | Limit to genomes at the specified [assembly level](https://www.ncbi.nlm.nih.gov/datasets/docs/v2/glossary/#assembly-level) (optional)
     filters_first_release_date = '2024-01-10' # datetime | Limit to genomes released on or after the specified date (optional)
     filters_last_release_date = '2025-01-10' # datetime | Limit to genomes released on or before the specified date (optional)
     filters_search_text = ['Genome Reference Consortium'] # List[str] | Limit to genomes that match the specified submitter name, assembly name, infraspecific name (or modifier), or organism name. (optional)
-    filters_is_metagenome_derived = METAGENOME_DERIVED_UNSET # V2AssemblyDatasetDescriptorsFilterMetagenomeDerivedFilter | Exclude or limit to metagenome-assembled genomes (MAGs). (optional) (default to METAGENOME_DERIVED_UNSET)
+    filters_is_metagenome_derived = 'METAGENOME_DERIVED_UNSET' # V2AssemblyDatasetDescriptorsFilterMetagenomeDerivedFilter | Exclude or limit to metagenome-assembled genomes (MAGs). (optional) (default to 'METAGENOME_DERIVED_UNSET')
     filters_is_type_material = False # bool | If true, limit to genomes derived from type material. (optional) (default to False)
     filters_is_ictv_exemplar = False # bool | If true, limit to genomes derived from an ICTV exemplar (only applies to virus genomes). (optional) (default to False)
     filters_exclude_multi_isolate = False # bool | If true, exclude genomes that were sequenced as part of large multi-isolate projects. (optional) (default to False)
-    filters_type_material_category = NONE # V2AssemblyDatasetDescriptorsFilterTypeMaterialCategory | Limit to genomes derived from specific type material categories. (optional) (default to NONE)
+    filters_type_material_category = 'NONE' # V2AssemblyDatasetDescriptorsFilterTypeMaterialCategory | Limit to genomes derived from specific type material categories. (optional) (default to 'NONE')
     tax_exact_match = False # bool | If true, only return assemblies matching the specified taxon, but not child taxa. For example, if querying by \"Canis lupus\", return Canis lupus but not Canis lupus familiaris genomes. (optional) (default to False)
     table_fields = ['accession'] # List[str] |  (optional)
-    returned_content = COMPLETE # V2AssemblyDatasetReportsRequestContentType | Return complete genome assembly reports, or abbreviated reports with assembly accessions with or without paired assembly information. (optional) (default to COMPLETE)
+    returned_content = 'COMPLETE' # V2AssemblyDatasetReportsRequestContentType | Return complete genome assembly reports, or abbreviated reports with assembly accessions with or without paired assembly information. (optional) (default to 'COMPLETE')
     page_size = 20 # int | The maximum number of genome assembly reports to return. Default is 20 and maximum is 1000. If the number of results exceeds the page size, `page_token` can be used to retrieve the remaining results. (optional) (default to 20)
     page_token = 'page_token_example' # str | A page token is returned when the results count exceeds `page size`. Use this token along with previous request parameters to retrieve the next page of results. When `page_token` is empty, all results have been retrieved. (optional)
     sort_field = 'sort_field_example' # str |  (optional)
-    sort_direction = SORT_DIRECTION_UNSPECIFIED # V2SortDirection |  (optional) (default to SORT_DIRECTION_UNSPECIFIED)
-    include_tabular_header = INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY # V2IncludeTabularHeader | Specify when to include the table header when requesting a tabular report. (optional) (default to INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY)
+    sort_direction = 'SORT_DIRECTION_UNSPECIFIED' # V2SortDirection |  (optional) (default to 'SORT_DIRECTION_UNSPECIFIED')
+    include_tabular_header = 'INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY' # V2IncludeTabularHeader | Specify when to include the table header when requesting a tabular report. (optional) (default to 'INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY')
 
     try:
         # Get a genome assembly report by taxon
@@ -2268,28 +2268,28 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **taxons** | [**List[str]**](str.md)| NCBI Taxonomy ID or name (common or scientific) at any taxonomic rank | 
  **filters_reference_only** | **bool**| If true, limit to reference genome assemblies. | [optional] [default to False]
- **filters_assembly_source** | [**V2AssemblyDatasetDescriptorsFilterAssemblySource**](.md)| Limit to either RefSeq (GCF_) or GenBank (GCA_) genome assemblies. | [optional] [default to all]
+ **filters_assembly_source** | [**V2AssemblyDatasetDescriptorsFilterAssemblySource**](.md)| Limit to either RefSeq (GCF_) or GenBank (GCA_) genome assemblies. | [optional] [default to &#39;all&#39;]
  **filters_has_annotation** | **bool**| Limit to annotated genome assemblies. | [optional] [default to False]
  **filters_exclude_paired_reports** | **bool**| If true, for GenBank (GCA_)/RefSeq (GCF_) pairs, returns the RefSeq copy. When no RefSeq copy exists, the GenBank assembly is returned. | [optional] [default to False]
  **filters_exclude_atypical** | **bool**| If true, exclude [atypical genome assemblies](https://www.ncbi.nlm.nih.gov/datasets/docs/v2/data-processing/policies-annotation/genome-processing/genome_notes/#atypical-assemblies), i.e., genomes that have assembly issues or are otherwise atypical. | [optional] [default to False]
- **filters_assembly_version** | [**V2AssemblyDatasetDescriptorsFilterAssemblyVersion**](.md)| Limit to the most recent (current) version of a genome assembly. | [optional] [default to current]
+ **filters_assembly_version** | [**V2AssemblyDatasetDescriptorsFilterAssemblyVersion**](.md)| Limit to the most recent (current) version of a genome assembly. | [optional] [default to &#39;current&#39;]
  **filters_assembly_level** | [**List[V2reportsAssemblyLevel]**](V2reportsAssemblyLevel.md)| Limit to genomes at the specified [assembly level](https://www.ncbi.nlm.nih.gov/datasets/docs/v2/glossary/#assembly-level) | [optional] 
  **filters_first_release_date** | **datetime**| Limit to genomes released on or after the specified date | [optional] 
  **filters_last_release_date** | **datetime**| Limit to genomes released on or before the specified date | [optional] 
  **filters_search_text** | [**List[str]**](str.md)| Limit to genomes that match the specified submitter name, assembly name, infraspecific name (or modifier), or organism name. | [optional] 
- **filters_is_metagenome_derived** | [**V2AssemblyDatasetDescriptorsFilterMetagenomeDerivedFilter**](.md)| Exclude or limit to metagenome-assembled genomes (MAGs). | [optional] [default to METAGENOME_DERIVED_UNSET]
+ **filters_is_metagenome_derived** | [**V2AssemblyDatasetDescriptorsFilterMetagenomeDerivedFilter**](.md)| Exclude or limit to metagenome-assembled genomes (MAGs). | [optional] [default to &#39;METAGENOME_DERIVED_UNSET&#39;]
  **filters_is_type_material** | **bool**| If true, limit to genomes derived from type material. | [optional] [default to False]
  **filters_is_ictv_exemplar** | **bool**| If true, limit to genomes derived from an ICTV exemplar (only applies to virus genomes). | [optional] [default to False]
  **filters_exclude_multi_isolate** | **bool**| If true, exclude genomes that were sequenced as part of large multi-isolate projects. | [optional] [default to False]
- **filters_type_material_category** | [**V2AssemblyDatasetDescriptorsFilterTypeMaterialCategory**](.md)| Limit to genomes derived from specific type material categories. | [optional] [default to NONE]
+ **filters_type_material_category** | [**V2AssemblyDatasetDescriptorsFilterTypeMaterialCategory**](.md)| Limit to genomes derived from specific type material categories. | [optional] [default to &#39;NONE&#39;]
  **tax_exact_match** | **bool**| If true, only return assemblies matching the specified taxon, but not child taxa. For example, if querying by \&quot;Canis lupus\&quot;, return Canis lupus but not Canis lupus familiaris genomes. | [optional] [default to False]
  **table_fields** | [**List[str]**](str.md)|  | [optional] 
- **returned_content** | [**V2AssemblyDatasetReportsRequestContentType**](.md)| Return complete genome assembly reports, or abbreviated reports with assembly accessions with or without paired assembly information. | [optional] [default to COMPLETE]
+ **returned_content** | [**V2AssemblyDatasetReportsRequestContentType**](.md)| Return complete genome assembly reports, or abbreviated reports with assembly accessions with or without paired assembly information. | [optional] [default to &#39;COMPLETE&#39;]
  **page_size** | **int**| The maximum number of genome assembly reports to return. Default is 20 and maximum is 1000. If the number of results exceeds the page size, &#x60;page_token&#x60; can be used to retrieve the remaining results. | [optional] [default to 20]
  **page_token** | **str**| A page token is returned when the results count exceeds &#x60;page size&#x60;. Use this token along with previous request parameters to retrieve the next page of results. When &#x60;page_token&#x60; is empty, all results have been retrieved. | [optional] 
  **sort_field** | **str**|  | [optional] 
- **sort_direction** | [**V2SortDirection**](.md)|  | [optional] [default to SORT_DIRECTION_UNSPECIFIED]
- **include_tabular_header** | [**V2IncludeTabularHeader**](.md)| Specify when to include the table header when requesting a tabular report. | [optional] [default to INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY]
+ **sort_direction** | [**V2SortDirection**](.md)|  | [optional] [default to &#39;SORT_DIRECTION_UNSPECIFIED&#39;]
+ **include_tabular_header** | [**V2IncludeTabularHeader**](.md)| Specify when to include the table header when requesting a tabular report. | [optional] [default to &#39;INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY&#39;]
 
 ### Return type
 
@@ -2361,28 +2361,28 @@ with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
     api_instance = ncbi.datasets.openapi.GenomeApi(api_client)
     wgs_accessions = ['JAXUCZ01'] # List[str] | One or more WGS accessions associated with a genome assembly
     filters_reference_only = False # bool | If true, limit to reference genome assemblies. (optional) (default to False)
-    filters_assembly_source = all # V2AssemblyDatasetDescriptorsFilterAssemblySource | Limit to either RefSeq (GCF_) or GenBank (GCA_) genome assemblies. (optional) (default to all)
+    filters_assembly_source = 'all' # V2AssemblyDatasetDescriptorsFilterAssemblySource | Limit to either RefSeq (GCF_) or GenBank (GCA_) genome assemblies. (optional) (default to 'all')
     filters_has_annotation = False # bool | Limit to annotated genome assemblies. (optional) (default to False)
     filters_exclude_paired_reports = False # bool | If true, for GenBank (GCA_)/RefSeq (GCF_) pairs, returns the RefSeq copy. When no RefSeq copy exists, the GenBank assembly is returned. (optional) (default to False)
     filters_exclude_atypical = False # bool | If true, exclude [atypical genome assemblies](https://www.ncbi.nlm.nih.gov/datasets/docs/v2/data-processing/policies-annotation/genome-processing/genome_notes/#atypical-assemblies), i.e., genomes that have assembly issues or are otherwise atypical. (optional) (default to False)
-    filters_assembly_version = current # V2AssemblyDatasetDescriptorsFilterAssemblyVersion | Limit to the most recent (current) version of a genome assembly. (optional) (default to current)
+    filters_assembly_version = 'current' # V2AssemblyDatasetDescriptorsFilterAssemblyVersion | Limit to the most recent (current) version of a genome assembly. (optional) (default to 'current')
     filters_assembly_level = [ncbi.datasets.openapi.V2reportsAssemblyLevel()] # List[V2reportsAssemblyLevel] | Limit to genomes at the specified [assembly level](https://www.ncbi.nlm.nih.gov/datasets/docs/v2/glossary/#assembly-level) (optional)
     filters_first_release_date = '2024-01-10' # datetime | Limit to genomes released on or after the specified date (optional)
     filters_last_release_date = '2025-01-10' # datetime | Limit to genomes released on or before the specified date (optional)
     filters_search_text = ['Genome Reference Consortium'] # List[str] | Limit to genomes that match the specified submitter name, assembly name, infraspecific name (or modifier), or organism name. (optional)
-    filters_is_metagenome_derived = METAGENOME_DERIVED_UNSET # V2AssemblyDatasetDescriptorsFilterMetagenomeDerivedFilter | Exclude or limit to metagenome-assembled genomes (MAGs). (optional) (default to METAGENOME_DERIVED_UNSET)
+    filters_is_metagenome_derived = 'METAGENOME_DERIVED_UNSET' # V2AssemblyDatasetDescriptorsFilterMetagenomeDerivedFilter | Exclude or limit to metagenome-assembled genomes (MAGs). (optional) (default to 'METAGENOME_DERIVED_UNSET')
     filters_is_type_material = False # bool | If true, limit to genomes derived from type material. (optional) (default to False)
     filters_is_ictv_exemplar = False # bool | If true, limit to genomes derived from an ICTV exemplar (only applies to virus genomes). (optional) (default to False)
     filters_exclude_multi_isolate = False # bool | If true, exclude genomes that were sequenced as part of large multi-isolate projects. (optional) (default to False)
-    filters_type_material_category = NONE # V2AssemblyDatasetDescriptorsFilterTypeMaterialCategory | Limit to genomes derived from specific type material categories. (optional) (default to NONE)
+    filters_type_material_category = 'NONE' # V2AssemblyDatasetDescriptorsFilterTypeMaterialCategory | Limit to genomes derived from specific type material categories. (optional) (default to 'NONE')
     tax_exact_match = False # bool | If true, only return assemblies matching the specified taxon, but not child taxa. For example, if querying by \"Canis lupus\", return Canis lupus but not Canis lupus familiaris genomes. (optional) (default to False)
     table_fields = ['accession'] # List[str] |  (optional)
-    returned_content = COMPLETE # V2AssemblyDatasetReportsRequestContentType | Return complete genome assembly reports, or abbreviated reports with assembly accessions with or without paired assembly information. (optional) (default to COMPLETE)
+    returned_content = 'COMPLETE' # V2AssemblyDatasetReportsRequestContentType | Return complete genome assembly reports, or abbreviated reports with assembly accessions with or without paired assembly information. (optional) (default to 'COMPLETE')
     page_size = 20 # int | The maximum number of genome assembly reports to return. Default is 20 and maximum is 1000. If the number of results exceeds the page size, `page_token` can be used to retrieve the remaining results. (optional) (default to 20)
     page_token = 'page_token_example' # str | A page token is returned when the results count exceeds `page size`. Use this token along with previous request parameters to retrieve the next page of results. When `page_token` is empty, all results have been retrieved. (optional)
     sort_field = 'sort_field_example' # str |  (optional)
-    sort_direction = SORT_DIRECTION_UNSPECIFIED # V2SortDirection |  (optional) (default to SORT_DIRECTION_UNSPECIFIED)
-    include_tabular_header = INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY # V2IncludeTabularHeader | Specify when to include the table header when requesting a tabular report. (optional) (default to INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY)
+    sort_direction = 'SORT_DIRECTION_UNSPECIFIED' # V2SortDirection |  (optional) (default to 'SORT_DIRECTION_UNSPECIFIED')
+    include_tabular_header = 'INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY' # V2IncludeTabularHeader | Specify when to include the table header when requesting a tabular report. (optional) (default to 'INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY')
 
     try:
         # Get a genome assembly data report by WGS accession
@@ -2402,28 +2402,28 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **wgs_accessions** | [**List[str]**](str.md)| One or more WGS accessions associated with a genome assembly | 
  **filters_reference_only** | **bool**| If true, limit to reference genome assemblies. | [optional] [default to False]
- **filters_assembly_source** | [**V2AssemblyDatasetDescriptorsFilterAssemblySource**](.md)| Limit to either RefSeq (GCF_) or GenBank (GCA_) genome assemblies. | [optional] [default to all]
+ **filters_assembly_source** | [**V2AssemblyDatasetDescriptorsFilterAssemblySource**](.md)| Limit to either RefSeq (GCF_) or GenBank (GCA_) genome assemblies. | [optional] [default to &#39;all&#39;]
  **filters_has_annotation** | **bool**| Limit to annotated genome assemblies. | [optional] [default to False]
  **filters_exclude_paired_reports** | **bool**| If true, for GenBank (GCA_)/RefSeq (GCF_) pairs, returns the RefSeq copy. When no RefSeq copy exists, the GenBank assembly is returned. | [optional] [default to False]
  **filters_exclude_atypical** | **bool**| If true, exclude [atypical genome assemblies](https://www.ncbi.nlm.nih.gov/datasets/docs/v2/data-processing/policies-annotation/genome-processing/genome_notes/#atypical-assemblies), i.e., genomes that have assembly issues or are otherwise atypical. | [optional] [default to False]
- **filters_assembly_version** | [**V2AssemblyDatasetDescriptorsFilterAssemblyVersion**](.md)| Limit to the most recent (current) version of a genome assembly. | [optional] [default to current]
+ **filters_assembly_version** | [**V2AssemblyDatasetDescriptorsFilterAssemblyVersion**](.md)| Limit to the most recent (current) version of a genome assembly. | [optional] [default to &#39;current&#39;]
  **filters_assembly_level** | [**List[V2reportsAssemblyLevel]**](V2reportsAssemblyLevel.md)| Limit to genomes at the specified [assembly level](https://www.ncbi.nlm.nih.gov/datasets/docs/v2/glossary/#assembly-level) | [optional] 
  **filters_first_release_date** | **datetime**| Limit to genomes released on or after the specified date | [optional] 
  **filters_last_release_date** | **datetime**| Limit to genomes released on or before the specified date | [optional] 
  **filters_search_text** | [**List[str]**](str.md)| Limit to genomes that match the specified submitter name, assembly name, infraspecific name (or modifier), or organism name. | [optional] 
- **filters_is_metagenome_derived** | [**V2AssemblyDatasetDescriptorsFilterMetagenomeDerivedFilter**](.md)| Exclude or limit to metagenome-assembled genomes (MAGs). | [optional] [default to METAGENOME_DERIVED_UNSET]
+ **filters_is_metagenome_derived** | [**V2AssemblyDatasetDescriptorsFilterMetagenomeDerivedFilter**](.md)| Exclude or limit to metagenome-assembled genomes (MAGs). | [optional] [default to &#39;METAGENOME_DERIVED_UNSET&#39;]
  **filters_is_type_material** | **bool**| If true, limit to genomes derived from type material. | [optional] [default to False]
  **filters_is_ictv_exemplar** | **bool**| If true, limit to genomes derived from an ICTV exemplar (only applies to virus genomes). | [optional] [default to False]
  **filters_exclude_multi_isolate** | **bool**| If true, exclude genomes that were sequenced as part of large multi-isolate projects. | [optional] [default to False]
- **filters_type_material_category** | [**V2AssemblyDatasetDescriptorsFilterTypeMaterialCategory**](.md)| Limit to genomes derived from specific type material categories. | [optional] [default to NONE]
+ **filters_type_material_category** | [**V2AssemblyDatasetDescriptorsFilterTypeMaterialCategory**](.md)| Limit to genomes derived from specific type material categories. | [optional] [default to &#39;NONE&#39;]
  **tax_exact_match** | **bool**| If true, only return assemblies matching the specified taxon, but not child taxa. For example, if querying by \&quot;Canis lupus\&quot;, return Canis lupus but not Canis lupus familiaris genomes. | [optional] [default to False]
  **table_fields** | [**List[str]**](str.md)|  | [optional] 
- **returned_content** | [**V2AssemblyDatasetReportsRequestContentType**](.md)| Return complete genome assembly reports, or abbreviated reports with assembly accessions with or without paired assembly information. | [optional] [default to COMPLETE]
+ **returned_content** | [**V2AssemblyDatasetReportsRequestContentType**](.md)| Return complete genome assembly reports, or abbreviated reports with assembly accessions with or without paired assembly information. | [optional] [default to &#39;COMPLETE&#39;]
  **page_size** | **int**| The maximum number of genome assembly reports to return. Default is 20 and maximum is 1000. If the number of results exceeds the page size, &#x60;page_token&#x60; can be used to retrieve the remaining results. | [optional] [default to 20]
  **page_token** | **str**| A page token is returned when the results count exceeds &#x60;page size&#x60;. Use this token along with previous request parameters to retrieve the next page of results. When &#x60;page_token&#x60; is empty, all results have been retrieved. | [optional] 
  **sort_field** | **str**|  | [optional] 
- **sort_direction** | [**V2SortDirection**](.md)|  | [optional] [default to SORT_DIRECTION_UNSPECIFIED]
- **include_tabular_header** | [**V2IncludeTabularHeader**](.md)| Specify when to include the table header when requesting a tabular report. | [optional] [default to INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY]
+ **sort_direction** | [**V2SortDirection**](.md)|  | [optional] [default to &#39;SORT_DIRECTION_UNSPECIFIED&#39;]
+ **include_tabular_header** | [**V2IncludeTabularHeader**](.md)| Specify when to include the table header when requesting a tabular report. | [optional] [default to &#39;INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY&#39;]
 
 ### Return type
 
@@ -2823,7 +2823,7 @@ with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
     count_assembly_unplaced = False # bool | Include the count of unplaced scaffold sequences (optional) (default to False)
     page_size = 56 # int | The maximum number of genome assemblies to return. Maximum is 1000. If the number of results exceeds the page size, `page_token` can be used to retrieve the remaining results. (optional)
     page_token = 'page_token_example' # str | A page token is returned when the results count exceeds `page size`. Use this token along with previous request parameters to retrieve the next page of results. When `page_token` is empty, all results have been retrieved. (optional)
-    include_tabular_header = INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY # V2IncludeTabularHeader |  (optional) (default to INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY)
+    include_tabular_header = 'INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY' # V2IncludeTabularHeader |  (optional) (default to 'INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY')
 
     try:
         # Get a genome sequence report by genome assembly accession
@@ -2848,7 +2848,7 @@ Name | Type | Description  | Notes
  **count_assembly_unplaced** | **bool**| Include the count of unplaced scaffold sequences | [optional] [default to False]
  **page_size** | **int**| The maximum number of genome assemblies to return. Maximum is 1000. If the number of results exceeds the page size, &#x60;page_token&#x60; can be used to retrieve the remaining results. | [optional] 
  **page_token** | **str**| A page token is returned when the results count exceeds &#x60;page size&#x60;. Use this token along with previous request parameters to retrieve the next page of results. When &#x60;page_token&#x60; is empty, all results have been retrieved. | [optional] 
- **include_tabular_header** | [**V2IncludeTabularHeader**](.md)|  | [optional] [default to INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY]
+ **include_tabular_header** | [**V2IncludeTabularHeader**](.md)|  | [optional] [default to &#39;INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY&#39;]
 
 ### Return type
 

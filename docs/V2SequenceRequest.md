@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **accessions** | **List[str]** |  | [optional] 
 **include_all_versions** | **bool** |  | [optional] 
+**returned_content** | [**V2SequenceRequestContentType**](V2SequenceRequestContentType.md) |  | [optional] [default to V2SequenceRequestContentType.COMPLETE]
 
 ## Example
 

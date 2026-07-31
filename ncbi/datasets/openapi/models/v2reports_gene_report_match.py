@@ -20,6 +20,7 @@ import json
 from pydantic import BaseModel, ConfigDict, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from ncbi.datasets.openapi.models.v2reports_error import V2reportsError
+from ncbi.datasets.openapi.models.v2reports_expression_descriptor import V2reportsExpressionDescriptor
 from ncbi.datasets.openapi.models.v2reports_gene_descriptor import V2reportsGeneDescriptor
 from ncbi.datasets.openapi.models.v2reports_product_descriptor import V2reportsProductDescriptor
 from ncbi.datasets.openapi.models.v2reports_warning import V2reportsWarning
@@ -33,11 +34,12 @@ class V2reportsGeneReportMatch(BaseModel):
     """ # noqa: E501
     gene: Optional[V2reportsGeneDescriptor] = None
     product: Optional[V2reportsProductDescriptor] = None
+    expression: Optional[V2reportsExpressionDescriptor] = None
     query: Optional[List[StrictStr]] = None
     warnings: Optional[List[V2reportsWarning]] = None
     warning: Optional[V2reportsWarning] = None
     errors: Optional[List[V2reportsError]] = None
-    __properties: ClassVar[List[str]] = ["gene", "product", "query", "warnings", "warning", "errors"]
+    __properties: ClassVar[List[str]] = ["gene", "product", "expression", "query", "warnings", "warning", "errors"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -84,6 +86,9 @@ class V2reportsGeneReportMatch(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of product
         if self.product:
             _dict['product'] = self.product.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of expression
+        if self.expression:
+            _dict['expression'] = self.expression.to_dict()
         # override the default output from pydantic by calling `to_dict()` of each item in warnings (list)
         _items = []
         if self.warnings:
@@ -115,6 +120,7 @@ class V2reportsGeneReportMatch(BaseModel):
         _obj = cls.model_validate({
             "gene": V2reportsGeneDescriptor.from_dict(obj["gene"]) if obj.get("gene") is not None else None,
             "product": V2reportsProductDescriptor.from_dict(obj["product"]) if obj.get("product") is not None else None,
+            "expression": V2reportsExpressionDescriptor.from_dict(obj["expression"]) if obj.get("expression") is not None else None,
             "query": obj.get("query"),
             "warnings": [V2reportsWarning.from_dict(_item) for _item in obj["warnings"]] if obj.get("warnings") is not None else None,
             "warning": V2reportsWarning.from_dict(obj["warning"]) if obj.get("warning") is not None else None,

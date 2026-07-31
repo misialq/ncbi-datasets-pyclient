@@ -448,7 +448,7 @@ with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
     usa_state = 'CA' # str | Limit to genomes collected from the specified U.S. state (two-letter abbreviation). (optional)
     complete_only = False # bool | Limit to genomes designated as complete, as defined by the submitter. (optional) (default to False)
     table_fields = [ncbi.datasets.openapi.V2VirusTableField()] # List[V2VirusTableField] | Specify which fields to include in the tabular report (optional)
-    format = tsv # V2TableFormat | Specify output format (optional) (default to tsv)
+    format = 'tsv' # V2TableFormat | Specify output format (optional) (default to 'tsv')
 
     try:
         # Get SARS-CoV-2 protein metadata in a tabular format by protein name
@@ -477,7 +477,7 @@ Name | Type | Description  | Notes
  **usa_state** | **str**| Limit to genomes collected from the specified U.S. state (two-letter abbreviation). | [optional] 
  **complete_only** | **bool**| Limit to genomes designated as complete, as defined by the submitter. | [optional] [default to False]
  **table_fields** | [**List[V2VirusTableField]**](V2VirusTableField.md)| Specify which fields to include in the tabular report | [optional] 
- **format** | [**V2TableFormat**](.md)| Specify output format | [optional] [default to tsv]
+ **format** | [**V2TableFormat**](.md)| Specify output format | [optional] [default to &#39;tsv&#39;]
 
 ### Return type
 
@@ -1492,7 +1492,7 @@ with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
     table_fields = [ncbi.datasets.openapi.V2VirusTableField()] # List[V2VirusTableField] | Specify which fields to include in the tabular report (optional)
     include_sequence = [ncbi.datasets.openapi.V2ViralSequenceType()] # List[V2ViralSequenceType] | Specify which sequence files to include in the data package. (optional)
     aux_report = [ncbi.datasets.openapi.V2VirusDatasetReportType()] # List[V2VirusDatasetReportType] | Specify which report files to include in the data package. The virus data report is always included, and its inclusion is not affected by this parameter. (optional)
-    format = tsv # V2TableFormat | Choose download format (tsv, csv or jsonl) (optional) (default to tsv)
+    format = 'tsv' # V2TableFormat | Choose download format (tsv, csv or jsonl) (optional) (default to 'tsv')
 
     try:
         # Get virus genome metadata in a tabular format
@@ -1524,7 +1524,7 @@ Name | Type | Description  | Notes
  **table_fields** | [**List[V2VirusTableField]**](V2VirusTableField.md)| Specify which fields to include in the tabular report | [optional] 
  **include_sequence** | [**List[V2ViralSequenceType]**](V2ViralSequenceType.md)| Specify which sequence files to include in the data package. | [optional] 
  **aux_report** | [**List[V2VirusDatasetReportType]**](V2VirusDatasetReportType.md)| Specify which report files to include in the data package. The virus data report is always included, and its inclusion is not affected by this parameter. | [optional] 
- **format** | [**V2TableFormat**](.md)| Choose download format (tsv, csv or jsonl) | [optional] [default to tsv]
+ **format** | [**V2TableFormat**](.md)| Choose download format (tsv, csv or jsonl) | [optional] [default to &#39;tsv&#39;]
 
 ### Return type
 
@@ -1597,7 +1597,7 @@ with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
     filter_geo_location = 'USA' # str | Limit to genomes collected from the specified geographic location. (optional)
     filter_usa_state = 'CA' # str | Limit to genomes collected from the specified U.S. state (two-letter abbreviation). (optional)
     filter_complete_only = False # bool | Limit to genomes designated as complete, as defined by the submitter. (optional) (default to False)
-    returned_content = COMPLETE # V2VirusDataReportRequestContentType | Return complete virus reports or nucleotide accessions only (optional) (default to COMPLETE)
+    returned_content = 'COMPLETE' # V2VirusDataReportRequestContentType | Return complete virus reports or nucleotide accessions only (optional) (default to 'COMPLETE')
     table_fields = ['[\"accession\",\"is-complete\",\"is-annotated\"]'] # List[str] | Specify which fields to include in the tabular report (optional)
     page_size = 20 # int | The maximum number of virus data reports to return. Default is 20 and maximum is 1000. If the number of results exceeds the page size, `page_token` can be used to retrieve the remaining results. (optional) (default to 20)
     page_token = 'page_token_example' # str | A page token is returned when the results count exceeds `page size`. Use this token along with previous request parameters to retrieve the next page of results. When `page_token` is empty, all results have been retrieved. (optional)
@@ -1628,7 +1628,7 @@ Name | Type | Description  | Notes
  **filter_geo_location** | **str**| Limit to genomes collected from the specified geographic location. | [optional] 
  **filter_usa_state** | **str**| Limit to genomes collected from the specified U.S. state (two-letter abbreviation). | [optional] 
  **filter_complete_only** | **bool**| Limit to genomes designated as complete, as defined by the submitter. | [optional] [default to False]
- **returned_content** | [**V2VirusDataReportRequestContentType**](.md)| Return complete virus reports or nucleotide accessions only | [optional] [default to COMPLETE]
+ **returned_content** | [**V2VirusDataReportRequestContentType**](.md)| Return complete virus reports or nucleotide accessions only | [optional] [default to &#39;COMPLETE&#39;]
  **table_fields** | [**List[str]**](str.md)| Specify which fields to include in the tabular report | [optional] 
  **page_size** | **int**| The maximum number of virus data reports to return. Default is 20 and maximum is 1000. If the number of results exceeds the page size, &#x60;page_token&#x60; can be used to retrieve the remaining results. | [optional] [default to 20]
  **page_token** | **str**| A page token is returned when the results count exceeds &#x60;page size&#x60;. Use this token along with previous request parameters to retrieve the next page of results. When &#x60;page_token&#x60; is empty, all results have been retrieved. | [optional] 
@@ -1785,7 +1785,7 @@ with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
     filter_geo_location = 'USA' # str | Limit to genomes collected from the specified geographic location. (optional)
     filter_usa_state = 'CA' # str | Limit to genomes collected from the specified U.S. state (two-letter abbreviation). (optional)
     filter_complete_only = False # bool | Limit to genomes designated as complete, as defined by the submitter. (optional) (default to False)
-    returned_content = COMPLETE # V2VirusDataReportRequestContentType | Return complete virus reports or nucleotide accessions only (optional) (default to COMPLETE)
+    returned_content = 'COMPLETE' # V2VirusDataReportRequestContentType | Return complete virus reports or nucleotide accessions only (optional) (default to 'COMPLETE')
     table_fields = ['[\"accession\",\"is-complete\",\"is-annotated\"]'] # List[str] | Specify which fields to include in the tabular report (optional)
     page_size = 20 # int | The maximum number of virus data reports to return. Default is 20 and maximum is 1000. If the number of results exceeds the page size, `page_token` can be used to retrieve the remaining results. (optional) (default to 20)
     page_token = 'page_token_example' # str | A page token is returned when the results count exceeds `page size`. Use this token along with previous request parameters to retrieve the next page of results. When `page_token` is empty, all results have been retrieved. (optional)
@@ -1816,7 +1816,7 @@ Name | Type | Description  | Notes
  **filter_geo_location** | **str**| Limit to genomes collected from the specified geographic location. | [optional] 
  **filter_usa_state** | **str**| Limit to genomes collected from the specified U.S. state (two-letter abbreviation). | [optional] 
  **filter_complete_only** | **bool**| Limit to genomes designated as complete, as defined by the submitter. | [optional] [default to False]
- **returned_content** | [**V2VirusDataReportRequestContentType**](.md)| Return complete virus reports or nucleotide accessions only | [optional] [default to COMPLETE]
+ **returned_content** | [**V2VirusDataReportRequestContentType**](.md)| Return complete virus reports or nucleotide accessions only | [optional] [default to &#39;COMPLETE&#39;]
  **table_fields** | [**List[str]**](str.md)| Specify which fields to include in the tabular report | [optional] 
  **page_size** | **int**| The maximum number of virus data reports to return. Default is 20 and maximum is 1000. If the number of results exceeds the page size, &#x60;page_token&#x60; can be used to retrieve the remaining results. | [optional] [default to 20]
  **page_token** | **str**| A page token is returned when the results count exceeds &#x60;page size&#x60;. Use this token along with previous request parameters to retrieve the next page of results. When &#x60;page_token&#x60; is empty, all results have been retrieved. | [optional] 
