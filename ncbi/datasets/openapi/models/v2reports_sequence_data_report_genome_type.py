@@ -27,7 +27,6 @@ class V2reportsSequenceDataReportGenomeType(str, Enum):
     allowed enum values
     """
     GENOME_TYPE_UNKNOWN = 'genome_type_unknown'
-    GENOMIC = 'genomic'
     CHLOROPLAST = 'chloroplast'
     CHROMOPLAST = 'chromoplast'
     KINETOPLAST = 'kinetoplast'

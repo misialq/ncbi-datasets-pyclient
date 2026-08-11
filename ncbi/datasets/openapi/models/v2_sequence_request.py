@@ -19,7 +19,9 @@ import json
 
 from pydantic import BaseModel, ConfigDict, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from ncbi.datasets.openapi.models.v2_include_tabular_header import V2IncludeTabularHeader
 from ncbi.datasets.openapi.models.v2_sequence_request_content_type import V2SequenceRequestContentType
+from ncbi.datasets.openapi.models.v2_sequence_request_table_format import V2SequenceRequestTableFormat
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
@@ -31,7 +33,9 @@ class V2SequenceRequest(BaseModel):
     accessions: Optional[List[StrictStr]] = None
     include_all_versions: Optional[StrictBool] = None
     returned_content: Optional[V2SequenceRequestContentType] = V2SequenceRequestContentType.COMPLETE
-    __properties: ClassVar[List[str]] = ["accessions", "include_all_versions", "returned_content"]
+    include_tabular_header: Optional[V2IncludeTabularHeader] = V2IncludeTabularHeader.INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY
+    table_format: Optional[V2SequenceRequestTableFormat] = V2SequenceRequestTableFormat.SUMMARY
+    __properties: ClassVar[List[str]] = ["accessions", "include_all_versions", "returned_content", "include_tabular_header", "table_format"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -86,7 +90,9 @@ class V2SequenceRequest(BaseModel):
         _obj = cls.model_validate({
             "accessions": obj.get("accessions"),
             "include_all_versions": obj.get("include_all_versions"),
-            "returned_content": obj.get("returned_content") if obj.get("returned_content") is not None else V2SequenceRequestContentType.COMPLETE
+            "returned_content": obj.get("returned_content") if obj.get("returned_content") is not None else V2SequenceRequestContentType.COMPLETE,
+            "include_tabular_header": obj.get("include_tabular_header") if obj.get("include_tabular_header") is not None else V2IncludeTabularHeader.INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY,
+            "table_format": obj.get("table_format") if obj.get("table_format") is not None else V2SequenceRequestTableFormat.SUMMARY
         })
         return _obj
 

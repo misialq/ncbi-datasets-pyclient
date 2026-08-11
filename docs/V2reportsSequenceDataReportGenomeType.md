@@ -5,8 +5,6 @@
 
 * `GENOME_TYPE_UNKNOWN` (value: `'genome_type_unknown'`)
 
-* `GENOMIC` (value: `'genomic'`)
-
 * `CHLOROPLAST` (value: `'chloroplast'`)
 
 * `CHROMOPLAST` (value: `'chromoplast'`)

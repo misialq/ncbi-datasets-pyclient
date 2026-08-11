@@ -135,6 +135,7 @@ from ncbi.datasets.openapi.models.v2_sequence_dataset_request_file_type import V
 from ncbi.datasets.openapi.models.v2_sequence_report_page import V2SequenceReportPage
 from ncbi.datasets.openapi.models.v2_sequence_request import V2SequenceRequest
 from ncbi.datasets.openapi.models.v2_sequence_request_content_type import V2SequenceRequestContentType
+from ncbi.datasets.openapi.models.v2_sequence_request_table_format import V2SequenceRequestTableFormat
 from ncbi.datasets.openapi.models.v2_sleep_reply import V2SleepReply
 from ncbi.datasets.openapi.models.v2_sleep_request import V2SleepRequest
 from ncbi.datasets.openapi.models.v2_sort_direction import V2SortDirection

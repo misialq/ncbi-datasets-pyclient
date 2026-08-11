@@ -131,6 +131,7 @@ docs/V2SequenceDatasetRequestFileType.md
 docs/V2SequenceReportPage.md
 docs/V2SequenceRequest.md
 docs/V2SequenceRequestContentType.md
+docs/V2SequenceRequestTableFormat.md
 docs/V2SleepReply.md
 docs/V2SleepRequest.md
 docs/V2SortDirection.md
@@ -487,6 +488,7 @@ ncbi/datasets/openapi/models/v2_sequence_dataset_request_file_type.py
 ncbi/datasets/openapi/models/v2_sequence_report_page.py
 ncbi/datasets/openapi/models/v2_sequence_request.py
 ncbi/datasets/openapi/models/v2_sequence_request_content_type.py
+ncbi/datasets/openapi/models/v2_sequence_request_table_format.py
 ncbi/datasets/openapi/models/v2_sleep_reply.py
 ncbi/datasets/openapi/models/v2_sleep_request.py
 ncbi/datasets/openapi/models/v2_sort_direction.py
@@ -709,15 +711,5 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_v2_sequence_dataset_request.py
-test/test_v2_sequence_dataset_request_file_type.py
-test/test_v2_sequence_request_content_type.py
-test/test_v2reports_aggregate_expression_value.py
-test/test_v2reports_bio_sample.py
-test/test_v2reports_expression_bio_project.py
-test/test_v2reports_expression_descriptor.py
-test/test_v2reports_expression_release.py
-test/test_v2reports_sample.py
-test/test_v2reports_sequence_data_report_topology_type.py
-test/test_v2reports_sra_run.py
+test/test_v2_sequence_request_table_format.py
 tox.ini

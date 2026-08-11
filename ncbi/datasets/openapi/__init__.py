@@ -14,7 +14,7 @@
 """  # noqa: E501
 
 
-__version__ = "v18.34.0"
+__version__ = "v18.35.0"
 
 # Define package exports
 __all__ = [
@@ -157,6 +157,7 @@ __all__ = [
     "V2SequenceReportPage",
     "V2SequenceRequest",
     "V2SequenceRequestContentType",
+    "V2SequenceRequestTableFormat",
     "V2SleepReply",
     "V2SleepRequest",
     "V2SortDirection",
@@ -517,6 +518,7 @@ from ncbi.datasets.openapi.models.v2_sequence_dataset_request_file_type import V
 from ncbi.datasets.openapi.models.v2_sequence_report_page import V2SequenceReportPage as V2SequenceReportPage
 from ncbi.datasets.openapi.models.v2_sequence_request import V2SequenceRequest as V2SequenceRequest
 from ncbi.datasets.openapi.models.v2_sequence_request_content_type import V2SequenceRequestContentType as V2SequenceRequestContentType
+from ncbi.datasets.openapi.models.v2_sequence_request_table_format import V2SequenceRequestTableFormat as V2SequenceRequestTableFormat
 from ncbi.datasets.openapi.models.v2_sleep_reply import V2SleepReply as V2SleepReply
 from ncbi.datasets.openapi.models.v2_sleep_request import V2SleepRequest as V2SleepRequest
 from ncbi.datasets.openapi.models.v2_sort_direction import V2SortDirection as V2SortDirection

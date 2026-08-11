@@ -8,6 +8,8 @@ Name | Type | Description | Notes
 **accessions** | **List[str]** |  | [optional] 
 **include_all_versions** | **bool** |  | [optional] 
 **returned_content** | [**V2SequenceRequestContentType**](V2SequenceRequestContentType.md) |  | [optional] [default to V2SequenceRequestContentType.COMPLETE]
+**include_tabular_header** | [**V2IncludeTabularHeader**](V2IncludeTabularHeader.md) |  | [optional] [default to V2IncludeTabularHeader.INCLUDE_TABULAR_HEADER_FIRST_PAGE_ONLY]
+**table_format** | [**V2SequenceRequestTableFormat**](V2SequenceRequestTableFormat.md) |  | [optional] [default to V2SequenceRequestTableFormat.SUMMARY]
 
 ## Example
 

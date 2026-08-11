@@ -39,6 +39,7 @@ class V2reportsSequenceDataReport(BaseModel):
     accession: Optional[StrictStr] = None
     organism_name: Optional[StrictStr] = None
     length: Optional[StrictInt] = None
+    update_date: Optional[StrictStr] = None
     units: Optional[V2reportsSequenceDataReportUnits] = V2reportsSequenceDataReportUnits.UNITS_UNSPECIFIED
     molecule_type: Optional[V2reportsSequenceDataReportMoleculeType] = V2reportsSequenceDataReportMoleculeType.MOLECULE_TYPE_UNSPECIFIED
     database_provider: Optional[StrictStr] = None
@@ -54,7 +55,7 @@ class V2reportsSequenceDataReport(BaseModel):
     sample_info: Optional[V2reportsSampleInfo] = None
     genome_type: Optional[V2reportsSequenceDataReportGenomeType] = V2reportsSequenceDataReportGenomeType.GENOME_TYPE_UNKNOWN
     topology: Optional[V2reportsSequenceDataReportTopologyType] = V2reportsSequenceDataReportTopologyType.NOT_SET
-    __properties: ClassVar[List[str]] = ["accession", "organism_name", "length", "units", "molecule_type", "database_provider", "description", "source_mrna", "tax_id", "submissions", "references", "bioproject_accession", "biosample_accessions", "origin_type", "infraspecific_modifiers", "sample_info", "genome_type", "topology"]
+    __properties: ClassVar[List[str]] = ["accession", "organism_name", "length", "update_date", "units", "molecule_type", "database_provider", "description", "source_mrna", "tax_id", "submissions", "references", "bioproject_accession", "biosample_accessions", "origin_type", "infraspecific_modifiers", "sample_info", "genome_type", "topology"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -130,6 +131,7 @@ class V2reportsSequenceDataReport(BaseModel):
             "accession": obj.get("accession"),
             "organism_name": obj.get("organism_name"),
             "length": obj.get("length"),
+            "update_date": obj.get("update_date"),
             "units": obj.get("units") if obj.get("units") is not None else V2reportsSequenceDataReportUnits.UNITS_UNSPECIFIED,
             "molecule_type": obj.get("molecule_type") if obj.get("molecule_type") is not None else V2reportsSequenceDataReportMoleculeType.MOLECULE_TYPE_UNSPECIFIED,
             "database_provider": obj.get("database_provider"),

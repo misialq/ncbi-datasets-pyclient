@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **accession** | **str** |  | [optional] 
 **organism_name** | **str** |  | [optional] 
 **length** | **int** |  | [optional] 
+**update_date** | **str** |  | [optional] 
 **units** | [**V2reportsSequenceDataReportUnits**](V2reportsSequenceDataReportUnits.md) |  | [optional] [default to V2reportsSequenceDataReportUnits.UNITS_UNSPECIFIED]
 **molecule_type** | [**V2reportsSequenceDataReportMoleculeType**](V2reportsSequenceDataReportMoleculeType.md) |  | [optional] [default to V2reportsSequenceDataReportMoleculeType.MOLECULE_TYPE_UNSPECIFIED]
 **database_provider** | **str** |  | [optional] 
