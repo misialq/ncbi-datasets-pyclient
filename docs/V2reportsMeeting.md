@@ -5,6 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**pmid** | **int** |  | [optional] 
 **number** | **int** |  | [optional] 
 **var_date** | **str** |  | [optional] 
 **place** | **str** |  | [optional] 

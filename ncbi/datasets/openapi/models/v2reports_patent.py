@@ -28,13 +28,14 @@ class V2reportsPatent(BaseModel):
     """
     V2reportsPatent
     """ # noqa: E501
+    pmid: Optional[StrictInt] = None
     patent_id: Optional[StrictStr] = None
     title: Optional[StrictStr] = None
     authors: Optional[List[V2reportsAuthor]] = None
     claim_no: Optional[StrictInt] = None
     issued_date: Optional[StrictStr] = None
     assignee: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["patent_id", "title", "authors", "claim_no", "issued_date", "assignee"]
+    __properties: ClassVar[List[str]] = ["pmid", "patent_id", "title", "authors", "claim_no", "issued_date", "assignee"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -94,6 +95,7 @@ class V2reportsPatent(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "pmid": obj.get("pmid"),
             "patent_id": obj.get("patent_id"),
             "title": obj.get("title"),
             "authors": [V2reportsAuthor.from_dict(_item) for _item in obj["authors"]] if obj.get("authors") is not None else None,

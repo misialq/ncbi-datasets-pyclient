@@ -5,6 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**pmid** | **int** |  | [optional] 
 **book** | [**V2reportsBook**](V2reportsBook.md) |  | [optional] 
 **id** | **str** |  | [optional] 
 **classification_type** | [**V2reportsThesisType**](V2reportsThesisType.md) |  | [optional] [default to V2reportsThesisType.UNKNOWN]

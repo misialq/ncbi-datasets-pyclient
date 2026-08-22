@@ -17,24 +17,21 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from ncbi.datasets.openapi.models.v2reports_article import V2reportsArticle
-from ncbi.datasets.openapi.models.v2reports_medline_status import V2reportsMedlineStatus
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
 
-class V2reportsMedline(BaseModel):
+class V2reportsProteinNameEvidence(BaseModel):
     """
-    V2reportsMedline
+    V2reportsProteinNameEvidence
     """ # noqa: E501
-    pmid: Optional[StrictInt] = None
-    medline_uid: Optional[StrictStr] = None
-    entry_month: Optional[StrictStr] = None
-    article: Optional[V2reportsArticle] = None
-    status: Optional[V2reportsMedlineStatus] = V2reportsMedlineStatus.UNKNOWN
-    __properties: ClassVar[List[str]] = ["pmid", "medline_uid", "entry_month", "article", "status"]
+    accession: Optional[StrictStr] = None
+    category: Optional[StrictStr] = None
+    source: Optional[StrictStr] = None
+    source_identifier: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["accession", "category", "source", "source_identifier"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -54,7 +51,7 @@ class V2reportsMedline(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of V2reportsMedline from a JSON string"""
+        """Create an instance of V2reportsProteinNameEvidence from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -75,14 +72,11 @@ class V2reportsMedline(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of article
-        if self.article:
-            _dict['article'] = self.article.to_dict()
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of V2reportsMedline from a dict"""
+        """Create an instance of V2reportsProteinNameEvidence from a dict"""
         if obj is None:
             return None
 
@@ -90,11 +84,10 @@ class V2reportsMedline(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "pmid": obj.get("pmid"),
-            "medline_uid": obj.get("medline_uid"),
-            "entry_month": obj.get("entry_month"),
-            "article": V2reportsArticle.from_dict(obj["article"]) if obj.get("article") is not None else None,
-            "status": obj.get("status") if obj.get("status") is not None else V2reportsMedlineStatus.UNKNOWN
+            "accession": obj.get("accession"),
+            "category": obj.get("category"),
+            "source": obj.get("source"),
+            "source_identifier": obj.get("source_identifier")
         })
         return _obj
 

@@ -20,10 +20,13 @@ import json
 from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from ncbi.datasets.openapi.models.v2reports_infraspecific_modifers import V2reportsInfraspecificModifers
+from ncbi.datasets.openapi.models.v2reports_molecule_type import V2reportsMoleculeType
+from ncbi.datasets.openapi.models.v2reports_protein_name_evidence import V2reportsProteinNameEvidence
 from ncbi.datasets.openapi.models.v2reports_sample_info import V2reportsSampleInfo
+from ncbi.datasets.openapi.models.v2reports_sequence_data_report_completeness import V2reportsSequenceDataReportCompleteness
 from ncbi.datasets.openapi.models.v2reports_sequence_data_report_genome_type import V2reportsSequenceDataReportGenomeType
-from ncbi.datasets.openapi.models.v2reports_sequence_data_report_molecule_type import V2reportsSequenceDataReportMoleculeType
 from ncbi.datasets.openapi.models.v2reports_sequence_data_report_origin_type import V2reportsSequenceDataReportOriginType
+from ncbi.datasets.openapi.models.v2reports_sequence_data_report_sequencing_method import V2reportsSequenceDataReportSequencingMethod
 from ncbi.datasets.openapi.models.v2reports_sequence_data_report_topology_type import V2reportsSequenceDataReportTopologyType
 from ncbi.datasets.openapi.models.v2reports_sequence_data_report_units import V2reportsSequenceDataReportUnits
 from ncbi.datasets.openapi.models.v2reports_sequence_reference import V2reportsSequenceReference
@@ -41,7 +44,9 @@ class V2reportsSequenceDataReport(BaseModel):
     length: Optional[StrictInt] = None
     update_date: Optional[StrictStr] = None
     units: Optional[V2reportsSequenceDataReportUnits] = V2reportsSequenceDataReportUnits.UNITS_UNSPECIFIED
-    molecule_type: Optional[V2reportsSequenceDataReportMoleculeType] = V2reportsSequenceDataReportMoleculeType.MOLECULE_TYPE_UNSPECIFIED
+    molecule_type: Optional[V2reportsMoleculeType] = V2reportsMoleculeType.MOLECULE_TYPE_UNSPECIFIED
+    sequencing_method: Optional[V2reportsSequenceDataReportSequencingMethod] = V2reportsSequenceDataReportSequencingMethod.SEQUENCING_METHOD_UNKNOWN
+    completeness: Optional[V2reportsSequenceDataReportCompleteness] = V2reportsSequenceDataReportCompleteness.COMPLETENESS_UNKNOWN
     database_provider: Optional[StrictStr] = None
     description: Optional[StrictStr] = None
     source_mrna: Optional[StrictStr] = None
@@ -55,7 +60,8 @@ class V2reportsSequenceDataReport(BaseModel):
     sample_info: Optional[V2reportsSampleInfo] = None
     genome_type: Optional[V2reportsSequenceDataReportGenomeType] = V2reportsSequenceDataReportGenomeType.GENOME_TYPE_UNKNOWN
     topology: Optional[V2reportsSequenceDataReportTopologyType] = V2reportsSequenceDataReportTopologyType.NOT_SET
-    __properties: ClassVar[List[str]] = ["accession", "organism_name", "length", "update_date", "units", "molecule_type", "database_provider", "description", "source_mrna", "tax_id", "submissions", "references", "bioproject_accession", "biosample_accessions", "origin_type", "infraspecific_modifiers", "sample_info", "genome_type", "topology"]
+    protein_name_evidence: Optional[V2reportsProteinNameEvidence] = None
+    __properties: ClassVar[List[str]] = ["accession", "organism_name", "length", "update_date", "units", "molecule_type", "sequencing_method", "completeness", "database_provider", "description", "source_mrna", "tax_id", "submissions", "references", "bioproject_accession", "biosample_accessions", "origin_type", "infraspecific_modifiers", "sample_info", "genome_type", "topology", "protein_name_evidence"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -116,6 +122,9 @@ class V2reportsSequenceDataReport(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of sample_info
         if self.sample_info:
             _dict['sample_info'] = self.sample_info.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of protein_name_evidence
+        if self.protein_name_evidence:
+            _dict['protein_name_evidence'] = self.protein_name_evidence.to_dict()
         return _dict
 
     @classmethod
@@ -133,7 +142,9 @@ class V2reportsSequenceDataReport(BaseModel):
             "length": obj.get("length"),
             "update_date": obj.get("update_date"),
             "units": obj.get("units") if obj.get("units") is not None else V2reportsSequenceDataReportUnits.UNITS_UNSPECIFIED,
-            "molecule_type": obj.get("molecule_type") if obj.get("molecule_type") is not None else V2reportsSequenceDataReportMoleculeType.MOLECULE_TYPE_UNSPECIFIED,
+            "molecule_type": obj.get("molecule_type") if obj.get("molecule_type") is not None else V2reportsMoleculeType.MOLECULE_TYPE_UNSPECIFIED,
+            "sequencing_method": obj.get("sequencing_method") if obj.get("sequencing_method") is not None else V2reportsSequenceDataReportSequencingMethod.SEQUENCING_METHOD_UNKNOWN,
+            "completeness": obj.get("completeness") if obj.get("completeness") is not None else V2reportsSequenceDataReportCompleteness.COMPLETENESS_UNKNOWN,
             "database_provider": obj.get("database_provider"),
             "description": obj.get("description"),
             "source_mrna": obj.get("source_mrna"),
@@ -146,7 +157,8 @@ class V2reportsSequenceDataReport(BaseModel):
             "infraspecific_modifiers": V2reportsInfraspecificModifers.from_dict(obj["infraspecific_modifiers"]) if obj.get("infraspecific_modifiers") is not None else None,
             "sample_info": V2reportsSampleInfo.from_dict(obj["sample_info"]) if obj.get("sample_info") is not None else None,
             "genome_type": obj.get("genome_type") if obj.get("genome_type") is not None else V2reportsSequenceDataReportGenomeType.GENOME_TYPE_UNKNOWN,
-            "topology": obj.get("topology") if obj.get("topology") is not None else V2reportsSequenceDataReportTopologyType.NOT_SET
+            "topology": obj.get("topology") if obj.get("topology") is not None else V2reportsSequenceDataReportTopologyType.NOT_SET,
+            "protein_name_evidence": V2reportsProteinNameEvidence.from_dict(obj["protein_name_evidence"]) if obj.get("protein_name_evidence") is not None else None
         })
         return _obj
 

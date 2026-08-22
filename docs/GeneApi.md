@@ -17,6 +17,8 @@ Method | HTTP request | Description
 [**gene_dataset_reports_by_taxon**](GeneApi.md#gene_dataset_reports_by_taxon) | **GET** /gene/taxon/{taxon}/dataset_report | Get a gene data report by taxon
 [**gene_download_summary_by_id**](GeneApi.md#gene_download_summary_by_id) | **GET** /gene/id/{gene_ids}/download_summary | Get a download summary of a gene data package by GeneID
 [**gene_download_summary_by_post**](GeneApi.md#gene_download_summary_by_post) | **POST** /gene/download_summary | Get a download summary of a gene data package
+[**gene_expression_report**](GeneApi.md#gene_expression_report) | **POST** /gene/expression_report | Get a gene expression report
+[**gene_expression_reports_by_id**](GeneApi.md#gene_expression_reports_by_id) | **GET** /gene/id/{gene_ids}/expression_report | Get a gene expression report by GeneID
 [**gene_links_by_id**](GeneApi.md#gene_links_by_id) | **GET** /gene/id/{gene_ids}/links | Get gene links by GeneID
 [**gene_links_by_id_by_post**](GeneApi.md#gene_links_by_id_by_post) | **POST** /gene/links | Get gene links by GeneID
 [**gene_metadata_by_accession**](GeneApi.md#gene_metadata_by_accession) | **GET** /gene/accession/{accessions} | Get gene metadata by RefSeq Accession
@@ -1210,6 +1212,167 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: application/json
  - **Accept**: text/plain, application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | A successful response |  -  |
+**0** | An unexpected error response. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **gene_expression_report**
+> V2reportsGeneDataReportPage gene_expression_report(ncbieukgenev2_gene_id_request)
+
+Get a gene expression report
+
+Get a gene expression report. By default, in paged JSON format, but also available in tabular (accept: text/tab-separated-values) or JSON Lines (accept: application/x-ndjson) formats.
+
+### Example
+
+* Api Key Authentication (ApiKeyAuthHeader):
+
+```python
+import ncbi.datasets.openapi
+from ncbi.datasets.openapi.models.ncbieukgenev2_gene_id_request import Ncbieukgenev2GeneIdRequest
+from ncbi.datasets.openapi.models.v2reports_gene_data_report_page import V2reportsGeneDataReportPage
+from ncbi.datasets.openapi.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.ncbi.nlm.nih.gov/datasets/v2
+# See configuration.py for a list of all supported configuration parameters.
+configuration = ncbi.datasets.openapi.Configuration(
+    host = "https://api.ncbi.nlm.nih.gov/datasets/v2"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: ApiKeyAuthHeader
+configuration.api_key['ApiKeyAuthHeader'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['ApiKeyAuthHeader'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = ncbi.datasets.openapi.GeneApi(api_client)
+    ncbieukgenev2_gene_id_request = ncbi.datasets.openapi.Ncbieukgenev2GeneIdRequest() # Ncbieukgenev2GeneIdRequest | 
+
+    try:
+        # Get a gene expression report
+        api_response = api_instance.gene_expression_report(ncbieukgenev2_gene_id_request)
+        print("The response of GeneApi->gene_expression_report:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling GeneApi->gene_expression_report: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ncbieukgenev2_gene_id_request** | [**Ncbieukgenev2GeneIdRequest**](Ncbieukgenev2GeneIdRequest.md)|  | 
+
+### Return type
+
+[**V2reportsGeneDataReportPage**](V2reportsGeneDataReportPage.md)
+
+### Authorization
+
+[ApiKeyAuthHeader](../README.md#ApiKeyAuthHeader)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: text/plain, application/json, application/x-ndjson, text/tab-separated-values
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | A successful response |  -  |
+**0** | An unexpected error response. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **gene_expression_reports_by_id**
+> V2reportsGeneDataReportPage gene_expression_reports_by_id(gene_ids)
+
+Get a gene expression report by GeneID
+
+Get a gene expression report by GeneID. By default, in paged JSON format, but also available in tabular (accept: text/tab-separated-values) or JSON Lines (accept: application/x-ndjson) formats.
+
+### Example
+
+* Api Key Authentication (ApiKeyAuthHeader):
+
+```python
+import ncbi.datasets.openapi
+from ncbi.datasets.openapi.models.v2reports_gene_data_report_page import V2reportsGeneDataReportPage
+from ncbi.datasets.openapi.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.ncbi.nlm.nih.gov/datasets/v2
+# See configuration.py for a list of all supported configuration parameters.
+configuration = ncbi.datasets.openapi.Configuration(
+    host = "https://api.ncbi.nlm.nih.gov/datasets/v2"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: ApiKeyAuthHeader
+configuration.api_key['ApiKeyAuthHeader'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['ApiKeyAuthHeader'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = ncbi.datasets.openapi.GeneApi(api_client)
+    gene_ids = [56] # List[int] | NCBI gene ids, limited to 1000 ids
+
+    try:
+        # Get a gene expression report by GeneID
+        api_response = api_instance.gene_expression_reports_by_id(gene_ids)
+        print("The response of GeneApi->gene_expression_reports_by_id:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling GeneApi->gene_expression_reports_by_id: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **gene_ids** | [**List[int]**](int.md)| NCBI gene ids, limited to 1000 ids | 
+
+### Return type
+
+[**V2reportsGeneDataReportPage**](V2reportsGeneDataReportPage.md)
+
+### Authorization
+
+[ApiKeyAuthHeader](../README.md#ApiKeyAuthHeader)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, application/x-ndjson, text/tab-separated-values
 
 ### HTTP response details
 

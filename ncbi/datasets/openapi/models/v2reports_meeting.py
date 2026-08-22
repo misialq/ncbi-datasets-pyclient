@@ -27,10 +27,11 @@ class V2reportsMeeting(BaseModel):
     """
     V2reportsMeeting
     """ # noqa: E501
+    pmid: Optional[StrictInt] = None
     number: Optional[StrictInt] = None
     var_date: Optional[StrictStr] = Field(default=None, alias="date")
     place: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["number", "date", "place"]
+    __properties: ClassVar[List[str]] = ["pmid", "number", "date", "place"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -83,6 +84,7 @@ class V2reportsMeeting(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "pmid": obj.get("pmid"),
             "number": obj.get("number"),
             "date": obj.get("date"),
             "place": obj.get("place")

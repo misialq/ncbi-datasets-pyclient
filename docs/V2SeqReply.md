@@ -6,8 +6,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **accession** | **str** |  | [optional] 
-**seq_length** | **str** |  | [optional] 
-**mol_type** | [**V2MolType**](V2MolType.md) |  | [optional] [default to V2MolType.MOL_UNSPECIFIED]
+**length** | **str** |  | [optional] 
+**molecule_type** | [**V2reportsMoleculeType**](V2reportsMoleculeType.md) |  | [optional] [default to V2reportsMoleculeType.MOLECULE_TYPE_UNSPECIFIED]
 **defline** | **str** |  | [optional] 
 **sequence** | **str** |  | [optional] 
 **begin** | **str** |  | [optional] 

@@ -5,6 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**pmid** | **int** |  | [optional] 
 **meeting** | [**V2reportsMeeting**](V2reportsMeeting.md) |  | [optional] 
 **book** | [**V2reportsBook**](V2reportsBook.md) |  | [optional] 
 

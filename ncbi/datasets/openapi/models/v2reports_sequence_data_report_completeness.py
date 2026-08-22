@@ -18,22 +18,27 @@ from enum import Enum
 from typing_extensions import Self
 
 
-class V2reportsMedlineStatus(str, Enum):
+class V2reportsSequenceDataReportCompleteness(str, Enum):
     """
-    V2reportsMedlineStatus
+    V2reportsSequenceDataReportCompleteness
     """
 
     """
     allowed enum values
     """
-    UNKNOWN = 'unknown'
-    PUBLISHER = 'publisher'
-    PREMEDLINE = 'premedline'
-    MEDLINE = 'medline'
+    COMPLETENESS_UNKNOWN = 'completeness_unknown'
+    COMPLETE = 'complete'
+    PARTIAL = 'partial'
+    NO_LEFT = 'no_left'
+    NO_RIGHT = 'no_right'
+    NO_ENDS = 'no_ends'
+    HAS_LEFT = 'has_left'
+    HAS_RIGHT = 'has_right'
+    COMPLETENESS_OTHER = 'completeness_other'
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:
-        """Create an instance of V2reportsMedlineStatus from a JSON string"""
+        """Create an instance of V2reportsSequenceDataReportCompleteness from a JSON string"""
         return cls(json.loads(json_str))
 
 

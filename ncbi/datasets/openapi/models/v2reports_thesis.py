@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
+from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from ncbi.datasets.openapi.models.v2reports_book import V2reportsBook
 from ncbi.datasets.openapi.models.v2reports_thesis_type import V2reportsThesisType
@@ -29,10 +29,11 @@ class V2reportsThesis(BaseModel):
     """
     V2reportsThesis
     """ # noqa: E501
+    pmid: Optional[StrictInt] = None
     book: Optional[V2reportsBook] = None
     id: Optional[StrictStr] = None
     classification_type: Optional[V2reportsThesisType] = V2reportsThesisType.UNKNOWN
-    __properties: ClassVar[List[str]] = ["book", "id", "classification_type"]
+    __properties: ClassVar[List[str]] = ["pmid", "book", "id", "classification_type"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -88,6 +89,7 @@ class V2reportsThesis(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "pmid": obj.get("pmid"),
             "book": V2reportsBook.from_dict(obj["book"]) if obj.get("book") is not None else None,
             "id": obj.get("id"),
             "classification_type": obj.get("classification_type") if obj.get("classification_type") is not None else V2reportsThesisType.UNKNOWN

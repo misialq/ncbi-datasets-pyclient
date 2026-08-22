@@ -5,6 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**pmid** | **int** |  | [optional] 
 **title** | **str** |  | [optional] 
 **var_date** | **str** |  | [optional] 
 **authors** | [**List[V2reportsAuthor]**](V2reportsAuthor.md) |  | [optional] 

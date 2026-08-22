@@ -5,11 +5,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**pmid** | **int** |  | [optional] 
 **medline_uid** | **str** |  | [optional] 
 **entry_month** | **str** |  | [optional] 
 **article** | [**V2reportsArticle**](V2reportsArticle.md) |  | [optional] 
-**pmid** | **int** |  | [optional] 
-**status** | [**V2reportsMedlineStatus**](V2reportsMedlineStatus.md) |  | [optional] [default to V2reportsMedlineStatus.UKNOWN]
+**status** | [**V2reportsMedlineStatus**](V2reportsMedlineStatus.md) |  | [optional] [default to V2reportsMedlineStatus.UNKNOWN]
 
 ## Example
 

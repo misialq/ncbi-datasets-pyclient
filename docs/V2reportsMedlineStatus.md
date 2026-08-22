@@ -3,11 +3,11 @@
 
 ## Enum
 
-* `UKNOWN` (value: `'uknown'`)
+* `UNKNOWN` (value: `'unknown'`)
 
 * `PUBLISHER` (value: `'publisher'`)
 
-* `PREMIDLINE` (value: `'premidline'`)
+* `PREMEDLINE` (value: `'premedline'`)
 
 * `MEDLINE` (value: `'medline'`)
 

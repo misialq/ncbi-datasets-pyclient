@@ -14,7 +14,7 @@
 """  # noqa: E501
 
 
-__version__ = "v18.35.0"
+__version__ = "v18.36.0"
 
 # Define package exports
 __all__ = [
@@ -130,7 +130,6 @@ __all__ = [
     "V2IncludeTabularHeader",
     "V2MicroBiggeDatasetRequest",
     "V2MicroBiggeDatasetRequestFileType",
-    "V2MolType",
     "V2OrganelleDownloadRequest",
     "V2OrganelleMetadataRequest",
     "V2OrganelleMetadataRequestContentType",
@@ -290,6 +289,7 @@ __all__ = [
     "V2reportsMedlineStatus",
     "V2reportsMeeting",
     "V2reportsMessage",
+    "V2reportsMoleculeType",
     "V2reportsNameAndAuthority",
     "V2reportsNameAndAuthorityNote",
     "V2reportsNameAndAuthorityNoteClassifier",
@@ -315,6 +315,7 @@ __all__ = [
     "V2reportsProteinDataReport",
     "V2reportsProteinDataReportPage",
     "V2reportsProteinFamily",
+    "V2reportsProteinNameEvidence",
     "V2reportsPurposeOfSampling",
     "V2reportsRange",
     "V2reportsRankType",
@@ -325,11 +326,12 @@ __all__ = [
     "V2reportsSeqRangeSet",
     "V2reportsSeqRangeSetFasta",
     "V2reportsSequenceDataReport",
+    "V2reportsSequenceDataReportCompleteness",
     "V2reportsSequenceDataReportGenomeType",
     "V2reportsSequenceDataReportMatch",
-    "V2reportsSequenceDataReportMoleculeType",
     "V2reportsSequenceDataReportOriginType",
     "V2reportsSequenceDataReportPage",
+    "V2reportsSequenceDataReportSequencingMethod",
     "V2reportsSequenceDataReportTopologyType",
     "V2reportsSequenceDataReportUnits",
     "V2reportsSequenceInfo",
@@ -491,7 +493,6 @@ from ncbi.datasets.openapi.models.v2_image_size import V2ImageSize as V2ImageSiz
 from ncbi.datasets.openapi.models.v2_include_tabular_header import V2IncludeTabularHeader as V2IncludeTabularHeader
 from ncbi.datasets.openapi.models.v2_micro_bigge_dataset_request import V2MicroBiggeDatasetRequest as V2MicroBiggeDatasetRequest
 from ncbi.datasets.openapi.models.v2_micro_bigge_dataset_request_file_type import V2MicroBiggeDatasetRequestFileType as V2MicroBiggeDatasetRequestFileType
-from ncbi.datasets.openapi.models.v2_mol_type import V2MolType as V2MolType
 from ncbi.datasets.openapi.models.v2_organelle_download_request import V2OrganelleDownloadRequest as V2OrganelleDownloadRequest
 from ncbi.datasets.openapi.models.v2_organelle_metadata_request import V2OrganelleMetadataRequest as V2OrganelleMetadataRequest
 from ncbi.datasets.openapi.models.v2_organelle_metadata_request_content_type import V2OrganelleMetadataRequestContentType as V2OrganelleMetadataRequestContentType
@@ -651,6 +652,7 @@ from ncbi.datasets.openapi.models.v2reports_medline import V2reportsMedline as V
 from ncbi.datasets.openapi.models.v2reports_medline_status import V2reportsMedlineStatus as V2reportsMedlineStatus
 from ncbi.datasets.openapi.models.v2reports_meeting import V2reportsMeeting as V2reportsMeeting
 from ncbi.datasets.openapi.models.v2reports_message import V2reportsMessage as V2reportsMessage
+from ncbi.datasets.openapi.models.v2reports_molecule_type import V2reportsMoleculeType as V2reportsMoleculeType
 from ncbi.datasets.openapi.models.v2reports_name_and_authority import V2reportsNameAndAuthority as V2reportsNameAndAuthority
 from ncbi.datasets.openapi.models.v2reports_name_and_authority_note import V2reportsNameAndAuthorityNote as V2reportsNameAndAuthorityNote
 from ncbi.datasets.openapi.models.v2reports_name_and_authority_note_classifier import V2reportsNameAndAuthorityNoteClassifier as V2reportsNameAndAuthorityNoteClassifier
@@ -676,6 +678,7 @@ from ncbi.datasets.openapi.models.v2reports_protein_conserved_domain import V2re
 from ncbi.datasets.openapi.models.v2reports_protein_data_report import V2reportsProteinDataReport as V2reportsProteinDataReport
 from ncbi.datasets.openapi.models.v2reports_protein_data_report_page import V2reportsProteinDataReportPage as V2reportsProteinDataReportPage
 from ncbi.datasets.openapi.models.v2reports_protein_family import V2reportsProteinFamily as V2reportsProteinFamily
+from ncbi.datasets.openapi.models.v2reports_protein_name_evidence import V2reportsProteinNameEvidence as V2reportsProteinNameEvidence
 from ncbi.datasets.openapi.models.v2reports_purpose_of_sampling import V2reportsPurposeOfSampling as V2reportsPurposeOfSampling
 from ncbi.datasets.openapi.models.v2reports_range import V2reportsRange as V2reportsRange
 from ncbi.datasets.openapi.models.v2reports_rank_type import V2reportsRankType as V2reportsRankType
@@ -686,11 +689,12 @@ from ncbi.datasets.openapi.models.v2reports_sample_info import V2reportsSampleIn
 from ncbi.datasets.openapi.models.v2reports_seq_range_set import V2reportsSeqRangeSet as V2reportsSeqRangeSet
 from ncbi.datasets.openapi.models.v2reports_seq_range_set_fasta import V2reportsSeqRangeSetFasta as V2reportsSeqRangeSetFasta
 from ncbi.datasets.openapi.models.v2reports_sequence_data_report import V2reportsSequenceDataReport as V2reportsSequenceDataReport
+from ncbi.datasets.openapi.models.v2reports_sequence_data_report_completeness import V2reportsSequenceDataReportCompleteness as V2reportsSequenceDataReportCompleteness
 from ncbi.datasets.openapi.models.v2reports_sequence_data_report_genome_type import V2reportsSequenceDataReportGenomeType as V2reportsSequenceDataReportGenomeType
 from ncbi.datasets.openapi.models.v2reports_sequence_data_report_match import V2reportsSequenceDataReportMatch as V2reportsSequenceDataReportMatch
-from ncbi.datasets.openapi.models.v2reports_sequence_data_report_molecule_type import V2reportsSequenceDataReportMoleculeType as V2reportsSequenceDataReportMoleculeType
 from ncbi.datasets.openapi.models.v2reports_sequence_data_report_origin_type import V2reportsSequenceDataReportOriginType as V2reportsSequenceDataReportOriginType
 from ncbi.datasets.openapi.models.v2reports_sequence_data_report_page import V2reportsSequenceDataReportPage as V2reportsSequenceDataReportPage
+from ncbi.datasets.openapi.models.v2reports_sequence_data_report_sequencing_method import V2reportsSequenceDataReportSequencingMethod as V2reportsSequenceDataReportSequencingMethod
 from ncbi.datasets.openapi.models.v2reports_sequence_data_report_topology_type import V2reportsSequenceDataReportTopologyType as V2reportsSequenceDataReportTopologyType
 from ncbi.datasets.openapi.models.v2reports_sequence_data_report_units import V2reportsSequenceDataReportUnits as V2reportsSequenceDataReportUnits
 from ncbi.datasets.openapi.models.v2reports_sequence_info import V2reportsSequenceInfo as V2reportsSequenceInfo

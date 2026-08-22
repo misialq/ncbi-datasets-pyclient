@@ -10,7 +10,9 @@ Name | Type | Description | Notes
 **length** | **int** |  | [optional] 
 **update_date** | **str** |  | [optional] 
 **units** | [**V2reportsSequenceDataReportUnits**](V2reportsSequenceDataReportUnits.md) |  | [optional] [default to V2reportsSequenceDataReportUnits.UNITS_UNSPECIFIED]
-**molecule_type** | [**V2reportsSequenceDataReportMoleculeType**](V2reportsSequenceDataReportMoleculeType.md) |  | [optional] [default to V2reportsSequenceDataReportMoleculeType.MOLECULE_TYPE_UNSPECIFIED]
+**molecule_type** | [**V2reportsMoleculeType**](V2reportsMoleculeType.md) |  | [optional] [default to V2reportsMoleculeType.MOLECULE_TYPE_UNSPECIFIED]
+**sequencing_method** | [**V2reportsSequenceDataReportSequencingMethod**](V2reportsSequenceDataReportSequencingMethod.md) |  | [optional] [default to V2reportsSequenceDataReportSequencingMethod.SEQUENCING_METHOD_UNKNOWN]
+**completeness** | [**V2reportsSequenceDataReportCompleteness**](V2reportsSequenceDataReportCompleteness.md) |  | [optional] [default to V2reportsSequenceDataReportCompleteness.COMPLETENESS_UNKNOWN]
 **database_provider** | **str** |  | [optional] 
 **description** | **str** |  | [optional] 
 **source_mrna** | **str** |  | [optional] 
@@ -24,6 +26,7 @@ Name | Type | Description | Notes
 **sample_info** | [**V2reportsSampleInfo**](V2reportsSampleInfo.md) |  | [optional] 
 **genome_type** | [**V2reportsSequenceDataReportGenomeType**](V2reportsSequenceDataReportGenomeType.md) |  | [optional] [default to V2reportsSequenceDataReportGenomeType.GENOME_TYPE_UNKNOWN]
 **topology** | [**V2reportsSequenceDataReportTopologyType**](V2reportsSequenceDataReportTopologyType.md) |  | [optional] [default to V2reportsSequenceDataReportTopologyType.NOT_SET]
+**protein_name_evidence** | [**V2reportsProteinNameEvidence**](V2reportsProteinNameEvidence.md) |  | [optional] 
 
 ## Example
 

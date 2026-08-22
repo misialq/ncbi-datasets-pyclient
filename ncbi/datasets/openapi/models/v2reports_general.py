@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from ncbi.datasets.openapi.models.v2reports_author import V2reportsAuthor
 from typing import Optional, Set
@@ -28,11 +28,12 @@ class V2reportsGeneral(BaseModel):
     """
     V2reportsGeneral
     """ # noqa: E501
+    pmid: Optional[StrictInt] = None
     title: Optional[StrictStr] = None
     var_date: Optional[StrictStr] = Field(default=None, alias="date")
     authors: Optional[List[V2reportsAuthor]] = None
     status: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["title", "date", "authors", "status"]
+    __properties: ClassVar[List[str]] = ["pmid", "title", "date", "authors", "status"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -92,6 +93,7 @@ class V2reportsGeneral(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "pmid": obj.get("pmid"),
             "title": obj.get("title"),
             "date": obj.get("date"),
             "authors": [V2reportsAuthor.from_dict(_item) for _item in obj["authors"]] if obj.get("authors") is not None else None,

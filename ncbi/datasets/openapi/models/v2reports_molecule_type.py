@@ -18,22 +18,31 @@ from enum import Enum
 from typing_extensions import Self
 
 
-class V2reportsMedlineStatus(str, Enum):
+class V2reportsMoleculeType(str, Enum):
     """
-    V2reportsMedlineStatus
+    V2reportsMoleculeType
     """
 
     """
     allowed enum values
     """
-    UNKNOWN = 'unknown'
-    PUBLISHER = 'publisher'
-    PREMEDLINE = 'premedline'
-    MEDLINE = 'medline'
+    MOLECULE_TYPE_UNSPECIFIED = 'molecule_type_unspecified'
+    UNASSIGNED_DNA = 'unassigned_dna'
+    UNASSIGNED_RNA = 'unassigned_rna'
+    GENOMIC_DNA = 'genomic_dna'
+    GENOMIC_RNA = 'genomic_rna'
+    M_RNA = 'm_rna'
+    R_RNA = 'r_rna'
+    T_RNA = 't_rna'
+    TRANSCRIBED_RNA = 'transcribed_rna'
+    OTHER_DNA = 'other_dna'
+    OTHER_RNA = 'other_rna'
+    VIRAL_C_RNA = 'viral_c_rna'
+    PROTEIN = 'protein'
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:
-        """Create an instance of V2reportsMedlineStatus from a JSON string"""
+        """Create an instance of V2reportsMoleculeType from a JSON string"""
         return cls(json.loads(json_str))
 
 

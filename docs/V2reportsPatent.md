@@ -5,6 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**pmid** | **int** |  | [optional] 
 **patent_id** | **str** |  | [optional] 
 **title** | **str** |  | [optional] 
 **authors** | [**List[V2reportsAuthor]**](V2reportsAuthor.md) |  | [optional] 

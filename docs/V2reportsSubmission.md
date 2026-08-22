@@ -5,6 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**pmid** | **int** |  | [optional] 
 **var_date** | **str** |  | [optional] 
 **institution** | **str** |  | [optional] 
 **address** | **str** |  | [optional] 

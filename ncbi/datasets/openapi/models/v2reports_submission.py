@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -27,11 +27,12 @@ class V2reportsSubmission(BaseModel):
     """
     V2reportsSubmission
     """ # noqa: E501
+    pmid: Optional[StrictInt] = None
     var_date: Optional[StrictStr] = Field(default=None, alias="date")
     institution: Optional[StrictStr] = None
     address: Optional[StrictStr] = None
     authors: Optional[List[StrictStr]] = None
-    __properties: ClassVar[List[str]] = ["date", "institution", "address", "authors"]
+    __properties: ClassVar[List[str]] = ["pmid", "date", "institution", "address", "authors"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -84,6 +85,7 @@ class V2reportsSubmission(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "pmid": obj.get("pmid"),
             "date": obj.get("date"),
             "institution": obj.get("institution"),
             "address": obj.get("address"),

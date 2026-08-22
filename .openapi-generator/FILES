@@ -104,7 +104,6 @@ docs/V2ImageSize.md
 docs/V2IncludeTabularHeader.md
 docs/V2MicroBiggeDatasetRequest.md
 docs/V2MicroBiggeDatasetRequestFileType.md
-docs/V2MolType.md
 docs/V2OrganelleDownloadRequest.md
 docs/V2OrganelleMetadataRequest.md
 docs/V2OrganelleMetadataRequestContentType.md
@@ -264,6 +263,7 @@ docs/V2reportsMedline.md
 docs/V2reportsMedlineStatus.md
 docs/V2reportsMeeting.md
 docs/V2reportsMessage.md
+docs/V2reportsMoleculeType.md
 docs/V2reportsNameAndAuthority.md
 docs/V2reportsNameAndAuthorityNote.md
 docs/V2reportsNameAndAuthorityNoteClassifier.md
@@ -289,6 +289,7 @@ docs/V2reportsProteinConservedDomain.md
 docs/V2reportsProteinDataReport.md
 docs/V2reportsProteinDataReportPage.md
 docs/V2reportsProteinFamily.md
+docs/V2reportsProteinNameEvidence.md
 docs/V2reportsPurposeOfSampling.md
 docs/V2reportsRange.md
 docs/V2reportsRankType.md
@@ -299,11 +300,12 @@ docs/V2reportsSampleInfo.md
 docs/V2reportsSeqRangeSet.md
 docs/V2reportsSeqRangeSetFasta.md
 docs/V2reportsSequenceDataReport.md
+docs/V2reportsSequenceDataReportCompleteness.md
 docs/V2reportsSequenceDataReportGenomeType.md
 docs/V2reportsSequenceDataReportMatch.md
-docs/V2reportsSequenceDataReportMoleculeType.md
 docs/V2reportsSequenceDataReportOriginType.md
 docs/V2reportsSequenceDataReportPage.md
+docs/V2reportsSequenceDataReportSequencingMethod.md
 docs/V2reportsSequenceDataReportTopologyType.md
 docs/V2reportsSequenceDataReportUnits.md
 docs/V2reportsSequenceInfo.md
@@ -461,7 +463,6 @@ ncbi/datasets/openapi/models/v2_image_size.py
 ncbi/datasets/openapi/models/v2_include_tabular_header.py
 ncbi/datasets/openapi/models/v2_micro_bigge_dataset_request.py
 ncbi/datasets/openapi/models/v2_micro_bigge_dataset_request_file_type.py
-ncbi/datasets/openapi/models/v2_mol_type.py
 ncbi/datasets/openapi/models/v2_organelle_download_request.py
 ncbi/datasets/openapi/models/v2_organelle_metadata_request.py
 ncbi/datasets/openapi/models/v2_organelle_metadata_request_content_type.py
@@ -621,6 +622,7 @@ ncbi/datasets/openapi/models/v2reports_medline.py
 ncbi/datasets/openapi/models/v2reports_medline_status.py
 ncbi/datasets/openapi/models/v2reports_meeting.py
 ncbi/datasets/openapi/models/v2reports_message.py
+ncbi/datasets/openapi/models/v2reports_molecule_type.py
 ncbi/datasets/openapi/models/v2reports_name_and_authority.py
 ncbi/datasets/openapi/models/v2reports_name_and_authority_note.py
 ncbi/datasets/openapi/models/v2reports_name_and_authority_note_classifier.py
@@ -646,6 +648,7 @@ ncbi/datasets/openapi/models/v2reports_protein_conserved_domain.py
 ncbi/datasets/openapi/models/v2reports_protein_data_report.py
 ncbi/datasets/openapi/models/v2reports_protein_data_report_page.py
 ncbi/datasets/openapi/models/v2reports_protein_family.py
+ncbi/datasets/openapi/models/v2reports_protein_name_evidence.py
 ncbi/datasets/openapi/models/v2reports_purpose_of_sampling.py
 ncbi/datasets/openapi/models/v2reports_range.py
 ncbi/datasets/openapi/models/v2reports_rank_type.py
@@ -656,11 +659,12 @@ ncbi/datasets/openapi/models/v2reports_sample_info.py
 ncbi/datasets/openapi/models/v2reports_seq_range_set.py
 ncbi/datasets/openapi/models/v2reports_seq_range_set_fasta.py
 ncbi/datasets/openapi/models/v2reports_sequence_data_report.py
+ncbi/datasets/openapi/models/v2reports_sequence_data_report_completeness.py
 ncbi/datasets/openapi/models/v2reports_sequence_data_report_genome_type.py
 ncbi/datasets/openapi/models/v2reports_sequence_data_report_match.py
-ncbi/datasets/openapi/models/v2reports_sequence_data_report_molecule_type.py
 ncbi/datasets/openapi/models/v2reports_sequence_data_report_origin_type.py
 ncbi/datasets/openapi/models/v2reports_sequence_data_report_page.py
+ncbi/datasets/openapi/models/v2reports_sequence_data_report_sequencing_method.py
 ncbi/datasets/openapi/models/v2reports_sequence_data_report_topology_type.py
 ncbi/datasets/openapi/models/v2reports_sequence_data_report_units.py
 ncbi/datasets/openapi/models/v2reports_sequence_info.py
@@ -711,5 +715,8 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_v2_sequence_request_table_format.py
+test/test_v2reports_molecule_type.py
+test/test_v2reports_protein_name_evidence.py
+test/test_v2reports_sequence_data_report_completeness.py
+test/test_v2reports_sequence_data_report_sequencing_method.py
 tox.ini

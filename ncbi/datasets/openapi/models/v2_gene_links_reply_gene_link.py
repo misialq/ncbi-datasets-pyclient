@@ -32,7 +32,8 @@ class V2GeneLinksReplyGeneLink(BaseModel):
     gene_link_type: Optional[V2GeneLinksReplyGeneLinkType] = V2GeneLinksReplyGeneLinkType.DEFAULT
     resource_link: Optional[StrictStr] = None
     resource_id: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["gene_id", "gene_link_type", "resource_link", "resource_id"]
+    database: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["gene_id", "gene_link_type", "resource_link", "resource_id", "database"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -88,7 +89,8 @@ class V2GeneLinksReplyGeneLink(BaseModel):
             "gene_id": obj.get("gene_id"),
             "gene_link_type": obj.get("gene_link_type") if obj.get("gene_link_type") is not None else V2GeneLinksReplyGeneLinkType.DEFAULT,
             "resource_link": obj.get("resource_link"),
-            "resource_id": obj.get("resource_id")
+            "resource_id": obj.get("resource_id"),
+            "database": obj.get("database")
         })
         return _obj
 

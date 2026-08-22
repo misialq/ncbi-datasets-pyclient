@@ -19,7 +19,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from ncbi.datasets.openapi.models.v2_mol_type import V2MolType
+from ncbi.datasets.openapi.models.v2reports_molecule_type import V2reportsMoleculeType
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
@@ -29,13 +29,13 @@ class V2SeqReply(BaseModel):
     V2SeqReply
     """ # noqa: E501
     accession: Optional[StrictStr] = None
-    seq_length: Optional[StrictStr] = None
-    mol_type: Optional[V2MolType] = V2MolType.MOL_UNSPECIFIED
+    length: Optional[StrictStr] = None
+    molecule_type: Optional[V2reportsMoleculeType] = V2reportsMoleculeType.MOLECULE_TYPE_UNSPECIFIED
     defline: Optional[StrictStr] = None
     sequence: Optional[StrictStr] = None
     begin: Optional[StrictStr] = None
     end: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["accession", "seq_length", "mol_type", "defline", "sequence", "begin", "end"]
+    __properties: ClassVar[List[str]] = ["accession", "length", "molecule_type", "defline", "sequence", "begin", "end"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -89,8 +89,8 @@ class V2SeqReply(BaseModel):
 
         _obj = cls.model_validate({
             "accession": obj.get("accession"),
-            "seq_length": obj.get("seq_length"),
-            "mol_type": obj.get("mol_type") if obj.get("mol_type") is not None else V2MolType.MOL_UNSPECIFIED,
+            "length": obj.get("length"),
+            "molecule_type": obj.get("molecule_type") if obj.get("molecule_type") is not None else V2reportsMoleculeType.MOLECULE_TYPE_UNSPECIFIED,
             "defline": obj.get("defline"),
             "sequence": obj.get("sequence"),
             "begin": obj.get("begin"),
