@@ -18,12 +18,14 @@ from typing_extensions import Annotated
 from pydantic import Field, StrictBool, StrictBytes, StrictInt, StrictStr
 from typing import List, Optional, Tuple, Union
 from typing_extensions import Annotated
+from ncbi.datasets.openapi.models.v2_get_biocollections_request import V2GetBiocollectionsRequest
 from ncbi.datasets.openapi.models.v2_image_size import V2ImageSize
 from ncbi.datasets.openapi.models.v2_include_tabular_header import V2IncludeTabularHeader
 from ncbi.datasets.openapi.models.v2_organism_query_request import V2OrganismQueryRequest
 from ncbi.datasets.openapi.models.v2_organism_query_request_tax_rank_filter import V2OrganismQueryRequestTaxRankFilter
 from ncbi.datasets.openapi.models.v2_organism_query_request_taxon_resource_filter import V2OrganismQueryRequestTaxonResourceFilter
 from ncbi.datasets.openapi.models.v2_sci_name_and_ids import V2SciNameAndIds
+from ncbi.datasets.openapi.models.v2_sort_direction import V2SortDirection
 from ncbi.datasets.openapi.models.v2_taxonomy_dataset_request import V2TaxonomyDatasetRequest
 from ncbi.datasets.openapi.models.v2_taxonomy_dataset_request_taxonomy_report_type import V2TaxonomyDatasetRequestTaxonomyReportType
 from ncbi.datasets.openapi.models.v2_taxonomy_filtered_subtree_request import V2TaxonomyFilteredSubtreeRequest
@@ -39,6 +41,7 @@ from ncbi.datasets.openapi.models.v2_taxonomy_metadata_request_table_format impo
 from ncbi.datasets.openapi.models.v2_taxonomy_metadata_response import V2TaxonomyMetadataResponse
 from ncbi.datasets.openapi.models.v2_taxonomy_related_id_request import V2TaxonomyRelatedIdRequest
 from ncbi.datasets.openapi.models.v2_taxonomy_tax_ids_page import V2TaxonomyTaxIdsPage
+from ncbi.datasets.openapi.models.v2reports_biocollections_report_page import V2reportsBiocollectionsReportPage
 from ncbi.datasets.openapi.models.v2reports_rank_type import V2reportsRankType
 from ncbi.datasets.openapi.models.v2reports_taxonomy_data_report_page import V2reportsTaxonomyDataReportPage
 from ncbi.datasets.openapi.models.v2reports_taxonomy_names_data_report_page import V2reportsTaxonomyNamesDataReportPage
@@ -642,6 +645,618 @@ class TaxonomyApi:
         return self.api_client.param_serialize(
             method='POST',
             resource_path='/taxonomy/download',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def get_biocollections(
+        self,
+        v2_get_biocollections_request: V2GetBiocollectionsRequest,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> V2reportsBiocollectionsReportPage:
+        """Get a biocollection report by collection ID or code
+
+        Get a biocollection report by collection ID or code in JSON format.
+
+        :param v2_get_biocollections_request: (required)
+        :type v2_get_biocollections_request: V2GetBiocollectionsRequest
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_biocollections_serialize(
+            v2_get_biocollections_request=v2_get_biocollections_request,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "V2reportsBiocollectionsReportPage",
+            'default': "RpcStatus",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def get_biocollections_with_http_info(
+        self,
+        v2_get_biocollections_request: V2GetBiocollectionsRequest,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[V2reportsBiocollectionsReportPage]:
+        """Get a biocollection report by collection ID or code
+
+        Get a biocollection report by collection ID or code in JSON format.
+
+        :param v2_get_biocollections_request: (required)
+        :type v2_get_biocollections_request: V2GetBiocollectionsRequest
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_biocollections_serialize(
+            v2_get_biocollections_request=v2_get_biocollections_request,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "V2reportsBiocollectionsReportPage",
+            'default': "RpcStatus",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def get_biocollections_without_preload_content(
+        self,
+        v2_get_biocollections_request: V2GetBiocollectionsRequest,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """Get a biocollection report by collection ID or code
+
+        Get a biocollection report by collection ID or code in JSON format.
+
+        :param v2_get_biocollections_request: (required)
+        :type v2_get_biocollections_request: V2GetBiocollectionsRequest
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_biocollections_serialize(
+            v2_get_biocollections_request=v2_get_biocollections_request,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "V2reportsBiocollectionsReportPage",
+            'default': "RpcStatus",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _get_biocollections_serialize(
+        self,
+        v2_get_biocollections_request,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+        if v2_get_biocollections_request is not None:
+            _body_params = v2_get_biocollections_request
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'text/plain', 
+                    'application/json'
+                ]
+            )
+
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            _header_params['Content-Type'] = _content_type
+        else:
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'application/json'
+                    ]
+                )
+            )
+            if _default_content_type is not None:
+                _header_params['Content-Type'] = _default_content_type
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'ApiKeyAuthHeader'
+        ]
+
+        return self.api_client.param_serialize(
+            method='POST',
+            resource_path='/taxonomy/biocollections/dataset_report',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def get_biocollections_by_get(
+        self,
+        collection_ids: Annotated[List[StrictStr], Field(description="One or more collection IDs or codes")],
+        page_size: Annotated[Optional[StrictInt], Field(description="The maximum number of biocollection reports to return. Default is 1000 and maximum is 1000. If the number of results exceeds the page size, `page_token` can be used to retrieve the remaining results.")] = None,
+        page_token: Annotated[Optional[StrictStr], Field(description="A page token returned from a prior call with more than `page_size` results. Use this token with the same request parameters to retrieve the next page. When `page_token` is empty, all results have been retrieved.")] = None,
+        sort_field: Optional[StrictStr] = None,
+        sort_direction: Optional[V2SortDirection] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> V2reportsBiocollectionsReportPage:
+        """Get a biocollection report by collection ID or code
+
+        Get a biocollection report by collection ID or code in JSON format.
+
+        :param collection_ids: One or more collection IDs or codes (required)
+        :type collection_ids: List[str]
+        :param page_size: The maximum number of biocollection reports to return. Default is 1000 and maximum is 1000. If the number of results exceeds the page size, `page_token` can be used to retrieve the remaining results.
+        :type page_size: int
+        :param page_token: A page token returned from a prior call with more than `page_size` results. Use this token with the same request parameters to retrieve the next page. When `page_token` is empty, all results have been retrieved.
+        :type page_token: str
+        :param sort_field:
+        :type sort_field: str
+        :param sort_direction:
+        :type sort_direction: V2SortDirection
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_biocollections_by_get_serialize(
+            collection_ids=collection_ids,
+            page_size=page_size,
+            page_token=page_token,
+            sort_field=sort_field,
+            sort_direction=sort_direction,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "V2reportsBiocollectionsReportPage",
+            'default': "RpcStatus",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def get_biocollections_by_get_with_http_info(
+        self,
+        collection_ids: Annotated[List[StrictStr], Field(description="One or more collection IDs or codes")],
+        page_size: Annotated[Optional[StrictInt], Field(description="The maximum number of biocollection reports to return. Default is 1000 and maximum is 1000. If the number of results exceeds the page size, `page_token` can be used to retrieve the remaining results.")] = None,
+        page_token: Annotated[Optional[StrictStr], Field(description="A page token returned from a prior call with more than `page_size` results. Use this token with the same request parameters to retrieve the next page. When `page_token` is empty, all results have been retrieved.")] = None,
+        sort_field: Optional[StrictStr] = None,
+        sort_direction: Optional[V2SortDirection] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[V2reportsBiocollectionsReportPage]:
+        """Get a biocollection report by collection ID or code
+
+        Get a biocollection report by collection ID or code in JSON format.
+
+        :param collection_ids: One or more collection IDs or codes (required)
+        :type collection_ids: List[str]
+        :param page_size: The maximum number of biocollection reports to return. Default is 1000 and maximum is 1000. If the number of results exceeds the page size, `page_token` can be used to retrieve the remaining results.
+        :type page_size: int
+        :param page_token: A page token returned from a prior call with more than `page_size` results. Use this token with the same request parameters to retrieve the next page. When `page_token` is empty, all results have been retrieved.
+        :type page_token: str
+        :param sort_field:
+        :type sort_field: str
+        :param sort_direction:
+        :type sort_direction: V2SortDirection
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_biocollections_by_get_serialize(
+            collection_ids=collection_ids,
+            page_size=page_size,
+            page_token=page_token,
+            sort_field=sort_field,
+            sort_direction=sort_direction,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "V2reportsBiocollectionsReportPage",
+            'default': "RpcStatus",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def get_biocollections_by_get_without_preload_content(
+        self,
+        collection_ids: Annotated[List[StrictStr], Field(description="One or more collection IDs or codes")],
+        page_size: Annotated[Optional[StrictInt], Field(description="The maximum number of biocollection reports to return. Default is 1000 and maximum is 1000. If the number of results exceeds the page size, `page_token` can be used to retrieve the remaining results.")] = None,
+        page_token: Annotated[Optional[StrictStr], Field(description="A page token returned from a prior call with more than `page_size` results. Use this token with the same request parameters to retrieve the next page. When `page_token` is empty, all results have been retrieved.")] = None,
+        sort_field: Optional[StrictStr] = None,
+        sort_direction: Optional[V2SortDirection] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """Get a biocollection report by collection ID or code
+
+        Get a biocollection report by collection ID or code in JSON format.
+
+        :param collection_ids: One or more collection IDs or codes (required)
+        :type collection_ids: List[str]
+        :param page_size: The maximum number of biocollection reports to return. Default is 1000 and maximum is 1000. If the number of results exceeds the page size, `page_token` can be used to retrieve the remaining results.
+        :type page_size: int
+        :param page_token: A page token returned from a prior call with more than `page_size` results. Use this token with the same request parameters to retrieve the next page. When `page_token` is empty, all results have been retrieved.
+        :type page_token: str
+        :param sort_field:
+        :type sort_field: str
+        :param sort_direction:
+        :type sort_direction: V2SortDirection
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_biocollections_by_get_serialize(
+            collection_ids=collection_ids,
+            page_size=page_size,
+            page_token=page_token,
+            sort_field=sort_field,
+            sort_direction=sort_direction,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "V2reportsBiocollectionsReportPage",
+            'default': "RpcStatus",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _get_biocollections_by_get_serialize(
+        self,
+        collection_ids,
+        page_size,
+        page_token,
+        sort_field,
+        sort_direction,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+            'collection_ids': 'csv',
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        if collection_ids is not None:
+            _path_params['collection_ids'] = collection_ids
+        # process the query parameters
+        if page_size is not None:
+            
+            _query_params.append(('page_size', page_size))
+            
+        if page_token is not None:
+            
+            _query_params.append(('page_token', page_token))
+            
+        if sort_field is not None:
+            
+            _query_params.append(('sort.field', sort_field))
+            
+        if sort_direction is not None:
+            
+            _query_params.append(('sort.direction', sort_direction.value))
+            
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'text/plain', 
+                    'application/json'
+                ]
+            )
+
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'ApiKeyAuthHeader'
+        ]
+
+        return self.api_client.param_serialize(
+            method='GET',
+            resource_path='/taxonomy/biocollections/id/{collection_ids}/dataset_report',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,

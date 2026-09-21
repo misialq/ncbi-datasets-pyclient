@@ -77,22 +77,19 @@ class V2reportsGeneOntology(BaseModel):
         _items = []
         if self.molecular_functions:
             for _item_molecular_functions in self.molecular_functions:
-                if _item_molecular_functions:
-                    _items.append(_item_molecular_functions.to_dict())
+                _items.append(_item_molecular_functions.to_dict() if _item_molecular_functions is not None else None)
             _dict['molecular_functions'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in biological_processes (list)
         _items = []
         if self.biological_processes:
             for _item_biological_processes in self.biological_processes:
-                if _item_biological_processes:
-                    _items.append(_item_biological_processes.to_dict())
+                _items.append(_item_biological_processes.to_dict() if _item_biological_processes is not None else None)
             _dict['biological_processes'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in cellular_components (list)
         _items = []
         if self.cellular_components:
             for _item_cellular_components in self.cellular_components:
-                if _item_cellular_components:
-                    _items.append(_item_cellular_components.to_dict())
+                _items.append(_item_cellular_components.to_dict() if _item_cellular_components is not None else None)
             _dict['cellular_components'] = _items
         return _dict
 

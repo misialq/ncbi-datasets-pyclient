@@ -82,8 +82,7 @@ class V2reportsOrganism(BaseModel):
         _items = []
         if self.lineage:
             for _item_lineage in self.lineage:
-                if _item_lineage:
-                    _items.append(_item_lineage.to_dict())
+                _items.append(_item_lineage.to_dict() if _item_lineage is not None else None)
             _dict['lineage'] = _items
         # override the default output from pydantic by calling `to_dict()` of infraspecific_names
         if self.infraspecific_names:

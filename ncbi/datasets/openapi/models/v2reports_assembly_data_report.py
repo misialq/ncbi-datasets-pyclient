@@ -106,15 +106,13 @@ class V2reportsAssemblyDataReport(BaseModel):
         _items = []
         if self.organelle_info:
             for _item_organelle_info in self.organelle_info:
-                if _item_organelle_info:
-                    _items.append(_item_organelle_info.to_dict())
+                _items.append(_item_organelle_info.to_dict() if _item_organelle_info is not None else None)
             _dict['organelle_info'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in additional_submitters (list)
         _items = []
         if self.additional_submitters:
             for _item_additional_submitters in self.additional_submitters:
-                if _item_additional_submitters:
-                    _items.append(_item_additional_submitters.to_dict())
+                _items.append(_item_additional_submitters.to_dict() if _item_additional_submitters is not None else None)
             _dict['additional_submitters'] = _items
         # override the default output from pydantic by calling `to_dict()` of annotation_info
         if self.annotation_info:

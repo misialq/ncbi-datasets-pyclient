@@ -81,8 +81,7 @@ class V2reportsVirusGene(BaseModel):
         _items = []
         if self.cds:
             for _item_cds in self.cds:
-                if _item_cds:
-                    _items.append(_item_cds.to_dict())
+                _items.append(_item_cds.to_dict() if _item_cds is not None else None)
             _dict['cds'] = _items
         return _dict
 

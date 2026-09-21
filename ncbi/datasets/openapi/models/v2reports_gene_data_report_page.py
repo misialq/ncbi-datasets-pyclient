@@ -78,15 +78,13 @@ class V2reportsGeneDataReportPage(BaseModel):
         _items = []
         if self.reports:
             for _item_reports in self.reports:
-                if _item_reports:
-                    _items.append(_item_reports.to_dict())
+                _items.append(_item_reports.to_dict() if _item_reports is not None else None)
             _dict['reports'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in messages (list)
         _items = []
         if self.messages:
             for _item_messages in self.messages:
-                if _item_messages:
-                    _items.append(_item_messages.to_dict())
+                _items.append(_item_messages.to_dict() if _item_messages is not None else None)
             _dict['messages'] = _items
         return _dict
 

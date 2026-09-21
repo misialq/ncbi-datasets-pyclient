@@ -74,8 +74,7 @@ class V2GeneChromosomeSummaryReply(BaseModel):
         _items = []
         if self.gene_chromosome_summaries:
             for _item_gene_chromosome_summaries in self.gene_chromosome_summaries:
-                if _item_gene_chromosome_summaries:
-                    _items.append(_item_gene_chromosome_summaries.to_dict())
+                _items.append(_item_gene_chromosome_summaries.to_dict() if _item_gene_chromosome_summaries is not None else None)
             _dict['gene_chromosome_summaries'] = _items
         return _dict
 

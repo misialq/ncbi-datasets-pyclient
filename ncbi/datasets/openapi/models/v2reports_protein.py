@@ -79,8 +79,7 @@ class V2reportsProtein(BaseModel):
         _items = []
         if self.mature_peptides:
             for _item_mature_peptides in self.mature_peptides:
-                if _item_mature_peptides:
-                    _items.append(_item_mature_peptides.to_dict())
+                _items.append(_item_mature_peptides.to_dict() if _item_mature_peptides is not None else None)
             _dict['mature_peptides'] = _items
         return _dict
 

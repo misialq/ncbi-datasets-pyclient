@@ -106,15 +106,13 @@ class V2reportsSequenceDataReport(BaseModel):
         _items = []
         if self.submissions:
             for _item_submissions in self.submissions:
-                if _item_submissions:
-                    _items.append(_item_submissions.to_dict())
+                _items.append(_item_submissions.to_dict() if _item_submissions is not None else None)
             _dict['submissions'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in references (list)
         _items = []
         if self.references:
             for _item_references in self.references:
-                if _item_references:
-                    _items.append(_item_references.to_dict())
+                _items.append(_item_references.to_dict() if _item_references is not None else None)
             _dict['references'] = _items
         # override the default output from pydantic by calling `to_dict()` of infraspecific_modifiers
         if self.infraspecific_modifiers:

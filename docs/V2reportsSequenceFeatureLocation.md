@@ -5,10 +5,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**begin** | **str** |  | [optional] 
-**end** | **str** |  | [optional] 
-**position** | **str** |  | [optional] 
-**orientation** | **str** |  | [optional] 
+**var_from** | **int** |  | [optional] 
+**to** | **int** |  | [optional] 
+**strand** | [**V2reportsSequenceFeatureLocationStrand**](V2reportsSequenceFeatureLocationStrand.md) |  | [optional] [default to V2reportsSequenceFeatureLocationStrand.STRAND_UNKNOWN]
+**fuzz_from** | [**V2reportsSequenceFeatureLocationIntFuzz**](V2reportsSequenceFeatureLocationIntFuzz.md) |  | [optional] 
+**fuzz_to** | [**V2reportsSequenceFeatureLocationIntFuzz**](V2reportsSequenceFeatureLocationIntFuzz.md) |  | [optional] 
 
 ## Example
 

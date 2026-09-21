@@ -79,8 +79,7 @@ class V2reportsBiocollectionInstitution(BaseModel):
         _items = []
         if self.bio_collections:
             for _item_bio_collections in self.bio_collections:
-                if _item_bio_collections:
-                    _items.append(_item_bio_collections.to_dict())
+                _items.append(_item_bio_collections.to_dict() if _item_bio_collections is not None else None)
             _dict['bio_collections'] = _items
         return _dict
 

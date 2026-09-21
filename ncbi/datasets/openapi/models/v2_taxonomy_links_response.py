@@ -80,8 +80,7 @@ class V2TaxonomyLinksResponse(BaseModel):
         _items = []
         if self.generic_links:
             for _item_generic_links in self.generic_links:
-                if _item_generic_links:
-                    _items.append(_item_generic_links.to_dict())
+                _items.append(_item_generic_links.to_dict() if _item_generic_links is not None else None)
             _dict['generic_links'] = _items
         return _dict
 

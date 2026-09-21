@@ -80,8 +80,7 @@ class V2reportsGenomicLocation(BaseModel):
         _items = []
         if self.exons:
             for _item_exons in self.exons:
-                if _item_exons:
-                    _items.append(_item_exons.to_dict())
+                _items.append(_item_exons.to_dict() if _item_exons is not None else None)
             _dict['exons'] = _items
         return _dict
 

@@ -92,15 +92,13 @@ class V2DownloadSummary(BaseModel):
         _items = []
         if self.errors:
             for _item_errors in self.errors:
-                if _item_errors:
-                    _items.append(_item_errors.to_dict())
+                _items.append(_item_errors.to_dict() if _item_errors is not None else None)
             _dict['errors'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in messages (list)
         _items = []
         if self.messages:
             for _item_messages in self.messages:
-                if _item_messages:
-                    _items.append(_item_messages.to_dict())
+                _items.append(_item_messages.to_dict() if _item_messages is not None else None)
             _dict['messages'] = _items
         # override the default output from pydantic by calling `to_dict()` of available_files
         if self.available_files:

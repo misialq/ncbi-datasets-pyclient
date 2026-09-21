@@ -87,29 +87,25 @@ class V2reportsNameAndAuthority(BaseModel):
         _items = []
         if self.type_strains:
             for _item_type_strains in self.type_strains:
-                if _item_type_strains:
-                    _items.append(_item_type_strains.to_dict())
+                _items.append(_item_type_strains.to_dict() if _item_type_strains is not None else None)
             _dict['type_strains'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in homotypic_synonyms (list)
         _items = []
         if self.homotypic_synonyms:
             for _item_homotypic_synonyms in self.homotypic_synonyms:
-                if _item_homotypic_synonyms:
-                    _items.append(_item_homotypic_synonyms.to_dict())
+                _items.append(_item_homotypic_synonyms.to_dict() if _item_homotypic_synonyms is not None else None)
             _dict['homotypic_synonyms'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in heterotypic_synonyms (list)
         _items = []
         if self.heterotypic_synonyms:
             for _item_heterotypic_synonyms in self.heterotypic_synonyms:
-                if _item_heterotypic_synonyms:
-                    _items.append(_item_heterotypic_synonyms.to_dict())
+                _items.append(_item_heterotypic_synonyms.to_dict() if _item_heterotypic_synonyms is not None else None)
             _dict['heterotypic_synonyms'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in other_synonyms (list)
         _items = []
         if self.other_synonyms:
             for _item_other_synonyms in self.other_synonyms:
-                if _item_other_synonyms:
-                    _items.append(_item_other_synonyms.to_dict())
+                _items.append(_item_other_synonyms.to_dict() if _item_other_synonyms is not None else None)
             _dict['other_synonyms'] = _items
         # override the default output from pydantic by calling `to_dict()` of basionym
         if self.basionym:
@@ -118,15 +114,13 @@ class V2reportsNameAndAuthority(BaseModel):
         _items = []
         if self.publications:
             for _item_publications in self.publications:
-                if _item_publications:
-                    _items.append(_item_publications.to_dict())
+                _items.append(_item_publications.to_dict() if _item_publications is not None else None)
             _dict['publications'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in notes (list)
         _items = []
         if self.notes:
             for _item_notes in self.notes:
-                if _item_notes:
-                    _items.append(_item_notes.to_dict())
+                _items.append(_item_notes.to_dict() if _item_notes is not None else None)
             _dict['notes'] = _items
         return _dict
 

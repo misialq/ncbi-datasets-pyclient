@@ -111,15 +111,13 @@ class V2reportsGeneDescriptor(BaseModel):
         _items = []
         if self.reference_standards:
             for _item_reference_standards in self.reference_standards:
-                if _item_reference_standards:
-                    _items.append(_item_reference_standards.to_dict())
+                _items.append(_item_reference_standards.to_dict() if _item_reference_standards is not None else None)
             _dict['reference_standards'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in genomic_regions (list)
         _items = []
         if self.genomic_regions:
             for _item_genomic_regions in self.genomic_regions:
-                if _item_genomic_regions:
-                    _items.append(_item_genomic_regions.to_dict())
+                _items.append(_item_genomic_regions.to_dict() if _item_genomic_regions is not None else None)
             _dict['genomic_regions'] = _items
         # override the default output from pydantic by calling `to_dict()` of nomenclature_authority
         if self.nomenclature_authority:
@@ -128,29 +126,25 @@ class V2reportsGeneDescriptor(BaseModel):
         _items = []
         if self.annotations:
             for _item_annotations in self.annotations:
-                if _item_annotations:
-                    _items.append(_item_annotations.to_dict())
+                _items.append(_item_annotations.to_dict() if _item_annotations is not None else None)
             _dict['annotations'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in transcript_type_counts (list)
         _items = []
         if self.transcript_type_counts:
             for _item_transcript_type_counts in self.transcript_type_counts:
-                if _item_transcript_type_counts:
-                    _items.append(_item_transcript_type_counts.to_dict())
+                _items.append(_item_transcript_type_counts.to_dict() if _item_transcript_type_counts is not None else None)
             _dict['transcript_type_counts'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in gene_groups (list)
         _items = []
         if self.gene_groups:
             for _item_gene_groups in self.gene_groups:
-                if _item_gene_groups:
-                    _items.append(_item_gene_groups.to_dict())
+                _items.append(_item_gene_groups.to_dict() if _item_gene_groups is not None else None)
             _dict['gene_groups'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in summary (list)
         _items = []
         if self.summary:
             for _item_summary in self.summary:
-                if _item_summary:
-                    _items.append(_item_summary.to_dict())
+                _items.append(_item_summary.to_dict() if _item_summary is not None else None)
             _dict['summary'] = _items
         # override the default output from pydantic by calling `to_dict()` of gene_ontology
         if self.gene_ontology:
@@ -159,8 +153,7 @@ class V2reportsGeneDescriptor(BaseModel):
         _items = []
         if self.map_locations:
             for _item_map_locations in self.map_locations:
-                if _item_map_locations:
-                    _items.append(_item_map_locations.to_dict())
+                _items.append(_item_map_locations.to_dict() if _item_map_locations is not None else None)
             _dict['map_locations'] = _items
         return _dict
 

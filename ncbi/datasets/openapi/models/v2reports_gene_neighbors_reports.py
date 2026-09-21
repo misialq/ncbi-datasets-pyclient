@@ -74,8 +74,7 @@ class V2reportsGeneNeighborsReports(BaseModel):
         _items = []
         if self.genes:
             for _item_genes in self.genes:
-                if _item_genes:
-                    _items.append(_item_genes.to_dict())
+                _items.append(_item_genes.to_dict() if _item_genes is not None else None)
             _dict['genes'] = _items
         return _dict
 

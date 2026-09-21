@@ -76,15 +76,13 @@ class V2TaxonomyMetadataResponse(BaseModel):
         _items = []
         if self.messages:
             for _item_messages in self.messages:
-                if _item_messages:
-                    _items.append(_item_messages.to_dict())
+                _items.append(_item_messages.to_dict() if _item_messages is not None else None)
             _dict['messages'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in taxonomy_nodes (list)
         _items = []
         if self.taxonomy_nodes:
             for _item_taxonomy_nodes in self.taxonomy_nodes:
-                if _item_taxonomy_nodes:
-                    _items.append(_item_taxonomy_nodes.to_dict())
+                _items.append(_item_taxonomy_nodes.to_dict() if _item_taxonomy_nodes is not None else None)
             _dict['taxonomy_nodes'] = _items
         return _dict
 

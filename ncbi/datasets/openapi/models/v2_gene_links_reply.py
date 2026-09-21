@@ -74,8 +74,7 @@ class V2GeneLinksReply(BaseModel):
         _items = []
         if self.gene_links:
             for _item_gene_links in self.gene_links:
-                if _item_gene_links:
-                    _items.append(_item_gene_links.to_dict())
+                _items.append(_item_gene_links.to_dict() if _item_gene_links is not None else None)
             _dict['gene_links'] = _items
         return _dict
 

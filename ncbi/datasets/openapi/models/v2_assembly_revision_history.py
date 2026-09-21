@@ -75,8 +75,7 @@ class V2AssemblyRevisionHistory(BaseModel):
         _items = []
         if self.assembly_revisions:
             for _item_assembly_revisions in self.assembly_revisions:
-                if _item_assembly_revisions:
-                    _items.append(_item_assembly_revisions.to_dict())
+                _items.append(_item_assembly_revisions.to_dict() if _item_assembly_revisions is not None else None)
             _dict['assembly_revisions'] = _items
         return _dict
 

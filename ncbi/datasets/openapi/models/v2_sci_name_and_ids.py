@@ -74,8 +74,7 @@ class V2SciNameAndIds(BaseModel):
         _items = []
         if self.sci_name_and_ids:
             for _item_sci_name_and_ids in self.sci_name_and_ids:
-                if _item_sci_name_and_ids:
-                    _items.append(_item_sci_name_and_ids.to_dict())
+                _items.append(_item_sci_name_and_ids.to_dict() if _item_sci_name_and_ids is not None else None)
             _dict['sci_name_and_ids'] = _items
         return _dict
 

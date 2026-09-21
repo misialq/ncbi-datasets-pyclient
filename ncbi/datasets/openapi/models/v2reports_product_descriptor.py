@@ -88,15 +88,13 @@ class V2reportsProductDescriptor(BaseModel):
         _items = []
         if self.transcripts:
             for _item_transcripts in self.transcripts:
-                if _item_transcripts:
-                    _items.append(_item_transcripts.to_dict())
+                _items.append(_item_transcripts.to_dict() if _item_transcripts is not None else None)
             _dict['transcripts'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in transcript_type_counts (list)
         _items = []
         if self.transcript_type_counts:
             for _item_transcript_type_counts in self.transcript_type_counts:
-                if _item_transcript_type_counts:
-                    _items.append(_item_transcript_type_counts.to_dict())
+                _items.append(_item_transcript_type_counts.to_dict() if _item_transcript_type_counts is not None else None)
             _dict['transcript_type_counts'] = _items
         return _dict
 

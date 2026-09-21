@@ -116,8 +116,7 @@ class V2reportsBioSampleDataReport(BaseModel):
         _items = []
         if self.sample_ids:
             for _item_sample_ids in self.sample_ids:
-                if _item_sample_ids:
-                    _items.append(_item_sample_ids.to_dict())
+                _items.append(_item_sample_ids.to_dict() if _item_sample_ids is not None else None)
             _dict['sample_ids'] = _items
         # override the default output from pydantic by calling `to_dict()` of description
         if self.description:
@@ -129,15 +128,13 @@ class V2reportsBioSampleDataReport(BaseModel):
         _items = []
         if self.bioprojects:
             for _item_bioprojects in self.bioprojects:
-                if _item_bioprojects:
-                    _items.append(_item_bioprojects.to_dict())
+                _items.append(_item_bioprojects.to_dict() if _item_bioprojects is not None else None)
             _dict['bioprojects'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in attributes (list)
         _items = []
         if self.attributes:
             for _item_attributes in self.attributes:
-                if _item_attributes:
-                    _items.append(_item_attributes.to_dict())
+                _items.append(_item_attributes.to_dict() if _item_attributes is not None else None)
             _dict['attributes'] = _items
         # override the default output from pydantic by calling `to_dict()` of status
         if self.status:

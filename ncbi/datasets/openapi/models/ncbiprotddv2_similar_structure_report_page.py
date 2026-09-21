@@ -77,8 +77,7 @@ class Ncbiprotddv2SimilarStructureReportPage(BaseModel):
         _items = []
         if self.similar_structures:
             for _item_similar_structures in self.similar_structures:
-                if _item_similar_structures:
-                    _items.append(_item_similar_structures.to_dict())
+                _items.append(_item_similar_structures.to_dict() if _item_similar_structures is not None else None)
             _dict['similar_structures'] = _items
         return _dict
 

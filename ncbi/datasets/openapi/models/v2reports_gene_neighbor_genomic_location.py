@@ -79,8 +79,7 @@ class V2reportsGeneNeighborGenomicLocation(BaseModel):
         _items = []
         if self.gene_neighbors:
             for _item_gene_neighbors in self.gene_neighbors:
-                if _item_gene_neighbors:
-                    _items.append(_item_gene_neighbors.to_dict())
+                _items.append(_item_gene_neighbors.to_dict() if _item_gene_neighbors is not None else None)
             _dict['gene_neighbors'] = _items
         return _dict
 

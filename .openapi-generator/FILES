@@ -18,6 +18,7 @@ docs/Ncbiprotddv2ChainFootprint.md
 docs/Ncbiprotddv2ParsedAbstract.md
 docs/Ncbiprotddv2ParsedAbstractAuthor.md
 docs/Ncbiprotddv2ParsedAbstractEpub.md
+docs/Ncbiprotddv2ProteinAccessionRequest.md
 docs/Ncbiprotddv2PubmedAbstractRequest.md
 docs/Ncbiprotddv2QueryStructureDefinition.md
 docs/Ncbiprotddv2RedundancyLevel.md
@@ -38,7 +39,6 @@ docs/ProkaryoteApi.md
 docs/ProtobufAny.md
 docs/RpcStatus.md
 docs/TaxonomyApi.md
-docs/V2Accessions.md
 docs/V2AnnotationForAssemblyType.md
 docs/V2AnnotationForOrganelleType.md
 docs/V2AssemblyAccessions.md
@@ -127,6 +127,7 @@ docs/V2SeqReply.md
 docs/V2SequenceAccessionRequest.md
 docs/V2SequenceDatasetRequest.md
 docs/V2SequenceDatasetRequestFileType.md
+docs/V2SequenceFeatureRequest.md
 docs/V2SequenceReportPage.md
 docs/V2SequenceRequest.md
 docs/V2SequenceRequestContentType.md
@@ -308,6 +309,14 @@ docs/V2reportsSequenceDataReportPage.md
 docs/V2reportsSequenceDataReportSequencingMethod.md
 docs/V2reportsSequenceDataReportTopologyType.md
 docs/V2reportsSequenceDataReportUnits.md
+docs/V2reportsSequenceFeatureLocation.md
+docs/V2reportsSequenceFeatureLocationFuzzLim.md
+docs/V2reportsSequenceFeatureLocationFuzzRange.md
+docs/V2reportsSequenceFeatureLocationIntFuzz.md
+docs/V2reportsSequenceFeatureLocationStrand.md
+docs/V2reportsSequenceFeatureQualifier.md
+docs/V2reportsSequenceFeatureWithAccession.md
+docs/V2reportsSequenceFeaturesPage.md
 docs/V2reportsSequenceInfo.md
 docs/V2reportsSequenceInformation.md
 docs/V2reportsSequenceReference.md
@@ -380,6 +389,7 @@ ncbi/datasets/openapi/models/ncbiprotddv2_chain_footprint.py
 ncbi/datasets/openapi/models/ncbiprotddv2_parsed_abstract.py
 ncbi/datasets/openapi/models/ncbiprotddv2_parsed_abstract_author.py
 ncbi/datasets/openapi/models/ncbiprotddv2_parsed_abstract_epub.py
+ncbi/datasets/openapi/models/ncbiprotddv2_protein_accession_request.py
 ncbi/datasets/openapi/models/ncbiprotddv2_pubmed_abstract_request.py
 ncbi/datasets/openapi/models/ncbiprotddv2_query_structure_definition.py
 ncbi/datasets/openapi/models/ncbiprotddv2_redundancy_level.py
@@ -397,7 +407,6 @@ ncbi/datasets/openapi/models/ncbiprotddv2_structure_request.py
 ncbi/datasets/openapi/models/ncbiprotddv2_vast_score.py
 ncbi/datasets/openapi/models/protobuf_any.py
 ncbi/datasets/openapi/models/rpc_status.py
-ncbi/datasets/openapi/models/v2_accessions.py
 ncbi/datasets/openapi/models/v2_annotation_for_assembly_type.py
 ncbi/datasets/openapi/models/v2_annotation_for_organelle_type.py
 ncbi/datasets/openapi/models/v2_assembly_accessions.py
@@ -486,6 +495,7 @@ ncbi/datasets/openapi/models/v2_seq_reply.py
 ncbi/datasets/openapi/models/v2_sequence_accession_request.py
 ncbi/datasets/openapi/models/v2_sequence_dataset_request.py
 ncbi/datasets/openapi/models/v2_sequence_dataset_request_file_type.py
+ncbi/datasets/openapi/models/v2_sequence_feature_request.py
 ncbi/datasets/openapi/models/v2_sequence_report_page.py
 ncbi/datasets/openapi/models/v2_sequence_request.py
 ncbi/datasets/openapi/models/v2_sequence_request_content_type.py
@@ -667,6 +677,14 @@ ncbi/datasets/openapi/models/v2reports_sequence_data_report_page.py
 ncbi/datasets/openapi/models/v2reports_sequence_data_report_sequencing_method.py
 ncbi/datasets/openapi/models/v2reports_sequence_data_report_topology_type.py
 ncbi/datasets/openapi/models/v2reports_sequence_data_report_units.py
+ncbi/datasets/openapi/models/v2reports_sequence_feature_location.py
+ncbi/datasets/openapi/models/v2reports_sequence_feature_location_fuzz_lim.py
+ncbi/datasets/openapi/models/v2reports_sequence_feature_location_fuzz_range.py
+ncbi/datasets/openapi/models/v2reports_sequence_feature_location_int_fuzz.py
+ncbi/datasets/openapi/models/v2reports_sequence_feature_location_strand.py
+ncbi/datasets/openapi/models/v2reports_sequence_feature_qualifier.py
+ncbi/datasets/openapi/models/v2reports_sequence_feature_with_accession.py
+ncbi/datasets/openapi/models/v2reports_sequence_features_page.py
 ncbi/datasets/openapi/models/v2reports_sequence_info.py
 ncbi/datasets/openapi/models/v2reports_sequence_information.py
 ncbi/datasets/openapi/models/v2reports_sequence_reference.py
@@ -715,8 +733,13 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_v2reports_molecule_type.py
-test/test_v2reports_protein_name_evidence.py
-test/test_v2reports_sequence_data_report_completeness.py
-test/test_v2reports_sequence_data_report_sequencing_method.py
+test/test_ncbiprotddv2_protein_accession_request.py
+test/test_v2_sequence_feature_request.py
+test/test_v2reports_sequence_feature_location_fuzz_lim.py
+test/test_v2reports_sequence_feature_location_fuzz_range.py
+test/test_v2reports_sequence_feature_location_int_fuzz.py
+test/test_v2reports_sequence_feature_location_strand.py
+test/test_v2reports_sequence_feature_qualifier.py
+test/test_v2reports_sequence_feature_with_accession.py
+test/test_v2reports_sequence_features_page.py
 tox.ini

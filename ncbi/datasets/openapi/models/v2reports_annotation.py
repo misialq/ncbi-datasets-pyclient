@@ -78,8 +78,7 @@ class V2reportsAnnotation(BaseModel):
         _items = []
         if self.genomic_locations:
             for _item_genomic_locations in self.genomic_locations:
-                if _item_genomic_locations:
-                    _items.append(_item_genomic_locations.to_dict())
+                _items.append(_item_genomic_locations.to_dict() if _item_genomic_locations is not None else None)
             _dict['genomic_locations'] = _items
         return _dict
 

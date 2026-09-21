@@ -102,8 +102,7 @@ class V2reportsTaxonomyNode(BaseModel):
         _items = []
         if self.counts:
             for _item_counts in self.counts:
-                if _item_counts:
-                    _items.append(_item_counts.to_dict())
+                _items.append(_item_counts.to_dict() if _item_counts is not None else None)
             _dict['counts'] = _items
         # override the default output from pydantic by calling `to_dict()` of genetic_code
         if self.genetic_code:

@@ -84,22 +84,19 @@ class V2reportsProteinDataReport(BaseModel):
         _items = []
         if self.conserved_domains:
             for _item_conserved_domains in self.conserved_domains:
-                if _item_conserved_domains:
-                    _items.append(_item_conserved_domains.to_dict())
+                _items.append(_item_conserved_domains.to_dict() if _item_conserved_domains is not None else None)
             _dict['conserved_domains'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in functional_sites (list)
         _items = []
         if self.functional_sites:
             for _item_functional_sites in self.functional_sites:
-                if _item_functional_sites:
-                    _items.append(_item_functional_sites.to_dict())
+                _items.append(_item_functional_sites.to_dict() if _item_functional_sites is not None else None)
             _dict['functional_sites'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in protein_families (list)
         _items = []
         if self.protein_families:
             for _item_protein_families in self.protein_families:
-                if _item_protein_families:
-                    _items.append(_item_protein_families.to_dict())
+                _items.append(_item_protein_families.to_dict() if _item_protein_families is not None else None)
             _dict['protein_families'] = _items
         return _dict
 

@@ -91,29 +91,25 @@ class Ncbiprotddv2StructureDataReport(BaseModel):
         _items = []
         if self.chains:
             for _item_chains in self.chains:
-                if _item_chains:
-                    _items.append(_item_chains.to_dict())
+                _items.append(_item_chains.to_dict() if _item_chains is not None else None)
             _dict['chains'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in ligand_chains (list)
         _items = []
         if self.ligand_chains:
             for _item_ligand_chains in self.ligand_chains:
-                if _item_ligand_chains:
-                    _items.append(_item_ligand_chains.to_dict())
+                _items.append(_item_ligand_chains.to_dict() if _item_ligand_chains is not None else None)
             _dict['ligand_chains'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in asymmetric_chains (list)
         _items = []
         if self.asymmetric_chains:
             for _item_asymmetric_chains in self.asymmetric_chains:
-                if _item_asymmetric_chains:
-                    _items.append(_item_asymmetric_chains.to_dict())
+                _items.append(_item_asymmetric_chains.to_dict() if _item_asymmetric_chains is not None else None)
             _dict['asymmetric_chains'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in asymmetric_ligands (list)
         _items = []
         if self.asymmetric_ligands:
             for _item_asymmetric_ligands in self.asymmetric_ligands:
-                if _item_asymmetric_ligands:
-                    _items.append(_item_asymmetric_ligands.to_dict())
+                _items.append(_item_asymmetric_ligands.to_dict() if _item_asymmetric_ligands is not None else None)
             _dict['asymmetric_ligands'] = _items
         return _dict
 

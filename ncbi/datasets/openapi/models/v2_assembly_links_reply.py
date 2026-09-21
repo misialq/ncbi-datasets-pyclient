@@ -74,8 +74,7 @@ class V2AssemblyLinksReply(BaseModel):
         _items = []
         if self.assembly_links:
             for _item_assembly_links in self.assembly_links:
-                if _item_assembly_links:
-                    _items.append(_item_assembly_links.to_dict())
+                _items.append(_item_assembly_links.to_dict() if _item_assembly_links is not None else None)
             _dict['assembly_links'] = _items
         return _dict
 

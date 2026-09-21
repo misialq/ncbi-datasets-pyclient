@@ -6,6 +6,8 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**download_taxonomy_package**](TaxonomyApi.md#download_taxonomy_package) | **GET** /taxonomy/taxon/{tax_ids}/download | Get a taxonomy data package by Taxonomy ID
 [**download_taxonomy_package_by_post**](TaxonomyApi.md#download_taxonomy_package_by_post) | **POST** /taxonomy/download | Get a taxonomy data package by Taxonomy ID
+[**get_biocollections**](TaxonomyApi.md#get_biocollections) | **POST** /taxonomy/biocollections/dataset_report | Get a biocollection report by collection ID or code
+[**get_biocollections_by_get**](TaxonomyApi.md#get_biocollections_by_get) | **GET** /taxonomy/biocollections/id/{collection_ids}/dataset_report | Get a biocollection report by collection ID or code
 [**tax_name_query**](TaxonomyApi.md#tax_name_query) | **GET** /taxonomy/taxon_suggest/{taxon_query} | Get a list of taxonomy names and IDs by partial taxonomic name
 [**tax_name_query_by_post**](TaxonomyApi.md#tax_name_query_by_post) | **POST** /taxonomy/taxon_suggest | Get a list of taxonomy names and IDs by partial taxonomic name
 [**taxonomy_data_report**](TaxonomyApi.md#taxonomy_data_report) | **GET** /taxonomy/taxon/{taxons}/dataset_report | Get a taxonomy data report by taxon
@@ -182,6 +184,176 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: application/json
  - **Accept**: text/plain, application/zip
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | A successful response |  -  |
+**0** | An unexpected error response. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_biocollections**
+> V2reportsBiocollectionsReportPage get_biocollections(v2_get_biocollections_request)
+
+Get a biocollection report by collection ID or code
+
+Get a biocollection report by collection ID or code in JSON format.
+
+### Example
+
+* Api Key Authentication (ApiKeyAuthHeader):
+
+```python
+import ncbi.datasets.openapi
+from ncbi.datasets.openapi.models.v2_get_biocollections_request import V2GetBiocollectionsRequest
+from ncbi.datasets.openapi.models.v2reports_biocollections_report_page import V2reportsBiocollectionsReportPage
+from ncbi.datasets.openapi.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.ncbi.nlm.nih.gov/datasets/v2
+# See configuration.py for a list of all supported configuration parameters.
+configuration = ncbi.datasets.openapi.Configuration(
+    host = "https://api.ncbi.nlm.nih.gov/datasets/v2"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: ApiKeyAuthHeader
+configuration.api_key['ApiKeyAuthHeader'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['ApiKeyAuthHeader'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = ncbi.datasets.openapi.TaxonomyApi(api_client)
+    v2_get_biocollections_request = {"collection_ids":["4296"]} # V2GetBiocollectionsRequest | 
+
+    try:
+        # Get a biocollection report by collection ID or code
+        api_response = api_instance.get_biocollections(v2_get_biocollections_request)
+        print("The response of TaxonomyApi->get_biocollections:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling TaxonomyApi->get_biocollections: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **v2_get_biocollections_request** | [**V2GetBiocollectionsRequest**](V2GetBiocollectionsRequest.md)|  | 
+
+### Return type
+
+[**V2reportsBiocollectionsReportPage**](V2reportsBiocollectionsReportPage.md)
+
+### Authorization
+
+[ApiKeyAuthHeader](../README.md#ApiKeyAuthHeader)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: text/plain, application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | A successful response |  -  |
+**0** | An unexpected error response. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_biocollections_by_get**
+> V2reportsBiocollectionsReportPage get_biocollections_by_get(collection_ids, page_size=page_size, page_token=page_token, sort_field=sort_field, sort_direction=sort_direction)
+
+Get a biocollection report by collection ID or code
+
+Get a biocollection report by collection ID or code in JSON format.
+
+### Example
+
+* Api Key Authentication (ApiKeyAuthHeader):
+
+```python
+import ncbi.datasets.openapi
+from ncbi.datasets.openapi.models.v2_sort_direction import V2SortDirection
+from ncbi.datasets.openapi.models.v2reports_biocollections_report_page import V2reportsBiocollectionsReportPage
+from ncbi.datasets.openapi.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.ncbi.nlm.nih.gov/datasets/v2
+# See configuration.py for a list of all supported configuration parameters.
+configuration = ncbi.datasets.openapi.Configuration(
+    host = "https://api.ncbi.nlm.nih.gov/datasets/v2"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: ApiKeyAuthHeader
+configuration.api_key['ApiKeyAuthHeader'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['ApiKeyAuthHeader'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = ncbi.datasets.openapi.TaxonomyApi(api_client)
+    collection_ids = ['4296'] # List[str] | One or more collection IDs or codes
+    page_size = 56 # int | The maximum number of biocollection reports to return. Default is 1000 and maximum is 1000. If the number of results exceeds the page size, `page_token` can be used to retrieve the remaining results. (optional)
+    page_token = 'page_token_example' # str | A page token returned from a prior call with more than `page_size` results. Use this token with the same request parameters to retrieve the next page. When `page_token` is empty, all results have been retrieved. (optional)
+    sort_field = 'sort_field_example' # str |  (optional)
+    sort_direction = 'SORT_DIRECTION_UNSPECIFIED' # V2SortDirection |  (optional) (default to 'SORT_DIRECTION_UNSPECIFIED')
+
+    try:
+        # Get a biocollection report by collection ID or code
+        api_response = api_instance.get_biocollections_by_get(collection_ids, page_size=page_size, page_token=page_token, sort_field=sort_field, sort_direction=sort_direction)
+        print("The response of TaxonomyApi->get_biocollections_by_get:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling TaxonomyApi->get_biocollections_by_get: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **collection_ids** | [**List[str]**](str.md)| One or more collection IDs or codes | 
+ **page_size** | **int**| The maximum number of biocollection reports to return. Default is 1000 and maximum is 1000. If the number of results exceeds the page size, &#x60;page_token&#x60; can be used to retrieve the remaining results. | [optional] 
+ **page_token** | **str**| A page token returned from a prior call with more than &#x60;page_size&#x60; results. Use this token with the same request parameters to retrieve the next page. When &#x60;page_token&#x60; is empty, all results have been retrieved. | [optional] 
+ **sort_field** | **str**|  | [optional] 
+ **sort_direction** | [**V2SortDirection**](.md)|  | [optional] [default to &#39;SORT_DIRECTION_UNSPECIFIED&#39;]
+
+### Return type
+
+[**V2reportsBiocollectionsReportPage**](V2reportsBiocollectionsReportPage.md)
+
+### Authorization
+
+[ApiKeyAuthHeader](../README.md#ApiKeyAuthHeader)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json
 
 ### HTTP response details
 

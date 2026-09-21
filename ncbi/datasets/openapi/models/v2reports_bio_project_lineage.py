@@ -74,8 +74,7 @@ class V2reportsBioProjectLineage(BaseModel):
         _items = []
         if self.bioprojects:
             for _item_bioprojects in self.bioprojects:
-                if _item_bioprojects:
-                    _items.append(_item_bioprojects.to_dict())
+                _items.append(_item_bioprojects.to_dict() if _item_bioprojects is not None else None)
             _dict['bioprojects'] = _items
         return _dict
 

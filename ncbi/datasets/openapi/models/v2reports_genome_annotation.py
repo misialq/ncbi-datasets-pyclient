@@ -101,36 +101,31 @@ class V2reportsGenomeAnnotation(BaseModel):
         _items = []
         if self.reference_standards:
             for _item_reference_standards in self.reference_standards:
-                if _item_reference_standards:
-                    _items.append(_item_reference_standards.to_dict())
+                _items.append(_item_reference_standards.to_dict() if _item_reference_standards is not None else None)
             _dict['reference_standards'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in genomic_regions (list)
         _items = []
         if self.genomic_regions:
             for _item_genomic_regions in self.genomic_regions:
-                if _item_genomic_regions:
-                    _items.append(_item_genomic_regions.to_dict())
+                _items.append(_item_genomic_regions.to_dict() if _item_genomic_regions is not None else None)
             _dict['genomic_regions'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in transcripts (list)
         _items = []
         if self.transcripts:
             for _item_transcripts in self.transcripts:
-                if _item_transcripts:
-                    _items.append(_item_transcripts.to_dict())
+                _items.append(_item_transcripts.to_dict() if _item_transcripts is not None else None)
             _dict['transcripts'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in proteins (list)
         _items = []
         if self.proteins:
             for _item_proteins in self.proteins:
-                if _item_proteins:
-                    _items.append(_item_proteins.to_dict())
+                _items.append(_item_proteins.to_dict() if _item_proteins is not None else None)
             _dict['proteins'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in annotations (list)
         _items = []
         if self.annotations:
             for _item_annotations in self.annotations:
-                if _item_annotations:
-                    _items.append(_item_annotations.to_dict())
+                _items.append(_item_annotations.to_dict() if _item_annotations is not None else None)
             _dict['annotations'] = _items
         return _dict
 

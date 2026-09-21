@@ -96,8 +96,7 @@ class V2GeneDatasetReportsRequest(BaseModel):
         _items = []
         if self.sort:
             for _item_sort in self.sort:
-                if _item_sort:
-                    _items.append(_item_sort.to_dict())
+                _items.append(_item_sort.to_dict() if _item_sort is not None else None)
             _dict['sort'] = _items
         return _dict
 

@@ -92,8 +92,7 @@ class V2reportsVirusPeptide(BaseModel):
         _items = []
         if self.cdd:
             for _item_cdd in self.cdd:
-                if _item_cdd:
-                    _items.append(_item_cdd.to_dict())
+                _items.append(_item_cdd.to_dict() if _item_cdd is not None else None)
             _dict['cdd'] = _items
         # override the default output from pydantic by calling `to_dict()` of uni_prot_kb
         if self.uni_prot_kb:
@@ -102,8 +101,7 @@ class V2reportsVirusPeptide(BaseModel):
         _items = []
         if self.mature_peptide:
             for _item_mature_peptide in self.mature_peptide:
-                if _item_mature_peptide:
-                    _items.append(_item_mature_peptide.to_dict())
+                _items.append(_item_mature_peptide.to_dict() if _item_mature_peptide is not None else None)
             _dict['mature_peptide'] = _items
         return _dict
 

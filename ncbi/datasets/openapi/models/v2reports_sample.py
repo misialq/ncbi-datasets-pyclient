@@ -80,8 +80,7 @@ class V2reportsSample(BaseModel):
         _items = []
         if self.biosamples:
             for _item_biosamples in self.biosamples:
-                if _item_biosamples:
-                    _items.append(_item_biosamples.to_dict())
+                _items.append(_item_biosamples.to_dict() if _item_biosamples is not None else None)
             _dict['biosamples'] = _items
         return _dict
 

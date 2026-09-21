@@ -108,15 +108,13 @@ class V2reportsAssemblyInfo(BaseModel):
         _items = []
         if self.bioproject_lineage:
             for _item_bioproject_lineage in self.bioproject_lineage:
-                if _item_bioproject_lineage:
-                    _items.append(_item_bioproject_lineage.to_dict())
+                _items.append(_item_bioproject_lineage.to_dict() if _item_bioproject_lineage is not None else None)
             _dict['bioproject_lineage'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in linked_assemblies (list)
         _items = []
         if self.linked_assemblies:
             for _item_linked_assemblies in self.linked_assemblies:
-                if _item_linked_assemblies:
-                    _items.append(_item_linked_assemblies.to_dict())
+                _items.append(_item_linked_assemblies.to_dict() if _item_linked_assemblies is not None else None)
             _dict['linked_assemblies'] = _items
         # override the default output from pydantic by calling `to_dict()` of atypical
         if self.atypical:

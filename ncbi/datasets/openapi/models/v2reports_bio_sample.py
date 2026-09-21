@@ -75,8 +75,7 @@ class V2reportsBioSample(BaseModel):
         _items = []
         if self.sra_runs:
             for _item_sra_runs in self.sra_runs:
-                if _item_sra_runs:
-                    _items.append(_item_sra_runs.to_dict())
+                _items.append(_item_sra_runs.to_dict() if _item_sra_runs is not None else None)
             _dict['sra_runs'] = _items
         return _dict
 

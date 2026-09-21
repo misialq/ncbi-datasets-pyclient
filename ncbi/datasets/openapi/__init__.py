@@ -14,7 +14,7 @@
 """  # noqa: E501
 
 
-__version__ = "v18.36.0"
+__version__ = "v18.37.0"
 
 # Define package exports
 __all__ = [
@@ -47,6 +47,7 @@ __all__ = [
     "Ncbiprotddv2ParsedAbstract",
     "Ncbiprotddv2ParsedAbstractAuthor",
     "Ncbiprotddv2ParsedAbstractEpub",
+    "Ncbiprotddv2ProteinAccessionRequest",
     "Ncbiprotddv2PubmedAbstractRequest",
     "Ncbiprotddv2QueryStructureDefinition",
     "Ncbiprotddv2RedundancyLevel",
@@ -64,7 +65,6 @@ __all__ = [
     "Ncbiprotddv2VastScore",
     "ProtobufAny",
     "RpcStatus",
-    "V2Accessions",
     "V2AnnotationForAssemblyType",
     "V2AnnotationForOrganelleType",
     "V2AssemblyAccessions",
@@ -153,6 +153,7 @@ __all__ = [
     "V2SequenceAccessionRequest",
     "V2SequenceDatasetRequest",
     "V2SequenceDatasetRequestFileType",
+    "V2SequenceFeatureRequest",
     "V2SequenceReportPage",
     "V2SequenceRequest",
     "V2SequenceRequestContentType",
@@ -334,6 +335,14 @@ __all__ = [
     "V2reportsSequenceDataReportSequencingMethod",
     "V2reportsSequenceDataReportTopologyType",
     "V2reportsSequenceDataReportUnits",
+    "V2reportsSequenceFeatureLocation",
+    "V2reportsSequenceFeatureLocationFuzzLim",
+    "V2reportsSequenceFeatureLocationFuzzRange",
+    "V2reportsSequenceFeatureLocationIntFuzz",
+    "V2reportsSequenceFeatureLocationStrand",
+    "V2reportsSequenceFeatureQualifier",
+    "V2reportsSequenceFeatureWithAccession",
+    "V2reportsSequenceFeaturesPage",
     "V2reportsSequenceInfo",
     "V2reportsSequenceInformation",
     "V2reportsSequenceReference",
@@ -410,6 +419,7 @@ from ncbi.datasets.openapi.models.ncbiprotddv2_chain_footprint import Ncbiprotdd
 from ncbi.datasets.openapi.models.ncbiprotddv2_parsed_abstract import Ncbiprotddv2ParsedAbstract as Ncbiprotddv2ParsedAbstract
 from ncbi.datasets.openapi.models.ncbiprotddv2_parsed_abstract_author import Ncbiprotddv2ParsedAbstractAuthor as Ncbiprotddv2ParsedAbstractAuthor
 from ncbi.datasets.openapi.models.ncbiprotddv2_parsed_abstract_epub import Ncbiprotddv2ParsedAbstractEpub as Ncbiprotddv2ParsedAbstractEpub
+from ncbi.datasets.openapi.models.ncbiprotddv2_protein_accession_request import Ncbiprotddv2ProteinAccessionRequest as Ncbiprotddv2ProteinAccessionRequest
 from ncbi.datasets.openapi.models.ncbiprotddv2_pubmed_abstract_request import Ncbiprotddv2PubmedAbstractRequest as Ncbiprotddv2PubmedAbstractRequest
 from ncbi.datasets.openapi.models.ncbiprotddv2_query_structure_definition import Ncbiprotddv2QueryStructureDefinition as Ncbiprotddv2QueryStructureDefinition
 from ncbi.datasets.openapi.models.ncbiprotddv2_redundancy_level import Ncbiprotddv2RedundancyLevel as Ncbiprotddv2RedundancyLevel
@@ -427,7 +437,6 @@ from ncbi.datasets.openapi.models.ncbiprotddv2_structure_request import Ncbiprot
 from ncbi.datasets.openapi.models.ncbiprotddv2_vast_score import Ncbiprotddv2VastScore as Ncbiprotddv2VastScore
 from ncbi.datasets.openapi.models.protobuf_any import ProtobufAny as ProtobufAny
 from ncbi.datasets.openapi.models.rpc_status import RpcStatus as RpcStatus
-from ncbi.datasets.openapi.models.v2_accessions import V2Accessions as V2Accessions
 from ncbi.datasets.openapi.models.v2_annotation_for_assembly_type import V2AnnotationForAssemblyType as V2AnnotationForAssemblyType
 from ncbi.datasets.openapi.models.v2_annotation_for_organelle_type import V2AnnotationForOrganelleType as V2AnnotationForOrganelleType
 from ncbi.datasets.openapi.models.v2_assembly_accessions import V2AssemblyAccessions as V2AssemblyAccessions
@@ -516,6 +525,7 @@ from ncbi.datasets.openapi.models.v2_seq_reply import V2SeqReply as V2SeqReply
 from ncbi.datasets.openapi.models.v2_sequence_accession_request import V2SequenceAccessionRequest as V2SequenceAccessionRequest
 from ncbi.datasets.openapi.models.v2_sequence_dataset_request import V2SequenceDatasetRequest as V2SequenceDatasetRequest
 from ncbi.datasets.openapi.models.v2_sequence_dataset_request_file_type import V2SequenceDatasetRequestFileType as V2SequenceDatasetRequestFileType
+from ncbi.datasets.openapi.models.v2_sequence_feature_request import V2SequenceFeatureRequest as V2SequenceFeatureRequest
 from ncbi.datasets.openapi.models.v2_sequence_report_page import V2SequenceReportPage as V2SequenceReportPage
 from ncbi.datasets.openapi.models.v2_sequence_request import V2SequenceRequest as V2SequenceRequest
 from ncbi.datasets.openapi.models.v2_sequence_request_content_type import V2SequenceRequestContentType as V2SequenceRequestContentType
@@ -697,6 +707,14 @@ from ncbi.datasets.openapi.models.v2reports_sequence_data_report_page import V2r
 from ncbi.datasets.openapi.models.v2reports_sequence_data_report_sequencing_method import V2reportsSequenceDataReportSequencingMethod as V2reportsSequenceDataReportSequencingMethod
 from ncbi.datasets.openapi.models.v2reports_sequence_data_report_topology_type import V2reportsSequenceDataReportTopologyType as V2reportsSequenceDataReportTopologyType
 from ncbi.datasets.openapi.models.v2reports_sequence_data_report_units import V2reportsSequenceDataReportUnits as V2reportsSequenceDataReportUnits
+from ncbi.datasets.openapi.models.v2reports_sequence_feature_location import V2reportsSequenceFeatureLocation as V2reportsSequenceFeatureLocation
+from ncbi.datasets.openapi.models.v2reports_sequence_feature_location_fuzz_lim import V2reportsSequenceFeatureLocationFuzzLim as V2reportsSequenceFeatureLocationFuzzLim
+from ncbi.datasets.openapi.models.v2reports_sequence_feature_location_fuzz_range import V2reportsSequenceFeatureLocationFuzzRange as V2reportsSequenceFeatureLocationFuzzRange
+from ncbi.datasets.openapi.models.v2reports_sequence_feature_location_int_fuzz import V2reportsSequenceFeatureLocationIntFuzz as V2reportsSequenceFeatureLocationIntFuzz
+from ncbi.datasets.openapi.models.v2reports_sequence_feature_location_strand import V2reportsSequenceFeatureLocationStrand as V2reportsSequenceFeatureLocationStrand
+from ncbi.datasets.openapi.models.v2reports_sequence_feature_qualifier import V2reportsSequenceFeatureQualifier as V2reportsSequenceFeatureQualifier
+from ncbi.datasets.openapi.models.v2reports_sequence_feature_with_accession import V2reportsSequenceFeatureWithAccession as V2reportsSequenceFeatureWithAccession
+from ncbi.datasets.openapi.models.v2reports_sequence_features_page import V2reportsSequenceFeaturesPage as V2reportsSequenceFeaturesPage
 from ncbi.datasets.openapi.models.v2reports_sequence_info import V2reportsSequenceInfo as V2reportsSequenceInfo
 from ncbi.datasets.openapi.models.v2reports_sequence_information import V2reportsSequenceInformation as V2reportsSequenceInformation
 from ncbi.datasets.openapi.models.v2reports_sequence_reference import V2reportsSequenceReference as V2reportsSequenceReference

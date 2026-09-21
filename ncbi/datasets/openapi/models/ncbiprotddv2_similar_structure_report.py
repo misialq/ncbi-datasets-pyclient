@@ -89,8 +89,7 @@ class Ncbiprotddv2SimilarStructureReport(BaseModel):
         _items = []
         if self.footprints:
             for _item_footprints in self.footprints:
-                if _item_footprints:
-                    _items.append(_item_footprints.to_dict())
+                _items.append(_item_footprints.to_dict() if _item_footprints is not None else None)
             _dict['footprints'] = _items
         return _dict
 

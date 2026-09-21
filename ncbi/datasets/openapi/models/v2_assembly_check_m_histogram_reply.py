@@ -75,8 +75,7 @@ class V2AssemblyCheckMHistogramReply(BaseModel):
         _items = []
         if self.histogram_intervals:
             for _item_histogram_intervals in self.histogram_intervals:
-                if _item_histogram_intervals:
-                    _items.append(_item_histogram_intervals.to_dict())
+                _items.append(_item_histogram_intervals.to_dict() if _item_histogram_intervals is not None else None)
             _dict['histogram_intervals'] = _items
         return _dict
 
