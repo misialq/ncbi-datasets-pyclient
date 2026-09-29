@@ -31,10 +31,12 @@ class V2reportsSequenceFeatureLocation(BaseModel):
     """ # noqa: E501
     var_from: Optional[StrictInt] = Field(default=None, alias="from")
     to: Optional[StrictInt] = None
+    point: Optional[StrictInt] = None
     strand: Optional[V2reportsSequenceFeatureLocationStrand] = V2reportsSequenceFeatureLocationStrand.STRAND_UNKNOWN
     fuzz_from: Optional[V2reportsSequenceFeatureLocationIntFuzz] = None
     fuzz_to: Optional[V2reportsSequenceFeatureLocationIntFuzz] = None
-    __properties: ClassVar[List[str]] = ["from", "to", "strand", "fuzz_from", "fuzz_to"]
+    fuzz: Optional[V2reportsSequenceFeatureLocationIntFuzz] = None
+    __properties: ClassVar[List[str]] = ["from", "to", "point", "strand", "fuzz_from", "fuzz_to", "fuzz"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -81,6 +83,9 @@ class V2reportsSequenceFeatureLocation(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of fuzz_to
         if self.fuzz_to:
             _dict['fuzz_to'] = self.fuzz_to.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of fuzz
+        if self.fuzz:
+            _dict['fuzz'] = self.fuzz.to_dict()
         return _dict
 
     @classmethod
@@ -95,9 +100,11 @@ class V2reportsSequenceFeatureLocation(BaseModel):
         _obj = cls.model_validate({
             "from": obj.get("from"),
             "to": obj.get("to"),
+            "point": obj.get("point"),
             "strand": obj.get("strand") if obj.get("strand") is not None else V2reportsSequenceFeatureLocationStrand.STRAND_UNKNOWN,
             "fuzz_from": V2reportsSequenceFeatureLocationIntFuzz.from_dict(obj["fuzz_from"]) if obj.get("fuzz_from") is not None else None,
-            "fuzz_to": V2reportsSequenceFeatureLocationIntFuzz.from_dict(obj["fuzz_to"]) if obj.get("fuzz_to") is not None else None
+            "fuzz_to": V2reportsSequenceFeatureLocationIntFuzz.from_dict(obj["fuzz_to"]) if obj.get("fuzz_to") is not None else None,
+            "fuzz": V2reportsSequenceFeatureLocationIntFuzz.from_dict(obj["fuzz"]) if obj.get("fuzz") is not None else None
         })
         return _obj
 

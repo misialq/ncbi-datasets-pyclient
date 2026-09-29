@@ -19,10 +19,10 @@ from datetime import datetime
 from pydantic import Field, StrictBool, StrictBytes, StrictInt, StrictStr
 from typing import List, Optional, Tuple, Union
 from typing_extensions import Annotated
+from ncbi.datasets.openapi.models.googleapi_http_body import GoogleapiHttpBody
 from ncbi.datasets.openapi.models.v2_download_summary import V2DownloadSummary
 from ncbi.datasets.openapi.models.v2_sars2_protein_dataset_request import V2Sars2ProteinDatasetRequest
 from ncbi.datasets.openapi.models.v2_table_format import V2TableFormat
-from ncbi.datasets.openapi.models.v2_tabular_output import V2TabularOutput
 from ncbi.datasets.openapi.models.v2_viral_sequence_type import V2ViralSequenceType
 from ncbi.datasets.openapi.models.v2_virus_annotation_report_request import V2VirusAnnotationReportRequest
 from ncbi.datasets.openapi.models.v2_virus_availability import V2VirusAvailability
@@ -1604,6 +1604,7 @@ class VirusApi:
         complete_only: Annotated[Optional[StrictBool], Field(description="Limit to genomes designated as complete, as defined by the submitter.")] = None,
         table_fields: Annotated[Optional[List[V2VirusTableField]], Field(description="Specify which fields to include in the tabular report")] = None,
         format: Annotated[Optional[V2TableFormat], Field(description="Specify output format")] = None,
+        filename: Annotated[Optional[StrictStr], Field(description="Output file name.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1616,7 +1617,7 @@ class VirusApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> V2TabularOutput:
+    ) -> GoogleapiHttpBody:
         """Get SARS-CoV-2 protein metadata in a tabular format by protein name
 
         Get SARS-CoV-2 protein metadata in a tabular format by protein name.
@@ -1645,6 +1646,8 @@ class VirusApi:
         :type table_fields: List[V2VirusTableField]
         :param format: Specify output format
         :type format: V2TableFormat
+        :param filename: Output file name.
+        :type filename: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1680,6 +1683,7 @@ class VirusApi:
             complete_only=complete_only,
             table_fields=table_fields,
             format=format,
+            filename=filename,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1687,7 +1691,7 @@ class VirusApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "V2TabularOutput",
+            '200': "GoogleapiHttpBody",
             'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
@@ -1716,6 +1720,7 @@ class VirusApi:
         complete_only: Annotated[Optional[StrictBool], Field(description="Limit to genomes designated as complete, as defined by the submitter.")] = None,
         table_fields: Annotated[Optional[List[V2VirusTableField]], Field(description="Specify which fields to include in the tabular report")] = None,
         format: Annotated[Optional[V2TableFormat], Field(description="Specify output format")] = None,
+        filename: Annotated[Optional[StrictStr], Field(description="Output file name.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1728,7 +1733,7 @@ class VirusApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[V2TabularOutput]:
+    ) -> ApiResponse[GoogleapiHttpBody]:
         """Get SARS-CoV-2 protein metadata in a tabular format by protein name
 
         Get SARS-CoV-2 protein metadata in a tabular format by protein name.
@@ -1757,6 +1762,8 @@ class VirusApi:
         :type table_fields: List[V2VirusTableField]
         :param format: Specify output format
         :type format: V2TableFormat
+        :param filename: Output file name.
+        :type filename: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1792,6 +1799,7 @@ class VirusApi:
             complete_only=complete_only,
             table_fields=table_fields,
             format=format,
+            filename=filename,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1799,7 +1807,7 @@ class VirusApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "V2TabularOutput",
+            '200': "GoogleapiHttpBody",
             'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
@@ -1828,6 +1836,7 @@ class VirusApi:
         complete_only: Annotated[Optional[StrictBool], Field(description="Limit to genomes designated as complete, as defined by the submitter.")] = None,
         table_fields: Annotated[Optional[List[V2VirusTableField]], Field(description="Specify which fields to include in the tabular report")] = None,
         format: Annotated[Optional[V2TableFormat], Field(description="Specify output format")] = None,
+        filename: Annotated[Optional[StrictStr], Field(description="Output file name.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1869,6 +1878,8 @@ class VirusApi:
         :type table_fields: List[V2VirusTableField]
         :param format: Specify output format
         :type format: V2TableFormat
+        :param filename: Output file name.
+        :type filename: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1904,6 +1915,7 @@ class VirusApi:
             complete_only=complete_only,
             table_fields=table_fields,
             format=format,
+            filename=filename,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1911,7 +1923,7 @@ class VirusApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "V2TabularOutput",
+            '200': "GoogleapiHttpBody",
             'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
@@ -1935,6 +1947,7 @@ class VirusApi:
         complete_only,
         table_fields,
         format,
+        filename,
         _request_auth,
         _content_type,
         _headers,
@@ -2022,6 +2035,10 @@ class VirusApi:
         if format is not None:
             
             _query_params.append(('format', format.value))
+            
+        if filename is not None:
+            
+            _query_params.append(('filename', filename))
             
         # process the header parameters
         # process the form parameters
@@ -5978,6 +5995,7 @@ class VirusApi:
         include_sequence: Annotated[Optional[List[V2ViralSequenceType]], Field(description="Specify which sequence files to include in the data package.")] = None,
         aux_report: Annotated[Optional[List[V2VirusDatasetReportType]], Field(description="Specify which report files to include in the data package. The virus data report is always included, and its inclusion is not affected by this parameter.")] = None,
         format: Annotated[Optional[V2TableFormat], Field(description="Choose download format (tsv, csv or jsonl)")] = None,
+        filename: Annotated[Optional[StrictStr], Field(description="Output file name.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5990,7 +6008,7 @@ class VirusApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> V2TabularOutput:
+    ) -> GoogleapiHttpBody:
         """(Deprecated) Get virus genome metadata in a tabular format
 
         Get virus genome metadata in tabular format for virus genomes by taxon.
@@ -6025,6 +6043,8 @@ class VirusApi:
         :type aux_report: List[V2VirusDatasetReportType]
         :param format: Choose download format (tsv, csv or jsonl)
         :type format: V2TableFormat
+        :param filename: Output file name.
+        :type filename: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -6064,6 +6084,7 @@ class VirusApi:
             include_sequence=include_sequence,
             aux_report=aux_report,
             format=format,
+            filename=filename,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -6071,7 +6092,7 @@ class VirusApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "V2TabularOutput",
+            '200': "GoogleapiHttpBody",
             'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
@@ -6103,6 +6124,7 @@ class VirusApi:
         include_sequence: Annotated[Optional[List[V2ViralSequenceType]], Field(description="Specify which sequence files to include in the data package.")] = None,
         aux_report: Annotated[Optional[List[V2VirusDatasetReportType]], Field(description="Specify which report files to include in the data package. The virus data report is always included, and its inclusion is not affected by this parameter.")] = None,
         format: Annotated[Optional[V2TableFormat], Field(description="Choose download format (tsv, csv or jsonl)")] = None,
+        filename: Annotated[Optional[StrictStr], Field(description="Output file name.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -6115,7 +6137,7 @@ class VirusApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[V2TabularOutput]:
+    ) -> ApiResponse[GoogleapiHttpBody]:
         """(Deprecated) Get virus genome metadata in a tabular format
 
         Get virus genome metadata in tabular format for virus genomes by taxon.
@@ -6150,6 +6172,8 @@ class VirusApi:
         :type aux_report: List[V2VirusDatasetReportType]
         :param format: Choose download format (tsv, csv or jsonl)
         :type format: V2TableFormat
+        :param filename: Output file name.
+        :type filename: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -6189,6 +6213,7 @@ class VirusApi:
             include_sequence=include_sequence,
             aux_report=aux_report,
             format=format,
+            filename=filename,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -6196,7 +6221,7 @@ class VirusApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "V2TabularOutput",
+            '200': "GoogleapiHttpBody",
             'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
@@ -6228,6 +6253,7 @@ class VirusApi:
         include_sequence: Annotated[Optional[List[V2ViralSequenceType]], Field(description="Specify which sequence files to include in the data package.")] = None,
         aux_report: Annotated[Optional[List[V2VirusDatasetReportType]], Field(description="Specify which report files to include in the data package. The virus data report is always included, and its inclusion is not affected by this parameter.")] = None,
         format: Annotated[Optional[V2TableFormat], Field(description="Choose download format (tsv, csv or jsonl)")] = None,
+        filename: Annotated[Optional[StrictStr], Field(description="Output file name.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -6275,6 +6301,8 @@ class VirusApi:
         :type aux_report: List[V2VirusDatasetReportType]
         :param format: Choose download format (tsv, csv or jsonl)
         :type format: V2TableFormat
+        :param filename: Output file name.
+        :type filename: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -6314,6 +6342,7 @@ class VirusApi:
             include_sequence=include_sequence,
             aux_report=aux_report,
             format=format,
+            filename=filename,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -6321,7 +6350,7 @@ class VirusApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "V2TabularOutput",
+            '200': "GoogleapiHttpBody",
             'default': "RpcStatus",
         }
         response_data = self.api_client.call_api(
@@ -6348,6 +6377,7 @@ class VirusApi:
         include_sequence,
         aux_report,
         format,
+        filename,
         _request_auth,
         _content_type,
         _headers,
@@ -6449,6 +6479,10 @@ class VirusApi:
         if format is not None:
             
             _query_params.append(('format', format.value))
+            
+        if filename is not None:
+            
+            _query_params.append(('filename', filename))
             
         # process the header parameters
         # process the form parameters

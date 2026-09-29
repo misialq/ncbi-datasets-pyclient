@@ -885,7 +885,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **taxonomy_image**
-> bytes taxonomy_image(taxon, image_size=image_size)
+> bytes taxonomy_image(taxon, image_size=image_size, filename=filename)
 
 Get a taxonomy image by taxon
 
@@ -924,10 +924,11 @@ with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
     api_instance = ncbi.datasets.openapi.TaxonomyApi(api_client)
     taxon = '9606' # str | 
     image_size = 'UNSPECIFIED' # V2ImageSize |  (optional) (default to 'UNSPECIFIED')
+    filename = 'ncbi_dataset.zip' # str | Output file name. (optional) (default to 'ncbi_dataset.zip')
 
     try:
         # Get a taxonomy image by taxon
-        api_response = api_instance.taxonomy_image(taxon, image_size=image_size)
+        api_response = api_instance.taxonomy_image(taxon, image_size=image_size, filename=filename)
         print("The response of TaxonomyApi->taxonomy_image:\n")
         pprint(api_response)
     except Exception as e:
@@ -943,6 +944,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **taxon** | **str**|  | 
  **image_size** | [**V2ImageSize**](.md)|  | [optional] [default to &#39;UNSPECIFIED&#39;]
+ **filename** | **str**| Output file name. | [optional] [default to &#39;ncbi_dataset.zip&#39;]
 
 ### Return type
 
@@ -1128,7 +1130,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **taxonomy_image_post**
-> bytes taxonomy_image_post(v2_taxonomy_image_request)
+> bytes taxonomy_image_post(v2_taxonomy_image_request, filename=filename)
 
 Get a taxonomy image by taxon
 
@@ -1166,10 +1168,11 @@ with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = ncbi.datasets.openapi.TaxonomyApi(api_client)
     v2_taxonomy_image_request = {"taxon":"9606"} # V2TaxonomyImageRequest | 
+    filename = 'ncbi_dataset.zip' # str | Output file name. (optional) (default to 'ncbi_dataset.zip')
 
     try:
         # Get a taxonomy image by taxon
-        api_response = api_instance.taxonomy_image_post(v2_taxonomy_image_request)
+        api_response = api_instance.taxonomy_image_post(v2_taxonomy_image_request, filename=filename)
         print("The response of TaxonomyApi->taxonomy_image_post:\n")
         pprint(api_response)
     except Exception as e:
@@ -1184,6 +1187,7 @@ with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **v2_taxonomy_image_request** | [**V2TaxonomyImageRequest**](V2TaxonomyImageRequest.md)|  | 
+ **filename** | **str**| Output file name. | [optional] [default to &#39;ncbi_dataset.zip&#39;]
 
 ### Return type
 

@@ -398,7 +398,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **sars2_protein_table**
-> V2TabularOutput sars2_protein_table(proteins, refseq_only=refseq_only, annotated_only=annotated_only, released_since=released_since, updated_since=updated_since, host=host, pangolin_classification=pangolin_classification, geo_location=geo_location, usa_state=usa_state, complete_only=complete_only, table_fields=table_fields, format=format)
+> GoogleapiHttpBody sars2_protein_table(proteins, refseq_only=refseq_only, annotated_only=annotated_only, released_since=released_since, updated_since=updated_since, host=host, pangolin_classification=pangolin_classification, geo_location=geo_location, usa_state=usa_state, complete_only=complete_only, table_fields=table_fields, format=format, filename=filename)
 
 Get SARS-CoV-2 protein metadata in a tabular format by protein name
 
@@ -410,8 +410,8 @@ Get SARS-CoV-2 protein metadata in a tabular format by protein name.
 
 ```python
 import ncbi.datasets.openapi
+from ncbi.datasets.openapi.models.googleapi_http_body import GoogleapiHttpBody
 from ncbi.datasets.openapi.models.v2_table_format import V2TableFormat
-from ncbi.datasets.openapi.models.v2_tabular_output import V2TabularOutput
 from ncbi.datasets.openapi.models.v2_virus_table_field import V2VirusTableField
 from ncbi.datasets.openapi.rest import ApiException
 from pprint import pprint
@@ -449,10 +449,11 @@ with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
     complete_only = False # bool | Limit to genomes designated as complete, as defined by the submitter. (optional) (default to False)
     table_fields = [ncbi.datasets.openapi.V2VirusTableField()] # List[V2VirusTableField] | Specify which fields to include in the tabular report (optional)
     format = 'tsv' # V2TableFormat | Specify output format (optional) (default to 'tsv')
+    filename = 'ncbi_dataset.zip' # str | Output file name. (optional) (default to 'ncbi_dataset.zip')
 
     try:
         # Get SARS-CoV-2 protein metadata in a tabular format by protein name
-        api_response = api_instance.sars2_protein_table(proteins, refseq_only=refseq_only, annotated_only=annotated_only, released_since=released_since, updated_since=updated_since, host=host, pangolin_classification=pangolin_classification, geo_location=geo_location, usa_state=usa_state, complete_only=complete_only, table_fields=table_fields, format=format)
+        api_response = api_instance.sars2_protein_table(proteins, refseq_only=refseq_only, annotated_only=annotated_only, released_since=released_since, updated_since=updated_since, host=host, pangolin_classification=pangolin_classification, geo_location=geo_location, usa_state=usa_state, complete_only=complete_only, table_fields=table_fields, format=format, filename=filename)
         print("The response of VirusApi->sars2_protein_table:\n")
         pprint(api_response)
     except Exception as e:
@@ -478,10 +479,11 @@ Name | Type | Description  | Notes
  **complete_only** | **bool**| Limit to genomes designated as complete, as defined by the submitter. | [optional] [default to False]
  **table_fields** | [**List[V2VirusTableField]**](V2VirusTableField.md)| Specify which fields to include in the tabular report | [optional] 
  **format** | [**V2TableFormat**](.md)| Specify output format | [optional] [default to &#39;tsv&#39;]
+ **filename** | **str**| Output file name. | [optional] [default to &#39;ncbi_dataset.zip&#39;]
 
 ### Return type
 
-[**V2TabularOutput**](V2TabularOutput.md)
+[**GoogleapiHttpBody**](GoogleapiHttpBody.md)
 
 ### Authorization
 
@@ -1437,7 +1439,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **virus_genome_table**
-> V2TabularOutput virus_genome_table(taxon, accessions=accessions, refseq_only=refseq_only, annotated_only=annotated_only, released_since=released_since, updated_since=updated_since, host=host, pangolin_classification=pangolin_classification, geo_location=geo_location, usa_state=usa_state, complete_only=complete_only, table_fields=table_fields, include_sequence=include_sequence, aux_report=aux_report, format=format)
+> GoogleapiHttpBody virus_genome_table(taxon, accessions=accessions, refseq_only=refseq_only, annotated_only=annotated_only, released_since=released_since, updated_since=updated_since, host=host, pangolin_classification=pangolin_classification, geo_location=geo_location, usa_state=usa_state, complete_only=complete_only, table_fields=table_fields, include_sequence=include_sequence, aux_report=aux_report, format=format, filename=filename)
 
 Get virus genome metadata in a tabular format
 
@@ -1449,8 +1451,8 @@ Get virus genome metadata in tabular format for virus genomes by taxon.
 
 ```python
 import ncbi.datasets.openapi
+from ncbi.datasets.openapi.models.googleapi_http_body import GoogleapiHttpBody
 from ncbi.datasets.openapi.models.v2_table_format import V2TableFormat
-from ncbi.datasets.openapi.models.v2_tabular_output import V2TabularOutput
 from ncbi.datasets.openapi.models.v2_viral_sequence_type import V2ViralSequenceType
 from ncbi.datasets.openapi.models.v2_virus_dataset_report_type import V2VirusDatasetReportType
 from ncbi.datasets.openapi.models.v2_virus_table_field import V2VirusTableField
@@ -1493,10 +1495,11 @@ with ncbi.datasets.openapi.ApiClient(configuration) as api_client:
     include_sequence = [ncbi.datasets.openapi.V2ViralSequenceType()] # List[V2ViralSequenceType] | Specify which sequence files to include in the data package. (optional)
     aux_report = [ncbi.datasets.openapi.V2VirusDatasetReportType()] # List[V2VirusDatasetReportType] | Specify which report files to include in the data package. The virus data report is always included, and its inclusion is not affected by this parameter. (optional)
     format = 'tsv' # V2TableFormat | Choose download format (tsv, csv or jsonl) (optional) (default to 'tsv')
+    filename = 'ncbi_dataset.zip' # str | Output file name. (optional) (default to 'ncbi_dataset.zip')
 
     try:
         # Get virus genome metadata in a tabular format
-        api_response = api_instance.virus_genome_table(taxon, accessions=accessions, refseq_only=refseq_only, annotated_only=annotated_only, released_since=released_since, updated_since=updated_since, host=host, pangolin_classification=pangolin_classification, geo_location=geo_location, usa_state=usa_state, complete_only=complete_only, table_fields=table_fields, include_sequence=include_sequence, aux_report=aux_report, format=format)
+        api_response = api_instance.virus_genome_table(taxon, accessions=accessions, refseq_only=refseq_only, annotated_only=annotated_only, released_since=released_since, updated_since=updated_since, host=host, pangolin_classification=pangolin_classification, geo_location=geo_location, usa_state=usa_state, complete_only=complete_only, table_fields=table_fields, include_sequence=include_sequence, aux_report=aux_report, format=format, filename=filename)
         print("The response of VirusApi->virus_genome_table:\n")
         pprint(api_response)
     except Exception as e:
@@ -1525,10 +1528,11 @@ Name | Type | Description  | Notes
  **include_sequence** | [**List[V2ViralSequenceType]**](V2ViralSequenceType.md)| Specify which sequence files to include in the data package. | [optional] 
  **aux_report** | [**List[V2VirusDatasetReportType]**](V2VirusDatasetReportType.md)| Specify which report files to include in the data package. The virus data report is always included, and its inclusion is not affected by this parameter. | [optional] 
  **format** | [**V2TableFormat**](.md)| Choose download format (tsv, csv or jsonl) | [optional] [default to &#39;tsv&#39;]
+ **filename** | **str**| Output file name. | [optional] [default to &#39;ncbi_dataset.zip&#39;]
 
 ### Return type
 
-[**V2TabularOutput**](V2TabularOutput.md)
+[**GoogleapiHttpBody**](GoogleapiHttpBody.md)
 
 ### Authorization
 

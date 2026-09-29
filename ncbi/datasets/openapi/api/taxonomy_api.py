@@ -3169,6 +3169,7 @@ class TaxonomyApi:
         self,
         taxon: StrictStr,
         image_size: Optional[V2ImageSize] = None,
+        filename: Annotated[Optional[StrictStr], Field(description="Output file name.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3190,6 +3191,8 @@ class TaxonomyApi:
         :type taxon: str
         :param image_size:
         :type image_size: V2ImageSize
+        :param filename: Output file name.
+        :type filename: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3215,6 +3218,7 @@ class TaxonomyApi:
         _param = self._taxonomy_image_serialize(
             taxon=taxon,
             image_size=image_size,
+            filename=filename,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3241,6 +3245,7 @@ class TaxonomyApi:
         self,
         taxon: StrictStr,
         image_size: Optional[V2ImageSize] = None,
+        filename: Annotated[Optional[StrictStr], Field(description="Output file name.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3262,6 +3267,8 @@ class TaxonomyApi:
         :type taxon: str
         :param image_size:
         :type image_size: V2ImageSize
+        :param filename: Output file name.
+        :type filename: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3287,6 +3294,7 @@ class TaxonomyApi:
         _param = self._taxonomy_image_serialize(
             taxon=taxon,
             image_size=image_size,
+            filename=filename,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3313,6 +3321,7 @@ class TaxonomyApi:
         self,
         taxon: StrictStr,
         image_size: Optional[V2ImageSize] = None,
+        filename: Annotated[Optional[StrictStr], Field(description="Output file name.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3334,6 +3343,8 @@ class TaxonomyApi:
         :type taxon: str
         :param image_size:
         :type image_size: V2ImageSize
+        :param filename: Output file name.
+        :type filename: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3359,6 +3370,7 @@ class TaxonomyApi:
         _param = self._taxonomy_image_serialize(
             taxon=taxon,
             image_size=image_size,
+            filename=filename,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3380,6 +3392,7 @@ class TaxonomyApi:
         self,
         taxon,
         image_size,
+        filename,
         _request_auth,
         _content_type,
         _headers,
@@ -3407,6 +3420,10 @@ class TaxonomyApi:
         if image_size is not None:
             
             _query_params.append(('image_size', image_size.value))
+            
+        if filename is not None:
+            
+            _query_params.append(('filename', filename))
             
         # process the header parameters
         # process the form parameters
@@ -3997,6 +4014,7 @@ class TaxonomyApi:
     def taxonomy_image_post(
         self,
         v2_taxonomy_image_request: V2TaxonomyImageRequest,
+        filename: Annotated[Optional[StrictStr], Field(description="Output file name.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4016,6 +4034,8 @@ class TaxonomyApi:
 
         :param v2_taxonomy_image_request: (required)
         :type v2_taxonomy_image_request: V2TaxonomyImageRequest
+        :param filename: Output file name.
+        :type filename: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -4040,6 +4060,7 @@ class TaxonomyApi:
 
         _param = self._taxonomy_image_post_serialize(
             v2_taxonomy_image_request=v2_taxonomy_image_request,
+            filename=filename,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -4065,6 +4086,7 @@ class TaxonomyApi:
     def taxonomy_image_post_with_http_info(
         self,
         v2_taxonomy_image_request: V2TaxonomyImageRequest,
+        filename: Annotated[Optional[StrictStr], Field(description="Output file name.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4084,6 +4106,8 @@ class TaxonomyApi:
 
         :param v2_taxonomy_image_request: (required)
         :type v2_taxonomy_image_request: V2TaxonomyImageRequest
+        :param filename: Output file name.
+        :type filename: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -4108,6 +4132,7 @@ class TaxonomyApi:
 
         _param = self._taxonomy_image_post_serialize(
             v2_taxonomy_image_request=v2_taxonomy_image_request,
+            filename=filename,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -4133,6 +4158,7 @@ class TaxonomyApi:
     def taxonomy_image_post_without_preload_content(
         self,
         v2_taxonomy_image_request: V2TaxonomyImageRequest,
+        filename: Annotated[Optional[StrictStr], Field(description="Output file name.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4152,6 +4178,8 @@ class TaxonomyApi:
 
         :param v2_taxonomy_image_request: (required)
         :type v2_taxonomy_image_request: V2TaxonomyImageRequest
+        :param filename: Output file name.
+        :type filename: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -4176,6 +4204,7 @@ class TaxonomyApi:
 
         _param = self._taxonomy_image_post_serialize(
             v2_taxonomy_image_request=v2_taxonomy_image_request,
+            filename=filename,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -4196,6 +4225,7 @@ class TaxonomyApi:
     def _taxonomy_image_post_serialize(
         self,
         v2_taxonomy_image_request,
+        filename,
         _request_auth,
         _content_type,
         _headers,
@@ -4218,6 +4248,10 @@ class TaxonomyApi:
 
         # process the path parameters
         # process the query parameters
+        if filename is not None:
+            
+            _query_params.append(('filename', filename))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter

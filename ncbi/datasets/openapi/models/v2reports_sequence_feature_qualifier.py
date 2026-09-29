@@ -36,11 +36,11 @@ class V2reportsSequenceFeatureQualifier(BaseModel):
     map: Optional[StrictStr] = None
     operon: Optional[StrictStr] = None
     product: Optional[StrictStr] = None
-    protein_id: Optional[StrictStr] = None
+    protein_accession: Optional[StrictStr] = None
     translation: Optional[StrictStr] = None
     codon_start: Optional[StrictStr] = None
     transl_table: Optional[StrictStr] = None
-    transl_except: Optional[StrictStr] = None
+    translation_exception: Optional[List[StrictStr]] = None
     ec_number: Optional[StrictStr] = None
     function: Optional[StrictStr] = None
     experiment: Optional[StrictStr] = None
@@ -64,16 +64,16 @@ class V2reportsSequenceFeatureQualifier(BaseModel):
     focus: Optional[StrictBool] = None
     transgenic: Optional[StrictBool] = None
     environmental_sample: Optional[StrictBool] = None
-    transcript_id: Optional[StrictStr] = None
+    transcript_accession: Optional[StrictStr] = None
     regulatory_class: Optional[StrictStr] = None
     bound_moiety: Optional[StrictStr] = None
     direction: Optional[StrictStr] = None
     pcr_conditions: Optional[StrictStr] = None
     pcr_primers: Optional[StrictStr] = None
-    rpt_type: Optional[StrictStr] = None
-    rpt_family: Optional[StrictStr] = None
-    rpt_unit_range: Optional[StrictStr] = None
-    rpt_unit_seq: Optional[StrictStr] = None
+    repeat_type: Optional[StrictStr] = None
+    repeat_family: Optional[StrictStr] = None
+    repeat_unit_range: Optional[StrictStr] = None
+    repeat_unit_sequence: Optional[StrictStr] = None
     satellite: Optional[StrictStr] = None
     mod_base: Optional[StrictStr] = None
     anticodon: Optional[StrictStr] = None
@@ -84,10 +84,16 @@ class V2reportsSequenceFeatureQualifier(BaseModel):
     replace: Optional[StrictStr] = None
     recombination_class: Optional[StrictStr] = None
     mobile_element_type: Optional[StrictStr] = None
-    ncrna_class: Optional[StrictStr] = None
+    nc_rna_class: Optional[StrictStr] = None
     artificial_location: Optional[StrictStr] = None
     exception: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["gene", "gene_synonym", "locus_tag", "old_locus_tag", "allele", "standard_name", "map", "operon", "product", "protein_id", "translation", "codon_start", "transl_table", "transl_except", "ec_number", "function", "experiment", "inference", "note", "external_db", "citation", "compare", "number", "phenotype", "frequency", "pseudo", "pseudogene", "ribosomal_slippage", "trans_splicing", "circular_rna", "proviral", "germline", "rearranged", "macronuclear", "focus", "transgenic", "environmental_sample", "transcript_id", "regulatory_class", "bound_moiety", "direction", "pcr_conditions", "pcr_primers", "rpt_type", "rpt_family", "rpt_unit_range", "rpt_unit_seq", "satellite", "mod_base", "anticodon", "tag_peptide", "estimated_length", "gap_type", "linkage_evidence", "replace", "recombination_class", "mobile_element_type", "ncrna_class", "artificial_location", "exception"]
+    go_component: Optional[List[StrictStr]] = None
+    go_function: Optional[List[StrictStr]] = None
+    go_process: Optional[List[StrictStr]] = None
+    used_in: Optional[List[StrictStr]] = None
+    repeat_unit: Optional[StrictStr] = None
+    gene_id: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["gene", "gene_synonym", "locus_tag", "old_locus_tag", "allele", "standard_name", "map", "operon", "product", "protein_accession", "translation", "codon_start", "transl_table", "translation_exception", "ec_number", "function", "experiment", "inference", "note", "external_db", "citation", "compare", "number", "phenotype", "frequency", "pseudo", "pseudogene", "ribosomal_slippage", "trans_splicing", "circular_rna", "proviral", "germline", "rearranged", "macronuclear", "focus", "transgenic", "environmental_sample", "transcript_accession", "regulatory_class", "bound_moiety", "direction", "pcr_conditions", "pcr_primers", "repeat_type", "repeat_family", "repeat_unit_range", "repeat_unit_sequence", "satellite", "mod_base", "anticodon", "tag_peptide", "estimated_length", "gap_type", "linkage_evidence", "replace", "recombination_class", "mobile_element_type", "nc_rna_class", "artificial_location", "exception", "go_component", "go_function", "go_process", "used_in", "repeat_unit", "gene_id"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -149,11 +155,11 @@ class V2reportsSequenceFeatureQualifier(BaseModel):
             "map": obj.get("map"),
             "operon": obj.get("operon"),
             "product": obj.get("product"),
-            "protein_id": obj.get("protein_id"),
+            "protein_accession": obj.get("protein_accession"),
             "translation": obj.get("translation"),
             "codon_start": obj.get("codon_start"),
             "transl_table": obj.get("transl_table"),
-            "transl_except": obj.get("transl_except"),
+            "translation_exception": obj.get("translation_exception"),
             "ec_number": obj.get("ec_number"),
             "function": obj.get("function"),
             "experiment": obj.get("experiment"),
@@ -177,16 +183,16 @@ class V2reportsSequenceFeatureQualifier(BaseModel):
             "focus": obj.get("focus"),
             "transgenic": obj.get("transgenic"),
             "environmental_sample": obj.get("environmental_sample"),
-            "transcript_id": obj.get("transcript_id"),
+            "transcript_accession": obj.get("transcript_accession"),
             "regulatory_class": obj.get("regulatory_class"),
             "bound_moiety": obj.get("bound_moiety"),
             "direction": obj.get("direction"),
             "pcr_conditions": obj.get("pcr_conditions"),
             "pcr_primers": obj.get("pcr_primers"),
-            "rpt_type": obj.get("rpt_type"),
-            "rpt_family": obj.get("rpt_family"),
-            "rpt_unit_range": obj.get("rpt_unit_range"),
-            "rpt_unit_seq": obj.get("rpt_unit_seq"),
+            "repeat_type": obj.get("repeat_type"),
+            "repeat_family": obj.get("repeat_family"),
+            "repeat_unit_range": obj.get("repeat_unit_range"),
+            "repeat_unit_sequence": obj.get("repeat_unit_sequence"),
             "satellite": obj.get("satellite"),
             "mod_base": obj.get("mod_base"),
             "anticodon": obj.get("anticodon"),
@@ -197,9 +203,15 @@ class V2reportsSequenceFeatureQualifier(BaseModel):
             "replace": obj.get("replace"),
             "recombination_class": obj.get("recombination_class"),
             "mobile_element_type": obj.get("mobile_element_type"),
-            "ncrna_class": obj.get("ncrna_class"),
+            "nc_rna_class": obj.get("nc_rna_class"),
             "artificial_location": obj.get("artificial_location"),
-            "exception": obj.get("exception")
+            "exception": obj.get("exception"),
+            "go_component": obj.get("go_component"),
+            "go_function": obj.get("go_function"),
+            "go_process": obj.get("go_process"),
+            "used_in": obj.get("used_in"),
+            "repeat_unit": obj.get("repeat_unit"),
+            "gene_id": obj.get("gene_id")
         })
         return _obj
 

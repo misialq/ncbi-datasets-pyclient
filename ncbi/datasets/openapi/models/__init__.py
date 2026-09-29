@@ -13,6 +13,7 @@
 """  # noqa: E501
 
 # import models into model package
+from ncbi.datasets.openapi.models.googleapi_http_body import GoogleapiHttpBody
 from ncbi.datasets.openapi.models.ncbieukgenev2_gene_id_request import Ncbieukgenev2GeneIdRequest
 from ncbi.datasets.openapi.models.ncbigsupgcolv2_assembly_accessions_reply import Ncbigsupgcolv2AssemblyAccessionsReply
 from ncbi.datasets.openapi.models.ncbigsupgcolv2_assembly_check_m_histogram_request import Ncbigsupgcolv2AssemblyCheckMHistogramRequest
@@ -22,6 +23,8 @@ from ncbi.datasets.openapi.models.ncbigsupgcolv2_chromosome_location import Ncbi
 from ncbi.datasets.openapi.models.ncbigsupgcolv2_chromosome_type import Ncbigsupgcolv2ChromosomeType
 from ncbi.datasets.openapi.models.ncbigsupgcolv2_sequence_accession_request import Ncbigsupgcolv2SequenceAccessionRequest
 from ncbi.datasets.openapi.models.ncbiprotddv2_chain_footprint import Ncbiprotddv2ChainFootprint
+from ncbi.datasets.openapi.models.ncbiprotddv2_get_vast_query_domains_request import Ncbiprotddv2GetVastQueryDomainsRequest
+from ncbi.datasets.openapi.models.ncbiprotddv2_get_vast_query_domains_response import Ncbiprotddv2GetVastQueryDomainsResponse
 from ncbi.datasets.openapi.models.ncbiprotddv2_parsed_abstract import Ncbiprotddv2ParsedAbstract
 from ncbi.datasets.openapi.models.ncbiprotddv2_parsed_abstract_author import Ncbiprotddv2ParsedAbstractAuthor
 from ncbi.datasets.openapi.models.ncbiprotddv2_parsed_abstract_epub import Ncbiprotddv2ParsedAbstractEpub
@@ -40,6 +43,11 @@ from ncbi.datasets.openapi.models.ncbiprotddv2_structure_data_report_experiment 
 from ncbi.datasets.openapi.models.ncbiprotddv2_structure_data_report_kind import Ncbiprotddv2StructureDataReportKind
 from ncbi.datasets.openapi.models.ncbiprotddv2_structure_data_report_ligand_chain import Ncbiprotddv2StructureDataReportLigandChain
 from ncbi.datasets.openapi.models.ncbiprotddv2_structure_request import Ncbiprotddv2StructureRequest
+from ncbi.datasets.openapi.models.ncbiprotddv2_vast_protein_chain import Ncbiprotddv2VastProteinChain
+from ncbi.datasets.openapi.models.ncbiprotddv2_vast_query_domain import Ncbiprotddv2VastQueryDomain
+from ncbi.datasets.openapi.models.ncbiprotddv2_vast_query_status import Ncbiprotddv2VastQueryStatus
+from ncbi.datasets.openapi.models.ncbiprotddv2_vast_replacement import Ncbiprotddv2VastReplacement
+from ncbi.datasets.openapi.models.ncbiprotddv2_vast_residue_interval import Ncbiprotddv2VastResidueInterval
 from ncbi.datasets.openapi.models.ncbiprotddv2_vast_score import Ncbiprotddv2VastScore
 from ncbi.datasets.openapi.models.protobuf_any import ProtobufAny
 from ncbi.datasets.openapi.models.rpc_status import RpcStatus
@@ -103,7 +111,6 @@ from ncbi.datasets.openapi.models.v2_genome_annotation_request_annotation_type i
 from ncbi.datasets.openapi.models.v2_genome_annotation_request_genome_annotation_table_format import V2GenomeAnnotationRequestGenomeAnnotationTableFormat
 from ncbi.datasets.openapi.models.v2_genome_annotation_table_summary_reply import V2GenomeAnnotationTableSummaryReply
 from ncbi.datasets.openapi.models.v2_get_biocollections_request import V2GetBiocollectionsRequest
-from ncbi.datasets.openapi.models.v2_http_body import V2HttpBody
 from ncbi.datasets.openapi.models.v2_image_size import V2ImageSize
 from ncbi.datasets.openapi.models.v2_include_tabular_header import V2IncludeTabularHeader
 from ncbi.datasets.openapi.models.v2_micro_bigge_dataset_request import V2MicroBiggeDatasetRequest
@@ -126,12 +133,15 @@ from ncbi.datasets.openapi.models.v2_ref_gene_catalog_dataset_request_file_type 
 from ncbi.datasets.openapi.models.v2_sars2_protein_dataset_request import V2Sars2ProteinDatasetRequest
 from ncbi.datasets.openapi.models.v2_sci_name_and_ids import V2SciNameAndIds
 from ncbi.datasets.openapi.models.v2_sci_name_and_ids_sci_name_and_id import V2SciNameAndIdsSciNameAndId
-from ncbi.datasets.openapi.models.v2_seq_range import V2SeqRange
-from ncbi.datasets.openapi.models.v2_seq_reply import V2SeqReply
 from ncbi.datasets.openapi.models.v2_sequence_accession_request import V2SequenceAccessionRequest
 from ncbi.datasets.openapi.models.v2_sequence_dataset_request import V2SequenceDatasetRequest
 from ncbi.datasets.openapi.models.v2_sequence_dataset_request_file_type import V2SequenceDatasetRequestFileType
+from ncbi.datasets.openapi.models.v2_sequence_fasta_request import V2SequenceFastaRequest
 from ncbi.datasets.openapi.models.v2_sequence_feature_request import V2SequenceFeatureRequest
+from ncbi.datasets.openapi.models.v2_sequence_feature_tree_request import V2SequenceFeatureTreeRequest
+from ncbi.datasets.openapi.models.v2_sequence_features_by_id_request import V2SequenceFeaturesByIdRequest
+from ncbi.datasets.openapi.models.v2_sequence_file_request import V2SequenceFileRequest
+from ncbi.datasets.openapi.models.v2_sequence_file_request_format import V2SequenceFileRequestFormat
 from ncbi.datasets.openapi.models.v2_sequence_report_page import V2SequenceReportPage
 from ncbi.datasets.openapi.models.v2_sequence_request import V2SequenceRequest
 from ncbi.datasets.openapi.models.v2_sequence_request_content_type import V2SequenceRequestContentType
@@ -141,7 +151,6 @@ from ncbi.datasets.openapi.models.v2_sleep_request import V2SleepRequest
 from ncbi.datasets.openapi.models.v2_sort_direction import V2SortDirection
 from ncbi.datasets.openapi.models.v2_sort_field import V2SortField
 from ncbi.datasets.openapi.models.v2_table_format import V2TableFormat
-from ncbi.datasets.openapi.models.v2_tabular_output import V2TabularOutput
 from ncbi.datasets.openapi.models.v2_taxonomy_dataset_request import V2TaxonomyDatasetRequest
 from ncbi.datasets.openapi.models.v2_taxonomy_dataset_request_taxonomy_report_type import V2TaxonomyDatasetRequestTaxonomyReportType
 from ncbi.datasets.openapi.models.v2_taxonomy_filtered_subtree_request import V2TaxonomyFilteredSubtreeRequest
@@ -319,7 +328,9 @@ from ncbi.datasets.openapi.models.v2reports_sequence_feature_location_fuzz_range
 from ncbi.datasets.openapi.models.v2reports_sequence_feature_location_int_fuzz import V2reportsSequenceFeatureLocationIntFuzz
 from ncbi.datasets.openapi.models.v2reports_sequence_feature_location_strand import V2reportsSequenceFeatureLocationStrand
 from ncbi.datasets.openapi.models.v2reports_sequence_feature_qualifier import V2reportsSequenceFeatureQualifier
+from ncbi.datasets.openapi.models.v2reports_sequence_feature_tree_node import V2reportsSequenceFeatureTreeNode
 from ncbi.datasets.openapi.models.v2reports_sequence_feature_with_accession import V2reportsSequenceFeatureWithAccession
+from ncbi.datasets.openapi.models.v2reports_sequence_features_by_id_response import V2reportsSequenceFeaturesByIdResponse
 from ncbi.datasets.openapi.models.v2reports_sequence_features_page import V2reportsSequenceFeaturesPage
 from ncbi.datasets.openapi.models.v2reports_sequence_info import V2reportsSequenceInfo
 from ncbi.datasets.openapi.models.v2reports_sequence_information import V2reportsSequenceInformation

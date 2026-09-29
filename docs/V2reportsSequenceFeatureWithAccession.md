@@ -9,6 +9,9 @@ Name | Type | Description | Notes
 **name** | **str** |  | [optional] 
 **location** | [**List[V2reportsSequenceFeatureLocation]**](V2reportsSequenceFeatureLocation.md) |  | [optional] 
 **qualifiers** | [**V2reportsSequenceFeatureQualifier**](V2reportsSequenceFeatureQualifier.md) |  | [optional] 
+**feature_id** | **int** |  | [optional] 
+**parent_feature_id** | **int** |  | [optional] 
+**has_children** | **bool** |  | [optional] 
 
 ## Example
 

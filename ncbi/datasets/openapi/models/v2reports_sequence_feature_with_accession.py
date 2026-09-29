@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
+from pydantic import BaseModel, ConfigDict, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from ncbi.datasets.openapi.models.v2reports_sequence_feature_location import V2reportsSequenceFeatureLocation
 from ncbi.datasets.openapi.models.v2reports_sequence_feature_qualifier import V2reportsSequenceFeatureQualifier
@@ -33,7 +33,10 @@ class V2reportsSequenceFeatureWithAccession(BaseModel):
     name: Optional[StrictStr] = None
     location: Optional[List[V2reportsSequenceFeatureLocation]] = None
     qualifiers: Optional[V2reportsSequenceFeatureQualifier] = None
-    __properties: ClassVar[List[str]] = ["accession", "name", "location", "qualifiers"]
+    feature_id: Optional[StrictInt] = None
+    parent_feature_id: Optional[StrictInt] = None
+    has_children: Optional[StrictBool] = None
+    __properties: ClassVar[List[str]] = ["accession", "name", "location", "qualifiers", "feature_id", "parent_feature_id", "has_children"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -98,7 +101,10 @@ class V2reportsSequenceFeatureWithAccession(BaseModel):
             "accession": obj.get("accession"),
             "name": obj.get("name"),
             "location": [V2reportsSequenceFeatureLocation.from_dict(_item) for _item in obj["location"]] if obj.get("location") is not None else None,
-            "qualifiers": V2reportsSequenceFeatureQualifier.from_dict(obj["qualifiers"]) if obj.get("qualifiers") is not None else None
+            "qualifiers": V2reportsSequenceFeatureQualifier.from_dict(obj["qualifiers"]) if obj.get("qualifiers") is not None else None,
+            "feature_id": obj.get("feature_id"),
+            "parent_feature_id": obj.get("parent_feature_id"),
+            "has_children": obj.get("has_children")
         })
         return _obj
 
