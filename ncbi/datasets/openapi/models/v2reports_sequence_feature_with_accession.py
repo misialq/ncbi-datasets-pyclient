@@ -30,13 +30,13 @@ class V2reportsSequenceFeatureWithAccession(BaseModel):
     V2reportsSequenceFeatureWithAccession
     """ # noqa: E501
     accession: Optional[StrictStr] = None
-    name: Optional[StrictStr] = None
+    feature_type: Optional[StrictStr] = None
     location: Optional[List[V2reportsSequenceFeatureLocation]] = None
     qualifiers: Optional[V2reportsSequenceFeatureQualifier] = None
     feature_id: Optional[StrictInt] = None
     parent_feature_id: Optional[StrictInt] = None
     has_children: Optional[StrictBool] = None
-    __properties: ClassVar[List[str]] = ["accession", "name", "location", "qualifiers", "feature_id", "parent_feature_id", "has_children"]
+    __properties: ClassVar[List[str]] = ["accession", "feature_type", "location", "qualifiers", "feature_id", "parent_feature_id", "has_children"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -99,7 +99,7 @@ class V2reportsSequenceFeatureWithAccession(BaseModel):
 
         _obj = cls.model_validate({
             "accession": obj.get("accession"),
-            "name": obj.get("name"),
+            "feature_type": obj.get("feature_type"),
             "location": [V2reportsSequenceFeatureLocation.from_dict(_item) for _item in obj["location"]] if obj.get("location") is not None else None,
             "qualifiers": V2reportsSequenceFeatureQualifier.from_dict(obj["qualifiers"]) if obj.get("qualifiers") is not None else None,
             "feature_id": obj.get("feature_id"),

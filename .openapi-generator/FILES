@@ -315,6 +315,7 @@ docs/V2reportsSequenceDataReportGenomeType.md
 docs/V2reportsSequenceDataReportMatch.md
 docs/V2reportsSequenceDataReportOriginType.md
 docs/V2reportsSequenceDataReportPage.md
+docs/V2reportsSequenceDataReportSequenceStatus.md
 docs/V2reportsSequenceDataReportSequencingMethod.md
 docs/V2reportsSequenceDataReportTopologyType.md
 docs/V2reportsSequenceDataReportUnits.md
@@ -694,6 +695,7 @@ ncbi/datasets/openapi/models/v2reports_sequence_data_report_genome_type.py
 ncbi/datasets/openapi/models/v2reports_sequence_data_report_match.py
 ncbi/datasets/openapi/models/v2reports_sequence_data_report_origin_type.py
 ncbi/datasets/openapi/models/v2reports_sequence_data_report_page.py
+ncbi/datasets/openapi/models/v2reports_sequence_data_report_sequence_status.py
 ncbi/datasets/openapi/models/v2reports_sequence_data_report_sequencing_method.py
 ncbi/datasets/openapi/models/v2reports_sequence_data_report_topology_type.py
 ncbi/datasets/openapi/models/v2reports_sequence_data_report_units.py
@@ -755,19 +757,5 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_googleapi_http_body.py
-test/test_ncbiprotddv2_get_vast_query_domains_request.py
-test/test_ncbiprotddv2_get_vast_query_domains_response.py
-test/test_ncbiprotddv2_vast_protein_chain.py
-test/test_ncbiprotddv2_vast_query_domain.py
-test/test_ncbiprotddv2_vast_query_status.py
-test/test_ncbiprotddv2_vast_replacement.py
-test/test_ncbiprotddv2_vast_residue_interval.py
-test/test_v2_sequence_fasta_request.py
-test/test_v2_sequence_feature_tree_request.py
-test/test_v2_sequence_features_by_id_request.py
-test/test_v2_sequence_file_request.py
-test/test_v2_sequence_file_request_format.py
-test/test_v2reports_sequence_feature_tree_node.py
-test/test_v2reports_sequence_features_by_id_response.py
+test/test_v2reports_sequence_data_report_sequence_status.py
 tox.ini

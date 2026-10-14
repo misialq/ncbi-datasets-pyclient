@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **title** | **str** |  | [optional] 
 **var_date** | **str** |  | [optional] 
 **authors** | [**List[V2reportsAuthor]**](V2reportsAuthor.md) |  | [optional] 
+**doi** | **str** |  | [optional] 
 **journal** | [**V2reportsJournal**](V2reportsJournal.md) |  | [optional] 
 **book** | [**V2reportsBook**](V2reportsBook.md) |  | [optional] 
 **proceedings** | [**V2reportsProceedings**](V2reportsProceedings.md) |  | [optional] 

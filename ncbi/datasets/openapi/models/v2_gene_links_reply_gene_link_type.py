@@ -32,6 +32,7 @@ class V2GeneLinksReplyGeneLinkType(str, Enum):
     ORTHOLOG_LINK = 'ORTHOLOG_LINK'
     MCGV_LINK = 'MCGV_LINK'
     CROSS_REFERENCE_LINK = 'CROSS_REFERENCE_LINK'
+    VARIATION_VIEWER_LINK = 'VARIATION_VIEWER_LINK'
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:

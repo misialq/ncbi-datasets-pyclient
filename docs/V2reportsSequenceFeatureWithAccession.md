@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **accession** | **str** |  | [optional] 
-**name** | **str** |  | [optional] 
+**feature_type** | **str** |  | [optional] 
 **location** | [**List[V2reportsSequenceFeatureLocation]**](V2reportsSequenceFeatureLocation.md) |  | [optional] 
 **qualifiers** | [**V2reportsSequenceFeatureQualifier**](V2reportsSequenceFeatureQualifier.md) |  | [optional] 
 **feature_id** | **int** |  | [optional] 

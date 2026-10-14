@@ -14,7 +14,7 @@
 """  # noqa: E501
 
 
-__version__ = "v18.38.0"
+__version__ = "v18.39.0"
 
 # Define package exports
 __all__ = [
@@ -341,6 +341,7 @@ __all__ = [
     "V2reportsSequenceDataReportMatch",
     "V2reportsSequenceDataReportOriginType",
     "V2reportsSequenceDataReportPage",
+    "V2reportsSequenceDataReportSequenceStatus",
     "V2reportsSequenceDataReportSequencingMethod",
     "V2reportsSequenceDataReportTopologyType",
     "V2reportsSequenceDataReportUnits",
@@ -724,6 +725,7 @@ from ncbi.datasets.openapi.models.v2reports_sequence_data_report_genome_type imp
 from ncbi.datasets.openapi.models.v2reports_sequence_data_report_match import V2reportsSequenceDataReportMatch as V2reportsSequenceDataReportMatch
 from ncbi.datasets.openapi.models.v2reports_sequence_data_report_origin_type import V2reportsSequenceDataReportOriginType as V2reportsSequenceDataReportOriginType
 from ncbi.datasets.openapi.models.v2reports_sequence_data_report_page import V2reportsSequenceDataReportPage as V2reportsSequenceDataReportPage
+from ncbi.datasets.openapi.models.v2reports_sequence_data_report_sequence_status import V2reportsSequenceDataReportSequenceStatus as V2reportsSequenceDataReportSequenceStatus
 from ncbi.datasets.openapi.models.v2reports_sequence_data_report_sequencing_method import V2reportsSequenceDataReportSequencingMethod as V2reportsSequenceDataReportSequencingMethod
 from ncbi.datasets.openapi.models.v2reports_sequence_data_report_topology_type import V2reportsSequenceDataReportTopologyType as V2reportsSequenceDataReportTopologyType
 from ncbi.datasets.openapi.models.v2reports_sequence_data_report_units import V2reportsSequenceDataReportUnits as V2reportsSequenceDataReportUnits

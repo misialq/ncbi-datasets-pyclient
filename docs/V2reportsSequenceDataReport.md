@@ -7,7 +7,9 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **accession** | **str** |  | [optional] 
 **organism_name** | **str** |  | [optional] 
+**curator_common_name** | **str** |  | [optional] 
 **length** | **int** |  | [optional] 
+**chromosome_name** | **str** |  | [optional] 
 **update_date** | **str** |  | [optional] 
 **units** | [**V2reportsSequenceDataReportUnits**](V2reportsSequenceDataReportUnits.md) |  | [optional] [default to V2reportsSequenceDataReportUnits.UNITS_UNSPECIFIED]
 **molecule_type** | [**V2reportsMoleculeType**](V2reportsMoleculeType.md) |  | [optional] [default to V2reportsMoleculeType.MOLECULE_TYPE_UNSPECIFIED]
@@ -27,6 +29,7 @@ Name | Type | Description | Notes
 **genome_type** | [**V2reportsSequenceDataReportGenomeType**](V2reportsSequenceDataReportGenomeType.md) |  | [optional] [default to V2reportsSequenceDataReportGenomeType.GENOME_TYPE_UNKNOWN]
 **topology** | [**V2reportsSequenceDataReportTopologyType**](V2reportsSequenceDataReportTopologyType.md) |  | [optional] [default to V2reportsSequenceDataReportTopologyType.NOT_SET]
 **protein_name_evidence** | [**V2reportsProteinNameEvidence**](V2reportsProteinNameEvidence.md) |  | [optional] 
+**sequence_status** | [**V2reportsSequenceDataReportSequenceStatus**](V2reportsSequenceDataReportSequenceStatus.md) |  | [optional] [default to V2reportsSequenceDataReportSequenceStatus.SEQUENCE_STATUS_UNKNOWN]
 
 ## Example
 

@@ -30,7 +30,6 @@ from ncbi.datasets.openapi.models.v2_gene_dataset_request import V2GeneDatasetRe
 from ncbi.datasets.openapi.models.v2_gene_dataset_request_content_type import V2GeneDatasetRequestContentType
 from ncbi.datasets.openapi.models.v2_gene_dataset_request_gene_dataset_report_type import V2GeneDatasetRequestGeneDatasetReportType
 from ncbi.datasets.openapi.models.v2_gene_links_reply import V2GeneLinksReply
-from ncbi.datasets.openapi.models.v2_gene_links_request import V2GeneLinksRequest
 from ncbi.datasets.openapi.models.v2_gene_type import V2GeneType
 from ncbi.datasets.openapi.models.v2_include_tabular_header import V2IncludeTabularHeader
 from ncbi.datasets.openapi.models.v2_ortholog_request import V2OrthologRequest
@@ -4640,9 +4639,9 @@ class GeneApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> V2reportsGeneDataReportPage:
-        """Get a gene expression report
+        """Get a gene expression report by GeneID
 
-        Get a gene expression report. By default, in paged JSON format, but also available in tabular (accept: text/tab-separated-values) or JSON Lines (accept: application/x-ndjson) formats.
+        Get a gene expression report by GeneID. Gene expression values are organized by BioProject, sample group, BioSample, and SRA run. By default, in JSON format, but also available in JSON Lines (accept: application/x-ndjson) format.
 
         :param ncbieukgenev2_gene_id_request: (required)
         :type ncbieukgenev2_gene_id_request: Ncbieukgenev2GeneIdRequest
@@ -4708,9 +4707,9 @@ class GeneApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[V2reportsGeneDataReportPage]:
-        """Get a gene expression report
+        """Get a gene expression report by GeneID
 
-        Get a gene expression report. By default, in paged JSON format, but also available in tabular (accept: text/tab-separated-values) or JSON Lines (accept: application/x-ndjson) formats.
+        Get a gene expression report by GeneID. Gene expression values are organized by BioProject, sample group, BioSample, and SRA run. By default, in JSON format, but also available in JSON Lines (accept: application/x-ndjson) format.
 
         :param ncbieukgenev2_gene_id_request: (required)
         :type ncbieukgenev2_gene_id_request: Ncbieukgenev2GeneIdRequest
@@ -4776,9 +4775,9 @@ class GeneApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Get a gene expression report
+        """Get a gene expression report by GeneID
 
-        Get a gene expression report. By default, in paged JSON format, but also available in tabular (accept: text/tab-separated-values) or JSON Lines (accept: application/x-ndjson) formats.
+        Get a gene expression report by GeneID. Gene expression values are organized by BioProject, sample group, BioSample, and SRA run. By default, in JSON format, but also available in JSON Lines (accept: application/x-ndjson) format.
 
         :param ncbieukgenev2_gene_id_request: (required)
         :type ncbieukgenev2_gene_id_request: Ncbieukgenev2GeneIdRequest
@@ -4906,7 +4905,7 @@ class GeneApi:
     @validate_call
     def gene_expression_reports_by_id(
         self,
-        gene_ids: Annotated[List[StrictInt], Field(description="NCBI gene ids, limited to 1000 ids")],
+        gene_ids: Annotated[List[StrictInt], Field(description="One or more NCBI GeneIDs, limited to 1,000")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4922,9 +4921,9 @@ class GeneApi:
     ) -> V2reportsGeneDataReportPage:
         """Get a gene expression report by GeneID
 
-        Get a gene expression report by GeneID. By default, in paged JSON format, but also available in tabular (accept: text/tab-separated-values) or JSON Lines (accept: application/x-ndjson) formats.
+        Get a gene expression report by GeneID. Gene expression values are organized by BioProject, sample group, BioSample, and SRA run. By default, in JSON format, but also available in JSON Lines (accept: application/x-ndjson) format.
 
-        :param gene_ids: NCBI gene ids, limited to 1000 ids (required)
+        :param gene_ids: One or more NCBI GeneIDs, limited to 1,000 (required)
         :type gene_ids: List[int]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -4974,7 +4973,7 @@ class GeneApi:
     @validate_call
     def gene_expression_reports_by_id_with_http_info(
         self,
-        gene_ids: Annotated[List[StrictInt], Field(description="NCBI gene ids, limited to 1000 ids")],
+        gene_ids: Annotated[List[StrictInt], Field(description="One or more NCBI GeneIDs, limited to 1,000")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4990,9 +4989,9 @@ class GeneApi:
     ) -> ApiResponse[V2reportsGeneDataReportPage]:
         """Get a gene expression report by GeneID
 
-        Get a gene expression report by GeneID. By default, in paged JSON format, but also available in tabular (accept: text/tab-separated-values) or JSON Lines (accept: application/x-ndjson) formats.
+        Get a gene expression report by GeneID. Gene expression values are organized by BioProject, sample group, BioSample, and SRA run. By default, in JSON format, but also available in JSON Lines (accept: application/x-ndjson) format.
 
-        :param gene_ids: NCBI gene ids, limited to 1000 ids (required)
+        :param gene_ids: One or more NCBI GeneIDs, limited to 1,000 (required)
         :type gene_ids: List[int]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -5042,7 +5041,7 @@ class GeneApi:
     @validate_call
     def gene_expression_reports_by_id_without_preload_content(
         self,
-        gene_ids: Annotated[List[StrictInt], Field(description="NCBI gene ids, limited to 1000 ids")],
+        gene_ids: Annotated[List[StrictInt], Field(description="One or more NCBI GeneIDs, limited to 1,000")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5058,9 +5057,9 @@ class GeneApi:
     ) -> RESTResponseType:
         """Get a gene expression report by GeneID
 
-        Get a gene expression report by GeneID. By default, in paged JSON format, but also available in tabular (accept: text/tab-separated-values) or JSON Lines (accept: application/x-ndjson) formats.
+        Get a gene expression report by GeneID. Gene expression values are organized by BioProject, sample group, BioSample, and SRA run. By default, in JSON format, but also available in JSON Lines (accept: application/x-ndjson) format.
 
-        :param gene_ids: NCBI gene ids, limited to 1000 ids (required)
+        :param gene_ids: One or more NCBI GeneIDs, limited to 1,000 (required)
         :type gene_ids: List[int]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -5174,7 +5173,7 @@ class GeneApi:
     @validate_call
     def gene_links_by_id(
         self,
-        gene_ids: Annotated[List[StrictInt], Field(description="One or more NCBI GeneIDs, limited to 100")],
+        gene_ids: Annotated[List[StrictInt], Field(description="One or more NCBI GeneIDs, limited to 1,000")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5192,7 +5191,7 @@ class GeneApi:
 
         Get links to available gene resources in JSON format.
 
-        :param gene_ids: One or more NCBI GeneIDs, limited to 100 (required)
+        :param gene_ids: One or more NCBI GeneIDs, limited to 1,000 (required)
         :type gene_ids: List[int]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -5242,7 +5241,7 @@ class GeneApi:
     @validate_call
     def gene_links_by_id_with_http_info(
         self,
-        gene_ids: Annotated[List[StrictInt], Field(description="One or more NCBI GeneIDs, limited to 100")],
+        gene_ids: Annotated[List[StrictInt], Field(description="One or more NCBI GeneIDs, limited to 1,000")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5260,7 +5259,7 @@ class GeneApi:
 
         Get links to available gene resources in JSON format.
 
-        :param gene_ids: One or more NCBI GeneIDs, limited to 100 (required)
+        :param gene_ids: One or more NCBI GeneIDs, limited to 1,000 (required)
         :type gene_ids: List[int]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -5310,7 +5309,7 @@ class GeneApi:
     @validate_call
     def gene_links_by_id_without_preload_content(
         self,
-        gene_ids: Annotated[List[StrictInt], Field(description="One or more NCBI GeneIDs, limited to 100")],
+        gene_ids: Annotated[List[StrictInt], Field(description="One or more NCBI GeneIDs, limited to 1,000")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5328,7 +5327,7 @@ class GeneApi:
 
         Get links to available gene resources in JSON format.
 
-        :param gene_ids: One or more NCBI GeneIDs, limited to 100 (required)
+        :param gene_ids: One or more NCBI GeneIDs, limited to 1,000 (required)
         :type gene_ids: List[int]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -5440,7 +5439,7 @@ class GeneApi:
     @validate_call
     def gene_links_by_id_by_post(
         self,
-        v2_gene_links_request: V2GeneLinksRequest,
+        ncbieukgenev2_gene_id_request: Ncbieukgenev2GeneIdRequest,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5458,8 +5457,8 @@ class GeneApi:
 
         Get links to available gene resources in JSON format.
 
-        :param v2_gene_links_request: (required)
-        :type v2_gene_links_request: V2GeneLinksRequest
+        :param ncbieukgenev2_gene_id_request: (required)
+        :type ncbieukgenev2_gene_id_request: Ncbieukgenev2GeneIdRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -5483,7 +5482,7 @@ class GeneApi:
         """ # noqa: E501
 
         _param = self._gene_links_by_id_by_post_serialize(
-            v2_gene_links_request=v2_gene_links_request,
+            ncbieukgenev2_gene_id_request=ncbieukgenev2_gene_id_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -5508,7 +5507,7 @@ class GeneApi:
     @validate_call
     def gene_links_by_id_by_post_with_http_info(
         self,
-        v2_gene_links_request: V2GeneLinksRequest,
+        ncbieukgenev2_gene_id_request: Ncbieukgenev2GeneIdRequest,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5526,8 +5525,8 @@ class GeneApi:
 
         Get links to available gene resources in JSON format.
 
-        :param v2_gene_links_request: (required)
-        :type v2_gene_links_request: V2GeneLinksRequest
+        :param ncbieukgenev2_gene_id_request: (required)
+        :type ncbieukgenev2_gene_id_request: Ncbieukgenev2GeneIdRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -5551,7 +5550,7 @@ class GeneApi:
         """ # noqa: E501
 
         _param = self._gene_links_by_id_by_post_serialize(
-            v2_gene_links_request=v2_gene_links_request,
+            ncbieukgenev2_gene_id_request=ncbieukgenev2_gene_id_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -5576,7 +5575,7 @@ class GeneApi:
     @validate_call
     def gene_links_by_id_by_post_without_preload_content(
         self,
-        v2_gene_links_request: V2GeneLinksRequest,
+        ncbieukgenev2_gene_id_request: Ncbieukgenev2GeneIdRequest,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5594,8 +5593,8 @@ class GeneApi:
 
         Get links to available gene resources in JSON format.
 
-        :param v2_gene_links_request: (required)
-        :type v2_gene_links_request: V2GeneLinksRequest
+        :param ncbieukgenev2_gene_id_request: (required)
+        :type ncbieukgenev2_gene_id_request: Ncbieukgenev2GeneIdRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -5619,7 +5618,7 @@ class GeneApi:
         """ # noqa: E501
 
         _param = self._gene_links_by_id_by_post_serialize(
-            v2_gene_links_request=v2_gene_links_request,
+            ncbieukgenev2_gene_id_request=ncbieukgenev2_gene_id_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -5639,7 +5638,7 @@ class GeneApi:
 
     def _gene_links_by_id_by_post_serialize(
         self,
-        v2_gene_links_request,
+        ncbieukgenev2_gene_id_request,
         _request_auth,
         _content_type,
         _headers,
@@ -5665,8 +5664,8 @@ class GeneApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if v2_gene_links_request is not None:
-            _body_params = v2_gene_links_request
+        if ncbieukgenev2_gene_id_request is not None:
+            _body_params = ncbieukgenev2_gene_id_request
 
 
         # set the HTTP header `Accept`

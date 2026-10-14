@@ -35,10 +35,11 @@ class V2reportsArticle(BaseModel):
     title: Optional[StrictStr] = None
     var_date: Optional[StrictStr] = Field(default=None, alias="date")
     authors: Optional[List[V2reportsAuthor]] = None
+    doi: Optional[StrictStr] = None
     journal: Optional[V2reportsJournal] = None
     book: Optional[V2reportsBook] = None
     proceedings: Optional[V2reportsProceedings] = None
-    __properties: ClassVar[List[str]] = ["pmid", "title", "date", "authors", "journal", "book", "proceedings"]
+    __properties: ClassVar[List[str]] = ["pmid", "title", "date", "authors", "doi", "journal", "book", "proceedings"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -110,6 +111,7 @@ class V2reportsArticle(BaseModel):
             "title": obj.get("title"),
             "date": obj.get("date"),
             "authors": [V2reportsAuthor.from_dict(_item) for _item in obj["authors"]] if obj.get("authors") is not None else None,
+            "doi": obj.get("doi"),
             "journal": V2reportsJournal.from_dict(obj["journal"]) if obj.get("journal") is not None else None,
             "book": V2reportsBook.from_dict(obj["book"]) if obj.get("book") is not None else None,
             "proceedings": V2reportsProceedings.from_dict(obj["proceedings"]) if obj.get("proceedings") is not None else None

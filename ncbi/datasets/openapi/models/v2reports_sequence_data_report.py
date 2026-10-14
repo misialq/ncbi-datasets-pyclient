@@ -26,6 +26,7 @@ from ncbi.datasets.openapi.models.v2reports_sample_info import V2reportsSampleIn
 from ncbi.datasets.openapi.models.v2reports_sequence_data_report_completeness import V2reportsSequenceDataReportCompleteness
 from ncbi.datasets.openapi.models.v2reports_sequence_data_report_genome_type import V2reportsSequenceDataReportGenomeType
 from ncbi.datasets.openapi.models.v2reports_sequence_data_report_origin_type import V2reportsSequenceDataReportOriginType
+from ncbi.datasets.openapi.models.v2reports_sequence_data_report_sequence_status import V2reportsSequenceDataReportSequenceStatus
 from ncbi.datasets.openapi.models.v2reports_sequence_data_report_sequencing_method import V2reportsSequenceDataReportSequencingMethod
 from ncbi.datasets.openapi.models.v2reports_sequence_data_report_topology_type import V2reportsSequenceDataReportTopologyType
 from ncbi.datasets.openapi.models.v2reports_sequence_data_report_units import V2reportsSequenceDataReportUnits
@@ -41,7 +42,9 @@ class V2reportsSequenceDataReport(BaseModel):
     """ # noqa: E501
     accession: Optional[StrictStr] = None
     organism_name: Optional[StrictStr] = None
+    curator_common_name: Optional[StrictStr] = None
     length: Optional[StrictInt] = None
+    chromosome_name: Optional[StrictStr] = None
     update_date: Optional[StrictStr] = None
     units: Optional[V2reportsSequenceDataReportUnits] = V2reportsSequenceDataReportUnits.UNITS_UNSPECIFIED
     molecule_type: Optional[V2reportsMoleculeType] = V2reportsMoleculeType.MOLECULE_TYPE_UNSPECIFIED
@@ -61,7 +64,8 @@ class V2reportsSequenceDataReport(BaseModel):
     genome_type: Optional[V2reportsSequenceDataReportGenomeType] = V2reportsSequenceDataReportGenomeType.GENOME_TYPE_UNKNOWN
     topology: Optional[V2reportsSequenceDataReportTopologyType] = V2reportsSequenceDataReportTopologyType.NOT_SET
     protein_name_evidence: Optional[V2reportsProteinNameEvidence] = None
-    __properties: ClassVar[List[str]] = ["accession", "organism_name", "length", "update_date", "units", "molecule_type", "sequencing_method", "completeness", "database_provider", "description", "source_mrna", "tax_id", "submissions", "references", "bioproject_accession", "biosample_accessions", "origin_type", "infraspecific_modifiers", "sample_info", "genome_type", "topology", "protein_name_evidence"]
+    sequence_status: Optional[V2reportsSequenceDataReportSequenceStatus] = V2reportsSequenceDataReportSequenceStatus.SEQUENCE_STATUS_UNKNOWN
+    __properties: ClassVar[List[str]] = ["accession", "organism_name", "curator_common_name", "length", "chromosome_name", "update_date", "units", "molecule_type", "sequencing_method", "completeness", "database_provider", "description", "source_mrna", "tax_id", "submissions", "references", "bioproject_accession", "biosample_accessions", "origin_type", "infraspecific_modifiers", "sample_info", "genome_type", "topology", "protein_name_evidence", "sequence_status"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -137,7 +141,9 @@ class V2reportsSequenceDataReport(BaseModel):
         _obj = cls.model_validate({
             "accession": obj.get("accession"),
             "organism_name": obj.get("organism_name"),
+            "curator_common_name": obj.get("curator_common_name"),
             "length": obj.get("length"),
+            "chromosome_name": obj.get("chromosome_name"),
             "update_date": obj.get("update_date"),
             "units": obj.get("units") if obj.get("units") is not None else V2reportsSequenceDataReportUnits.UNITS_UNSPECIFIED,
             "molecule_type": obj.get("molecule_type") if obj.get("molecule_type") is not None else V2reportsMoleculeType.MOLECULE_TYPE_UNSPECIFIED,
@@ -156,7 +162,8 @@ class V2reportsSequenceDataReport(BaseModel):
             "sample_info": V2reportsSampleInfo.from_dict(obj["sample_info"]) if obj.get("sample_info") is not None else None,
             "genome_type": obj.get("genome_type") if obj.get("genome_type") is not None else V2reportsSequenceDataReportGenomeType.GENOME_TYPE_UNKNOWN,
             "topology": obj.get("topology") if obj.get("topology") is not None else V2reportsSequenceDataReportTopologyType.NOT_SET,
-            "protein_name_evidence": V2reportsProteinNameEvidence.from_dict(obj["protein_name_evidence"]) if obj.get("protein_name_evidence") is not None else None
+            "protein_name_evidence": V2reportsProteinNameEvidence.from_dict(obj["protein_name_evidence"]) if obj.get("protein_name_evidence") is not None else None,
+            "sequence_status": obj.get("sequence_status") if obj.get("sequence_status") is not None else V2reportsSequenceDataReportSequenceStatus.SEQUENCE_STATUS_UNKNOWN
         })
         return _obj
 
