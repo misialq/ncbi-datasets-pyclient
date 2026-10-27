@@ -71,6 +71,9 @@ Name | Type | Description | Notes
 **used_in** | **List[str]** |  | [optional] 
 **repeat_unit** | **str** |  | [optional] 
 **gene_id** | **str** |  | [optional] 
+**description** | **str** |  | [optional] 
+**region_name** | **str** |  | [optional] 
+**site_type** | [**V2reportsSequenceFeatureQualifierSiteType**](V2reportsSequenceFeatureQualifierSiteType.md) |  | [optional] [default to V2reportsSequenceFeatureQualifierSiteType.SITE_TYPE_UNSPECIFIED]
 
 ## Example
 

@@ -19,6 +19,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from ncbi.datasets.openapi.models.v2reports_sequence_feature_qualifier_site_type import V2reportsSequenceFeatureQualifierSiteType
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
@@ -93,7 +94,10 @@ class V2reportsSequenceFeatureQualifier(BaseModel):
     used_in: Optional[List[StrictStr]] = None
     repeat_unit: Optional[StrictStr] = None
     gene_id: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["gene", "gene_synonym", "locus_tag", "old_locus_tag", "allele", "standard_name", "map", "operon", "product", "protein_accession", "translation", "codon_start", "transl_table", "translation_exception", "ec_number", "function", "experiment", "inference", "note", "external_db", "citation", "compare", "number", "phenotype", "frequency", "pseudo", "pseudogene", "ribosomal_slippage", "trans_splicing", "circular_rna", "proviral", "germline", "rearranged", "macronuclear", "focus", "transgenic", "environmental_sample", "transcript_accession", "regulatory_class", "bound_moiety", "direction", "pcr_conditions", "pcr_primers", "repeat_type", "repeat_family", "repeat_unit_range", "repeat_unit_sequence", "satellite", "mod_base", "anticodon", "tag_peptide", "estimated_length", "gap_type", "linkage_evidence", "replace", "recombination_class", "mobile_element_type", "nc_rna_class", "artificial_location", "exception", "go_component", "go_function", "go_process", "used_in", "repeat_unit", "gene_id"]
+    description: Optional[StrictStr] = None
+    region_name: Optional[StrictStr] = None
+    site_type: Optional[V2reportsSequenceFeatureQualifierSiteType] = V2reportsSequenceFeatureQualifierSiteType.SITE_TYPE_UNSPECIFIED
+    __properties: ClassVar[List[str]] = ["gene", "gene_synonym", "locus_tag", "old_locus_tag", "allele", "standard_name", "map", "operon", "product", "protein_accession", "translation", "codon_start", "transl_table", "translation_exception", "ec_number", "function", "experiment", "inference", "note", "external_db", "citation", "compare", "number", "phenotype", "frequency", "pseudo", "pseudogene", "ribosomal_slippage", "trans_splicing", "circular_rna", "proviral", "germline", "rearranged", "macronuclear", "focus", "transgenic", "environmental_sample", "transcript_accession", "regulatory_class", "bound_moiety", "direction", "pcr_conditions", "pcr_primers", "repeat_type", "repeat_family", "repeat_unit_range", "repeat_unit_sequence", "satellite", "mod_base", "anticodon", "tag_peptide", "estimated_length", "gap_type", "linkage_evidence", "replace", "recombination_class", "mobile_element_type", "nc_rna_class", "artificial_location", "exception", "go_component", "go_function", "go_process", "used_in", "repeat_unit", "gene_id", "description", "region_name", "site_type"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -211,7 +215,10 @@ class V2reportsSequenceFeatureQualifier(BaseModel):
             "go_process": obj.get("go_process"),
             "used_in": obj.get("used_in"),
             "repeat_unit": obj.get("repeat_unit"),
-            "gene_id": obj.get("gene_id")
+            "gene_id": obj.get("gene_id"),
+            "description": obj.get("description"),
+            "region_name": obj.get("region_name"),
+            "site_type": obj.get("site_type") if obj.get("site_type") is not None else V2reportsSequenceFeatureQualifierSiteType.SITE_TYPE_UNSPECIFIED
         })
         return _obj
 

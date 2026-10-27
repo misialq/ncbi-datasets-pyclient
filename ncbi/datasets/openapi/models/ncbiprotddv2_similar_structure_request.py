@@ -30,7 +30,7 @@ class Ncbiprotddv2SimilarStructureRequest(BaseModel):
     """
     Ncbiprotddv2SimilarStructureRequest
     """ # noqa: E501
-    sdid: Optional[StrictStr] = None
+    sdid: Optional[StrictInt] = None
     page_token: Optional[StrictStr] = None
     redundancy_level: Optional[Ncbiprotddv2RedundancyLevel] = Ncbiprotddv2RedundancyLevel.NOT_SPECIFIED
     sort_by: Optional[Ncbiprotddv2SortById] = Ncbiprotddv2SortById.NONE

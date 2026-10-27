@@ -14,7 +14,7 @@
 """  # noqa: E501
 
 
-__version__ = "v18.39.0"
+__version__ = "v18.40.0"
 
 # Define package exports
 __all__ = [
@@ -351,6 +351,7 @@ __all__ = [
     "V2reportsSequenceFeatureLocationIntFuzz",
     "V2reportsSequenceFeatureLocationStrand",
     "V2reportsSequenceFeatureQualifier",
+    "V2reportsSequenceFeatureQualifierSiteType",
     "V2reportsSequenceFeatureTreeNode",
     "V2reportsSequenceFeatureWithAccession",
     "V2reportsSequenceFeaturesByIdResponse",
@@ -735,6 +736,7 @@ from ncbi.datasets.openapi.models.v2reports_sequence_feature_location_fuzz_range
 from ncbi.datasets.openapi.models.v2reports_sequence_feature_location_int_fuzz import V2reportsSequenceFeatureLocationIntFuzz as V2reportsSequenceFeatureLocationIntFuzz
 from ncbi.datasets.openapi.models.v2reports_sequence_feature_location_strand import V2reportsSequenceFeatureLocationStrand as V2reportsSequenceFeatureLocationStrand
 from ncbi.datasets.openapi.models.v2reports_sequence_feature_qualifier import V2reportsSequenceFeatureQualifier as V2reportsSequenceFeatureQualifier
+from ncbi.datasets.openapi.models.v2reports_sequence_feature_qualifier_site_type import V2reportsSequenceFeatureQualifierSiteType as V2reportsSequenceFeatureQualifierSiteType
 from ncbi.datasets.openapi.models.v2reports_sequence_feature_tree_node import V2reportsSequenceFeatureTreeNode as V2reportsSequenceFeatureTreeNode
 from ncbi.datasets.openapi.models.v2reports_sequence_feature_with_accession import V2reportsSequenceFeatureWithAccession as V2reportsSequenceFeatureWithAccession
 from ncbi.datasets.openapi.models.v2reports_sequence_features_by_id_response import V2reportsSequenceFeaturesByIdResponse as V2reportsSequenceFeaturesByIdResponse

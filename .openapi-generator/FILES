@@ -325,6 +325,7 @@ docs/V2reportsSequenceFeatureLocationFuzzRange.md
 docs/V2reportsSequenceFeatureLocationIntFuzz.md
 docs/V2reportsSequenceFeatureLocationStrand.md
 docs/V2reportsSequenceFeatureQualifier.md
+docs/V2reportsSequenceFeatureQualifierSiteType.md
 docs/V2reportsSequenceFeatureTreeNode.md
 docs/V2reportsSequenceFeatureWithAccession.md
 docs/V2reportsSequenceFeaturesByIdResponse.md
@@ -705,6 +706,7 @@ ncbi/datasets/openapi/models/v2reports_sequence_feature_location_fuzz_range.py
 ncbi/datasets/openapi/models/v2reports_sequence_feature_location_int_fuzz.py
 ncbi/datasets/openapi/models/v2reports_sequence_feature_location_strand.py
 ncbi/datasets/openapi/models/v2reports_sequence_feature_qualifier.py
+ncbi/datasets/openapi/models/v2reports_sequence_feature_qualifier_site_type.py
 ncbi/datasets/openapi/models/v2reports_sequence_feature_tree_node.py
 ncbi/datasets/openapi/models/v2reports_sequence_feature_with_accession.py
 ncbi/datasets/openapi/models/v2reports_sequence_features_by_id_response.py
@@ -757,5 +759,5 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_v2reports_sequence_data_report_sequence_status.py
+test/test_v2reports_sequence_feature_qualifier_site_type.py
 tox.ini
