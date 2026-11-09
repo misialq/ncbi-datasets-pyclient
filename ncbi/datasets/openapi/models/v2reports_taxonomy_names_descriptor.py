@@ -40,7 +40,8 @@ class V2reportsTaxonomyNamesDescriptor(BaseModel):
     links_from_type: Optional[StrictStr] = None
     citations: Optional[List[V2reportsTaxonomyNamesDescriptorCitation]] = None
     current_scientific_name_is_formal: Optional[StrictBool] = None
-    __properties: ClassVar[List[str]] = ["tax_id", "rank", "current_scientific_name", "group_name", "curator_common_name", "other_common_names", "general_notes", "links_from_type", "citations", "current_scientific_name_is_formal"]
+    in_part_names: Optional[List[V2reportsNameAndAuthority]] = None
+    __properties: ClassVar[List[str]] = ["tax_id", "rank", "current_scientific_name", "group_name", "curator_common_name", "other_common_names", "general_notes", "links_from_type", "citations", "current_scientific_name_is_formal", "in_part_names"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -90,6 +91,12 @@ class V2reportsTaxonomyNamesDescriptor(BaseModel):
             for _item_citations in self.citations:
                 _items.append(_item_citations.to_dict() if _item_citations is not None else None)
             _dict['citations'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in in_part_names (list)
+        _items = []
+        if self.in_part_names:
+            for _item_in_part_names in self.in_part_names:
+                _items.append(_item_in_part_names.to_dict() if _item_in_part_names is not None else None)
+            _dict['in_part_names'] = _items
         return _dict
 
     @classmethod
@@ -111,7 +118,8 @@ class V2reportsTaxonomyNamesDescriptor(BaseModel):
             "general_notes": obj.get("general_notes"),
             "links_from_type": obj.get("links_from_type"),
             "citations": [V2reportsTaxonomyNamesDescriptorCitation.from_dict(_item) for _item in obj["citations"]] if obj.get("citations") is not None else None,
-            "current_scientific_name_is_formal": obj.get("current_scientific_name_is_formal")
+            "current_scientific_name_is_formal": obj.get("current_scientific_name_is_formal"),
+            "in_part_names": [V2reportsNameAndAuthority.from_dict(_item) for _item in obj["in_part_names"]] if obj.get("in_part_names") is not None else None
         })
         return _obj
 

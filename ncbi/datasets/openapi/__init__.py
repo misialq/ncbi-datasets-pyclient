@@ -14,7 +14,7 @@
 """  # noqa: E501
 
 
-__version__ = "v18.40.0"
+__version__ = "v18.41.0"
 
 # Define package exports
 __all__ = [
@@ -250,6 +250,7 @@ __all__ = [
     "V2reportsContentType",
     "V2reportsCountType",
     "V2reportsCultureCollection",
+    "V2reportsDatabaseReference",
     "V2reportsError",
     "V2reportsErrorAssemblyErrorCode",
     "V2reportsErrorGeneErrorCode",
@@ -345,15 +346,19 @@ __all__ = [
     "V2reportsSequenceDataReportSequencingMethod",
     "V2reportsSequenceDataReportTopologyType",
     "V2reportsSequenceDataReportUnits",
+    "V2reportsSequenceFeature",
     "V2reportsSequenceFeatureLocation",
-    "V2reportsSequenceFeatureLocationFuzzLim",
-    "V2reportsSequenceFeatureLocationFuzzRange",
-    "V2reportsSequenceFeatureLocationIntFuzz",
+    "V2reportsSequenceFeatureLocationCoordinateStatus",
+    "V2reportsSequenceFeatureLocationCoordinateStatusAlternatives",
+    "V2reportsSequenceFeatureLocationCoordinateStatusBetween",
+    "V2reportsSequenceFeatureLocationCoordinateStatusPartial",
+    "V2reportsSequenceFeatureLocationCoordinateStatusRange",
+    "V2reportsSequenceFeatureLocationInterval",
+    "V2reportsSequenceFeatureLocationPoint",
     "V2reportsSequenceFeatureLocationStrand",
     "V2reportsSequenceFeatureQualifier",
     "V2reportsSequenceFeatureQualifierSiteType",
     "V2reportsSequenceFeatureTreeNode",
-    "V2reportsSequenceFeatureWithAccession",
     "V2reportsSequenceFeaturesByIdResponse",
     "V2reportsSequenceFeaturesPage",
     "V2reportsSequenceInfo",
@@ -635,6 +640,7 @@ from ncbi.datasets.openapi.models.v2reports_conserved_domain import V2reportsCon
 from ncbi.datasets.openapi.models.v2reports_content_type import V2reportsContentType as V2reportsContentType
 from ncbi.datasets.openapi.models.v2reports_count_type import V2reportsCountType as V2reportsCountType
 from ncbi.datasets.openapi.models.v2reports_culture_collection import V2reportsCultureCollection as V2reportsCultureCollection
+from ncbi.datasets.openapi.models.v2reports_database_reference import V2reportsDatabaseReference as V2reportsDatabaseReference
 from ncbi.datasets.openapi.models.v2reports_error import V2reportsError as V2reportsError
 from ncbi.datasets.openapi.models.v2reports_error_assembly_error_code import V2reportsErrorAssemblyErrorCode as V2reportsErrorAssemblyErrorCode
 from ncbi.datasets.openapi.models.v2reports_error_gene_error_code import V2reportsErrorGeneErrorCode as V2reportsErrorGeneErrorCode
@@ -730,15 +736,19 @@ from ncbi.datasets.openapi.models.v2reports_sequence_data_report_sequence_status
 from ncbi.datasets.openapi.models.v2reports_sequence_data_report_sequencing_method import V2reportsSequenceDataReportSequencingMethod as V2reportsSequenceDataReportSequencingMethod
 from ncbi.datasets.openapi.models.v2reports_sequence_data_report_topology_type import V2reportsSequenceDataReportTopologyType as V2reportsSequenceDataReportTopologyType
 from ncbi.datasets.openapi.models.v2reports_sequence_data_report_units import V2reportsSequenceDataReportUnits as V2reportsSequenceDataReportUnits
+from ncbi.datasets.openapi.models.v2reports_sequence_feature import V2reportsSequenceFeature as V2reportsSequenceFeature
 from ncbi.datasets.openapi.models.v2reports_sequence_feature_location import V2reportsSequenceFeatureLocation as V2reportsSequenceFeatureLocation
-from ncbi.datasets.openapi.models.v2reports_sequence_feature_location_fuzz_lim import V2reportsSequenceFeatureLocationFuzzLim as V2reportsSequenceFeatureLocationFuzzLim
-from ncbi.datasets.openapi.models.v2reports_sequence_feature_location_fuzz_range import V2reportsSequenceFeatureLocationFuzzRange as V2reportsSequenceFeatureLocationFuzzRange
-from ncbi.datasets.openapi.models.v2reports_sequence_feature_location_int_fuzz import V2reportsSequenceFeatureLocationIntFuzz as V2reportsSequenceFeatureLocationIntFuzz
+from ncbi.datasets.openapi.models.v2reports_sequence_feature_location_coordinate_status import V2reportsSequenceFeatureLocationCoordinateStatus as V2reportsSequenceFeatureLocationCoordinateStatus
+from ncbi.datasets.openapi.models.v2reports_sequence_feature_location_coordinate_status_alternatives import V2reportsSequenceFeatureLocationCoordinateStatusAlternatives as V2reportsSequenceFeatureLocationCoordinateStatusAlternatives
+from ncbi.datasets.openapi.models.v2reports_sequence_feature_location_coordinate_status_between import V2reportsSequenceFeatureLocationCoordinateStatusBetween as V2reportsSequenceFeatureLocationCoordinateStatusBetween
+from ncbi.datasets.openapi.models.v2reports_sequence_feature_location_coordinate_status_partial import V2reportsSequenceFeatureLocationCoordinateStatusPartial as V2reportsSequenceFeatureLocationCoordinateStatusPartial
+from ncbi.datasets.openapi.models.v2reports_sequence_feature_location_coordinate_status_range import V2reportsSequenceFeatureLocationCoordinateStatusRange as V2reportsSequenceFeatureLocationCoordinateStatusRange
+from ncbi.datasets.openapi.models.v2reports_sequence_feature_location_interval import V2reportsSequenceFeatureLocationInterval as V2reportsSequenceFeatureLocationInterval
+from ncbi.datasets.openapi.models.v2reports_sequence_feature_location_point import V2reportsSequenceFeatureLocationPoint as V2reportsSequenceFeatureLocationPoint
 from ncbi.datasets.openapi.models.v2reports_sequence_feature_location_strand import V2reportsSequenceFeatureLocationStrand as V2reportsSequenceFeatureLocationStrand
 from ncbi.datasets.openapi.models.v2reports_sequence_feature_qualifier import V2reportsSequenceFeatureQualifier as V2reportsSequenceFeatureQualifier
 from ncbi.datasets.openapi.models.v2reports_sequence_feature_qualifier_site_type import V2reportsSequenceFeatureQualifierSiteType as V2reportsSequenceFeatureQualifierSiteType
 from ncbi.datasets.openapi.models.v2reports_sequence_feature_tree_node import V2reportsSequenceFeatureTreeNode as V2reportsSequenceFeatureTreeNode
-from ncbi.datasets.openapi.models.v2reports_sequence_feature_with_accession import V2reportsSequenceFeatureWithAccession as V2reportsSequenceFeatureWithAccession
 from ncbi.datasets.openapi.models.v2reports_sequence_features_by_id_response import V2reportsSequenceFeaturesByIdResponse as V2reportsSequenceFeaturesByIdResponse
 from ncbi.datasets.openapi.models.v2reports_sequence_features_page import V2reportsSequenceFeaturesPage as V2reportsSequenceFeaturesPage
 from ncbi.datasets.openapi.models.v2reports_sequence_info import V2reportsSequenceInfo as V2reportsSequenceInfo

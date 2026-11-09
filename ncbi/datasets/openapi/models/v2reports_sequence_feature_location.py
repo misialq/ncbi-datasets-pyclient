@@ -17,10 +17,10 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt
+from pydantic import BaseModel, ConfigDict, StrictBool
 from typing import Any, ClassVar, Dict, List, Optional
-from ncbi.datasets.openapi.models.v2reports_sequence_feature_location_int_fuzz import V2reportsSequenceFeatureLocationIntFuzz
-from ncbi.datasets.openapi.models.v2reports_sequence_feature_location_strand import V2reportsSequenceFeatureLocationStrand
+from ncbi.datasets.openapi.models.v2reports_sequence_feature_location_interval import V2reportsSequenceFeatureLocationInterval
+from ncbi.datasets.openapi.models.v2reports_sequence_feature_location_point import V2reportsSequenceFeatureLocationPoint
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
@@ -29,14 +29,10 @@ class V2reportsSequenceFeatureLocation(BaseModel):
     """
     V2reportsSequenceFeatureLocation
     """ # noqa: E501
-    var_from: Optional[StrictInt] = Field(default=None, alias="from")
-    to: Optional[StrictInt] = None
-    point: Optional[StrictInt] = None
-    strand: Optional[V2reportsSequenceFeatureLocationStrand] = V2reportsSequenceFeatureLocationStrand.STRAND_UNKNOWN
-    fuzz_from: Optional[V2reportsSequenceFeatureLocationIntFuzz] = None
-    fuzz_to: Optional[V2reportsSequenceFeatureLocationIntFuzz] = None
-    fuzz: Optional[V2reportsSequenceFeatureLocationIntFuzz] = None
-    __properties: ClassVar[List[str]] = ["from", "to", "point", "strand", "fuzz_from", "fuzz_to", "fuzz"]
+    interval: Optional[V2reportsSequenceFeatureLocationInterval] = None
+    point: Optional[V2reportsSequenceFeatureLocationPoint] = None
+    crosses_origin: Optional[StrictBool] = None
+    __properties: ClassVar[List[str]] = ["interval", "point", "crosses_origin"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -77,15 +73,12 @@ class V2reportsSequenceFeatureLocation(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of fuzz_from
-        if self.fuzz_from:
-            _dict['fuzz_from'] = self.fuzz_from.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of fuzz_to
-        if self.fuzz_to:
-            _dict['fuzz_to'] = self.fuzz_to.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of fuzz
-        if self.fuzz:
-            _dict['fuzz'] = self.fuzz.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of interval
+        if self.interval:
+            _dict['interval'] = self.interval.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of point
+        if self.point:
+            _dict['point'] = self.point.to_dict()
         return _dict
 
     @classmethod
@@ -98,13 +91,9 @@ class V2reportsSequenceFeatureLocation(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "from": obj.get("from"),
-            "to": obj.get("to"),
-            "point": obj.get("point"),
-            "strand": obj.get("strand") if obj.get("strand") is not None else V2reportsSequenceFeatureLocationStrand.STRAND_UNKNOWN,
-            "fuzz_from": V2reportsSequenceFeatureLocationIntFuzz.from_dict(obj["fuzz_from"]) if obj.get("fuzz_from") is not None else None,
-            "fuzz_to": V2reportsSequenceFeatureLocationIntFuzz.from_dict(obj["fuzz_to"]) if obj.get("fuzz_to") is not None else None,
-            "fuzz": V2reportsSequenceFeatureLocationIntFuzz.from_dict(obj["fuzz"]) if obj.get("fuzz") is not None else None
+            "interval": V2reportsSequenceFeatureLocationInterval.from_dict(obj["interval"]) if obj.get("interval") is not None else None,
+            "point": V2reportsSequenceFeatureLocationPoint.from_dict(obj["point"]) if obj.get("point") is not None else None,
+            "crosses_origin": obj.get("crosses_origin")
         })
         return _obj
 

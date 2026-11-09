@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **links_from_type** | **str** |  | [optional] 
 **citations** | [**List[V2reportsTaxonomyNamesDescriptorCitation]**](V2reportsTaxonomyNamesDescriptorCitation.md) |  | [optional] 
 **current_scientific_name_is_formal** | **bool** |  | [optional] 
+**in_part_names** | [**List[V2reportsNameAndAuthority]**](V2reportsNameAndAuthority.md) |  | [optional] 
 
 ## Example
 

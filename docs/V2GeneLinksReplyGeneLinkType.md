@@ -17,6 +17,8 @@
 
 * `VARIATION_VIEWER_LINK` (value: `'VARIATION_VIEWER_LINK'`)
 
+* `CLINVAR_LINK` (value: `'CLINVAR_LINK'`)
+
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

@@ -5,18 +5,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | [optional] 
-**name** | **str** |  | [optional] 
-**locus_tag** | **str** |  | [optional] 
-**gene_id** | **str** |  | [optional] 
-**location** | [**V2reportsSequenceFeatureLocation**](V2reportsSequenceFeatureLocation.md) |  | [optional] 
-**other_names** | **List[str]** |  | [optional] 
-**ec_number** | **List[str]** |  | [optional] 
-**coded_protein_info** | [**V2reportsSequenceCodedProteinInfo**](V2reportsSequenceCodedProteinInfo.md) |  | [optional] 
-**prediction_source** | [**V2reportsSequencePredictionSource**](V2reportsSequencePredictionSource.md) |  | [optional] 
-**data_provenance** | [**V2reportsSequenceDataProvenance**](V2reportsSequenceDataProvenance.md) |  | [optional] 
-**signal_sequence** | **str** |  | [optional] 
-**nested_features** | [**List[V2reportsSequenceFeature]**](V2reportsSequenceFeature.md) |  | [optional] 
+**accession** | **str** |  | [optional] 
+**feature_type** | **str** |  | [optional] 
+**location** | [**List[V2reportsSequenceFeatureLocation]**](V2reportsSequenceFeatureLocation.md) |  | [optional] 
+**qualifiers** | [**V2reportsSequenceFeatureQualifier**](V2reportsSequenceFeatureQualifier.md) |  | [optional] 
+**feature_id** | **int** |  | [optional] 
+**parent_feature_id** | **int** |  | [optional] 
+**has_children** | **bool** |  | [optional] 
+**database_cross_references** | [**List[V2reportsDatabaseReference]**](V2reportsDatabaseReference.md) |  | [optional] 
 
 ## Example
 

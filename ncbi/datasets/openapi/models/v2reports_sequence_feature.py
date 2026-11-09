@@ -17,12 +17,11 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
+from pydantic import BaseModel, ConfigDict, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from ncbi.datasets.openapi.models.v2reports_sequence_coded_protein_info import V2reportsSequenceCodedProteinInfo
-from ncbi.datasets.openapi.models.v2reports_sequence_data_provenance import V2reportsSequenceDataProvenance
+from ncbi.datasets.openapi.models.v2reports_database_reference import V2reportsDatabaseReference
 from ncbi.datasets.openapi.models.v2reports_sequence_feature_location import V2reportsSequenceFeatureLocation
-from ncbi.datasets.openapi.models.v2reports_sequence_prediction_source import V2reportsSequencePredictionSource
+from ncbi.datasets.openapi.models.v2reports_sequence_feature_qualifier import V2reportsSequenceFeatureQualifier
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
@@ -31,19 +30,15 @@ class V2reportsSequenceFeature(BaseModel):
     """
     V2reportsSequenceFeature
     """ # noqa: E501
-    type: Optional[StrictStr] = None
-    name: Optional[StrictStr] = None
-    locus_tag: Optional[StrictStr] = None
-    gene_id: Optional[StrictStr] = None
-    location: Optional[V2reportsSequenceFeatureLocation] = None
-    other_names: Optional[List[StrictStr]] = None
-    ec_number: Optional[List[StrictStr]] = None
-    coded_protein_info: Optional[V2reportsSequenceCodedProteinInfo] = None
-    prediction_source: Optional[V2reportsSequencePredictionSource] = None
-    data_provenance: Optional[V2reportsSequenceDataProvenance] = None
-    signal_sequence: Optional[StrictStr] = None
-    nested_features: Optional[List[V2reportsSequenceFeature]] = None
-    __properties: ClassVar[List[str]] = ["type", "name", "locus_tag", "gene_id", "location", "other_names", "ec_number", "coded_protein_info", "prediction_source", "data_provenance", "signal_sequence", "nested_features"]
+    accession: Optional[StrictStr] = None
+    feature_type: Optional[StrictStr] = None
+    location: Optional[List[V2reportsSequenceFeatureLocation]] = None
+    qualifiers: Optional[V2reportsSequenceFeatureQualifier] = None
+    feature_id: Optional[StrictInt] = None
+    parent_feature_id: Optional[StrictInt] = None
+    has_children: Optional[StrictBool] = None
+    database_cross_references: Optional[List[V2reportsDatabaseReference]] = None
+    __properties: ClassVar[List[str]] = ["accession", "feature_type", "location", "qualifiers", "feature_id", "parent_feature_id", "has_children", "database_cross_references"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -84,25 +79,21 @@ class V2reportsSequenceFeature(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of location
-        if self.location:
-            _dict['location'] = self.location.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of coded_protein_info
-        if self.coded_protein_info:
-            _dict['coded_protein_info'] = self.coded_protein_info.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of prediction_source
-        if self.prediction_source:
-            _dict['prediction_source'] = self.prediction_source.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of data_provenance
-        if self.data_provenance:
-            _dict['data_provenance'] = self.data_provenance.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of each item in nested_features (list)
+        # override the default output from pydantic by calling `to_dict()` of each item in location (list)
         _items = []
-        if self.nested_features:
-            for _item_nested_features in self.nested_features:
-                if _item_nested_features:
-                    _items.append(_item_nested_features.to_dict())
-            _dict['nested_features'] = _items
+        if self.location:
+            for _item_location in self.location:
+                _items.append(_item_location.to_dict() if _item_location is not None else None)
+            _dict['location'] = _items
+        # override the default output from pydantic by calling `to_dict()` of qualifiers
+        if self.qualifiers:
+            _dict['qualifiers'] = self.qualifiers.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of each item in database_cross_references (list)
+        _items = []
+        if self.database_cross_references:
+            for _item_database_cross_references in self.database_cross_references:
+                _items.append(_item_database_cross_references.to_dict() if _item_database_cross_references is not None else None)
+            _dict['database_cross_references'] = _items
         return _dict
 
     @classmethod
@@ -115,21 +106,15 @@ class V2reportsSequenceFeature(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "type": obj.get("type"),
-            "name": obj.get("name"),
-            "locus_tag": obj.get("locus_tag"),
-            "gene_id": obj.get("gene_id"),
-            "location": V2reportsSequenceFeatureLocation.from_dict(obj["location"]) if obj.get("location") is not None else None,
-            "other_names": obj.get("other_names"),
-            "ec_number": obj.get("ec_number"),
-            "coded_protein_info": V2reportsSequenceCodedProteinInfo.from_dict(obj["coded_protein_info"]) if obj.get("coded_protein_info") is not None else None,
-            "prediction_source": V2reportsSequencePredictionSource.from_dict(obj["prediction_source"]) if obj.get("prediction_source") is not None else None,
-            "data_provenance": V2reportsSequenceDataProvenance.from_dict(obj["data_provenance"]) if obj.get("data_provenance") is not None else None,
-            "signal_sequence": obj.get("signal_sequence"),
-            "nested_features": [V2reportsSequenceFeature.from_dict(_item) for _item in obj["nested_features"]] if obj.get("nested_features") is not None else None
+            "accession": obj.get("accession"),
+            "feature_type": obj.get("feature_type"),
+            "location": [V2reportsSequenceFeatureLocation.from_dict(_item) for _item in obj["location"]] if obj.get("location") is not None else None,
+            "qualifiers": V2reportsSequenceFeatureQualifier.from_dict(obj["qualifiers"]) if obj.get("qualifiers") is not None else None,
+            "feature_id": obj.get("feature_id"),
+            "parent_feature_id": obj.get("parent_feature_id"),
+            "has_children": obj.get("has_children"),
+            "database_cross_references": [V2reportsDatabaseReference.from_dict(_item) for _item in obj["database_cross_references"]] if obj.get("database_cross_references") is not None else None
         })
         return _obj
 
-# TODO: Rewrite to not use raise_errors
-V2reportsSequenceFeature.model_rebuild(raise_errors=False)
 

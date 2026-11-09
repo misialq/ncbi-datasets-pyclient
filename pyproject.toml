@@ -1,13 +1,13 @@
 [project]
 name = "ncbi-datasets-pyclient"
-version = "v18.40.0"
+version = "v18.41.0"
 description = "NCBI Datasets API"
 authors = [
   {name = "NCBI", email = "help@ncbi.nlm.nih.gov"},
 ]
 readme = "README.md"
 keywords = ["OpenAPI", "OpenAPI-Generator", "NCBI Datasets API"]
-requires-python = ">=3.10"
+requires-python = ">=3.11"
 
 dependencies = [
   "urllib3 (>=2.7.0,<3.0.0)",

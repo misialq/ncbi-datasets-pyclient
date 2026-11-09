@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**reports** | [**List[V2reportsSequenceFeatureWithAccession]**](V2reportsSequenceFeatureWithAccession.md) |  | [optional] 
+**reports** | [**List[V2reportsSequenceFeature]**](V2reportsSequenceFeature.md) |  | [optional] 
 **total_count** | **int** |  | [optional] 
 **next_page_token** | **str** |  | [optional] 
 
